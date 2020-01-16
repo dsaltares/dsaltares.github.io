@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on David Saltares</title>
-    <link>https://saltares.com/blog/categories/projects/</link>
+    <link>https://saltares.com/categories/projects/</link>
     <description>Recent content in Projects on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Sat, 10 Sep 2016 14:16:40 +0000</lastBuildDate>
     
-	<atom:link href="https://saltares.com/blog/categories/projects/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://saltares.com/categories/projects/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ashley 1.7.3 released!</title>
-      <link>https://saltares.com/blog/projects/ashley-1-7-3-released/</link>
+      <link>https://saltares.com/projects/ashley-1-7-3-released/</link>
       <pubDate>Sat, 10 Sep 2016 14:16:40 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-7-3-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
  API addition: Adds ‘createComponent()&amp;rdquo; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;rdquo; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;rdquo; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
     <item>
       <title>Sloppynauts, our LibGDXJAM entry</title>
-      <link>https://saltares.com/blog/projects/sloppynauts-our-libgdxjam-entry/</link>
+      <link>https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/</link>
       <pubDate>Fri, 22 Jan 2016 23:07:04 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/sloppynauts-our-libgdxjam-entry/</guid>
+      <guid>https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/</guid>
       <description>After a crazy weekend before the deadline, we finally managed to put something playable together for LibGDXJAM.
 We&amp;rdquo;d love you to have a go, and leave some feedback.
  We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute.</description>
@@ -34,20 +34,20 @@ We&amp;rdquo;d love you to have a go, and leave some feedback.
     
     <item>
       <title>Ashley 1.7.1 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-7-1-released/</link>
+      <link>https://saltares.com/projects/ashley-1-7-1-released/</link>
       <pubDate>Sun, 10 Jan 2016 12:27:15 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-7-1-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-7-1-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.1 below:
  API addition: expose IntervalSystem interval value (read-only). Bug fix: fixed pending entity operations not being processed in the right order. Bug fix: fixed adding component in empty family EntityListener causing wrong EntityListener calls. Bug fix: fixed some entity operations not being performed under special circumstances. Internals: split Engine internals into loosely coupled, single responsibility smaller classes. Update: uses Libgdx 1.</description>
     </item>
     
     <item>
       <title>LibGDXJAM update #3</title>
-      <link>https://saltares.com/blog/projects/libgdxjam-update-3/</link>
+      <link>https://saltares.com/projects/libgdxjam-update-3/</link>
       <pubDate>Sun, 10 Jan 2016 11:28:19 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdxjam-update-3/</guid>
+      <guid>https://saltares.com/projects/libgdxjam-update-3/</guid>
       <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&amp;rsquo;ve been hard at work, especially @DrillerDev who&amp;rsquo;s pushed the character design and animation.
 Look at this bad boy for instance, better not to mess with his alien gun.
 Or the beholder powered alien surveillance.
@@ -56,10 +56,10 @@ Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from
     
     <item>
       <title>LibGDXJAM New Year&#39;s update</title>
-      <link>https://saltares.com/blog/projects/libgdxjam-new-years-update/</link>
+      <link>https://saltares.com/projects/libgdxjam-new-years-update/</link>
       <pubDate>Fri, 01 Jan 2016 19:39:03 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdxjam-new-years-update/</guid>
+      <guid>https://saltares.com/projects/libgdxjam-new-years-update/</guid>
       <description>We&amp;rdquo;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&amp;rsquo;s eve.
 Here&amp;rsquo;s a few updates.
  @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&amp;rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
@@ -67,10 +67,10 @@ Here&amp;rsquo;s a few updates.
     
     <item>
       <title>LibJDX jam is on: Life in Space</title>
-      <link>https://saltares.com/blog/projects/libjdxjam-is-on-life-in-space/</link>
+      <link>https://saltares.com/projects/libjdxjam-is-on-life-in-space/</link>
       <pubDate>Sat, 19 Dec 2015 12:45:32 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libjdxjam-is-on-life-in-space/</guid>
+      <guid>https://saltares.com/projects/libjdxjam-is-on-life-in-space/</guid>
       <description>Check the keynote and all the awkward moments from the dev team, including mine!
 The theme is Life in Space and I&amp;rdquo;m teaming up with Alberto for #libGDXJAM and here&amp;rsquo;s our idea:
  Abe&amp;rsquo;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
@@ -79,60 +79,60 @@ The theme is Life in Space and I&amp;rdquo;m teaming up with Alberto for #libGDX
     
     <item>
       <title>Ashley 1.7.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-7-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-7-0-released/</link>
       <pubDate>Tue, 10 Nov 2015 21:48:23 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-7-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-7-0-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.0 below:
  API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership(). Update: uses Libgdx 1.</description>
     </item>
     
     <item>
       <title>Win a free digital copy of Libgdx Cookbook</title>
-      <link>https://saltares.com/blog/projects/win-a-free-digital-copy-of-libgdx-cookbook/</link>
+      <link>https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/</link>
       <pubDate>Mon, 21 Sep 2015 12:34:54 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/win-a-free-digital-copy-of-libgdx-cookbook/</guid>
+      <guid>https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/</guid>
       <description>Update: the list of winners is available as a public draw. Congratulations and thanks for the support! The Libgdx Cookbook discount will continue until September the 30th. If you help us spread the word by retweeting the following message, you&amp;rdquo;ll have a chance of getting one of the three free digital copies of the book we&amp;rdquo;ll be giving away.
 Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to enter a raffle for 3 digital copies of the book.</description>
     </item>
     
     <item>
       <title>Libgdx Cookbook 50 off!</title>
-      <link>https://saltares.com/blog/projects/libgdx-cookbook-50-off/</link>
+      <link>https://saltares.com/projects/libgdx-cookbook-50-off/</link>
       <pubDate>Sat, 12 Sep 2015 12:44:13 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdx-cookbook-50-off/</guid>
+      <guid>https://saltares.com/projects/libgdx-cookbook-50-off/</guid>
       <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&amp;rsquo;s website using the code LCPGDC50. You have to admit it&amp;rsquo;s a total steal, considering it&amp;rsquo;s the most complete and up to date Libgdx book out there.
  Over 75 to-the-point articles that will show you how to leverage a particular aspect of Libgdx for your game. Every article is accompanied by a runnable sample available on GitHub.</description>
     </item>
     
     <item>
       <title>My new side project: Conjugate is now online</title>
-      <link>https://saltares.com/blog/projects/conjugate-is-now-available/</link>
+      <link>https://saltares.com/projects/conjugate-is-now-available/</link>
       <pubDate>Sat, 08 Aug 2015 11:27:03 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/conjugate-is-now-available/</guid>
+      <guid>https://saltares.com/projects/conjugate-is-now-available/</guid>
       <description>Conjugate is a free, multi-language verb conjugator service and it is now available at saltares.com/conjugate.
 It&amp;rdquo;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the Conjugate button to get a nice list with all its conjugated forms. You don&amp;rsquo;t know how to conjugate a verb whilst on the go? No worries, Conjugate&amp;rsquo;s design is responsive, which means it looks neat on any device.</description>
     </item>
     
     <item>
       <title>Ashley 1.6.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-6-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-6-0-released/</link>
       <pubDate>Wed, 29 Jul 2015 22:58:27 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-6-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-6-0-released/</guid>
       <description>A new Ashley package has shipped, making 1.6.0 the latest stable version. Here&amp;rsquo;s the summary of the changes:
  API change: Component is now an interface. API addition: adds getEngine() to EntitySystem. API addition: EntityListeners now are notified by priority order. API consistency: defines what happens when an Entity is added twice to an Engine and when we try do nested updates. We throw an exception in both cases. API consistency: adding an EntitySystem of the same class twice replaces the previous one, just like it has always happened when adding Components to an Entity.</description>
     </item>
     
     <item>
       <title>Libgdx Cookbook samples updated to support Libgdx 1.6.0</title>
-      <link>https://saltares.com/blog/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</link>
+      <link>https://saltares.com/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</link>
       <pubDate>Sun, 17 May 2015 11:02:20 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</guid>
+      <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</guid>
       <description>Haven&amp;rsquo;t bought Libgdx Cross-platform Game Development Cookbook yet? Stop reading and go get it!
 Quick update to inform you that I just updated the samples repository to use Libgdx 1.6.0 and Ashley 1.5.0, both recently released.
 Libgdx 1.6.0 introduces changes in our font rendering API, which require a few minor tweaks to the framework calls, nothing major.
@@ -141,10 +141,10 @@ Libgdx 1.6.0 introduces changes in our font rendering API, which require a few m
     
     <item>
       <title>Ashley 1.5.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-5-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-5-0-released/</link>
       <pubDate>Sun, 17 May 2015 10:24:29 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-5-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-5-0-released/</guid>
       <description>Thanks to the contributors, here&amp;rsquo;s a new version of Ashley, which now stands at 1.5.0. A new version of your favorite component based entity framework is out.
 The version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
  API addition: adds getFamily() method to IntervalIteratingSystem and IteratingSystem. API change: IntervalSystem‘s update() method is now final, as it doesn&amp;rsquo;t make sense to override it.</description>
@@ -152,10 +152,10 @@ The version comes with a bunch of bug fixes that, hopefully, will iron out some 
     
     <item>
       <title>Conjugate</title>
-      <link>https://saltares.com/blog/projects/conjugate/</link>
+      <link>https://saltares.com/projects/conjugate/</link>
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/conjugate/</guid>
+      <guid>https://saltares.com/projects/conjugate/</guid>
       <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
@@ -164,30 +164,30 @@ Reason to be When learning a new language, it is very common to struggle with ve
     
     <item>
       <title>Libgdx Cookbook samples updated</title>
-      <link>https://saltares.com/blog/projects/libgdx-cookbook-samples-updated/</link>
+      <link>https://saltares.com/projects/libgdx-cookbook-samples-updated/</link>
       <pubDate>Thu, 19 Mar 2015 23:27:03 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdx-cookbook-samples-updated/</guid>
+      <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated/</guid>
       <description>It&amp;rsquo;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
 As promised, we have updated our samples repository to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, only a few changes were necessary to make everything work again.</description>
     </item>
     
     <item>
       <title>Ashley 1.4.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-4-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-4-0-released/</link>
       <pubDate>Sat, 14 Mar 2015 16:04:37 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-4-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-4-0-released/</guid>
       <description>A new version of Ashley, your favourite component based entity framework is out. The 1.4.0 version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
  API deprecation: finallt removed the Family.getFor() methods. In order to retrieve a family, you can do Family.all().one().exclude().get(). API change: makes family Builder package protected. Bug fix: EntityOperation and ComponentOperation are now properly reset when put back into their pools.</description>
     </item>
     
     <item>
       <title>We have a Libgdx Cookbook winner!</title>
-      <link>https://saltares.com/blog/general/we-have-a-libgdx-cookbook-winner/</link>
+      <link>https://saltares.com/general/we-have-a-libgdx-cookbook-winner/</link>
       <pubDate>Fri, 07 Nov 2014 17:36:23 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/general/we-have-a-libgdx-cookbook-winner/</guid>
+      <guid>https://saltares.com/general/we-have-a-libgdx-cookbook-winner/</guid>
       <description>To celebrate the release of our Libgdx Cross-platform Game Development Cookbook we announced a raffle on Twitter earlier this week. A few RTs later and a random number generation, the winner is.
 Rafael Giordanno
 Congratulations, we&amp;rsquo;ll get in touch with the winner to send him his paperback copy.
@@ -197,10 +197,10 @@ Here&amp;rsquo;s proof that everything was legit:
     
     <item>
       <title>Get a free Libgdx Cookbook!</title>
-      <link>https://saltares.com/blog/projects/get-a-free-libgdx-cookbook/</link>
+      <link>https://saltares.com/projects/get-a-free-libgdx-cookbook/</link>
       <pubDate>Mon, 03 Nov 2014 19:33:38 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/get-a-free-libgdx-cookbook/</guid>
+      <guid>https://saltares.com/projects/get-a-free-libgdx-cookbook/</guid>
       <description>In order to spread the good word of Libgdx Cross-platform Game Development Cookbook, Alberto and I suggested Packt Publishing the idea of a raffle.
 Simply give us a retweet to enter the giveaway. We&amp;rsquo;ll announce the winners on Friday 7th November.
 Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to enter the raffle! http://t.co/TVx4Zptc5y
@@ -209,20 +209,20 @@ Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to e
     
     <item>
       <title>Libgdx for Cross-platform Game Development Cookbook is out!</title>
-      <link>https://saltares.com/blog/general/libgdx-for-cross-platform-game-development-cookbook-is-out/</link>
+      <link>https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/</link>
       <pubDate>Thu, 30 Oct 2014 08:08:06 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/general/libgdx-for-cross-platform-game-development-cookbook-is-out/</guid>
+      <guid>https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/</guid>
       <description>After over a year of long hours after my day job, sweat, blood and tears, my colleague Alberto Cejas and I are extremely proud to announce that our Libgdx for Cross-platform Game Development Cookbook has finally been published.
 The cookbook has over 75 practical recipes on how to get stuff done with Libgdx. It covers pretty much everything: graphics, input, audio, physics, maps, deployment and third-party extensions among many, many more.</description>
     </item>
     
     <item>
       <title>Ashley 1.3.1 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-3-1-released/</link>
+      <link>https://saltares.com/projects/ashley-1-3-1-released/</link>
       <pubDate>Mon, 13 Oct 2014 21:31:37 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-3-1-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-3-1-released/</guid>
       <description>Small stability release for Ashley entity framework this time.
 Bug fix: fixed IllegalArgumentException thrown when trying to remove components from an already reset entity. The call has no effect now. Thanks for that SgtCoDFish.
 Bug fix: fixed family match failure due to silly silly hashing.
@@ -232,20 +232,20 @@ Bug fix: fixed nested iteration problem caused by adding/removing entities from 
     
     <item>
       <title>Ashley 1.3.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-3-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-3-0-released/</link>
       <pubDate>Sun, 05 Oct 2014 20:17:30 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-3-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-3-0-released/</guid>
       <description>Time for another Ashley entity framework release! This time, the focus has been on stability by getting rid of as many bugs as we could find. Check all the new goodies below.
  API addition: adds IntervalSystem and IntervalIteratingSystem, which are updated at a fixed interval. API addition: adds getEntities() to IteratingSystem and IntervalIteratingSystem. API change: entities use long as ID. Changes entity.getIndex() for entity.getId(). Ids are reset to 0 after the entity is removed from the engine.</description>
     </item>
     
     <item>
       <title>Libgdx Cookbook Git repository evolution</title>
-      <link>https://saltares.com/blog/projects/libgdx-cookbook-git-repository-evolution/</link>
+      <link>https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/</link>
       <pubDate>Tue, 30 Sep 2014 15:49:45 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdx-cookbook-git-repository-evolution/</guid>
+      <guid>https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/</guid>
       <description>As I have mentioned before, I have been working on a book titled Libgdx Cross-platform Game Development Cookbook, which is set to be released next month.
 Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&amp;rsquo;s evolution. Neat, isn&amp;rsquo;t it?
   For those interested, here are the options I used.
@@ -254,40 +254,40 @@ gource -1280x720 --seconds-per-day 0.</description>
     
     <item>
       <title>Ashley 1.2.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-2-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-2-0-released/</link>
       <pubDate>Sun, 14 Sep 2014 20:00:07 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-2-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-2-0-released/</guid>
       <description>There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&amp;rsquo;ll find new.
  API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish&amp;#8216;s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&amp;rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.</description>
     </item>
     
     <item>
       <title>Ashley 1.1.0 released</title>
-      <link>https://saltares.com/blog/projects/ashley-1-1-0-released/</link>
+      <link>https://saltares.com/projects/ashley-1-1-0-released/</link>
       <pubDate>Sun, 10 Aug 2014 17:22:29 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-1-1-0-released/</guid>
+      <guid>https://saltares.com/projects/ashley-1-1-0-released/</guid>
       <description>Just under a month of the first official release we are ready to release a new stable version: Ashley 1.1.0. Here is the list of changes.
  Performance improvements: massive performance gains with O(1) component retrieval through ComponentMapper and the use of Array&amp;lt;Entity&amp;gt; rather than IntMap&amp;lt;Entity&amp;gt;. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits. Complete Ashley manual: now the wiki has a lot more content, it fully covers Ashley.</description>
     </item>
     
     <item>
       <title>Finally, Ashley has a logo</title>
-      <link>https://saltares.com/blog/projects/finally-ashley-has-a-logo/</link>
+      <link>https://saltares.com/projects/finally-ashley-has-a-logo/</link>
       <pubDate>Sat, 09 Aug 2014 21:41:53 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/finally-ashley-has-a-logo/</guid>
+      <guid>https://saltares.com/projects/finally-ashley-has-a-logo/</guid>
       <description>Ashley now has a logo and it&amp;rsquo;s awesome! What an amazing contribution.
 This is really good news because Ashley lacked an image to make it a bit more memorable. Now back to work, there will soon be a new release. Despite it involving some API changes, it will make for a much faster framework.</description>
     </item>
     
     <item>
       <title>Ashley javadocs and wiki</title>
-      <link>https://saltares.com/blog/projects/ashley-javadocs-and-wiki/</link>
+      <link>https://saltares.com/projects/ashley-javadocs-and-wiki/</link>
       <pubDate>Tue, 29 Jul 2014 06:45:42 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/ashley-javadocs-and-wiki/</guid>
+      <guid>https://saltares.com/projects/ashley-javadocs-and-wiki/</guid>
       <description>Ashley, your favourite entity framework now has online javadocs and a wiki.
  Wooohooo!
  The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
@@ -296,10 +296,10 @@ I just started putting stuff into the wiki yesterday so it&amp;rsquo;s pretty em
     
     <item>
       <title>Libgdx Cross-platform Development Cookbook announced</title>
-      <link>https://saltares.com/blog/projects/libgdx-cross-platform-development-cookbook-announced/</link>
+      <link>https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/</link>
       <pubDate>Mon, 30 Jun 2014 12:24:00 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/libgdx-cross-platform-development-cookbook-announced/</guid>
+      <guid>https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/</guid>
       <description>Almost a year ago, I started working on a Libgdx recipe book with Alberto Cejas, an old University mate. Now, Packt Publishing, have announced the project on their website, Libgdx Cross-platform Development Cookbook.
 You can even pre-order a printed copy or the e-book version (DRM free).
 Exciting times!
@@ -308,126 +308,126 @@ The book offers step-by-step guides on how to master Libgdx subsystems to build 
     
     <item>
       <title>New beginnings</title>
-      <link>https://saltares.com/blog/general/new-beginnings/</link>
+      <link>https://saltares.com/general/new-beginnings/</link>
       <pubDate>Mon, 27 Jan 2014 08:46:10 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/general/new-beginnings/</guid>
+      <guid>https://saltares.com/general/new-beginnings/</guid>
       <description>It&amp;rsquo;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
 In a spark of madness, after Math Maze was done, I partnered with a publisher to start writing a game development book. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery.</description>
     </item>
     
     <item>
       <title>My projects migrated to GitHub</title>
-      <link>https://saltares.com/blog/projects/my-projects-migrated-to-github/</link>
+      <link>https://saltares.com/projects/my-projects-migrated-to-github/</link>
       <pubDate>Mon, 05 Nov 2012 23:09:42 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/my-projects-migrated-to-github/</guid>
+      <guid>https://saltares.com/projects/my-projects-migrated-to-github/</guid>
       <description>I&amp;rsquo;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
 Even though I&amp;rsquo;ve always been kind of sceptical about GitHub, I&amp;rsquo;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&amp;rsquo;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects).</description>
     </item>
     
     <item>
       <title>ID generator, avoiding string comparisons</title>
-      <link>https://saltares.com/blog/projects/id-generator-avoiding-string-comparisons/</link>
+      <link>https://saltares.com/projects/id-generator-avoiding-string-comparisons/</link>
       <pubDate>Sun, 09 Sep 2012 19:58:44 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/id-generator-avoiding-string-comparisons/</guid>
+      <guid>https://saltares.com/projects/id-generator-avoiding-string-comparisons/</guid>
       <description>Disclaimer: IDGenerator is being used in SionEngine and it&amp;rsquo;s an useful but rather simple approach to the problem described in the paragraphs below.
 Needless to say that in games development we care very much about performance. It becomes an even more critical issue when we&amp;rdquo;re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons.</description>
     </item>
     
     <item>
       <title>SionEngine, a libgdx based system</title>
-      <link>https://saltares.com/blog/projects/sionengine-a-libgdx-based-system/</link>
+      <link>https://saltares.com/projects/sionengine-a-libgdx-based-system/</link>
       <pubDate>Sun, 02 Sep 2012 09:57:18 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/sionengine-a-libgdx-based-system/</guid>
+      <guid>https://saltares.com/projects/sionengine-a-libgdx-based-system/</guid>
       <description>Note: I&amp;rsquo;ve decided to remove the repo for now as I feel that it&amp;rsquo;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my GitHub profile.
 I&amp;rsquo;ve been working with libgdx for a few months now and I love every aspect of it, except maybe the fact that it&amp;rsquo;s only compatible with Java but don&amp;rsquo;t worry about me, I&amp;rdquo;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&amp;rsquo;s just too awesome.</description>
     </item>
     
     <item>
       <title>VI Concurso Universitario de Software Libre</title>
-      <link>https://saltares.com/blog/projects/vi-concurso-universitario-de-software-libre/</link>
+      <link>https://saltares.com/projects/vi-concurso-universitario-de-software-libre/</link>
       <pubDate>Wed, 05 Oct 2011 09:38:45 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/vi-concurso-universitario-de-software-libre/</guid>
+      <guid>https://saltares.com/projects/vi-concurso-universitario-de-software-libre/</guid>
       <description>Se acaba de abrir el plazo de inscripción a la VI edición del Concurso Universitario de Software Libre. Aquel que siga el blog de forma asidua ya sabe en qué consiste pero para el que no, simplemente se trata de un concurso a nivel nacional sobre desarrollo de software, hardware o documentación libre. En caso de no conocerlo sigue leyendo porque realmente merece la pena.
 Los participantes han de ser estudiantes universitarios, de bachillerato o de ciclos superiores y han de desarrollar un proyecto libre de forma individual o junto hasta un máximo de dos compañeros adicionales.</description>
     </item>
     
     <item>
       <title>gLapse v0.3 has been released</title>
-      <link>https://saltares.com/blog/projects/english-glapse-v0-3-has-been-released/</link>
+      <link>https://saltares.com/projects/english-glapse-v0-3-has-been-released/</link>
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/english-glapse-v0-3-has-been-released/</guid>
+      <guid>https://saltares.com/projects/english-glapse-v0-3-has-been-released/</guid>
       <description>I&amp;#8217;ve been really busy with the development of Sion Tower but it&amp;#8217;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;#8217;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.  Changelog   Improves video quality but the slider to configure it had to be deleted.</description>
     </item>
     
     <item>
       <title>gLapse v0.3 has been released</title>
-      <link>https://saltares.com/blog/projects/glapse-v0-3-has-been-released/</link>
+      <link>https://saltares.com/projects/glapse-v0-3-has-been-released/</link>
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/glapse-v0-3-has-been-released/</guid>
+      <guid>https://saltares.com/projects/glapse-v0-3-has-been-released/</guid>
       <description>I&amp;rsquo;ve been really busy with the development of Sion Tower but it&amp;rsquo;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;rdquo;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.
 Changelog  Improves video quality but the slider to configure it had to be deleted.</description>
     </item>
     
     <item>
       <title>gLapse: take screenshots, glue them together</title>
-      <link>https://saltares.com/blog/projects/english-glapse-take-screenshots-glue-them-together/</link>
+      <link>https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/</link>
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/english-glapse-take-screenshots-glue-them-together/</guid>
+      <guid>https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/</guid>
       <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;#8217;s where gLapse comes into play.</description>
     </item>
     
     <item>
       <title>gLapse: take screenshots, glue them together</title>
-      <link>https://saltares.com/blog/projects/glapse-take-screenshots-glue-them-together/</link>
+      <link>https://saltares.com/projects/glapse-take-screenshots-glue-them-together/</link>
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/glapse-take-screenshots-glue-them-together/</guid>
+      <guid>https://saltares.com/projects/glapse-take-screenshots-glue-them-together/</guid>
       <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;rsquo;s where gLapse comes into play.</description>
     </item>
     
     <item>
       <title>IberOgre y Sion Tower en los medios</title>
-      <link>https://saltares.com/blog/projects/iberogre-y-sion-tower-en-los-medios/</link>
+      <link>https://saltares.com/projects/iberogre-y-sion-tower-en-los-medios/</link>
       <pubDate>Wed, 04 May 2011 22:56:34 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/iberogre-y-sion-tower-en-los-medios/</guid>
+      <guid>https://saltares.com/projects/iberogre-y-sion-tower-en-los-medios/</guid>
       <description>La Universidad de Cádiz ha publicado la noticia de que IberOgre y Sion Tower es proyecto finalista en el V CUSL que se celebrará en Granada. Desde entonces, muchos otros medios se han hecho eco dándole una mayor difusión al proyecto. No podemos estar más contentos por el apoyo recibido.
 El periódico gratuito Viva Cádiz nos dedica la mayor parte de su contraportada (podéis ver la noticia completa más abajo) y aparecemos en la versión digital de Diario Bahía de Cádiz.</description>
     </item>
     
     <item>
       <title>Lanzado Tiny Backup 0.2</title>
-      <link>https://saltares.com/blog/projects/lanzado-tiny-backup-0-2/</link>
+      <link>https://saltares.com/projects/lanzado-tiny-backup-0-2/</link>
       <pubDate>Sat, 25 Sep 2010 10:51:48 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/lanzado-tiny-backup-0-2/</guid>
+      <guid>https://saltares.com/projects/lanzado-tiny-backup-0-2/</guid>
       <description>Tiny Backup es una pequeña interfaz para algunas de las funcionalidades del comando dpkg que permite a usuarios de GNU/Linux realizar y restaurar copias de la lista de paquetes instalados en el sistema. Está desarrollado en Python utilizando PyGTK y Glade para la GUI aunque de eso ya hablé suficiente en el artículo que le dediqué hace algo más de un mes. En este pequeño escrito hablaré de la acogida de la primera versión y de los arreglos que incorpora la segunda.</description>
     </item>
     
     <item>
       <title>Twigraph, grafos de followers y followings</title>
-      <link>https://saltares.com/blog/projects/twigraph-grafos-de-followers-y-followings/</link>
+      <link>https://saltares.com/projects/twigraph-grafos-de-followers-y-followings/</link>
       <pubDate>Fri, 27 Aug 2010 16:31:11 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/twigraph-grafos-de-followers-y-followings/</guid>
+      <guid>https://saltares.com/projects/twigraph-grafos-de-followers-y-followings/</guid>
       <description>En un post anterior hablé sobre cómo me introduje en la programación en Python con PyGTK y Glade desarrollando Tiny Backup. Antes que eso ya había experimentado un acercamiento al lenguaje de la serpiente en un ejercicio no extremadamente útil aunque curioso, el resultado fue Twigraph.
 Twigraph Twigraph es un pequeño script que utiliza un wrapper de la API de Twitter y una biblioteca para trabajar con el lenguaje Dot de Graphviz.</description>
     </item>
     
     <item>
       <title>Tiny Backup, PyGTK y Glade</title>
-      <link>https://saltares.com/blog/projects/tiny-backup-pygtk-y-glade/</link>
+      <link>https://saltares.com/projects/tiny-backup-pygtk-y-glade/</link>
       <pubDate>Tue, 10 Aug 2010 17:30:00 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/tiny-backup-pygtk-y-glade/</guid>
+      <guid>https://saltares.com/projects/tiny-backup-pygtk-y-glade/</guid>
       <description>Si quieres conocer una biblioteca o un lenguaje nuevos lo mejor es, sin lugar a dudas, utilizarlos. Había mirado ya algunas cosas sobre Python pero hace algunos meses sentí la necesidad de programar algo pequeño para adquirir un mínimo de destreza. Había oído maravillas de lo sencillo y elegante que era diseñar la interfaz de una aplicación de escritorio con Glade y manejarla con PyGTK desde Python. Por tanto me puse manos a la obra y desarrollé Tiny Backup en un par de días.</description>
     </item>
     

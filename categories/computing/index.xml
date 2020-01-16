@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computing on David Saltares</title>
-    <link>https://saltares.com/blog/categories/computing/</link>
+    <link>https://saltares.com/categories/computing/</link>
     <description>Recent content in Computing on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
     <lastBuildDate>Mon, 04 May 2015 17:27:20 +0000</lastBuildDate>
     
-	<atom:link href="https://saltares.com/blog/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://saltares.com/categories/computing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Conjugate</title>
-      <link>https://saltares.com/blog/projects/conjugate/</link>
+      <link>https://saltares.com/projects/conjugate/</link>
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/projects/conjugate/</guid>
+      <guid>https://saltares.com/projects/conjugate/</guid>
       <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
@@ -25,10 +25,10 @@ Reason to be When learning a new language, it is very common to struggle with ve
     
     <item>
       <title>Recover history with Git</title>
-      <link>https://saltares.com/blog/computing/recover-history-with-git/</link>
+      <link>https://saltares.com/computing/recover-history-with-git/</link>
       <pubDate>Wed, 31 Dec 2014 13:00:26 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/recover-history-with-git/</guid>
+      <guid>https://saltares.com/computing/recover-history-with-git/</guid>
       <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&amp;rsquo;t been pushed to origin yet. However, I didn&amp;rsquo;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
  Oh noes!
@@ -37,10 +37,10 @@ After a couple of weeks, a hundred commits and many other branches mingling abou
     
     <item>
       <title>Book review: Clean Code</title>
-      <link>https://saltares.com/blog/computing/book-review-clean-code/</link>
+      <link>https://saltares.com/computing/book-review-clean-code/</link>
       <pubDate>Sun, 14 Dec 2014 21:27:11 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/book-review-clean-code/</guid>
+      <guid>https://saltares.com/computing/book-review-clean-code/</guid>
       <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&amp;rsquo;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
 Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, Clean Code.
 And so I read it.</description>
@@ -48,10 +48,10 @@ And so I read it.</description>
     
     <item>
       <title>ListenerSet using variadic templates</title>
-      <link>https://saltares.com/blog/computing/listenerset-using-variadic-templates/</link>
+      <link>https://saltares.com/computing/listenerset-using-variadic-templates/</link>
       <pubDate>Thu, 24 Apr 2014 10:00:02 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/listenerset-using-variadic-templates/</guid>
+      <guid>https://saltares.com/computing/listenerset-using-variadic-templates/</guid>
       <description>Important: variadic templates are only available from C++11, make sure your compiler supports it.
 Who has never used the Observer pattern? As long as you have been involved in any medium sized project, chances are you have come across it at some point.
 The problem It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis.</description>
@@ -59,10 +59,10 @@ The problem It is extremely common to have an event generating system other comp
     
     <item>
       <title>Contribute back to open source projects</title>
-      <link>https://saltares.com/blog/computing/contribute-back-to-open-source-projects/</link>
+      <link>https://saltares.com/computing/contribute-back-to-open-source-projects/</link>
       <pubDate>Fri, 14 Mar 2014 16:42:15 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/contribute-back-to-open-source-projects/</guid>
+      <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
       <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
 Have you thought about contributing back?
  Who, me?
@@ -72,10 +72,10 @@ So much win The beauty of a healthy community driven project such as Libgdx is t
     
     <item>
       <title>Using Ant behind a proxy</title>
-      <link>https://saltares.com/blog/computing/using-ant-behind-a-proxy/</link>
+      <link>https://saltares.com/computing/using-ant-behind-a-proxy/</link>
       <pubDate>Mon, 10 Mar 2014 12:49:15 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/using-ant-behind-a-proxy/</guid>
+      <guid>https://saltares.com/computing/using-ant-behind-a-proxy/</guid>
       <description>Many Java projects use Ant to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.
 Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.
 &amp;lt;setproxy proxyhost=&amp;quot;host&amp;quot; proxyport=&amp;quot;port&amp;quot; proxypassword=&amp;quot;password&amp;quot;/&amp;gt;  Users behind a proxy would now be able to download dependencies with Ant.</description>
@@ -83,48 +83,48 @@ Downloading dependencies while your machine is behind a proxy might prove proble
     
     <item>
       <title>Smart enums in C&#43;&#43; or: &#34;what is this madness?&#34;</title>
-      <link>https://saltares.com/blog/computing/smart-enums-in-c-or-what-is-this-madness/</link>
+      <link>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</link>
       <pubDate>Sun, 09 Feb 2014 20:45:57 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
+      <guid>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
       <description>Needless to say, C++ is a glorious language. Sadly, the attention it gets on the blog is far from representative of my appreciation towards it. Despite it being my main language at work, I only tend to talk about Libgdx side projects around here. Well, enough is enough!
 Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&amp;rsquo;s actually a set of languages.</description>
     </item>
     
     <item>
       <title>Don&#39;t be a dick with the community</title>
-      <link>https://saltares.com/blog/computing/dont-be-a-dick-with-the-community/</link>
+      <link>https://saltares.com/computing/dont-be-a-dick-with-the-community/</link>
       <pubDate>Sun, 14 Apr 2013 07:57:55 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/dont-be-a-dick-with-the-community/</guid>
+      <guid>https://saltares.com/computing/dont-be-a-dick-with-the-community/</guid>
       <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&amp;rsquo;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
     </item>
     
     <item>
       <title>Programming books, personal picks</title>
-      <link>https://saltares.com/blog/computing/programming-books-personal-picks/</link>
+      <link>https://saltares.com/computing/programming-books-personal-picks/</link>
       <pubDate>Sat, 22 Dec 2012 19:55:38 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/programming-books-personal-picks/</guid>
+      <guid>https://saltares.com/computing/programming-books-personal-picks/</guid>
       <description>A friend recently asked me about which either general or games specific programming books would I recommend. The true and legendary must read. I answered him directly as I was feeling lazy about posting a comment on each one of them but here I am now. Nevertheless, before going straight to the list, please bare in mind that just like any other best of [insert year here] collection, this is simply a matter of opinion.</description>
     </item>
     
     <item>
       <title>Recent projects and future changes</title>
-      <link>https://saltares.com/blog/general/recent-projects-and-future-changes/</link>
+      <link>https://saltares.com/general/recent-projects-and-future-changes/</link>
       <pubDate>Thu, 12 Jan 2012 22:00:27 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/general/recent-projects-and-future-changes/</guid>
+      <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
       <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
  Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
     
     <item>
       <title>&#34;Shiny PC graphics in Battlefield 3&#34;</title>
-      <link>https://saltares.com/blog/computing/shiny-pc-graphics-in-battlefield-3/</link>
+      <link>https://saltares.com/computing/shiny-pc-graphics-in-battlefield-3/</link>
       <pubDate>Tue, 08 Nov 2011 19:15:49 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/shiny-pc-graphics-in-battlefield-3/</guid>
+      <guid>https://saltares.com/computing/shiny-pc-graphics-in-battlefield-3/</guid>
       <description>Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called &amp;ldquo;Shiny PC graphics in Battlefield 3&amp;rdquo; during the last nVidia GeForce LAN. It&amp;rsquo;s focused on the latest improvements the Frostbite 2 engine includes and I think it&amp;rsquo;s a pretty good example of where the graphics technology is going.
 Click on more to see the videos.
   </description>
@@ -132,147 +132,147 @@ Click on more to see the videos.
     
     <item>
       <title>Google Music en Linux y Android desde España</title>
-      <link>https://saltares.com/blog/computing/google-music-en-linux-y-android-desde-espana/</link>
+      <link>https://saltares.com/computing/google-music-en-linux-y-android-desde-espana/</link>
       <pubDate>Wed, 08 Jun 2011 23:17:11 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/google-music-en-linux-y-android-desde-espana/</guid>
+      <guid>https://saltares.com/computing/google-music-en-linux-y-android-desde-espana/</guid>
       <description>Google anunció Music, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que sólo usuarios de Estados Unidos pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo procedimiento para poder saltarse esta barrera, sigue leyendo para saber cuál es.</description>
     </item>
     
     <item>
       <title>Backups de wikis con Wikiteam</title>
-      <link>https://saltares.com/blog/computing/backups-de-wikis-con-wikiteam/</link>
+      <link>https://saltares.com/computing/backups-de-wikis-con-wikiteam/</link>
       <pubDate>Sat, 04 Jun 2011 10:45:05 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/backups-de-wikis-con-wikiteam/</guid>
+      <guid>https://saltares.com/computing/backups-de-wikis-con-wikiteam/</guid>
       <description>IberOgre está alojada en los servidores de la OSLUCA a los que no tengo acceso y, aunque sé que se hacen copias de seguridad diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: Wikiteam. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.</description>
     </item>
     
     <item>
       <title>El conversor de vídeo YakiTo</title>
-      <link>https://saltares.com/blog/computing/el-conversor-de-video-yakito/</link>
+      <link>https://saltares.com/computing/el-conversor-de-video-yakito/</link>
       <pubDate>Wed, 18 May 2011 17:14:27 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/el-conversor-de-video-yakito/</guid>
+      <guid>https://saltares.com/computing/el-conversor-de-video-yakito/</guid>
       <description>¿Cuántas veces te has peleado con conversores de vídeo horribles? Acudes a Softonic, tecleas &amp;ldquo;de .avi a iPod&amp;rdquo;, descargas el que más estrellas tiene, se instala sin preguntar la enésima barra del navegador, resulta que no funciona y además su interfaz es ultra compleja. Es más que probable que lo que busques sea YakiTo, uno de los mejores conversores que he probado. No, no lo digo porque su creador, Sergio García Mondaray, sea un compañero del V CUSL.</description>
     </item>
     
     <item>
       <title>Blender 2.5 estable en Ubuntu</title>
-      <link>https://saltares.com/blog/computing/blender-2-5-estable-en-ubuntu/</link>
+      <link>https://saltares.com/computing/blender-2-5-estable-en-ubuntu/</link>
       <pubDate>Tue, 26 Apr 2011 11:40:08 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/blender-2-5-estable-en-ubuntu/</guid>
+      <guid>https://saltares.com/computing/blender-2-5-estable-en-ubuntu/</guid>
       <description>El pasado día 13 de abril se lanzó la primera versión estable de la línea 2.5 de Blender (2.57), la herramienta de modelado y animación 3D libre por excelencia. Entre sus múltiples mejoras se encuentra el rediseño completo de la interfaz y la nueva API para Python. Es posible descargarlo para Linux desde la web pero lo más cómodo es instalarlo en Ubuntu es a través de un PPA y a continuación explico cómo hacerlo.</description>
     </item>
     
     <item>
       <title>!BarraLibreCamp 2011 en Cádiz</title>
-      <link>https://saltares.com/blog/computing/barralibrecamp-2011-en-cadiz/</link>
+      <link>https://saltares.com/computing/barralibrecamp-2011-en-cadiz/</link>
       <pubDate>Thu, 21 Apr 2011 16:00:24 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/barralibrecamp-2011-en-cadiz/</guid>
+      <guid>https://saltares.com/computing/barralibrecamp-2011-en-cadiz/</guid>
       <description>El próximo día 27 de mayo se celebra la !BarraLibreCamp 2011 en la Escuela Superior de Ingeniería en Cádiz. La !BarraLibreCamp es la BarCamp de Software Libre andaluza. Básicamente es una jornada llena de seminarios y talleres informales en el que todos los participantes deberían intervenir. Escribo este comentario por aquí para difundir un poco el evento y animar al personal a que se de una vuelta.
 Una BarCamp tiene como principal punto fuerte que todo participante debería aportar algo en forma de actividad, comida o ayuda a la organización.</description>
     </item>
     
     <item>
       <title>Gráficas en Python con PyCha</title>
-      <link>https://saltares.com/blog/computing/graficas-en-python-con-pycha/</link>
+      <link>https://saltares.com/computing/graficas-en-python-con-pycha/</link>
       <pubDate>Sun, 27 Mar 2011 11:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/graficas-en-python-con-pycha/</guid>
+      <guid>https://saltares.com/computing/graficas-en-python-con-pycha/</guid>
       <description>En una práctica de la Universidad pedían medir los tiempos de ejecución de un algoritmo paralelo empleando un número diferente de hilos en cada ocasión. En la correspondiente memoria debía aparecer una comparativa del rendimiento así que decidí adjuntar una gráfica para ilustrarlo mejor. Introducir los datos a manubrio iba a ser horriblemente tedioso. Me entró el gusanillo y me hice un sencillo script en Python que genera la gráfica utilizando PyCha.</description>
     </item>
     
     <item>
       <title>En la ADWYS CON 2011</title>
-      <link>https://saltares.com/blog/computing/en-la-adwys-con-2011/</link>
+      <link>https://saltares.com/computing/en-la-adwys-con-2011/</link>
       <pubDate>Wed, 23 Feb 2011 09:12:54 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/en-la-adwys-con-2011/</guid>
+      <guid>https://saltares.com/computing/en-la-adwys-con-2011/</guid>
       <description>En lo que queda de semana es probable que haya menos actividad en el blog debido a que asistiré a la ADWYS CON 2011. Un congreso sobre ingeniería web y seguridad informática (¡no todo iban a ser videojuegos!) organizado por mis compañeros de la Asociación de Desarrollo Web y Seguridad de la Universidad de Cádiz. Han trabajado durísimo, cuentan con ponentes de alto nivel y el número de inscritos ha superado las expectativas.</description>
     </item>
     
     <item>
       <title>Screencast y edición de vídeo en Linux</title>
-      <link>https://saltares.com/blog/computing/screencast-y-edicion-de-video-en-linux/</link>
+      <link>https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/</link>
       <pubDate>Mon, 21 Feb 2011 11:00:58 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/screencast-y-edicion-de-video-en-linux/</guid>
+      <guid>https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/</guid>
       <description>Muchas veces he querido grabar un vídeo de cualquier proyecto personal (como los que he publicado de Sion Tower) pero siempre he tenido muchos problemas a la hora de hacerlo con Software Libre en mi preciada Ubuntu. Hasta ahora me había visto obligado a recurrir a productos privativos pero por fin he encontrado herramientas libres con la suficiente madurez para conseguir exactamente lo que quiero. En este artículo voy a comentar mi receta de la salvación para hacer un buen screencast.</description>
     </item>
     
     <item>
       <title>HTC Desire HD, eliminar aplicaciones de Vodafone</title>
-      <link>https://saltares.com/blog/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/</link>
+      <link>https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/</link>
       <pubDate>Thu, 03 Feb 2011 18:32:13 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/</guid>
+      <guid>https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/</guid>
       <description>Cuando hace más de un año compré mi HTC Magic sólo había tres teléfonos Android en el mercado y todos del mismo fabricante. Alucinaba en colores con su conectividad, prestaciones y pantalla. ¡Tenía un teléfono más potente que mi primer ordenador! Como cualquier otro cacharro no tardó en quedarse anticuado y actualmente se resiente al trabajar casi con cualquier aplicación. Por ello he decidido renovarme y adquirir el HTC Desire HD, una auténtica bestia parda.</description>
     </item>
     
     <item>
       <title>BURG, un GRUB más bonito: instalación en Ubuntu</title>
-      <link>https://saltares.com/blog/computing/burg-un-grub-mas-bonito-en-ubuntu/</link>
+      <link>https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/</link>
       <pubDate>Sat, 04 Dec 2010 13:12:26 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/burg-un-grub-mas-bonito-en-ubuntu/</guid>
+      <guid>https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/</guid>
       <description>Como sabéis, GRUB (GRand Unified Bootloader) es un fantástico software que nos permite elegir entre los sistemas operativos que tengamos instalados en el momento del arranque. Para muchos es la salvación en una transición de Windows a GNU/Linux mientras que para otros es la forma de acudir suplicando a otro Kernel cuando el principal da problemas. El único problema que puede tener es que es un bastante feo. Al rescate de los vanidosos y acude BURG (Brand-new Universal loadeR from GRUB), nótese la ironía infinita al darle la vuelta a &amp;ldquo;GRUB&amp;rdquo;.</description>
     </item>
     
     <item>
       <title>Spotify vs Grooveshark</title>
-      <link>https://saltares.com/blog/computing/spotify-vs-grooveshark/</link>
+      <link>https://saltares.com/computing/spotify-vs-grooveshark/</link>
       <pubDate>Sat, 06 Nov 2010 18:35:07 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/spotify-vs-grooveshark/</guid>
+      <guid>https://saltares.com/computing/spotify-vs-grooveshark/</guid>
       <description>Llevo bastante tiempo utilizando Spotify en Linux a través de Wine y últimamente me estaba dando más disgustos que alegrías por problemas relacionados con el sonido. Raudo y veloz acudí a su alternativa más evidente, Grooveshark. En este artículo comentaré mi experiencia con ambos servicios de música por streaming de forma que puedan decidirse por alguno de los dos en caso de duda.
 La aplicación Spotify cuenta con clientes de escritorio compatibles con Windows y Mac.</description>
     </item>
     
     <item>
       <title>Backup a través de la red con tar y ssh</title>
-      <link>https://saltares.com/blog/computing/backup-a-traves-de-la-red-con-tar-y-ssh/</link>
+      <link>https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/</link>
       <pubDate>Fri, 01 Oct 2010 19:38:16 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/backup-a-traves-de-la-red-con-tar-y-ssh/</guid>
+      <guid>https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/</guid>
       <description>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas tuvimos que actualizar una aplicación web que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync estimamos oportuno hacer una copia completa y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección.</description>
     </item>
     
     <item>
       <title>Synergy: varios equipos, un ratón</title>
-      <link>https://saltares.com/blog/computing/synergy-varios-equipos-un-raton/</link>
+      <link>https://saltares.com/computing/synergy-varios-equipos-un-raton/</link>
       <pubDate>Sun, 26 Sep 2010 11:11:23 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/synergy-varios-equipos-un-raton/</guid>
+      <guid>https://saltares.com/computing/synergy-varios-equipos-un-raton/</guid>
       <description>Cuando trabajamos no es extraño tener varias ventanas abiertas: navegador, documentación, código y cliente de Twitter (¡ejem!). Cambiar constantemente de ventana puede ser un suplicio por lo que muchos optan por utilizar dos pantallas conectadas a su equipo. Menos usual pero igualmente posible es tener que manejar dos ordenadores al mismo tiempo, por ejemplo, el equipo de trabajo y el de pruebas. En tal caso tu mesa puede convertirse en un verdadero caos con tanto teclado y ratón estorbando, la solución es Synergy.</description>
     </item>
     
     <item>
       <title>Instalar Android 2.2 en HTC Magic 1.6</title>
-      <link>https://saltares.com/blog/computing/instalar-android-2-2-en-htc-magic-1-6/</link>
+      <link>https://saltares.com/computing/instalar-android-2-2-en-htc-magic-1-6/</link>
       <pubDate>Mon, 30 Aug 2010 20:39:16 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/instalar-android-2-2-en-htc-magic-1-6/</guid>
+      <guid>https://saltares.com/computing/instalar-android-2-2-en-htc-magic-1-6/</guid>
       <description>Uno de los mayores problemas de Android es la segmentación de versiones que sufre. No es raro ver usuarios con la 1.5 Cupcake instalada mientras que los más afortunados se encuentran en la 2.0 Froyo. Como seguramente sepas, esto se debe a numerosos factores como el retraso que imponen las operadoras o capas de interfaz que han de ser actualizadas aunque esto da contenido para otro artículo. Hace más de un año me hice con una HTC Magic a través de Vodafone y, desgraciadamente, aún estoy abandonado en la 1.</description>
     </item>
     
     <item>
       <title>Guía de estilo para C&#43;&#43; de Google</title>
-      <link>https://saltares.com/blog/computing/guia-de-estilo-para-c-de-google/</link>
+      <link>https://saltares.com/computing/guia-de-estilo-para-c-de-google/</link>
       <pubDate>Tue, 03 Aug 2010 20:48:56 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/guia-de-estilo-para-c-de-google/</guid>
+      <guid>https://saltares.com/computing/guia-de-estilo-para-c-de-google/</guid>
       <description>Cuando se programa es de suma importancia que el estilo sea uniforme, máxime, si trabajamos en un equipo de varias personas. Por si no supusiera suficiente esfuerzo comprender código ajeno aunque éste cuente con comentarios, hacerlo cuando cada desarrollador sigue su propio criterio puede ser una pesadilla. Es ahí donde entran en juego las guías de estilo. Hay muchas y ninguna tiene por qué ser mejor que otra a priori, no obstante, es recomendable ceñirse a una.</description>
     </item>
     
     <item>
       <title>Contraseñas seguras con KeePassX</title>
-      <link>https://saltares.com/blog/computing/contrasenas-seguras-con-keepassx/</link>
+      <link>https://saltares.com/computing/contrasenas-seguras-con-keepassx/</link>
       <pubDate>Mon, 26 Jul 2010 17:55:59 +0000</pubDate>
       
-      <guid>https://saltares.com/blog/computing/contrasenas-seguras-con-keepassx/</guid>
+      <guid>https://saltares.com/computing/contrasenas-seguras-con-keepassx/</guid>
       <description>Usar en todas las webs y servicios en los que tengamos una cuenta la misma contraseña es altamente peligroso. Lo ideal sería utilizar contraseñas largas, que combinasen caracteres alfanuméricos con diversos símbolos. Entonces es cuando surge el dilema, ¿cómo me voy a acordar de todo?
 La necesidad de utilizar un gestor de contraseñas se hace evidente y KeePassX cumple bien su función. Se trata de un software en el que podemos almacenar todas nuestras contraseñas de manera segura, protegidas por una clave maestra y un fichero encriptado.</description>
     </item>
