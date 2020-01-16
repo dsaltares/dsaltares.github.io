@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>David Saltares &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="https://saltares.com/blog/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/terreno-montanoso-en-blender/">Terreno montañoso en Blender</a>
+      </h1>
+      <span class="post-date">Jul 3, 2011 &middot; <a href="https://saltares.com/blog/games/terreno-montanoso-en-blender/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+
+<p>Me gustaría pedir disculpas por el descenso en el ritmo de publicación, el motivo es muy sencillo: estoy <strong>trabajando de forma intensa en la interfaz de <a href="../../proyectos/sion-tower/">Sion Tower</a></strong>. Para el menú principal he creado un <strong>escenario montañoso</strong> con los enemigos aproximándose a la Torre Sagrada en medio de una intensa lluvia. <strong>Modelar las montañas con Blender</strong> es terriblemente sencillo una vez se conoce la técnica apropiada y aquí vamos a comentarla en detalle.</p>
+
+<h3 id="creación-de-la-malla">Creación de la malla</h3>
+
+<p>Lo primero que debes hacer es abrir Blender y eliminar el cubo por defecto. Utilizaremos una rejilla o malla de vértices para modelar el terreno. El proceso es simple, habrá que modificar la posición <em>Z</em> (vertical) de varios vértices para crear elevaciones. Finalmente, utilizaremos suavizado para evitar los bordes abruptos.</p>
+
+<p>Para <strong>añadir la rejilla</strong> seleccionamos <em>Add → Mesh → Grid</em> e indicamos el número de vértices. A mayor resolución más calidad pero el coste computacional en Blender y en un videojuego crecerá de forma cuadrática. En Sion Tower me ha bastado con <em>50×50</em>, el suavizado final se encargará de mejorar el resultado. Después, en modo edición, debes escalar la rejilla hasta que se ajuste a la escala de tu juego o entorno.</p>
+
+<p><img src="../../img/wp/blender-grid.jpg" alt="blender-grid.jpg" /></p>
+
+<h3 id="modelado-de-las-montañas">Modelado de las montañas</h3>
+
+<p>La clave está en utilizar el modo de <strong>edición proporcional</strong> que activamos pulsando la tecla <em>O</em>. Veremos que el modo también puede activarse en la barra de herramientas <em>Proportional – On</em>. Este modo hará que, al modificar un vértice, los vecinos dentro de un radio de acción también se vean ligeramente afectados. Justo al lado establecemos el <em>Falloff</em> a <em>Smooth Falloff</em>. Para activar el suavizado, seleccionamos todos los vértices con <em>A</em> y pulsamos en <em>Set Smooth</em>.</p>
+
+<p><img src="../../img/wp/blender-elevacion.jpg" alt="blender-elevacion.jpg" /></p>
+
+<p>El proceso a seguir para <strong>crear o modificar elevaciones</strong> es:</p>
+
+<ol>
+<li>Seleccionar un vértice con el botón derecho y ajustar el radio de acción con la rueda del ratón a nuestro gusto.</li>
+<li>Desplazar el vértice pulsando la tecla <em>G</em>, es importante restringirlo al eje vertical con la tecla <em>Z</em>, de lo contrario se producen efectos extraños.</li>
+<li>Repetir el proceso con vértices y radios de acción diferentes hasta conseguir el resultado deseado.</li>
+</ol>
+
+<p><img src="../../img/wp/blender-terrain.jpg" alt="blender-terrain.jpg" /></p>
+
+<p>Recuerda que <strong>las montañas son estructuras naturales</strong> y que, por tanto, muestran multitud de irregularidades. En la asimetría y lo brusco está el secreto.</p>
+
+<h3 id="texturizar-el-terreno">Texturizar el terreno</h3>
+
+<p>Continuamos la creación del terreno <strong>añadiendo una textura</strong>:</p>
+
+<ol>
+<li>Seleccionamos el terreno, acudimos al panel de materiales (<em>F5</em>) y añadimos un material nuevo.</li>
+<li>Las montañas no tienen un aspecto de material plástico, por lo que establecemos su color especular a .</li>
+<li>Nos dirigimos al panel de texturas (<em>F6</em>) y añadimos una nueva textura de tipo imagen con césped.</li>
+<li>Cargamos la textura de fichero y establecemos las propiedades <em>XRepeat</em> e <em>YRepeat</em> que, como sus propios nombres indican, hacen repetir la textura.</li>
+</ol>
+
+<p><img src="../../img/wp/grass.jpg" alt="grass.jpg" /></p>
+
+<p>Si pulsas <em>F12</em> verás el renderizado de tus montañas y no tardarás de percatarte de dos problemas: la iluminación y… <strong>¡parecen las montañas de los hobbits estando verdes!</strong> En primer lugar, deberás jugar con las fuentes de luz. Ahora nos centraremos en mezclar varias texturas.</p>
+
+<p><img src="../../img/wp/terrain.jpg" alt="terrain.jpg" /></p>
+
+<h3 id="texturas-stencil">Texturas stencil</h3>
+
+<p>Un terreno de corte más realista tiene <strong>varias texturas</strong>: hierba, tierra, rocas o incluso nieve. Las transiciones entre las mismas deben ser suaves y su situación debe ser lógica: la hierba abunda en los valles mientras la roca en los picos montañosos. En esta sección aprenderemos a aplicar varias texturas a nuestro terreno mezclándolas entre sí de manera apropiada.</p>
+
+<p>Imaginad que tendremos una <strong>pila de capas con varias texturas</strong> ordenadas: hierba, roca y nieve. En medio colocaremos dos texturas en escala de grises llamadas stencil que indicarán al sistema de renderizado cómo han de mezclarse las capas entre sí. Un color negro indica que sólo ha de visualizarse la capa superior, blanco significa que sólo se vera la capa inferior. Lo interesante es que un valor intermedio o gris significará que las capas se mezclarán siguiendo la ponderación del color.</p>
+
+<p><img src="../../img/wp/blender-stencil-3d.jpg" alt="blender-stencil-3d.jpg" /></p>
+
+<p>Seguimos el siguiente proceso:</p>
+
+<ul>
+<li>Cambiamos del modo edición al <em>Vertex Paint</em>.</li>
+<li>Seleccionamos el panel de edición (<em>F9</em>) y veremos una paleta de colores. Elegimos el color negro y pulsamos sobre <em>set VertCol</em> y la malla quedará completamente negra (se visualizaría la capa inferior).</li>
+<li>Elegimos el color blanco y configuramos tanto la opacidad como el tamaño.</li>
+<li>Comenzamos a pintar el terreno: los picos deberían ser completamente blancos (roca), las lomas de un tono intermedio y los valles prácticamente negros (hierba).</li>
+<li>Cuando estemos satisfechos seleccionaremos la vista <em>Top</em> y el modo de proyección ortográfico. Hemos de hacer una captura de pantalla y aislar la el resultado con cualquier software de edición de imágenes como Gimp.</li>
+</ul>
+
+<p><img src="../../img/wp/blender-stencil.jpg" alt="blender-stencil.jpg" /></p>
+
+<ul>
+<li>Volvemos al modo edición y creamos una nueva textura debajo de la hierba de tipo imagen cargando la textura stencil hierba-roca. Esta textura no debe repetirse.</li>
+<li>En el panel <em>Map To</em> deseleccionamos <em>Col</em> y activamos <em>Stencil</em> y <em>No RGB</em>.</li>
+<li>Creamos una nueva textura para la roca, cargamos la imagen y aplicamos repetición.</li>
+</ul>
+
+<p><img src="../../img/wp/rock.jpg" alt="rock.jpg" /></p>
+
+<p><img src="../../img/wp/blender-stencil-aplicando.jpg" alt="blender-stencil-aplicando.jpg" /></p>
+
+<p>Si renderizas con <em>F12</em> verás un resultado mucho más satisfactorio.</p>
+
+<p><img src="../../img/wp/terrain-rock.jpg" alt="terrain-rock.jpg" /></p>
+
+<h3 id="resultado-final">Resultado final</h3>
+
+<p>Si repites el proceso stencil para añadir una <strong>nueva capa con nieve</strong> el resultado tendrá mucha más calidad:</p>
+
+<p><img src="../../img/wp/terrain-snow.jpg" alt="terrain-snow.jpg" /></p>
+
+<p>La escena final para el <strong>menú principal de Sion Tower</strong> ha quedado de la siguiente manera:</p>
+
+<p><img src="../../img/wp/siontower-menu.jpg" alt="siontower-menu.jpg" /></p>
+
+<p><span style="color: #ff0000;"><strong>Nota importante</strong></span>: A la hora de exportar a Ogre el modelo con las texturas stencil he tenido muchos problemas. Al final la solución ha pasado por mezclar yo mismo las capas stencil con las de texturas utilizando Gimp y aplicarlas a la maya utilizando mapeado UV.</p>
+
+<p><img src="../../img/wp/blender-stencil-precomputado.jpg" alt="blender-stencil-precomputado.jpg" /></p>
+
+<h3 id="referencias">Referencias</h3>
+
+<p>Para realizar el proceso y redactar el artículo he seguido estos dos estupendos tutoriales con varios añadidos personales:</p>
+
+<ul>
+<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_I:_Basic_Terrain">Blender 3D: Noob to Pro – Landscape Modeling I: Basic Terrain</a></li>
+<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_II:_Texture_Stenciling">Blender 3D: Noob to Pro – Landscape Modeling II: Texture Stenciling</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/busqueda-de-caminos-floyd-vs-a/">Búsqueda de caminos: Floyd vs A*</a>
+      </h1>
+      <span class="post-date">Jun 22, 2011 &middot; <a href="https://saltares.com/blog/games/busqueda-de-caminos-floyd-vs-a/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+
+<p><img src="../../img/wp/avsfloyd.png" alt="avsfloyd.png" /></p>
+
+<p>Las últimas semanas he estado trabajando en la <strong>IA de Sion Tower</strong> y por el momento el resultado es satisfactorio. Antes utilizaba el algoritmo <strong>A</strong> para la búsqueda de caminos de los enemigos, pero me di cuenta de que el rendimiento podía ser mucho mejor si precomputaba las búsquedas con una alternativa como <strong>Floyd</strong>. En este artículo hablo de las dos aproximaciones y comparo los resultados obtenidos.</p>
+
+<p><span style="color: #ff0000;"><strong>Aclaración</strong></span>: en el texto no voy a entrar en detalles sobre los algoritmos <a href="http://en.wikipedia.org/wiki/A*_search_algorithm">A*</a> ni <a href="http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd</a>. Si no los conoces deberías consultar los sendos artículos de Wikipedia o tu libro de algoritmia preferido.</p>
+
+<h3 id="aproximación-1-algoritmo-a">Aproximación 1: algoritmo A*</h3>
+
+<p>Como ya he dicho alguna vez, utilizo una malla de navegación diseñada con Blender para definir el área transitable por los enemigos. <strong>Cada vez que algún monstruo desea saber el camino</strong> hacia el personaje se realizaban los siguientes pasos:</p>
+
+<ol>
+<li>Ejecutar A* desde la celda del enemigo hasta la del personaje.</li>
+<li>Recuperar camino devuelto por A*.</li>
+<li>Simplificar el camino eliminando celdas intermedias para evitar zig-zag.</li>
+<li>Suavizado del camino mediante spline cúbico.</li>
+</ol>
+
+<p>Los pasos 1 y 3 resultaban especialmente costosos en términos de tiempo mientras que los pasos 2 y 4 eran muy rápidos. Traté de minimizar la necesidad de recalcular rutas hacia el protagonista pero cuando el jugador se desplaza demasiado, resulta inevitable.</p>
+
+<h3 id="aproximación-2-algoritmo-de-floyd">Aproximación 2: algoritmo de Floyd</h3>
+
+<p>Al ejecutar A* cada vez que un enemigo deseaba rehacer su ruta estábamos incurriendo en muchos cálculos redundantes. <strong>¿Por qué no precomputar los caminos mínimos?</strong> Eso es precisamente lo que hace el algoritmo de Floyd, calcula los costes y el camino para viajar entre todos los pares de nodos x e y de un grafo. El resultado lo almacena en una matriz de costes mínimos (que no nos interesa) y otra de caminos (con la que nos quedaremos).</p>
+
+<p>Al tener una matriz con los caminos ya calculados, <strong>recuperar una ruta es mucho más eficiente</strong> en tiempo. Incluso podemos eliminar la simplificación de caminos en cada consulta si también precalculamos todas las simplificaciones posibles. No obstante, se requieren una serie de <strong>pasos iniciales</strong>:</p>
+
+<ol>
+<li>Construcción de la matriz de costes iniciales a partir de la malla.</li>
+<li>Ejecución del algoritmo de Floyd.</li>
+<li>Simplificar todos los caminos actualizando la matriz de caminos mínimos.</li>
+</ol>
+
+<p>Cuando un enemigo quiera conocer una ruta, simplemente realizamos los siguientes pasos cuyo tiempo es mínimo:</p>
+
+<ol>
+<li>Recuperar el camino.</li>
+<li>Suavizar el camino mediante un spline cúbico.</li>
+</ol>
+
+<h3 id="comparativa-a-vs-floyd">Comparativa: A* vs Floyd</h3>
+
+<p>Todas las mediciones de tiempo que se muestran a continuación se han realizado sobre el mismo equipo, bajo la misma carga de trabajo y con la misma malla de navegación de 113 celdas.</p>
+
+<p><strong>Coste inicial</strong>: Utilizar Floyd conlleva una serie de cálculos iniciales que A* no son necesarios. No obstante, podemos ver que son bastante reducidos ya que suponen 2.18ms una sola vez al cargar cada nivel.</p>
+
+<p><strong>Consumo de memoria</strong>: podría preocuparnos el coste de almacenar la matriz de caminos mínimos. Para 113 celdas tenemos una matriz de 113 * 113 = 12769 enteros para indexar las celdas que componen los caminos. Esto equivale a 50KB, una cantidad reducida comparada con el tamaño de un modelo 3D animado. Es cierto que la aproximación de Floyd no es tan escalable como A* por el coste en memoria. Mi escenario de 113 celdas es pequeño, si aumentamos a 1000 celdas, la matriz ocuparía 4MB. Es O(n2) con respecto al número de celdas.</p>
+
+<p><strong>Tiempo para construir un camino</strong>: aquí es donde Floyd le saca una gran ventaja a A<em>. Recuperar un camino utilizando A</em> requiere en término medio 0.5ms mientras que utilizando Floyd necesitamos 0.02ms. La diferencia es muy significativa. Imaginad que tenemos 5 enemigos en pantalla que piden un camino en el mismo frame. Con A* el coste ascendería a 5 * 0.5ms = 2.5ms mientras que con Floyd invertimos 5 * 0.02ms = 0.1ms. En un juego mono-hilo que va a 60 FPS sólo disponemos de 16.6ms para realizar todos los cálculos (IA, colisiones, renderizado).</p>
+
+<p>¡2.4 ms de diferencia por frame es una excelente optimización!</p>
+
+<h3 id="conclusión-express">Conclusión express</h3>
+
+<p>Precomputar caminos es mucho menos escalable que hacer los cálculos de forma dinámica pero la mejora de rendimiento es enorme. A pesar de ello, para escenarios grandes puede hacerse una búsqueda de caminos jerárquica (un tema un poco más complejo). Hay que tener cuidado ya que al utilizar Floyd, un cambio en el escenario implicaría una nueva precomputación completa.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/hobbies/podcasts-que-merecen-la-pena-ii/">Podcasts que merecen la pena II</a>
+      </h1>
+      <span class="post-date">Jun 16, 2011 &middot; <a href="https://saltares.com/blog/hobbies/podcasts-que-merecen-la-pena-ii/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      
+
+<p><img src="../../img/wp/podcasts2.png" alt="podcasts2.png" /></p>
+
+<p>Hace tiempo publiqué un artículo en el que <strong><a href="../../ocio/internet/podcasts-que-merecen-la-pena/" title="Podcasts que merecen la pena">recomendaba cuatro podcasts de calidad</a></strong>: Game Over, Dame la voz, Wildgames y Pánico en el Núcleo. Los podcasts me ayudan a que el tiempo pase a mayor velocidad mientras hago deporte así que devoro capítulos que da gusto y tengo que seguir varios programas. En esta <strong>segunda entrega</strong> recomendaré otro buen pack.</p>
+
+<h3 id="el-octavo-pasajero-http-www-octavopasajero-com"><a href="http://www.octavopasajero.com/">El octavo pasajero</a></h3>
+
+<p>Un programa semanal de <strong>cine</strong> de hora y media de duración en el que hablan sobre noticias, comentan los estrenos y hacen monográficos especiales. En realidad es un programa de radio que se emite desde Barcelona, en la misma emisora que Game Over. De hecho, algunos colaboradores intervienen en ambos programas.</p>
+
+<p>Tienen un criterio razonable pero lo más importante es la <strong>genial mezcla de humor y casposidad</strong>. Se notan los casi 500 programas que llevan a sus espaldas, son muy buenos.</p>
+
+<p><img src="../../img/wp/el-octavo-pasajero.jpg" alt="el-octavo-pasajero.jpg" /></p>
+
+<h3 id="de-pelotas-como-puedas-http-depelotascomopuedas-com"><a href="http://depelotascomopuedas.com/">De pelotas como puedas</a></h3>
+
+<p>Su subtítulo <strong>&ldquo;el primer micropodcast de cine de mierda&rdquo;</strong> lo dice todo. Cada capítulo dura menos de quince minutos y sus dos creadores se dedican a destripar una película lamentable. Serie Z, cine comercial pero absolutamente deleznable… Toda la basura tiene cabida en De pelotas como puedas. <strong>Ideal para cuando se tiene poco tiempo</strong> para escuchar algo, te pones y a los diez minutos ya ha acabado: rápido y directo.</p>
+
+<p>Algunas de las películas que han vapuleado son: Zombies strippers, Dragon Ball, Jesucristo cazavampiros, Britannic o Payasos asesinos del espacio exterior.</p>
+
+<p><img src="../../img/wp/de-pelotas-como-puedas.jpg" alt="de-pelotas-como-puedas.jpg" /></p>
+
+<h3 id="el-club-vintage-http-www-ivoox-com-podcast-club-vintage-videojuegos-clasicos-80-s-sq-f18511-1-html"><a href="http://www.ivoox.com/podcast-club-vintage-videojuegos-clasicos-80-s_sq_f18511_1.html">El club Vintage</a></h3>
+
+<p>Un programa de videojuegos bisemanal diferente porque sólo hablan de <strong>clásicos de los años 80 y 90</strong>. Muchos de ellos son títulos míticos con los que me inicié en el mundo del ocio electrónico y ese es su punto fuerte. Seguro que nombres como Super Mario Land, Street Fighter 2 o Sonic The Hedgehog os traen <strong>muchos recuerdos</strong>.</p>
+
+<p>No sólo hablan de los juegos en sí mismos sino de la época que los rodeaba. ¿Sabías qué películas o grupos musicales estaban de moda cuando se lanzó Doom? Además también puedes aprender muchas curiosidades sobre el desarrollo y la gente que había detrás de tamañas obras. Nostalgia en estado puro.</p>
+
+<p><img src="../../img/wp/el-club-vintage.jpg" alt="el-club-vintage.jpg" /></p>
+
+<h3 id="el-amuleto-de-yendor-http-yendor-es"><a href="http://yendor.es/">El Amuleto de Yendor</a></h3>
+
+<p>Carlos Fenollosa y Nacho Lasheras de Dame la Voz se reúnen cada mes (más o menos) para grabar El Amuleto de Yendor. Un programa de una hora sobre temas de <strong>frikerío fino</strong>: informática, ciencia ficción, videojuegos, etc. Su periodicidad es un poco irregular pero suelen tocar temas interesantes y polémicos sabiendo lo que dicen.</p>
+
+<p><img src="../../img/wp/el-amuleto-de-yendor.jpg" alt="el-amuleto-de-yendor.jpg" /></p>
+
+<h3 id="tercera-entrega">¿Tercera entrega?</h3>
+
+<p>Cada vez tengo menos programas en la manga para recomendar, así que no sé si habrá tercera entrega de esta ¿serie? de artículos. Últimamente estoy intentando escuchar alguno en inglés para mejorar mi comprensión oral sin la referencias de los gestos o subtítulos que hay en el cine o las series. Quizás la siguiente entrega vaya por ahí.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/sion-tower-ia-y-combate/">Sion Tower: IA y combate</a>
+      </h1>
+      <span class="post-date">Jun 13, 2011 &middot; <a href="https://saltares.com/blog/games/sion-tower-ia-y-combate/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/c8HaWPnIPCg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<p>En este nuevo <strong>vídeo de Sion Tower</strong> podéis ver la <strong>inteligencia artificial</strong> de los enemigos en acción. Cuando un bicho feo aparece, utiliza el <strong>navigation mesh</strong> y la búsqueda de caminos para trazar una ruta hacia el personaje. Gracias a los <strong>steering behaviours</strong> siguedicho camino y evita colisiones con sus compañeros. En el momento en el que se acerca al protagonista, comienzan a atacar.</p>
+
+<p>En los próximos artículos comentaré el funcionamiento del sistema. Por cierto, espero que sepáis <strong>perdonar los fallos</strong>: la IA necesita pequeños ajustes y faltan los efectos de sonido.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/english-sound-effect-prototyping-with-sfxr/">Sound effect prototyping with SFXR</a>
+      </h1>
+      <span class="post-date">Jun 12, 2011 &middot; <a href="https://saltares.com/blog/games/english-sound-effect-prototyping-with-sfxr/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p style="text-align: justify;">
+  <img class="aligncenter size-full wp-image-1627" title="sfxr-title" src="https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-title.png" alt="" width="550" height="110" srcset="https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-title.png 550w, https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-title-300x59.png 300w, https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-title-150x29.png 150w" sizes="(max-width: 550px) 100vw, 550px" />
+</p>
+
+<p style="text-align: justify;">
+  When you&#8217;re <strong>developing a game as a team</strong>, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&#8217;ve probably used yourself ugly squares to represent some character&#8217;s sprite in early development stages but&#8230; <strong>What happens with audio?</strong> That&#8217;s when <a href="http://www.drpetter.se/project_sfxr.html">SFXR</a> comes into play.
+</p>
+
+<h3 style="text-align: justify;">
+
+</h3>
+
+<h3 style="text-align: justify;">
+  What is SFXR?
+</h3>
+
+<p style="text-align: justify;">
+  <strong>SFXR is a simple sound effect prototyping open source tool</strong>. It was initially developed for the <a href="http://www.ludumdare.com/compo/2007/12/13/sfxr-sound-effects-for-all/">10th Ludum Dare 48h gamedev competition</a>. People neither had the time nor expertise to produce their own SFX so they generated them almost automatically with SFXR.
+</p>
+
+<p style="text-align: justify;">
+  SFXR only has one big panel in which you can produce your sound effects. Using the left buttons you can<strong> select pre-defined sounds</strong> for simple actions like shooting, jumping or getting a power-up. If you want more customization it&#8217;s possible to adjust some sound properties such as speed, wave form and other stuff I have no idea about. You can monitor the current state of your effect by clicking the <em>“Play sound”</em> button. When you&#8217;re done, click the <em>“Export .wav”</em> button and that&#8217;s it!
+</p>
+
+<p style="text-align: center;">
+  &nbsp;
+</p><figure id="attachment_1626" class="thumbnail wp-caption aligncenter" style="width: 459px">
+
+[<img class="size-full wp-image-1626 " title="sfxr" src="https://saltares.com/blog/wp-content/uploads/2011/06/sfxr.png" alt="" width="449" height="357" srcset="https://saltares.com/blog/wp-content/uploads/2011/06/sfxr.png 642w, https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-300x238.png 300w, https://saltares.com/blog/wp-content/uploads/2011/06/sfxr-150x119.png 150w" sizes="(max-width: 449px) 100vw, 449px" />](https://saltares.com/blog/wp-content/uploads/2011/06/sfxr.png)<figcaption class="caption wp-caption-text">SFXR user interface</figcaption></figure>
+
+<h3 style="text-align: justify;">
+  Downloading SFXR
+</h3>
+
+<p style="text-align: justify;">
+  SFXR is<strong> multi platform</strong> so you won&#8217;t have any problems to get it running on your system. Simply, download the correspondent version:
+</p>
+
+<ul style="text-align: justify;">
+  <li>
+    <a href="http://www.drpetter.se/files/sfxr-sdl-1.1.tar.gz">SFXR for GNU/Linux</a>
+  </li>
+  <li>
+    <a href="http://www.drpetter.se/files/sfxr.zip">SFXR for Windows</a>
+  </li>
+  <li>
+    <a href="http://thirdcog.eu/apps/cfxr">SFXR port for Mac (CFXR)</a>
+  </li>
+  <li>
+    <a href="http://www.superflashbros.net/as3sfxr/">SFXR for web (using Flash)</a>
+  </li>
+</ul>
+
+<p style="text-align: justify;">
+  If you want to use the <strong>GNU/Linux version</strong> you must install the SDL and GTK libraries. For Debian like distributions users, please follow these simple steps:
+</p>
+
+<ol style="text-align: justify;">
+  <li>
+    Install the dependencies: <pre class="brush: bash">sudo apt-get install libsdl1.2-dev libgtk2.0-dev</pre>
+  </li>
+
+  <li>
+    Build and install (optional): <pre class="brush: bash">make && sudo make install</pre>
+  </li>
+</ol>
+
+<h3 style="text-align: justify;">
+  Have fun prototyping
+</h3>
+
+<p style="text-align: justify;">
+  I&#8217;m using SFXR for <a href="https://saltares.com/blog/en/proyectos/sion-tower/">Sion Tower</a>, the strategy action game I&#8217;m developing right now and I&#8217;m quite happy with it. A colleague of mine who studied sound production is working on the effects for the game. In the meanwhile, testing the sound system with SFXR is working great!
+</p>
+
+      
+    </div>
+    
+        <div class=pagination>
+        <ul class="pagination">
+            <li>
+                <a href="../../">««</a>
+            </li>
+            
+            <li>
+                <a href="../../page/29/">«</a>
+            </li>
+            
+            <li class="active">
+                <a href="../../page/30/">30</a>
+            </li>
+            
+            <li>
+                <a href="../../page/31/">»</a>
+            </li>
+            
+            <li>
+                <a href="../../page/60/">»»</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "siondream";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

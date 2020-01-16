@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>#1GAM February: game design &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">#1GAM February: game design</h1>
+    <span class="post-date">Feb 3, 2013 &middot; <a href="https://saltares.com/blog/games/1gam-february-game-design/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p>It&rsquo;s February already! What kind of madness is this? Anyhow, that means it&rsquo;s time to start working on this month&rsquo;s entry for <a href="http://www.onegameamonth.com/">One Game A Month</a> without further ado. This time I promise not to shamelessly make a port of an existing game and go for a brand new project instead. Shall this initial design article serve as the compromise I&rdquo;m making to see this game to completion.</p>
+
+<p>I believe the following game concept to be simple enough for it to be achievable within a short month like February. Understandably, mechanics are very likely to change in case they don&rsquo;t work as initially thought. However I&rsquo;ve tried to keep the idea to it&rsquo;s bare minimum. Also, additional features will be included if there&rsquo;s a necessity and enough time for them.</p>
+
+<h3 id="concept">Concept</h3>
+
+<blockquote>
+<p>The humans have invaded the planet you call home! All of a sudden there are all these conquest hungry astronauts wandering around. You must take your recon spaceship and abduct them all before it&rsquo;s too late!</p>
+</blockquote>
+
+<p><img src="../../img/wp/design-anotated.png" alt="design-anotated.png" /></p>
+
+<p>That&rsquo;s right, you control an alien in a small spaceship who must abduct every astronaut in each level in the minimum amount of time possible. In order to do so, you must position the ship over them for a certain amount of time, while the alien halo drags them up. Beware the rocky environment, you don&rsquo;t want to crash in the middle of the mission!</p>
+
+<p>Level design would start quite simple with linear levels that test the player&rsquo;s skill controlling the spaceship. However, as the game progresses, things might get complicated. What seems to be a linear level could actually be some sort of maze with hidden astronauts requiring exploration.</p>
+
+<h3 id="controls">Controls</h3>
+
+<p>The player uses touch controls to pilot the spaceship across the level. Rather than using an unpopular virtual joystick, he&rsquo;s presented area controls. The steering force applied to the spaceship will be different depending on the touch position: up, left or right. It&rsquo;s worth mentioning that by touching the intersections, the player can make the ship ascend whilst moving towards a side.</p>
+
+<p><img src="../../img/wp/design-controls.png" alt="design-controls.png" /></p>
+
+<p>Piloting the spaceship has the additional difficulty of having to take into account inertia. If we let it descend for a while, it&rdquo;ll be quite hard to regain height. On the contrary, if we ascend too much, we&rdquo;ll inevitably crash as well.</p>
+
+<h3 id="visuals">Visuals</h3>
+
+<p>As explained in <a href="../../general/2d-character-creation-and-animation-for-dummies/"><em>&ldquo;2D character creation and animation… For dummies&rdquo;</em></a>, my lack of skill kind of forces me to go for a friendly cartoon style. No worries, that&rsquo;s fine because it matches the gameplay. It&rsquo;s clearly a casual arcade game with funny characters, so some colorful vector art will come very in handy.</p>
+
+<h3 id="development">Development</h3>
+
+<p>LibGDX will be the framework of choice and I&rdquo;ll try to keep the code as cross platform compatible as possible with the aim of targeting desktop, Android and HTML5. I&rdquo;ll be regularly posting updates!</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

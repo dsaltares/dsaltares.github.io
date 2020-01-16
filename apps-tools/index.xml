@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Apps-tools on David Saltares</title>
+    <link>https://saltares.com/blog/apps-tools/</link>
+    <description>Recent content in Apps-tools on David Saltares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 08 Aug 2015 22:19:46 +0000</lastBuildDate>
+    
+	<atom:link href="https://saltares.com/blog/apps-tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Conjugate</title>
+      <link>https://saltares.com/blog/apps-tools/conjugate/</link>
+      <pubDate>Sat, 08 Aug 2015 22:19:46 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/apps-tools/conjugate/</guid>
+      <description>Conjugate is a responsive verb conjugator webapp. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
+Motivation When learning a new language, it is very common to struggle with verb conjugations. For example:
+ I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.
+ Unfortunately, the available resources are somehow limited:</description>
+    </item>
+    
+    <item>
+      <title>Laterdroid</title>
+      <link>https://saltares.com/blog/apps-tools/laterdroid/</link>
+      <pubDate>Mon, 26 Dec 2011 22:38:39 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/apps-tools/laterdroid/</guid>
+      <description> Simple Pocket client for Android.
+ Role: designer and sole programmer Year: 2011 Development time: 1 week Technology: Java and the official Android SDK Download: Laterdroid 0.1 APK  Screenshots    Laterdroid add
+      Laterdroid article
+      Laterdroid list
+      Laterdroid login
+      Laterdroid sync
+     Features  Login or create a new account Synchronize and cache your reading list Browse your articles list Read offline or online Share articles Add new articles to your list  Video   </description>
+    </item>
+    
+    <item>
+      <title>Tiny Backup</title>
+      <link>https://saltares.com/blog/apps-tools/tiny-backup/</link>
+      <pubDate>Sun, 25 Sep 2011 22:25:56 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/apps-tools/tiny-backup/</guid>
+      <description>Open source tool to save and restore the list of installed packages in a Debian based Linux distribution. I developed this tool to learn Python basics and the GTK library.
+ Role: project leader and sole programmer Year: 2010 Development time: 1 week Technology: Python language using pyGTK Download: Tiny Backup 0.2, source code  Screenshots    Tinybackup restore
+      Tinybackup save</description>
+    </item>
+    
+    <item>
+      <title>gLapse</title>
+      <link>https://saltares.com/blog/apps-tools/glapse/</link>
+      <pubDate>Tue, 31 May 2011 22:33:55 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/apps-tools/glapse/</guid>
+      <description>Linux tool that allows you take screenshots at fixed intervals and glue them together to create a time lapse video. It’s actively used in the Ludum Dare 48h game competition by several contestants to record their development process.
+ Role: project leader and sole programmer Year: 2011 Development time: 2 weeks Technology: Python language using pyGTK Download: gLapse 0.3, source code  Screenshots Features  Take PNG screenshots with custom interval and quality.</description>
+    </item>
+    
+  </channel>
+</rss>

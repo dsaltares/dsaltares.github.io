@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>David Saltares &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="https://saltares.com/blog/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/sound-effect-prototyping-with-sfxr/">Sound effect prototyping with SFXR</a>
+      </h1>
+      <span class="post-date">Jun 12, 2011 &middot; <a href="https://saltares.com/blog/games/sound-effect-prototyping-with-sfxr/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+
+<p><img src="../../img/wp/sfxr-title.png" alt="sfxr-title.png" /></p>
+
+<p>When you&rdquo;re <strong>developing a game as a team</strong>, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&rsquo;ve probably used yourself ugly squares to represent some character&rsquo;s sprite in early development stages but… <strong>What happens with audio?</strong> That&rsquo;s when <a href="http://www.drpetter.se/project_sfxr.html">SFXR</a> comes into play.</p>
+
+<h3 id="what-is-sfxr">What is SFXR?</h3>
+
+<p><strong>SFXR is a simple sound effect prototyping open source tool</strong>. It was initially developed for the <a href="http://www.ludumdare.com/compo/2007/12/13/sfxr-sound-effects-for-all/">10th Ludum Dare 48h gamedev competition</a>. People neither had the time nor expertise to produce their own SFX so they generated them almost automatically with SFXR.</p>
+
+<p>SFXR only has one big panel in which you can produce your sound effects. Using the left buttons you can <strong>select pre-defined sounds</strong> for simple actions like shooting, jumping or getting a power-up. If you want more customization it&rsquo;s possible to adjust some sound properties such as speed, wave form and other stuff I have no idea about. You can monitor the current state of your effect by clicking the <em>&ldquo;Play sound&rdquo;</em> button. When you&rdquo;re done, click the <em>&ldquo;Export .wav&rdquo;</em> button and that&rsquo;s it!</p>
+
+<p><img src="../../img/wp/sfxr.png" alt="sfxr.png" /></p>
+
+<h3 id="downloading-sfxr">Downloading SFXR</h3>
+
+<p>SFXR is <strong>multi platform</strong> so you won&rsquo;t have any problems to get it running on your system. Simply, download the correspondent version:</p>
+
+<ul>
+<li><a href="http://www.drpetter.se/files/sfxr-sdl-1.1.tar.gz">SFXR for GNU/Linux</a></li>
+<li><a href="http://www.drpetter.se/files/sfxr.zip">SFXR for Windows</a></li>
+<li><a href="http://thirdcog.eu/apps/cfxr">SFXR port for Mac (CFXR)</a></li>
+<li><a href="http://www.superflashbros.net/as3sfxr/">SFXR for web (using Flash)</a></li>
+</ul>
+
+<p>If you want to use the <strong>GNU/Linux version</strong> you must install the SDL and GTK libraries. For Debian like distributions users, please follow these simple steps:</p>
+
+<ul>
+<li><p>Install the dependencies:</p>
+
+<pre><code>sudo apt-get install libsdl1.2-dev libgtk2.0-dev
+</code></pre></li>
+
+<li><p>Build and install (optional):</p>
+
+<pre><code>make &amp;&amp; sudo make install
+</code></pre></li>
+</ul>
+
+<h3 id="have-fun-prototyping">Have fun prototyping</h3>
+
+<p>I&rdquo;m using SFXR for <a href="../../en/proyectos/sion-tower/">Sion Tower</a>, the strategy action game I&rdquo;m developing right now and I&rdquo;m quite happy with it. A colleague of mine who studied sound production is working on the effects for the game. In the meanwhile, testing the sound system with SFXR is working great!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/hobbies/x-men-first-class/">X-Men: First class</a>
+      </h1>
+      <span class="post-date">Jun 11, 2011 &middot; <a href="https://saltares.com/blog/hobbies/x-men-first-class/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      <p><img src="../../img/wp/xmen-titulo.jpg" alt="xmen-titulo.jpg" /></p>
+
+<p><strong>Tras la lamentable X-Men 3: The last stand</strong>, no tenía demasiadas esperanzas puestas en esta precuela. Sobre todo prescindiendo de todos los actores con cierto caché de episodios anteriores como Ian McKellen (Magneto), Patrick Stewart (Charles Xavier) o Hale Berry (Tormenta). Una licencia que vende y una reducción de presupuesto parecían <strong>los ingredientes idóneos para el enésimo truñaco</strong>. Nada más lejos de la realidad, <strong><a href="http://www.imdb.com/title/tt1270798/">X-Men: First class</a> es una buena película de superhéroes</strong>.</p>
+
+<p><img src="../../img/wp/xmen-chess.jpg" alt="xmen-chess.jpg" /></p>
+
+<p><strong>X-Men: First class nos relata el origen de la patrulla X</strong> y las raíces del antagonismo entre Charles Xavier (<a href="http://www.imdb.com/name/nm0564215/">James McAvoy</a>) y Erik (<a href="http://www.imdb.com/name/nm1055413/">Michael Fassbender</a>). Con eso ya me tenían prácticamente ganado porque es una de las etapas del cómic que más me interesan. Desde la perspectiva de Magneto, que asume gran parte del protagonismo, experimentamos <strong>las heridas de una reciente Segunda Guerra Mundial</strong>, los coletazos del nazismo y el paralelismo con los florecientes mutantes: <em>&ldquo;la raza superior&rdquo;</em>.</p>
+
+<p>Si se va con una mente abierta, <strong>a First class se le perdonan las innumerables licencias</strong> que se toman los guionistas. Obviando la estupidez que implicaría comentarlas todas, hay que reconocer que algunas añaden una chispa a la trama, como la participación de los mutantes en la <strong>crisis de los misiles cubanos</strong>. Siempre me ha parecido una tontería criticar las adaptaciones que introducen variaciones con respecto a la obra original. <em><a href="http://en.wikipedia.org/wiki/X-Men">X-Men #1</a></em> fue publicado en 1963, hay una <strong>necesidad de adaptar</strong> la historia a la actualidad para llegar al gran público.</p>
+
+<p><img src="../../img/wp/xmen-first-class-magneto.jpg" alt="xmen-first-class-magneto.jpg" /></p>
+
+<p>No temo equivocarme afirmando que <strong>el renovado reparto hace un gran trabajo</strong>, quizás sea porque esperaba más bien poco de ellos. Destacan sobre todo Xavier y Erik, los cuales protagonizan las secuencias más épicas de todo el metraje. El dramatismo que aporta el Holocausto y su relación con el fenómeno mutante ofrece el caldo de cultivo perfecto para que el mensaje llegue al espectador. Ah, se me olvidaba, quizás os encontréis con algún <em>cameo</em> especial.</p>
+
+<p>Incluso teniendo un fondo que invita a la reflexión, es una <strong>película sencilla y digerible</strong>. La intensidad de la historia y las secuencias de acción hacen que sus 132 minutos de duración se pasen sin darnos cuenta. Aquí hay que hacer un apunte obligado, los efectos especiales han perdido enteros, se notan los recortes. No soy un sibarita al respecto, pero en algunos momentos no llegan ni a mediocres.</p>
+
+<p><img src="../../img/wp/xmen-first-class-misiles.jpg" alt="xmen-first-class-misiles.jpg" /></p>
+
+<p>Lo dicho, a X-Men: First class le perdono sus pequeños detalles sin ningún problema. No abundan las películas por las que merezca la pena dejarse unos euros en la entrada y en esta ocasión no me he arrepentido en absoluto. En cartelera no hay ahora mismo una película de acción mejor que esta, <strong>recomendada</strong>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/computing/google-music-en-linux-y-android-desde-espana/">Google Music en Linux y Android desde España</a>
+      </h1>
+      <span class="post-date">Jun 8, 2011 &middot; <a href="https://saltares.com/blog/computing/google-music-en-linux-y-android-desde-espana/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      
+
+<p><strong>Google anunció <a href="http://music.google.com/">Music</a></strong>, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que <strong>sólo usuarios de Estados Unidos</strong> pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo <strong>procedimiento para poder saltarse esta barrera</strong>, sigue leyendo para saber cuál es. Gracias a mi buen amigo <a href="http://ragingbit.com/blog/">Javier</a> por los enlaces y las pistas.</p>
+
+<h3 id="características">Características</h3>
+
+<p>Google Music nos permite subir <strong>hasta 20.000 canciones</strong> de nuestra biblioteca de música local a través de una sencilla aplicación de escritorio que sincroniza directorios de forma automática. Es una lástima que el cliente solo esté para Windows y Mac aunque de forma extra-oficial se puede utilizar en Linux bajo Wine (hablaremos de ello más adelante). El servicio toma los <strong>metadatos de las canciones</strong> para clasificarlas, por lo que es recomendable tener una biblioteca ordenada aunque podamos editarlas más tarde desde la aplicación web.</p>
+
+<p>Una vez tengamos nuestra biblioteca de música en la nube, podremos <strong>escucharla desde cualquier PC</strong> con navegador y Flash instalados. La aplicación web no tiene muchas opciones por el momento pero es ligera y funciona mejor de lo esperado. Por su parte, también tenemos la <strong>aplicación para Android</strong> que nos permite reproducir por streamming y guardar las canciones en local.</p>
+
+<h3 id="registrarse-en-la-beta-desde-españa">Registrarse en la Beta desde España</h3>
+
+<p><img src="../../img/wp/solo-eeuu.png" alt="solo-eeuu.png" /></p>
+
+<p>Si acudimos a la web de <a href="http://music.google.com/">Google Music</a> desde España nos aparecerá un descorazonador mensaje que nos impide solicitar la invitación. Simplemente utilizaremos un proxy para engañar al servicio, siguiendo los pasos que nos indican en <a href="http://www.elandroidelibre.com/2011/05/tutorial-apuntate-a-la-beta-de-google-music-desde-cualquier-pais-y-con-cualquier-cuenta-google.html">El Androide Libre</a> no tendrás problemas:</p>
+
+<ul>
+<li>Entra en <a href="http://proxy.org">proxy.org</a>.</li>
+<li>Elije un proxy americano, los que aparecen en verde.</li>
+<li>En la web del proxy introduce la URL: <http: music.google.com="" music="" usernotinvited="">.</li>
+<li>Inicia sesión con tu cuenta de Google, no importa que sea española.</li>
+<li>Elije la opción de participar en la beta.</li>
+</ul>
+
+<p><strong>Recibirás un e-mail confirmándote el acceso</strong> a Google Music, no sé cuanto tiempo puede tardar.</p>
+
+<h3 id="google-music-manager-en-ubuntu-bajo-wine">Google Music Manager en Ubuntu bajo Wine</h3>
+
+<p>Google no nos deja descargar el manager si estamos en Linux así que tenemos que obtener el programa por otros medios como bien apuntan en <a href="http://www.androidcentral.com/using-google-music-manager-ubuntu-made-easy">Android Central</a>. Los siguientes pasos son válidos para distribuciones basadas en Debian:</p>
+
+<ul>
+<li><p>Si tenías la versión de Wine de los repositorios oficiales debes desinstalarla:</p>
+
+<pre><code>sudo apt-get remove wine --purge
+</code></pre></li>
+
+<li><p>Añade el PPA con la última versión de Wine, actualiza e instálalo de nuevo:</p>
+
+<pre><code>sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine
+</code></pre></li>
+
+<li><p><a href="http://dl.dropbox.com/u/1439807/gmm.zip">Descarga el paquete con Google Music Manager</a>.</p></li>
+
+<li><p>Descomprime el fichero.</p></li>
+
+<li><p>Accede desde una terminal, dale permisos de ejecución e instala:</p>
+
+<pre><code>chmod +x install.sh
+./install.sh
+</code></pre></li>
+</ul>
+
+<p><img src="../../img/wp/musicmanager.png" alt="musicmanager.png" /></p>
+
+<p>¡Listo! <strong>Ya puedes utilizar Google Music Manager en Linux</strong> desde <em>Aplicaciones -&gt; Internet -&gt; Google Music Manager</em>.</p>
+
+<h3 id="aplicación-para-android">Aplicación para Android</h3>
+
+<p>La aplicación de Google Music para Android sólo se puede descargar desde la web del market y detecta si nuestro dispositivo no es estadounidense. Para saltarnos este impedimento simplemente <strong>nos descargamos el APK</strong> con la última versión en la fecha de redacción de este artículo, la 3.1. Para instalarla debes tener <strong>Android 2.2 o superior</strong> ya que requiere OpenGL ES 2.0.</p>
+
+<ul>
+<li><a href="http://dl.dropbox.com/u/1439807/com.google.android.music-2.apk">Descargar APK Google Music 3.1 para Android</a></li>
+</ul>
+
+<p><img src="../../img/wp/google-music-android.jpg" alt="google-music-android.jpg" /></p>
+
+<p>Lo cierto es que me da mucho miedo instalar un APK que no sea del Market pero los permisos que pide no son extraños. Nada de mandar SMS, por ejemplo. Así que con esto ya podréis disfrutar de Google Music allá donde estéis mientras el 3G no os traicione.</p>
+
+<h3 id="primeras-impresiones">Primeras impresiones</h3>
+
+<p>Por el momento <strong>estoy muy contento con el servicio</strong>: la aplicación de Android reproduce por streamming sin problemas, la música se sube a buena velocidad y todo es bastante limpio.</p>
+
+<p><strong>¡A disfrutar de Google Music!</strong></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/aparicion-de-enemigos-y-barras-de-vida/">Aparición de enemigos y barras de vida</a>
+      </h1>
+      <span class="post-date">Jun 4, 2011 &middot; <a href="https://saltares.com/blog/games/aparicion-de-enemigos-y-barras-de-vida/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+
+<p><img src="../../img/wp/titulo-enemyspawn.jpg" alt="titulo-enemyspawn.jpg" /></p>
+
+<p>Estos días he estado trabajando en la <strong>carga de enemigos</strong> dentro de Sion Tower y en las <strong>barras de vida</strong> que veis sobre sus cabezas. Tras algún que otro comedero de cabeza he acabado con un sistema bastante sencillo y que funciona exactamente como yo quería. En los siguientes párrafos explico cómo están diseñadas la aparición (spawn) de enemigos y las barras de vida para finalizar con un <strong>vídeo del resultado</strong>.</p>
+
+<h3 id="aparición-de-enemigos">Aparición de enemigos</h3>
+
+<p>Como ya he mencionado en varias ocasiones, <strong>Blender será el editor de niveles de Sion Tower</strong>. Desde esta potente herramienta definimos los objetos que componen el escenario, las zonas transitables por el enemigo (malla de navegación) y ahora los puntos y el momento en el que llegan las oleadas de enemigos. Todo esto se consigue gracias al formato de exportación DotScene y a una <strong>convención de nombres</strong>.</p>
+
+<p><strong>De la aparición</strong> o spawn de un enemigo concreto <strong>necesitamos conocer</strong>:</p>
+
+<ul>
+<li>Posición inicial.</li>
+<li>Orientación inicial.</li>
+<li>Tipo de enemigo.</li>
+<li>Momento en el que aparece.</li>
+</ul>
+
+<p><img src="../../img/wp/blender-enemy.jpg" alt="blender-enemy.jpg" /></p>
+
+<p>En Blender utilizamos una pequeñas pirámides horizontales para indicar la aparición de enemigos. Los dos primeros puntos ya los da la propia posición y orientación del objeto mientras que el resto lo conseguimos con el nombre del mismo. Los nombres tienen la estructura <em>&ldquo;enemy.tipo.tiempo&rdquo;</em>. Por ejemplo, un Goblin que aparezca en el segundo 1 se llamaría <em>&ldquo;enemy.goblin.1&rdquo;</em> tal y como podéis ver en la siguiente figura.</p>
+
+<p><img src="../../img/wp/nombre-objeto-blender.png" alt="nombre-objeto-blender.png" /></p>
+
+<p>La clase <em>Level</em> guarda un vector de objetos <em>EnemySpawn</em> que simplemente contienen la información de los cuatro puntos anteriores. El cada iteración de <em>StateGame</em> se consulta si en el momento actual debería aparecer algún enemigo y en caso afirmativo se crea uno con las propiedades adecuadas.</p>
+
+<p>Si colocamos los enemigos en el centro del escenario aparecerán súbitamente (como se muestra en el vídeo). Lo ideal es colocarlos en las puertas y que ellos mismos se desplacen para atacar al protagonista.</p>
+
+<h3 id="barra-de-vida">Barra de vida</h3>
+
+<p><strong>Las barras de vida son <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html">Billboards</a></strong> de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con <strong>una sencilla textura que cuenta con las dos partes</strong> de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.</p>
+
+<p><img src="../../img/wp/barra-de-vida.png" alt="barra-de-vida.png" /></p>
+
+<p>Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase <em>Enemy</em> tenemos los siguientes atributos.</p>
+
+<pre><code>class Enemy: public Actor {
+    ...
+
+    private:
+        Ogre::BillboardSet* _bbSetLife;
+        Ogre::Billboard* _lifeBar;
+        Ogre::SceneNode* _lifeNode;
+};
+</code></pre>
+
+<p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
+
+<pre><code>void Enemy::createLifeBar() {
+    _bbSetLife = _sceneManager-&gt;createBillboardSet();
+    _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
+    _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
+    _lifeBar-&gt;setDimensions(1, 0.1);
+    _lifeBar-&gt;setTexcoordRect(0.0f, 0.0f, 0.5f, 1.0f);
+
+    _lifeNode = _node-&gt;createChildSceneNode();
+
+    _lifeNode-&gt;attachObject(_bbSetLife);
+}
+</code></pre>
+
+<p>El material <em>&ldquo;lifeBar&rdquo;</em> no podía ser más sencillo:</p>
+
+<pre><code>material lifeBar
+{
+	technique
+	{
+		pass
+		{	
+			emissive 0.7 0.7 0.7 1.0
+
+			texture_unit
+			{
+				texture life.png
+			}
+		}
+	}
+}
+</code></pre>
+
+<p>En cada iteración o cuando el enemigo sea herido hemos de llamar a <em>updateLifeBar</em>.</p>
+
+<pre><code>void Enemy::updateLifeBar() {
+    Ogre::Real ratio = _energy / _maxEnergy;
+
+    if (ratio &lt; 0.0f)
+        ratio = 0.0f;
+
+    Ogre::Real u1 = (1.0f - ratio) / 2.0f;
+    Ogre::Real v1 = 0.0f;
+    Ogre::Real u2 = 0.5f + (1.0f - ratio) / 2.0f;
+    Ogre::Real v2 = 1.0f;
+
+    _lifeBar-&gt;setTexcoordRect(u1, v1, u2, v2);
+}
+</code></pre>
+
+<h3 id="vídeo">Vídeo</h3>
+
+<p>En el siguiente vídeo se muestra el sistema de spawn de enemigos junto a sus barras de vida. Todo esto es <em>&ldquo;work in progress&rdquo;</em> y aún queda mucho espacio para la mejora. Se esperan cambios en las animaciones del personaje, añadir efectos de sonido, incluir la IA de los enemigos… Sean comprensivos.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/Pt3-Xf-n1KA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/computing/backups-de-wikis-con-wikiteam/">Backups de wikis con Wikiteam</a>
+      </h1>
+      <span class="post-date">Jun 4, 2011 &middot; <a href="https://saltares.com/blog/computing/backups-de-wikis-con-wikiteam/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      
+
+<p><img src="../../img/wp/backups-wikiteam1.png" alt="backups-wikiteam1.png" /></p>
+
+<p><strong><a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a> está alojada en los servidores de la <a href="http://osl.uca.es/">OSLUCA</a></strong> a los que no tengo acceso y, aunque sé que se hacen <strong>copias de seguridad</strong> diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: <strong><a href="http://code.google.com/p/wikiteam/">Wikiteam</a></strong>. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.</p>
+
+<h3 id="qué-hace-wikiteam">¿Qué hace Wikiteam?</h3>
+
+<p><strong>Wikiteam</strong> es un script GPL v3 escrito en Python que <strong>descarga todo el contenido de una wiki</strong> que utilice el sistema Mediawiki (actualmente el más extendido). No sólo es capaz de obtener el estado actual de una wiki sino que también recupera <strong>todo el historial</strong> de cambios así como las <strong>imágenes y ficheros</strong> que se hayan subido. El único (pero comprensible) problema es que no recupera los usuarios ya que no requiere acceso a la base de datos.</p>
+
+<p>El objetivo principal de Wikiteam es <strong>permitir que cualquier usuario pueda hacer una copia de una wiki</strong>. Si el sitio deja de existir por cualquier motivo, el conocimiento no se habrá perdido ya que este usuario podría restaurar la copia en un nuevo servidor. De hecho, en la forja del proyecto tienen disponibles backups de diversas wikis.</p>
+
+<h3 id="hacer-backups-con-wikiteam">Hacer backups con Wikiteam</h3>
+
+<p>Generar copias de seguridad es harto sencillo y sólo requiere ejecutar el script con los parámetros adecuados. Sigue los siguientes pasos:</p>
+
+<ol>
+<li><a href="http://code.google.com/p/wikiteam/source/browse/trunk/dumpgenerator.py">Descarga el script</a> desde su forja de Google Code.</li>
+
+<li><p>Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:</p>
+
+<pre><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
+</code></pre></li>
+</ol>
+
+<p>El significado de los parámetros es el siguiente:</p>
+
+<ul>
+<li><strong>api</strong>: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: <a href="http://osl2.uca.es/iberogre/api.php">http://osl2.uca.es/iberogre/api.php</a></li>
+<li><strong>xml</strong>: recupera todas las páginas de la wiki junto a su historial-</li>
+<li><strong>images</strong>: recupera todas las imágenes y ficheros de la wiki.</li>
+</ul>
+
+<h3 id="restaurar-backups-con-wikiteam">Restaurar backups con Wikiteam</h3>
+
+<p>Volcar las copias en otra instancia de Mediawiki es ligeramente más complejo y requiere, evidentemente, de acceso al servidor. Lo recomendable es que sigas <a href="http://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">el proceso detallado en la propia wiki de Mediawiki</a>.</p>
+
+      
+    </div>
+    
+        <div class=pagination>
+        <ul class="pagination">
+            <li>
+                <a href="../../">««</a>
+            </li>
+            
+            <li>
+                <a href="../../page/30/">«</a>
+            </li>
+            
+            <li class="active">
+                <a href="../../page/31/">31</a>
+            </li>
+            
+            <li>
+                <a href="../../page/32/">»</a>
+            </li>
+            
+            <li>
+                <a href="../../page/60/">»»</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "siondream";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

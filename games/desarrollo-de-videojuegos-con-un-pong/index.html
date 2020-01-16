@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Desarrollo de videojuegos con un Pong &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Desarrollo de videojuegos con un Pong</h1>
+    <span class="post-date">Nov 10, 2010 &middot; <a href="https://saltares.com/blog/games/desarrollo-de-videojuegos-con-un-pong/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    <p><img src="../../img/wp/tallerpong-titulo.png" alt="tallerpong-titulo.png" /></p>
+
+<p>Cuando hace unos días escribía un <a href="../../proyectos/presentacion-de-la-advuca/#comments"><strong>artículo presentando a la Asociación de Desarrollo de Videojuegos de la Universidad de Cádiz (ADVUCA)</strong></a> comentaba que estábamos preparando nuestra primera actividad. El taller: &ldquo;<em>Introducción al desarrollo de videojuegos con un Pong&rdquo;</em> va viento en popa y se celebrará los días 22 y 25 de noviembre de 17:00 a 20:00 en la Escuela Superior de Ingeniería de Cádiz. Lo impartimos principalmente Alberto Cejas y yo aunque contaremos con el apoyo de varios compañeros más.</p>
+
+<p>Como habréis podido imaginar pretendemos <strong>abordar los conceptos básicos del desarrollo de videojuegos</strong> de forma sencilla y práctica. La idea es que cada asistente salga del taller con <strong>una versión del clásico Pong</strong> programada por él mismo bajo el brazo. Utilizaremos el lenguaje de programación C (el que primero se aprende en Cádiz) y la biblioteca <a href="http://es.wikipedia.org/wiki/Simple_DirectMedia_Layer">SDL</a>. No será algo a lo loco, pasaremos por todas las fases: planificación, diseño, implementación paso a paso… Como reza nuestro cartel sólo se necesita <em>&ldquo;C y muchas ganas&rdquo;</em>. Creo que es una idea ambiciosa pero nos conformamos con que los asistentes acaben lo suficientemente motivados como para <strong>seguir aprendiendo</strong> de forma individual.</p>
+
+<p>El haber pegado carteles por la facultad ha hecho subir las inscripciones como la espuma y estamos muy ilusionados con el proyecto. No podemos olvidar <strong>el apoyo de la <a href="http://osl.uca.es/">Oficina de Software Libre (OSLUCA)</a></strong> el cual está siendo inestimable ya que, hasta el momento, tenemos poca experiencia en organizar este tipo de actividades. Estos días seguiremos trabajando duro en ultimar los detalles aunque sea inevitable que aparezcan imprevistos a la hora de la verdad.</p>
+
+<p><strong>¡Os mantendremos informados!</strong> Mientras tanto os dejo el cartel, podéis hacer click para verlo ampliado.</p>
+
+<p><img src="../../img/wp/cartel-taller-212x300.jpg" alt="cartel-taller-212x300.jpg" /></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Conjugate &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Conjugate</h1>
+    <span class="post-date">May 4, 2015 &middot; <a href="https://saltares.com/blog/projects/conjugate/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/projects">Projects</a>
+    </span>
+    
+
+<p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It&rsquo;s probably easier if I just stick a summary of the GitHub readme here.</p>
+
+<p>Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.</p>
+
+<p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg" /></p>
+
+<h3 id="reason-to-be">Reason to be</h3>
+
+<p>When learning a new language, it is very common to struggle with verb conjugations. For example:</p>
+
+<blockquote>
+<p>I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</p>
+</blockquote>
+
+<p>Unfortunately, the available resources are somehow limited:</p>
+
+<ul>
+<li>Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.</li>
+<li>Apps: seriously? I don&rsquo;t want to install yet another app!</li>
+<li>Websites: lists are limited, the sites are old, full of ads and/or don&rsquo;t play well with mobile devices.</li>
+</ul>
+
+<p>Conjugate tries to solve that use case.</p>
+
+<h3 id="project-structure">Project structure</h3>
+
+<p>The project is divided in two parts:</p>
+
+<ul>
+<li>Scraper</li>
+<li>Mobile friendly website</li>
+</ul>
+
+<h4 id="scraper">Scraper</h4>
+
+<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn&rsquo;t work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
+
+<p>The script currently supports Romanian (which I&rsquo;m trying to learn) and Spanish. Luckily, it&rsquo;s pretty easy to add support for new languages, although no thanks to Verbix&rsquo;s poor use of web standards.</p>
+
+<h4 id="website">Website</h4>
+
+<p>Currently, I&rsquo;m in the process of writing the mobile friendly application. It&rsquo;ll be extremely simple:</p>
+
+<ol>
+<li>Enter a verb in English (infinitive).</li>
+<li>Select a language from a dropdown.</li>
+<li>Hit &ldquo;Go&rdquo;.</li>
+</ol>
+
+<p><img src="../../img/conjugate/flask.png" alt="flask.png" /></p>
+
+<p>For the backend I&rsquo;m using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they&rsquo;re really easy to get started with. Not too sure about the frontend, but I&rsquo;ll probably go for a framework that makes responsive design simple enough.</p>
+
+<p>Any suggestions?</p>
+
+<h3 id="progress">Progress</h3>
+
+<p>I&rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&rsquo;d be more than happy to accept PR&rsquo;s if you&rsquo;re interested to help!</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

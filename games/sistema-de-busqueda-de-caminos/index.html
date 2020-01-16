@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Sistema de búsqueda de caminos &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Sistema de búsqueda de caminos</h1>
+    <span class="post-date">Apr 5, 2011 &middot; <a href="https://saltares.com/blog/games/sistema-de-busqueda-de-caminos/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/titulo-navmesh.png" alt="titulo-navmesh.png" /></p>
+
+<p>Hace unos días publicaba un <a href="../../proyectos/pfc/sion-tower/sion-tower-navigation-mesh-y-a/" title="Sion Tower, navigation mesh y A*">vídeo</a> mostrando el <strong>sistema de búsqueda de caminos empleando mallas de navegación</strong> y el algoritmo A estrella para Sion Tower. Pudisteis ver que el personaje recorría el camino de forma brusca, actualmente el problema se ha solucionado gracias a la <strong>inclusión de splines en una colaboración</strong> del compañero <a href="http://ragingbit.com/blog/">Javier Santacruz</a> (<a href="http://twitter.com/#!/arld101">@arld101</a>). ¡La primera colaboración en forma de código! En este artículo nos centraremos en ilustrar a grandes rasgos <strong>como funciona la búsqueda</strong> de caminos internamente.</p>
+
+<h3 id="conceptos-generales">Conceptos generales</h3>
+
+<p>El problema inicial era la <strong>necesidad de que los enemigos pudiesen moverse</strong> por el escenario hacia un objetivo evitando los obstáculos estáticos. El ejemplo más común sería el de perseguir al protagonista para atacarle. Para ello es necesario definir las zonas transitables de alguna manera y la respuesta es emplear una malla de navegación.</p>
+
+<p>En <a href="http://www.blender.org/">Blender</a> se crea una <strong>malla compuesta de triángulos interconectados</strong> tal y como se ilustra en la imagen que ya he mostrado en alguna ocasión. El sistema de carga de niveles procesa la malla y genera un grafo de forma interna. Realizar búsqueda de caminos dentro del grafo es un problema conocido y relativamente sencillo de resolver como veremos más adelante. Además el sistema soporta celdas con inclinación (como en las escaleras) aunque al algoritmo esto le es indiferente.</p>
+
+<p><img src="../../img/wp/blender-navmesh.jpg" alt="blender-navmesh.jpg" /></p>
+
+<h3 id="clases-implicadas">Clases implicadas</h3>
+
+<p>El sistema de búsqueda de caminos de Sion Tower está compuesto por las clases del siguiente diagrama:</p>
+
+<p><img src="../../img/wp/clases-navmesh.png" alt="clases-navmesh.png" /></p>
+
+<ul>
+<li><em>Cell</em>: representa una celda triangular de la malla.*   <em>NavigationMesh</em>: malla de navegación formada por un grafo de <em>Cells</em>. Permite localizar elementos en celdas de la malla, conocer la altura a la que debe colocarse un personaje para pegarlo al suelo, realizar consultas de línea de visión y búsqueda de caminos.*   <em>CellNode</em>: nodo de la búsqueda de caminos. Tiene asociado una <em>Cell</em>, y los costes de la heurística.*   <em>Level</em>: ya hablamos de ella en <a href="../../proyectos/pfc/sion-tower/creacion-de-escenarios-en-formato-dotscene-con-blender/" title="Creación de escenarios en formato DotScene con Blender">otra ocasión</a>. Se encarga de cargar y almacenar la información de los niveles desde ficheros en formato XML. Entre la información del nivel, carga un <em>NavigationMesh</em>.</li>
+</ul>
+
+<h3 id="algoritmo-a">Algoritmo A*</h3>
+
+<p>El <strong><a href="http://en.wikipedia.org/wiki/A*_search_algorithm">algoritmo A*</a></strong> es de sobra conocido por muchos y puede obtenerse mucha información sobre el mismo en decenas de fuentes. En la búsqueda de Sion Tower le indicamos una posición de comienzo y una de destino al método <em>buildPath</em> de <em>NavigationMesh</em> y se nos devuelve una lista de puntos por los que hay que pasar. De forma esquematizada <strong>se hace lo siguiente</strong>:</p>
+
+<ol>
+<li>Encontrar las celdas en las que se encuentran las posiciones de inicio y destino</li>
+<li>Crear un <a href="http://en.wikipedia.org/wiki/Heap_(data_structure)">montículo</a> con un <em>CellNode</em> asociado a la primera celda.</li>
+<li>Bucle:
+
+<ol>
+<li>Sacar el nodo más prometedor del montículo.</li>
+<li>Si el nodo corresponde a la celda final, hemos terminado.</li>
+<li>Introducimos en el montículo los nodos cuyas celdas son vecinas a las del nodo actual.</li>
+<li>Comenzar de nuevo el paso 3.</li>
+</ol></li>
+<li>Reconstruir el camino de puntos empleando un spline para evitar cambios bruscos.</li>
+</ol>
+
+<h3 id="colaboración-para-suavizar-el-camino">Colaboración para suavizar el camino</h3>
+
+<p>El compañero Francisco Javier Santacruz se interesó en suavizar la ruta resultante de la búsqueda y rápidamente se puso manos a la obra. Tras un par de días de trabajo me envió un parche que apliqué gustosamente por sus <strong>impresionantes resultados</strong>.</p>
+
+<p>La forma de suavizar la ruta consiste en generar muchos puntos intermedios <strong>siguiendo un <a href="http://es.wikipedia.org/wiki/Spline">spline</a></strong>. Los splines son curvas definidas mediante polinomios: ¡por fin las clases de Métodos Numéricos sirven para algo! En el caso que nos ocupa utilizó el <a href="http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline">spline de Catmull-Roll</a>, un tipo de interpolación cúbica. En la prueba que me mandó se visualizaba la ruta del personaje ya suavizada como una línea en el suelo dibujada con primitivas de Ogre. Simplemente restan por hacer unos pequeños ajustes, <strong>¡muchas gracias!</strong></p>
+
+<p><img src="../../img/wp/siontower-navmesh.jpg" alt="siontower-navmesh.jpg" /></p>
+
+<h3 id="conclusiones">Conclusiones</h3>
+
+<p>Implementar el sistema de búsqueda de caminos con una malla de navegación <strong>ha sido muy enriquecedor</strong> ya que era una materia completamente desconocida por mí hasta el momento. He aprendido mucho sobre las distintas aproximaciones existentes y la forma de aplicarla a un juego tridimensional. Además he obtenido la primera colaboración en términos de código a través de un parche. Los que estéis interesados en los detalles podéis acudir a <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/navmesh-javi/?root=cusl5-iberogre">la rama correspondiente de la forja</a>.</p>
+
+<p>¡Seguiré informando!</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

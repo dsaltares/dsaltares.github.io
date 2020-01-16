@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+	<meta name="generator" content="Hugo 0.55.6" />
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>David Saltares &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  <link href="https://saltares.com/blog/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="posts">
+    
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/ashley-1-3-3-released/">Ashley 1.3.3 released</a>
+      </h1>
+      <span class="post-date">Jan 18, 2015 &middot; <a href="https://saltares.com/blog/games/ashley-1-3-3-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png" /></p>
+
+<p><a href="https://github.com/libgdx/ashley/pulse/monthly">As you can see</a>, Ashley development has slowed down a bit. I would like to think it&rsquo;s because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there&rsquo;s still been quite a bit of progress, enough to warrant a new release.</p>
+
+<p><a href="https://github.com/libgdx/ashley/releases/tag/ahsley-1.3.3">Ashley 1.3.3</a> is now out.</p>
+
+<ul>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/1c21f972998df9d5125617f3e6b0c6cc279829d2">API addition</a></strong>: added <code>getEntity()</code> method to <code>Engine</code>, it is now possible to retrieve entities by their ID. This will ease networked entity systems.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/ed3d3b7ef040023c8bd4d64efb6e9fcad69dc9aa">API addition</a></strong>: added <code>getEntities()</code> method to <code>Engine</code>, which returns an immutable array of all the entities registered with said engine.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/3910be7b4ae472f415c22c0f5109e4f140056f7d">Bug fix</a></strong>: remove old component when adding a new one of the same type to an entity.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/9f6aa51229544f9a66c12f7f7fdcff7e6bf5dbde">Bug fix</a></strong>: fixes component not being added to an entity when done from an <code>entityRemoved()</code> family entity listener handler.</li>
+</ul>
+
+<p>The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.3.4-SNAPSHOT</code>.</p>
+
+<p><a href="http://libgdx.badlogicgames.com:8080/job/ashley/">All unit tests are passing</a>, the wiki is up to date and life is good. Enjoy Ashley and don&rsquo;t forget to report anything that doesn&rsquo;t work as expected.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/computing/recover-history-with-git/">Recover history with Git</a>
+      </h1>
+      <span class="post-date">Dec 31, 2014 &middot; <a href="https://saltares.com/blog/computing/recover-history-with-git/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&rsquo;t been pushed to <code>origin</code> yet. However, I didn&rsquo;t realise at the time.</p>
+
+<p>After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.</p>
+
+<blockquote>
+<p>Oh noes!</p>
+</blockquote>
+
+<p>Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using <code>git reflog</code> you can list the tip of branches, including the deleted ones. Once you find the commit you were looking for, you can just use <code>git checkout</code> to get it back. This will detach you from <code>HEAD</code>, so you will probably want to create the old branch again with <code>git checkout -b name</code>.</p>
+
+<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let&rsquo;s say you know the commit message had <code>feature x</code> in it.</p>
+
+<pre><code>git reflog --grep='feature x'
+git checkout 123456
+git checkout -b feature-x
+</code></pre>
+
+<p>I really love Git.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/computing/book-review-clean-code/">Book review: Clean Code</a>
+      </h1>
+      <span class="post-date">Dec 14, 2014 &middot; <a href="https://saltares.com/blog/computing/book-review-clean-code/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/clean-code-uncle-bob.jpg" alt="clean-code-uncle-bob.jpg" /></p>
+
+<p>I recently had the pleasure to attend a few lectures by <a href="http://en.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a>, also known as Uncle Bob. He&rsquo;s a software consultant, speaker and fierce advocate of <a href="http://en.wikipedia.org/wiki/Agile_software_development">agile methodologies</a> as well as <a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a>. Not only were the talks entertaining, but also deeply inspirational.</p>
+
+<p>Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>.</p>
+
+<p>And so I read it.</p>
+
+<p>It has definitely changed me as a developer. I cannot look at code the same way anymore.</p>
+
+<p>Clean Code offers a set of very simple guidelines to help us improve the quality of our codebases little by little.</p>
+
+<p>You start by looking at that unholy class nobody dares to touch. Once you get the gist of it, you realise some methods and variables should be named differently, for clarity&rsquo;s sake. Immediately after, you identify some duplication and factor that out into a different function. Later on, you decide that a particular method is too big and it should be broken down. Maybe this class is doing too many things, lets split it up into smaller classes that do one thing and one thing only.</p>
+
+<p>Oh my God, suddenly that monolithic satanic pile of garbage has been tamed. Future developers (including yourself) will be able to understand it and work with it much better.</p>
+
+<blockquote>
+<p>Hang on! How can we make sure that it still works?</p>
+</blockquote>
+
+<p>Unit tests!</p>
+
+<p>As developers, it is very much our professional duty to work in such a way that allows us to thrive in the long run. We can only deliver and maintain a large project if we keep things under control. Doom is certain if we do things quick and dirty and absent discipline.</p>
+
+<p>Clean Code is far from being the panacea but it does provide us with quite a few tools to work towards that goal. Uncle Bob exposes the reader to several practical exercises. A piece of bad code is listed, studied and refactored step by step until it becomes a much readable, cleaner and correct chunk of work.</p>
+
+<p>I personally loved the book as it is fun, positive and tremendously useful, cannot recommend it enough.</p>
+
+<p>By the way, you can ready more by Uncle Bob on the <a href="http://blog.8thlight.com/uncle-bob/archive.html">8th Light blog</a>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/libgdx-at-kingston-university/">Libgdx at Kingston University</a>
+      </h1>
+      <span class="post-date">Nov 26, 2014 &middot; <a href="https://saltares.com/blog/games/libgdx-at-kingston-university/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/kingston-phones.jpg" alt="kingston-phones.jpg" /></p>
+
+<p>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements <a href="../../games/libgdx-workshop-at-cadiz-university/">Alberto&rsquo;s Libgdx workshop</a> at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">book</a>.</p>
+
+<p>I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students. Just like in Alberto&rsquo;s talk, we gave two copies of our book away to a couple of lucky students!</p>
+
+<p>Sadly, no pictures were taken this time round, you&rsquo;ll have to take my word when I say that quite a few people showed up. Thanks for that!</p>
+
+<p>As promised, here are <a href="../../docs/libgdx-talk-notes.pdf">the slides</a> in case anyone is interested.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/blog/games/libgdx-workshop-at-cadiz-university/">Libgdx workshop at Cadiz University</a>
+      </h1>
+      <span class="post-date">Nov 25, 2014 &middot; <a href="https://saltares.com/blog/games/libgdx-workshop-at-cadiz-university/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/flappy-plane/flappy-plane.png" alt="flappy-plane.png" /></p>
+
+<p><a href="https://twitter.com/omniyo">Alberto Cejas</a>, colleague and co-author of <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">Libgdx Cross-platform Game Development Cookbook</a> delivered a Libgdx workshop at Cadiz University (Spain) last Friday 21st of November.</p>
+
+<p>During a 2 hour session, the students put together a bunch of pieces to build Flappy Plane, a Flappy Bird clone originally developed by <a href="https://twitter.com/badlogicgames">Mario Zechner</a>. Moreover, there was free stuff! Alberto did a small raffle and gave two copies of our book away.</p>
+
+<p><img src="../../img/flappy-plane/flappy-plane-01.png" alt="flappy-plane.png" /></p>
+
+<p>We&rsquo;re really happy with the turnout, just take a look at the gallery below!</p>
+
+<p>If you&rsquo;re interested in an easy introduction to Libgdx, feel free to check the <a href="https://github.com/AlbertoCejas/flappybird_workshop">GitHub repo</a> where we&rsquo;ve uploaded everything: <a href="https://github.com/AlbertoCejas/flappybird_workshop/blob/master/slides/slides_english.pdf?raw=true">slides</a>, code and exercises.</p>
+
+<p>Many thanks to everyone who turned up!</p>
+
+<p>
+<link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
+
+<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//flappy-plane-01.png');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//flappy-plane-01.png" alt="Flappy plane 01" />
+				    </div>
+			      <figcaption>
+		          <p>Flappy plane 01</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//flappy-plane-01.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//flappy-plane.png');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//flappy-plane.png" alt="Flappy plane" />
+				    </div>
+			      <figcaption>
+		          <p>Flappy plane</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//flappy-plane.png" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop01.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop01.jpg" alt="Workshop01" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop01</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop01.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop02.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop02.jpg" alt="Workshop02" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop02</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop02.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop03.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop03.jpg" alt="Workshop03" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop03</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop03.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop04.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop04.jpg" alt="Workshop04" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop04</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop04.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop05.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop05.jpg" alt="Workshop05" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop05</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop05.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop06.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop06.jpg" alt="Workshop06" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop06</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop06.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop07.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop07.jpg" alt="Workshop07" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop07</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop07.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop08.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop08.jpg" alt="Workshop08" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop08</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop08.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+				<div class="box">
+				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				    <div class="img" style="background-image: url('https://saltares.com/blog//img/flappy-plane//workshop09.jpg');" >
+				      <img itemprop="thumbnail" src="https://saltares.com/blog//img/flappy-plane//workshop09.jpg" alt="Workshop09" />
+				    </div>
+			      <figcaption>
+		          <p>Workshop09</p>
+			      </figcaption>
+				    <a href="https://saltares.com/blog//img/flappy-plane//workshop09.jpg" itemprop="contentUrl"></a>
+				  </figure>
+				</div>
+</div>
+
+
+
+
+
+  
+
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+</p>
+
+      
+    </div>
+    
+        <div class=pagination>
+        <ul class="pagination">
+            <li>
+                <a href="../../">««</a>
+            </li>
+            
+            <li>
+                <a href="../../page/7/">«</a>
+            </li>
+            
+            <li class="active">
+                <a href="../../page/8/">8</a>
+            </li>
+            
+            <li>
+                <a href="../../page/9/">»</a>
+            </li>
+            
+            <li>
+                <a href="../../page/60/">»»</a>
+            </li>
+        </ul>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+var disqus_shortname = "siondream";
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

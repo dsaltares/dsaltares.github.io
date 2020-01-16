@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Postmortem: Granny&#39;s Bloodbath &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Postmortem: Granny&#39;s Bloodbath</h1>
+    <span class="post-date">Nov 11, 2010 &middot; <a href="https://saltares.com/blog/games/postmortem-grannys-bloodbath/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/grannysbloodbath-banner.png" alt="grannysbloodbath-banner.png" /></p>
+
+<p><strong><a href="../../proyectos/grannys-bloodbath/">Granny&rsquo;s Bloodbath</a></strong> fue el proyecto que desarrollamos tres compañeros <strong>para la asignatura Diseño de Videojuegos</strong> en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de <strong>plataformas y acción de scroll horizontal</strong> en el que manejamos a una <strong>abuelita que trata de sobrevivir a una invasión zombie</strong>. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss. En este articulo diseccionaré el desarrollo de Granny&rsquo;s Bloodbath a modo de reflexión.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-1.png" alt="grannysbloodbath-1.png" /></p>
+
+<h3 id="datos-técnicos">Datos técnicos</h3>
+
+<p>Granny&rsquo;s Bloodbath está <strong>desarrollado en C++ utilizando la librería multimedia <a href="http://www.libsdl.org/">SDL</a></strong>, varias de sus extensiones y el parser <a href="http://www.grinninglizard.com/tinyxml/">TinyXML++</a>. Inicialmente estaban previstas versiones para Windows y GNU/Linux aunque finalmente tratamos de portarlo a Playstation Portable. Por razones de tiempo sólo pudimos publicar una versión beta pero el resultado fue satisfactorio. Además, publiqué  en Wikibooks, un artículo sobre <a href="http://es.wikibooks.org/wiki/Desarrollo_de_videojuegos_para_PSP_con_C%2B%2B_y_SDL">desarrollo de juegos en PSP utilizando SDL</a>. El grupo lo formábamos 3 proyectos de ingenieros y ningún artista (craso error).</p>
+
+<p><img src="../../img/wp/portpsp.png" alt="portpsp.png" /></p>
+
+<h3 id="sobre-el-postmortem">Sobre el Postmortem</h3>
+
+<p>Antes de entrar en faena creo que debería comentar <strong>qué es un Postmortem</strong> para que los que no hayan oído hablar del término puedan subirse al tren. Tras el lanzamiento y recepción de un videojuego suele redactarse una reflexión en la que se analiza <strong>tanto lo que salió bien durante el desarrollo como los errores cometidos</strong> por el equipo. Se tocan temas de diseño, gestión de poyectos, programación etc. No es que me esté dando delirios de grandeza, simplemente escribo esto para reflexionar sobre mi experiencia con Granny&rsquo;s Bloodbath y si a alguien le sirve de algo, mucho mejor</p>
+
+<p><img src="../../img/wp/grannysbloodbath-4.png" alt="grannysbloodbath-4.png" /></p>
+
+<h3 id="lo-que-salió-bien">Lo que salió bien</h3>
+
+<h4 id="planificación-inicial">Planificación inicial</h4>
+
+<p>Desde el principio <strong>supimos que debíamos acotar las dimensiones del proyecto</strong> a nuestras circunstancias: 3 meses de desarrollo y muchas más asignaturas a las que atender. Nos decantamos por la biblioteca SDL y teníamos un largo trecho por delante para crear una capa por encima orientada a objetos que nos facilitase la vida. Partiendo de esa base confeccionamos una planificación utilizando <a href="http://live.gnome.org/Planner">Planner</a> y <strong>redactamos un GDD</strong> (Game Design Document) tosco pero muy fácil de comprender.</p>
+
+<p>Definir exactamente lo que estaba dentro y fuera del proyecto fue un punto fundamental para el <em>&ldquo;éxito&rdquo;</em>. <strong>Fue complicado</strong> conocer de antemano las mecánicas que debíamos implementar y los recursos artísticos necesarios pero más tarde nos ayudó más de lo que pensábamos. <strong>Hubo consenso en el equipo</strong>, durante todo el desarrollo permanecimos en el mismo barco y respetamos el acuerdo inicial. Ahora acudo al documento de diseño y me parece tremendamente pobre pero, sin lugar a dudas, era mejor eso que nada. Lo tenéis [aquí por si os interesa.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-2.png" alt="grannysbloodbath-2.png" /></p>
+
+<h4 id="disfrutamos-mucho">Disfrutamos mucho</h4>
+
+<p>No estábamos trabajando en Granny&rsquo;s Bloodbath por trabajo y los requisitos para aprobar la asignatura estaban por debajo del resultado obtenido. Entonces, ¿por qué trabajamos tan duro? El desarrollo de videojuegos nos gustaba a los tres miembros del equipo y e<strong>stábamos deseosos de aprender</strong> (aunque el entusiasmo no estuviera repartido de forma equitativa). <strong>Escogimos una idea muy divertida y creemos que original</strong>, aunque ahora haya juegos, series y películas de zombies hasta debajo de las piedras.</p>
+
+<p><strong>El hecho de disfrutar de lo que hicimos fue clave</strong> para la consecución del proyecto. Parece una idea obvia pero no lo es tanto. Mantener la moral del equipo alta incluso en los momentos más estresantes del desarrollo no es tarea fácil. ¡No penséis que fui el jefe del equipo! Nuestra jerarquía era completamente horizontal y nos apoyamos los unos a los otros.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-3.png" alt="grannysbloodbath-3.png" /></p>
+
+<h4 id="motor-modular-y-separado-de-los-datos">Motor modular y separado de los datos</h4>
+
+<p>SDL es una biblioteca muy sencilla pero compatible con gran cantidad de plataformas sin tocar casi ninguna línea de código. La pega es que es de muy bajo nivel. Por comodidad <strong>tuvimos que crear capas de abstracción superiores</strong> conformando un motor orientado a objetos y, a riesgo de perder modestia, diría que no hicimos un mal trabajo. Entre otros, creamos un módulo de <strong>gestión de recursos</strong> multimedia que funcionaba realmente bien. Esto nos permitía no duplicar recursos y utilizar lo estrictamente necesario en un momento dado. Tuvimos que <strong>adaptar el motor a PSP</strong> y fue muy sencillo, se cambió la implementación de la gestión de entrada sin afectar al resto del código.</p>
+
+<p>Hicimos un <strong>uso extensivo del formato XML</strong> para separar del código fuente todos los datos: atributos de los personajes, cajas de colisión, animaciones, niveles, escenas narrativas e incluso el guión del juego. Esto nos permite <strong>modificar una gran cantidad de parámetros sin tener que recompilar</strong> todo el proyecto. Ajustar velocidades, modificar posiciones de enemigos o cambiar el orden de los niveles era muy sencillo y cualquiera podría hacerlo sin conocimientos de programación. <strong>No desarrollamos herramientas de diseño</strong> ya que se salía completamente de las dimensiones del proyecto.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-5.png" alt="grannysbloodbath-5.png" /></p>
+
+<h4 id="testeo">Testeo</h4>
+
+<p>Como todos sabréis hacer pruebas de forma exhaustiva es primordial para desarrollar software de calidad. En esta ocasión no me refiero a pruebas unitarias o de integración sino de jugabilidad. En un juego <strong>es imprescindible pulir las mecánicas</strong> para obtener la mayor diversión posible porque de eso es lo que se trata. Todo debe ser intuitivo y directo, nada de controles confusos o mecánicas que distraigan al usuario. <strong>Los desarrolladores acabamos demasiado implicados</strong> y no podemos aportar una visión objetiva del conjunto, se necesita gente de fuera.</p>
+
+<p>A medida que avanzaba el desarrollo <strong>engañamos a familiares y amigos para que echaran una partida</strong> a Granny&rsquo;s Bloodbath. Incluso tuvimos una pequeña presencia en alguna red social. Gracias a eso pudimos recibir feedback, detectar a tiempo fallos de conceptos y conseguir una versión final más depurada.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-9.png" alt="grannysbloodbath-9.png" /></p>
+
+<h3 id="lo-que-salió-mal">Lo que salió mal</h3>
+
+<h4 id="problemas-de-diseño">Problemas de diseño</h4>
+
+<p>A pesar de las pruebas, cometimos ciertos <strong>fallos de diseño</strong> bastante graves. <strong>El scroll horizontal daba muy poco margen</strong> al jugador para anticipar los movimientos de los enemigos. Éstos aparecían en nuestras narices y era muy complicado hacerles frente. Por otra parte, l<strong>os elementos sobre los que podías saltar</strong> (coches, muebles, cajas, etc ) <strong>no contrastaban</strong> en absoluto con el resto del escenario. El jugador podía confundirse y no aprovechar todas las posibilidades.</p>
+
+<p>Como he mencionado antes, es indispensable que el jugador se haga rápidamente con los controles y la mecánica le resulte natural y cómoda. Desde luego, es uno de los apartados más difíciles de aprender. <strong>Trataremos de aplicarnos el cuento</strong> para la próxima vez.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-8.png" alt="grannysbloodbath-8.png" /></p>
+
+<h4 id="distintas-expectativas">Distintas expectativas</h4>
+
+<p>Es cierto que los tres componentes del equipo queríamos aprender y compartíamos la misma visión del juego. No obstante, <strong>no hubo una dedicación (en términos de tiempo) equitativa</strong> en el equipo. Supongo que no fue problema de organización, ni de motivación. Creo que este tipo de problemas vienen de serie cuando trabajas en un proyecto tan pequeño, sin repercusión alguna ni un trabajo de por medio. Cada uno invierte en él lo que quiere o puede.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-7.png" alt="grannysbloodbath-7.png" /></p>
+
+<h4 id="no-externalizar-el-trabajo-artístico">No externalizar el trabajo artístico</h4>
+
+<p><strong>No somos artistas</strong> 2D ni muchísimo menos aunque decidimos encargarnos nosotros mismos de los sprites, niveles y GUI (el sonido lo obtuvimos de Jamendo y otros bancos libres). Esto <strong>nos retrasó muchísimo</strong> y nos restó ingentes cantidades de tiempo y fuerzas. El trabajo gráfico fue mucho más grande de lo que pudimos prever. Otros compañeros de la asignatura consiguieron colaboraciones externas para el plano artístico. ¡Mi intención no es criticarlos! <strong>Fueron más inteligentes</strong> y se centraron en lo que mejor sabían hacer.</p>
+
+<p>Sin duda, <strong>deberíamos haber buscado activamente colaboradores</strong>. Quizás sea una de las lecciones más valiosas aprendidas durante el desarrollo de Granny&rsquo;s Bloodbath (al menos en lo que a mí respecta). No existe un concepto más básico: los desarrolladores no podemos trabajar solos, necesitamos muchos artistas.</p>
+
+<p><img src="../../img/wp/grannysbloodbath-6.png" alt="grannysbloodbath-6.png" /></p>
+
+<h3 id="conclusiones">Conclusiones</h3>
+
+<p>¡Oh, veo que has aguantado este artículo tan extenso como un campeón! Uhmm… quizás hayas hecho scroll hasta aquí abajo para ir directamente a las conclusiones. Granny&rsquo;s Bloodbath era el proyecto más grande al que nos habíamos enfrentado hasta el momento y aprendimos muchísimo. Creo que no es descabellado decir que <strong>no salió mal teniendo en cuenta los recursos</strong> (tiempo, equipo y conocimientos) con los que contábamos. <strong>Espero que este artículo me ayude a recordar nuestras equivocaciones</strong> y tenerlas siempre presentes para que no se vuelvan a repetir.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

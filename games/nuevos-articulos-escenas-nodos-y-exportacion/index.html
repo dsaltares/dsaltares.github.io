@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Nuevos artículos: escenas, nodos y exportación &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Nuevos artículos: escenas, nodos y exportación</h1>
+    <span class="post-date">Dec 8, 2010 &middot; <a href="https://saltares.com/blog/games/nuevos-articulos-escenas-nodos-y-exportacion/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/escenas-nodos-exportacion.png" alt="escenas-nodos-exportacion.png" /></p>
+
+<p>El puente se acaba y , entre otras cosas, me ha permitido darle un pequeño pero <strong>importante impulso a <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a></strong>. Ligeras correcciones o ampliaciones en varios artículos y un par completamente nuevos. <strong>La wiki va sobre ruedas</strong> y no hemos tenido problemas de disponibilidad desde el cambio de servidor, ¡gracias de nuevo a la OSLUCA! Lo que sigue es un pequeño resumen del trabajo de los últimos días.</p>
+
+<h3 id="creación-básica-de-escenas-http-osl2-uca-es-iberogre-index-php-creaci-c3-b3n-b-c3-a1sica-de-escenas"><a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas">Creación básica de escenas</a></h3>
+
+<p>Hasta el momento sólo conocíamos el proceso de inicialización de Ogre. Este artículo pretendía continuar desde dicho punto y <strong>llegar hasta la carga de un modelo 3D en pantalla</strong>. Debido a la multitud de pasos necesarios y las distintas vías que se nos abren, el texto resultante tiene una extensión considerable. Finalmente se tratan los siguientes puntos:</p>
+
+<ul>
+<li>Creación de una ventana.</li>
+<li>Elección y creación del gestor de escenas adecuado (SceneManager).</li>
+<li>La cámara y el frustrum.</li>
+<li>La utilidad de los viewports, juego a pantalla dividida.</li>
+<li>Creación de una escena, añadiendo nodos con entidades adjuntas.</li>
+<li>Dos aproximaciones al main loop en Ogre.</li>
+<li>Ejemplo comentado a modo de resumen.</li>
+</ul>
+
+<p>En mi opinión, se trata de un <strong>artículo de máxima importancia</strong> ya que es el primero en el que comenzamos a renderizar elementos. Llevaba cierto tiempo publicado y estos días me he dedicado a completarlo (prestando especial atención al ejemplo).</p>
+
+<h3 id="manipulación-de-nodos-http-osl2-uca-es-iberogre-index-php-manipulaci-c3-b3n-de-nodos-ejemplo"><a href="http://osl2.uca.es/iberogre/index.php/Manipulaci%C3%B3n_de_nodos#Ejemplo">Manipulación de nodos</a></h3>
+
+<p>¿Qué sería de nuestro videojuego si no pudiésemos darle movimiento a los elementos que lo componen? Este artículo se centra en la <strong>manipulación del scene graph</strong> tanto en cuanto a su jerarquía como a sus componentes individuales (SceneNodes). Básicamente se abarcan los siguientes aspectos:</p>
+
+<ul>
+<li>Sistema de coordenadas de Ogre.</li>
+<li>Información de un nodo, objetos adjuntos y descendientes.</li>
+<li>Espacios de transformación.</li>
+<li>Movimiento, rotación y escalado.</li>
+<li>Control de tiempo en el bucle de juego.</li>
+<li>Ejemplo. El artículo aún no está completo ya que <strong>le falta el ejemplo principal</strong> y un par de esquemas explicativos.</li>
+</ul>
+
+<p>He querido publicarlo para que los lectores puedan seguir aprendiendo y reportando los problemas encontrados (aunque creo que es correcto en su mayoría).</p>
+
+<h3 id="exportar-modelos-desde-blender-http-osl2-uca-es-iberogre-index-php-exportar-modelos-desde-blender"><a href="http://osl2.uca.es/iberogre/index.php/Exportar_modelos_desde_Blender">Exportar modelos desde Blender</a></h3>
+
+<p>Ogre sólo acepta su propio formato binario <em>.mesh</em> a la hora de cargar modelos tridimensionales por razones de eficiencia y optimización. Esto significa que <strong>debemos exportar nuestras creaciones</strong> a dicho formato. En IberOgre daremos soporte a Blender y su <strong>magnífico script Blender Exporter</strong>. En este artículo encontraréis:</p>
+
+<ul>
+<li>Instalación de Blender Exporter (Windows y GNU/Linux).</li>
+<li>Proceso de exportación de un modelo con todas las opciones comentadas.</li>
+<li>Recomendaciones a la hora de realizar una exportación.</li>
+</ul>
+
+<h3 id="el-trabajo-duro-continua">El trabajo duro continua</h3>
+
+<p>Durante la última semana he estado trabajando fuerte y se ha notado en la forja de Red Iris. <strong>Un porcentaje de actividad que rozaba el 100% y me situaba entre los 5 proyectos más activos</strong>. ¡Creo que para contar con un único desarrollador es mucho decir! Espero continuar siendo productivo y generar más contenido pronto.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

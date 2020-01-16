@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology on David Saltares</title>
+    <link>https://saltares.com/blog/categories/technology/</link>
+    <description>Recent content in Technology on David Saltares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sun, 19 Oct 2014 10:33:49 +0000</lastBuildDate>
+    
+	<atom:link href="https://saltares.com/blog/categories/technology/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The future of affordable high end Android phones</title>
+      <link>https://saltares.com/blog/technology/the-future-of-affordable-high-end-android-phones/</link>
+      <pubDate>Sun, 19 Oct 2014 10:33:49 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/technology/the-future-of-affordable-high-end-android-phones/</guid>
+      <description>The Google Nexus product line has always been the reference when it came to affordable high end smartphones. However, that seems to have changed a couple of days ago, the second the Nexus 6 was announced with a starting price tag of $649. Let us not forget that one could get a Nexus 5 for only $349.
+As many have pointed out, this is most likely Google&amp;rsquo;s response to the pressure other vendors have put on the former.</description>
+    </item>
+    
+  </channel>
+</rss>

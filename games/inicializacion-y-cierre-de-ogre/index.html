@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Inicialización y cierre de Ogre &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Inicialización y cierre de Ogre</h1>
+    <span class="post-date">Feb 1, 2011 &middot; <a href="https://saltares.com/blog/games/inicializacion-y-cierre-de-ogre/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    <p><img src="../../img/wp/inicializacion-cierre-ogre.png" alt="inicializacion-cierre-ogre.png" /></p>
+
+<p>Muchos seguidores de <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal"><strong>IberOgre</strong></a> estabais <strong>esperando un artículo a modo de introducción</strong> para aprender a inicializar el motor. Un artículo de lo más básico era imprescindible y estaba planificado desde el principio. No obstante, debido a diversos motivos no me ha sido posible publicarlo hasta <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre">ahora</a>. El retraso ha sido imperdonable pero al menos me queda l<strong>a satisfacción de haber cumplido el objetivo</strong> más prioritario de la <a href="../../proyectos/pfc/proximos-objetivos-en-iberogre-y-sion-tower/">lista de objetivos</a> que publiqué hace unos días.</p>
+
+<p><strong>El artículo <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre"><em>&ldquo;Inicialización y cierre de Ogre&rdquo;</em></a></strong> sería el primero en el que el lector comienza a trabajar de primera mano con la biblioteca. Es un choque complicado ante la increíble variedad de aproximaciones posibles ante un mismo problema, de hecho cuando yo tuve que dar mis primeros pasos me sentí abrumado. Por ello y siempre teniendo la perspectiva del principiante, he tratado de explicar los conceptos de la forma más clara posible. El lector que avance con paciencia por el artículo y se detenga en los ejemplos no debería tener ningún problema en comprender la secuencia de inicialización de Ogre. Se explican la carga de plugins, los ficheros de configuración y el sistema de logging. Creo que ha quedado un artículo bastante completo, pero <strong>siempre podéis mejorarlo haciendo comentarios y sugerencias</strong>.</p>
+
+<p>Para terminar quiero decir que estoy horrorizado porque hace unos días recibí un correo de la Universidad de Cádiz recordando la fecha para la <strong>fase local del concurso</strong>. Tendrá lugar del 21 al 25 de marzo lo que quiere decir que… ¡Quedan menos de dos meses! Esto me dará la motivación suficiente para ampliar IberOgre y conseguir al menos una demo técnica de Sion Tower. Vislumbro muchísimo desarrollo por delante, horas de depuración, trabajo de arte y algún que otro golpe contra la pared.</p>
+
+<p><strong>¡Suerte a todos mis compañeros concursantes de Cádiz!</strong></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

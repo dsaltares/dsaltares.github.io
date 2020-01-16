@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011) &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)</h1>
+    <span class="post-date">Mar 14, 2011 &middot; <a href="https://saltares.com/blog/games/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/statsvn-iberogre-siontower.png" alt="statsvn-iberogre-siontower.png" /></p>
+
+<p><strong><a href="http://www.statsvn.org/">StatSVN</a></strong> es una herramienta que <strong>recopila información de un repositorio Subversion y genera un informe</strong> en HTML describiendo su desarrollo. Como veremos, es posible obtener una gran cantidad de datos relevantes que desvelan los hábitos de los miembros de un equipo y en qué medida ha contribuido cada uno. ¿Quieres conocer cómo se ha trabajado en el proyecto estos meses?</p>
+
+<p>En el informe sólo se refleja mi actividad ya que los artistas que están colaborando con el proyecto no están dados de alta en la forja. Nota para mí mismo: <em>&ldquo;añadir los colaboradores a la forja&rdquo;</em>.</p>
+
+<h3 id="utilizando-statsvn">Utilizando StatSVN</h3>
+
+<p><strong>StatSVN es muy sencillo de utilizar</strong>, nos basta con tener la máquina virtual de Java instalada y seguir estos pasos:</p>
+
+<ul>
+<li><p>Descargar la última versión del software <a href="http://www.statsvn.org/downloads.html">aquí</a>. * Obtener la última revisión del proyecto que queramos con <em>svn checkout</em>. * Desde el directorio raíz del repositorio obtenemos el log completo:</p>
+
+<pre><code>svn log -v –xml &gt; logfile.log
+</code></pre></li>
+
+<li><p>Desde el directorio en el que queramos guardar el informe:</p>
+
+<pre><code>java -jar ruta-a-statsvn.jar ruta-a-logfile.log ruta-a-raiz-repo
+</code></pre></li>
+</ul>
+
+<h3 id="evolución-de-las-líneas-de-código">Evolución de las líneas de código</h3>
+
+<p><img src="../../img/wp/loc.png" alt="loc.png" />](<a href="https://saltares.com/docs/iberogre-siontower-statsvn/loc.png">https://saltares.com/docs/iberogre-siontower-statsvn/loc.png</a>)</p>
+
+<p>La gráfica anterior muestra el <strong>número de líneas de código</strong> correspondientes a los ejemplos de IberOgre y al juego Sion Tower en el eje <em>y</em> mientras que en el <em>x</em> aparece el tiempo. Puede observarse un crecimiento bastante lento hasta el 2 de noviembre ya que este periodo lo dediqué sobre todo a planificación y aprendizaje. También trabajé en los primeros artículos de la wiki, que no aparecen reflejados en el repositorio.</p>
+
+<p>A medida que comenzaba el desarrollo de Sion Tower el número de líneas <strong>ha crecido considerablemente</strong>. Los saltos corresponden a pequeñas iteraciones: análisis y diseño de un sistema, implementación, pruebas e integración.</p>
+
+<p>Los resultados parecen bastante positivos, espero seguir manteniendo el ritmo durante los próximos meses.</p>
+
+<h3 id="horas-del-día-y-días-de-la-semana">Horas del día y días de la semana</h3>
+
+<p><img src="../../img/wp/activity_time.png" alt="activity_time.png" /></p>
+
+<p>Esta gráfica muestra las <strong>horas del día</strong> en el eje <em>x</em> mientras que en el <em>y</em> aparece el número de commits. He procurado adquirir el hábito de trabajar en el proyecto por las mañanas, lo que ha provocado un aumento de actividad entorno a las 10:00. No es raro que trabaje por la tarde y puedo decir que el proyecto aún no me ha quitado el sueño.</p>
+
+<p><img src="../../img/wp/activity_day.png" alt="activity_day.png" /></p>
+
+<p>Por su parte, esta gráfica muestra la actividad medida en número de commits (eje <em>y</em>) con respecto a los <strong>días de la semana</strong> (eje <em>x</em>). Entre semana el nivel de actividad es uniforme, aunque parece ser que llego al viernes bastante cansado. Me ha sorprendido el <strong>tremendo pico</strong> de actividad situado en los sábados. Seguramente se deba a que he pasado varios meses del desarrollo trabajando como becario en la Universidad y no tenía demasiado tiempo.</p>
+
+<h3 id="informe-completo">Informe completo</h3>
+
+<p>Eso es todo amigos (por el momento). Los interesados pueden husmear el <a href="https://saltares.com/docs/iberogre-siontower-statsvn">informe completo</a> generado por StatSVN para IberOgre y Sion Tower en el mencionado periodo de tiempo. Dentro de unos meses volveré a generarlo para seguir viendo la evolución del proyecto.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

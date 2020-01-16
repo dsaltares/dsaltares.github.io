@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Sistema de gestión de tareas en Red Iris &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Sistema de gestión de tareas en Red Iris</h1>
+    <span class="post-date">Dec 5, 2010 &middot; <a href="https://saltares.com/blog/games/sistema-de-gestion-de-tareas-en-red-iris/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/gestion-tareas.png" alt="gestion-tareas.png" /></p>
+
+<p><strong>Gestionar de forma eficiente el tiempo que le dedico al proyecto es complicado</strong>. Tras una dura mañana de trabajo, redactar un artículo para IberOgre o programar un módulo de Sion Tower se vuelve una carrera cuesta arriba. Aún así no me ha ido del todo mal hasta el momento, pues la wiki tiene varios artículos publicados y el GDD del videojuego está avanzado. En cualquier caso, espero no ser el único que tenga estos problemas. Al grano, con el objetivo de aumentar mi rendimiento h<strong>e decido utilizar el <a href="https://forja.rediris.es/pm/?group_id=820">sistema de tareas que ofrece la forja de Red Iris</a></strong>.</p>
+
+<h3 id="por-qué-el-sistema-de-red-iris">¿Por qué el sistema de Red Iris?</h3>
+
+<p>Sé que no es el mejor software para administrar y controlar las tareas de un proyecto pero tiene sus ventajas. La primera es su <strong>carácter público</strong>. No tendría sentido trabajar en software libre y mantener las tareas en un fichero privado de mi disco duro. De esta manera los interesados pueden ver en qué se trabaja actualmente y cuáles serán las características o artículos que se harán públicos en el futuro próximo.</p>
+
+<p>Además, cualquier interesado conocerá los puntos flacos y las tareas que se han quedado descolgadas esperando un empujón. Por tanto, creo que es una <strong>buena estrategia para atraer colaboradores</strong> y facilitarles su integración. ¡Aún estoy a la caza de artistas!</p>
+
+<h3 id="organización-de-las-tareas">Organización de las tareas</h3>
+
+<p>Para una mayor claridad, he organizado las tareas de la siguiente forma:</p>
+
+<ul>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1457&amp;group_id=820&amp;func=browse"><strong>Artículos IberOgre</strong></a>: artículos que tengo pensado incluir en la wiki así como los puntos a mejorar en los ya existentes.</li>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1458&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Diseño</strong></a>: tareas de diseño del videojuego.</li>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1661&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Análisis</strong></a>: tareas relacionadas con la fase de análisis del videojuego.</li>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1662&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Sistema de menús</strong></a>: tareas para el sistema de menús. El juego cuenta con muchas pantallas intermedias, por lo que se merece una categoría independiente.</li>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1663&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Juego</strong></a>: tareas relacionadas con la implementación del sistema de juego.</li>
+<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1664&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Arte</strong></a>: tareas relacionadas con el apartado gráfico y sonoro del juego.</li>
+</ul>
+
+<p>De cara al Hackathon que se celebrará en la Universidad de Cádiz para los participantes del V CUSL y otros proyectos, crearé las tareas que necesito. ¡Seguro que será una experiencia que merece la pena!</p>
+
+<p><strong>Espero poder aumentar mi productividad</strong> estableciendo tareas cortas y objetivos realizables a corto plazo. Trabajando poco a poco pero de forma constante conseguiré buenos resultados.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Twigraph, grafos de followers y followings &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Twigraph, grafos de followers y followings</h1>
+    <span class="post-date">Aug 27, 2010 &middot; <a href="https://saltares.com/blog/projects/twigraph-grafos-de-followers-y-followings/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/projects">Projects</a>
+    </span>
+    
+
+<p><img src="../../img/wp/twigraph-logo.png" alt="twigraph-logo.png" /></p>
+
+<p>En un post anterior hablé sobre cómo me introduje en la <strong>programación en Python</strong> con PyGTK y Glade desarrollando <strong><a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">Tiny Backup</a></strong>. Antes que eso ya había experimentado un acercamiento al lenguaje de la serpiente en un ejercicio no extremadamente útil aunque curioso, el resultado fue Twigraph.</p>
+
+<h3 id="twigraph">Twigraph</h3>
+
+<p><strong>Twigraph</strong> es un pequeño script que utiliza un wrapper de la API de Twitter y una biblioteca para trabajar con el lenguaje Dot de <a href="http://www.graphviz.org/">Graphviz</a>. El script toma nuestro usuario y contraseña para producir una imagen PNG con el <strong>grafo de nuestros followings y followers</strong>. Nuestro usuario es el nodo central del cual parten flechas hacia nuestros following Las flechas recibidas corresponden a los followers. No es nada del otro mundo sino una pequeña práctica personal que ha quedado como una mera anécdota.</p>
+
+<p>En un principio <strong>pensé ahondar en la recursividad</strong>, de manera que fuese posible ver qué amigos estaban conectados entre sí. Esta característica es ofrecida por Twitter actualmente pero en el momento de la creación de Twigraph no era así. El problema era el <strong>límite de peticiones</strong> que impone Twitter sobre APIs externas, el número de enlaces crecía exponencialmente y las excepciones saltaban constantemente.[</p>
+
+<p><a href="../../img/wp/twitterfriendgraph.png"><img src="../../img/wp/twitterfriendgraph.png" alt="twitterfriendgraph.png" /></a></p>
+
+<h3 id="python-twitter">Python Twitter</h3>
+
+<p>Hay que reconocer que el nombre de <strong><a href="http://code.google.com/p/python-twitter/">este wrapper de la API de Twitter</a></strong> para Python no es nada original. No obstante es tremendamente sencillo de utilizar y está <strong>bien <a href="http://python-twitter.googlecode.com/hg/doc/twitter.html">documentado</a></strong>. Con este wrapper podemos postear tweets, ver nuestro timeline o comenzar a seguir a otro usuario. En definitiva, tendremos acceso a la inmensa mayoría de las posibilidades de Twitter desde Python y con ejemplos de muchas de ellas.</p>
+
+<h3 id="graphviz-y-pydot">Graphviz y pydot</h3>
+
+<p>Graphviz es un software increíblemente potente para la <strong>generación de gráficas y diagramas</strong> liberado bajo <a href="http://www.graphviz.org/License.php">Commons Public License</a> (CPL). Podemos generarlas en forma de imágenes o en un formato vectorial para incluirlo en cualquier tipo de documentos como LaTeX. Cuenta con una <strong>sintaxis propia llamada dot</strong> con la que se definen los grafos a generar. Una herramienta muy potente de la que sólo conozco la superficie.</p>
+
+<p><strong><a href="http://dkbza.org/pydot.html">Pydot</a> es el wrapper de Graphviz</strong> para Python (aunque existen para multitud de lenguajes). Esta API es un poco más compleja y profunda por lo que puede resultar más difícil utilizarla. No obstante, si sólo deseamos las funciones básicas una ojeada a la <a href="http://dkbza.org/pydot/pydot.html">documentación</a> y a sus ejemplos bastará.</p>
+
+<p>Como siempre, si se quiere aprender un lenguaje o el uso de una API lo mejor es lanzarse a desarrollar un pequeño script o proyecto. Quien tenga curiosidad puede descargar Twigraph aunque aviso que no se trata el éxtasis de la elegancia.</p>
+
+<p>[<strong>Descargar twigraph.py</strong></p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

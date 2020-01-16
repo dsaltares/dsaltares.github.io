@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>Aparición de enemigos y barras de vida &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Aparición de enemigos y barras de vida</h1>
+    <span class="post-date">Jun 4, 2011 &middot; <a href="https://saltares.com/blog/games/aparicion-de-enemigos-y-barras-de-vida/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><img src="../../img/wp/titulo-enemyspawn.jpg" alt="titulo-enemyspawn.jpg" /></p>
+
+<p>Estos días he estado trabajando en la <strong>carga de enemigos</strong> dentro de Sion Tower y en las <strong>barras de vida</strong> que veis sobre sus cabezas. Tras algún que otro comedero de cabeza he acabado con un sistema bastante sencillo y que funciona exactamente como yo quería. En los siguientes párrafos explico cómo están diseñadas la aparición (spawn) de enemigos y las barras de vida para finalizar con un <strong>vídeo del resultado</strong>.</p>
+
+<h3 id="aparición-de-enemigos">Aparición de enemigos</h3>
+
+<p>Como ya he mencionado en varias ocasiones, <strong>Blender será el editor de niveles de Sion Tower</strong>. Desde esta potente herramienta definimos los objetos que componen el escenario, las zonas transitables por el enemigo (malla de navegación) y ahora los puntos y el momento en el que llegan las oleadas de enemigos. Todo esto se consigue gracias al formato de exportación DotScene y a una <strong>convención de nombres</strong>.</p>
+
+<p><strong>De la aparición</strong> o spawn de un enemigo concreto <strong>necesitamos conocer</strong>:</p>
+
+<ul>
+<li>Posición inicial.</li>
+<li>Orientación inicial.</li>
+<li>Tipo de enemigo.</li>
+<li>Momento en el que aparece.</li>
+</ul>
+
+<p><img src="../../img/wp/blender-enemy.jpg" alt="blender-enemy.jpg" /></p>
+
+<p>En Blender utilizamos una pequeñas pirámides horizontales para indicar la aparición de enemigos. Los dos primeros puntos ya los da la propia posición y orientación del objeto mientras que el resto lo conseguimos con el nombre del mismo. Los nombres tienen la estructura <em>&ldquo;enemy.tipo.tiempo&rdquo;</em>. Por ejemplo, un Goblin que aparezca en el segundo 1 se llamaría <em>&ldquo;enemy.goblin.1&rdquo;</em> tal y como podéis ver en la siguiente figura.</p>
+
+<p><img src="../../img/wp/nombre-objeto-blender.png" alt="nombre-objeto-blender.png" /></p>
+
+<p>La clase <em>Level</em> guarda un vector de objetos <em>EnemySpawn</em> que simplemente contienen la información de los cuatro puntos anteriores. El cada iteración de <em>StateGame</em> se consulta si en el momento actual debería aparecer algún enemigo y en caso afirmativo se crea uno con las propiedades adecuadas.</p>
+
+<p>Si colocamos los enemigos en el centro del escenario aparecerán súbitamente (como se muestra en el vídeo). Lo ideal es colocarlos en las puertas y que ellos mismos se desplacen para atacar al protagonista.</p>
+
+<h3 id="barra-de-vida">Barra de vida</h3>
+
+<p><strong>Las barras de vida son <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html">Billboards</a></strong> de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con <strong>una sencilla textura que cuenta con las dos partes</strong> de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.</p>
+
+<p><img src="../../img/wp/barra-de-vida.png" alt="barra-de-vida.png" /></p>
+
+<p>Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase <em>Enemy</em> tenemos los siguientes atributos.</p>
+
+<pre><code>class Enemy: public Actor {
+    ...
+
+    private:
+        Ogre::BillboardSet* _bbSetLife;
+        Ogre::Billboard* _lifeBar;
+        Ogre::SceneNode* _lifeNode;
+};
+</code></pre>
+
+<p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
+
+<pre><code>void Enemy::createLifeBar() {
+    _bbSetLife = _sceneManager-&gt;createBillboardSet();
+    _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
+    _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
+    _lifeBar-&gt;setDimensions(1, 0.1);
+    _lifeBar-&gt;setTexcoordRect(0.0f, 0.0f, 0.5f, 1.0f);
+
+    _lifeNode = _node-&gt;createChildSceneNode();
+
+    _lifeNode-&gt;attachObject(_bbSetLife);
+}
+</code></pre>
+
+<p>El material <em>&ldquo;lifeBar&rdquo;</em> no podía ser más sencillo:</p>
+
+<pre><code>material lifeBar
+{
+	technique
+	{
+		pass
+		{	
+			emissive 0.7 0.7 0.7 1.0
+
+			texture_unit
+			{
+				texture life.png
+			}
+		}
+	}
+}
+</code></pre>
+
+<p>En cada iteración o cuando el enemigo sea herido hemos de llamar a <em>updateLifeBar</em>.</p>
+
+<pre><code>void Enemy::updateLifeBar() {
+    Ogre::Real ratio = _energy / _maxEnergy;
+
+    if (ratio &lt; 0.0f)
+        ratio = 0.0f;
+
+    Ogre::Real u1 = (1.0f - ratio) / 2.0f;
+    Ogre::Real v1 = 0.0f;
+    Ogre::Real u2 = 0.5f + (1.0f - ratio) / 2.0f;
+    Ogre::Real v2 = 1.0f;
+
+    _lifeBar-&gt;setTexcoordRect(u1, v1, u2, v2);
+}
+</code></pre>
+
+<h3 id="vídeo">Vídeo</h3>
+
+<p>En el siguiente vídeo se muestra el sistema de spawn de enemigos junto a sus barras de vida. Todo esto es <em>&ldquo;work in progress&rdquo;</em> y aún queda mucho espacio para la mejora. Se esperan cambios en las animaciones del personaje, añadir efectos de sonido, incluir la IA de los enemigos… Sean comprensivos.</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/Pt3-Xf-n1KA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

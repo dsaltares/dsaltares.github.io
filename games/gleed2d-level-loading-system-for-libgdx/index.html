@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+
+  <title>GLEED2D level loading system for libgdx &middot; David Saltares</title>
+
+  
+  <link rel="stylesheet" href="../../css/poole.css">
+  <link rel="stylesheet" href="../../css/hyde.css">
+  <link rel="stylesheet" href="../../css/poole-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../../css/hyde-x.css">
+  <link rel="stylesheet" href="../../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../touch-icon-144-precomposed.png">
+  <link href="../../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../../"><img src="../../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../../">David Saltares</a></h1>
+      <p class="lead">Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      <a href="https://www.youtube.com/channel/UCw375yUExJOVIEHmvmPFWyg"><i class="fa fa-youtube-square fa-2x"></i></a>
+      <a href="../../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>&copy; 2020 David Saltares.<br/>
+         Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a></p>
+    </div>
+  </div>
+</div>
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">GLEED2D level loading system for libgdx</h1>
+    <span class="post-date">Nov 7, 2012 &middot; <a href="https://saltares.com/blog/games/gleed2d-level-loading-system-for-libgdx/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../../categories/games-development">Games development</a>
+    </span>
+    
+
+<p><span style="color: #ff0000;"><strong>Update</strong></span>: the system had been <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed">moved into the official libgdx repository</a> as an extension but then it was removed. Gleed doesn&rsquo;t support basic features such as relative paths for textures.</p>
+
+<p>I&rdquo;m happy to announce that I&rsquo;ve made my first contribution to a relatively big open source project. I feel honoured to contribute to the brilliant <a href="https://github.com/libgdx/libgdx">libgdx framework</a> with these humble loader and renderer for GLEED2D levels. Hold on, what the hell is that? Please, read on.</p>
+
+<h3 id="about-gleed">About GLEED</h3>
+
+<p><a href="http://gleed2d.codeplex.com/">GLEED2D</a> is a non tiled based open source general purpose level editor. You can place textures and shapes, rotate and scale them. As usual, elements are laid in layers and it is also possible to add custom properties which makes it adequate for all kinds of purposes. Level are saved in an easy to parse XML format. It&rsquo;s based on XNA 3 but XNA 4 and Mono versions are on the works. What&rsquo;s good aboutGLEED2D is that it allows you to create smooth levels in a very nice way. Shapes can be used to define collision areas, triggers and so on.</p>
+
+<p>This means you can set a few rules and conventions of your own and be able to fire up scripts, set the player spawn point and all sorts of level design sweetness.</p>
+
+<p><img src="../../img/wp/gleed-editor.png" alt="gleed-editor.png" /></p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+<li>Full XML GLEED2D spec: layers, custom properties, textures, shapes (circle, rectangle, polygon), visibility, color tints…</li>
+<li>Transforms: object positioning, rotation and scaling.</li>
+<li>LevelRenderer class with frustum culling</li>
+<li>AssetManager integration through the LevelLoader class</li>
+<li>Use multiple Texture files or a single TextureAtlas for performance gain.</li>
+</ul>
+
+<h3 id="possible-improvements">Possible improvements</h3>
+
+<ul>
+<li>Make the renderer use a SpriteCache (tricky due to texture rotation)</li>
+<li>Create a JSON exporter and loader for performance gain</li>
+<li>Load levels without using the AssetManager? Some people don&rsquo;t use it but they really should since levels tend to be heavy to load</li>
+<li>Suggest more!</li>
+</ul>
+
+<p><img src="../../img/wp/gleed-level-ingame.jpg" alt="gleed-level-ingame.jpg" /></p>
+
+<h3 id="usage">Usage</h3>
+
+<p>When creating the level you need to specify the textures root folder or atlas file as a top level custom property:</p>
+
+<ul>
+<li>If using individual textures create the &ldquo;assetRoot&rdquo; property</li>
+
+<li><p>If using an atlas create the &ldquo;atlas&rdquo; property</p>
+
+<pre><code>// Set loader in the Asset manager
+m_assetManager.setLoader(Level.class, new LevelLoader(new InternalFileHandleResolver()));
+
+...
+
+// Tell the manager to load the level
+m_assetManager.load(&quot;data/braidtest.xml&quot;, Level.class);
+
+...
+
+// When it's ready, fetch the level and create renderer
+m_level = m_assetManager.get(&quot;data/braidtest.xml&quot;, Level.class);
+m_levelRenderer = new LevelRenderer(m_level, null, Game.mpp);
+
+...
+
+// Render all layers
+m_levelRenderer.render(m_camera);
+</code></pre></li>
+</ul>
+
+<p>However, if you get lost, there are Javadoc comments <a href="https://github.com/dsaltares/sionengine/tree/master/sionengine/src/com/siondream/engine/gleed">everywhere in the code</a>.</p>
+
+<h3 id="where-do-i-get-it">Where do I get it?</h3>
+
+<p>It should be soon in the <a href="libgdx.badlogicgames.com/nightlies/">libgdx nightly builds</a> but if you&rdquo;re really eager to use it and can&rsquo;t wait any longer (seriously?) you can go to the libgdx repository and find it in the <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed">extensions section</a>. Remember to leave some feedback of any flavour: rotten tomatoes, rocks and so on and so forth.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<script src="../../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
+

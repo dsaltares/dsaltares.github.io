@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Games on David Saltares</title>
+    <link>https://saltares.com/blog/games/</link>
+    <description>Recent content in Games on David Saltares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Sat, 03 Aug 2013 17:11:10 +0000</lastBuildDate>
+    
+	<atom:link href="https://saltares.com/blog/games/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Math Maze</title>
+      <link>https://saltares.com/blog/games/math-maze/</link>
+      <pubDate>Sat, 03 Aug 2013 17:11:10 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/math-maze/</guid>
+      <description>Is your head agile enough to succeed at this math based brain teaser game? Reach the exit of the labyrinth as fast as you can by using operations that will open the conditional blockages. Freshen up your mental calculus without even realising!
+  Role: designer, coder and artist Year: 2013 Development time: 5 months (after work!) Technology: Java language using libgdx Links: Google Play, Facebook, pressKit  Trailer   Screenshots    Math maze 01</description>
+    </item>
+    
+    <item>
+      <title>Freegemas Libgdx</title>
+      <link>https://saltares.com/blog/games/freegemas-for-android-and-html5/</link>
+      <pubDate>Thu, 19 Apr 2012 21:57:20 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/freegemas-for-android-and-html5/</guid>
+      <description>Fregemas libgdx is a Java port of the original game developed by José Tomás Tocino. It’s a simple but addictive puzzle game where the player has to swap gems to make groups of three or more adjacent ones.
+ Role: port programmer, UI redesign Year: 2012 Development time: 2 weeks Technology: Java language using libgdx Download: Freegemas desktop, Freegemas Android, source code Original version  Screenshots    Freegemas 01</description>
+    </item>
+    
+    <item>
+      <title>Urban Race</title>
+      <link>https://saltares.com/blog/games/urban-race/</link>
+      <pubDate>Wed, 28 Dec 2011 19:38:45 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/urban-race/</guid>
+      <description>Urban Race is an open source 3D time attack racing game for Windows. It was a university project for which I had to learn both C# and XNA.
+ Role: game designer, artist and sole programmer. Year: 2011 Development time: 1 month Technology: C# language using XNA Game Studio 4.0 Download: Urban Race 1.0, source code  Screenshots    Urbanrace 1
+      Urbanrace 2</description>
+    </item>
+    
+    <item>
+      <title>Sion Tower</title>
+      <link>https://saltares.com/blog/games/sion-tower/</link>
+      <pubDate>Sat, 02 Apr 2011 22:46:28 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/sion-tower/</guid>
+      <description>Open source multiplatform tactical action 3D game in which the player controls a young magician who has to defend the Sacred Tower from an enemy invasion.
+It was my final degree project and it won the V Open Source University Contest, a national competition in Spain between university students.
+ Role: project leader, game designer, sole programmer and level designer. Year: 2011 Development time: 6 months Team: 1 3D artist, 1 2D artist, 2 musicians and 1 sfx artist Technology: C++ language using Ogre3D, OIS, MyGUI and SDL Download: source code.</description>
+    </item>
+    
+    <item>
+      <title>IberOgre</title>
+      <link>https://saltares.com/blog/games/iberogre/</link>
+      <pubDate>Sun, 03 Oct 2010 19:44:06 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/iberogre/</guid>
+      <description>Ogre 3D games programming wiki in Spanish language. It was part of my final degree project with Sion Tower.
+ Role: designer, writer and samples programmer Year: 2011 Development time: 6 months Technology: C++ language using Ogre3D and Mediawiki engine Sample Code: GitHub  Features  Geometry and math articles. Ogre articles. Complementary technology articles: OIS, Blender, Bullet. Samples of increasing complexity discussed in detail. Use of open source tools.</description>
+    </item>
+    
+    <item>
+      <title>Granny&#39;s Bloodbath</title>
+      <link>https://saltares.com/blog/games/grannys-bloodbath/</link>
+      <pubDate>Wed, 07 Jul 2010 19:31:12 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/grannys-bloodbath/</guid>
+      <description>Open source side scrolling platform action game in which the player controls a peaceful grandma who gets really angry when a horde of zombies disturbs her. It’s a university project developed in a team of three.
+ Role: game designer, lead programmer, 2D artist and level designer Year: 2010 Development time: 3 months Team: 2 additional programmers Technology: C++ language using SDL Download: Granny’s Bloodbath 0.5 (Windows), Granny’s Bloodbath 0.</description>
+    </item>
+    
+    <item>
+      <title>Air Force Pilot</title>
+      <link>https://saltares.com/blog/games/air-force-pilot/</link>
+      <pubDate>Wed, 07 Jul 2010 19:25:36 +0000</pubDate>
+      
+      <guid>https://saltares.com/blog/games/air-force-pilot/</guid>
+      <description>Top view 2D plane shooter in which the player controls a fighter who has to knock down enemy planes in the level. It was my first game and it was finalist in an open source contest in Cádiz University (Spain).
+ Role: game designer, sole programmer and artist Year: 2009 Development time: 2 months Technology: C++ language using SDL Download: source code  Screenshots    Airforcepilot 1</description>
+    </item>
+    
+  </channel>
+</rss>
