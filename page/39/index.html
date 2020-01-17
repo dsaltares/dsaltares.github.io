@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -110,64 +111,40 @@
       </span>
       
       
-
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/6hoiOkAX8V8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/6hoiOkAX8V8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p><strong><a href="http://code.google.com/p/gource/">Gource</a> es una herramienta para la visualización de la evolución de un proyecto</strong> a partir del log de su sistema de control de versiones. Gource es mucho más visual que <a href="../../proyectos/pfc/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/ &quot;StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011">StatSVN</a>&rdquo;) ya que <strong>utiliza <a href="http://es.wikipedia.org/wiki/OpenGL">OpenGL</a> para renderizar de forma atractiva</strong> el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</p>
-
+<p><strong><a href="http://code.google.com/p/gource/">Gource</a> es una herramienta para la visualización de la evolución de un proyecto</strong> a partir del log de su sistema de control de versiones. Gource es mucho más visual que <a href="../../proyectos/pfc/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/" title="StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)">StatSVN</a> ya que <strong>utiliza <a href="http://es.wikipedia.org/wiki/OpenGL">OpenGL</a> para renderizar de forma atractiva</strong> el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</p>
 <h3 id="un-poco-de-reflexión">Un poco de reflexión</h3>
-
 <p>En el vídeo <strong>se aprecia perfectamente las dos partes diferenciadas del proyecto</strong>: <a href="../../category/proyectos/pfc/iberogre-wiki/">IberOgre</a> (derecha) y <a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> (izquierda). Como mencioné en el informe de StatSVN, vemos que al comienzo el ritmo de trabajo era muy bajo. Comencé por el documento de diseño del juego y algunos artículos de la wiki (no reflejados por Gource). Más adelante <strong>la situación mejoró</strong> con los ejemplos para IberOgre y la explosión de trabajo en Sion Tower a partir de enero.</p>
-
 <p>Me atrevo a decir que <strong>la evolución es favorable</strong> y trataré de que permanezca así durante los próximos meses.</p>
-
 <h3 id="compilando-e-instalando-gource-en-linux">Compilando e instalando Gource en Linux</h3>
-
 <p>La versión de Gource que se encuentra en los repositorios de Ubuntu es bastante arcaica por lo que la mejor opción es descargarlo, compilarlo e instalarlo.</p>
-
 <ul>
 <li>Descargamos <a href="http://code.google.com/p/gource/downloads/list">la última versión de Google Code</a>.</li>
 <li>Descomprimimos el paquete y accedemos al directorio desde la terminal.</li>
-
-<li><p>Instalamos las dependencias:</p>
-
-<pre><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
-</code></pre></li>
-
-<li><p>Configuramos y comprobamos que todo esta correcto:</p>
-
-<pre><code>./configure
-</code></pre></li>
-
-<li><p>Compilamos:</p>
-
-<pre><code>make
-</code></pre></li>
-
-<li><p>Instalamos:</p>
-
-<pre><code>sudo make install
-</code></pre></li>
+<li>Instalamos las dependencias:</li>
 </ul>
-
-<h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
-
+<pre><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
+</code></pre><ul>
+<li>Configuramos y comprobamos que todo esta correcto:</li>
+</ul>
+<pre><code>./configure
+</code></pre><ul>
+<li>Compilamos:</li>
+</ul>
+<pre><code>make
+</code></pre><ul>
+<li>Instalamos:</li>
+</ul>
+<pre><code>sudo make install
+</code></pre><h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
 <p>Gource se dedica a mostrar en una ventana la evolución del proyecto pero <strong>no guarda un vídeo</strong> del resultado. Para conseguirlo <strong>podemos hacer uso de <a href="http://es.wikipedia.org/wiki/FFmpeg">ffmpeg</a></strong>, la solución libre para trabajar con audio y/o vídeo. Instalamos ffmpeg en sistemas basados en Debian con el clásico comando:</p>
-
 <pre><code>sudo apt-get install ffmpeg
-</code></pre>
-
-<p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
-
+</code></pre><p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
 <pre><code>gource --seconds-per-day 1 --stop-at-end -1280x720 -o - | ffmpeg -y -f image2pipe -vcodec ppm -i - -vcodec libx264 -vpre slow -threads 4 gource.mp4
-</code></pre>
-
-<p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
-
+</code></pre><p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
 <ul>
 <li>–seconds-per-day: número de segundos de vídeo por cada día en la evolución del proyecto.</li>
 <li>–stop-at-end: cierra Gource cuando hayamos llegado al punto actual del proyecto.</li>
@@ -188,52 +165,30 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/statsvn-iberogre-siontower.png" alt="statsvn-iberogre-siontower.png" /></p>
-
+      <p><img src="../../img/wp/statsvn-iberogre-siontower.png" alt="statsvn-iberogre-siontower.png"></p>
 <p><strong><a href="http://www.statsvn.org/">StatSVN</a></strong> es una herramienta que <strong>recopila información de un repositorio Subversion y genera un informe</strong> en HTML describiendo su desarrollo. Como veremos, es posible obtener una gran cantidad de datos relevantes que desvelan los hábitos de los miembros de un equipo y en qué medida ha contribuido cada uno. ¿Quieres conocer cómo se ha trabajado en el proyecto estos meses?</p>
-
 <p>En el informe sólo se refleja mi actividad ya que los artistas que están colaborando con el proyecto no están dados de alta en la forja. Nota para mí mismo: <em>&ldquo;añadir los colaboradores a la forja&rdquo;</em>.</p>
-
 <h3 id="utilizando-statsvn">Utilizando StatSVN</h3>
-
 <p><strong>StatSVN es muy sencillo de utilizar</strong>, nos basta con tener la máquina virtual de Java instalada y seguir estos pasos:</p>
-
 <ul>
-<li><p>Descargar la última versión del software <a href="http://www.statsvn.org/downloads.html">aquí</a>. * Obtener la última revisión del proyecto que queramos con <em>svn checkout</em>. * Desde el directorio raíz del repositorio obtenemos el log completo:</p>
-
-<pre><code>svn log -v –xml &gt; logfile.log
-</code></pre></li>
-
-<li><p>Desde el directorio en el que queramos guardar el informe:</p>
-
-<pre><code>java -jar ruta-a-statsvn.jar ruta-a-logfile.log ruta-a-raiz-repo
-</code></pre></li>
+<li>Descargar la última versión del software <a href="http://www.statsvn.org/downloads.html">aquí</a>. * Obtener la última revisión del proyecto que queramos con <em>svn checkout</em>. * Desde el directorio raíz del repositorio obtenemos el log completo:</li>
 </ul>
-
-<h3 id="evolución-de-las-líneas-de-código">Evolución de las líneas de código</h3>
-
-<p><img src="../../img/wp/loc.png" alt="loc.png" />](<a href="https://saltares.com/docs/iberogre-siontower-statsvn/loc.png">https://saltares.com/docs/iberogre-siontower-statsvn/loc.png</a>)</p>
-
+<pre><code>svn log -v –xml &gt; logfile.log
+</code></pre><ul>
+<li>Desde el directorio en el que queramos guardar el informe:</li>
+</ul>
+<pre><code>java -jar ruta-a-statsvn.jar ruta-a-logfile.log ruta-a-raiz-repo
+</code></pre><h3 id="evolución-de-las-líneas-de-código">Evolución de las líneas de código</h3>
+<p><img src="../../img/wp/loc.png" alt="loc.png">](<a href="https://saltares.com/docs/iberogre-siontower-statsvn/loc.png">https://saltares.com/docs/iberogre-siontower-statsvn/loc.png</a>)</p>
 <p>La gráfica anterior muestra el <strong>número de líneas de código</strong> correspondientes a los ejemplos de IberOgre y al juego Sion Tower en el eje <em>y</em> mientras que en el <em>x</em> aparece el tiempo. Puede observarse un crecimiento bastante lento hasta el 2 de noviembre ya que este periodo lo dediqué sobre todo a planificación y aprendizaje. También trabajé en los primeros artículos de la wiki, que no aparecen reflejados en el repositorio.</p>
-
 <p>A medida que comenzaba el desarrollo de Sion Tower el número de líneas <strong>ha crecido considerablemente</strong>. Los saltos corresponden a pequeñas iteraciones: análisis y diseño de un sistema, implementación, pruebas e integración.</p>
-
 <p>Los resultados parecen bastante positivos, espero seguir manteniendo el ritmo durante los próximos meses.</p>
-
 <h3 id="horas-del-día-y-días-de-la-semana">Horas del día y días de la semana</h3>
-
-<p><img src="../../img/wp/activity_time.png" alt="activity_time.png" /></p>
-
+<p><img src="../../img/wp/activity_time.png" alt="activity_time.png"></p>
 <p>Esta gráfica muestra las <strong>horas del día</strong> en el eje <em>x</em> mientras que en el <em>y</em> aparece el número de commits. He procurado adquirir el hábito de trabajar en el proyecto por las mañanas, lo que ha provocado un aumento de actividad entorno a las 10:00. No es raro que trabaje por la tarde y puedo decir que el proyecto aún no me ha quitado el sueño.</p>
-
-<p><img src="../../img/wp/activity_day.png" alt="activity_day.png" /></p>
-
+<p><img src="../../img/wp/activity_day.png" alt="activity_day.png"></p>
 <p>Por su parte, esta gráfica muestra la actividad medida en número de commits (eje <em>y</em>) con respecto a los <strong>días de la semana</strong> (eje <em>x</em>). Entre semana el nivel de actividad es uniforme, aunque parece ser que llego al viernes bastante cansado. Me ha sorprendido el <strong>tremendo pico</strong> de actividad situado en los sábados. Seguramente se deba a que he pasado varios meses del desarrollo trabajando como becario en la Universidad y no tenía demasiado tiempo.</p>
-
 <h3 id="informe-completo">Informe completo</h3>
-
 <p>Eso es todo amigos (por el momento). Los interesados pueden husmear el <a href="https://saltares.com/docs/iberogre-siontower-statsvn">informe completo</a> generado por StatSVN para IberOgre y Sion Tower en el mencionado periodo de tiempo. Dentro de unos meses volveré a generarlo para seguir viendo la evolución del proyecto.</p>
 
       
@@ -249,51 +204,32 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/taller-blender-y-gosu-advuca.png" alt="taller-blender-y-gosu-advuca.png" /></p>
-
+      <p><img src="../../img/wp/taller-blender-y-gosu-advuca.png" alt="taller-blender-y-gosu-advuca.png"></p>
 <p>Con motivo de la <a href="http://osl.uca.es/node/1157">Quincena de la Ingeniería</a> en la Escuela Superior de Ingeniería de Cádiz <strong>en la <a href="http://advuca.com/blog/talleres/talleres-blender-y-gosu-en-marzo/">ADVUCA</a> estamos organizando talleres y conferencias</strong> relacionados con el desarrollo de videojuegos. Los alumnos de la Universidad y de cualquier procedencia pueden disfrutar de una conferencia sobre <strong>Blender</strong> y un taller práctico de <strong>Gosu</strong>, todos los detalles a continuación.</p>
-
 <h3 id="diseño-3d-con-blender">Diseño 3D con Blender</h3>
-
-<p><img src="../../img/wp/blender-300x88.jpg" alt="blender.jpeg" /></p>
-
+<p><img src="../../img/wp/blender-300x88.jpg" alt="blender.jpeg"></p>
 <ul>
 <li>21 de marzo de 2011 de 17:00 a 19:00</li>
 </ul>
-
 <p><strong><a href="http://www.blender.org/">Blender</a> es una herramienta libre de modelado y animación en tres dimensiones</strong>. Se ha utilizado en decenas de <a href="http://blender-games.com/">videojuegos</a> y cortos de animación como <a href="http://www.bigbuckbunny.org/">Big Buck Bunny</a> o <a href="http://www.sintel.org/">Sintel</a>. Además, integra un completo motor llamado <a href="http://www.blender.org/education-help/tutorials/game-engine/">Blender Game Engine</a> el cual emplea Python como lenguaje de scripting.</p>
-
-<p><img src="../../img/wp/sintel.jpg" alt="sintel.jpg" /></p>
-
+<p><img src="../../img/wp/sintel.jpg" alt="sintel.jpg"></p>
 <p>La conferencia la ofrecerá <strong><a href="http://www.inf-cr.uclm.es/www/cglez/">Carlos Morcillo</a></strong>, profesor en la Universidad de Castilla La-Mancha y miembro de la Blender Foundation. Es todo un experto en la herramienta y ha publicado libros como <em><a href="http://www.inf-cr.uclm.es/www/cglez/downloads/blender/24hBlenderYafray.pdf">&ldquo;Aprende Blender en 24 horas&rdquo;</a></em> el cual me vino estupendamente para Sion Tower.</p>
-
 <h3 id="desarrollo-de-videojuegos-en-c-con-gosu">Desarrollo de videojuegos en C++ con Gosu</h3>
-
-<p><img src="../../img/wp/gosu.png" alt="gosu.png" /></p>
-
+<p><img src="../../img/wp/gosu.png" alt="gosu.png"></p>
 <ul>
 <li>24 de marzo de 2011 de 18:00 a 21:00</li>
 </ul>
-
 <p><strong><a href="http://libgosu.org/">Gosu</a> es una biblioteca</strong> libre para el desarrollo de <strong>videojuegos en 2D utilizando C++</strong> o Ruby. Emplea OpenGL internamente por lo que cuenta con aceleración por hardware. Además es compatible con Windows, GNU/Linux, iOS y Mac. Al ser orientada a objetos, su curva de aprendizaje es considerablemente más suave que la de la clásica <a href="http://www.libsdl.org/">SDL</a>. Definitivamente es lo mejorcito que existe ahora mismo en 2D (open source).</p>
 
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/DonQd48B9AU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/DonQd48B9AU" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
 <p>El taller corre a cargo del compañero <strong><a href="http://www.josetomastocino.com/">José Tomás Tocino</a></strong> el cual ha desarrollado varios juegos con esta biblioteca (<a href="http://oflute.wordpress.com/">oFlute</a> y <a href="http://code.google.com/p/freegemas/">Freegemas</a>). Por si fuera poco, ha publicado una serie de tres artículos al respecto en la edición española de <a href="http://www.linux-magazine.es/issue/66">Linux Magazine</a>.</p>
-
 <h3 id="ponentes-de-lujo-en-la-advuca">Ponentes de lujo en la ADVUCA</h3>
-
 <p>En la ADVUCA no podemos estar más <strong>contentos e ilusionados</strong> con estos talleres y sus ponentes. En cualquier otro sitio suelen cobrar las matrículas a un precio elevado mientras que nosotros los ofrecemos completamente gratis. No cabe duda de que la temática es de lo más interesante y todos aprenderemos mucho la semana que viene.</p>
-
 <p><strong>¡Ya os contaré como han ido!</strong></p>
-
-<p><img src="../../img/wp/taller-blender-y-gosu-cartel-212x300.jpg" alt="taller-blender-y-gosu-cartel-212x300.jpg" /></p>
+<p><img src="../../img/wp/taller-blender-y-gosu-cartel-212x300.jpg" alt="taller-blender-y-gosu-cartel-212x300.jpg"></p>
 
       
     </div>
@@ -308,20 +244,12 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/bso-exclusiva.png" alt="bso-exclusiva.png" /></p>
-
+      <p><img src="../../img/wp/bso-exclusiva.png" alt="bso-exclusiva.png"></p>
 <p>Cuando me propuse buscar colaboradores para el proyecto no me esperaba tener una acogida tan buena. Hace unas semanas, <strong>Antonio Caro Oca</strong> (<a href="http://twitter.com/#!/Hempfreud">@Hempfreud</a>) contactó conmigo <a href="http://twitter.com/#!/Hempfreud/status/38933531031908352">vía Twitter</a> ofreciéndose junto a <strong>Daniel Pellicer García</strong> (<a href="http://twitter.com/#!/Danpelgar">@Danpelgar</a>) para componer la música de algún juego que desarrollase. Mis ojos se abrieron como platos rápidamente, ¡música expresamente compuesta para Sion Tower! Hoy os muestro los primeros resultados.</p>
-
 <p>Antonio Caro y Daniel Pellicer solían componer y editar piezas para juegos imaginarios y se han mostrado muy entusiasmados por ver reflejado su trabajo en un producto tangible. Tengo que decirles que el placer es totalmente mío, <strong>es un gustazo trabajar con gente tan profesional</strong> y con capacidad para adaptarse a las circunstancias. Han hecho un encomiable esfuerzo a la hora de entregar los primeros resultados antes de la fase local del CUSL. <strong>Partieron de las descripciones del documento de diseño</strong> (de nuevo queda patente su importancia) y fuimos comentando el estilo que debía tener la música. Con cada prueba que me mandaban íbamos opinando y en pocos días tenían los cambios listos.</p>
-
 <p>Con esta banda sonora <strong>están haciendo que Sion Tower crezca muchísimo</strong>. A continuación tenéis una versión prácticamente acabada (aunque sujeta a cambios) de la canción que sonará durante las partidas. Toda la banda sonora está sujeta a una <strong>licencia <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons by-nc-sa</a></strong> (atribución, no comercial, compartir igual).</p>
-
-<p><audio controls>
-    <source src='../../audio/Sion-Tower-partida.mp3' />
-</audio></p>
-
+<!-- raw HTML omitted -->
 <p>Además de esta pista, <strong>están decididos a seguir trabajando</strong> con melodías para los menús y otras canciones para distintos niveles. Un lujo impagable.</p>
-
 <p><strong>¡Muchísimas gracias!</strong></p>
 
       
@@ -338,13 +266,9 @@
       </span>
       
       <p>La aparición de IberOgre en la web oficial de Ogre ya ha dado sus frutos y es que un usuario del foro no tardó en contactar conmigo para ofrecerme su colaboración. <strong>Mario Velázquez Muñoz</strong> nos ha proporcionado amablemente una <strong><a href="http://osl2.uca.es/iberogre/images/6/62/Manual-ogre3d.pdf">traducción completa del manual oficial de Ogre3D</a> liberada bajo la <a href="http://www.gnu.org/licenses/fdl.html">Free Documentation License</a></strong>.</p>
-
 <p>Mario Velázquez es estudiante de Ingeniería Informática en la Universidad Carlos III de Madrid. Actualmente está terminando su PFC, un juego de skate llamado DHSkate del cual podéis ver un vídeo más abajo. Desde aquí quiero darle la <strong>enhorabuena por el magnífico trabajo</strong> de documentación que acompaña a su juego, si no obtiene matrícula de honor estaríamos ante una imperdonable injusticia. Como no podía ser de otra forma, <strong>le agradezco infinitamente su envidiable afán colaborativo</strong>. Es inspirador que no haya dudado poner a disposición de la comunidad el trabajo que ha desarrollado con tremendo esfuerzo.</p>
-
 <p><strong>El manual oficial de Ogre es un complemento excelente</strong> para los artículos de la wiki. Mientras que los tutoriales toman una aproximación didáctica, el manual sirve como documento de consulta avanzado. Estoy convencido de que esta aportación la agradecerán muchísimos usuarios. La versión original (en inglés) está disponible <a href="http://www.ogre3d.org/docs/manual/">aquí</a>.</p>
-
 <p>En <strong>DHSkate</strong> el jugador debe descender una pendiente en el menor tiempo posible. Está desarrollado en C++ utilizando varias bibliotecas que complementan a Ogre como <a href="http://newtondynamics.com/forum/newton.php">Newton</a> (física), <a href="http://www.ogre3d.org/tikiwiki/MyGUI">MyGUI</a> (interfaz de usuario), cAudio (efectos y música) y <a href="http://sourceforge.net/projects/ogre-ccs/">CSS</a> (control de la cámara). En breves lo publicará en SourceForge.</p>
-
 <p>No dejo de sorprenderme la cantidad de gente con voluntad de colaborar en IberOgre y Sion Tower. <strong>¡Muchas gracias a todos!</strong></p>
 
       
@@ -387,8 +311,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

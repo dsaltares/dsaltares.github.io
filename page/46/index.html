@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,59 +110,34 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p>Para poder trabajar en una <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">wiki</a> sobre el engine de renderizado Ogre3D <strong>he tenido que aprender a utilizar la biblioteca en algún sitio</strong>. Estos conocimientos también son indispensables para el desarrollo de <a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a>. Lo cierto es que debería poner un <strong>disclaimer</strong> como una casa advirtiendo mi escasa experiencia porque aún estoy aprendiendo. En cualquier caso, en este artículo <strong>enumero las fuentes</strong> que he utilizado acompañadas de las razones por las que me han sido útiles. ¿Quién sabe? Puede que alguien conozca una fuente nueva.</p>
-
+      <p>Para poder trabajar en una <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">wiki</a> sobre el engine de renderizado Ogre3D <strong>he tenido que aprender a utilizar la biblioteca en algún sitio</strong>. Estos conocimientos también son indispensables para el desarrollo de <a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a>. Lo cierto es que debería poner un <strong>disclaimer</strong> como una casa advirtiendo mi escasa experiencia porque aún estoy aprendiendo. En cualquier caso, en este artículo <strong>enumero las fuentes</strong> que he utilizado acompañadas de las razones por las que me han sido útiles. ¿Quién sabe? Puede que alguien conozca una fuente nueva.</p>
 <p>Por supuesto, todo el contenido (texto, diagramas, ejemplos) de IberOgre es original y libre, no está copiado de ningún sitio. No obstante, es lógico que haya aprendido de otras publicaciones. ¿Cómo si no?</p>
-
-<p><img src="../../img/wp/ogre-wiki.png" alt="ogre-wiki.png" /></p>
-
+<p><img src="../../img/wp/ogre-wiki.png" alt="ogre-wiki.png"></p>
 <h3 id="wiki-oficial-de-ogre3d">Wiki oficial de Ogre3D</h3>
-
 <p><strong>La fuente más evidente de todas</strong>, su amplísimo catálogo de artículos, tutoriales y referencias le otorgan un valor indiscutible. Lógicamente, es la web que más consulto para escribir IberOgre y desarrollar Sion Tower. No sólo se puede aprender a manejar el engine de renderizado sino que entre sus páginas se encuentran las claves para componer un flujo de trabajo decente.</p>
-
 <p>No obstante, hay que reconocer que <strong>no es oro todo lo que reluce</strong>, la <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php">wiki</a> tiene ciertos puntos negros que no me acaban de agradar. Para empezar, se le da demasiado soporte al desarrollo en Windows con IDEs como Microsoft Visual Studio. Se echa de menos soporte para herramientas y Sistemas Operativos libres, cosa que trato de suplir en IberOgre. El hecho de querer entrar en materia hace que explique las bases de Ogre más tarde de lo que debiera. Siempre se hereda de <em>BaseApplication</em>, clase encargada de inicializar las bibliotecas pero no se nos explica su funcionamiento hasta el sexto tutorial.</p>
-
 <p>A continuación, enumero las zonas de la wiki que me han sido de mayor utilidad:</p>
-
 <ul>
 <li><a href="http://www.ogre3d.org/tikiwiki/Tutorials">Tutoriales</a></li>
 <li><a href="http://www.ogre3d.org/tikiwiki/Snippets">Fragmentos de código</a></li>
 <li><a href="http://www.ogre3d.org/tikiwiki/Assembling+a+production+pipeline">Herramientas de creación de contenido y exportadores</a></li>
 <li><a href="http://www.ogre3d.org/tikiwiki/Ogre+Lexicon">Léxico</a></li>
 </ul>
-
 <p>Por supuesto, no se me podían olvidar ni el <a href="http://www.ogre3d.org/forums/">foro</a> (con sabios usuarios dispuestos a ayudar) ni la <a href="http://www.ogre3d.org/docs/api/html/">documentación online</a>.</p>
-
 <h3 id="pro-ogre-3d-programming">Pro OGRE 3D Programming</h3>
-
-<p><img src="../../img/wp/pro-ogre-3d-programming-221x300.jpg" alt="pro-ogre-3d-programming.jpg" /></p>
-
+<p><img src="../../img/wp/pro-ogre-3d-programming-221x300.jpg" alt="pro-ogre-3d-programming.jpg"></p>
 <p><a href="http://www.amazon.com/Pro-OGRE-Programming-Gregory-Junker/dp/1590597109">Pro OGRE 3D Programming</a> <strong>era el único libro</strong> sobre Ogre hasta hace muy poco. No es precisamente barato (~$45) pero <strong>nos ayuda a comprender el funcionamiento del motor</strong> bastante bien. Cubre prácticamente la totalidad de los apartados con nivel de detalle aceptable. El mayor problema con el que me he topado a la hora de trabajar con Ogre es el gran número de formas de abordar un mismo problema. No sabía qué ventajas e inconvenientes conllevaba cada alternativa y este libro me ha ayudado a aclararme las ideas.</p>
-
 <p>Diría que es un buen complemento a la ligereza de los tutoriales de la wiki oficial. No obstante, la <strong>escasez de ejemplos</strong> es importante. No hay mejor manera de entender conceptos complejos que con una sesión práctica. No sólo escasean los ejemplos sino que éstos son de juguete. A pesar de todo sigo diciendo que es una buena referencia complementaria.</p>
-
-<h3 id="ogre-3d-1-7-beginner-s-guide">OGRE 3D 1.7 Beginner&rsquo;s Guide</h3>
-
-<p><img src="../../img/wp/ogre-3d-beginners-guide-233x300.jpg" alt="ogre-3d-beginners-guide.jpeg" /></p>
-
-<p>Recientemente se ha puesto a la venta <strong>el segundo libro</strong> de nuestro motor favorito, <a href="https://www.packtpub.com/ogre-3d-1-7-beginners-guide-for-real-time-3d-applications/book">OGRE 3D 1.7 Beginner&rsquo;s Guide</a>. Es una obra más económica (35€) que se aproxima al estilo de trabajo de la wiki oficial (<em>BaseApplication</em>). Su principal ventaja es la <strong>gran cantidad de ejemplos</strong> que incluye, siempre muy visuales. Tiene un flujo de trabajo muy atractivo: enunciado del problema, exposición de la técnica con un caso práctico, muestra de resultados y explicación sobre lo que se acaba de hacer.</p>
-
+<h3 id="ogre-3d-17-beginners-guide">OGRE 3D 1.7 Beginner's Guide</h3>
+<p><img src="../../img/wp/ogre-3d-beginners-guide-233x300.jpg" alt="ogre-3d-beginners-guide.jpeg"></p>
+<p>Recientemente se ha puesto a la venta <strong>el segundo libro</strong> de nuestro motor favorito, <a href="https://www.packtpub.com/ogre-3d-1-7-beginners-guide-for-real-time-3d-applications/book">OGRE 3D 1.7 Beginner's Guide</a>. Es una obra más económica (35€) que se aproxima al estilo de trabajo de la wiki oficial (<em>BaseApplication</em>). Su principal ventaja es la <strong>gran cantidad de ejemplos</strong> que incluye, siempre muy visuales. Tiene un flujo de trabajo muy atractivo: enunciado del problema, exposición de la técnica con un caso práctico, muestra de resultados y explicación sobre lo que se acaba de hacer.</p>
 <p>Sufre del problema de <strong>dejar el fundamento de Ogre para los últimos compases</strong> pero es una buena guía de iniciación para la siempre dolorosa toma de contacto. Ayuda a ver las cosas con más cercanía y puede proporcionar la confianza necesaria para seguir.</p>
-
 <h3 id="game-engine-architecture">Game Engine Architecture</h3>
-
-<p><img src="../../img/wp/game-engine-architecture-243x300.jpg" alt="game-engine-architecture.jpg" /></p>
-
+<p><img src="../../img/wp/game-engine-architecture-243x300.jpg" alt="game-engine-architecture.jpg"></p>
 <p><a href="http://www.amazon.com/Game-Engine-Architecture-Jason-Gregory/dp/1568814135">Game Engine Architecture</a> es un libro de los que hacen daño al transportarlo en la mochila pero me tiene completamente fascinado. Es u<strong>n viaje por todos los subsistemas</strong> que componen un motor para un videojuego más o menos genérico. Abarca desde el más bajo de los niveles hasta el más alto y considera todas las plataformas (PC y consolas). Temas como la gestión de memoria, el subsistema de colisiones, el renderizado o la animación tienen apartados dedicados. Su elevado precio (~$60) hace que nos lo pensemos dos veces pero merece la pena.</p>
-
 <p>Es <strong>tan complejo como extenso</strong> y no lo recomiendo para alguien que esté empezando. La ventaja es que no se anda con memeces y directamente pone ejemplos de código perteneciente a videojuegos triple A como Quake o Uncharted. Admito que no ofrece demasiados detalles dentro de cada apartado pero es suficiente para comprender las distintas técnicas a la hora de resolver un problema.</p>
-
 <h3 id="vuelta-a-trabajar">Vuelta a trabajar</h3>
-
 <p>Aprovecho para comentar que <strong>he abierto una <a href="http://www.delicious.com/david.saltares">cuenta de Delicious</a></strong> para compartir principalmente enlaces sobre desarrollo de videojuegos que vaya encontrando por la red.</p>
-
 <p>Bueno, <strong>dejemos la charla</strong> para volver al desarrollo de Sion Tower y la composición de IberOgre. Espero que si buscabas fuentes de información sobre Ogre o el desarrollo de videojuegos 3D en general hayas encontrado lo deseado.</p>
 
       
@@ -177,55 +153,33 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/ogitor.png" alt="ogitor.png" /></p>
-
+      <p><img src="../../img/wp/ogitor.png" alt="ogitor.png"></p>
 <p>Como es lógico, <strong>los niveles de Sion Tower se almacenarán en ficheros</strong> y deberán contener información para poder desplegar el escenario, oleadas de enemigos, música etc. Escribir a mano un un fichero tan complejo es peor que una tortura propia de mafiosos. Por tanto, lo ideal sería disponer de <strong>un editor libre y multiplataforma</strong> con el que crear los niveles. El sistema de Sion Tower tomará la responsabilidad parsear los ficheros del editor y cargar los niveles. Para un menor sufrimiento, es indispensable que el editor sea compatible con un formato abierto y conocido por la comunidad. Más detalles a continuación.</p>
-
 <h3 id="el-formato-dotscene">El formato DotScene</h3>
-
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml</strong> diseñado para la exportación e importación de <strong>escenas 3D</strong> en proyectos Ogre, podéis encontrar el correspondiente DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Es ampliamente utilizado por la comunidad de Ogre en ficheros con extensión <em>.scene</em> y contempla todo lo que una escena puede mostrar: mayas, luces, geometría básica y un larguísimo etcétera.</p>
-
 <p>El procesamiento de un fichero con tantos elementos podría ser complejo. No obstante, <strong>existen parsers</strong> ya desarrollados como <a href="http://www.ogre3d.org/tikiwiki/New+DotScene+Loader&amp;comzone=show"><strong>DotSceneLoader</strong></a>. En cualquier caso, creo que acabaré implementando uno propio que utilice internamente la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a>. Ofrezco dos razones principales: me gustaría personalizar mi parser y pugixml es tremendamente eficiente en tiempo/espacio (mirad este <a href="http://pugixml.org/benchmark/">impresionante benchmark</a>).</p>
-
-<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg" /></p>
-
+<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg"></p>
 <h3 id="ogitor-la-respuesta">Ogitor, la respuesta</h3>
-
 <p><strong><a href="http://www.ogitor.org/">Ogitor</a> es un editor de escenarios libre y multiplataforma</strong>. Está desarrollado con QT y, por supuesto, Ogre. Lo mejor de todo es que soporta el formato DotScene así que no tendré que preocuparme por toquetear inmensos ficheros XML. Es compatible tanto con Windows como con Linux aunque en éste último hay que compilar. Aún se encuentra en la versión 0.4 pero tiene un desarrollo activo y una <a href="http://forum.ogitor.org/">comunidad</a> dispuesta a ayudar.</p>
-
 <h3 id="instalación-de-ogitor-en-linux">Instalación de Ogitor en Linux</h3>
-
 <p>Ogitor viene perfectamente empaquetado para Windows pero <strong>en Linux estamos obligados a compilarlo</strong> desde las fuentes. Aunque… ¿desde cuándo ha sido eso un problema para tan avezados usuarios? En las siguientes líneas les detallo el proceso, no exento de pequeños detalles delicados.</p>
-
 <h4 id="dependencias">Dependencias</h4>
-
 <ul>
 <li><strong>Ogre 1.7</strong>: creo que era bastante evidente. Si no lo has hecho, puedes acudir a IberOgre por su flamante <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">artículo</a> al respecto. Es importante que instales los ejemplos.</li>
-
-<li><p><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</p>
-
-<pre><code>sudo apt-get install cmake cmake-gui
-</code></pre></li>
-
-<li><p><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</p>
-
-<pre><code>sudo apt-get install libqt4-dev
-</code></pre></li>
-
-<li><p><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</p>
-
-<pre><code>sudo apt-get install libboost-regex-dev
-</code></pre></li>
+<li><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</li>
 </ul>
-
-<p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png" /></p>
-
+<pre><code>sudo apt-get install cmake cmake-gui
+</code></pre><ul>
+<li><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</li>
+</ul>
+<pre><code>sudo apt-get install libqt4-dev
+</code></pre><ul>
+<li><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</li>
+</ul>
+<pre><code>sudo apt-get install libboost-regex-dev
+</code></pre><p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png"></p>
 <h4 id="compilación-e-instalación">Compilación e Instalación</h4>
-
 <p>Le toca el turno al editor que llevamos queriendo instalar hace un buen rato:</p>
-
 <ul>
 <li>Descargamos la última versión estable (4.2) desde la <a href="http://www.ogitor.org/Repositories">web oficial</a> y descomprimimos el paquete.</li>
 <li>Ejecutamos la interfaz de cmake introduciendo cmake-gui en la terminal.</li>
@@ -233,21 +187,13 @@
 <li>Pulsamos <em>&ldquo;Configure&rdquo;</em>. Si se produce algún error es probable que CMake no consiga encontrar alguna biblioteca, revisa que cumples todas las dependencias.</li>
 <li>Establecemos las opciones <em>OGITOR_DIST</em> a true y <em>OGRE_SAMPLES_INCLUDEPATH</em> con la ruta de las cabeceras de los ejemplos de Ogre.</li>
 <li>Hacemos click sobre <em>&ldquo;Generate&rdquo;</em>.</li>
-
-<li><p>Finalmente, los clásicos:</p>
-
+<li>Finalmente, los clásicos:</li>
+</ul>
 <pre><code>make
 sudo make install
-</code></pre></li>
-</ul>
-
-<p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
-
+</code></pre><p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
 <pre><code>[compilación-ogitor]/RunPath/bin/qtOgitor
-</code></pre>
-
-<h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
-
+</code></pre><h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
 <p>En este artículo hemos hablado sobre el ampliamente aceptado formato DotScene y hemos desgranado la instalación de Ogitor. Es probable que haya un próximo episodio en el que relate mi experiencia con Ogitor y documente la creación de niveles para Sion Tower. Ya saben, <strong>ante cualquier problema que encuentren pueden dejar un comentario</strong>.</p>
 
       
@@ -263,48 +209,26 @@ sudo make install
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/batman-arkham-asylum-5.jpg" alt="batman-arkham-asylum-5.jpg" /></p>
-
+      <p><img src="../../img/wp/batman-arkham-asylum-5.jpg" alt="batman-arkham-asylum-5.jpg"></p>
 <p>¿Otro comentario de un juego de hace año y medio? Caballeros, qué quieren que les diga, me tomo las cosas con calma. Mientras la masa se deja los cuartos en el Call of Duty de turno yo estaba <strong>a dos bandas entre <a href="../../hobbies/fifa-11/">Fifa 11</a></strong> con su delicioso vestíbulo online 2vs2 <strong>y <a href="http://es.wikipedia.org/wiki/Batman:_Arkham_Asylum">Batman Arkham Asylum</a></strong>. <a href="http://en.wikipedia.org/wiki/Rocksteady_Studios">Rocksteady</a> le ha dado una patada en la boca a todos aquellos que decían que los juegos de superhéroes no podían ser buenos. La ausencia de presión por un lanzamiento coincidente con el estreno de <a href="http://www.imdb.com/title/tt0468569/"><em>&ldquo;El Caballero Oscuro&rdquo;</em></a> le vino de maravilla. Lo que sigue es <strong>mi experiencia en la prisión psiquiátrica</strong> de Arkham.</p>
-
-<p><img src="../../img/wp/batman-arkham-asylum-4.jpg" alt="batman-arkham-asylum-4.jpg" /></p>
-
+<p><img src="../../img/wp/batman-arkham-asylum-4.jpg" alt="batman-arkham-asylum-4.jpg"></p>
 <h3 id="el-joker-es-un-troll-de-cuidado">El Joker es un troll de cuidado</h3>
-
 <p><strong>Arkham Asylum se inspira en el <a href="http://es.wikipedia.org/wiki/Asilo_Arkham">cómic</a></strong> de mismo nombre y nos cuenta cómo Batman consigue atrapar a Joker y llevarlo hasta la prisión psiquiátrica de Arkham. <strong>El Joker, como buen troll que es, tenía preparada una sorpresita</strong>. Finalmente consigue tomar la prisión al completo sometiendo al personal de seguridad entre risas diabólicas. Como cabía esperar, nuestra misión consiste en recuperar el control de la isla y capturar al Joker.</p>
-
 <p>No cuento más ante riesgo de spoilers. Si bien este tipo de títulos no suelen contar con argumentos de interés, en esta ocasión la historia adquiere más importancia. En absoluto es la quintaesencia de los guiones pero me ha parecido bastante <strong>interesante descubrir el entramado</strong>.</p>
-
-<p><img src="../../img/wp/batman-arkham-asylum-6.jpg" alt="batman-arkham-asylum-6.jpg" /></p>
-
+<p><img src="../../img/wp/batman-arkham-asylum-6.jpg" alt="batman-arkham-asylum-6.jpg"></p>
 <h3 id="camarero-agite-bien-el-cóctel">Camarero, agite bien el cóctel</h3>
-
 <p>Podríamos decir que <strong>Batman Arkham Asylum es un juego de acción</strong> en tercera persona pero nos quedaríamos cortos. Lo que cautivó a la crítica en su momento y lo que me ha mantenido pegado al mando ha sido su <strong>magnífica combinación de géneros</strong>. En primer lugar destacaría <strong>el</strong> <strong>sigilo</strong>. No basta con saltar en medio de una reunión de presos ciclados armados hasta los dientes para liarnos a mamporros porque recibiremos una buena dosis de plomo. Estamos obligados a estudiar el entorno y acabar con los enemigos uno a uno, tal y como trabaja Batman. El diseño de los emplazamientos es lo suficientemente rico como para proporcionar distintas formas de abordar una solución y eso siempre se agradece.</p>
-
 <p>El sistema de golpes, esquivas y contraataques es sencillo pero efectivo. Los enemigos desarmados no son demasiado complicados pero a veces no queda otra que medir cuidadosamente los tiempos. A pesar de todo, he echado de menos un combate algo más profundo y variado en enemigos. Por último tenemos <strong>la exploración y la recolección de objetos</strong>. La isla de Arkham tiene cientos de recovecos con secretos por descubrir, lo cual aumenta la rejugabilidad.</p>
-
 <p><strong>Los gadgets típicos</strong> del hombre murciélago estarán presentes y nos ayudarán tanto en el combato como en el avance por el escenario. Atención porque a pesar de lo que ya he mencionado me dejo mecánicas por comentar.</p>
-
-<p><img src="../../img/wp/batman-arkham-asylum-2.jpg" alt="batman-arkham-asylum-2.jpg" /></p>
-
+<p><img src="../../img/wp/batman-arkham-asylum-2.jpg" alt="batman-arkham-asylum-2.jpg"></p>
 <h3 id="unreal-engine-3-un-motor-que-da-la-talla">Unreal Engine 3, un motor que da la talla</h3>
-
 <p><strong>Muchos se quejan del reaprovechamiento del motor</strong> <a href="http://es.wikipedia.org/wiki/Unreal_Engine">Unreal Engine 3</a> desarrollado por Epic y lanzado en 2006. Tendrá sus añitos pero hace un papel excepcional a la hora de plagar de detalles el tétrico entorno de Batman Arkham Asylum. Iluminación, reflejos, anatomía o escenarios son algunos de los campos en los que destaca el apartado técnico. Sobre todo me ha llamado la atención la <strong>casi total ausencia de cargas entre zonas</strong>. Simplemente las transacciones de disco se hacen en paralelo, por streamming. Si tengo que quejarme de algo lo haría de las sombras, algo pixeladas. Precisamente, el Unreal Engine se renueva dentro de poco para ponerse al día en la carrera de los gráficos.</p>
-
-<p><img src="../../img/wp/batman-arkham-asylum-3.jpg" alt="batman-arkham-asylum-3.jpg" /></p>
-
+<p><img src="../../img/wp/batman-arkham-asylum-3.jpg" alt="batman-arkham-asylum-3.jpg"></p>
 <h3 id="de-paseo-por-arkham-asylum">De paseo por Arkham Asylum</h3>
-
 <p>Es cierto que el Unreal Engine hace mucho pero <strong>el trabajo de los diseñadores de Rocksteady ha sido descomunal</strong>. El universo Batman está recreado a la perfección incluyendo entornos y personajes. No sólo me refiero a los modelos y texturas sino al sonido. El Joker siempre se guarda un chascarrillo y los enemigos finales no dejan pasar la ocasión de lanzarnos mensajes en función de nuestra actuación en el combate.</p>
-
 <p>Nos veremos <strong>inmersos en la locura de la penitenciaría psiquiátrica</strong> de la mano de presos dementes y enemigos finales como el Espantapájaros, Hiedra venenosa, Bane o Harley Quinn. La apariencia de Batman va cambiando a medida que avanzamos con heridas y estropicios en el traje. Hablo en serio, la ambientación es absolutamente magistral, ¡si incluso el doblaje al castellano es el mejor que recuerdo en mucho tiempo!</p>
-
-<p><img src="../../img/wp/batman-arkham-asylum-1.jpg" alt="batman-arkham-asylum-1.jpg" /></p>
-
+<p><img src="../../img/wp/batman-arkham-asylum-1.jpg" alt="batman-arkham-asylum-1.jpg"></p>
 <h3 id="resumiendo">Resumiendo</h3>
-
 <p>Es complicado describir la experiencia de Arkham Asylum en un simple artículo y ya me estoy extendiendo demasiado, <strong>deben jugarlo</strong>. Quizás no sea la magnánima obra maestra que muchos medios proclamaban pero sin duda es el mejor título de superhéroes al que he tenido el placer de jugar. Lo mejor de todo es que la segunda parte, Arkham City, ya viene de camino. En fin, les dejo que he desprecintado hace nada Castlevania Lords of Shadows, ¡producto patrio!</p>
 
       
@@ -320,17 +244,12 @@ sudo make install
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/sherlock.jpg" alt="sherlock.jpg" /></p>
-
-<p><span style="color: #888888;"><strong>Siempre me han gustado las historias de investigación y acción</strong> en las que lo importante no es si el personaje descubre el misterio, sino cómo lo consigue. Creo que la nueva serie británica <strong><a href="http://www.imdb.com/title/tt1475582/">Sherlock</a> entra dentro de la categoría</strong>. Se estrenó en UK el pasado verano con una crítica excelente. Aunque sus episodios constasen de 90 minutos de metraje, esta primera temporada sólo cuenta con 3 de ellos por lo que en unos días ya la había finiquitado.</span></p>
-
-<p><span style="color: #888888;"></span><span style="color: #888888;"><strong>Lo más reseñable</strong> es que las aventuras de Sherlock Holmes creadas por <a href="http://en.wikipedia.org/wiki/Arthur_Conan_Doyle">Arthun Conan Doyle</a> ambientadas en el S. XIX. <strong>se trasladan a la actualidad</strong>. El prodigioso pero socialmente inadaptado detective utiliza Internet o el teléfono móvil entre otras tecnologías modernas. Los personajes se mantienen con licencias más o menos abusivas aunque en un contexto completamente distinto. ¿Le sienta bien el cambio? Diría que sí, al menos es algo distinto a lo habitual.</span></p>
-
-<p><span style="color: #888888;"><strong>En absoluto es una serie profunda</strong> que induzca a una reflexión posterior. A cambio, nos ofrece diversión y obliga a prestar un alto grado de atención para seguir las <strong>vertiginosas deducciones de Holmes</strong>. <em>&ldquo;A Study in Pink&rdquo;</em>, el primer episodio roza un nivel estupendo. ¿Quiere decir eso que los demás pierden? El par de capítulos restantes no me han agradado como el primero, quizás por la temática y pequeñas bajadas de ritmo. Se nota que <strong>mantener una dinámica acelerada en episodios de hora y media</strong> es una tarea titánica.</span></p>
-
-<p><span style="color: #888888;">No quiero extenderme más, para terminar diré que si te gusta Sherlock Holmes y las producciones de misterio deberías darle una oportunidad. No sé vosotros, pero yo estoy <strong>algo cansado de los protagonistas egocéntricos y sociópata</strong>s que tanto se han puesto de moda con House. Se queda en un <em>&ldquo;bien&rdquo;</em> hasta que llegue la segunda temporada en otoño del año que viene y se resuelva el cliffhanger final.</span></p>
-
-<p><span style="color: #888888;">Por cierto, <strong>feliz año nuevo</strong>.</span></p>
+      <p><img src="../../img/wp/sherlock.jpg" alt="sherlock.jpg"></p>
+<p><!-- raw HTML omitted --><strong>Siempre me han gustado las historias de investigación y acción</strong> en las que lo importante no es si el personaje descubre el misterio, sino cómo lo consigue. Creo que la nueva serie británica <strong><a href="http://www.imdb.com/title/tt1475582/">Sherlock</a> entra dentro de la categoría</strong>. Se estrenó en UK el pasado verano con una crítica excelente. Aunque sus episodios constasen de 90 minutos de metraje, esta primera temporada sólo cuenta con 3 de ellos por lo que en unos días ya la había finiquitado.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --><!-- raw HTML omitted --><strong>Lo más reseñable</strong> es que las aventuras de Sherlock Holmes creadas por <a href="http://en.wikipedia.org/wiki/Arthur_Conan_Doyle">Arthun Conan Doyle</a> ambientadas en el S. XIX. <strong>se trasladan a la actualidad</strong>. El prodigioso pero socialmente inadaptado detective utiliza Internet o el teléfono móvil entre otras tecnologías modernas. Los personajes se mantienen con licencias más o menos abusivas aunque en un contexto completamente distinto. ¿Le sienta bien el cambio? Diría que sí, al menos es algo distinto a lo habitual.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted --><strong>En absoluto es una serie profunda</strong> que induzca a una reflexión posterior. A cambio, nos ofrece diversión y obliga a prestar un alto grado de atención para seguir las <strong>vertiginosas deducciones de Holmes</strong>. <em>&ldquo;A Study in Pink&rdquo;</em>, el primer episodio roza un nivel estupendo. ¿Quiere decir eso que los demás pierden? El par de capítulos restantes no me han agradado como el primero, quizás por la temática y pequeñas bajadas de ritmo. Se nota que <strong>mantener una dinámica acelerada en episodios de hora y media</strong> es una tarea titánica.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->No quiero extenderme más, para terminar diré que si te gusta Sherlock Holmes y las producciones de misterio deberías darle una oportunidad. No sé vosotros, pero yo estoy <strong>algo cansado de los protagonistas egocéntricos y sociópata</strong>s que tanto se han puesto de moda con House. Se queda en un <em>&ldquo;bien&rdquo;</em> hasta que llegue la segunda temporada en otoño del año que viene y se resuelva el cliffhanger final.<!-- raw HTML omitted --></p>
+<p><!-- raw HTML omitted -->Por cierto, <strong>feliz año nuevo</strong>.<!-- raw HTML omitted --></p>
 
       
     </div>
@@ -345,35 +264,22 @@ sudo make install
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/audio3d-ogre1.png" alt="audio3d-ogre1.png" /></p>
-
+      <p><img src="../../img/wp/audio3d-ogre1.png" alt="audio3d-ogre1.png"></p>
 <p>Como todo buen hijo de vecino, <strong><a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> necesitará reproducir efectos de sonido y música</strong> de fondo, de otro modo al jugador se le caerían dos lagrimones y lo cerraría para siempre. Ogre es un motor de renderizado y no incorpora elementos como un subsistema de audio, por tanto, debía buscarlo en otro lugar. Como he comentado anteriormente, Ogre cuenta con un sistema de gestión de recursos muy potente y ampliable. Sobra decir que mi audio debería <strong>integrarse completamente</strong> con dicho sistema. A continuación, relato mi pequeña odisea para conseguir lo deseado.</p>
-
 <h3 id="elegir-una-biblioteca-de-audio">Elegir una biblioteca de audio</h3>
-
 <p>Debía elegir una biblioteca para gestionar el audio, al menos a bajo nivel. <strong>Las opciones más evidentes eran <a href="http://es.wikipedia.org/wiki/Simple_DirectMedia_Layer#Componentes_adicionales">SDL Mixer</a> y <a href="http://es.wikipedia.org/wiki/OpenAL">OpenAL</a></strong>. Indagando un poco, encontré una biblioteca auxiliar llamada <strong><a href="http://www.ogre3d.org/tikiwiki/OgreOggSound&amp;structure=Libraries">OgreOggSound</a></strong> que integraba OpenAL con Ogre incorporando audio 3D. Los ojos se me abrieron como platos pero me llevé una decepción cuando vi que la documentación brillaba por su ausencia. Además, <strong>prefería aprender</strong> la forma de extender la gestión de recursos de Ogre y cacharrear un poco con el audio.</p>
-
 <p><strong>OpenAL</strong> es al sonido lo que OpenGL al 3D en el ámbito open source. Es compatible con decenas de plataformas y está enfocada al desarrollo de videojuegos en 3D. Títulos triple A como Doom 3, Battlefield 2 o Jedi Knight lo han utilizado. Como era de esperar, es un <strong>sistema muy grande y complejo</strong>.</p>
-
-<p><strong>SDL Mixer</strong> es una biblioteca <strong>pequeña y sencilla</strong> que me permite regular aspectos como volumen y ángulo para provocar un efecto pseudo 3D. Ya había trabajado con ella en <a href="../../proyectos/air-force-pilot/">Air Force Pilot</a> y en <a href="../../proyectos/grannys-bloodbath/">Granny&rsquo;s Bloodbath</a> de forma satisfactoria. Además, es compatible con las plataformas que necesito. En fin, es más limitada pero me basta para mis necesidades.</p>
-
+<p><strong>SDL Mixer</strong> es una biblioteca <strong>pequeña y sencilla</strong> que me permite regular aspectos como volumen y ángulo para provocar un efecto pseudo 3D. Ya había trabajado con ella en <a href="../../proyectos/air-force-pilot/">Air Force Pilot</a> y en <a href="../../proyectos/grannys-bloodbath/">Granny's Bloodbath</a> de forma satisfactoria. Además, es compatible con las plataformas que necesito. En fin, es más limitada pero me basta para mis necesidades.</p>
 <h3 id="integración-con-la-gestión-de-recursos-de-ogre">Integración con la gestión de recursos de Ogre</h3>
-
 <p>Los recursos que queramos <strong>integrar con Ogre</strong> deben implementar la interfaz <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Resource.html">Resource</a>. Ogre utiliza el <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html">ResourceGroupManager</a> para gestionar los recursos a nivel global pero tiene un <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceManager.html">ResourceManager</a> para cada tipo de recurso. Esto quiere decir que tenemos que implementar clases que hereden de ResourceManager. Los gestores de recursos no manejan objetos Resource directamente, sino que utilizan punteros inteligentes, <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1SharedPtr.html">SharedPtr</a> muy similares a los <a href="http://www.boost.org/doc/libs/1_45_0/libs/smart_ptr/shared_ptr.htm">shared_ptr</a> de Boost. Esto les permite mantener una sola instancia de cada recurso compartida por varias entidades.</p>
-
 <p>SDL Mixer trata de forma distinta la música y los efectos de sonido por lo que planteé <strong>dos nuevos recursos: Musica y Sonido</strong>. A continuación tenéis la lista de clases resultante aunque al final de este artículo se expone un diagrama UML completo.</p>
-
 <ul>
 <li>SoundFX y SoundFXPtr</li>
 <li>Song y SongPtr</li>
 <li>SoundFXManager</li>
 <li>SongManager</li>
 </ul>
-
 <p>La forma de trabajar con los nuevos recursos es semejante al estilo de Ogre. Queda completamente integrado:</p>
-
 <pre><code>// Al arrancar la aplicación
 SoundFXManager* soundFXManager = new SoundFXManager();
 
@@ -387,30 +293,17 @@ sound-&gt;play();
 
 // Al cerrar la aplicación
 delete soundFXManager;
-</code></pre>
-
-<h3 id="sencillo-pero-resultón-sonido-3d">Sencillo pero resultón sonido 3D</h3>
-
+</code></pre><h3 id="sencillo-pero-resultón-sonido-3d">Sencillo pero resultón sonido 3D</h3>
 <p>No todos los sonidos tienen porqué reproducirse con efecto 3D por lo que he modelado este pequeño sistema de forma independiente. <strong>La clase Sound3D</strong> tiene un SoundFXPtr y dos punteros a SceneNode. Uno de los nodos es el emisor y el otro el que escucha. El volumen varía en función de la distancia entre ambos nodos mientras que el ángulo entre ambos elementos produce un efecto estéreo. El siguiente diagrama lo ilustra:</p>
-
-<p><img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png" /></p>
-
+<p><img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png"></p>
 <p>SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado a tal efecto. Un mismo Sound3D puede estar reproduciéndose en canales distintos al mismo tiempo. La clase Sound3D controla internamente qué sonido tiene asociado cada canal. Se pone a disposición del desarrollador un <strong>método estático para actualizar todos los sonidos 3D</strong> en reproducción. Preferiblemente una vez por cada iteración del game loop deberíamos hacer:</p>
-
 <pre><code>// Actualizar todos los sonidos 3D en reproducción
 Sound3D::update3DSound();
-</code></pre>
-
-<h3 id="a-vista-de-pájaro">A vista de pájaro</h3>
-
+</code></pre><h3 id="a-vista-de-pájaro">A vista de pájaro</h3>
 <p>El siguiente <strong>diagrama de clases</strong> simplificado ilustra a grandes rasgos los elementos de este sistema de audio y sus relaciones.</p>
-
-<p><img src="../../img/wp/audio3d-clases1.png" alt="audio3d-clases1.png" /></p>
-
+<p><img src="../../img/wp/audio3d-clases1.png" alt="audio3d-clases1.png"></p>
 <h3 id="para-terminar">Para terminar</h3>
-
 <p>¡Vaya, me he extendido más de la cuenta! Han sido dos días intensos de trabajo entre aprender a extender la gestión de recursos de Ogre e implementación. En principio he desarrollado este sistema de sonido para Sion Tower pero en realidad <strong>es completamente independiente</strong>. Si estás desarrollando un juego y te interesa, acude a la <a href="https://forja.rediris.es/projects/cusl5-iberogre/">forja</a> y utiliza lo que desees (es GPL).</p>
-
 <p>Seguiré informando de mis avances, muchas gracias por leer.</p>
 
       
@@ -453,8 +346,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

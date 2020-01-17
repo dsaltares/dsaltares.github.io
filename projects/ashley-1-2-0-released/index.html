@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Ashley 1.2.0 released</h1>
@@ -102,12 +103,10 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
     </span>
-    <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png" /></p>
-
-<p>There have been quite a few things happening in <a href="https://github.com/libgdx/ashley">Ashley</a> during the past month, enough to call for a brand new release. <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.2.0">Ashley 1.2.0</a> can now be fetched from Maven Central and this is what you&rsquo;ll find new.</p>
-
+    <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>There have been quite a few things happening in <a href="https://github.com/libgdx/ashley">Ashley</a> during the past month, enough to call for a brand new release. <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.2.0">Ashley 1.2.0</a> can now be fetched from Maven Central and this is what you'll find new.</p>
 <ul>
-<li><strong><a href="https://github.com/libgdx/ashley/pull/51">API addition</a></strong>: people requested to put <code>Entity#getComponent(Class)</code> back in, so we accepted <a href="https://github.com/libgdx/ashley/commits/master?author=SgtCoDFish">SgtCODFish</a>&#8216;s PR. <code>ComponentMapper</code> is still the most efficient and encouraged method to retrieve an entity&rsquo;s components.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/pull/51">API addition</a></strong>: people requested to put <code>Entity#getComponent(Class)</code> back in, so we accepted <a href="https://github.com/libgdx/ashley/commits/master?author=SgtCoDFish">SgtCODFish</a>‘s PR. <code>ComponentMapper</code> is still the most efficient and encouraged method to retrieve an entity's components.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/28372993d60d6e2f460f36e27df953936e550933">API addition</a></strong>: added <code>PooledEngine#clearPools()</code> to delete unused entity and component pool memory.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/188239aeaa3e99c9bd7ebab268a9e9959d2a09c2">API addition</a></strong>: adds <code>EntitySystem#setProcessing(boolean)</code> so as to be able to enable/disable systems at will.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/8f54a2a5ee97c87cba57bd187b4aeb2aef7ec831">API addition</a></strong>: adds <code>Engine#getSystems()</code>.</li>
@@ -117,13 +116,10 @@
 <li><strong><a href="https://github.com/libgdx/ashley/issues/44">Bug fix</a></strong>: some entities were skipped if the user removed an entity from the engine mid system update. Removing an entity from a system by changing its components mid iteration also caused problems, which are now solved.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/issues/56">Bug fix</a></strong>: there was a problem with family membership not being properly updated when removing a component from an entity was supposed to result in said entity being added to the family. This only affected families that exclude components.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/issues/59">Internals</a></strong>: small performance improvement.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/d6fec987e1ce493c559a7e8fdea7fc8f6cd82d7b">Others</a></strong>: added benchmark suite to compare Ashley&rsquo;s performance with Atermis&rsquo;.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/d6fec987e1ce493c559a7e8fdea7fc8f6cd82d7b">Others</a></strong>: added benchmark suite to compare Ashley's performance with Atermis&rsquo;.</li>
 </ul>
-
-<p>If you&rsquo;re using the nightly builds, please change your dependency to <code>com.badlogicgames.ashley:ashley:1.2.1-SNAPSHOT</code>. Both the <a href="https://github.com/libgdx/ashley/wiki">wiki</a> and the <a href="http://libgdx.badlogicgames.com/ashley/docs/">javadocs</a> have been updated to reflect the latest changes.</p>
-
-<p>Thanks to everyone using Ashley, opening issues and, of course, sending pull requests. I&rsquo;m extremely pleased with the response, it&rsquo;s awesome to see <a href="https://github.com/libgdx/ashley/pulse/monthly">how active things are</a>.</p>
-
+<p>If you're using the nightly builds, please change your dependency to <code>com.badlogicgames.ashley:ashley:1.2.1-SNAPSHOT</code>. Both the <a href="https://github.com/libgdx/ashley/wiki">wiki</a> and the <a href="http://libgdx.badlogicgames.com/ashley/docs/">javadocs</a> have been updated to reflect the latest changes.</p>
+<p>Thanks to everyone using Ashley, opening issues and, of course, sending pull requests. I'm extremely pleased with the response, it's awesome to see <a href="https://github.com/libgdx/ashley/pulse/monthly">how active things are</a>.</p>
 <p>Keep it up guys!</p>
 
   </div>
@@ -146,8 +142,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

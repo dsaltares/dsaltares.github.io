@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Built-in console for Libgdx games</h1>
@@ -103,11 +104,8 @@
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
     <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
-
-<p><img src="../../img/others/console1.jpg" alt="console1.jpg" /></p>
-
-<p>When you&rdquo;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&rdquo;ll take. Finally, you can also override the key to toggle the console.</p>
-
+<p><img src="../../img/others/console1.jpg" alt="console1.jpg"></p>
+<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It's incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project's dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
 <pre><code>private Console console;
 
 @Override
@@ -119,15 +117,9 @@ public void create() {
     console.setPositionPercent(0, 67);
     console.setKeyID(Keys.Z);
 }
-</code></pre>
-
-<p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
-
+</code></pre><p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
 <pre><code>console.draw();
-</code></pre>
-
-<p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let&rsquo;s specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
-
+</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let's specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
 <pre><code>public class GameCommandExecutor extends Command {
     private Console console;
 
@@ -147,18 +139,11 @@ public void create() {
         console.clear();
     }
 }
-</code></pre>
-
-<p>At some point, we need to register the executor with the console.</p>
-
+</code></pre><p>At some point, we need to register the executor with the console.</p>
 <pre><code>console.setCommandExecutor(new GameCommandExecutor(console));
-</code></pre>
-
-<p>Done, that&rsquo;s it!</p>
-
-<p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png" /></p>
-
-<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
+</code></pre><p>Done, that's it!</p>
+<p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png"></p>
+<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it's fully compatible with the WebGL backend. It's also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
 
   </div>
   <div id="disqus_thread"></div>
@@ -180,8 +165,14 @@ public void create() {
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

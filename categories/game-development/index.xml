@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game Development on David Saltares</title>
@@ -18,8 +18,8 @@
       
       <guid>https://saltares.com/games/ludum-dare-38-theme-ideas/</guid>
       <description>Ludum Dare 38 starts in a couple of hours. This one is special as it marks the 15th anniversary of the biggest weekend game development friendly competition in the world!
-If you don&amp;rsquo;t know about Ludum Dare and are interested, check the documentary they just released.
-I was thinking of participating using Godot Engine. I have a couple of social compromises this weekend and, honestly, I am a bit scared of failing miserably, so I&amp;rsquo;m not too sure how far I&amp;rsquo;ll take this one.</description>
+If you don&#39;t know about Ludum Dare and are interested, check the documentary they just released.
+I was thinking of participating using Godot Engine. I have a couple of social compromises this weekend and, honestly, I am a bit scared of failing miserably, so I&#39;m not too sure how far I&#39;ll take this one.</description>
     </item>
     
   </channel>

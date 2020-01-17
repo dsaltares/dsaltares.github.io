@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,12 +110,8 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-5.png" alt="colisiones-5.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-5.png" alt="colisiones-5.png"></p>
 <p>Entregas</p>
-
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
@@ -122,37 +119,21 @@
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a></li>
 <li><em>Colisiones V: Body, CollisionManager y GameObject</em></li>
 </ul>
-
 <p>Esta es la <strong>quinta y última entrega</strong> de la serie de artículos sobre el sistema de detección de colisiones de Sion Tower (STC). <strong>Trataremos las últimas clases</strong> que nos queda por ver: <em>Body</em>, <em>CollisionManager</em> y <em>GameObject</em>. Finalmente hablaré de las correcciones y mejoras que implementaré lo antes posible de cara a una futura versión.</p>
-
 <h3 id="la-clase-body">La clase Body</h3>
-
 <p>Un <em>Body</em> representa la <strong>parte colisionable de un objeto</strong> y está formado por un vector de formas (<em>Shape</em>) y una transformación (traslación con respecto al origen, escala y rotación). Los cuerpos tienen un tipo (entero) que permite agruparlos y filtrarlos en la detección de colisiones. Para manejar las colisiones entre dos cuerpos, debemos cruzar las formas de ambos en coordenadas del mundo, en ningún caso locales al objeto. Aplicar la transformación de cada cuerpo a cada forma en todas las iteraciones del bucle de juego es demasiado costoso. Por ello, he decidido almacenar un segundo vector de formas en coordenadas del mundo, en el eterno dilema de la eficiencia tempo/memoria ha ganado el tiempo en este caso.</p>
-
-<p><img src="../../img/wp/body1.png" alt="body1.png" /></p>
-
+<p><img src="../../img/wp/body1.png" alt="body1.png"></p>
 <p>¿Por qué no tener un sólo vector de formas en coordenadas del mundo? En la carga de niveles utilizaré una fábrica que guardará instancias de objetos como muros, mobiliario y otros elementos. Necesitaré copiarlos y por eso es más cómodo emplear coordenadas locales y luego transformarlas una sola vez.</p>
-
 <h3 id="la-clase-collisionmanager">La clase CollisionManager</h3>
-
 <p>El gestor de colisiones sigue el patrón de diseño <a href="http://es.wikipedia.org/wiki/Singleton">Singleton</a> y <strong>lleva el registro de todos los cuerpos colisionables</strong> de la escena. Es posible añadir o eliminar cuerpos según nos convenga. Una vez en cada iteración del bucle de juego es recomendable llamar al método <em>checkCollisions</em>.</p>
-
 <p>Sólo se comprobarán colisiones entre cuerpos para cuyo tipo exista un callback. Los callbacks son objetos función de Boost que reciben dos punteros a <em>Body</em> y no devuelven nada. Utilizando <em>boost:bind</em> podemos crear un objeto <em>boost:function</em> y añadir el callback para dos cuerpos de un tipo determinado. Por ejemplo, podemos hacer que el método <em>callbackSpellEnemy</em> sea llamado cuando colisionen cuerpos de los supuestos tipos <em>Spell</em> (cuyo número podría ser el 4) y <em>Enemy</em> (cuyo número podría ser el 8).</p>
-
 <p>En el método <em>checkCollisions</em> no sólo se filtran los cuerpos para los que existe un callback definido sino que no se comprueban aquellos que están a una distancia prudencial. Soy consciente de que para cantidades ingentes de elementos este <strong>particionado</strong> no es suficiente aunque por el momento funciona correctamente.</p>
-
-<p><img src="../../img/wp/collisionmanager.png" alt="collisionmanager-250x300.png" /></p>
-
+<p><img src="../../img/wp/collisionmanager.png" alt="collisionmanager-250x300.png"></p>
 <h3 id="la-clase-gameobject">La clase GameObject</h3>
-
 <p>La última clase que nos quedaba por repasar era <em>GameObject</em>, como ya he mencionado se encarga de <strong>encapsular la parte visual (<em>SceneNode</em> + <em>Entity</em>) y colisionable (<em>Body</em>) de los elementos</strong> de juego. Proporciona métodos para actualizar posición, escala y rotación pero si lo deseamos se nos permite acceder al nodo o al cuerpo que contiene. Si hacemos modificaciones sobre el nodo o el cuerpo tendremos que sincronizar la otra parte empleando los métodos <em>synchronizeBody</em> o <em>synchronizeNode</em> según corresponda.</p>
-
 <p>Cuenta con un método virtual update que no hace nada y está diseñado para ser sobrecargado. No es una clase abstracta de la que no puedan existir instancias aunque lo usual es heredar de ella y aportar un comportamiento concreto.</p>
-
-<p><img src="../../img/wp/gameobject.png" alt="gameobject-300x106.png" /></p>
-
+<p><img src="../../img/wp/gameobject.png" alt="gameobject-300x106.png"></p>
 <h3 id="próximas-versiones">Próximas versiones</h3>
-
 <p>El sistema de detección de colisiones de Sion Tower presenta un amplio margen de mejora. Tengo anotada una buena lista y ya he conseguido implementar algunas de ellas. En la futura versión 0.2 de la mini biblioteca encontraréis la forma <em>OrientedBox</em> (OBB), nuevos tests de colisión, una API más extensible y muchas correcciones de bugs.</p>
 
       
@@ -168,39 +149,24 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-4.png" alt="colisiones-4.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-4.png" alt="colisiones-4.png"></p>
 <p>Entregas:</p>
-
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: Shape y Collision Dispatching</a></li>
 <li><em>Colisiones IV: Tests de colisión</em></li>
 </ul>
-
 <p>En la cuarta entrega de la serie de artículos de documentación sobre el <strong>sistema de detección de colisiones de Sion Tower</strong> (STC) trataremos en profundidad los <strong>tests de colisión</strong>. Hasta ahora habíamos visto como funciona la clase abstracta Shape y sus implementaciones así como el Collision Dispatching. Este texto no pretende demostrar la validez de los algoritmos expuestos por la mediana complejidad que algunos entrañan, para una explicación más extensa sugiero acudir a las referencias contenidas en la sección de bibliografía.</p>
-
 <p>Para cada test se ofrece una breve explicación, un diagrama aclaratorio y el algoritmo en C++ utilizando Ogre3D y las clases que hemos visto hasta el momento.</p>
-
 <h3 id="teorema-del-plano-de-separación">Teorema del plano de separación</h3>
-
 <p>El <strong>Teorema del eje de separación</strong> (<a href="http://en.wikipedia.org/wiki/Separating_axis_theorem">separating axis theorem</a>) resulta extremadamente útil en la detección de colisiones. Este teorema asegura que dados dos objetos convexos en un plano 2D existe una línea sobre la cual, las proyecciones de los dos objetos no se solapan si y sólo si los objetos son disjuntos (no tienen puntos en común). Esta línea se conoce como eje de separación. En un espacio tridimensional el eje de separación se convierte en un plano de separación. El siguiente diagrama ilustra el teorema.</p>
-
-<p><img src="../../img/wp/separatin-axis.png" alt="separatin-axis.png" /></p>
-
+<p><img src="../../img/wp/separatin-axis.png" alt="separatin-axis.png"></p>
 <p>En muchos tests <strong>buscaremos el plano de separación</strong>, puede que existan varios pero en el momento que encontremos el primero podremos asegurar que los objetos no colisionan (suponiendo que sus formas son convexas). En cualquier videojuego lo normal es que dos objetos cualesquiera no colisionen, por lo que es más eficiente descartar posibles intersecciones cuanto antes. Buscando planos de separación.</p>
-
 <h3 id="test-sphere-sphere">Test Sphere-Sphere</h3>
-
 <p>El test entre dos esferas es el más sencillo y rápido de todos. Basta con comprobar si la distancia entre los centros de ambas esferas es menor que la suma de sus radios, en tal caso existiría colisión.</p>
-
-<p><img src="../../img/wp/test-sphere-sphere.png" alt="test-sphere-sphere.png" /></p>
-
+<p><img src="../../img/wp/test-sphere-sphere.png" alt="test-sphere-sphere.png"></p>
 <p>Para calcular la distancia entre dos puntos es necesario una raíz cuadrada pero éstas son extremadamente caras. Podemos comparar la distancia al cuadrado con el cuadrado de la suma de los radios, una expresión equivalente y de mayor eficiencia.</p>
-
 <pre><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son esferas)
     Sphere* sphereA = static_cast&lt;sphere *&gt;(shapeA);
@@ -212,14 +178,9 @@
 
     return (s.squaredLength() &lt; = totalRadius * totalRadius);
 }
-</code></pre>
-
-<h3 id="test-aabb-aabb">Test AABB-AABB</h3>
-
+</code></pre><h3 id="test-aabb-aabb">Test AABB-AABB</h3>
 <p>En la intersección entre cajas alineadas con los ejes emplearemos el teorema del plano de separación. Proyectamos las cajas sobre cada uno de los tres ejes y si algunas de las proyecciones no se solapan podremos asegurar que no existe colisión entre las AABB. El siguiente diagrama ilustra el test.</p>
-
-<p><img src="../../img/wp/test-aabb-aabb.png" alt="test-aabb-aabb.png" /></p>
-
+<p><img src="../../img/wp/test-aabb-aabb.png" alt="test-aabb-aabb.png"></p>
 <pre><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son AABBs)
     AxisAlignedBox* aabb1= static_cast&lt;axisalignedbox *&gt;(shapeA);
@@ -233,14 +194,9 @@
             aabb1-&gt;getMaxPos().z &gt; aabb2-&gt;getMinPos().z &amp;&amp;
             aabb1-&gt;getMinPos().z &lt; aabb2-&gt;getMaxPos().z);
 }
-</code></pre>
-
-<h3 id="test-plane-plane">Test Plane-Plane</h3>
-
+</code></pre><h3 id="test-plane-plane">Test Plane-Plane</h3>
 <p>Los planos son infinitos por lo que la única situación en la que dos planos no colisionan es cuando estos son paralelos y no están a la misma distancia del origen. La orientación de los planos está definida por su vector normal. Si las dos normales son paralelas y la distancia con respecto al origen no coincide podremos asegurar que los planos no colisionan. Dos vectores son paralelos si su producto escalar es igual a 1.</p>
-
-<p><img src="../../img/wp/test-plane-plane.png" alt="test-plane-plane.png" /></p>
-
+<p><img src="../../img/wp/test-plane-plane.png" alt="test-plane-plane.png"></p>
 <pre><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son Planes)
     Plane* planeA = static_cast&lt;plane *&gt;(shapeA);
@@ -251,16 +207,10 @@
     Ogre::Vector3 normalB = planeB-&gt;getNormal().normalisedCopy();
     return normalA.dotProduct(normalB) != 1;
 }
-</code></pre>
-
-<h3 id="test-sphere-aabb">Test Sphere-AABB</h3>
-
+</code></pre><h3 id="test-sphere-aabb">Test Sphere-AABB</h3>
 <p>En este test se pueden producir dos casos en los que existe intersección entre los objetos. El primero se da cuando el centro de la esfera está contenida en el AABB mientras que el segundo tiene lugar cuando el centro está fuera de la caja pero existe intersección (el diagrama ilustra el segundo caso). En primer lugar comprobamos si el centro de la esfera está dentro de la caja. Posteriormente recorremos los vértices del AABB y elegimos el más cercano al centro de la esfera. Si la distancia entre ambos es menor que el radio de la esfera las dos formas colisionan.</p>
-
-<p><img src="../../img/wp/test-sphere-aabb.png" alt="test-sphere-aabb.png" /></p>
-
+<p><img src="../../img/wp/test-sphere-aabb.png" alt="test-sphere-aabb.png"></p>
 <p>De nuevo, utilizamos el cuadrado de la distancia para conseguir una mayor eficiencia.</p>
-
 <pre><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Sphere y B es AABB)
     Sphere* sphere;
@@ -304,16 +254,10 @@
 
     return (d &lt; = sphere-&gt;getRadius() * sphere-&gt;getRadius());
 }
-</code></pre>
-
-<h3 id="test-sphere-plane">Test Sphere-Plane</h3>
-
+</code></pre><h3 id="test-sphere-plane">Test Sphere-Plane</h3>
 <p>Comprobar si una esfera colisiona con un plano es tan sencillo como obtener la distancia entre ambos y compararla con el radio de la esfera como hemos hecho en otras ocasiones. La distancia entre el centro y el punto que conocemos del plano no es la distancia real entre ambas formas. Para calcular la distancia real tendremos que proyectar el vector p-c (punto del plano – centro de la esfera) sobre la normal del plano.</p>
-
-<p><img src="../../img/wp/test-sphere-plane.png" alt="test-sphere-plane.png" /></p>
-
+<p><img src="../../img/wp/test-sphere-plane.png" alt="test-sphere-plane.png"></p>
 <p>Sólo nos es necesario el cuadrado de la distancia y lo comprobaremos con el cuadrado del radio (para evitarnos utilizar una raíz cuadrada).</p>
-
 <pre><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es Sphere)
     Plane* plane;
@@ -336,14 +280,9 @@
     // Si d &lt; = radio, hay colisión
     return d &lt;= sphere-&gt;getRadius();
 }
-</code></pre>
-
-<h3 id="test-aabb-plane">Test AABB-Plane</h3>
-
+</code></pre><h3 id="test-aabb-plane">Test AABB-Plane</h3>
 <p>En el test entre AABB y plano calculamos el vértice más lejano y el más cercano al plano (pmin y pmax respectivamente). Si cada punto está a un lado distinto del plano podemos asegurar que ambas formas colisionan.</p>
-
-<p><img src="../../img/wp/test-plane-aabb.png" alt="test-plane-aabb.png" /></p>
-
+<p><img src="../../img/wp/test-plane-aabb.png" alt="test-plane-aabb.png"></p>
 <pre><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es AABB)
     Plane* plane;
@@ -376,19 +315,14 @@
 
     return ((d1 &lt; = 0 &amp;&amp; d2 &gt;= 0) || (d1 &gt;= 0 &amp;&amp; d2 &lt; = 0));
 }
-</code></pre>
-
-<h3 id="bibliografía">Bibliografía</h3>
-
+</code></pre><h3 id="bibliografía">Bibliografía</h3>
 <p>Como podéis comprobar, hay un poco más de fundamento detrás de estos tests de lo que se ha explicado en la secciones anteriores. Para obtener más información sobre este interesante tema, recomiendo las siguientes lecturas (todo en inglés):</p>
-
 <ul>
 <li><a href="http://realtimecollisiondetection.net/">Real Time Collision Detection</a> (Christer Ericson ): excepcional libro que cubre todo lo relacionado sobre la detección de colisiones en 3D escrito por un trabajador de Sony Computer Entertainment America.</li>
 <li><a href="http://www.gamasutra.com/view/feature/3383/simple_intersection_tests_for_games.php">Gamasutra &ldquo;Simple intersection tests for games&rdquo;</a> (Miguel Gomez): repaso por varios tests de intersección entre distintos tipos de formas (cubre cuerpos en movimiento).</li>
 <li><a href="http://www.gamasutra.com/view/feature/3190/advanced_collision_detection_.php">Gamasutra &ldquo;Advanced collision detection techniques&rdquo;</a> (Nick Bobic): técnicas de detección de colisiones, particionado del espacio y otras optimizaciones.</li>
 <li><a href="http://www.metanetsoftware.com/technique/tutorialA.html">Metanet software &ldquo;Collision detection and response&rdquo;</a>: explicación teórica sobre la detección de colisione. Cuenta con ejemplos gráficos interactivos para ilustrar cada concepto. Me la recomendó el compañero José Tomás Tocino.</li>
 </ul>
-
 <p>En el siguiente artículo lo dedicaremos a las clases Body y CollisionManager del sistema de detección de colisiones de Sion Tower.</p>
 
       
@@ -404,10 +338,8 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><a href="http://cusl5-iberogre.forja.rediris.es/"><img src="../../img/wp/web-estatica-iberogre-214x300.png" alt="web-estatica-iberogre-214x300.png" /></a></p>
-
+      <p><a href="http://cusl5-iberogre.forja.rediris.es/"><img src="../../img/wp/web-estatica-iberogre-214x300.png" alt="web-estatica-iberogre-214x300.png"></a></p>
 <p><strong>La Forja de Red Iris proporciona a cada proyecto un espacio</strong> para colgar una web estática sencilla. Es una tontería no aprovechar dicho espacio ya que Red Iris cuenta con un indexado en buscadores excelente. Simplemente <a href="http://cusl5-iberogre.forja.rediris.es/">he colgado un panel</a> explicando en qué consiste mi proyecto junto con enlaces a otros medios (wiki, blog, forja y Twitter).</p>
-
 <p>No es nada del otro mundo ya que mis habilidades de diseño tienden a cero pero creo que será s<strong>uficiente para ampliar un poco más la difusión del proyecto</strong>. Cualquiera que llegue a esa página podrá acceder de forma sencilla a los focos en los hay más actividad. Creo que es una buena idea y algo que debería haber hecho hace cierto tiempo.</p>
 
       
@@ -423,16 +355,11 @@
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/hereafter.jpg" alt="hereafter.jpg" /></p>
-
+      <p><img src="../../img/wp/hereafter.jpg" alt="hereafter.jpg"></p>
 <p>Como queda poco para los Oscar <strong>era buen momento para ir a ver las películas nominada</strong>s. No obstante, en mi cine habitual suelen retirar de cartelera el buen material con sorprendente rapidez dejando la carroña típica. Eso y el hecho de tener que elegir la intersección de los gustos entre los miembros del grupo hizo que acabásemos yendo a <a href="http://www.imdb.es/title/tt1212419/"><strong>Más allá de la vida</strong></a>, dirigida por el veterano <a href="http://www.imdb.es/name/nm0000142/">Clint Eastwood</a> y nominada por los mejores efectos visuales. Craso error.</p>
-
 <p><em>Más allá de la vida</em> cuenta las historias de <strong>tres protagonistas que acaban encontrándose a través de la famosa técnica del calzador</strong> en el último momento. George Logan (<a href="http://www.imdb.es/name/nm0000354/">Matt Damon</a>) es un parapsicólogo de San Francisco que contacta con los familiares difuntos de aquellos que toca. Considera que su habilidad es una maldición y le impide llevar una vida normal por lo que lo deja definitivamente. Marie (<a href="http://www.imdb.es/name/nm0208426/">Cécile de France</a>) es una periodista parisina que pasó varios minutos técnicamente muerta tras un tsunami y el contacto con el más allá le cambia para siempre. Marcos (<a href="http://www.imdb.es/name/nm3727999/">Frankie McLaren</a>) es un niño londinense cuya madre es drogadicta y pierde a su hermano gemelo en un accidente de tráfico.</p>
-
 <p>Estaremos de acuerdo en que hay diversos tipos de cine, por ejemplo, algunas películas buscan entretener a través el humor o la acción sin que nos hagan pensar demasiado. En cambio, otras pretenden evocar sentimientos o inducirnos a la meditación. Comprendo perfectamente que las últimas sean más duras de seguir y requieran esfuerzo extra por parte del espectador. <em>Más allá de la vida</em> busca que reflexionemos sobre la vida y la muerte aunque <strong>se muestra terriblemente torpe</strong> es ese aspecto. Es lenta, <strong>dolorosamente lenta</strong> y para colmo sales de la sala con la sensación de que no te han contado nada.</p>
-
 <p>A su favor he de decir que algunas escenas están bien llevadas, son creíbles y su carga dramática nos alcanza. No deben confundirse porque en absoluto representa la tónica general. En la mayor parte de los casos <strong>recurre al tópico fácil</strong> sin tratar de ir más allá (menudo juego de palabras que me he sacado de la manga). El <strong>inexpresivo Matt Damon</strong> no pega ni con cola en un largometraje dramático como este. Nadie puede negar que es un actor estupendo para la trilogía Bourne pero en este caso no consigue conectar con el personaje ni con la audiencia, a mí me ha dejado completamente indiferente.</p>
-
 <p>Creo que puedo resumir de forma acertada mi reseña diciendo que la película son <strong>dos horas que se viven como cuatro</strong>. Tiene un único objetivo en el que fracasa estrepitosamente. Imagino que la nominación a los mejores efectos visuales corresponden a los primeros cinco minutos de película en los que aparece el tsunami porque el resto no tiene nada. Debe estar muy malita la cosa en Hollywood para que Más allá de la vida aparezca en esta categoría. <strong>Si pueden evitarla, no lo duden, háganlo</strong>.</p>
 
       
@@ -450,9 +377,8 @@
       
       
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/jK32IioGmGk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/jK32IioGmGk" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
-
 
 <p>Como una imagen vale más que mil palabras he grabado este sencillo vídeo en el que se muestran tanto el sistema de detección de colisiones como la reproducción de audio 3D de Sion Tower. Estas semanas pienso trabajar duro en la carga del escenario a partir de un fichero DotScene, será interesante grabar otro vídeo dentro de cierto tiempo para comprobar la mejora.</p>
 
@@ -496,8 +422,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

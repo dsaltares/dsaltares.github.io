@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Movimiento relativo a la cámara</h1>
@@ -102,50 +103,29 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png" /></p>
-
+    <p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png"></p>
 <p>En la mayoría de videojuegos en tercera persona, <strong>la dirección hacia la que se mueve el personaje depende de la orientación de la cámara</strong>. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido. En este artículo <strong>explico un sencillo algoritmo para conseguirlo</strong>.</p>
-
 <h3 id="qué-queremos-conseguir">¿Qué queremos conseguir?</h3>
-
 <p>El siguiente diagrama muestra el <strong>sistema de coordenadas de Ogre</strong>. Imaginad que nuestro personaje se encuentra en el origen <em>p = (0, 0, 0)</em> y que la cámara está en el <em>c = (0, 0, 50)</em> mirando hacia el origen. Nuestras teclas de movimiento son las clásicas: WASD. Al pulsar W el personaje debe moverse en la dirección negativa del eje Z, en cambio, si pulsamos D deberá hacerlo en la dirección positiva del eje X.</p>
-
 <p>En cambio, si la cámara se situase en <em>c = (50, 0, 0)</em> mirando a <em>(0, 0, 0)</em> las teclas no tendrían el mismo efecto en términos absolutos, aunque se mantiene idéntico si tomamos como punto de referencia a la cámara. Si pulsamos W el personaje se desplazará en la dirección negativa del eje X. En el caso de que pulsemos D, el personaje se dirigirá en la dirección negativa del eje Z.</p>
-
-<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png" /></p>
-
+<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png"></p>
 <p>Por supuesto, <strong>el personaje deberá girarse</strong> para mirar hacia la dirección del desplazamiento. A continuación, detallamos la manera de implementar este sistema de movimiento.</p>
-
 <h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
-
 <p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>
-
 <p>Partimos de los siguientes objetos:</p>
-
 <pre><code>Ogre::SceneNode* nodoPersonaje; // Nodo que representa al personaje
 Ogre::Vector3 direccionObjetivo; // Relativa a la cámara
 Ogre::Vector3 direccionActual; // Relativa a la cámara
 Ogre::Vector3 velocidad; // Velocidad del personaje
 bool andando; // true si el personaje se está desplazando
 OIS::Keyboard* teclado; // Teclado para controlar al personaje
-</code></pre>
-
-<h3 id="algoritmo-desplazamiento-del-personaje">Algoritmo: desplazamiento del personaje</h3>
-
+</code></pre><h3 id="algoritmo-desplazamiento-del-personaje">Algoritmo: desplazamiento del personaje</h3>
 <p>En cada frame debemos <strong>tomar la dirección de la cámara</strong> y quedarnos con su componente x y z ya que nos movemos en el plano. Esa será nuestra dirección <em>&ldquo;hacia delante&rdquo;</em>. Es muy sencillo obtener la dirección &ldquo;<em>hacia la derecha&rdquo;</em>, simplemente intercambiamos las componentes x y z cambiándole el signo a la z de <em>&ldquo;hacia delante&rdquo;</em>.</p>
-
 <p><strong>La dirección objetivo</strong> de este frame se puede calcular consultando las <strong>pulsaciones de las teclas</strong> y <strong>combinando los dos vectores</strong> anteriores utilizando sumas o restas. Nos podremos mover en 8 direcciones distintas. Por ejemplo, si deseamos dirigirnos hacia atrás a la izquierda tendremos: <em>direccionObjetivo = -delante – derecha</em>. Finalmente, <strong>la dirección objetivo debe ser normalizada</strong>, es decir, que el módulo del vector sea igual a 1. Esto es muy importante si no queremos que la velocidad del personaje se vea alterada. Finalmente, aplicamos el desplazamiento teniendo en cuenta la velocidad, la dirección y el tiempo en milisegundos desde el último frame. Esta técnica se conoce como <strong>LERP</strong> (Linear Interpolation).</p>
-
 <h3 id="algoritmo-orientación-del-personaje">Algoritmo: orientación del personaje</h3>
-
 <p>Sólo nos queda corregir la orientación del personaje para que mire hacia la dirección en la que se desplaza. Ogre pone a nuestra disposición el método <em>Vector3::getRotationTo</em> que, dado un vector nos devuelve el cuaternio a aplicar de forma que tras la rotación quede alineado con el segundo. <strong>Los cuaternios se utilizan para representar rotaciones</strong> en el espacio y están compuestos por un ángulo y un eje (en este caso el y). Si multiplicamos la rotación necesaria por la que ya posee el nodo del personaje, éste mirará hacia donde deseamos. Es importante el orden de los operadores ya que el producto de cuaternios no es conmutativo.</p>
-
 <h3 id="algoritmo-código-completo">Algoritmo: código completo</h3>
-
 <p>He aquí el código completo:</p>
-
 <pre><code>using namespace Ogre;
 
 void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
@@ -210,18 +190,11 @@ void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
         }
     }
 }
-</code></pre>
-
-<h3 id="posibles-mejoras">Posibles mejoras</h3>
-
+</code></pre><h3 id="posibles-mejoras">Posibles mejoras</h3>
 <p>Este algoritmo no está pensado para incluirse en un juego completo puesto que debe ser refinado. Sólo tenemos en cuenta la animación externa del personaje (desplazamiento y orientación). El algoritmo se olvida completamente de la animación interna. Si quieres un mejor resultado deberías incluirla (andar, detenerse, etc).</p>
-
 <p>La rotación es brusca, lo ideal sería aplicarla poco a poco de forma que el personaje se girase suavemente. Para hacerlo deberíamos dividir la rotación en partes y aplicar una en cada frame.</p>
-
 <h3 id="referencias">Referencias</h3>
-
 <p>Seguramente quieras consultar fuentes mucho más fiables que yo:</p>
-
 <ul>
 <li><em>Game Engine Architecture (Jason Gregory)</em>: libro que cubre todos los aspectos a la hora de desarrollar un motor de juego. Contiene una sección de matemáticas muy bien explicada.</li>
 <li><a href="http://en.wikipedia.org/wiki/Lerp_%28computing%29"><em>LERP (Wikipedia)</em></a></li>
@@ -249,8 +222,14 @@ void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

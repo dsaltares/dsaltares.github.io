@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Gestión de recursos en Ogre3D</h1>
@@ -102,39 +103,24 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p>Estos últimos días he estado trabajando en la redacción del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document</a> (GDD) de Sion Tower y en la preparación del taller <a href="../../proyectos/pfc/desarrollo-de-videojuegos-con-un-pong/"><em>&ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo;</em></a> que organizamos en la <a href="../../proyectos/presentacion-de-la-advuca/">ADVUCA</a>. <strong>Ya era hora de retomar IberOgre</strong>. Para poder continuar con el artículo <a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas"><em>&ldquo;Creación básica de escenas&rdquo;</em></a> tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: <a href="http://osl2.uca.es/iberogre/index.php/Gesti%C3%B3n_de_recursos"><em>&ldquo;Gestión de recursos&rdquo;</em></a>. ¡Hallelujah!</p>
-
+    <p>Estos últimos días he estado trabajando en la redacción del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document</a> (GDD) de Sion Tower y en la preparación del taller <a href="../../proyectos/pfc/desarrollo-de-videojuegos-con-un-pong/"><em>&ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo;</em></a> que organizamos en la <a href="../../proyectos/presentacion-de-la-advuca/">ADVUCA</a>. <strong>Ya era hora de retomar IberOgre</strong>. Para poder continuar con el artículo <a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas"><em>&ldquo;Creación básica de escenas&rdquo;</em></a> tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: <a href="http://osl2.uca.es/iberogre/index.php/Gesti%C3%B3n_de_recursos"><em>&ldquo;Gestión de recursos&rdquo;</em></a>. ¡Hallelujah!</p>
 <p>Por supuesto, os remito a que leáis el artículo completo pero en este, nuestro amado blog, os comentaré a modo de resumen los temas tratados.</p>
-
 <h3 id="la-importancia-de-un-gestor-de-recursos">La importancia de un gestor de recursos</h3>
-
 <p>En un videojuego mínimamente elaborado <strong>se necesita un gestor responsable de</strong>:</p>
-
 <ul>
 <li>Mantener una sola instancia de cada sprite, modelo, textura o efecto de sonido.</li>
 <li>Controlar el ciclo de vida de los recursos.</li>
 <li>Gestión uniforme de los distintos tipos de recursos.</li>
 <li>Cuidar la integridad.</li>
 </ul>
-
 <p>Si no disponemos de un gestor de recursos, nuestro videojuego podría hacer un uso ingente de memoria y no funcionar en un sistema corriente (a menos que trabajes en la NASA). <strong>En el artículo de IberOgre hacemos una argumentación</strong> sobre la necesidad de controlar la memoria que utilizan nuestros recursos.</p>
-
 <h3 id="gestión-del-ciclo-de-vida-de-los-recursos">Gestión del ciclo de vida de los recursos</h3>
-
 <p>¿Por qué mantener en memoria el escenario del nivel 10 cuando aún no hemos terminado el nivel 1? Es ridículo. Nuestro gestor de recursos debe proporcionarnos un <strong>sistema para controlar el ciclo de vida</strong> de los mismos. Por supuesto, Ogre cuenta con un excelente sistema a tal efecto. <strong>En IberOgre ofrecemos información para llevar a cabo este control</strong> según las distintas aproximaciones de nuestro motor de renderizado favorito.</p>
-
 <h3 id="automatización-del-proceso">Automatización del proceso</h3>
-
 <p>Gracias a los <strong>ficheros de configuración de Ogre</strong> podemos automatizar parte de la gestión de recursos. Siempre es mejor mantener nuestros datos externos al código (para evitar recompilaciones innecesarias y lentas) y declarar los recursos que utilizaremos en un fichero externo.</p>
-
 <p>Además, explicamos como <strong>crear grupos de recursos</strong> para gestionarlos masivamente. Es muy cómodo separar nuestros recursos por niveles y cargar o descargarlos todos según los vayamos necesitando.</p>
-
 <h3 id="feedback-please">¡Feedback, please!</h3>
-
 <p>Es muy común creer que se está explicando conceptos de forma correcta cuando uno mismo los comprende. No obstante, es posible que esté escribiendo artículos confusos y densos. <strong>¡Necesito feedback!</strong> Estaría encantado de que alguien leyera IberOgre y comenzara a lanzarme tomates en forma de quejas sin piedad en el blog o por correo electrónico. Algunos lectores como <a href="http://twitter.com/#!/spectrumgomas">@spectrumgomas</a> o <a href="http://twitter.com/#!/che1404">@che1404</a> ya han contribuido sugiriendo temas y correcciones.</p>
-
 <p><strong>No se corten, ¡a la yugular y sin piedad!</strong></p>
 
   </div>
@@ -157,8 +143,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,16 +110,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/escenas-nodos-exportacion.png" alt="escenas-nodos-exportacion.png" /></p>
-
+      <p><img src="../../img/wp/escenas-nodos-exportacion.png" alt="escenas-nodos-exportacion.png"></p>
 <p>El puente se acaba y , entre otras cosas, me ha permitido darle un pequeño pero <strong>importante impulso a <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a></strong>. Ligeras correcciones o ampliaciones en varios artículos y un par completamente nuevos. <strong>La wiki va sobre ruedas</strong> y no hemos tenido problemas de disponibilidad desde el cambio de servidor, ¡gracias de nuevo a la OSLUCA! Lo que sigue es un pequeño resumen del trabajo de los últimos días.</p>
-
-<h3 id="creación-básica-de-escenas-http-osl2-uca-es-iberogre-index-php-creaci-c3-b3n-b-c3-a1sica-de-escenas"><a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas">Creación básica de escenas</a></h3>
-
+<h3 id="creación-básica-de-escenashttposl2ucaesiberogreindexphpcreacic3b3n_bc3a1sica_de_escenas"><a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas">Creación básica de escenas</a></h3>
 <p>Hasta el momento sólo conocíamos el proceso de inicialización de Ogre. Este artículo pretendía continuar desde dicho punto y <strong>llegar hasta la carga de un modelo 3D en pantalla</strong>. Debido a la multitud de pasos necesarios y las distintas vías que se nos abren, el texto resultante tiene una extensión considerable. Finalmente se tratan los siguientes puntos:</p>
-
 <ul>
 <li>Creación de una ventana.</li>
 <li>Elección y creación del gestor de escenas adecuado (SceneManager).</li>
@@ -128,13 +123,9 @@
 <li>Dos aproximaciones al main loop en Ogre.</li>
 <li>Ejemplo comentado a modo de resumen.</li>
 </ul>
-
 <p>En mi opinión, se trata de un <strong>artículo de máxima importancia</strong> ya que es el primero en el que comenzamos a renderizar elementos. Llevaba cierto tiempo publicado y estos días me he dedicado a completarlo (prestando especial atención al ejemplo).</p>
-
-<h3 id="manipulación-de-nodos-http-osl2-uca-es-iberogre-index-php-manipulaci-c3-b3n-de-nodos-ejemplo"><a href="http://osl2.uca.es/iberogre/index.php/Manipulaci%C3%B3n_de_nodos#Ejemplo">Manipulación de nodos</a></h3>
-
+<h3 id="manipulación-de-nodoshttposl2ucaesiberogreindexphpmanipulacic3b3n_de_nodosejemplo"><a href="http://osl2.uca.es/iberogre/index.php/Manipulaci%C3%B3n_de_nodos#Ejemplo">Manipulación de nodos</a></h3>
 <p>¿Qué sería de nuestro videojuego si no pudiésemos darle movimiento a los elementos que lo componen? Este artículo se centra en la <strong>manipulación del scene graph</strong> tanto en cuanto a su jerarquía como a sus componentes individuales (SceneNodes). Básicamente se abarcan los siguientes aspectos:</p>
-
 <ul>
 <li>Sistema de coordenadas de Ogre.</li>
 <li>Información de un nodo, objetos adjuntos y descendientes.</li>
@@ -143,21 +134,15 @@
 <li>Control de tiempo en el bucle de juego.</li>
 <li>Ejemplo. El artículo aún no está completo ya que <strong>le falta el ejemplo principal</strong> y un par de esquemas explicativos.</li>
 </ul>
-
 <p>He querido publicarlo para que los lectores puedan seguir aprendiendo y reportando los problemas encontrados (aunque creo que es correcto en su mayoría).</p>
-
-<h3 id="exportar-modelos-desde-blender-http-osl2-uca-es-iberogre-index-php-exportar-modelos-desde-blender"><a href="http://osl2.uca.es/iberogre/index.php/Exportar_modelos_desde_Blender">Exportar modelos desde Blender</a></h3>
-
+<h3 id="exportar-modelos-desde-blenderhttposl2ucaesiberogreindexphpexportar_modelos_desde_blender"><a href="http://osl2.uca.es/iberogre/index.php/Exportar_modelos_desde_Blender">Exportar modelos desde Blender</a></h3>
 <p>Ogre sólo acepta su propio formato binario <em>.mesh</em> a la hora de cargar modelos tridimensionales por razones de eficiencia y optimización. Esto significa que <strong>debemos exportar nuestras creaciones</strong> a dicho formato. En IberOgre daremos soporte a Blender y su <strong>magnífico script Blender Exporter</strong>. En este artículo encontraréis:</p>
-
 <ul>
 <li>Instalación de Blender Exporter (Windows y GNU/Linux).</li>
 <li>Proceso de exportación de un modelo con todas las opciones comentadas.</li>
 <li>Recomendaciones a la hora de realizar una exportación.</li>
 </ul>
-
 <h3 id="el-trabajo-duro-continua">El trabajo duro continua</h3>
-
 <p>Durante la última semana he estado trabajando fuerte y se ha notado en la forja de Red Iris. <strong>Un porcentaje de actividad que rozaba el 100% y me situaba entre los 5 proyectos más activos</strong>. ¡Creo que para contar con un único desarrollador es mucho decir! Espero continuar siendo productivo y generar más contenido pronto.</p>
 
       
@@ -173,22 +158,13 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/gestion-tareas.png" alt="gestion-tareas.png" /></p>
-
+      <p><img src="../../img/wp/gestion-tareas.png" alt="gestion-tareas.png"></p>
 <p><strong>Gestionar de forma eficiente el tiempo que le dedico al proyecto es complicado</strong>. Tras una dura mañana de trabajo, redactar un artículo para IberOgre o programar un módulo de Sion Tower se vuelve una carrera cuesta arriba. Aún así no me ha ido del todo mal hasta el momento, pues la wiki tiene varios artículos publicados y el GDD del videojuego está avanzado. En cualquier caso, espero no ser el único que tenga estos problemas. Al grano, con el objetivo de aumentar mi rendimiento h<strong>e decido utilizar el <a href="https://forja.rediris.es/pm/?group_id=820">sistema de tareas que ofrece la forja de Red Iris</a></strong>.</p>
-
 <h3 id="por-qué-el-sistema-de-red-iris">¿Por qué el sistema de Red Iris?</h3>
-
 <p>Sé que no es el mejor software para administrar y controlar las tareas de un proyecto pero tiene sus ventajas. La primera es su <strong>carácter público</strong>. No tendría sentido trabajar en software libre y mantener las tareas en un fichero privado de mi disco duro. De esta manera los interesados pueden ver en qué se trabaja actualmente y cuáles serán las características o artículos que se harán públicos en el futuro próximo.</p>
-
 <p>Además, cualquier interesado conocerá los puntos flacos y las tareas que se han quedado descolgadas esperando un empujón. Por tanto, creo que es una <strong>buena estrategia para atraer colaboradores</strong> y facilitarles su integración. ¡Aún estoy a la caza de artistas!</p>
-
 <h3 id="organización-de-las-tareas">Organización de las tareas</h3>
-
 <p>Para una mayor claridad, he organizado las tareas de la siguiente forma:</p>
-
 <ul>
 <li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1457&amp;group_id=820&amp;func=browse"><strong>Artículos IberOgre</strong></a>: artículos que tengo pensado incluir en la wiki así como los puntos a mejorar en los ya existentes.</li>
 <li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1458&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Diseño</strong></a>: tareas de diseño del videojuego.</li>
@@ -197,9 +173,7 @@
 <li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1663&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Juego</strong></a>: tareas relacionadas con la implementación del sistema de juego.</li>
 <li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1664&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Arte</strong></a>: tareas relacionadas con el apartado gráfico y sonoro del juego.</li>
 </ul>
-
 <p>De cara al Hackathon que se celebrará en la Universidad de Cádiz para los participantes del V CUSL y otros proyectos, crearé las tareas que necesito. ¡Seguro que será una experiencia que merece la pena!</p>
-
 <p><strong>Espero poder aumentar mi productividad</strong> estableciendo tareas cortas y objetivos realizables a corto plazo. Trabajando poco a poco pero de forma constante conseguiré buenos resultados.</p>
 
       
@@ -215,43 +189,26 @@
       <a class="label" href="../../categories/computing">Computing</a>
       </span>
       
-      <p><img src="../../img/wp/burg.png" alt="burg.png" /></p>
-
+      <p><img src="../../img/wp/burg.png" alt="burg.png"></p>
 <p>Como sabéis, <strong><a href="http://es.wikipedia.org/wiki/GNU_GRUB">GRUB</a></strong> (GRand Unified Bootloader) es un fantástico software que nos permite elegir entre los sistemas operativos que tengamos instalados en el momento del arranque. Para muchos es la salvación en una transición de Windows a GNU/Linux mientras que para otros es la forma de acudir suplicando a otro Kernel cuando el principal da problemas. El único problema que puede tener es que es un bastante feo. <strong>Al rescate de los vanidosos y acude <a href="http://code.google.com/p/burg/">BURG</a></strong> (Brand-new Universal loadeR from GRUB), nótese la ironía infinita al darle la vuelta a <em>&ldquo;GRUB&rdquo;</em>.</p>
-
 <p><strong>BURG sustituye al clásico sistema de arranque</strong> ofreciéndonos diversos estilos muy atractivos para personalizarlo. <strong>Instalarlo</strong> en Ubuntu es muy sencillo, simplemente sigue estos pasos:</p>
-
 <p>Añade estas líneas al fichero /etc/apt/sources.list:</p>
-
 <pre><code>deb http://ppa.launchpad.net/bean123ch/burg/ubuntu maverick main
 deb-src http://ppa.launchpad.net/bean123ch/burg/ubuntu maverick main
-</code></pre>
-
-<p>Sustituye maverick por el nombre de tu distribución. Tras esto, actualiza tus paquetes con:</p>
-
+</code></pre><p>Sustituye maverick por el nombre de tu distribución. Tras esto, actualiza tus paquetes con:</p>
 <pre><code>sudo apt-get update
 sudo apt-get install burg
-</code></pre>
-
-<p>Debes aceptar cuando te avisen sobre la firma desconocida puesto que confiamos en la fuente. Para <strong>configurar BURG</strong> y hacer que sustituya al clásico GRUB debemos hacer:</p>
-
+</code></pre><p>Debes aceptar cuando te avisen sobre la firma desconocida puesto que confiamos en la fuente. Para <strong>configurar BURG</strong> y hacer que sustituya al clásico GRUB debemos hacer:</p>
 <pre><code>sudo burg-install /dev/sda
 sudo update-burg
-</code></pre>
-
-<p>Cambia /dev/sda por el nombre del disco duro donde tengas instalado el gestor de arranque. Para <strong>elegir el tema</strong> de BURG puedes utilizar el emulador con el que se distribuye:</p>
-
+</code></pre><p>Cambia /dev/sda por el nombre del disco duro donde tengas instalado el gestor de arranque. Para <strong>elegir el tema</strong> de BURG puedes utilizar el emulador con el que se distribuye:</p>
 <pre><code>sudo burg-emu
-</code></pre>
-
-<p>Existen ciertos <strong>atajos de teclado</strong> que te vendría bien conocer para configurar BURG a tu gusto:</p>
-
+</code></pre><p>Existen ciertos <strong>atajos de teclado</strong> que te vendría bien conocer para configurar BURG a tu gusto:</p>
 <ul>
 <li><em>t</em>: abre la lista de temas disponibles</li>
 <li><em>f</em>: cambia entre modo reducido y completo. En el modo reducido no aparecen todos los kernels antiguos.</li>
 <li><em>c</em>: abre una terminal.</li>
 </ul>
-
 <p>Muchos atajos más que puedes encontrar en la <a href="http://code.google.com/p/burg/wiki/InstallUbuntu">documentación oficial</a>. Bien, llegados a este punto <strong>serás mucho más molón</strong> y podrás enseñárselo a tus coleguillas. BURG proporciona un sistema para <a href="http://code.google.com/p/burg/wiki/ThemeCustomization"><strong>personalizar los temas</strong></a>, puedes encontrar más información al respecto aquí. Disfrútalo.</p>
 
       
@@ -267,34 +224,19 @@ sudo update-burg
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/advuca-workshop/taller-advuca-11.jpg" alt="taller-advuca-11.jpg" /></p>
-
+      <p><img src="../../img/advuca-workshop/taller-advuca-11.jpg" alt="taller-advuca-11.jpg"></p>
 <p>La semana pasada se celebraron las dos sesiones del primer taller de la ADVUCA titulado <em>&ldquo;Introducción al Desarrollo de Videojuegos con un Pong&rdquo;</em>. Podéis obtener más información así como los materiales empleados en el <a href="http://blog.advuca.com">blog de la asociación</a>. En este artículo me gustaría comentar mi experiencia <strong>personal</strong> organizando la actividad junto con Alberto Cejas y otros compañeros. Por supuesto, al final, tenéis la galería de fotos cortesía de José Tomás Tocino.</p>
-
 <h3 id="la-preparación">La preparación</h3>
-
 <p>El taller <strong>comenzó a gestarse a principios de verano</strong>, casi de forma paralela al inicio del papeleo para registrar la asociación. En desarrollar el Pong empleamos menos de una semana utilizando únicamente los huecos libres que nos dejaba el trabajo. Los verdaderos retos fueron la presentación y la planificación del taller. Estábamos acostumbrados a estar del lado de los pupitres y era la primera vez que debíamos <strong>desgranar una materia compleja para principiantes</strong>.</p>
-
 <p>Hemos querido abarcar <strong>mucha materia</strong>: diseño de videojuegos, trabajo en equipo, librería SDL, implementación etc. No pretendíamos que la gente lo comprendiese todo al dedillo sino <strong>despertar una motivación</strong> en ellos. Si volvían a sus casas y seguían dándole vueltas al código, retocando fragmentos e investigando por cuenta propia, habríamos cumplido con creces.</p>
-
 <h3 id="la-ejecución">La ejecución</h3>
-
 <p>Creímos que nos costaría mucho conseguir asistencia pero <strong>la respuesta fue abrumadora</strong>. Las 88 plazas fueron arrasadas en poco más de una semana gracias a los carteles, el boca a boca y un poco de actividad en Twitter. El aula llena y los ponentes completamente impresionados (gracias a Noelia Sales, Ezequiel Vázquez, José Tomás Tocino y Jose Marente).</p>
-
-<p><strong>Gente atenta, participativa y bastante animada</strong> a pesar de la larga duración de las sesiones. Cuando llegó el momento de abordar el código alguno se descolgó pero creo que fue completamente normal. Muchas veces se nos olvida que también fuimos novatos (y aún lo somos) y había ciertas diferencias de nivel en la sala. A juzgar por la encuesta (que aún tenemos que procesar) la gente acabó contenta y animada. <em>&ldquo;Mission acomplished!&rdquo;</em></p>
-
+<p><strong>Gente atenta, participativa y bastante animada</strong> a pesar de la larga duración de las sesiones. Cuando llegó el momento de abordar el código alguno se descolgó pero creo que fue completamente normal. Muchas veces se nos olvida que también fuimos novatos (y aún lo somos) y había ciertas diferencias de nivel en la sala. A juzgar por la encuesta (que aún tenemos que procesar) la gente acabó contenta y animada. <em>&ldquo;Mission acomplished!&quot;</em></p>
 <p>Los <strong>mods que algunos asistentes desarrollaron</strong> cambiando los ficheros multimedia e incluso el código no tienen desperdicio. ¡Enhorabuena!</p>
-
 <h3 id="el-resultado">El resultado</h3>
-
 <p>Me atrevo a decir que <strong>la ilusión y el trabajo duro invertidos</strong> en este taller darán sus frutos. Nos toca seguir preparando actividades dentro del marco de la asociación, de forma que vayamos poniendo los ladrillos para construir una pequeña y activa <strong>comunidad</strong>. Por supuesto, las sugerencias serán tenidas en cuenta y trataremos de <strong>aprender de nuestros errores</strong>.</p>
-
 <h3 id="las-fotos">¡Las fotos!</h3>
-
 <p>Como he comentado al principio de este post, las fotos bajo licencia <a href="http://creativecommons.org/licenses/by/2.0/">cc-by</a> se las debemos a <a href="http://josetomastocino.com/">José Tomás Tocino</a>.</p>
-
 <p>
 <link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
 
@@ -616,14 +558,12 @@ sudo update-burg
   
 
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="../../js/load-photoswipe.js"></script>
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
 
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -684,21 +624,16 @@ sudo update-burg
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/gdd-siontower.png" alt="gdd-siontower.png" /></p>
-
+      <p><img src="../../img/wp/gdd-siontower.png" alt="gdd-siontower.png"></p>
 <p>He sudado un poco de tinta para conseguirlo pero ya <strong>he publicado la primera versión del documento de diseño de Sion Tower</strong>, el videojuego que acompañará a IberOgre. Hace algunas semanas os hablaba del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document (GDD)</a> en general y desde entonces he estado redactando el mío. Ha sido un paso duro (no disfruto con el papeleo) pero <strong>necesario para aclararme las ideas</strong>.</p>
-
 <p>El documento se divide en varias secciones diferenciadas:</p>
-
 <ul>
 <li><strong>Introducción</strong>: pequeña sección de un par de páginas en el que se habla del planteamiento del juego, sus características, género, público objetivo y mecánicas a grandes rasgos.</li>
 <li><strong>Mecánicas de juego</strong>: se especifica los elementos de los que se compone el juego y se detalla la forma en la que el jugador interactuará con el mismo. Después, se listan los personajes junto con sus descripciones, habilidades y atributos. Finalmente se aclaran aspectos relacionados con las físicas, colisiones y movimiento.</li>
 <li><strong>Interfaz</strong>: un diagrama general con las distintas pantallas y sus transiciones seguido de un boceto detallado de cada una de ellas.</li>
 <li><strong>Arte</strong>: lista con los recursos necesarios para el juego. Iconos, GUI, texturas, modelos 3D, fondos, letreros, efectos de sonido y canciones.</li>
 </ul>
-
 <p><strong>Seguramente necesite retoques</strong> para completar las lagunas que vayan surgiendo en la mecánica de juego (estoy seguro de que me he dejado algo). No obstante, quería tener una primera versión lo antes posible para c<strong>omenzar a buscar colaboradores</strong> en el plano artístico. Si les presento una lista de tareas disponibles estoy seguro de que la búsqueda será menos complicada (que no sencilla).</p>
-
 <p><strong>Sería genial que el documento estuviera lleno de bocetos</strong> artísticos para ilustrar la descripción del juego, ¿alguien se anima? Si le echáis una ojeada y veis cualquier cosa extraña o algo que no os parezca, estaré encantado de hacer correcciones o debatirlo en los comentarios. Mientras tanto, <a href="http://forja.rediris.es/frs/download.php/2019/gdd.pdf"><strong>podéis descargar el GDD aquí</strong></a>, en la <a href="http://forja.rediris.es/frs/?group_id=820">sección de ficheros de la forja</a>.</p>
 
       
@@ -741,8 +676,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

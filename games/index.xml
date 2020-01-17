@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games on David Saltares</title>
@@ -60,7 +60,7 @@ It was my final degree project and it won the V Open Source University Contest, 
       
       <guid>https://saltares.com/games/iberogre/</guid>
       <description>Ogre 3D games programming wiki in Spanish language. It was part of my final degree project with Sion Tower.
- Role: designer, writer and samples programmer Year: 2011 Development time: 6 months Technology: C++ language using Ogre3D and Mediawiki engine Sample Code: GitHub  Features  Geometry and math articles. Ogre articles. Complementary technology articles: OIS, Blender, Bullet. Samples of increasing complexity discussed in detail. Use of open source tools.</description>
+ Role: designer, writer and samples programmer Year: 2011 Development time: 6 months Technology: C++ language using Ogre3D and Mediawiki engine Sample Code: GitHub  Features  Geometry and math articles. Ogre articles. Complementary technology articles: OIS, Blender, Bullet. Samples of increasing complexity discussed in detail. Use of open source tools. Good practices to develop cross platform software.</description>
     </item>
     
     <item>
@@ -80,7 +80,8 @@ It was my final degree project and it won the V Open Source University Contest, 
       
       <guid>https://saltares.com/games/air-force-pilot/</guid>
       <description>Top view 2D plane shooter in which the player controls a fighter who has to knock down enemy planes in the level. It was my first game and it was finalist in an open source contest in Cádiz University (Spain).
- Role: game designer, sole programmer and artist Year: 2009 Development time: 2 months Technology: C++ language using SDL Download: source code  Screenshots    Airforcepilot 1</description>
+ Role: game designer, sole programmer and artist Year: 2009 Development time: 2 months Technology: C++ language using SDL Download: source code  Screenshots    Airforcepilot 1
+      Airforcepilot 2</description>
     </item>
     
   </channel>

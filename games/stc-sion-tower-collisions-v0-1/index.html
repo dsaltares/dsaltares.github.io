@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">STC: Sion Tower Collisions v0.1</h1>
@@ -102,18 +103,11 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png" /></p>
-
+    <p><img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png"></p>
 <p>El siguiente objetivo en el desarrollo de Sion Tower era la implementación de un <strong>sistema de detección de colisiones</strong>. Hablamos de un apartado crítico en el desarrollo de un videojuego por la cantidad de cálculos que implica, hay que tener especial cuidado en ese sentido. Llevo un par de semanas trabajando en él de forma intensiva y al menos puedo decir que he conseguido algo que funciona. Les presento la versión 0.1 de STC: <em>Sion Tower Collisions</em>.</p>
-
 <h3 id="modular-y-reutilizable">Modular y reutilizable</h3>
-
 <p>Al ser modular y completamente independiente del resto del juego <strong>he decidido liberarlo también por separado</strong>. Se puede utilizar sin ningún tipo de problemas en cualquier proyecto. Las únicas dependencias son Ogre y Boost. El código es C++ estándar así que es compatible con cualquier plataforma que soporte las dos bibliotecas anteriormente mencionadas.</p>
-
 <h3 id="características">Características</h3>
-
 <ul>
 <li><strong>Shape</strong>: formas de colisión básicas: esfera, plano y AABB.</li>
 <li><strong>Collision Dispatching</strong>: elección del test de colisión de forma adecuado de forma transparente a partir de dos figuras génericas.</li>
@@ -123,17 +117,12 @@
 <li><strong>Particionado del espacio</strong>: para aumentar el rendimiento se incorpora un filtrado inicial para evitar tests exhaustivos. Muy básico por el momento.</li>
 <li><strong>Callbacks</strong>: es posible indicarle al gestor de colisiones que llame a una función miembro con una signatura determinada ante una colisión entre dos cuerpos de un tipo predefinido.</li>
 </ul>
-
 <h3 id="descarga">Descarga</h3>
-
 <p>He habilitado una <strong>descarga en la forja de Red Iris</strong> para que podáis acceder sin problemas. Incluye el código fuente, licencia (GPL 3) y documentación generada con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. Ruego que me enviéis algún mensaje en caso de encontrar cualquier tipo de problemas: bugs, uso, posibles mejoras, etc.</p>
-
 <ul>
 <li><a href="http://forja.rediris.es/frs/download.php/2072/siontower-collisions-v0.1.zip">Descargar STC v0.1</a></li>
 </ul>
-
 <h3 id="documentación-adicional">Documentación adicional</h3>
-
 <p>Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.</p>
 
   </div>
@@ -156,8 +145,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

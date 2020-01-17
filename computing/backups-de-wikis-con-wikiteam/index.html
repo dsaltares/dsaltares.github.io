@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Backups de wikis con Wikiteam</h1>
@@ -102,41 +103,25 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
     </span>
-    
-
-<p><img src="../../img/wp/backups-wikiteam1.png" alt="backups-wikiteam1.png" /></p>
-
+    <p><img src="../../img/wp/backups-wikiteam1.png" alt="backups-wikiteam1.png"></p>
 <p><strong><a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a> está alojada en los servidores de la <a href="http://osl.uca.es/">OSLUCA</a></strong> a los que no tengo acceso y, aunque sé que se hacen <strong>copias de seguridad</strong> diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: <strong><a href="http://code.google.com/p/wikiteam/">Wikiteam</a></strong>. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.</p>
-
 <h3 id="qué-hace-wikiteam">¿Qué hace Wikiteam?</h3>
-
 <p><strong>Wikiteam</strong> es un script GPL v3 escrito en Python que <strong>descarga todo el contenido de una wiki</strong> que utilice el sistema Mediawiki (actualmente el más extendido). No sólo es capaz de obtener el estado actual de una wiki sino que también recupera <strong>todo el historial</strong> de cambios así como las <strong>imágenes y ficheros</strong> que se hayan subido. El único (pero comprensible) problema es que no recupera los usuarios ya que no requiere acceso a la base de datos.</p>
-
 <p>El objetivo principal de Wikiteam es <strong>permitir que cualquier usuario pueda hacer una copia de una wiki</strong>. Si el sitio deja de existir por cualquier motivo, el conocimiento no se habrá perdido ya que este usuario podría restaurar la copia en un nuevo servidor. De hecho, en la forja del proyecto tienen disponibles backups de diversas wikis.</p>
-
 <h3 id="hacer-backups-con-wikiteam">Hacer backups con Wikiteam</h3>
-
 <p>Generar copias de seguridad es harto sencillo y sólo requiere ejecutar el script con los parámetros adecuados. Sigue los siguientes pasos:</p>
-
 <ol>
 <li><a href="http://code.google.com/p/wikiteam/source/browse/trunk/dumpgenerator.py">Descarga el script</a> desde su forja de Google Code.</li>
-
-<li><p>Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:</p>
-
-<pre><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
-</code></pre></li>
+<li>Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:</li>
 </ol>
-
-<p>El significado de los parámetros es el siguiente:</p>
-
+<pre><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
+</code></pre><p>El significado de los parámetros es el siguiente:</p>
 <ul>
 <li><strong>api</strong>: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: <a href="http://osl2.uca.es/iberogre/api.php">http://osl2.uca.es/iberogre/api.php</a></li>
 <li><strong>xml</strong>: recupera todas las páginas de la wiki junto a su historial-</li>
 <li><strong>images</strong>: recupera todas las imágenes y ficheros de la wiki.</li>
 </ul>
-
 <h3 id="restaurar-backups-con-wikiteam">Restaurar backups con Wikiteam</h3>
-
 <p>Volcar las copias en otra instancia de Mediawiki es ligeramente más complejo y requiere, evidentemente, de acceso al servidor. Lo recomendable es que sigas <a href="http://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">el proceso detallado en la propia wiki de Mediawiki</a>.</p>
 
   </div>
@@ -159,8 +144,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

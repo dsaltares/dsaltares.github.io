@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,15 +110,13 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/intell-buzz-workshop.png" alt="intell-buzz-workshop.png" /></p>
-
+      <p><img src="../../img/wp/intell-buzz-workshop.png" alt="intell-buzz-workshop.png"></p>
 <p>Quick update to let you know I have been invited to talk about all Libgdx things
 at <a href="http://intelbuzz.bemyapp.com/">Intel Buzz Workshop 2015</a>, which will take
 place in Stockholm on July 17th. It will be a one day conference on mobile games
 development and will feature talks on virtual reality, Unreal Engine 4 and lots
 of cool stuff, check the <a href="http://intelbuzz.bemyapp.com/stockholm/#schedule">programme</a>
 for more details.</p>
-
 <p><a href="http://intelbuzz.bemyapp.com/stockholm/#schedule">Register</a> if you are interested, tickets are free until July 6th! Hope to see you there!</p>
 
       
@@ -133,18 +132,14 @@ for more details.</p>
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/libgdx-cookbook-cover.png" alt="libgdx-cookbook-cover.png" /></p>
-
-<p>Haven&rsquo;t bought <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">Libgdx Cross-platform Game Development Cookbook</a>
+      <p><img src="../../img/libgdx-cookbook-cover.png" alt="libgdx-cookbook-cover.png"></p>
+<p>Haven't bought <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">Libgdx Cross-platform Game Development Cookbook</a>
 yet? Stop reading and go get it!</p>
-
 <p>Quick update to inform you that I just updated the
 <a href="https://github.com/dsaltares/libgdx-cookbook">samples repository</a> to use Libgdx 1.6.0
 and Ashley 1.5.0, both recently released.</p>
-
 <p>Libgdx 1.6.0 introduces <a href="http://www.badlogicgames.com/wordpress/?p=3658">changes in our font rendering API</a>,
 which require a few minor tweaks to the framework calls, nothing major.</p>
-
 <p>7 months after the release of the book, we continue to support it. Rest assured, it is the most up to date Libgdx publication at this point in time. Thanks for your support!</p>
 
       
@@ -160,26 +155,21 @@ which require a few minor tweaks to the framework calls, nothing major.</p>
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png" /></p>
-
-<p>Thanks to the contributors, here&rsquo;s a new version of <a href="https://github.com/libgdx/ashley">Ashley</a>,
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>Thanks to the contributors, here's a new version of <a href="https://github.com/libgdx/ashley">Ashley</a>,
 which now stands at <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.5.0">1.5.0</a>.
 A new version of your favorite component based entity framework is out.</p>
-
 <p>The version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.</p>
-
 <ul>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/55241f5256c0ec186992262c7d598811bc4664fe">API addition</a></strong>: adds <code>getFamily()</code> method to <code>IntervalIteratingSystem</code> and <code>IteratingSystem</code>.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/bffa44cd5a59ca156e63b2ce7919869e41538907">API change</a></strong>: <code>IntervalSystem</code>‘s <code>update()</code> method is now <code>final</code>, as it doesn&rsquo;t make sense to override it.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/bffa44cd5a59ca156e63b2ce7919869e41538907">API change</a></strong>: <code>IntervalSystem</code>‘s <code>update()</code> method is now <code>final</code>, as it doesn't make sense to override it.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/9b0eb90d1a73f8e9ce5e42435a81bf49eb0ed29b">Update</a></strong>: updated Libgdx version to 1.6.0.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/issues/151">Enhancement</a></strong>: allows <code>IntervalSystem</code> to update faster than the main loop.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/b01cb15082df1358e620214f4bdef272cad700c4">Enhancement</a></strong>: improved <code>hashCode()</code> and <code>equals()</code> implementation of <code>Family</code>.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/e2be43e39c1634c3ef0c64fcb8f84f2e3e0ad3b1">Bug fix</a></strong>: fixed GWT build and made a <a href="http://libgdx.badlogicgames.com:8080/job/ashley-superjumper/">Jenkins job</a> to make sure we also test GWT integrity.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/db1286f69c22a5bb4b9e7055d8f65d3063824a9b">Bug fix</a></strong>: empty <code>Family</code> now matches empty entities.</li>
 </ul>
-
 <p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.5.0</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.5.1-SNAPSHOT</code>. As usual, <a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a> and the wiki is up to date.</p>
-
 <p>Please keep up the good work sending more pull requests and reporting bugs.</p>
 
       
@@ -195,66 +185,42 @@ A new version of your favorite component based entity framework is out.</p>
       <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      
-
-<p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It&rsquo;s probably easier if I just stick a summary of the GitHub readme here.</p>
-
+      <p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It's probably easier if I just stick a summary of the GitHub readme here.</p>
 <p>Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.</p>
-
-<p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg" /></p>
-
+<p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg"></p>
 <h3 id="reason-to-be">Reason to be</h3>
-
 <p>When learning a new language, it is very common to struggle with verb conjugations. For example:</p>
-
 <blockquote>
 <p>I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</p>
 </blockquote>
-
 <p>Unfortunately, the available resources are somehow limited:</p>
-
 <ul>
 <li>Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.</li>
-<li>Apps: seriously? I don&rsquo;t want to install yet another app!</li>
-<li>Websites: lists are limited, the sites are old, full of ads and/or don&rsquo;t play well with mobile devices.</li>
+<li>Apps: seriously? I don't want to install yet another app!</li>
+<li>Websites: lists are limited, the sites are old, full of ads and/or don't play well with mobile devices.</li>
 </ul>
-
 <p>Conjugate tries to solve that use case.</p>
-
 <h3 id="project-structure">Project structure</h3>
-
 <p>The project is divided in two parts:</p>
-
 <ul>
 <li>Scraper</li>
 <li>Mobile friendly website</li>
 </ul>
-
 <h4 id="scraper">Scraper</h4>
-
-<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn&rsquo;t work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
-
-<p>The script currently supports Romanian (which I&rsquo;m trying to learn) and Spanish. Luckily, it&rsquo;s pretty easy to add support for new languages, although no thanks to Verbix&rsquo;s poor use of web standards.</p>
-
+<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn't work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
+<p>The script currently supports Romanian (which I'm trying to learn) and Spanish. Luckily, it's pretty easy to add support for new languages, although no thanks to Verbix's poor use of web standards.</p>
 <h4 id="website">Website</h4>
-
-<p>Currently, I&rsquo;m in the process of writing the mobile friendly application. It&rsquo;ll be extremely simple:</p>
-
+<p>Currently, I'm in the process of writing the mobile friendly application. It'll be extremely simple:</p>
 <ol>
 <li>Enter a verb in English (infinitive).</li>
 <li>Select a language from a dropdown.</li>
 <li>Hit &ldquo;Go&rdquo;.</li>
 </ol>
-
-<p><img src="../../img/conjugate/flask.png" alt="flask.png" /></p>
-
-<p>For the backend I&rsquo;m using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they&rsquo;re really easy to get started with. Not too sure about the frontend, but I&rsquo;ll probably go for a framework that makes responsive design simple enough.</p>
-
+<p><img src="../../img/conjugate/flask.png" alt="flask.png"></p>
+<p>For the backend I'm using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they're really easy to get started with. Not too sure about the frontend, but I'll probably go for a framework that makes responsive design simple enough.</p>
 <p>Any suggestions?</p>
-
 <h3 id="progress">Progress</h3>
-
-<p>I&rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&rsquo;d be more than happy to accept PR&rsquo;s if you&rsquo;re interested to help!</p>
+<p>I've been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I'd be more than happy to accept PR's if you're interested to help!</p>
 
       
     </div>
@@ -269,28 +235,17 @@ A new version of your favorite component based entity framework is out.</p>
       <a class="label" href="../../categories/general">General</a>
       </span>
       
-      <p>It&rsquo;s been <a href="../../general/5-years-old/">over 5 years</a> since I registered <code>siondream.com</code>. At that time, I also signed up for a shared hosting plan with <a href="http://hostgator.com/">Hostgator</a>. Unfortunately, I&rsquo;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.</p>
-
+      <p>It's been <a href="../../general/5-years-old/">over 5 years</a> since I registered <code>siondream.com</code>. At that time, I also signed up for a shared hosting plan with <a href="http://hostgator.com/">Hostgator</a>. Unfortunately, I'm no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.</p>
 <p>Welcome to <code>saltares.com</code>!</p>
-
-<p>Here&rsquo;s a brief of my experience with Hostgator and the migration process.</p>
-
-<p><img src="../../img/others/hostgator.png" alt="hostgator.png" /></p>
-
-<p>Hostgator wasn&rsquo;t actually that bad. It had excellent client support and my plan offered &ldquo;unlimited&rdquo; disk space and monthly data transfer at a fair price. However, at the end of the day, both were limited by the number of people you shared your instance with. In all honestly, the uptime could have been better as it wasn&rsquo;t rare for me to get notifications about the blog being unreachable.</p>
-
-<p>The worst part about Hostgator were the access limitations. I couldn&rsquo;t just run whatever software I wanted on the server. Whilst it supported PHP, I believe Java or Python weren&rsquo;t among the list. I simply didn&rsquo;t have the permissions to install anything.</p>
-
-<p><img src="../../img/others/digitalocean.png" alt="digitalocean.png" /></p>
-
-<p>A few friends have <a href="https://www.digitalocean.com/">Digital Ocean</a> droplets and are very happy with the service, so I went for it and got my Ubuntu SSD machine. I took advantage of the <a href="https://education.github.com/pack">GitHub student pack</a>, which offers a $100 voucher, meaning I don&rsquo;t have to pay at all for the first 20 months.</p>
-
-<p>Yes, you have to set absolutely everything up yourself, including a web server, PHP, MySQL, etc. Conveniently, Digital Ocean&rsquo;s website has a myriad of <a href="https://www.digitalocean.com/community/tutorials">tutorials</a> with detailed steps on how to do all of this. Great way to polish up my rusty Linux skills.</p>
-
-<p><img src="../../img/others/namecheap.png" alt="namecheap.png" /></p>
-
-<p>After digging around for a bit, I registered <code>saltares.com</code> with <a href="https://www.namecheap.com/">Namecheap</a>. Despite being put off by the name, a lot of people recommended it and now I can see why. The DNS setup propagated extremely quickly and there is no fuss. Additionally, it&rsquo;s really easy to find a <a href="http://www.namecheapcoupons.com/">discount code</a>, so I got the domain during a year for £6, not bad.</p>
-
+<p>Here's a brief of my experience with Hostgator and the migration process.</p>
+<p><img src="../../img/others/hostgator.png" alt="hostgator.png"></p>
+<p>Hostgator wasn't actually that bad. It had excellent client support and my plan offered &ldquo;unlimited&rdquo; disk space and monthly data transfer at a fair price. However, at the end of the day, both were limited by the number of people you shared your instance with. In all honestly, the uptime could have been better as it wasn't rare for me to get notifications about the blog being unreachable.</p>
+<p>The worst part about Hostgator were the access limitations. I couldn't just run whatever software I wanted on the server. Whilst it supported PHP, I believe Java or Python weren't among the list. I simply didn't have the permissions to install anything.</p>
+<p><img src="../../img/others/digitalocean.png" alt="digitalocean.png"></p>
+<p>A few friends have <a href="https://www.digitalocean.com/">Digital Ocean</a> droplets and are very happy with the service, so I went for it and got my Ubuntu SSD machine. I took advantage of the <a href="https://education.github.com/pack">GitHub student pack</a>, which offers a $100 voucher, meaning I don't have to pay at all for the first 20 months.</p>
+<p>Yes, you have to set absolutely everything up yourself, including a web server, PHP, MySQL, etc. Conveniently, Digital Ocean's website has a myriad of <a href="https://www.digitalocean.com/community/tutorials">tutorials</a> with detailed steps on how to do all of this. Great way to polish up my rusty Linux skills.</p>
+<p><img src="../../img/others/namecheap.png" alt="namecheap.png"></p>
+<p>After digging around for a bit, I registered <code>saltares.com</code> with <a href="https://www.namecheap.com/">Namecheap</a>. Despite being put off by the name, a lot of people recommended it and now I can see why. The DNS setup propagated extremely quickly and there is no fuss. Additionally, it's really easy to find a <a href="http://www.namecheapcoupons.com/">discount code</a>, so I got the domain during a year for £6, not bad.</p>
 <p>All of this should have been seamless for everyone, so please contact me if something is not working quite well. Requests to <code>siondream.com</code> now point to my droplet, so the old domain points to the same thing as <code>saltares.com</code>.</p>
 
       
@@ -333,8 +288,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

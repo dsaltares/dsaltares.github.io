@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,25 +110,17 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-1.png" alt="colisiones-1.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-1.png" alt="colisiones-1.png"></p>
 <p>Entregas:</p>
-
 <ul>
 <li><em>Colisiones I: Introducción, requisitos y alternativas</em></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
 <li><a href="../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: La clase Shape y Collision Dispatching</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">ColisionesIV: Tests de colisión</a></li>
 </ul>
-
 <p>Mientras diseñaba e implementaba el <a href="../../proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-1/"><strong>sistema de detección de colisiones de Sion Tower (STC)</strong></a> he leído bastante y aprendido mucho al respecto. Es un tema muy complejo, crítico y delicado estudiado con detalle en varias ocasiones. Me queda muchísimo por aprender al respecto pero por razones de calendario no puedo permitirme abarcarlo todo antes de ponerme a trabajar. Este es el primero de <strong>una serie de artículos en los que documento el sistema de colisiones que he desarrollado</strong>. Comenzamos con los requisitos del sistema y las alternativas disponibles.</p>
-
 <h3 id="requisitos-del-sistema">Requisitos del sistema</h3>
-
 <p>En el <a href="http://forja.rediris.es/frs/download.php/2019/gdd.pdf">documento de diseño de Sion Tower</a> se especifican los <strong>posibles tipos de colisiones</strong> que pueden darse en el transcurso de una partida típica (sección 3.4.1):</p>
-
 <ul>
 <li>Personaje-Personaje</li>
 <li>Personaje-Escenario</li>
@@ -136,11 +129,8 @@
 <li>Trampa-Personaje</li>
 <li>Trampa-Escenario</li>
 </ul>
-
 <p>El área de colisión del protagonista y los enemigos podrían modelarse utilizando una o varias cajas. El escenario estará compuesto por el suelo y diversas piezas de mobiliario, es decir, un plano y otro puñado de cajas. Las trampas también pueden modelarse como cajas mientras que el área de efecto de un proyectil mágico podría ser representado mediante una sencilla esfera. Parte de la mecánica de juego consiste en seleccionar un hechizo o trampa utilizando los botones de la interfaz y colocarlo en el escenario con el ratón. Para ello hay que transformar coordenadas de pantalla (donde se desplaza el ratón) a un rayo que atraviesa el escenario y detectar las intersecciones con elementos del juego (técnica conocida como mouse raycasting).</p>
-
 <p>Antes de lanzarme a la piscina redacté una pequeña <strong>lista de las funcionalidades</strong> que debía ofrecer el sistema de colisiones que utilizase Sion Tower. Básicamente se reducían a las siguientes:</p>
-
 <ul>
 <li>Soporte para varias <strong>formas</strong>: esferas, planos, AABB y OBB</li>
 <li><strong>Tests de colisión</strong> para las combinaciones de dichas formas. El usuario de la API le pasa varias formas de un tipo genérico al sistema y éste selecciona el test adecuado (collision dispatching).</li>
@@ -150,20 +140,15 @@
 <li><strong>Filtrado de colisiones</strong>, el usuario debe poder definir clases de elementos de juego que pueden colisionar.</li>
 <li>Registro de <strong>callbacks</strong> para tipos de colisiones concretas. Por ejemplo, debe ser posible definir una función que será llamada automáticamente por el gestor de colisiones cuando un enemigo reciba el impacto de un hechizo.</li>
 </ul>
-
 <h3 id="alternativas-disponibles">Alternativas disponibles</h3>
-
 <p>Reinventar la rueda siempre es una mala idea así que lo primero que hice fue salir en busca de un sistema que se ajustase a mis necesidades. A continuación listo las alternativas disponibles junto con el motivo que me llevó a desecharlas.</p>
-
 <ul>
 <li><a href="http://www.ogre3d.org/tikiwiki/OgreBullet"><strong>Ogre Bullet</strong></a>: wrapper de la mastodóntica biblioteca de físicas <em>Bullet</em> para Ogre3D. Es multiplataforma (disponible en decenas de sistemas) y ofrece todas las funcionalidades que uno podría desear con una eficiencia envidiable. No obstante, era como matar moscas a cañonazos. Para empezar sólo me interesaba el subsistema de detección de colisiones, no el de físicas. Además, añadía nuevas dependencias al proyecto y aprender a utilizarla no iba a ser trivial.</li>
 <li><a href="http://www.ogre3d.org/tikiwiki/OgreODE"><strong>Ogre ODE</strong></a>: el correspondiente wrapper de <em>Open Dynamics Engine</em> para Ogre3D. Básicamente presenta las mismas ventajas e inconvenientes que la anterior. El problema es que el proyecto no está muy activo hablando suavemente.</li>
 <li><a href="http://www.ogre3d.org/forums/viewtopic.php?t=45267"><strong>MOC</strong></a>: <em>Minimal Ogre Collision</em> es una biblioteca tremendamente sencilla que proporciona al usuario lo mínimo para detectar colisiones. Se compone únicamente de dos ficheros sólo hay que añadir al proyecto. El problema es que obliga al uso del gestor de terrero ETM y no incluye callbacks.</li>
 <li><a href="http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=59063&amp;sid=cc6db1211f8a5d839f73e2039a40711b"><strong>Beastie</strong></a>: sencilla biblioteca compuesta únicamente por un fichero de cabecera enfocada a la detección de colisiones entre formas básicas y raycasting (emisión de rayos sobre la escena). Su interfaz no me acababa de convencer y tampoco ofrece callbacks ni cuerpos compuestos de varias formas.</li>
 </ul>
-
 <p>Es cierto que podría haber hecho el esfuerzo y adaptarme a cualquiera de las cuatro bibliotecas anteriores (sobre todo a Beastie) pero como Sion Tower forma parte de mi Proyecto Fin de Carrera <strong>decidí que era mejor aprender los fundamentos</strong> de la detección de colisiones. Por supuesto era imprescindible mantener al mínimo la complejidad con el objetivo de no hacerme viejo antes de terminarla.</p>
-
 <p>Por el momento no ofrezco más que este pequeño aperitivo introductorio. En el próximo artículo de la serie veremos el diseño general de <strong>Sion Tower Collisions (STC)</strong>. Más adelante nos centraremos en cada uno de los componentes de dicho sistema.</p>
 
       
@@ -179,18 +164,11 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png"></p>
 <p>El siguiente objetivo en el desarrollo de Sion Tower era la implementación de un <strong>sistema de detección de colisiones</strong>. Hablamos de un apartado crítico en el desarrollo de un videojuego por la cantidad de cálculos que implica, hay que tener especial cuidado en ese sentido. Llevo un par de semanas trabajando en él de forma intensiva y al menos puedo decir que he conseguido algo que funciona. Les presento la versión 0.1 de STC: <em>Sion Tower Collisions</em>.</p>
-
 <h3 id="modular-y-reutilizable">Modular y reutilizable</h3>
-
 <p>Al ser modular y completamente independiente del resto del juego <strong>he decidido liberarlo también por separado</strong>. Se puede utilizar sin ningún tipo de problemas en cualquier proyecto. Las únicas dependencias son Ogre y Boost. El código es C++ estándar así que es compatible con cualquier plataforma que soporte las dos bibliotecas anteriormente mencionadas.</p>
-
 <h3 id="características">Características</h3>
-
 <ul>
 <li><strong>Shape</strong>: formas de colisión básicas: esfera, plano y AABB.</li>
 <li><strong>Collision Dispatching</strong>: elección del test de colisión de forma adecuado de forma transparente a partir de dos figuras génericas.</li>
@@ -200,17 +178,12 @@
 <li><strong>Particionado del espacio</strong>: para aumentar el rendimiento se incorpora un filtrado inicial para evitar tests exhaustivos. Muy básico por el momento.</li>
 <li><strong>Callbacks</strong>: es posible indicarle al gestor de colisiones que llame a una función miembro con una signatura determinada ante una colisión entre dos cuerpos de un tipo predefinido.</li>
 </ul>
-
 <h3 id="descarga">Descarga</h3>
-
 <p>He habilitado una <strong>descarga en la forja de Red Iris</strong> para que podáis acceder sin problemas. Incluye el código fuente, licencia (GPL 3) y documentación generada con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. Ruego que me enviéis algún mensaje en caso de encontrar cualquier tipo de problemas: bugs, uso, posibles mejoras, etc.</p>
-
 <ul>
 <li><a href="http://forja.rediris.es/frs/download.php/2072/siontower-collisions-v0.1.zip">Descargar STC v0.1</a></li>
 </ul>
-
 <h3 id="documentación-adicional">Documentación adicional</h3>
-
 <p>Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.</p>
 
       
@@ -226,22 +199,13 @@
       <a class="label" href="../../categories/computing">Computing</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/htc-desire-hd.png" alt="htc-desire-hd.png" /></p>
-
+      <p><img src="../../img/wp/htc-desire-hd.png" alt="htc-desire-hd.png"></p>
 <p>Cuando hace más de un año compré mi HTC Magic sólo había tres teléfonos Android en el mercado y todos del mismo fabricante. Alucinaba en colores con su conectividad, prestaciones y pantalla. ¡Tenía un teléfono más potente que mi primer ordenador! Como cualquier otro cacharro no tardó en quedarse anticuado y actualmente se resiente al trabajar casi con cualquier aplicación. Por ello <strong>he decidido renovarme y adquirir el HTC Desire HD</strong>, una auténtica bestia parda. Cuando pase cierto tiempo trasteando con ella dejaré caer un pequeño análisis personal, mientras tanto comento la forma de eliminar esas odiosas aplicaciones de Vodafone.</p>
-
 <h3 id="el-caca-soft">El caca-soft</h3>
-
-<p><strong>El placer por desprecintar el teléfono</strong> nuevo de turno es un claro símbolo consumista pero nos encanta a los amantes de los cacharros. Estaba maravillado por la potencia del HTC Desire HD, era capaz de mantener decenas de aplicaciones abiertas sin inmutarse lo más mínimo. De pronto me dije: &ldquo;<em>Oh wait…!&rdquo;</em>, había descubierto las <strong>aplicaciones pre-instaladas</strong> de Vodafone. Raudo y veloz me dispuse a desinstalarlas pero (¡horror!) están bloqueadas y no pueden ser eliminadas. Mi odio hacia las aplicaciones que mancillan un flamante dispositivo no conoce límites. <strong>En la intimidad las llamo caca-soft</strong>.</p>
-
+<p><strong>El placer por desprecintar el teléfono</strong> nuevo de turno es un claro símbolo consumista pero nos encanta a los amantes de los cacharros. Estaba maravillado por la potencia del HTC Desire HD, era capaz de mantener decenas de aplicaciones abiertas sin inmutarse lo más mínimo. De pronto me dije: &ldquo;<em>Oh wait…!&quot;</em>, había descubierto las <strong>aplicaciones pre-instaladas</strong> de Vodafone. Raudo y veloz me dispuse a desinstalarlas pero (¡horror!) están bloqueadas y no pueden ser eliminadas. Mi odio hacia las aplicaciones que mancillan un flamante dispositivo no conoce límites. <strong>En la intimidad las llamo caca-soft</strong>.</p>
 <h3 id="eliminar-aplicaciones-pre-instaladas-de-vodafone">Eliminar aplicaciones pre-instaladas de Vodafone</h3>
-
 <p>Una busqueda en Google confirmó mis sospechas, es necesario tener permisos root para poder eliminar aplicaciones bloqueadas. El HTC Desire HD es un terminal relativamente nuevo y aún no existe ningún sistema del tipo <em>&ldquo;dale a un botón y ya eres root&rdquo;</em>. Hacía falta hacer un downgrade de la ROM y varias operaciones de seguridad cuestionable. Me negaba.</p>
-
 <p>Con la inestimable ayuda del foro HTC Manía encontré la respuesta. <strong>Es posible eliminar las aplicaciones que instala nuestro operador</strong> de telefonía sin cambiar la ROM ni tener acceso root. El proceso implica una restauración de fábrica. Las aplicaciones y los contactos están sincronizados, por tanto no los perderás. No obstante, los accesos directos y la configuración volverán a su estado inicial. Para librarte de una vez por todas del caca-soft <strong>sigue los siguientes pasos</strong>:</p>
-
 <ol>
 <li>Apaga el teléfono y retira la tarjeta SIM.</li>
 <li>Entra en modo recovery, lo conseguirás pulsando el botón <em>&ldquo;bajar volumen&rdquo;</em> mientras enciendes el terminal.</li>
@@ -251,9 +215,7 @@
 <li>Apaga el teléfono e introduce la SIM.</li>
 <li>Cuando arranques de nuevo se te preguntará si deseas sincronizar el teléfono con la tarjeta. Cancela la operación para siempre y no se instalarán las aplicaciones del operador.</li>
 </ol>
-
 <p>Es cierto que <strong>las aplicaciones de HTC Sense no pueden ser eliminadas</strong> a través de este proceso y requieren disponer de acceso root. Pero al menos ya sufrirás esas aplicaciones que te impone tu operador, carecen de utilidad y a veces consumen recursos en segundo plano.</p>
-
 <p>Eso es todo, <strong>ahora vivirás mejor</strong>.</p>
 
       
@@ -269,14 +231,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/inicializacion-cierre-ogre.png" alt="inicializacion-cierre-ogre.png" /></p>
-
+      <p><img src="../../img/wp/inicializacion-cierre-ogre.png" alt="inicializacion-cierre-ogre.png"></p>
 <p>Muchos seguidores de <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal"><strong>IberOgre</strong></a> estabais <strong>esperando un artículo a modo de introducción</strong> para aprender a inicializar el motor. Un artículo de lo más básico era imprescindible y estaba planificado desde el principio. No obstante, debido a diversos motivos no me ha sido posible publicarlo hasta <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre">ahora</a>. El retraso ha sido imperdonable pero al menos me queda l<strong>a satisfacción de haber cumplido el objetivo</strong> más prioritario de la <a href="../../proyectos/pfc/proximos-objetivos-en-iberogre-y-sion-tower/">lista de objetivos</a> que publiqué hace unos días.</p>
-
 <p><strong>El artículo <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre"><em>&ldquo;Inicialización y cierre de Ogre&rdquo;</em></a></strong> sería el primero en el que el lector comienza a trabajar de primera mano con la biblioteca. Es un choque complicado ante la increíble variedad de aproximaciones posibles ante un mismo problema, de hecho cuando yo tuve que dar mis primeros pasos me sentí abrumado. Por ello y siempre teniendo la perspectiva del principiante, he tratado de explicar los conceptos de la forma más clara posible. El lector que avance con paciencia por el artículo y se detenga en los ejemplos no debería tener ningún problema en comprender la secuencia de inicialización de Ogre. Se explican la carga de plugins, los ficheros de configuración y el sistema de logging. Creo que ha quedado un artículo bastante completo, pero <strong>siempre podéis mejorarlo haciendo comentarios y sugerencias</strong>.</p>
-
 <p>Para terminar quiero decir que estoy horrorizado porque hace unos días recibí un correo de la Universidad de Cádiz recordando la fecha para la <strong>fase local del concurso</strong>. Tendrá lugar del 21 al 25 de marzo lo que quiere decir que… ¡Quedan menos de dos meses! Esto me dará la motivación suficiente para ampliar IberOgre y conseguir al menos una demo técnica de Sion Tower. Vislumbro muchísimo desarrollo por delante, horas de depuración, trabajo de arte y algún que otro golpe contra la pared.</p>
-
 <p><strong>¡Suerte a todos mis compañeros concursantes de Cádiz!</strong></p>
 
       
@@ -292,40 +250,22 @@
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/revenge-of-the-titans-01.jpg" alt="revenge-of-the-titans-01.jpg" /></p>
-
+      <p><img src="../../img/wp/revenge-of-the-titans-01.jpg" alt="revenge-of-the-titans-01.jpg"></p>
 <p><strong><a href="http://www.puppygames.net/revenge-of-the-titans/">Revenge of the Titans</a> es un <a href="http://en.wikipedia.org/wiki/Tower_defense">tower defense</a> desarrollado por la compañía independiente <a href="http://www.puppygames.net/">Puppy Games</a></strong>. Me hice con él gracias al <a href="../../hobbies/the-humble-indie-bundle-2/">Humble Indie Bundle</a>, ese magnífico pack de cinco pequeñas grandes obras al precio que el comprador estimase oportuno. No todos los días lanzan juegos multiplataforma sin DRM y durante las últimas semanas lo he estado disfrutando en mi querida Ubuntu. Sigan leyendo porque el <em>&ldquo;jueguecito&rdquo;</em> tiene una propuesta de lo más interesante.</p>
-
-<p><img src="../../img/wp/revenge-of-the-titans-02.jpg" alt="revenge-of-the-titans-02.jpg" /></p>
-
+<p><img src="../../img/wp/revenge-of-the-titans-02.jpg" alt="revenge-of-the-titans-02.jpg"></p>
 <h3 id="los-titanes-han-vuelto">¡Los titanes han vuelto!</h3>
-
 <p><strong>Los titanes invadieron La Tierra</strong> tiempo atrás y en el matamarcianos <a href="http://www.puppygames.net/titan-attacks/">Titans Attack</a> (que no he probado) los humanos les hicimos frente. Finalmente han conseguido aterrizar, <strong>llegan clamando venganza</strong> y dispuestos a reducir nuestro planeta a cenizas. Este es el planteamiento de Revenge of the Titans, un tower defense que destila personalidad.</p>
-
 <p>Revenge of the Titans ofrece <strong>tres modos de juego</strong>: Campaing, Endless y Survival. En el modo campaña comenzamos defendiendo nuestro planeta y después perseguimos a los titanes por el Sistema Solar. Cada planeta es una campaña compuesta de un puñado de misiones. En el modo interminable debemos atravesar una serie de encuentros con los titanes en creciente dificultad. Finalmente, el modo supervivencia consiste en un único escenario en el que no paran de aparecer titanes. Puede que la campaña no sea extremadamente larga pero <strong>la dificultad y los distintos modos de juego aportan longevidad</strong> extra. ¡Ah, además hay logros!</p>
-
-<p><img src="../../img/wp/revenge-of-the-titans-04.jpg" alt="revenge-of-the-titans-04.jpg" /></p>
-
+<p><img src="../../img/wp/revenge-of-the-titans-04.jpg" alt="revenge-of-the-titans-04.jpg"></p>
 <h3 id="tower-defense-for-the-win">Tower defense for the win</h3>
-
 <p>En cada escenario debemos <strong>acabar con las oleadas de titanes que se ciernen sobre nuestra base</strong> central. Es imprescindible recolectar y administrar mineral e invertirlo en construir torretas entre otras estructuras para ponérselo complicado a los invasores. A primera vista puede parecer que desde la vista cenital controlamos el territorio pero, cuando tenemos <strong>varios frentes de combate abiertos</strong>, las misión se hace cuesta arriba. Conforme avanzamos no es extraño tener que repetir misiones, menos mal que <strong>su dinamismo hace que la frustración no aumente</strong> demasiado. Cada partida es diferente y no vale de nada memorizar que un enemigo especial entre por un punto determinado puesto que va cambiando. Revenge of the Titans es un reto divertido que nos obligará a buscar la mejor aproximación para cada situación.</p>
-
 <p>Entre misiones podemos aprovechar para invertir recursos en mejoras tecnológicas. El <strong>árbol de investigación</strong> tiene unas dimensiones aceptables y le da más profundidad al juego. No solo nos encargaremos de gestionar el mineral durante la batalla sino que tomaremos la delicada decisión de investigar en mejoras de armamento o ahorrar para el futuro. Creedme, <strong>los recursos son extremadamente limitados</strong>.</p>
-
-<p><img src="../../img/wp/revenge-of-the-titans-03.jpg" alt="revenge-of-the-titans-03.jpg" /></p>
-
+<p><img src="../../img/wp/revenge-of-the-titans-03.jpg" alt="revenge-of-the-titans-03.jpg"></p>
 <h3 id="el-encanto-de-lo-indie">El encanto de lo Indie</h3>
-
 <p>El estilo visual de Revenge of the Titans es harto simple pero nos encandilará al segundo. <strong>Todo tiene su encanto</strong>: desde los propios titanes pasando por la interfaz hasta nuestros dos consejeros particulares. Una mezcla entre lo tecnológico, el dibujo animado y lo retro. Como podéis ver en las capturas, no destaca en efectos ni innovación excesiva pero a mí me tiene ganado, ¿qué le voy a hacer? <strong>Es puro amor</strong>.</p>
-
 <p>No obstante, el juego presenta ciertos problemas en su apartado técnico que no puedo dejarme en el tintero. En primer lugar hay que reconocer sus <strong>serios problemas de rendimiento</strong>. Cuando comienzan a ocurrir muchas cosas en el escenario el juego no responde todo lo bien que debería y la interacción con el usuario se vuelve un pelín tosca. Sería comprensible si manejase un gran número de elementos 3D pero para un juego relativamente sencillo en 2D es grave. El segundo problema es menos crítico y más subjetivo. Hubiese preferido que los indicadores de las unidades fuesen más claros.</p>
-
-<p><img src="../../img/wp/revenge-of-the-titans-05.jpg" alt="revenge-of-the-titans-05.jpg" /></p>
-
+<p><img src="../../img/wp/revenge-of-the-titans-05.jpg" alt="revenge-of-the-titans-05.jpg"></p>
 <h3 id="en-resumen">En resumen</h3>
-
 <p>No quiero que se queden con una mala impresión de Revenge of the Titans por culpa del último párrafo. Es <strong>un juego excelente</strong>, muy apropiado para pequeños ratos libres. Divertido, gracioso y con un planteamiento que incita a seguir jugando lo cual es decir mucho. El problema es que <strong>duele sobremanera pagar cerca de 13€</strong> por un producto sencillo estando disponibles verdaderos triples A en plataformas como Steam. El Humble Indie Bundle fue una maravillosa oportunidad para adquirirlo a mejor precio, quizás dentro de poco hagan rebajas. Bueno, les dejo que ahora le toca el turno a Braid.</p>
 
       
@@ -368,8 +308,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

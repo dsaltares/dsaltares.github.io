@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Sion Tower, navigation mesh y A*</h1>
@@ -104,25 +105,19 @@
     </span>
     
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/2Q2tJxcTqoE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/2Q2tJxcTqoE" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p>En este nuevo vídeo podemos ver el <strong>sistema de búsqueda de caminos</strong> empleando el conocido **<a href="http://en.wikipedia.org/wiki/A*_search_algorithm">algoritmo A*</a>** junto a una malla de triángulos diseñada con <a href="http://www.blender.org/">Blender</a>. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del <strong>comportamiento de los enemigos</strong> de Sion Tower.</p>
-
+<p>En este nuevo vídeo podemos ver el <strong>sistema de búsqueda de caminos</strong> empleando el conocido <strong><a href="http://en.wikipedia.org/wiki/A*_search_algorithm">algoritmo A*</a></strong> junto a una malla de triángulos diseñada con <a href="http://www.blender.org/">Blender</a>. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del <strong>comportamiento de los enemigos</strong> de Sion Tower.</p>
 <p>El sistema está <strong>orientado a la optimización del flujo de trabajo</strong> y permite que los diseñadores puedan definir desde Blender las zonas del mapa que serán transitables por los enemigos:</p>
-
 <ol>
 <li>Creación de una malla de triángulos</li>
 <li>Exportación de la malla a formato <em>.mesh</em> (Ogre)</li>
 <li>Exportación del nivel completo en <em>DotScene</em> (incluyendo la malla)</li>
 <li>Carga del escenario en el motor del juego</li>
 </ol>
-
-<p><img src="../../img/wp/navigationMesh2.png" alt="navigationMesh2.png" /></p>
-
+<p><img src="../../img/wp/navigationMesh2.png" alt="navigationMesh2.png"></p>
 <p>Sobra decir que aún <strong>queda un gran espacio para la mejora</strong>. Actualmente el sistema nos devuelve la lista de celdas que componen el camino hacia el destino indicado. Posteriormente, el personaje recorre los puntos centrales de las celdas cambiando su orientación de forma brusca. La única optimización implementada consiste en tratar de saltar todas las celdas intermedias posibles siempre que haya una línea recta transitable entre el origen y el destino.</p>
-
 <p>En posteriores artículos ofreceré documentación adicional sobre el diseño y el funcionamiento interno del sistema. ¡Hay tanto trabajo por hacer!</p>
 
   </div>
@@ -145,8 +140,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

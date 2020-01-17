@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Colisiones II: Diseño general de STC</h1>
@@ -102,37 +103,23 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/colisiones-2.png" alt="colisiones-2.png" /></p>
-
+    <p><img src="../../img/wp/colisiones-2.png" alt="colisiones-2.png"></p>
 <p>Entregas:</p>
-
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
 <li><em>Colisiones II: Diseño general de STC</em></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: La clase Shape y Collision Dispatching</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a></li>
 </ul>
-
 <p>En la primera entrega de la serie de artículos sobre el <strong>sistema de detección de colisiones de Sion Tower (STC)</strong> comenté los requisitos que debía cumplir y las alternativas que valoré antes de decidirme a implementarlo por cuenta propia. En esta ocasión me dispongo a hacer <strong>un repaso por el diseño de esta pequeña biblioteca</strong>. Tras el diagrama de clases voy a tratar los componentes de forma breve pero individualizada. En posteriores entregas del artículo tendremos espacio suficiente para conocer en profundidad cada clase y algunos puntos relevantes de su implementación.</p>
-
 <h3 id="diagrama-de-clases-de-diseño">Diagrama de clases de diseño</h3>
-
 <p>El sistema de colisiones de Sion Tower es bastante sencillo y únicamente cuenta con las clases que se muestran a continuación.</p>
-
 <p>Este primer diagrama sólo muestra las clases y sus relaciones:</p>
-
-<p><img src="../../img/wp/collisions-simplified.png" alt="collisions-simplified.png" /></p>
-
+<p><img src="../../img/wp/collisions-simplified.png" alt="collisions-simplified.png"></p>
 <p>En este segundo diagrama podemos ver los métodos que componen la interfaz de cada clase, haz click sobre la imagen para verlo ampliado.</p>
-
-<p><a href="../../img/wp/collisions-interface.png"><img src="../../img/wp/collisions-interface.png" alt="collisions-interface.png" /></a></p>
-
+<p><a href="../../img/wp/collisions-interface.png"><img src="../../img/wp/collisions-interface.png" alt="collisions-interface.png"></a></p>
 <h3 id="componentes">Componentes</h3>
-
 <p>La siguiente lista repasa de forma superficial las responsabilidades de cada clase dentro de Sion Tower Collisions.</p>
-
 <ul>
 <li><strong>Shape</strong>: clase abstracta que modela formas básicas colisionables. Es la encargada del <em>&ldquo;collision dispatching&rdquo;</em>. Mediante el método estático <em>Shape::getCollision</em> podemos saber si dos formas concretas colisionan sin necesidad de conocer su clase concreta. El sistema detecta los tipos en tiempo de ejecución (<a href="http://en.wikipedia.org/wiki/Run-time_type_information">RTTI</a>) y elije el test de colisión apropiado de manera eficiente.</li>
 <li><strong>Plane</strong>: forma especializada para modelar un plano representado por un punto y un vector normal. Dentro del juego lo utilizaremos para modelar las colisiones del suelo.</li>
@@ -142,7 +129,6 @@
 <li><strong>CollisionManager</strong>: registra todos los cuerpos de la escena y permite detectar colisiones entre ellos. Habilita el registro de callbacks para ser informados de colisiones entre dos tipos concretos de cuerpos.</li>
 <li><strong>GameObject</strong>: encapsula el aspecto colisionable (<em>Body</em>) junto con el visual (<em>Ogre::Entity</em> – <em>Ogre::SceneNode</em>) de los elementos de juego. Los elementos que no tengan un comportamiento definido serán instancias de esta clase. Aquellos que deseen un comportamiento concreto deberán heredar de <em>GameObject</em>.</li>
 </ul>
-
 <p>Básicamente esto es lo que proporciona STC, <strong>no es mucho pero es fácil de extender</strong> y es independiente del resto de componentes de un videojuego.</p>
 
   </div>
@@ -165,8 +151,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,118 +110,68 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p>This text proposes an effective approach to painlessly create static collidable geometry in 2D levels with the help of Box2D and the new libgdx maps API.</p>
-
+      <p>This text proposes an effective approach to painlessly create static collidable geometry in 2D levels with the help of Box2D and the new libgdx maps API.</p>
 <p>All the source code is available for direct download below the post.</p>
-
 <h3 id="new-libgdx-maps-api">New libgdx maps API</h3>
-
-<p>The mighty libgdx library saw itself to yet another addition a couple of weeks ago, <a href="http://www.badlogicgames.com/wordpress/?p=2870">a shiny brand new maps API</a>. Nex and me had been working on it for a while and people seem to be quite happy with it. Actually, by now, loads of folks have contributed too, which is kind of the beauty of open source, isn&rsquo;t it? You might as well read the <a href="http://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps">wiki page</a> and check out the <a href="https://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps#Examples">sample code</a>, luckily enough, there&rsquo;s plenty which is not always the case.</p>
-
-<p>It primarily focuses on modelling how maps data is represented as well as in providing a way of easily implementing loaders and renderers for specific formats. The API comes with built in loaders and renderers for the <a href="http://www.mapeditor.org/">TMX</a>, <a href="http://tide.codeplex.com/">Tide</a> and <a href="http://gleed2d.codeplex.com/">Gleed</a> formats. However, the latter might be deprecated at some point in the future due its absolute paths horribleness. Believe me, I&rsquo;ve tried to work my way around it but there is just no elegant solution. Although there hasn&rsquo;t been any releases since it&rsquo;s inclusion, it&rsquo;s accessible in the <a href="http://libgdx.badlogicgames.com/nightlies/">nightly builds</a>. For those interested in the implementation, please go to the Github repository.</p>
-
-<p><img src="../../img/wp/maps-api-300x125.png" alt="maps-api-300x125.png" /></p>
-
+<p>The mighty libgdx library saw itself to yet another addition a couple of weeks ago, <a href="http://www.badlogicgames.com/wordpress/?p=2870">a shiny brand new maps API</a>. Nex and me had been working on it for a while and people seem to be quite happy with it. Actually, by now, loads of folks have contributed too, which is kind of the beauty of open source, isn't it? You might as well read the <a href="http://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps">wiki page</a> and check out the <a href="https://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps#Examples">sample code</a>, luckily enough, there's plenty which is not always the case.</p>
+<p>It primarily focuses on modelling how maps data is represented as well as in providing a way of easily implementing loaders and renderers for specific formats. The API comes with built in loaders and renderers for the <a href="http://www.mapeditor.org/">TMX</a>, <a href="http://tide.codeplex.com/">Tide</a> and <a href="http://gleed2d.codeplex.com/">Gleed</a> formats. However, the latter might be deprecated at some point in the future due its absolute paths horribleness. Believe me, I've tried to work my way around it but there is just no elegant solution. Although there hasn't been any releases since it's inclusion, it's accessible in the <a href="http://libgdx.badlogicgames.com/nightlies/">nightly builds</a>. For those interested in the implementation, please go to the Github repository.</p>
+<p><img src="../../img/wp/maps-api-300x125.png" alt="maps-api-300x125.png"></p>
 <p>Take this cutie as an example, <a href="https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/superkoalio/SuperKoalio.java">a minimalistic platformer using the new API</a> in just under 300 lines.</p>
-
-<p><img src="../../img/wp/koalio-300x216.png" alt="koalio-300x216.png" /></p>
-
+<p><img src="../../img/wp/koalio-300x216.png" alt="koalio-300x216.png"></p>
 <p>Enjoy.</p>
-
 <h3 id="use-your-level-editor-to-place-world-physics-geometry">Use your level editor to place world physics geometry</h3>
-
-<p>Let&rsquo;s say you&rdquo;re working on a 2D game which mechanics require some sort of collision detection. Most likely, you&rdquo;ll be leveraging an editor such as Tiled or Gleed to boost your level creation process. How are you planning to implement collision detection in a way it doesn&rsquo;t become an excruciating pain in the ass to maintain? Can we also make it efficient, please?</p>
-
+<p>Let's say you&quot;re working on a 2D game which mechanics require some sort of collision detection. Most likely, you&quot;ll be leveraging an editor such as Tiled or Gleed to boost your level creation process. How are you planning to implement collision detection in a way it doesn't become an excruciating pain in the ass to maintain? Can we also make it efficient, please?</p>
 <blockquote>
 <p>At last! After all, this is what the article is really about.</p>
 </blockquote>
-
-<p>If you&rdquo;re going for tile based levels, you could add properties to the map to determine tiles walkability, a perfectly valid approach when presented with just a bunch of tiles. However, adding or changing tiles can become tedious really soon. Why don&rsquo;t you take advantage of Box2D collision detection algorithms and <a href="http://en.wikipedia.org/wiki/Space_partitioning">space partitioning</a> techniques? No worries, you could do so regardless of the need of running a real time physics simulation, just create the bodies, move them according to the game logic and query the world for intersections without stepping it. In case of dealing with a physics based game, then, by all means, make full use of Box2D.</p>
-
-<p><img src="../../img/wp/tiled-caveman-300x154.png" alt="tiled-caveman-300x154.png" /></p>
-
-<p>I&rdquo;m going to assume basic knowledge of this popular physics library, if you don&rsquo;t consider yourself minimally familiar with it, please <a href="http://box2d.org/manual.pdf">take some time to get the basics</a>.</p>
-
-<p>Alright, your textures are all set in your level and it looks stunningly beautiful! Sadly, you lack any kind of collision data. A good practice is to create a separate layer named <em>&ldquo;physics&rdquo;</em> or similar for sanity reasons. Now you can start placing shapes (rectangles, circles, polygons or polylines) so they adjust to the non walkable areas. Here&rsquo;s an example in my WIP casual abduction game.</p>
-
-<p><img src="../../img/wp/gleed-abduction-collisions-300x158.png" alt="gleed-abduction-collisions-300x158.png" /></p>
-
-<p>As you could have guessed, having thousands of shapes won&rsquo;t do your game&rsquo;s performance any favours. It&rdquo;d be a good idea to keep the shape count under control while preserving a decent granularity. Ideally, the editor would have a <em>&ldquo;generate physics&rdquo;</em> option that would automatically create collision data from a texture layer using <a href="http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/alg.html">contour tracing</a>. Sadly, that&rsquo;s not the case in the state of the art open source software we have today.</p>
-
-<p>Don&rsquo;t forget to hit <em>&ldquo;save&rdquo;</em>.</p>
-
-<h3 id="create-bodies-from-your-level-data-my-level-has-collidable-static-geometry-data-how-do-i-get-that-in-my-game">Create bodies from your level data &gt; My level has collidable static geometry data, how do I get that in my game?</h3>
-
+<p>If you&quot;re going for tile based levels, you could add properties to the map to determine tiles walkability, a perfectly valid approach when presented with just a bunch of tiles. However, adding or changing tiles can become tedious really soon. Why don't you take advantage of Box2D collision detection algorithms and <a href="http://en.wikipedia.org/wiki/Space_partitioning">space partitioning</a> techniques? No worries, you could do so regardless of the need of running a real time physics simulation, just create the bodies, move them according to the game logic and query the world for intersections without stepping it. In case of dealing with a physics based game, then, by all means, make full use of Box2D.</p>
+<p><img src="../../img/wp/tiled-caveman-300x154.png" alt="tiled-caveman-300x154.png"></p>
+<p>I&quot;m going to assume basic knowledge of this popular physics library, if you don't consider yourself minimally familiar with it, please <a href="http://box2d.org/manual.pdf">take some time to get the basics</a>.</p>
+<p>Alright, your textures are all set in your level and it looks stunningly beautiful! Sadly, you lack any kind of collision data. A good practice is to create a separate layer named <em>&ldquo;physics&rdquo;</em> or similar for sanity reasons. Now you can start placing shapes (rectangles, circles, polygons or polylines) so they adjust to the non walkable areas. Here's an example in my WIP casual abduction game.</p>
+<p><img src="../../img/wp/gleed-abduction-collisions-300x158.png" alt="gleed-abduction-collisions-300x158.png"></p>
+<p>As you could have guessed, having thousands of shapes won't do your game's performance any favours. It&quot;d be a good idea to keep the shape count under control while preserving a decent granularity. Ideally, the editor would have a <em>&ldquo;generate physics&rdquo;</em> option that would automatically create collision data from a texture layer using <a href="http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/alg.html">contour tracing</a>. Sadly, that's not the case in the state of the art open source software we have today.</p>
+<p>Don't forget to hit <em>&ldquo;save&rdquo;</em>.</p>
+<h3 id="create-bodies-from-your-level-data--my-level-has-collidable-static-geometry-data-how-do-i-get-that-in-my-game">Create bodies from your level data &gt; My level has collidable static geometry data, how do I get that in my game?</h3>
 <p>To tackle that problem I implemented a simple class named <em>MapBodyManager</em> with the following interface.</p>
-
 <pre><code>public class MapBodyManager {
     public MapBodyManager(World world, int unitsPerPixel, String materialsFile);
     public void createPhysics(Map map, String layerName);
     public void destroyPhysics();
 }
-</code></pre>
-
-<p>I believe it to be simple enough but I&rdquo;ll explain the details just in case. The constructor takes the Box2D world so it knows where to dump the new bodies into and where to delete them from later on. Most level editors work in pixels, while Box2D measures stuff in metres (take that imperial system!), hence the need for the <em>unitsPerPixel</em> conversion rate. We&rdquo;ll get to the materials stuff in just a minute.</p>
-
+</code></pre><p>I believe it to be simple enough but I&quot;ll explain the details just in case. The constructor takes the Box2D world so it knows where to dump the new bodies into and where to delete them from later on. Most level editors work in pixels, while Box2D measures stuff in metres (take that imperial system!), hence the need for the <em>unitsPerPixel</em> conversion rate. We&quot;ll get to the materials stuff in just a minute.</p>
 <p>Once your level is loaded, you just need to do this.</p>
-
 <pre><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
 Map map = assetManager.get(&quot;data/level.xml&quot;, Map.class);
 mapBodyManager.createPhysics(map, &quot;physics&quot;);
-</code></pre>
-
-<p>This will automatically create a static body per shape in your <em>&ldquo;physics&rdquo;</em> layer as shown in the screenshot below.</p>
-
-<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg" /></p>
-
+</code></pre><p>This will automatically create a static body per shape in your <em>&ldquo;physics&rdquo;</em> layer as shown in the screenshot below.</p>
+<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
 <p>So the player heroically beats the level and makes it to the next one. You surely will want to get rid of all those bodies (reference to murder not intended) before adding any more. Interestingly enough, our handy <em>MapBodyManager</em> keeps track of all registered bodies, so voilá, easy as cake.</p>
-
 <pre><code>mapBodyManager.destroyPhysics();
-</code></pre>
-
-<h3 id="material-system">Material system</h3>
-
-<p>Those who are no strangers to Box2D will know that body&rsquo;s fixtures have properties that determine how they interact with other entities. These are mainly: density, restitution and friction. Mass is usually determined by the area of the shape involved and the fixture&rsquo;s density. Again, check out Box2D documentation for more details on this. We could just create all our static bodies with default properties but…</p>
-
+</code></pre><h3 id="material-system">Material system</h3>
+<p>Those who are no strangers to Box2D will know that body's fixtures have properties that determine how they interact with other entities. These are mainly: density, restitution and friction. Mass is usually determined by the area of the shape involved and the fixture's density. Again, check out Box2D documentation for more details on this. We could just create all our static bodies with default properties but…</p>
 <blockquote>
 <p>I want to have icy, sandy and elastic surfaces in my game so characters can slide, be slower and bounce!</p>
 </blockquote>
-
-<p>How can our <em>MapBodyManager</em> deal with all this? It&rsquo;s actually dead easy, I went for a very simple material system where each one of these materials are defined by a set of properties in a straightforward JSON file. Let&rsquo;s say that the game world we want to model has regular, ice and elastic elements, we might be able to get away with something such as this.</p>
-
+<p>How can our <em>MapBodyManager</em> deal with all this? It's actually dead easy, I went for a very simple material system where each one of these materials are defined by a set of properties in a straightforward JSON file. Let's say that the game world we want to model has regular, ice and elastic elements, we might be able to get away with something such as this.</p>
 <pre><code>[
   { &quot;name&quot; : &quot;ice&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.0, &quot;friction&quot; : 0.1 },
   { &quot;name&quot; : &quot;elastic&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.8, &quot;friction&quot; : 0.8 }
 ]
-</code></pre>
-
-<p>Assigning materials to elements in our editor is also fairly simple. Add a <em>&ldquo;material&rdquo;</em> custom property per shape you  want to behave in a non default manner. Every editor has its own GUI element for this and all of them are almost identical.</p>
-
-<p><img src="../../img/wp/material.png" alt="material.png" /></p>
-
-<p>The <em>MapBodyManager</em> will automatically pick up each shape&rsquo;s material and create bodies with the desired properties. Adding new materials is trivial and, whilst reassigning them is not comfortable, it&rsquo;s not a deal breaker either.</p>
-
-<p>This makes you happy, doesn&rsquo;t it?</p>
-
+</code></pre><p>Assigning materials to elements in our editor is also fairly simple. Add a <em>&ldquo;material&rdquo;</em> custom property per shape you  want to behave in a non default manner. Every editor has its own GUI element for this and all of them are almost identical.</p>
+<p><img src="../../img/wp/material.png" alt="material.png"></p>
+<p>The <em>MapBodyManager</em> will automatically pick up each shape's material and create bodies with the desired properties. Adding new materials is trivial and, whilst reassigning them is not comfortable, it's not a deal breaker either.</p>
+<p>This makes you happy, doesn't it?</p>
 <blockquote>
 <p>Yay! ### Source code</p>
 </blockquote>
-
-<p>Did you read this all or did you just scrolled down after realising you could download the source at the end? If you belong to the first group, I have to say you&rdquo;re awesome and deserve my most sincere admiration.</p>
-
-<p>Nevertheless, you&rdquo;ll be very disappointed to see there&rsquo;s no arcane magic going on behind the scenes as the implementation is not shocking in any way. Here it goes for those who are bored enough and wouldn&rsquo;t mind to procrastinate some more by reading a piece useless code.</p>
-
+<p>Did you read this all or did you just scrolled down after realising you could download the source at the end? If you belong to the first group, I have to say you&quot;re awesome and deserve my most sincere admiration.</p>
+<p>Nevertheless, you&quot;ll be very disappointed to see there's no arcane magic going on behind the scenes as the implementation is not shocking in any way. Here it goes for those who are bored enough and wouldn't mind to procrastinate some more by reading a piece useless code.</p>
 <p>As promised.</p>
-
 <p><a href="https://github.com/dsaltares/sioncore/blob/master/src/com/siondream/core/physics/MapBodyManager.java">MapBodyManager.java</a></p>
-
-<p>To be honest, I&rsquo;ve only tested this with Gleed created maps and I don&rsquo;t intend to maintain this utility class any further than what I deem necessary to carry on with my projects. The API is homogeneous and should be fully compatible with Tiled and Tide as it is. Worst case scenario, if you bump into problems, the fixes are likely to be simple. Obviously, you&rdquo;re not forced to use it, feel free to mimic the approach and pick ideas from it, you&rdquo;ll probably come up with something better after some thought.</p>
-
+<p>To be honest, I've only tested this with Gleed created maps and I don't intend to maintain this utility class any further than what I deem necessary to carry on with my projects. The API is homogeneous and should be fully compatible with Tiled and Tide as it is. Worst case scenario, if you bump into problems, the fixes are likely to be simple. Obviously, you&quot;re not forced to use it, feel free to mimic the approach and pick ideas from it, you&quot;ll probably come up with something better after some thought.</p>
 <ul>
-<li><span style="color: #ff0000;"><strong>Edit 1</strong></span>: updated the code to support latest Libgdx API and fixed bugs.</li>
-<li><span style="color: #ff0000;"><strong>Edit 2</strong></span>: changed materials file format from XML to JSON.</li>
+<li><!-- raw HTML omitted --><strong>Edit 1</strong><!-- raw HTML omitted -->: updated the code to support latest Libgdx API and fixed bugs.</li>
+<li><!-- raw HTML omitted --><strong>Edit 2</strong><!-- raw HTML omitted -->: changed materials file format from XML to JSON.</li>
 </ul>
 
       
@@ -236,18 +187,12 @@ mapBodyManager.createPhysics(map, &quot;physics&quot;);
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>It pleases me to say that this past week I&rsquo;ve been able to keep it real and stick to my humble set of tasks:</p>
-
-<p><strong>Victory and defeat mechanic</strong>: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it&rsquo;s empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state. The whole entity creation – deletion cycle has allowed me to spot some bugs and flaws in the entity system design, which is good.</p>
-
-<p><strong>Placeholder HUD</strong>: I&rsquo;ve used the simple and yet powerful libgdx scene 2D elements to compose a minimalistic HUD which shows remaining astronauts, spaceship energy and elapsed time. Relax, it won&rsquo;t look this bad forever as the assets will be replaced by the final art in due time. I just wanted to get something functional.</p>
-
-<p><strong>Improved control and abduction system</strong>: this is where I&rsquo;ve put most of the effort. Speed limits, collision restitution, impulses and so on have all been tweaked to make the spaceship control feel good. Luckily enough, I&rsquo;ve made it a lot smoother and pleasant, which was paramount to make the game fun. However, beware! For abducting all the astronauts shall not be an easy task.</p>
-
-<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg" /></p>
-
-<p>This week I&rdquo;ll be working on:</p>
-
+      <p>It pleases me to say that this past week I've been able to keep it real and stick to my humble set of tasks:</p>
+<p><strong>Victory and defeat mechanic</strong>: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it's empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state. The whole entity creation – deletion cycle has allowed me to spot some bugs and flaws in the entity system design, which is good.</p>
+<p><strong>Placeholder HUD</strong>: I've used the simple and yet powerful libgdx scene 2D elements to compose a minimalistic HUD which shows remaining astronauts, spaceship energy and elapsed time. Relax, it won't look this bad forever as the assets will be replaced by the final art in due time. I just wanted to get something functional.</p>
+<p><strong>Improved control and abduction system</strong>: this is where I've put most of the effort. Speed limits, collision restitution, impulses and so on have all been tweaked to make the spaceship control feel good. Luckily enough, I've made it a lot smoother and pleasant, which was paramount to make the game fun. However, beware! For abducting all the astronauts shall not be an easy task.</p>
+<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
+<p>This week I&quot;ll be working on:</p>
 <ul>
 <li>Refucktoring: some modules need a small cleanup.</li>
 <li>Animated toasts: adding some effects for victory, defeat, abduction and collision situations.</li>
@@ -267,34 +212,27 @@ mapBodyManager.createPhysics(map, &quot;physics&quot;);
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>This hasn&rsquo;t been a particularly productive week for my One Game a Month quest. Luckily enough, it wasn&rsquo;t completely wasted as some stuff has, indeed, been done. Coding after work and taking care of so many other things it&rsquo;s unsurprisingly tough. I&rdquo;m still looking for that guy who sells hours, so I can append them to a regular day.</p>
-
-<p>Except for the art, I pretty much did everything I promised. Actually, it&rsquo;s better if I make a game first and then worry about the art, as I learned from my <a href="../../games/ld24-evolution-postmortem/" title="LD#24 – Evolution Postmortem">Ludum Dare experience</a>.</p>
-
+      <p>This hasn't been a particularly productive week for my One Game a Month quest. Luckily enough, it wasn't completely wasted as some stuff has, indeed, been done. Coding after work and taking care of so many other things it's unsurprisingly tough. I&quot;m still looking for that guy who sells hours, so I can append them to a regular day.</p>
+<p>Except for the art, I pretty much did everything I promised. Actually, it's better if I make a game first and then worry about the art, as I learned from my <a href="../../games/ld24-evolution-postmortem/" title="LD#24 – Evolution Postmortem">Ludum Dare experience</a>.</p>
 <ul>
 <li>Spaceship with basic touch controls</li>
 <li>Collisions</li>
 <li>Camera following behavior</li>
 <li>Astronauts basic abduction mechanic</li>
 </ul>
-
-<p>Here&rsquo;s a silly WIP video but, please, don&rsquo;t mind the art nor the general feeling. The spaceship movement needs a lot of tweaking.</p>
-
+<p>Here's a silly WIP video but, please, don't mind the art nor the general feeling. The spaceship movement needs a lot of tweaking.</p>
 
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/QrLw6M60N_o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/QrLw6M60N_o" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p>This week I&rdquo;m resolved to accomplish the following:</p>
-
+<p>This week I&quot;m resolved to accomplish the following:</p>
 <ul>
 <li>Victory and defeat mechanic</li>
 <li>Working HUD with placeholders</li>
 <li>Improved control and abduction system</li>
 </ul>
-
-<p>I&rdquo;m out!</p>
+<p>I&quot;m out!</p>
 
       
     </div>
@@ -309,41 +247,28 @@ mapBodyManager.createPhysics(map, &quot;physics&quot;);
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p>One week ago I posted about the <a href="../../games/1gam-february-game-design/">initial game design for my February One Game A Month entry</a>. I believe, it&rsquo;s time to report back with the work I&rsquo;ve done during the past seven days. Actually, I&rsquo;ve realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.</p>
-
+      <p>One week ago I posted about the <a href="../../games/1gam-february-game-design/">initial game design for my February One Game A Month entry</a>. I believe, it's time to report back with the work I've done during the past seven days. Actually, I've realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.</p>
 <h3 id="what-i-have-so-far">What I have so far</h3>
-
-<p>Without further ado, here&rsquo;s the update.</p>
-
+<p>Without further ado, here's the update.</p>
 <ul>
 <li>Started a <a href="https://github.com/dsaltares/rescuecopter">GitHub repo</a>.</li>
 <li>Integrated my codebase with some improvements across the board: engine facade, ID generator, i18n support, animated sprites, physics objects.</li>
 <li>Integrated the <a href="https://github.com/libgdx/libgdx/tree/mapsapi/gdx/src/com/badlogic/gdx/maps">mapsapi libgdx branch</a> to do some further testing on my Gleed system. Found a bug and already <a href="https://github.com/libgdx/libgdx/pull/237">pull requested the fix</a>.</li>
-<li>Component based entity system with an <a href="https://code.google.com/p/artemis-framework/">Artemis</a> like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I&rdquo;ll talk more about it on a different post.</li>
-<li>Static bodies creation from map&rsquo;s shape data and material system. This might as well deserve another post, why the hell not!</li>
+<li>Component based entity system with an <a href="https://code.google.com/p/artemis-framework/">Artemis</a> like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I&quot;ll talk more about it on a different post.</li>
+<li>Static bodies creation from map's shape data and material system. This might as well deserve another post, why the hell not!</li>
 </ul>
-
-<p><img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg" /></p>
-
+<p><img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg"></p>
 <h3 id="coming-this-week">Coming this week</h3>
-
 <p>I hereby make the compromise of delivering the following within a week.</p>
-
 <ul>
 <li>Spaceship entity with controls.</li>
 <li>Camera movement behavior.</li>
 <li>Collision handlers for the spaceship.</li>
 <li>Foreground shapes set.</li>
 </ul>
-
-<p>Let&rsquo;s leave it at that and stay realistic.</p>
-
+<p>Let's leave it at that and stay realistic.</p>
 <h3 id="and-now-for-something-completely-different">And now for something completely different</h3>
-
-<p>I&rsquo;ve deleted my SionEngine repository from GitHub as I don&rsquo;t feel it meets the appropriate quality standards just yet. I will surely continue developing its components along every One Game a Month project, which, as you can see, will be open source too. I never pretended it to be a killer engine of any sort, this is just my codebase and a way of developing my software design skills.</p>
-
+<p>I've deleted my SionEngine repository from GitHub as I don't feel it meets the appropriate quality standards just yet. I will surely continue developing its components along every One Game a Month project, which, as you can see, will be open source too. I never pretended it to be a killer engine of any sort, this is just my codebase and a way of developing my software design skills.</p>
 <p>See you guys next week.</p>
 
       
@@ -359,39 +284,23 @@ mapBodyManager.createPhysics(map, &quot;physics&quot;);
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p>It&rsquo;s February already! What kind of madness is this? Anyhow, that means it&rsquo;s time to start working on this month&rsquo;s entry for <a href="http://www.onegameamonth.com/">One Game A Month</a> without further ado. This time I promise not to shamelessly make a port of an existing game and go for a brand new project instead. Shall this initial design article serve as the compromise I&rdquo;m making to see this game to completion.</p>
-
-<p>I believe the following game concept to be simple enough for it to be achievable within a short month like February. Understandably, mechanics are very likely to change in case they don&rsquo;t work as initially thought. However I&rsquo;ve tried to keep the idea to it&rsquo;s bare minimum. Also, additional features will be included if there&rsquo;s a necessity and enough time for them.</p>
-
+      <p>It's February already! What kind of madness is this? Anyhow, that means it's time to start working on this month's entry for <a href="http://www.onegameamonth.com/">One Game A Month</a> without further ado. This time I promise not to shamelessly make a port of an existing game and go for a brand new project instead. Shall this initial design article serve as the compromise I&quot;m making to see this game to completion.</p>
+<p>I believe the following game concept to be simple enough for it to be achievable within a short month like February. Understandably, mechanics are very likely to change in case they don't work as initially thought. However I've tried to keep the idea to it's bare minimum. Also, additional features will be included if there's a necessity and enough time for them.</p>
 <h3 id="concept">Concept</h3>
-
 <blockquote>
-<p>The humans have invaded the planet you call home! All of a sudden there are all these conquest hungry astronauts wandering around. You must take your recon spaceship and abduct them all before it&rsquo;s too late!</p>
+<p>The humans have invaded the planet you call home! All of a sudden there are all these conquest hungry astronauts wandering around. You must take your recon spaceship and abduct them all before it's too late!</p>
 </blockquote>
-
-<p><img src="../../img/wp/design-anotated.png" alt="design-anotated.png" /></p>
-
-<p>That&rsquo;s right, you control an alien in a small spaceship who must abduct every astronaut in each level in the minimum amount of time possible. In order to do so, you must position the ship over them for a certain amount of time, while the alien halo drags them up. Beware the rocky environment, you don&rsquo;t want to crash in the middle of the mission!</p>
-
-<p>Level design would start quite simple with linear levels that test the player&rsquo;s skill controlling the spaceship. However, as the game progresses, things might get complicated. What seems to be a linear level could actually be some sort of maze with hidden astronauts requiring exploration.</p>
-
+<p><img src="../../img/wp/design-anotated.png" alt="design-anotated.png"></p>
+<p>That's right, you control an alien in a small spaceship who must abduct every astronaut in each level in the minimum amount of time possible. In order to do so, you must position the ship over them for a certain amount of time, while the alien halo drags them up. Beware the rocky environment, you don't want to crash in the middle of the mission!</p>
+<p>Level design would start quite simple with linear levels that test the player's skill controlling the spaceship. However, as the game progresses, things might get complicated. What seems to be a linear level could actually be some sort of maze with hidden astronauts requiring exploration.</p>
 <h3 id="controls">Controls</h3>
-
-<p>The player uses touch controls to pilot the spaceship across the level. Rather than using an unpopular virtual joystick, he&rsquo;s presented area controls. The steering force applied to the spaceship will be different depending on the touch position: up, left or right. It&rsquo;s worth mentioning that by touching the intersections, the player can make the ship ascend whilst moving towards a side.</p>
-
-<p><img src="../../img/wp/design-controls.png" alt="design-controls.png" /></p>
-
-<p>Piloting the spaceship has the additional difficulty of having to take into account inertia. If we let it descend for a while, it&rdquo;ll be quite hard to regain height. On the contrary, if we ascend too much, we&rdquo;ll inevitably crash as well.</p>
-
+<p>The player uses touch controls to pilot the spaceship across the level. Rather than using an unpopular virtual joystick, he's presented area controls. The steering force applied to the spaceship will be different depending on the touch position: up, left or right. It's worth mentioning that by touching the intersections, the player can make the ship ascend whilst moving towards a side.</p>
+<p><img src="../../img/wp/design-controls.png" alt="design-controls.png"></p>
+<p>Piloting the spaceship has the additional difficulty of having to take into account inertia. If we let it descend for a while, it&quot;ll be quite hard to regain height. On the contrary, if we ascend too much, we&quot;ll inevitably crash as well.</p>
 <h3 id="visuals">Visuals</h3>
-
-<p>As explained in <a href="../../general/2d-character-creation-and-animation-for-dummies/"><em>&ldquo;2D character creation and animation… For dummies&rdquo;</em></a>, my lack of skill kind of forces me to go for a friendly cartoon style. No worries, that&rsquo;s fine because it matches the gameplay. It&rsquo;s clearly a casual arcade game with funny characters, so some colorful vector art will come very in handy.</p>
-
+<p>As explained in <a href="../../general/2d-character-creation-and-animation-for-dummies/"><em>&ldquo;2D character creation and animation… For dummies&rdquo;</em></a>, my lack of skill kind of forces me to go for a friendly cartoon style. No worries, that's fine because it matches the gameplay. It's clearly a casual arcade game with funny characters, so some colorful vector art will come very in handy.</p>
 <h3 id="development">Development</h3>
-
-<p>LibGDX will be the framework of choice and I&rdquo;ll try to keep the code as cross platform compatible as possible with the aim of targeting desktop, Android and HTML5. I&rdquo;ll be regularly posting updates!</p>
+<p>LibGDX will be the framework of choice and I&quot;ll try to keep the code as cross platform compatible as possible with the aim of targeting desktop, Android and HTML5. I&quot;ll be regularly posting updates!</p>
 
       
     </div>
@@ -433,8 +342,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

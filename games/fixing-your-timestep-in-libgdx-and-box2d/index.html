@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Fix your timestep in Libgdx and Box2D</h1>
@@ -102,34 +103,21 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
-
+    <p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
 <p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&rsquo; behaviour.</p>
-
 <p>I thought it would be a good idea to show how it translates to a <a href="https://github.com/libgdx/libgdx">Libgdx</a> application using the <a href="http://box2d.org/">Box2D</a> physics engine. Note that it also applies to <a href="http://bulletphysics.org/wordpress/">Bullet</a>, changes would be minimal.</p>
-
 <h3 id="simple-but-wrong-approaches">Simple but wrong approaches</h3>
-
 <p>It starts with a fix time step of 1/60th of a second, which makes for a stable simulation but fails terribly when the game runs at less than 60fps, a very common situation in mobile devices.</p>
-
 <p>The logical upgrade is to pass exactly how much time has passed since the last frame. Obviously, not every frame takes the same, which means the simulation could be unstable. Moreover, it will vary across devices as they can feature a wide range of specifications. This is definitely not the way to go.</p>
-
 <blockquote>
 <p>Everything is lost!</p>
 </blockquote>
-
 <h3 id="fixed-timestep">Fixed timestep</h3>
-
-<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let&rsquo;s say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we&rsquo;d only step the physics one every two frames.</p>
-
+<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let's say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we'd only step the physics one every two frames.</p>
 <blockquote>
 <p>What happens when the game runs at 50fps?</p>
 </blockquote>
-
 <p>We need an <code>accumulator</code> where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.</p>
-
 <pre><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
@@ -148,12 +136,8 @@
             accumulator -= step;
         }
 }
-</code></pre>
-
-<h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
-
-<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
-
+</code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
+<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler's suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
 <pre><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
@@ -175,10 +159,7 @@
 
         entityManager.interpolate(accumulator / step);
 }
-</code></pre>
-
-<p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
-
+</code></pre><p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
 <pre><code>public void interpolate(float alpha) {
     for (Entity entity : entities) {
         Transform transform = entity.getBody().getTransform();
@@ -192,23 +173,16 @@
         entity.setAngle(bodyAngle * alpha + angle * (1.0f - alpha));
     }
 }
-</code></pre>
-
-<p>Although it&rsquo;s been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
-
+</code></pre><p>Although it's been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
 <h3 id="a-working-sample">A working sample</h3>
-
 <p>Libgdx community memeber, Just4phil, pointed out in the comments the advantages of using a fixed timestep with interpolation. He kindly provided a working sample that lets you switch between all approaches explained in this article. Not only that, he also linked to the source, which is really awesome. Kudos.</p>
-
-<p><img src="../../img/wp/just4phil-fixed-timestep.png" alt="Fixed timestep demo" /></p>
-
+<p><img src="../../img/wp/just4phil-fixed-timestep.png" alt="Fixed timestep demo"></p>
 <ul>
 <li><a href="http://goo.gl/aF0wSJ">Download demo jar</a></li>
 <li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java">Fixed timestep code</a></li>
 <li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java">Interpolation code</a></li>
 </ul>
-
-<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven&rsquo;t done so already.</p>
+<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven't done so already.</p>
 
   </div>
   <div id="disqus_thread"></div>
@@ -230,8 +204,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

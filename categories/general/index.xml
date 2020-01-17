@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>General on David Saltares</title>
@@ -18,7 +18,7 @@
       
       <guid>https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/</guid>
       <description>PyCon ES 2017 was an absolute blast!
-The talks were very interesting and they&amp;rsquo;re all freely available on their Youtube channel.
+The talks were very interesting and they&#39;re all freely available on their Youtube channel.
 Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great choice. Beautiful medieval city center where some scenes in Game of Thrones were filmed, plus cheap and delicious food.
    Caceres 01
       Caceres 02
@@ -31,9 +31,9 @@ Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great cho
       <pubDate>Tue, 12 Sep 2017 22:03:02 +0100</pubDate>
       
       <guid>https://saltares.com/general/come-to-pycon-es-2017/</guid>
-      <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&amp;rsquo;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
-I&amp;rsquo;ll be helping out at a couple of presentations:
- Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io  For those not coming, I&amp;rsquo;m pretty sure all the talks will be recorded and made publicly available.</description>
+      <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&#39;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
+I&#39;ll be helping out at a couple of presentations:
+ Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io  For those not coming, I&#39;m pretty sure all the talks will be recorded and made publicly available.</description>
     </item>
     
     <item>
@@ -64,8 +64,8 @@ Planning With over 8k developers, 600 talks and 50 tracks spread across the univ
       
       <guid>https://saltares.com/general/migration-from-wordpress-to-hugo/</guid>
       <description>At long last, I got around to do something I had been meaning to do for a very long time. I migrated this Wordpress blog over to a statically generated site powered by Hugo.
-That&amp;rsquo;s 6 years or over 300 posts worth of content.
-Why not stay with Wordpress? First of all, I wanted to move away from Wordpress because it&amp;rsquo;s heavy and requires quite a bit of setup: PHP, database, plugins and so on.</description>
+That&#39;s 6 years or over 300 posts worth of content.
+Why not stay with Wordpress? First of all, I wanted to move away from Wordpress because it&#39;s heavy and requires quite a bit of setup: PHP, database, plugins and so on.</description>
     </item>
     
     <item>
@@ -75,7 +75,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       
       <guid>https://saltares.com/general/ashley-1-7-2-released/</guid>
       <description>Small Ashley release, check the changes for 1.7.2 below:
- Bug fix: Engine doesn&amp;rsquo;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws.  To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
+ Bug fix: Engine doesn&#39;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws.  To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       <pubDate>Sat, 19 Dec 2015 10:59:07 +0000</pubDate>
       
       <guid>https://saltares.com/general/libgdx-cookbook-is-now-as-cheap-as-beer/</guid>
-      <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&amp;rsquo;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&amp;rsquo;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
+      <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&#39;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&#39;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
 Happy holidays!</description>
     </item>
     
@@ -94,9 +94,9 @@ Happy holidays!</description>
       <pubDate>Sun, 22 Mar 2015 14:36:18 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-domain-and-hosting/</guid>
-      <description>It&amp;rsquo;s been over 5 years since I registered siondream.com. At that time, I also signed up for a shared hosting plan with Hostgator. Unfortunately, I&amp;rsquo;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
+      <description>It&#39;s been over 5 years since I registered siondream.com. At that time, I also signed up for a shared hosting plan with Hostgator. Unfortunately, I&#39;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
 Welcome to saltares.com!
-Here&amp;rsquo;s a brief of my experience with Hostgator and the migration process.</description>
+Here&#39;s a brief of my experience with Hostgator and the migration process.</description>
     </item>
     
     <item>
@@ -105,8 +105,8 @@ Here&amp;rsquo;s a brief of my experience with Hostgator and the migration proce
       <pubDate>Thu, 12 Mar 2015 22:10:59 +0000</pubDate>
       
       <guid>https://saltares.com/general/2d-game-art-for-programmers-copyright-infringement/</guid>
-      <description>This story really upset me, but let&amp;rsquo;s start from the beginning for context&amp;rsquo;s sake.
-I&amp;rsquo;ve been following Chris Hildenbrand&amp;rsquo;s blog 2D Game Art for Programmers since the very beginning because it&amp;rsquo;s absolutely amazing. He gives hope to talentless and desperate programmers like me, so we can go and make games that won&amp;rsquo;t make people want to pull their eyes out. Just a few intelligently placed shapes, some smart shading and you&amp;rsquo;ve got decent art.</description>
+      <description>This story really upset me, but let&#39;s start from the beginning for context&#39;s sake.
+I&#39;ve been following Chris Hildenbrand&#39;s blog 2D Game Art for Programmers since the very beginning because it&#39;s absolutely amazing. He gives hope to talentless and desperate programmers like me, so we can go and make games that won&#39;t make people want to pull their eyes out. Just a few intelligently placed shapes, some smart shading and you&#39;ve got decent art.</description>
     </item>
     
     <item>
@@ -115,8 +115,8 @@ I&amp;rsquo;ve been following Chris Hildenbrand&amp;rsquo;s blog 2D Game Art for
       <pubDate>Tue, 20 Jan 2015 13:26:29 +0000</pubDate>
       
       <guid>https://saltares.com/general/libgdx-at-the-london-java-community-meetup/</guid>
-      <description>Next Tuesday 3rd of February I will be talking about Libgdx at the London Java Community Meetup. Things won&amp;rsquo;t get too technical, I&amp;rsquo;ll introduce the framework, explain why it&amp;rsquo;s so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won&amp;rsquo;t miss this golden opportunity to cheekily mention my Libgdx Cookbook!
-If you&amp;rsquo;re interested, sign up and come to the The Skills Matter eXchange, doors open at 6.</description>
+      <description>Next Tuesday 3rd of February I will be talking about Libgdx at the London Java Community Meetup. Things won&#39;t get too technical, I&#39;ll introduce the framework, explain why it&#39;s so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won&#39;t miss this golden opportunity to cheekily mention my Libgdx Cookbook!
+If you&#39;re interested, sign up and come to the The Skills Matter eXchange, doors open at 6.</description>
     </item>
     
     <item>
@@ -125,8 +125,8 @@ If you&amp;rsquo;re interested, sign up and come to the The Skills Matter eXchan
       <pubDate>Thu, 13 Nov 2014 21:56:34 +0000</pubDate>
       
       <guid>https://saltares.com/general/upcoming-talk-at-kingston-university/</guid>
-      <description>I&amp;rsquo;ll be delivering a small presentation to the games development students at Kingston University of London on Monday November 24th. The reason behind the talk is the recent publication of our Libgdx Cookbook, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.
-Naturally, I&amp;rsquo;ll post the slides here for whoever&amp;rsquo;s interested.</description>
+      <description>I&#39;ll be delivering a small presentation to the games development students at Kingston University of London on Monday November 24th. The reason behind the talk is the recent publication of our Libgdx Cookbook, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.
+Naturally, I&#39;ll post the slides here for whoever&#39;s interested.</description>
     </item>
     
     <item>
@@ -137,8 +137,8 @@ Naturally, I&amp;rsquo;ll post the slides here for whoever&amp;rsquo;s intereste
       <guid>https://saltares.com/general/we-have-a-libgdx-cookbook-winner/</guid>
       <description>To celebrate the release of our Libgdx Cross-platform Game Development Cookbook we announced a raffle on Twitter earlier this week. A few RTs later and a random number generation, the winner is.
 Rafael Giordanno
-Congratulations, we&amp;rsquo;ll get in touch with the winner to send him his paperback copy.
-Here&amp;rsquo;s proof that everything was legit:
+Congratulations, we&#39;ll get in touch with the winner to send him his paperback copy.
+Here&#39;s proof that everything was legit:
  Participants list Random draw  </description>
     </item>
     
@@ -160,7 +160,7 @@ The cookbook has over 75 practical recipes on how to get stuff done with Libgdx.
       <guid>https://saltares.com/general/super-jumper-ashley-remake/</guid>
       <description>Ashley Super Jumper has been my weekend project. It is nothing more than a clone of the Libgdx demo game. The catch is that it goes for an entity system approach rather than the classic inheritance model. Naturally, it uses Ashley.
 The point was to have a reference project folks could check out in order to understand how entity systems in general and Ashley in particular work.
-Maybe one day, I&amp;rsquo;ll post a proper article explaining the design behind the entity systems at play in Super Jumper.</description>
+Maybe one day, I&#39;ll post a proper article explaining the design behind the entity systems at play in Super Jumper.</description>
     </item>
     
     <item>
@@ -169,7 +169,7 @@ Maybe one day, I&amp;rsquo;ll post a proper article explaining the design behind
       <pubDate>Mon, 21 Jul 2014 12:19:47 +0000</pubDate>
       
       <guid>https://saltares.com/general/5-years-old/</guid>
-      <description>This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&amp;rsquo;s from July 2009 and thought a recap was in order.
+      <description>This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&#39;s from July 2009 and thought a recap was in order.
 It might have been possible to say that 5 years can make a blog be referred to as veteran. If we were in 2010.</description>
     </item>
     
@@ -179,9 +179,8 @@ It might have been possible to say that 5 years can make a blog be referred to a
       <pubDate>Wed, 11 Jun 2014 09:20:45 +0000</pubDate>
       
       <guid>https://saltares.com/general/homefront-the-revolution-e3-stage-demo/</guid>
-      <description>You&amp;rsquo;ll have to excuse some Homefront: The Revolution spam in the blog these days. E3 2014 is on and, for the very first time, they&amp;rsquo;re showing gameplay of the game I worked on at Crytek UK for two years. Exciting!
-Without further ado, I&amp;rsquo;ll let you see how awesome it looks.
- </description>
+      <description>You&#39;ll have to excuse some Homefront: The Revolution spam in the blog these days. E3 2014 is on and, for the very first time, they&#39;re showing gameplay of the game I worked on at Crytek UK for two years. Exciting!
+Without further ado, I&#39;ll let you see how awesome it looks.</description>
     </item>
     
     <item>
@@ -190,7 +189,7 @@ Without further ado, I&amp;rsquo;ll let you see how awesome it looks.
       <pubDate>Mon, 02 Jun 2014 17:55:46 +0000</pubDate>
       
       <guid>https://saltares.com/general/homefront-the-revolution-announced/</guid>
-      <description>At last! The game I worked on during my 2 years at Crytek UK has been announced with an amazing trailer. Big congratulations at the Nottingham team for the huge effort put into this project. What a bunch of incredibly talented people, I&amp;rsquo;m really honoured to have been part of the project.
+      <description>At last! The game I worked on during my 2 years at Crytek UK has been announced with an amazing trailer. Big congratulations at the Nottingham team for the huge effort put into this project. What a bunch of incredibly talented people, I&#39;m really honoured to have been part of the project.
 I mainly worked on emergent AI systems for NPCs and animation. Unfortunately, you cannot see much of that on this trailer.</description>
     </item>
     
@@ -200,8 +199,8 @@ I mainly worked on emergent AI systems for NPCs and animation. Unfortunately, yo
       <pubDate>Sat, 29 Mar 2014 10:43:07 +0000</pubDate>
       
       <guid>https://saltares.com/general/talk-at-uclm/</guid>
-      <description>Next April 22nd I&amp;rsquo;ll be giving a talk at Castilla: La Mancha University (Spain). I&amp;rsquo;ll be addressing the students enrolled in their games development course who bother attending to listen to whatever I&amp;rsquo;m going to say.
-The talk will focus on how open source projects help you get into the industry, which is something I&amp;rsquo;ve been writing about lately. But I guess I&amp;rsquo;ll end up talking about tangential matters such as student life as well as my experience at Crytek and Sony.</description>
+      <description>Next April 22nd I&#39;ll be giving a talk at Castilla: La Mancha University (Spain). I&#39;ll be addressing the students enrolled in their games development course who bother attending to listen to whatever I&#39;m going to say.
+The talk will focus on how open source projects help you get into the industry, which is something I&#39;ve been writing about lately. But I guess I&#39;ll end up talking about tangential matters such as student life as well as my experience at Crytek and Sony.</description>
     </item>
     
     <item>
@@ -210,8 +209,8 @@ The talk will focus on how open source projects help you get into the industry, 
       <pubDate>Sun, 09 Mar 2014 21:45:21 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-look/</guid>
-      <description>Let&amp;rsquo;s face it, the old theme was extremely 2005. It was about time this blog got a proper facelift.
-Since I&amp;rsquo;m no designer, I put together all my creativity and went for one of the featured WordPress themes, Twenty Thirteen. But that&amp;rsquo;s okay because the awesomeness of my content makes up for the lack of innovation.
+      <description>Let&#39;s face it, the old theme was extremely 2005. It was about time this blog got a proper facelift.
+Since I&#39;m no designer, I put together all my creativity and went for one of the featured WordPress themes, Twenty Thirteen. But that&#39;s okay because the awesomeness of my content makes up for the lack of innovation.
  Ha!
  Now seriously, I thought a colorful and yet simple style would do this place some good.</description>
     </item>
@@ -222,7 +221,7 @@ Since I&amp;rsquo;m no designer, I put together all my creativity and went for o
       <pubDate>Mon, 27 Jan 2014 08:46:10 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-beginnings/</guid>
-      <description>It&amp;rsquo;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
+      <description>It&#39;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
 In a spark of madness, after Math Maze was done, I partnered with a publisher to start writing a game development book. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery.</description>
     </item>
     
@@ -245,8 +244,8 @@ How come? You might ask. Well, just over a year and a half ago I arrived into Ki
       <guid>https://saltares.com/general/from-google-reader-to-tiny-tiny-rss/</guid>
       <description>As all of you surely know, Google Reader is in death row and will be part of history as of June the 1st.
  Booh!
- Google Reader&amp;rsquo;s demise As usual, the people from the Internet went bananas, so I took the time to film one of them.
-Google is evil, they&amp;rdquo;re fucking us over and so on and so forth. However, the sad truth is, they just wanted to know what you&amp;rdquo;re interested in so they could provide you with more meaningful advertisement.</description>
+ Google Reader&#39;s demise As usual, the people from the Internet went bananas, so I took the time to film one of them.
+Google is evil, they&amp;quot;re fucking us over and so on and so forth. However, the sad truth is, they just wanted to know what you&amp;quot;re interested in so they could provide you with more meaningful advertisement.</description>
     </item>
     
     <item>
@@ -255,7 +254,7 @@ Google is evil, they&amp;rdquo;re fucking us over and so on and so forth. Howeve
       <pubDate>Sat, 16 Mar 2013 11:54:12 +0000</pubDate>
       
       <guid>https://saltares.com/general/lincoln-university-canjam13/</guid>
-      <description>Last weekend I went to Lincoln University to attend #CanJam13, a 24h game jam organized by some members of the Computing Society over there. They kindly asked some people from Crytek and Rockstar to do the judging and provide the students with some advice during the competition. Waking up early during the weekend is never ideal but hey, those students were about to pull an allnighter! It&amp;rdquo;d have been really inconsiderate not to show up.</description>
+      <description>Last weekend I went to Lincoln University to attend #CanJam13, a 24h game jam organized by some members of the Computing Society over there. They kindly asked some people from Crytek and Rockstar to do the judging and provide the students with some advice during the competition. Waking up early during the weekend is never ideal but hey, those students were about to pull an allnighter! It&amp;quot;d have been really inconsiderate not to show up.</description>
     </item>
     
     <item>
@@ -266,7 +265,7 @@ Google is evil, they&amp;rdquo;re fucking us over and so on and so forth. Howeve
       <guid>https://saltares.com/general/2d-character-creation-and-animation-for-dummies/</guid>
       <description>Hang on a second… An art article written by a programmer? How do you dare? This is madness
  Well yes, so deal with it.
-Life is hard for us programmers, who can&amp;rsquo;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&amp;rdquo;d never call that art.</description>
+Life is hard for us programmers, who can&#39;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&amp;quot;d never call that art.</description>
     </item>
     
     <item>
@@ -275,7 +274,7 @@ Life is hard for us programmers, who can&amp;rsquo;t always find a committed art
       <pubDate>Sat, 04 Feb 2012 22:46:49 +0000</pubDate>
       
       <guid>https://saltares.com/general/i-just-got-hired-by-crytek-uk/</guid>
-      <description>I can finally say it out loud: I just got hired by Crytek UK as a junior programmer! In case you were wondering, yes, they are the same guys that pulled the Crysis saga together using their jaw dropping CryEngine, and now they&amp;rdquo;re working on games like Homefront 2. Their British studio is based in Nottingham, so I moved here a couple of days ago and I really like the city so far.</description>
+      <description>I can finally say it out loud: I just got hired by Crytek UK as a junior programmer! In case you were wondering, yes, they are the same guys that pulled the Crysis saga together using their jaw dropping CryEngine, and now they&amp;quot;re working on games like Homefront 2. Their British studio is based in Nottingham, so I moved here a couple of days ago and I really like the city so far.</description>
     </item>
     
     <item>
@@ -284,7 +283,7 @@ Life is hard for us programmers, who can&amp;rsquo;t always find a committed art
       <pubDate>Thu, 12 Jan 2012 22:00:27 +0000</pubDate>
       
       <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
-      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
+      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&#39;ve been working on recently:
  Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
     
@@ -294,7 +293,7 @@ Life is hard for us programmers, who can&amp;rsquo;t always find a committed art
       <pubDate>Sat, 24 Sep 2011 13:28:24 +0000</pubDate>
       
       <guid>https://saltares.com/general/english-london-here-we-go/</guid>
-      <description>It&amp;#8217;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;#8217;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&amp;#8217;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
+      <description>&amp;lt;p style=&amp;quot;text-align: justify;&amp;quot;&amp;gt; Computing science is taught at the main campus which is called Penrhyn Road, 15 minutes away if you walk. I was amazed with the huge amount of money they should invest to have proper facilities: a huge library, great fully equipped labs and comfortable classrooms. It&amp;amp;#8217;s unbelievable how active the people is around here, there are students societies for almost everything you can imagine: DJs, skydiving, fencing, cake eating, wine tasting, gaming, market investment&amp;amp;#8230; And the list goes on!</description>
     </item>
     
     <item>
@@ -303,7 +302,7 @@ Life is hard for us programmers, who can&amp;rsquo;t always find a committed art
       <pubDate>Sat, 24 Sep 2011 13:28:24 +0000</pubDate>
       
       <guid>https://saltares.com/general/london-here-we-go/</guid>
-      <description>It&amp;rsquo;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;rdquo;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&amp;rsquo;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
+      <description>It&#39;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;quot;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&#39;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
     </item>
     
     <item>

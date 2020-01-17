@@ -1,17 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
     <loc>https://saltares.com/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://saltares.com/game-jams/</loc>
     <lastmod>2019-08-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -22,19 +20,16 @@
   <url>
     <loc>https://saltares.com/categories/</loc>
     <lastmod>2018-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://saltares.com/categories/games-development/</loc>
     <lastmod>2018-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://saltares.com/post/</loc>
     <lastmod>2018-11-26T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -45,7 +40,6 @@
   <url>
     <loc>https://saltares.com/categories/general/</loc>
     <lastmod>2017-10-24T20:49:32+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -66,7 +60,6 @@
   <url>
     <loc>https://saltares.com/categories/game-development/</loc>
     <lastmod>2017-04-20T22:07:01+01:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -107,7 +100,6 @@
   <url>
     <loc>https://saltares.com/categories/projects/</loc>
     <lastmod>2016-09-10T14:16:40+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -183,7 +175,6 @@
   <url>
     <loc>https://saltares.com/apps-tools/</loc>
     <lastmod>2015-08-08T22:19:46+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -224,7 +215,6 @@
   <url>
     <loc>https://saltares.com/categories/computing/</loc>
     <lastmod>2015-05-04T17:27:20+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -315,7 +305,6 @@
   <url>
     <loc>https://saltares.com/categories/technology/</loc>
     <lastmod>2014-10-19T10:33:49+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -506,7 +495,6 @@
   <url>
     <loc>https://saltares.com/games/</loc>
     <lastmod>2013-08-03T17:11:10+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -702,7 +690,6 @@
   <url>
     <loc>https://saltares.com/categories/hobbies/</loc>
     <lastmod>2012-06-23T16:50:38+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

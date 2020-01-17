@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Game-jams on David Saltares</title>
@@ -28,9 +28,10 @@ The theme of the game jam was &amp;ldquo;Only One&amp;rdquo;, so we created a ga
       
       <guid>https://saltares.com/game-jams/sloppynauts/</guid>
       <description>Sloppynauts is a 2D stealth platformer game where the player controls a chubby astronaut who must escape a dangerous alien planet undetected.
-  Game Jam: LibGDXJAM 2015-2016 Development time: 1 month Technology: Java, LibGDX and Ashley Team: @DrillerDev, @omniyo and @d_saltares Download: game, source code  Screenshots    Sloppynauts 1
+ Game Jam: LibGDXJAM 2015-2016 Development time: 1 month Technology: Java, LibGDX and Ashley Team: @DrillerDev, @omniyo and @d_saltares Download: game, source code  Screenshots    Sloppynauts 1
       Sloppynauts 2
-      Sloppynauts 3</description>
+      Sloppynauts 3
+      Sloppynauts 4</description>
     </item>
     
     <item>
@@ -62,11 +63,11 @@ The theme of the game jam was &amp;ldquo;Only One&amp;rdquo;, so we created a ga
       <pubDate>Sat, 04 May 2013 21:53:00 +0000</pubDate>
       
       <guid>https://saltares.com/game-jams/evolution/</guid>
-      <description> Evolution is a side scroller action platformer starred by a caveman who has to endure all sorts of dangers and get to the goal.
+      <description>Evolution is a side scroller action platformer starred by a caveman who has to endure all sorts of dangers and get to the goal.
  Game Jam: Ludum Dare #24 Development time: 48h compo Technology: Java using libgdx Download: desktop, source code  Screenshots    Evolution caveman 01
       Evolution caveman 02
       Evolution caveman 03
-     </description>
+                             </description>
     </item>
     
   </channel>

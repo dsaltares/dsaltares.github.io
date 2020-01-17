@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on David Saltares</title>
@@ -28,7 +28,7 @@ Godot and Gut Butch Wesley appears to be onboard, considering he created Gut, an
       
       <guid>https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/</guid>
       <description>PyCon ES 2017 was an absolute blast!
-The talks were very interesting and they&amp;rsquo;re all freely available on their Youtube channel.
+The talks were very interesting and they&#39;re all freely available on their Youtube channel.
 Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great choice. Beautiful medieval city center where some scenes in Game of Thrones were filmed, plus cheap and delicious food.
    Caceres 01
       Caceres 02
@@ -41,9 +41,9 @@ Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great cho
       <pubDate>Tue, 12 Sep 2017 22:03:02 +0100</pubDate>
       
       <guid>https://saltares.com/general/come-to-pycon-es-2017/</guid>
-      <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&amp;rsquo;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
-I&amp;rsquo;ll be helping out at a couple of presentations:
- Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io  For those not coming, I&amp;rsquo;m pretty sure all the talks will be recorded and made publicly available.</description>
+      <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&#39;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
+I&#39;ll be helping out at a couple of presentations:
+ Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io  For those not coming, I&#39;m pretty sure all the talks will be recorded and made publicly available.</description>
     </item>
     
     <item>
@@ -63,8 +63,8 @@ Overall, it was a pretty awesome weekend and although I wish there were more tal
       
       <guid>https://saltares.com/games/ludum-dare-38-theme-ideas/</guid>
       <description>Ludum Dare 38 starts in a couple of hours. This one is special as it marks the 15th anniversary of the biggest weekend game development friendly competition in the world!
-If you don&amp;rsquo;t know about Ludum Dare and are interested, check the documentary they just released.
-I was thinking of participating using Godot Engine. I have a couple of social compromises this weekend and, honestly, I am a bit scared of failing miserably, so I&amp;rsquo;m not too sure how far I&amp;rsquo;ll take this one.</description>
+If you don&#39;t know about Ludum Dare and are interested, check the documentary they just released.
+I was thinking of participating using Godot Engine. I have a couple of social compromises this weekend and, honestly, I am a bit scared of failing miserably, so I&#39;m not too sure how far I&#39;ll take this one.</description>
     </item>
     
     <item>
@@ -84,8 +84,8 @@ Planning With over 8k developers, 600 talks and 50 tracks spread across the univ
       <pubDate>Mon, 19 Dec 2016 11:09:53 +0000</pubDate>
       
       <guid>https://saltares.com/games/trying-godot-engine-out-for-the-godotjam/</guid>
-      <description>Godot Engine caught my eye a while back as a serious open source alternative to the ubiquitous Unity. Some of you may know I&amp;rsquo;ve been involved with the Libgdx project for some time, I even wrote a book about it!
-There&amp;rsquo;s nothing wrong with Libgdx, I absolutely love the project and the more than welcoming community around it.
+      <description>Godot Engine caught my eye a while back as a serious open source alternative to the ubiquitous Unity. Some of you may know I&#39;ve been involved with the Libgdx project for some time, I even wrote a book about it!
+There&#39;s nothing wrong with Libgdx, I absolutely love the project and the more than welcoming community around it.
 The problem is that shipping a game is hard. Doing so whilst working a full time job is harder.</description>
     </item>
     
@@ -96,8 +96,8 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
       
       <guid>https://saltares.com/general/migration-from-wordpress-to-hugo/</guid>
       <description>At long last, I got around to do something I had been meaning to do for a very long time. I migrated this Wordpress blog over to a statically generated site powered by Hugo.
-That&amp;rsquo;s 6 years or over 300 posts worth of content.
-Why not stay with Wordpress? First of all, I wanted to move away from Wordpress because it&amp;rsquo;s heavy and requires quite a bit of setup: PHP, database, plugins and so on.</description>
+That&#39;s 6 years or over 300 posts worth of content.
+Why not stay with Wordpress? First of all, I wanted to move away from Wordpress because it&#39;s heavy and requires quite a bit of setup: PHP, database, plugins and so on.</description>
     </item>
     
     <item>
@@ -106,7 +106,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       <pubDate>Sat, 10 Sep 2016 14:16:40 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
-      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
+      <description>There&#39;s a new Ashley release, check the changes for 1.7.3 below:
  API addition: Adds ‘createComponent()&amp;rdquo; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;rdquo; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;rdquo; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
@@ -117,7 +117,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       
       <guid>https://saltares.com/general/ashley-1-7-2-released/</guid>
       <description>Small Ashley release, check the changes for 1.7.2 below:
- Bug fix: Engine doesn&amp;rsquo;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws.  To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
+ Bug fix: Engine doesn&#39;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws.  To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
     </item>
     
     <item>
@@ -127,7 +127,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       
       <guid>https://saltares.com/games/built-in-console-for-libgdx-games/</guid>
       <description>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.
-When you&amp;rdquo;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
+When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
     </item>
     
     <item>
@@ -136,7 +136,7 @@ When you&amp;rdquo;re testing a new feature you just wrote, it can be incredibly
       <pubDate>Sat, 30 Jan 2016 16:07:46 +0000</pubDate>
       
       <guid>https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/</guid>
-      <description>In Sloppynauts the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using Ashley and Box2D and I think it&amp;rdquo;d be a shame if it went to waste. So here it is in case you&amp;rdquo;d like to use it.
+      <description>In Sloppynauts the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using Ashley and Box2D and I think it&amp;quot;d be a shame if it went to waste. So here it is in case you&amp;quot;d like to use it.
 This 2D vision system is generic enough to work with both side-scrolling and top-down games.</description>
     </item>
     
@@ -147,8 +147,8 @@ This 2D vision system is generic enough to work with both side-scrolling and top
       
       <guid>https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/</guid>
       <description>After a crazy weekend before the deadline, we finally managed to put something playable together for LibGDXJAM.
-We&amp;rdquo;d love you to have a go, and leave some feedback.
- We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute.</description>
+We&amp;quot;d love you to have a go, and leave some feedback.
+We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute. I guess the difficulty (or lack of readability) may make it slightly longer, which is also a bit bad.</description>
     </item>
     
     <item>
@@ -157,7 +157,7 @@ We&amp;rdquo;d love you to have a go, and leave some feedback.
       <pubDate>Sun, 10 Jan 2016 12:27:15 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-1-released/</guid>
-      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.1 below:
+      <description>There&#39;s a new Ashley release, check the changes for 1.7.1 below:
  API addition: expose IntervalSystem interval value (read-only). Bug fix: fixed pending entity operations not being processed in the right order. Bug fix: fixed adding component in empty family EntityListener causing wrong EntityListener calls. Bug fix: fixed some entity operations not being performed under special circumstances. Internals: split Engine internals into loosely coupled, single responsibility smaller classes. Update: uses Libgdx 1.</description>
     </item>
     
@@ -167,10 +167,10 @@ We&amp;rdquo;d love you to have a go, and leave some feedback.
       <pubDate>Sun, 10 Jan 2016 11:28:19 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdxjam-update-3/</guid>
-      <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&amp;rsquo;ve been hard at work, especially @DrillerDev who&amp;rsquo;s pushed the character design and animation.
+      <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&#39;ve been hard at work, especially @DrillerDev who&#39;s pushed the character design and animation.
 Look at this bad boy for instance, better not to mess with his alien gun.
 Or the beholder powered alien surveillance.
-Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
+Please, ignore the placeholder environment art, it&#39;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
     </item>
     
     <item>
@@ -179,9 +179,9 @@ Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from
       <pubDate>Fri, 01 Jan 2016 19:39:03 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdxjam-new-years-update/</guid>
-      <description>We&amp;rdquo;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&amp;rsquo;s eve.
-Here&amp;rsquo;s a few updates.
- @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&amp;rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
+      <description>We&amp;quot;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&#39;s eve.
+Here&#39;s a few updates.
+ @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&#39;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
     </item>
     
     <item>
@@ -191,9 +191,9 @@ Here&amp;rsquo;s a few updates.
       
       <guid>https://saltares.com/projects/libjdxjam-is-on-life-in-space/</guid>
       <description>Check the keynote and all the awkward moments from the dev team, including mine!
-The theme is Life in Space and I&amp;rdquo;m teaming up with Alberto for #libGDXJAM and here&amp;rsquo;s our idea:
- Abe&amp;rsquo;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
- A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&amp;rsquo;s inhabited by big fat angry aliens with guns.</description>
+The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJAM and here&#39;s our idea:
+ Abe&#39;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
+ A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&#39;s inhabited by big fat angry aliens with guns.</description>
     </item>
     
     <item>
@@ -202,7 +202,7 @@ The theme is Life in Space and I&amp;rdquo;m teaming up with Alberto for #libGDX
       <pubDate>Sat, 19 Dec 2015 10:59:07 +0000</pubDate>
       
       <guid>https://saltares.com/general/libgdx-cookbook-is-now-as-cheap-as-beer/</guid>
-      <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&amp;rsquo;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&amp;rsquo;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
+      <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&#39;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&#39;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
 Happy holidays!</description>
     </item>
     
@@ -223,7 +223,7 @@ Unit testing goodness That was over a year and a half ago and it has proven to b
       <pubDate>Tue, 10 Nov 2015 21:48:23 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-0-released/</guid>
-      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.0 below:
+      <description>There&#39;s a new Ashley release, check the changes for 1.7.0 below:
  API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership(). Update: uses Libgdx 1.</description>
     </item>
     
@@ -233,7 +233,7 @@ Unit testing goodness That was over a year and a half ago and it has proven to b
       <pubDate>Mon, 21 Sep 2015 12:34:54 +0000</pubDate>
       
       <guid>https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/</guid>
-      <description>Update: the list of winners is available as a public draw. Congratulations and thanks for the support! The Libgdx Cookbook discount will continue until September the 30th. If you help us spread the word by retweeting the following message, you&amp;rdquo;ll have a chance of getting one of the three free digital copies of the book we&amp;rdquo;ll be giving away.
+      <description>Update: the list of winners is available as a public draw. Congratulations and thanks for the support! The Libgdx Cookbook discount will continue until September the 30th. If you help us spread the word by retweeting the following message, you&amp;quot;ll have a chance of getting one of the three free digital copies of the book we&amp;quot;ll be giving away.
 Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to enter a raffle for 3 digital copies of the book.</description>
     </item>
     
@@ -243,7 +243,7 @@ Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to
       <pubDate>Sat, 12 Sep 2015 12:44:13 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-50-off/</guid>
-      <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&amp;rsquo;s website using the code LCPGDC50. You have to admit it&amp;rsquo;s a total steal, considering it&amp;rsquo;s the most complete and up to date Libgdx book out there.
+      <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&#39;s website using the code LCPGDC50. You have to admit it&#39;s a total steal, considering it&#39;s the most complete and up to date Libgdx book out there.
  Over 75 to-the-point articles that will show you how to leverage a particular aspect of Libgdx for your game. Every article is accompanied by a runnable sample available on GitHub.</description>
     </item>
     
@@ -254,7 +254,7 @@ Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to
       
       <guid>https://saltares.com/projects/conjugate-is-now-available/</guid>
       <description>Conjugate is a free, multi-language verb conjugator service and it is now available at saltares.com/conjugate.
-It&amp;rdquo;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the Conjugate button to get a nice list with all its conjugated forms. You don&amp;rsquo;t know how to conjugate a verb whilst on the go? No worries, Conjugate&amp;rsquo;s design is responsive, which means it looks neat on any device.</description>
+It&amp;quot;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the Conjugate button to get a nice list with all its conjugated forms. You don&#39;t know how to conjugate a verb whilst on the go? No worries, Conjugate&#39;s design is responsive, which means it looks neat on any device.</description>
     </item>
     
     <item>
@@ -263,7 +263,7 @@ It&amp;rdquo;dead easy: select the target language, enter the infinitive form, e
       <pubDate>Wed, 29 Jul 2015 22:58:27 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-6-0-released/</guid>
-      <description>A new Ashley package has shipped, making 1.6.0 the latest stable version. Here&amp;rsquo;s the summary of the changes:
+      <description>A new Ashley package has shipped, making 1.6.0 the latest stable version. Here&#39;s the summary of the changes:
  API change: Component is now an interface. API addition: adds getEngine() to EntitySystem. API addition: EntityListeners now are notified by priority order. API consistency: defines what happens when an Entity is added twice to an Engine and when we try do nested updates. We throw an exception in both cases. API consistency: adding an EntitySystem of the same class twice replaces the previous one, just like it has always happened when adding Components to an Entity.</description>
     </item>
     
@@ -293,7 +293,7 @@ Register if you are interested, tickets are free until July 6th!</description>
       <pubDate>Sun, 17 May 2015 11:02:20 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</guid>
-      <description>Haven&amp;rsquo;t bought Libgdx Cross-platform Game Development Cookbook yet? Stop reading and go get it!
+      <description>Haven&#39;t bought Libgdx Cross-platform Game Development Cookbook yet? Stop reading and go get it!
 Quick update to inform you that I just updated the samples repository to use Libgdx 1.6.0 and Ashley 1.5.0, both recently released.
 Libgdx 1.6.0 introduces changes in our font rendering API, which require a few minor tweaks to the framework calls, nothing major.
 7 months after the release of the book, we continue to support it. Rest assured, it is the most up to date Libgdx publication at this point in time.</description>
@@ -305,9 +305,9 @@ Libgdx 1.6.0 introduces changes in our font rendering API, which require a few m
       <pubDate>Sun, 17 May 2015 10:24:29 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-5-0-released/</guid>
-      <description>Thanks to the contributors, here&amp;rsquo;s a new version of Ashley, which now stands at 1.5.0. A new version of your favorite component based entity framework is out.
+      <description>Thanks to the contributors, here&#39;s a new version of Ashley, which now stands at 1.5.0. A new version of your favorite component based entity framework is out.
 The version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
- API addition: adds getFamily() method to IntervalIteratingSystem and IteratingSystem. API change: IntervalSystem‘s update() method is now final, as it doesn&amp;rsquo;t make sense to override it.</description>
+ API addition: adds getFamily() method to IntervalIteratingSystem and IteratingSystem. API change: IntervalSystem‘s update() method is now final, as it doesn&#39;t make sense to override it.</description>
     </item>
     
     <item>
@@ -316,7 +316,7 @@ The version comes with a bunch of bug fixes that, hopefully, will iron out some 
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
       <guid>https://saltares.com/projects/conjugate/</guid>
-      <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
+      <description>For the past few weeks working on a new toy: Conjugate. It&#39;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
  I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
@@ -328,9 +328,9 @@ Reason to be When learning a new language, it is very common to struggle with ve
       <pubDate>Sun, 22 Mar 2015 14:36:18 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-domain-and-hosting/</guid>
-      <description>It&amp;rsquo;s been over 5 years since I registered siondream.com. At that time, I also signed up for a shared hosting plan with Hostgator. Unfortunately, I&amp;rsquo;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
+      <description>It&#39;s been over 5 years since I registered siondream.com. At that time, I also signed up for a shared hosting plan with Hostgator. Unfortunately, I&#39;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
 Welcome to saltares.com!
-Here&amp;rsquo;s a brief of my experience with Hostgator and the migration process.</description>
+Here&#39;s a brief of my experience with Hostgator and the migration process.</description>
     </item>
     
     <item>
@@ -339,7 +339,7 @@ Here&amp;rsquo;s a brief of my experience with Hostgator and the migration proce
       <pubDate>Thu, 19 Mar 2015 23:27:03 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated/</guid>
-      <description>It&amp;rsquo;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
+      <description>It&#39;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
 As promised, we have updated our samples repository to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, only a few changes were necessary to make everything work again.</description>
     </item>
     
@@ -359,8 +359,8 @@ As promised, we have updated our samples repository to use the latest versions o
       <pubDate>Thu, 12 Mar 2015 22:10:59 +0000</pubDate>
       
       <guid>https://saltares.com/general/2d-game-art-for-programmers-copyright-infringement/</guid>
-      <description>This story really upset me, but let&amp;rsquo;s start from the beginning for context&amp;rsquo;s sake.
-I&amp;rsquo;ve been following Chris Hildenbrand&amp;rsquo;s blog 2D Game Art for Programmers since the very beginning because it&amp;rsquo;s absolutely amazing. He gives hope to talentless and desperate programmers like me, so we can go and make games that won&amp;rsquo;t make people want to pull their eyes out. Just a few intelligently placed shapes, some smart shading and you&amp;rsquo;ve got decent art.</description>
+      <description>This story really upset me, but let&#39;s start from the beginning for context&#39;s sake.
+I&#39;ve been following Chris Hildenbrand&#39;s blog 2D Game Art for Programmers since the very beginning because it&#39;s absolutely amazing. He gives hope to talentless and desperate programmers like me, so we can go and make games that won&#39;t make people want to pull their eyes out. Just a few intelligently placed shapes, some smart shading and you&#39;ve got decent art.</description>
     </item>
     
     <item>
@@ -380,8 +380,8 @@ I&amp;rsquo;ve been following Chris Hildenbrand&amp;rsquo;s blog 2D Game Art for
       <pubDate>Tue, 20 Jan 2015 13:26:29 +0000</pubDate>
       
       <guid>https://saltares.com/general/libgdx-at-the-london-java-community-meetup/</guid>
-      <description>Next Tuesday 3rd of February I will be talking about Libgdx at the London Java Community Meetup. Things won&amp;rsquo;t get too technical, I&amp;rsquo;ll introduce the framework, explain why it&amp;rsquo;s so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won&amp;rsquo;t miss this golden opportunity to cheekily mention my Libgdx Cookbook!
-If you&amp;rsquo;re interested, sign up and come to the The Skills Matter eXchange, doors open at 6.</description>
+      <description>Next Tuesday 3rd of February I will be talking about Libgdx at the London Java Community Meetup. Things won&#39;t get too technical, I&#39;ll introduce the framework, explain why it&#39;s so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won&#39;t miss this golden opportunity to cheekily mention my Libgdx Cookbook!
+If you&#39;re interested, sign up and come to the The Skills Matter eXchange, doors open at 6.</description>
     </item>
     
     <item>
@@ -390,7 +390,7 @@ If you&amp;rsquo;re interested, sign up and come to the The Skills Matter eXchan
       <pubDate>Sun, 18 Jan 2015 11:30:56 +0000</pubDate>
       
       <guid>https://saltares.com/games/ashley-1-3-3-released/</guid>
-      <description>As you can see, Ashley development has slowed down a bit. I would like to think it&amp;rsquo;s because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there&amp;rsquo;s still been quite a bit of progress, enough to warrant a new release.
+      <description>As you can see, Ashley development has slowed down a bit. I would like to think it&#39;s because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there&#39;s still been quite a bit of progress, enough to warrant a new release.
 Ashley 1.3.3 is now out.
  API addition: added getEntity() method to Engine, it is now possible to retrieve entities by their ID. This will ease networked entity systems.</description>
     </item>
@@ -401,7 +401,7 @@ Ashley 1.3.3 is now out.
       <pubDate>Wed, 31 Dec 2014 13:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/computing/recover-history-with-git/</guid>
-      <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&amp;rsquo;t been pushed to origin yet. However, I didn&amp;rsquo;t realise at the time.
+      <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&#39;t been pushed to origin yet. However, I didn&#39;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
  Oh noes!
  Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.</description>
@@ -413,7 +413,7 @@ After a couple of weeks, a hundred commits and many other branches mingling abou
       <pubDate>Sun, 14 Dec 2014 21:27:11 +0000</pubDate>
       
       <guid>https://saltares.com/computing/book-review-clean-code/</guid>
-      <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&amp;rsquo;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
+      <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&#39;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
 Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, Clean Code.
 And so I read it.</description>
     </item>
@@ -424,7 +424,7 @@ And so I read it.</description>
       <pubDate>Wed, 26 Nov 2014 18:00:09 +0000</pubDate>
       
       <guid>https://saltares.com/games/libgdx-at-kingston-university/</guid>
-      <description>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements Alberto&amp;rsquo;s Libgdx workshop at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released book.
+      <description>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements Alberto&#39;s Libgdx workshop at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released book.
 I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students.</description>
     </item>
     
@@ -436,7 +436,7 @@ I talked about what Libgdx can offer developers as well as the advantages of usi
       <guid>https://saltares.com/games/libgdx-workshop-at-cadiz-university/</guid>
       <description>Alberto Cejas, colleague and co-author of Libgdx Cross-platform Game Development Cookbook delivered a Libgdx workshop at Cadiz University (Spain) last Friday 21st of November.
 During a 2 hour session, the students put together a bunch of pieces to build Flappy Plane, a Flappy Bird clone originally developed by Mario Zechner. Moreover, there was free stuff! Alberto did a small raffle and gave two copies of our book away.
-We&amp;rsquo;re really happy with the turnout, just take a look at the gallery below!</description>
+We&#39;re really happy with the turnout, just take a look at the gallery below!</description>
     </item>
     
     <item>
@@ -455,8 +455,8 @@ We&amp;rsquo;re really happy with the turnout, just take a look at the gallery b
       <pubDate>Thu, 13 Nov 2014 21:56:34 +0000</pubDate>
       
       <guid>https://saltares.com/general/upcoming-talk-at-kingston-university/</guid>
-      <description>I&amp;rsquo;ll be delivering a small presentation to the games development students at Kingston University of London on Monday November 24th. The reason behind the talk is the recent publication of our Libgdx Cookbook, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.
-Naturally, I&amp;rsquo;ll post the slides here for whoever&amp;rsquo;s interested.</description>
+      <description>I&#39;ll be delivering a small presentation to the games development students at Kingston University of London on Monday November 24th. The reason behind the talk is the recent publication of our Libgdx Cookbook, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.
+Naturally, I&#39;ll post the slides here for whoever&#39;s interested.</description>
     </item>
     
     <item>
@@ -467,8 +467,8 @@ Naturally, I&amp;rsquo;ll post the slides here for whoever&amp;rsquo;s intereste
       <guid>https://saltares.com/general/we-have-a-libgdx-cookbook-winner/</guid>
       <description>To celebrate the release of our Libgdx Cross-platform Game Development Cookbook we announced a raffle on Twitter earlier this week. A few RTs later and a random number generation, the winner is.
 Rafael Giordanno
-Congratulations, we&amp;rsquo;ll get in touch with the winner to send him his paperback copy.
-Here&amp;rsquo;s proof that everything was legit:
+Congratulations, we&#39;ll get in touch with the winner to send him his paperback copy.
+Here&#39;s proof that everything was legit:
  Participants list Random draw  </description>
     </item>
     
@@ -479,7 +479,7 @@ Here&amp;rsquo;s proof that everything was legit:
       
       <guid>https://saltares.com/projects/get-a-free-libgdx-cookbook/</guid>
       <description>In order to spread the good word of Libgdx Cross-platform Game Development Cookbook, Alberto and I suggested Packt Publishing the idea of a raffle.
-Simply give us a retweet to enter the giveaway. We&amp;rsquo;ll announce the winners on Friday 7th November.
+Simply give us a retweet to enter the giveaway. We&#39;ll announce the winners on Friday 7th November.
 Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to enter the raffle! http://t.co/TVx4Zptc5y
 &amp;mdash; David Saltares (@d_saltares) November 3, 2014  Good luck!</description>
     </item>
@@ -501,7 +501,7 @@ The cookbook has over 75 practical recipes on how to get stuff done with Libgdx.
       
       <guid>https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/</guid>
       <description>The Google Nexus product line has always been the reference when it came to affordable high end smartphones. However, that seems to have changed a couple of days ago, the second the Nexus 6 was announced with a starting price tag of $649. Let us not forget that one could get a Nexus 5 for only $349.
-As many have pointed out, this is most likely Google&amp;rsquo;s response to the pressure other vendors have put on the former.</description>
+As many have pointed out, this is most likely Google&#39;s response to the pressure other vendors have put on the former.</description>
     </item>
     
     <item>
@@ -534,7 +534,7 @@ Bug fix: fixed nested iteration problem caused by adding/removing entities from 
       
       <guid>https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/</guid>
       <description>As I have mentioned before, I have been working on a book titled Libgdx Cross-platform Game Development Cookbook, which is set to be released next month.
-Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&amp;rsquo;s evolution. Neat, isn&amp;rsquo;t it?
+Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&#39;s evolution. Neat, isn&#39;t it?
   For those interested, here are the options I used.
 gource -1280x720 --seconds-per-day 0.</description>
     </item>
@@ -545,8 +545,8 @@ gource -1280x720 --seconds-per-day 0.</description>
       <pubDate>Sun, 14 Sep 2014 20:00:07 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-2-0-released/</guid>
-      <description>There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&amp;rsquo;ll find new.
- API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish&amp;#8216;s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&amp;rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.</description>
+      <description>There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&#39;ll find new.
+ API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&#39;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.</description>
     </item>
     
     <item>
@@ -565,7 +565,7 @@ gource -1280x720 --seconds-per-day 0.</description>
       <pubDate>Sat, 09 Aug 2014 21:41:53 +0000</pubDate>
       
       <guid>https://saltares.com/projects/finally-ashley-has-a-logo/</guid>
-      <description>Ashley now has a logo and it&amp;rsquo;s awesome! What an amazing contribution.
+      <description>Ashley now has a logo and it&#39;s awesome! What an amazing contribution.
 This is really good news because Ashley lacked an image to make it a bit more memorable. Now back to work, there will soon be a new release. Despite it involving some API changes, it will make for a much faster framework.</description>
     </item>
     
@@ -578,7 +578,7 @@ This is really good news because Ashley lacked an image to make it a bit more me
       <description>Ashley, your favourite entity framework now has online javadocs and a wiki.
  Wooohooo!
  The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
-I just started putting stuff into the wiki yesterday so it&amp;rsquo;s pretty empty as of now. Expect more content soon!</description>
+I just started putting stuff into the wiki yesterday so it&#39;s pretty empty as of now. Expect more content soon!</description>
     </item>
     
     <item>
@@ -589,7 +589,7 @@ I just started putting stuff into the wiki yesterday so it&amp;rsquo;s pretty em
       <guid>https://saltares.com/general/super-jumper-ashley-remake/</guid>
       <description>Ashley Super Jumper has been my weekend project. It is nothing more than a clone of the Libgdx demo game. The catch is that it goes for an entity system approach rather than the classic inheritance model. Naturally, it uses Ashley.
 The point was to have a reference project folks could check out in order to understand how entity systems in general and Ashley in particular work.
-Maybe one day, I&amp;rsquo;ll post a proper article explaining the design behind the entity systems at play in Super Jumper.</description>
+Maybe one day, I&#39;ll post a proper article explaining the design behind the entity systems at play in Super Jumper.</description>
     </item>
     
     <item>
@@ -609,7 +609,7 @@ By the way, if you already have a a project, adding the extra dependency is also
       <pubDate>Mon, 21 Jul 2014 12:19:47 +0000</pubDate>
       
       <guid>https://saltares.com/general/5-years-old/</guid>
-      <description>This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&amp;rsquo;s from July 2009 and thought a recap was in order.
+      <description>This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&#39;s from July 2009 and thought a recap was in order.
 It might have been possible to say that 5 years can make a blog be referred to as veteran. If we were in 2010.</description>
     </item>
     
@@ -619,8 +619,8 @@ It might have been possible to say that 5 years can make a blog be referred to a
       <pubDate>Sun, 20 Jul 2014 20:13:16 +0000</pubDate>
       
       <guid>https://saltares.com/games/ashley-1-0-1-released/</guid>
-      <description>Finally! During the past couple of months me and a bunch of awesome collaborators have been working on a proper Ashley release and now it&amp;rsquo;s done. Here is the list of the new shiny features.
-Mind that some of them break the previous API. However, this is our first official release, we&amp;rsquo;ll push hard to keep the API backwards compatible from now on.
+      <description>Finally! During the past couple of months me and a bunch of awesome collaborators have been working on a proper Ashley release and now it&#39;s done. Here is the list of the new shiny features.
+Mind that some of them break the previous API. However, this is our first official release, we&#39;ll push hard to keep the API backwards compatible from now on.
  Gradle: we got rid of the Eclipse projects and now use Gradle to manage our dependencies and build process.</description>
     </item>
     
@@ -630,8 +630,8 @@ Mind that some of them break the previous API. However, this is our first offici
       <pubDate>Sun, 20 Jul 2014 19:31:53 +0000</pubDate>
       
       <guid>https://saltares.com/games/ashley-entity-framework/</guid>
-      <description>Loads of stuff in the pipeline lately: new job, finishing my book and some Ashley development. What? You don&amp;rsquo;t know what Ashley is? Here is a brief, straight from GitHub.
- A tiny entity framework written in Java. It&amp;rsquo;s inspired by frameworks like Ash (hence the name) and Artemis. Ashley tries to be a high-performance entity framework without the use of black-magic and thus making the API easy and transparent to use.</description>
+      <description>Loads of stuff in the pipeline lately: new job, finishing my book and some Ashley development. What? You don&#39;t know what Ashley is? Here is a brief, straight from GitHub.
+ A tiny entity framework written in Java. It&#39;s inspired by frameworks like Ash (hence the name) and Artemis. Ashley tries to be a high-performance entity framework without the use of black-magic and thus making the API easy and transparent to use.</description>
     </item>
     
     <item>
@@ -652,9 +652,8 @@ The book offers step-by-step guides on how to master Libgdx subsystems to build 
       <pubDate>Wed, 11 Jun 2014 09:20:45 +0000</pubDate>
       
       <guid>https://saltares.com/general/homefront-the-revolution-e3-stage-demo/</guid>
-      <description>You&amp;rsquo;ll have to excuse some Homefront: The Revolution spam in the blog these days. E3 2014 is on and, for the very first time, they&amp;rsquo;re showing gameplay of the game I worked on at Crytek UK for two years. Exciting!
-Without further ado, I&amp;rsquo;ll let you see how awesome it looks.
- </description>
+      <description>You&#39;ll have to excuse some Homefront: The Revolution spam in the blog these days. E3 2014 is on and, for the very first time, they&#39;re showing gameplay of the game I worked on at Crytek UK for two years. Exciting!
+Without further ado, I&#39;ll let you see how awesome it looks.</description>
     </item>
     
     <item>
@@ -663,7 +662,7 @@ Without further ado, I&amp;rsquo;ll let you see how awesome it looks.
       <pubDate>Mon, 02 Jun 2014 17:55:46 +0000</pubDate>
       
       <guid>https://saltares.com/general/homefront-the-revolution-announced/</guid>
-      <description>At last! The game I worked on during my 2 years at Crytek UK has been announced with an amazing trailer. Big congratulations at the Nottingham team for the huge effort put into this project. What a bunch of incredibly talented people, I&amp;rsquo;m really honoured to have been part of the project.
+      <description>At last! The game I worked on during my 2 years at Crytek UK has been announced with an amazing trailer. Big congratulations at the Nottingham team for the huge effort put into this project. What a bunch of incredibly talented people, I&#39;m really honoured to have been part of the project.
 I mainly worked on emergent AI systems for NPCs and animation. Unfortunately, you cannot see much of that on this trailer.</description>
     </item>
     
@@ -683,8 +682,8 @@ Beneath the surface is a very simple, classic text adventure where the player ne
       <pubDate>Fri, 25 Apr 2014 19:47:07 +0000</pubDate>
       
       <guid>https://saltares.com/games/ludum-dare-29-im-in/</guid>
-      <description>I&amp;rsquo;m up for Ludum Dare despite not being too sure about whether or not I&amp;rsquo;ll be able to invest enough time on it. The last couple of editions eluded me, so I didn&amp;rsquo;t want to miss yet another one.
-Given the time constraints, I might even go for just a text adventure. Or maybe not, who knows. I&amp;rsquo;ll decide in the morning, once the theme is announced!
+      <description>I&#39;m up for Ludum Dare despite not being too sure about whether or not I&#39;ll be able to invest enough time on it. The last couple of editions eluded me, so I didn&#39;t want to miss yet another one.
+Given the time constraints, I might even go for just a text adventure. Or maybe not, who knows. I&#39;ll decide in the morning, once the theme is announced!
 Tools of the trade.</description>
     </item>
     
@@ -715,8 +714,8 @@ I would dare to say it was well received. A zero total count of rotten tomatoes 
       <pubDate>Sat, 29 Mar 2014 10:43:07 +0000</pubDate>
       
       <guid>https://saltares.com/general/talk-at-uclm/</guid>
-      <description>Next April 22nd I&amp;rsquo;ll be giving a talk at Castilla: La Mancha University (Spain). I&amp;rsquo;ll be addressing the students enrolled in their games development course who bother attending to listen to whatever I&amp;rsquo;m going to say.
-The talk will focus on how open source projects help you get into the industry, which is something I&amp;rsquo;ve been writing about lately. But I guess I&amp;rsquo;ll end up talking about tangential matters such as student life as well as my experience at Crytek and Sony.</description>
+      <description>Next April 22nd I&#39;ll be giving a talk at Castilla: La Mancha University (Spain). I&#39;ll be addressing the students enrolled in their games development course who bother attending to listen to whatever I&#39;m going to say.
+The talk will focus on how open source projects help you get into the industry, which is something I&#39;ve been writing about lately. But I guess I&#39;ll end up talking about tangential matters such as student life as well as my experience at Crytek and Sony.</description>
     </item>
     
     <item>
@@ -725,8 +724,8 @@ The talk will focus on how open source projects help you get into the industry, 
       <pubDate>Sat, 22 Mar 2014 17:59:03 +0000</pubDate>
       
       <guid>https://saltares.com/games/libgdx-is-a-1m-loc-project/</guid>
-      <description>Don&amp;rsquo;t exactly remember how, but last night I came across Code Analyzer, an open source Java desktop utility that counts lines of code. Out of curiosity, I downloaded the runnable jar file and tried it with Libgdx.
-I was very much aware that Libgdx was a pretty big project but certainly didn&amp;rsquo;t expect it to be that large. At the time of writing the HEAD of the repository contains 1.048.646 lines of Java, C and C++.</description>
+      <description>Don&#39;t exactly remember how, but last night I came across Code Analyzer, an open source Java desktop utility that counts lines of code. Out of curiosity, I downloaded the runnable jar file and tried it with Libgdx.
+I was very much aware that Libgdx was a pretty big project but certainly didn&#39;t expect it to be that large. At the time of writing the HEAD of the repository contains 1.048.646 lines of Java, C and C++.</description>
     </item>
     
     <item>
@@ -735,10 +734,10 @@ I was very much aware that Libgdx was a pretty big project but certainly didn&am
       <pubDate>Fri, 14 Mar 2014 16:42:15 +0000</pubDate>
       
       <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
-      <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
+      <description>Developers love Libgdx, it&#39;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&#39;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
 Have you thought about contributing back?
  Who, me?
- Yes and here&amp;rsquo;s why.
+ Yes and here&#39;s why.
 So much win The beauty of a healthy community driven project such as Libgdx is that decisions are crowd-sourced and code is always peer reviewed.</description>
     </item>
     
@@ -749,7 +748,7 @@ So much win The beauty of a healthy community driven project such as Libgdx is t
       
       <guid>https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/</guid>
       <description>Fix your Timestep is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.
-Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses.</description>
+Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&amp;rsquo; behaviour.</description>
     </item>
     
     <item>
@@ -758,7 +757,7 @@ Essentially, it covers different approaches to pick a delta value to pass throug
       <pubDate>Mon, 10 Mar 2014 23:17:51 +0000</pubDate>
       
       <guid>https://saltares.com/games/sioncore-a-small-game-engine/</guid>
-      <description>Today I created a repository on Gihub to keep track of my code base and I named it SionCore. This wasn&amp;rsquo;t made overnight, it&amp;rsquo;s the result of several small game projects, such as game jam gigs and Math Maze.
+      <description>Today I created a repository on Gihub to keep track of my code base and I named it SionCore. This wasn&#39;t made overnight, it&#39;s the result of several small game projects, such as game jam gigs and Math Maze.
 Slowly, it became obvious that some components were highly reusable and game agnostic. That is why I thought it would be good to make it public.
 Who knows, maybe someday someone might even contribute!</description>
     </item>
@@ -771,7 +770,7 @@ Who knows, maybe someday someone might even contribute!</description>
       <guid>https://saltares.com/computing/using-ant-behind-a-proxy/</guid>
       <description>Many Java projects use Ant to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.
 Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.
-&amp;lt;setproxy proxyhost=&amp;quot;host&amp;quot; proxyport=&amp;quot;port&amp;quot; proxypassword=&amp;quot;password&amp;quot;/&amp;gt;  Users behind a proxy would now be able to download dependencies with Ant.</description>
+&amp;lt;setproxy proxyhost=&amp;quot;host&amp;quot; proxyport=&amp;quot;port&amp;quot; proxypassword=&amp;quot;password&amp;quot;/&amp;gt; Users behind a proxy would now be able to download dependencies with Ant.</description>
     </item>
     
     <item>
@@ -780,8 +779,8 @@ Downloading dependencies while your machine is behind a proxy might prove proble
       <pubDate>Sun, 09 Mar 2014 21:45:21 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-look/</guid>
-      <description>Let&amp;rsquo;s face it, the old theme was extremely 2005. It was about time this blog got a proper facelift.
-Since I&amp;rsquo;m no designer, I put together all my creativity and went for one of the featured WordPress themes, Twenty Thirteen. But that&amp;rsquo;s okay because the awesomeness of my content makes up for the lack of innovation.
+      <description>Let&#39;s face it, the old theme was extremely 2005. It was about time this blog got a proper facelift.
+Since I&#39;m no designer, I put together all my creativity and went for one of the featured WordPress themes, Twenty Thirteen. But that&#39;s okay because the awesomeness of my content makes up for the lack of innovation.
  Ha!
  Now seriously, I thought a colorful and yet simple style would do this place some good.</description>
     </item>
@@ -793,7 +792,7 @@ Since I&amp;rsquo;m no designer, I put together all my creativity and went for o
       
       <guid>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
       <description>Needless to say, C++ is a glorious language. Sadly, the attention it gets on the blog is far from representative of my appreciation towards it. Despite it being my main language at work, I only tend to talk about Libgdx side projects around here. Well, enough is enough!
-Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&amp;rsquo;s actually a set of languages.</description>
+Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&#39;s actually a set of languages.</description>
     </item>
     
     <item>
@@ -802,7 +801,7 @@ Truth be told, over the years, standard after standard, C++ has become a behemot
       <pubDate>Mon, 27 Jan 2014 08:46:10 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-beginnings/</guid>
-      <description>It&amp;rsquo;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
+      <description>It&#39;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
 In a spark of madness, after Math Maze was done, I partnered with a publisher to start writing a game development book. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery.</description>
     </item>
     
@@ -822,8 +821,8 @@ The player has to move a purple block across a labyrinth towards the exit. Howev
       <pubDate>Sun, 29 Sep 2013 21:31:05 +0000</pubDate>
       
       <guid>https://saltares.com/games/learning-libgdx-game-development/</guid>
-      <description>Just a quick update this time. A while back I mentioned that I had been doing some technical reviewing on a LibGDX book, and now it&amp;rsquo;s finally out.
-Learning LibGDX Game Development by Andreas Oehlke explains the basic features of the mighty framework whilst building a simple platformer from scratch. Even though it isn&amp;rsquo;t an advanced read, it&amp;rdquo;ll surely help whoever doesn&amp;rsquo;t have a huge deal of experience in games development and wants to give LibGDX a try.</description>
+      <description>Just a quick update this time. A while back I mentioned that I had been doing some technical reviewing on a LibGDX book, and now it&#39;s finally out.
+Learning LibGDX Game Development by Andreas Oehlke explains the basic features of the mighty framework whilst building a simple platformer from scratch. Even though it isn&#39;t an advanced read, it&amp;quot;ll surely help whoever doesn&#39;t have a huge deal of experience in games development and wants to give LibGDX a try.</description>
     </item>
     
     <item>
@@ -832,8 +831,8 @@ Learning LibGDX Game Development by Andreas Oehlke explains the basic features o
       <pubDate>Mon, 16 Sep 2013 17:42:45 +0000</pubDate>
       
       <guid>https://saltares.com/games/math-maze-1-3-update/</guid>
-      <description>I&amp;rsquo;m pleased to say that Math Maze 1.3 is finally out on Google Play. This release has quite some more juice than the other ones as it&amp;rsquo;s the first to feature new content. Here&amp;rsquo;s the complete list of changes.
- 5 new levels (total of 40) including the new % operator. Polish locale thanks to my friend Konrad. Bug fixes (first one I found post release!)  The module operator gives the remainder of the division and it&amp;rsquo;s pretty cool because it allows me to add a new layer of complexity to level design.</description>
+      <description>I&#39;m pleased to say that Math Maze 1.3 is finally out on Google Play. This release has quite some more juice than the other ones as it&#39;s the first to feature new content. Here&#39;s the complete list of changes.
+ 5 new levels (total of 40) including the new % operator. Polish locale thanks to my friend Konrad. Bug fixes (first one I found post release!)  The module operator gives the remainder of the division and it&#39;s pretty cool because it allows me to add a new layer of complexity to level design.</description>
     </item>
     
     <item>
@@ -842,7 +841,7 @@ Learning LibGDX Game Development by Andreas Oehlke explains the basic features o
       <pubDate>Tue, 10 Sep 2013 17:15:25 +0000</pubDate>
       
       <guid>https://saltares.com/games/math-maze-1-2-update/</guid>
-      <description>Quick update just to let you guys now that Math Maze 1.2 is now live on the Google Play Store. This is yet another update with tweaks motivated directly by incredibly wise and valuable user feedback. Here&amp;rsquo;s the small list of changes:
+      <description>Quick update just to let you guys now that Math Maze 1.2 is now live on the Google Play Store. This is yet another update with tweaks motivated directly by incredibly wise and valuable user feedback. Here&#39;s the small list of changes:
  Added option to disable vibration Now allows to move app to the SD card Increased help text size  I cannot thank enough those who are taking the time to play Math Maze and write a small review or send me an e-mail afterwards.</description>
     </item>
     
@@ -852,7 +851,7 @@ Learning LibGDX Game Development by Andreas Oehlke explains the basic features o
       <pubDate>Sat, 07 Sep 2013 20:25:03 +0000</pubDate>
       
       <guid>https://saltares.com/games/math-maze-1-1-update/</guid>
-      <description>I released Math Maze 4 days ago and, even though it&amp;rsquo;s not on any top list of any kind, I&amp;rdquo;m getting loads of positive feedback through Twitter and Google Play itself. Only 17 ratings but averaging a total of 4.9 stars. Some of the comments might not even come from family nor friends! Impressive, isn&amp;rsquo;t it?
+      <description>I released Math Maze 4 days ago and, even though it&#39;s not on any top list of any kind, I&amp;quot;m getting loads of positive feedback through Twitter and Google Play itself. Only 17 ratings but averaging a total of 4.9 stars. Some of the comments might not even come from family nor friends! Impressive, isn&#39;t it?
 My intent was to make changes as per user feedback and so, today, Math Maze 1.</description>
     </item>
     
@@ -864,8 +863,8 @@ My intent was to make changes as per user feedback and so, today, Math Maze 1.</
       <guid>https://saltares.com/games/math-maze-1-0-is-now-on-google-play/</guid>
       <description>Today Math Maze 1.0 went live on Google Play!
  Woohooo!!
- If you don&amp;rsquo;t know what Math Maze is, please check its dedicated page on this blog.
-Go, download it, share it with your friends, like the Facebook page, drop me feedback and give it some shiny stars (preferably 5 of them). You won&amp;rsquo;t be making me rich because it&amp;rsquo;s a free download and doesn&amp;rsquo;t feature ads of any kind.</description>
+ If you don&#39;t know what Math Maze is, please check its dedicated page on this blog.
+Go, download it, share it with your friends, like the Facebook page, drop me feedback and give it some shiny stars (preferably 5 of them). You won&#39;t be making me rich because it&#39;s a free download and doesn&#39;t feature ads of any kind.</description>
     </item>
     
     <item>
@@ -874,7 +873,7 @@ Go, download it, share it with your friends, like the Facebook page, drop me fee
       <pubDate>Thu, 29 Aug 2013 08:41:01 +0000</pubDate>
       
       <guid>https://saltares.com/games/holidays-math-maze-update/</guid>
-      <description>Oh my… The posting rate has dangerously decreased lately! Before you judge, know that there are a couple of very good reasons for it. First and foremost, I&amp;rdquo;m on holiday, back in Cádiz, my hometown to enjoy a little bit of sun and work on my tan. It&amp;rsquo;s a small charming beautiful city with amazing beaches and prohibitively delicious places to eat .
+      <description>Oh my… The posting rate has dangerously decreased lately! Before you judge, know that there are a couple of very good reasons for it. First and foremost, I&amp;quot;m on holiday, back in Cádiz, my hometown to enjoy a little bit of sun and work on my tan. It&#39;s a small charming beautiful city with amazing beaches and prohibitively delicious places to eat .
  Fun fact: its 3000 years of history make it the oldest city in southwestern Europe.</description>
     </item>
     
@@ -885,7 +884,7 @@ Go, download it, share it with your friends, like the Facebook page, drop me fee
       
       <guid>https://saltares.com/games/book-learning-libgdx-game-development/</guid>
       <description>A few months back, I was contacted by Packt Publishing to see whether I was interested in being a technical reviewer for an upcoming libGDX book, to which I gladly accepted. Titled Learning libGDX Game Development, goes through all the basic features while building a multi-platform project from scratch.
-Andreas Oelhke, author, has done what I believe to be a pretty good job, mostly thanks to the incredibly practical approach he&amp;rsquo;s taken.</description>
+Andreas Oelhke, author, has done what I believe to be a pretty good job, mostly thanks to the incredibly practical approach he&#39;s taken.</description>
     </item>
     
     <item>
@@ -894,7 +893,7 @@ Andreas Oelhke, author, has done what I believe to be a pretty good job, mostly 
       <pubDate>Wed, 24 Jul 2013 21:32:32 +0000</pubDate>
       
       <guid>https://saltares.com/games/math-maze-closed-alpha/</guid>
-      <description>Math Maze is what&amp;rsquo;s been keeping me busy after work for the past three months and now it&amp;rsquo;s dangerously approaching a state I&amp;rdquo;m happy with. Woohooo!
+      <description>Math Maze is what&#39;s been keeping me busy after work for the past three months and now it&#39;s dangerously approaching a state I&amp;quot;m happy with. Woohooo!
  Is your head agile enough to succeed at this math based brain teaser game? Reach the exit of the labyrinth as fast as you can by using operations that will open the conditional blockages. Freshen up your mental calculus without even realising!
  I just wanted to make a really simple Android game so as to be able to polish it without giving up my job nor my social life.</description>
     </item>
@@ -905,7 +904,7 @@ Andreas Oelhke, author, has done what I believe to be a pretty good job, mostly 
       <pubDate>Mon, 15 Jul 2013 22:45:50 +0000</pubDate>
       
       <guid>https://saltares.com/games/about-epic-dropping-uscript/</guid>
-      <description>Last week I went to Develop in Brighton with work, had a great time and attended talks full of insight, so lucky me! While that might very well be a whole post on its own, I want to focus on Tim Sweeney&amp;ldquo;s interview on the past and future of Unreal Engine and Epic Games. More specifically, on the fact that they&amp;rdquo;ll be dropping their widely used scripting language entirely towards Unreal 4.</description>
+      <description>Last week I went to Develop in Brighton with work, had a great time and attended talks full of insight, so lucky me! While that might very well be a whole post on its own, I want to focus on Tim Sweeney&amp;ldquo;s interview on the past and future of Unreal Engine and Epic Games. More specifically, on the fact that they&amp;quot;ll be dropping their widely used scripting language entirely towards Unreal 4.</description>
     </item>
     
     <item>
@@ -925,7 +924,7 @@ Level design, practically a synonym of iteration Everybody knows how essential i
       
       <guid>https://saltares.com/games/freegemas-cloned-in-google-play-4-times/</guid>
       <description>That I know of…
-For those who don&amp;rsquo;t know, Freegemas was my first libgdx project, which I made in a couple of weeks to learn how to use the framework. Actually, I&amp;rdquo;m not to take the credit as it&amp;rsquo;s a silly Java/libgdx port of a game made by an university mate, José Tomás Tocino. Freegemas was originally written in C++ using Gosu and both versions were open sourced under the GPL license.</description>
+For those who don&#39;t know, Freegemas was my first libgdx project, which I made in a couple of weeks to learn how to use the framework. Actually, I&amp;quot;m not to take the credit as it&#39;s a silly Java/libgdx port of a game made by an university mate, José Tomás Tocino. Freegemas was originally written in C++ using Gosu and both versions were open sourced under the GPL license.</description>
     </item>
     
     <item>
@@ -936,7 +935,8 @@ For those who don&amp;rsquo;t know, Freegemas was my first libgdx project, which
       <guid>https://saltares.com/games/ludum-dare-26-results/</guid>
       <description>Very early this morning, and after 20 days of voting, Ludum Dare #26 came to an end, giving way to the much anticipated final results.
 How did I do? Without further ado, these are the scores for Lightbyrinth compared to those of my previous entry.
-  Category Position Percentile (2346 entries) Score Compared to #LD24   Graphics #242 90% 3.57/5.00 -7.03%   Mood #326 87% 3.18/5.00 +19.</description>
+Despite the obvious room for improvement, I&amp;quot;m quite happy with these results.
+Primarily, my performance compared to that of #LD24 has seen a significant increase in the most relevant categories, Whoooh!</description>
     </item>
     
     <item>
@@ -945,7 +945,7 @@ How did I do? Without further ado, these are the scores for Lightbyrinth compare
       <pubDate>Sun, 12 May 2013 16:23:57 +0000</pubDate>
       
       <guid>https://saltares.com/games/managing-groups-of-assets/</guid>
-      <description>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&amp;rsquo;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&amp;rsquo;t come for free.
+      <description>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&#39;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&#39;t come for free.
 Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite.</description>
     </item>
     
@@ -955,7 +955,7 @@ Fair enough, you can probably afford to brainlessly waste some memory on PC when
       <pubDate>Sat, 04 May 2013 15:57:19 +0000</pubDate>
       
       <guid>https://saltares.com/games/ld-26-lighbyrinth-postmortem/</guid>
-      <description>Last weekend was as sleep depriving as rewarding. While I could have easily been surrounded by the joys of procrastination and beer, I went for Ludum Dare #26, as announced in my previous post. Lightbyrinth is the result of that and, despite its flaws, I&amp;rdquo;m fairly happy with the outcome. Please don&amp;rsquo;t embarrass me by looking at the source, I was in a 48 hour rush.
+      <description>Last weekend was as sleep depriving as rewarding. While I could have easily been surrounded by the joys of procrastination and beer, I went for Ludum Dare #26, as announced in my previous post. Lightbyrinth is the result of that and, despite its flaws, I&amp;quot;m fairly happy with the outcome. Please don&#39;t embarrass me by looking at the source, I was in a 48 hour rush.
 Lightbyrinth is a light based maze which tries to stick to the &amp;ldquo;Minismalism&amp;rdquo; democratically voted theme.</description>
     </item>
     
@@ -965,7 +965,7 @@ Lightbyrinth is a light based maze which tries to stick to the &amp;ldquo;Minism
       <pubDate>Mon, 22 Apr 2013 22:19:31 +0000</pubDate>
       
       <guid>https://saltares.com/games/ludum-dare-26-im-in/</guid>
-      <description>Ludum Dare #24 was my first game jam, an experience I found most enjoyable. Sadly, I couldn&amp;rsquo;t make it to its 25th edition. However, unless something major happens, I&amp;rdquo;m totally in for Ludum Dare #26 which will take place next weekend. Aiming at respecting tradition I shall post my arsenal of choice, unsurprisingly, they are as follow.
+      <description>Ludum Dare #24 was my first game jam, an experience I found most enjoyable. Sadly, I couldn&#39;t make it to its 25th edition. However, unless something major happens, I&amp;quot;m totally in for Ludum Dare #26 which will take place next weekend. Aiming at respecting tradition I shall post my arsenal of choice, unsurprisingly, they are as follow.
  Environment: Java + Eclipse. Libraries: libgdx &amp;amp; friends, maybe something from my codebase.</description>
     </item>
     
@@ -975,7 +975,7 @@ Lightbyrinth is a light based maze which tries to stick to the &amp;ldquo;Minism
       <pubDate>Sun, 14 Apr 2013 07:57:55 +0000</pubDate>
       
       <guid>https://saltares.com/computing/dont-be-a-dick-with-the-community/</guid>
-      <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&amp;rsquo;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
+      <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&#39;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
     </item>
     
     <item>
@@ -1006,8 +1006,8 @@ How come? You might ask. Well, just over a year and a half ago I arrived into Ki
       <guid>https://saltares.com/general/from-google-reader-to-tiny-tiny-rss/</guid>
       <description>As all of you surely know, Google Reader is in death row and will be part of history as of June the 1st.
  Booh!
- Google Reader&amp;rsquo;s demise As usual, the people from the Internet went bananas, so I took the time to film one of them.
-Google is evil, they&amp;rdquo;re fucking us over and so on and so forth. However, the sad truth is, they just wanted to know what you&amp;rdquo;re interested in so they could provide you with more meaningful advertisement.</description>
+ Google Reader&#39;s demise As usual, the people from the Internet went bananas, so I took the time to film one of them.
+Google is evil, they&amp;quot;re fucking us over and so on and so forth. However, the sad truth is, they just wanted to know what you&amp;quot;re interested in so they could provide you with more meaningful advertisement.</description>
     </item>
     
     <item>
@@ -1016,7 +1016,7 @@ Google is evil, they&amp;rdquo;re fucking us over and so on and so forth. Howeve
       <pubDate>Sat, 16 Mar 2013 11:54:12 +0000</pubDate>
       
       <guid>https://saltares.com/general/lincoln-university-canjam13/</guid>
-      <description>Last weekend I went to Lincoln University to attend #CanJam13, a 24h game jam organized by some members of the Computing Society over there. They kindly asked some people from Crytek and Rockstar to do the judging and provide the students with some advice during the competition. Waking up early during the weekend is never ideal but hey, those students were about to pull an allnighter! It&amp;rdquo;d have been really inconsiderate not to show up.</description>
+      <description>Last weekend I went to Lincoln University to attend #CanJam13, a 24h game jam organized by some members of the Computing Society over there. They kindly asked some people from Crytek and Rockstar to do the judging and provide the students with some advice during the competition. Waking up early during the weekend is never ideal but hey, those students were about to pull an allnighter! It&amp;quot;d have been really inconsiderate not to show up.</description>
     </item>
     
     <item>
@@ -1036,8 +1036,8 @@ New libgdx maps API The mighty libgdx library saw itself to yet another addition
       <pubDate>Tue, 26 Feb 2013 18:31:38 +0000</pubDate>
       
       <guid>https://saltares.com/games/1gam-february-weekly-progress-3/</guid>
-      <description>It pleases me to say that this past week I&amp;rsquo;ve been able to keep it real and stick to my humble set of tasks:
-Victory and defeat mechanic: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it&amp;rsquo;s empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state.</description>
+      <description>It pleases me to say that this past week I&#39;ve been able to keep it real and stick to my humble set of tasks:
+Victory and defeat mechanic: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it&#39;s empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state.</description>
     </item>
     
     <item>
@@ -1046,8 +1046,8 @@ Victory and defeat mechanic: the spaceship has a limited amount of energy which 
       <pubDate>Mon, 18 Feb 2013 20:39:22 +0000</pubDate>
       
       <guid>https://saltares.com/games/1gam-february-weekly-progress-2/</guid>
-      <description>This hasn&amp;rsquo;t been a particularly productive week for my One Game a Month quest. Luckily enough, it wasn&amp;rsquo;t completely wasted as some stuff has, indeed, been done. Coding after work and taking care of so many other things it&amp;rsquo;s unsurprisingly tough. I&amp;rdquo;m still looking for that guy who sells hours, so I can append them to a regular day.
-Except for the art, I pretty much did everything I promised. Actually, it&amp;rsquo;s better if I make a game first and then worry about the art, as I learned from my Ludum Dare experience.</description>
+      <description>This hasn&#39;t been a particularly productive week for my One Game a Month quest. Luckily enough, it wasn&#39;t completely wasted as some stuff has, indeed, been done. Coding after work and taking care of so many other things it&#39;s unsurprisingly tough. I&amp;quot;m still looking for that guy who sells hours, so I can append them to a regular day.
+Except for the art, I pretty much did everything I promised. Actually, it&#39;s better if I make a game first and then worry about the art, as I learned from my Ludum Dare experience.</description>
     </item>
     
     <item>
@@ -1056,8 +1056,8 @@ Except for the art, I pretty much did everything I promised. Actually, it&amp;rs
       <pubDate>Sun, 10 Feb 2013 18:46:43 +0000</pubDate>
       
       <guid>https://saltares.com/games/1gam-february-weekly-progress/</guid>
-      <description>One week ago I posted about the initial game design for my February One Game A Month entry. I believe, it&amp;rsquo;s time to report back with the work I&amp;rsquo;ve done during the past seven days. Actually, I&amp;rsquo;ve realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.
-What I have so far Without further ado, here&amp;rsquo;s the update.</description>
+      <description>One week ago I posted about the initial game design for my February One Game A Month entry. I believe, it&#39;s time to report back with the work I&#39;ve done during the past seven days. Actually, I&#39;ve realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.
+What I have so far Without further ado, here&#39;s the update.</description>
     </item>
     
     <item>
@@ -1066,7 +1066,7 @@ What I have so far Without further ado, here&amp;rsquo;s the update.</descriptio
       <pubDate>Sun, 03 Feb 2013 09:30:37 +0000</pubDate>
       
       <guid>https://saltares.com/games/1gam-february-game-design/</guid>
-      <description>It&amp;rsquo;s February already! What kind of madness is this? Anyhow, that means it&amp;rsquo;s time to start working on this month&amp;rsquo;s entry for One Game A Month without further ado. This time I promise not to shamelessly make a port of an existing game and go for a brand new project instead. Shall this initial design article serve as the compromise I&amp;rdquo;m making to see this game to completion.
+      <description>It&#39;s February already! What kind of madness is this? Anyhow, that means it&#39;s time to start working on this month&#39;s entry for One Game A Month without further ado. This time I promise not to shamelessly make a port of an existing game and go for a brand new project instead. Shall this initial design article serve as the compromise I&amp;quot;m making to see this game to completion.
 I believe the following game concept to be simple enough for it to be achievable within a short month like February.</description>
     </item>
     
@@ -1076,7 +1076,7 @@ I believe the following game concept to be simple enough for it to be achievable
       <pubDate>Tue, 29 Jan 2013 19:02:03 +0000</pubDate>
       
       <guid>https://saltares.com/games/beware-memory-allocation/</guid>
-      <description>I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non garbage collected languages, say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey&amp;rsquo;s about memory won&amp;rsquo;t necessarily make your game crash.</description>
+      <description>I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non garbage collected languages, say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey&#39;s about memory won&#39;t necessarily make your game crash.</description>
     </item>
     
     <item>
@@ -1087,7 +1087,7 @@ I believe the following game concept to be simple enough for it to be achievable
       <guid>https://saltares.com/general/2d-character-creation-and-animation-for-dummies/</guid>
       <description>Hang on a second… An art article written by a programmer? How do you dare? This is madness
  Well yes, so deal with it.
-Life is hard for us programmers, who can&amp;rsquo;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&amp;rdquo;d never call that art.</description>
+Life is hard for us programmers, who can&#39;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&amp;quot;d never call that art.</description>
     </item>
     
     <item>
@@ -1096,8 +1096,8 @@ Life is hard for us programmers, who can&amp;rsquo;t always find a committed art
       <pubDate>Mon, 14 Jan 2013 23:39:29 +0000</pubDate>
       
       <guid>https://saltares.com/games/ogam-freegemas-html5/</guid>
-      <description>The HTML5 version of Freegemas is a project I&amp;rsquo;ve wanted to get around to finish for a long time. Finally, it greatly pleases me to say, it&amp;rsquo;s done and you can play it right here, right now.
-Play Freegemas Freegemas HTML5 runs on any browser that supports WebGL. If you&amp;rdquo;re an unlucky Internet Explorer user, you then deserve to be deprived of the joys Freegemas has to offer. Anyways! As some of you may already know, my work here consisted in simply porting the original Gosu game to Java and libgdx so it&amp;rdquo;d run on JVM desktops and Android.</description>
+      <description>The HTML5 version of Freegemas is a project I&#39;ve wanted to get around to finish for a long time. Finally, it greatly pleases me to say, it&#39;s done and you can play it right here, right now.
+Play Freegemas Freegemas HTML5 runs on any browser that supports WebGL. If you&amp;quot;re an unlucky Internet Explorer user, you then deserve to be deprived of the joys Freegemas has to offer. Anyways! As some of you may already know, my work here consisted in simply porting the original Gosu game to Java and libgdx so it&amp;quot;d run on JVM desktops and Android.</description>
     </item>
     
     <item>
@@ -1107,7 +1107,7 @@ Play Freegemas Freegemas HTML5 runs on any browser that supports WebGL. If you&a
       
       <guid>https://saltares.com/games/one-game-a-month/</guid>
       <description>Your quest is to try to create one new game each month. This challenge is meant to help you on a personal level. There are no prizes, signup fees or rules. It might sound crazy optimistic, but you CAN do it.
- These are the opening lines on the One Game A Month website, an initiative by Christer Kaitila aka @McFunckypants (author of The Game Jam Survival Guide). I came across this insane quest just over a week ago and I&amp;rsquo;ve given it a lot of thought before accepting it.</description>
+ These are the opening lines on the One Game A Month website, an initiative by Christer Kaitila aka @McFunckypants (author of The Game Jam Survival Guide). I came across this insane quest just over a week ago and I&#39;ve given it a lot of thought before accepting it.</description>
     </item>
     
     <item>
@@ -1116,8 +1116,8 @@ Play Freegemas Freegemas HTML5 runs on any browser that supports WebGL. If you&a
       <pubDate>Sun, 06 Jan 2013 10:15:20 +0000</pubDate>
       
       <guid>https://saltares.com/games/will-they-steal-my-code/</guid>
-      <description>Creative people usually make a big deal out of authorship and honestly, who can blame us? We&amp;rdquo;re passionate about our work! Producing something that doesn&amp;rsquo;t entirely suck entails sweat, tears and numerous sleepless nights. The open source world is inherently tricky and raises many concerns regarding ownership.
-Open source is a tradeoff The story of our lives isn&amp;rsquo;t it? Making your project open source is a tradeoff. On one hand you are more likely to achieve certain level of exposure.</description>
+      <description>Creative people usually make a big deal out of authorship and honestly, who can blame us? We&amp;quot;re passionate about our work! Producing something that doesn&#39;t entirely suck entails sweat, tears and numerous sleepless nights. The open source world is inherently tricky and raises many concerns regarding ownership.
+Open source is a tradeoff The story of our lives isn&#39;t it? Making your project open source is a tradeoff. On one hand you are more likely to achieve certain level of exposure.</description>
     </item>
     
     <item>
@@ -1127,7 +1127,7 @@ Open source is a tradeoff The story of our lives isn&amp;rsquo;t it? Making your
       
       <guid>https://saltares.com/games/new-to-games-just-make-games/</guid>
       <description>Disclaimer: this text is aimed at games programming beginners.
-Diving into games development for the first time is exciting but offtimes confusing, a great piece of advice would be: just make games. Get things done, period. I&amp;rsquo;ve often found myself researching which available technology would suit my requirements best, as if I needed a sophisticated tailored tuxedo. The fear of finding a dead end was as powerful as counterproductive. Such a time wasting approach.</description>
+Diving into games development for the first time is exciting but offtimes confusing, a great piece of advice would be: just make games. Get things done, period. I&#39;ve often found myself researching which available technology would suit my requirements best, as if I needed a sophisticated tailored tuxedo. The fear of finding a dead end was as powerful as counterproductive. Such a time wasting approach.</description>
     </item>
     
     <item>
@@ -1145,7 +1145,7 @@ Diving into games development for the first time is exciting but offtimes confus
       <pubDate>Fri, 30 Nov 2012 23:49:07 +0000</pubDate>
       
       <guid>https://saltares.com/games/talk-how-do-i-get-into-the-games-industry/</guid>
-      <description>I&amp;rsquo;ve recently been to Spain, not only to spend some quality time with family and friends but to deliver a presentation at my home University. It was basically about how the Games Industry work, how we make games at Crytek UK and what should a Computing Science student do in order to find a job in such a field. Anyways, it was quite nice coming back to where all this began and I&amp;rdquo;d like to thank my professor Manuel Palomo for making this possible.</description>
+      <description>I&#39;ve recently been to Spain, not only to spend some quality time with family and friends but to deliver a presentation at my home University. It was basically about how the Games Industry work, how we make games at Crytek UK and what should a Computing Science student do in order to find a job in such a field. Anyways, it was quite nice coming back to where all this began and I&amp;quot;d like to thank my professor Manuel Palomo for making this possible.</description>
     </item>
     
     <item>
@@ -1154,8 +1154,8 @@ Diving into games development for the first time is exciting but offtimes confus
       <pubDate>Wed, 07 Nov 2012 10:00:52 +0000</pubDate>
       
       <guid>https://saltares.com/games/gleed2d-level-loading-system-for-libgdx/</guid>
-      <description>Update: the system had been moved into the official libgdx repository as an extension but then it was removed. Gleed doesn&amp;rsquo;t support basic features such as relative paths for textures.
-I&amp;rdquo;m happy to announce that I&amp;rsquo;ve made my first contribution to a relatively big open source project. I feel honoured to contribute to the brilliant libgdx framework with these humble loader and renderer for GLEED2D levels. Hold on, what the hell is that?</description>
+      <description>Update: the system had been moved into the official libgdx repository as an extension but then it was removed. Gleed doesn&#39;t support basic features such as relative paths for textures.
+I&amp;quot;m happy to announce that I&#39;ve made my first contribution to a relatively big open source project. I feel honoured to contribute to the brilliant libgdx framework with these humble loader and renderer for GLEED2D levels. Hold on, what the hell is that?</description>
     </item>
     
     <item>
@@ -1164,8 +1164,8 @@ I&amp;rdquo;m happy to announce that I&amp;rsquo;ve made my first contribution t
       <pubDate>Mon, 05 Nov 2012 23:09:42 +0000</pubDate>
       
       <guid>https://saltares.com/projects/my-projects-migrated-to-github/</guid>
-      <description>I&amp;rsquo;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
-Even though I&amp;rsquo;ve always been kind of sceptical about GitHub, I&amp;rsquo;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&amp;rsquo;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects).</description>
+      <description>I&#39;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
+Even though I&#39;ve always been kind of sceptical about GitHub, I&#39;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&#39;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects).</description>
     </item>
     
     <item>
@@ -1184,8 +1184,8 @@ Even though I&amp;rsquo;ve always been kind of sceptical about GitHub, I&amp;rsq
       <pubDate>Sun, 09 Sep 2012 19:58:44 +0000</pubDate>
       
       <guid>https://saltares.com/projects/id-generator-avoiding-string-comparisons/</guid>
-      <description>Disclaimer: IDGenerator is being used in SionEngine and it&amp;rsquo;s an useful but rather simple approach to the problem described in the paragraphs below.
-Needless to say that in games development we care very much about performance. It becomes an even more critical issue when we&amp;rdquo;re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons.</description>
+      <description>Disclaimer: IDGenerator is being used in SionEngine and it&#39;s an useful but rather simple approach to the problem described in the paragraphs below.
+Needless to say that in games development we care very much about performance. It becomes an even more critical issue when we&amp;quot;re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons.</description>
     </item>
     
     <item>
@@ -1194,7 +1194,7 @@ Needless to say that in games development we care very much about performance. I
       <pubDate>Sat, 08 Sep 2012 11:02:59 +0000</pubDate>
       
       <guid>https://saltares.com/games/abstracting-platform-specific-code-in-libgdx/</guid>
-      <description>One of the main reasons I&amp;rdquo;m working with libgdx is its multiplatform capabilities. With very little effort you can target desktop (Windows/Linux/Mac), Android and WebGL able browsers. The problem comes with the &amp;ldquo;little&amp;rdquo; in the previous sentence. The developer is supposed to share the code base between all targets but sometimes it&amp;rdquo;s necessary to provide platform specific behaviour, maybe because a feature is not available in every device or just to adapt the product better to the target.</description>
+      <description>One of the main reasons I&amp;quot;m working with libgdx is its multiplatform capabilities. With very little effort you can target desktop (Windows/Linux/Mac), Android and WebGL able browsers. The problem comes with the &amp;ldquo;little&amp;rdquo; in the previous sentence. The developer is supposed to share the code base between all targets but sometimes it&amp;quot;s necessary to provide platform specific behaviour, maybe because a feature is not available in every device or just to adapt the product better to the target.</description>
     </item>
     
     <item>
@@ -1203,8 +1203,8 @@ Needless to say that in games development we care very much about performance. I
       <pubDate>Sun, 02 Sep 2012 09:57:18 +0000</pubDate>
       
       <guid>https://saltares.com/projects/sionengine-a-libgdx-based-system/</guid>
-      <description>Note: I&amp;rsquo;ve decided to remove the repo for now as I feel that it&amp;rsquo;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my GitHub profile.
-I&amp;rsquo;ve been working with libgdx for a few months now and I love every aspect of it, except maybe the fact that it&amp;rsquo;s only compatible with Java but don&amp;rsquo;t worry about me, I&amp;rdquo;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&amp;rsquo;s just too awesome.</description>
+      <description>Note: I&#39;ve decided to remove the repo for now as I feel that it&#39;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my GitHub profile.
+I&#39;ve been working with libgdx for a few months now and I love every aspect of it, except maybe the fact that it&#39;s only compatible with Java but don&#39;t worry about me, I&amp;quot;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&#39;s just too awesome.</description>
     </item>
     
     <item>
@@ -1213,8 +1213,8 @@ I&amp;rsquo;ve been working with libgdx for a few months now and I love every as
       <pubDate>Mon, 27 Aug 2012 21:42:38 +0000</pubDate>
       
       <guid>https://saltares.com/games/ld24-evolution-postmortem/</guid>
-      <description>Play the game! Ludum Dare #24 is over after an exhausting crazy weekend but, above all, it´s been a ton of fun. Joining the Dare has proven to be an excellent idea and I believe it&amp;rdquo;d be right to say it&amp;rsquo;s has not gone too bad after all, considering it was my first time. Here&amp;rsquo;s a little postmortem on the experience.
-Evolution – The survival of the fittest The competition&amp;rsquo;s theme was Evolution so I went for a classic 2D platformer starred by a funny caveman who has to get through the level while killing dinosaurs by jumping on them or throwing rocks which he collects himself.</description>
+      <description>Play the game! Ludum Dare #24 is over after an exhausting crazy weekend but, above all, it´s been a ton of fun. Joining the Dare has proven to be an excellent idea and I believe it&amp;quot;d be right to say it&#39;s has not gone too bad after all, considering it was my first time. Here&#39;s a little postmortem on the experience.
+Evolution – The survival of the fittest The competition&#39;s theme was Evolution so I went for a classic 2D platformer starred by a funny caveman who has to get through the level while killing dinosaurs by jumping on them or throwing rocks which he collects himself.</description>
     </item>
     
     <item>
@@ -1223,7 +1223,7 @@ Evolution – The survival of the fittest The competition&amp;rsquo;s theme was 
       <pubDate>Thu, 23 Aug 2012 23:06:43 +0000</pubDate>
       
       <guid>https://saltares.com/games/ludum-dare-24-im-in/</guid>
-      <description>This weekend I&amp;rdquo;ll be joining Ludum Dare #24, the crazy 48h solo game making online competition. Pick the tools of your choice but everything has to be made from scratch, and according to a theme selected by the community through strict democracy. Last edition got over 1000 submissions, so it looks really promising. I&amp;rdquo;m gathering with a couple of friends from work in some sort of LAN game jamming party and there will be food aplenty, fun times.</description>
+      <description>This weekend I&amp;quot;ll be joining Ludum Dare #24, the crazy 48h solo game making online competition. Pick the tools of your choice but everything has to be made from scratch, and according to a theme selected by the community through strict democracy. Last edition got over 1000 submissions, so it looks really promising. I&amp;quot;m gathering with a couple of friends from work in some sort of LAN game jamming party and there will be food aplenty, fun times.</description>
     </item>
     
     <item>
@@ -1232,7 +1232,7 @@ Evolution – The survival of the fittest The competition&amp;rsquo;s theme was 
       <pubDate>Sat, 23 Jun 2012 16:50:38 +0000</pubDate>
       
       <guid>https://saltares.com/hobbies/indie-game-the-movie/</guid>
-      <description>It&amp;rsquo;s the sum total of every expressive media of all times made interactive, how is that not awesome!
+      <description>It&#39;s the sum total of every expressive media of all times made interactive, how is that not awesome!
  I recently watched with a few friends Indie Game: The Movie, a documentary that shows the development process of a few independent small budget games and what drives their authors to work in such a competitive industry. I was fairly excited about watching it since the trailer highlighted some of the reasons I chose this career path.</description>
     </item>
     
@@ -1242,7 +1242,7 @@ Evolution – The survival of the fittest The competition&amp;rsquo;s theme was 
       <pubDate>Mon, 30 Apr 2012 21:22:16 +0000</pubDate>
       
       <guid>https://saltares.com/games/urban-race-has-been-freed/</guid>
-      <description>A few months ago I developed Urban Race, a very simple (and quite lame) time attack racing game using XNA. It was a University project so I couldn&amp;rsquo;t release the source until it was graded but then, I totally forgot about it. Recently, a reader asked me to publish the source and here we are. Please, bare in mind it&amp;rsquo;s for educational purposes, it was developed in one month without previous knowledge of neither C# or XNA and it&amp;rsquo;s not intended to be a fully playable product.</description>
+      <description>A few months ago I developed Urban Race, a very simple (and quite lame) time attack racing game using XNA. It was a University project so I couldn&#39;t release the source until it was graded but then, I totally forgot about it. Recently, a reader asked me to publish the source and here we are. Please, bare in mind it&#39;s for educational purposes, it was developed in one month without previous knowledge of neither C# or XNA and it&#39;s not intended to be a fully playable product.</description>
     </item>
     
     <item>
@@ -1253,7 +1253,7 @@ Evolution – The survival of the fittest The competition&amp;rsquo;s theme was 
       <guid>https://saltares.com/games/internationalization-for-libgdx-projects/</guid>
       <description>Warning: Libgdx now counts with localisation support, rendering this approach obsolete.
 Edit: I just added UTF-8 support
-Localization is a key aspect in games, specially if you want to reach a wider audience. I recently ported Freegemas to the libgdx platform and, as the original one, I wanted to ship it with multi-language support. There is no such a thing as gettext for Java and I didn&amp;rsquo;t see the Android internationalization system as a good fit in a multiplatform development.</description>
+Localization is a key aspect in games, specially if you want to reach a wider audience. I recently ported Freegemas to the libgdx platform and, as the original one, I wanted to ship it with multi-language support. There is no such a thing as gettext for Java and I didn&#39;t see the Android internationalization system as a good fit in a multiplatform development.</description>
     </item>
     
     <item>
@@ -1262,8 +1262,8 @@ Localization is a key aspect in games, specially if you want to reach a wider au
       <pubDate>Thu, 19 Apr 2012 22:33:46 +0000</pubDate>
       
       <guid>https://saltares.com/games/getting-started-with-libgdx-freegemas/</guid>
-      <description>I can&amp;rsquo;t believe it&amp;rsquo;s been almost three months since I started at Crytek UK, time has passed amazingly fast! Nevertheless, I&amp;rsquo;ve managed to get some stuff done game development wise. I&amp;rsquo;ve always wanted to jump into mobile and that&amp;rsquo;s what I&amp;rsquo;ve been doing during the last couple of weeks. May I present you Freegemas libgdx edition!
-It&amp;rsquo;s basically a libgdx port of the original Freegemas, a simple Bejeweled like C++ Gosu puzzle game developed by José Tomás Tocino who I have to thank for the neat original code and the excellent art.</description>
+      <description>I can&#39;t believe it&#39;s been almost three months since I started at Crytek UK, time has passed amazingly fast! Nevertheless, I&#39;ve managed to get some stuff done game development wise. I&#39;ve always wanted to jump into mobile and that&#39;s what I&#39;ve been doing during the last couple of weeks. May I present you Freegemas libgdx edition!
+It&#39;s basically a libgdx port of the original Freegemas, a simple Bejeweled like C++ Gosu puzzle game developed by José Tomás Tocino who I have to thank for the neat original code and the excellent art.</description>
     </item>
     
     <item>
@@ -1272,7 +1272,7 @@ It&amp;rsquo;s basically a libgdx port of the original Freegemas, a simple Bejew
       <pubDate>Sat, 04 Feb 2012 22:46:49 +0000</pubDate>
       
       <guid>https://saltares.com/general/i-just-got-hired-by-crytek-uk/</guid>
-      <description>I can finally say it out loud: I just got hired by Crytek UK as a junior programmer! In case you were wondering, yes, they are the same guys that pulled the Crysis saga together using their jaw dropping CryEngine, and now they&amp;rdquo;re working on games like Homefront 2. Their British studio is based in Nottingham, so I moved here a couple of days ago and I really like the city so far.</description>
+      <description>I can finally say it out loud: I just got hired by Crytek UK as a junior programmer! In case you were wondering, yes, they are the same guys that pulled the Crysis saga together using their jaw dropping CryEngine, and now they&amp;quot;re working on games like Homefront 2. Their British studio is based in Nottingham, so I moved here a couple of days ago and I really like the city so far.</description>
     </item>
     
     <item>
@@ -1281,7 +1281,7 @@ It&amp;rsquo;s basically a libgdx port of the original Freegemas, a simple Bejew
       <pubDate>Thu, 12 Jan 2012 22:00:27 +0000</pubDate>
       
       <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
-      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
+      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&#39;ve been working on recently:
  Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
     
@@ -1291,7 +1291,7 @@ It&amp;rsquo;s basically a libgdx port of the original Freegemas, a simple Bejew
       <pubDate>Wed, 07 Dec 2011 09:05:28 +0000</pubDate>
       
       <guid>https://saltares.com/games/getting-started-with-xna-urban-race/</guid>
-      <description>As if I didn&amp;rsquo;t have enough work, I recently started another project which has an early deadline. For the Advanced Games Programming module here at Kingston University we have to develop a game for Windows and Xbox 360 using C# and the XNA framework. The final deadline was in a month counting from the start date and, halfway through the development, we had to show a demo. That&amp;rsquo;s how Urban Race began just a week ago, in this post I&amp;rdquo;ll talk about the game and my first impressions on XNA.</description>
+      <description>As if I didn&#39;t have enough work, I recently started another project which has an early deadline. For the Advanced Games Programming module here at Kingston University we have to develop a game for Windows and Xbox 360 using C# and the XNA framework. The final deadline was in a month counting from the start date and, halfway through the development, we had to show a demo. That&#39;s how Urban Race began just a week ago, in this post I&amp;quot;ll talk about the game and my first impressions on XNA.</description>
     </item>
     
     <item>
@@ -1300,7 +1300,7 @@ It&amp;rsquo;s basically a libgdx port of the original Freegemas, a simple Bejew
       <pubDate>Sun, 27 Nov 2011 09:13:43 +0000</pubDate>
       
       <guid>https://saltares.com/games/official-open-source-playstation-move-library/</guid>
-      <description>Just a quick update: Sony has released moveme, an official and open source PlayStation Move API that enables developers to create Windows and Linux applications controlled using Sony&amp;rsquo;s famous wand. You can read more about the library in the following paragraphs.
+      <description>Just a quick update: Sony has released moveme, an official and open source PlayStation Move API that enables developers to create Windows and Linux applications controlled using Sony&#39;s famous wand. You can read more about the library in the following paragraphs.
 They have published a C/C++ version and a C# one. Within the Google Code repository you can find the sources for all the versions, some sample programs and a brief but accessible documentation.</description>
     </item>
     
@@ -1310,7 +1310,7 @@ They have published a C/C++ version and a C# one. Within the Google Code reposit
       <pubDate>Sat, 26 Nov 2011 08:39:02 +0000</pubDate>
       
       <guid>https://saltares.com/games/flocking-behavior-demo/</guid>
-      <description>I&amp;rsquo;ve just finished this simple flocking behavior demo based on the 3 Reynolds rules: separation, cohesion and alignment. It was part of a coursework for the Strategy &amp;amp; Intelligent Games module I&amp;rdquo;m taking here in Kingston University. I know it&amp;rsquo;s not precisely pretty but at least the boids are moving in a nice way. It&amp;rsquo;s written in C++ using the despicable Open Scene Graph library (such an uncomfortable API).</description>
+      <description>I&#39;ve just finished this simple flocking behavior demo based on the 3 Reynolds rules: separation, cohesion and alignment. It was part of a coursework for the Strategy &amp;amp; Intelligent Games module I&amp;quot;m taking here in Kingston University. I know it&#39;s not precisely pretty but at least the boids are moving in a nice way. It&#39;s written in C++ using the despicable Open Scene Graph library (such an uncomfortable API).</description>
     </item>
     
     <item>
@@ -1319,7 +1319,7 @@ They have published a C/C++ version and a C# one. Within the Google Code reposit
       <pubDate>Sat, 19 Nov 2011 01:40:13 +0000</pubDate>
       
       <guid>https://saltares.com/games/evolve-submitted-prototype/</guid>
-      <description>I&amp;rsquo;ve been working quite hard in Evolve, the PSP First Person Shooter prototype I&amp;rdquo;m developing for the Advanced Games Programming module here at Kingston University. The submission deadline is getting dangerously closer and I&amp;rsquo;ve had to crunch a little bit to get the basic features I wanted to include and be able to write a report on the game. In the following lines I&amp;rdquo;ll give my impressions on the development and at the bottom you&amp;rdquo;ll find a doubtful quality trailer.</description>
+      <description>I&#39;ve been working quite hard in Evolve, the PSP First Person Shooter prototype I&amp;quot;m developing for the Advanced Games Programming module here at Kingston University. The submission deadline is getting dangerously closer and I&#39;ve had to crunch a little bit to get the basic features I wanted to include and be able to write a report on the game. In the following lines I&amp;quot;ll give my impressions on the development and at the bottom you&amp;quot;ll find a doubtful quality trailer.</description>
     </item>
     
     <item>
@@ -1328,7 +1328,7 @@ They have published a C/C++ version and a C# one. Within the Google Code reposit
       <pubDate>Fri, 11 Nov 2011 08:39:35 +0000</pubDate>
       
       <guid>https://saltares.com/games/evolve-early-stage-demo/</guid>
-      <description>Yesterday I had an in class demo at university of my PSP First Person Shooter prototype, Evolve. The professor was impressed with the software engineering behind the system so, apparently, it went quite well although the project is in a very early stage of development. As always, I was in the games lab (it&amp;rsquo;s becoming my second home), so I recorded a video of the demo to keep track of the process.</description>
+      <description>Yesterday I had an in class demo at university of my PSP First Person Shooter prototype, Evolve. The professor was impressed with the software engineering behind the system so, apparently, it went quite well although the project is in a very early stage of development. As always, I was in the games lab (it&#39;s becoming my second home), so I recorded a video of the demo to keep track of the process.</description>
     </item>
     
     <item>
@@ -1337,7 +1337,7 @@ They have published a C/C++ version and a C# one. Within the Google Code reposit
       <pubDate>Tue, 08 Nov 2011 19:15:49 +0000</pubDate>
       
       <guid>https://saltares.com/computing/shiny-pc-graphics-in-battlefield-3/</guid>
-      <description>Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called &amp;ldquo;Shiny PC graphics in Battlefield 3&amp;rdquo; during the last nVidia GeForce LAN. It&amp;rsquo;s focused on the latest improvements the Frostbite 2 engine includes and I think it&amp;rsquo;s a pretty good example of where the graphics technology is going.
+      <description>Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called &amp;ldquo;Shiny PC graphics in Battlefield 3&amp;rdquo; during the last nVidia GeForce LAN. It&#39;s focused on the latest improvements the Frostbite 2 engine includes and I think it&#39;s a pretty good example of where the graphics technology is going.
 Click on more to see the videos.
   </description>
     </item>
@@ -1348,7 +1348,7 @@ Click on more to see the videos.
       <pubDate>Mon, 24 Oct 2011 10:17:07 +0000</pubDate>
       
       <guid>https://saltares.com/games/evolve-psp-project/</guid>
-      <description>I&amp;rdquo;m developing a first person shooter for PSP using the official and super confidential SDK for the Advanced Games Programming module. The deadline is settled in the middle of the semester, so that roughly gives me a couple of months which means a lot of hard work lies ahead, taking into account that it&amp;rsquo;s a completely new technology for me. The baby&amp;rsquo;s still a fetus, so in this post I&amp;rdquo;ll explain what am I trying to do and show some first screens.</description>
+      <description>I&amp;quot;m developing a first person shooter for PSP using the official and super confidential SDK for the Advanced Games Programming module. The deadline is settled in the middle of the semester, so that roughly gives me a couple of months which means a lot of hard work lies ahead, taking into account that it&#39;s a completely new technology for me. The baby&#39;s still a fetus, so in this post I&amp;quot;ll explain what am I trying to do and show some first screens.</description>
     </item>
     
     <item>
@@ -1357,7 +1357,7 @@ Click on more to see the videos.
       <pubDate>Fri, 21 Oct 2011 00:05:09 +0000</pubDate>
       
       <guid>https://saltares.com/games/english-inkubator-project-started/</guid>
-      <description>Life in Kingston goes on and it&amp;#8217;s time to get some work done. Hope Caton, who was the plot writer in Tomb Raider IV and currently works as a teacher here at Kingston University, is organizing InKUbator. It&amp;#8217;s a extra-curricular activity in which students can team up with the only goal of developing a great game. More on that in the following paragraphs.  InKUbator comes with extra sweetness since guest speakers from the games industry are coming.</description>
+      <description></description>
     </item>
     
     <item>
@@ -1366,7 +1366,7 @@ Click on more to see the videos.
       <pubDate>Fri, 21 Oct 2011 00:05:09 +0000</pubDate>
       
       <guid>https://saltares.com/games/inkubator-project-started/</guid>
-      <description>Life in Kingston goes on and it&amp;rsquo;s time to get some work done. Hope Caton, who was the plot writer in Tomb Raider IV and currently works as a teacher here at Kingston University, is organizing InKUbator. It&amp;rsquo;s a extra-curricular activity in which students can team up with the only goal of developing a great game. More on that in the following paragraphs.
+      <description>Life in Kingston goes on and it&#39;s time to get some work done. Hope Caton, who was the plot writer in Tomb Raider IV and currently works as a teacher here at Kingston University, is organizing InKUbator. It&#39;s a extra-curricular activity in which students can team up with the only goal of developing a great game. More on that in the following paragraphs.
 InKUbator comes with extra sweetness since guest speakers from the games industry are coming.</description>
     </item>
     
@@ -1386,7 +1386,7 @@ Los participantes han de ser estudiantes universitarios, de bachillerato o de ci
       <pubDate>Sat, 24 Sep 2011 13:28:24 +0000</pubDate>
       
       <guid>https://saltares.com/general/english-london-here-we-go/</guid>
-      <description>It&amp;#8217;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;#8217;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&amp;#8217;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
+      <description>&amp;lt;p style=&amp;quot;text-align: justify;&amp;quot;&amp;gt; Computing science is taught at the main campus which is called Penrhyn Road, 15 minutes away if you walk. I was amazed with the huge amount of money they should invest to have proper facilities: a huge library, great fully equipped labs and comfortable classrooms. It&amp;amp;#8217;s unbelievable how active the people is around here, there are students societies for almost everything you can imagine: DJs, skydiving, fencing, cake eating, wine tasting, gaming, market investment&amp;amp;#8230; And the list goes on!</description>
     </item>
     
     <item>
@@ -1395,7 +1395,7 @@ Los participantes han de ser estudiantes universitarios, de bachillerato o de ci
       <pubDate>Sat, 24 Sep 2011 13:28:24 +0000</pubDate>
       
       <guid>https://saltares.com/general/london-here-we-go/</guid>
-      <description>It&amp;rsquo;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;rdquo;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&amp;rsquo;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
+      <description>It&#39;s been a while since I wrote anything on the blog but hey, this time I have an excuse. I&amp;quot;m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it&#39;s been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.</description>
     </item>
     
     <item>
@@ -1493,7 +1493,7 @@ GNU gettext es prácticamente un estándar en la internacionalización de softwa
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
       <guid>https://saltares.com/projects/english-glapse-v0-3-has-been-released/</guid>
-      <description>I&amp;#8217;ve been really busy with the development of Sion Tower but it&amp;#8217;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;#8217;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.  Changelog   Improves video quality but the slider to configure it had to be deleted.</description>
+      <description></description>
     </item>
     
     <item>
@@ -1502,7 +1502,7 @@ GNU gettext es prácticamente un estándar en la internacionalización de softwa
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
       <guid>https://saltares.com/projects/glapse-v0-3-has-been-released/</guid>
-      <description>I&amp;rsquo;ve been really busy with the development of Sion Tower but it&amp;rsquo;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;rdquo;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.
+      <description>I&#39;ve been really busy with the development of Sion Tower but it&#39;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;quot;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.
 Changelog  Improves video quality but the slider to configure it had to be deleted.</description>
     </item>
     
@@ -1551,7 +1551,7 @@ En los próximos artículos comentaré el funcionamiento del sistema.</descripti
       <pubDate>Sun, 12 Jun 2011 16:56:46 +0000</pubDate>
       
       <guid>https://saltares.com/games/english-sound-effect-prototyping-with-sfxr/</guid>
-      <description>When you&amp;#8217;re developing a game as a team, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&amp;#8217;ve probably used yourself ugly squares to represent some character&amp;#8217;s sprite in early development stages but&amp;#8230; What happens with audio? That&amp;#8217;s when SFXR comes into play.  What is SFXR?  SFXR is a simple sound effect prototyping open source tool. It was initially developed for the 10th Ludum Dare 48h gamedev competition.</description>
+      <description>SFXR user interface</description>
     </item>
     
     <item>
@@ -1560,7 +1560,7 @@ En los próximos artículos comentaré el funcionamiento del sistema.</descripti
       <pubDate>Sun, 12 Jun 2011 16:56:46 +0000</pubDate>
       
       <guid>https://saltares.com/games/sound-effect-prototyping-with-sfxr/</guid>
-      <description>When you&amp;rdquo;re developing a game as a team, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&amp;rsquo;ve probably used yourself ugly squares to represent some character&amp;rsquo;s sprite in early development stages but… What happens with audio? That&amp;rsquo;s when SFXR comes into play.
+      <description>When you&amp;quot;re developing a game as a team, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&#39;ve probably used yourself ugly squares to represent some character&#39;s sprite in early development stages but… What happens with audio? That&#39;s when SFXR comes into play.
 What is SFXR? SFXR is a simple sound effect prototyping open source tool. It was initially developed for the 10th Ludum Dare 48h gamedev competition.</description>
     </item>
     
@@ -1579,7 +1579,7 @@ What is SFXR? SFXR is a simple sound effect prototyping open source tool. It was
       <pubDate>Wed, 08 Jun 2011 23:17:11 +0000</pubDate>
       
       <guid>https://saltares.com/computing/google-music-en-linux-y-android-desde-espana/</guid>
-      <description>Google anunció Music, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que sólo usuarios de Estados Unidos pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo procedimiento para poder saltarse esta barrera, sigue leyendo para saber cuál es.</description>
+      <description>Google anunció Music, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que sólo usuarios de Estados Unidos pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo procedimiento para poder saltarse esta barrera, sigue leyendo para saber cuál es. Gracias a mi buen amigo Javier por los enlaces y las pistas.</description>
     </item>
     
     <item>
@@ -1606,7 +1606,7 @@ What is SFXR? SFXR is a simple sound effect prototyping open source tool. It was
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/</guid>
-      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;#8217;s where gLapse comes into play.</description>
+      <description>gLapse GUI (click to view at full size)</description>
     </item>
     
     <item>
@@ -1615,7 +1615,7 @@ What is SFXR? SFXR is a simple sound effect prototyping open source tool. It was
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/projects/glapse-take-screenshots-glue-them-together/</guid>
-      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;rsquo;s where gLapse comes into play.</description>
+      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&#39;s where gLapse comes into play.</description>
     </item>
     
     <item>
@@ -1855,7 +1855,7 @@ En Speedx 3D avanzamos por una especie de túnel de colores planos y vivos de co
       <pubDate>Fri, 01 Apr 2011 14:42:08 +0000</pubDate>
       
       <guid>https://saltares.com/games/sion-tower-navigation-mesh-y-a/</guid>
-      <description>En este nuevo vídeo podemos ver el sistema de búsqueda de caminos empleando el conocido **algoritmo A*** junto a una malla de triángulos diseñada con Blender. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del comportamiento de los enemigos de Sion Tower.</description>
+      <description>En este nuevo vídeo podemos ver el sistema de búsqueda de caminos empleando el conocido algoritmo A* junto a una malla de triángulos diseñada con Blender. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del comportamiento de los enemigos de Sion Tower.</description>
     </item>
     
     <item>
@@ -1942,7 +1942,7 @@ AJR partió de la descripción del enemigo en el documento de diseño (GDD):
       <pubDate>Tue, 15 Mar 2011 10:00:11 +0000</pubDate>
       
       <guid>https://saltares.com/games/gource-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/</guid>
-      <description>Gource es una herramienta para la visualización de la evolución de un proyecto a partir del log de su sistema de control de versiones. Gource es mucho más visual que StatSVN&amp;rdquo;) ya que utiliza OpenGL para renderizar de forma atractiva el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</description>
+      <description>Gource es una herramienta para la visualización de la evolución de un proyecto a partir del log de su sistema de control de versiones. Gource es mucho más visual que StatSVN ya que utiliza OpenGL para renderizar de forma atractiva el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</description>
     </item>
     
     <item>
@@ -2021,7 +2021,8 @@ Para el proyecto es un acontecimiento de extrema importancia ya que una enorme c
       <pubDate>Sat, 26 Feb 2011 19:49:59 +0000</pubDate>
       
       <guid>https://saltares.com/games/creacion-de-escenarios-en-formato-dotscene-con-blender/</guid>
-      <description>Como pudisteis ver en el anterior vídeo ya he conseguido cargar un escenario creado con Blender. En este artículo pretendo explicar porqué he escogido Blender como editor de escenarios y cómo funciona el sistema de carga y gestión de niveles. Como veremos, aún me quedan puntos por implementar pero no quería abarcarlo todo desde el principio. Todo a su tiempo, al menos el diseño está pensado para ser escalable.</description>
+      <description>Como pudisteis ver en el anterior vídeo ya he conseguido cargar un escenario creado con Blender. En este artículo pretendo explicar porqué he escogido Blender como editor de escenarios y cómo funciona el sistema de carga y gestión de niveles. Como veremos, aún me quedan puntos por implementar pero no quería abarcarlo todo desde el principio. Todo a su tiempo, al menos el diseño está pensado para ser escalable.
+Blender vs Ogitor A comienzos de enero escribí un artículo en el que hablaba sobre un editor de escenarios desarrollado con QT y Ogre llamado Ogitor.</description>
     </item>
     
     <item>
@@ -2452,7 +2453,7 @@ Steve Streeting y Ogre Steve Streeting estuvo en el proyecto Ogre durante años 
       <pubDate>Sun, 14 Nov 2010 13:23:44 +0000</pubDate>
       
       <guid>https://saltares.com/games/gestion-de-recursos-en-ogre3d/</guid>
-      <description>Estos últimos días he estado trabajando en la redacción del Game Design Document (GDD) de Sion Tower y en la preparación del taller &amp;ldquo;Introducción al desarrollo de videojuegos con un Pong&amp;rdquo; que organizamos en la ADVUCA. Ya era hora de retomar IberOgre. Para poder continuar con el artículo &amp;ldquo;Creación básica de escenas&amp;rdquo; tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho.</description>
+      <description>Estos últimos días he estado trabajando en la redacción del Game Design Document (GDD) de Sion Tower y en la preparación del taller &amp;ldquo;Introducción al desarrollo de videojuegos con un Pong&amp;rdquo; que organizamos en la ADVUCA. Ya era hora de retomar IberOgre. Para poder continuar con el artículo &amp;ldquo;Creación básica de escenas&amp;rdquo; tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: &amp;ldquo;Gestión de recursos&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -2471,7 +2472,7 @@ Steve Streeting y Ogre Steve Streeting estuvo en el proyecto Ogre durante años 
       <pubDate>Thu, 11 Nov 2010 14:00:59 +0000</pubDate>
       
       <guid>https://saltares.com/games/postmortem-grannys-bloodbath/</guid>
-      <description>Granny&amp;rsquo;s Bloodbath fue el proyecto que desarrollamos tres compañeros para la asignatura Diseño de Videojuegos en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de plataformas y acción de scroll horizontal en el que manejamos a una abuelita que trata de sobrevivir a una invasión zombie. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss.</description>
+      <description>Granny&#39;s Bloodbath fue el proyecto que desarrollamos tres compañeros para la asignatura Diseño de Videojuegos en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de plataformas y acción de scroll horizontal en el que manejamos a una abuelita que trata de sobrevivir a una invasión zombie. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss.</description>
     </item>
     
     <item>
@@ -2489,7 +2490,7 @@ Steve Streeting y Ogre Steve Streeting estuvo en el proyecto Ogre durante años 
       <pubDate>Sun, 07 Nov 2010 20:11:51 +0000</pubDate>
       
       <guid>https://saltares.com/hobbies/los-ojos-de-julia/</guid>
-      <description>Los ojos de Julia se ha enfrentado a las obligadas comparaciones con el anterior largometraje de terror protagonizada por Belén Rueda, El orfanato. Ya saben, aquello de &amp;ldquo;la anterior era mucho mejor…&amp;rdquo;. Bah, pamplinas y lo dice alguien a quien le gustó mucho El orfanato. Hacía tiempo que todos los presentes de la sala se estremecían al unísono. Incluso algunos graciosos trataban de paliar su estrés soltando alguna ridícula burla en todo un alarde de testosterona.</description>
+      <description>Los ojos de Julia se ha enfrentado a las obligadas comparaciones con el anterior largometraje de terror protagonizada por Belén Rueda, El orfanato. Ya saben, aquello de &amp;ldquo;la anterior era mucho mejor…&amp;quot;. Bah, pamplinas y lo dice alguien a quien le gustó mucho El orfanato. Hacía tiempo que todos los presentes de la sala se estremecían al unísono. Incluso algunos graciosos trataban de paliar su estrés soltando alguna ridícula burla en todo un alarde de testosterona.</description>
     </item>
     
     <item>
@@ -2755,7 +2756,7 @@ Debía utilizar plantillas para estructurar la página principal y otros element
       <pubDate>Wed, 18 Aug 2010 20:41:28 +0000</pubDate>
       
       <guid>https://saltares.com/hobbies/dantes-inferno-el-averno-esta-templadito/</guid>
-      <description>El principal problema de Dante&amp;rsquo;s Inferno fue su fecha de lanzamiento, febrero de este año, demasiado cercano a la super-producción God of War III o al polémico Bayonetta. Desconozco si fue una decisión comercial de EA o producto algún retraso en Visceral Games, lo cierto es que el hecho no le hizo ningún favor de cara a la crítica especializada ni a las ventas. Con tanto hack&amp;rdquo;n slash entre las manos el tiro les salió por la culata.</description>
+      <description>El principal problema de Dante&#39;s Inferno fue su fecha de lanzamiento, febrero de este año, demasiado cercano a la super-producción God of War III o al polémico Bayonetta. Desconozco si fue una decisión comercial de EA o producto algún retraso en Visceral Games, lo cierto es que el hecho no le hizo ningún favor de cara a la crítica especializada ni a las ventas. Con tanto hack&amp;quot;n slash entre las manos el tiro les salió por la culata.</description>
     </item>
     
     <item>
@@ -2836,7 +2837,7 @@ Debía utilizar plantillas para estructurar la página principal y otros element
       <pubDate>Mon, 02 Aug 2010 12:42:59 +0000</pubDate>
       
       <guid>https://saltares.com/games/desarrollo-de-videojuegos-en-c-con-sdl-para-psp-en-wikilibros/</guid>
-      <description>Mientras trabajamos en Granny&amp;rsquo;s Bloodbath se nos ocurrió la idea de hacer un port a PSP del juego. Fui el encargado de la tarea y, cuando me puse manos la obra, descubrí que la documentación era pobre y en la mayoría de casos errónea. Lo cierto es que fue toda una aventura descubrir cómo crear un juego para PSP en C++ usando SDL y otras librerías sin cambiar el código original.</description>
+      <description>Mientras trabajamos en Granny&#39;s Bloodbath se nos ocurrió la idea de hacer un port a PSP del juego. Fui el encargado de la tarea y, cuando me puse manos la obra, descubrí que la documentación era pobre y en la mayoría de casos errónea. Lo cierto es que fue toda una aventura descubrir cómo crear un juego para PSP en C++ usando SDL y otras librerías sin cambiar el código original.</description>
     </item>
     
     <item>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -110,11 +111,8 @@
       </span>
       
       <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
-
-<p><img src="../../img/others/console1.jpg" alt="console1.jpg" /></p>
-
-<p>When you&rdquo;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&rdquo;ll take. Finally, you can also override the key to toggle the console.</p>
-
+<p><img src="../../img/others/console1.jpg" alt="console1.jpg"></p>
+<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It's incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project's dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
 <pre><code>private Console console;
 
 @Override
@@ -126,15 +124,9 @@ public void create() {
     console.setPositionPercent(0, 67);
     console.setKeyID(Keys.Z);
 }
-</code></pre>
-
-<p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
-
+</code></pre><p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
 <pre><code>console.draw();
-</code></pre>
-
-<p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let&rsquo;s specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
-
+</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let's specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
 <pre><code>public class GameCommandExecutor extends Command {
     private Console console;
 
@@ -154,18 +146,11 @@ public void create() {
         console.clear();
     }
 }
-</code></pre>
-
-<p>At some point, we need to register the executor with the console.</p>
-
+</code></pre><p>At some point, we need to register the executor with the console.</p>
 <pre><code>console.setCommandExecutor(new GameCommandExecutor(console));
-</code></pre>
-
-<p>Done, that&rsquo;s it!</p>
-
-<p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png" /></p>
-
-<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
+</code></pre><p>Done, that's it!</p>
+<p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png"></p>
+<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it's fully compatible with the WebGL backend. It's also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
 
       
     </div>
@@ -180,49 +165,31 @@ public void create() {
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" /></p>
-
-<p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&rdquo;d be a shame if it went to waste. So here it is in case you&rdquo;d like to use it.</p>
-
+      <p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png"></p>
+<p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&quot;d be a shame if it went to waste. So here it is in case you&quot;d like to use it.</p>
 <p>This 2D vision system is generic enough to work with both side-scrolling and top-down games. Surely it can be further optimised and tailored to your needs… Hey, it was done for a game jam! Nevertheless, it could be a decent starting point!</p>
-
 <p>Before we get down to business, make sure you understand what Ashley is and what <a href="http://www.gamedev.net/page/resources/_/technical/game-programming/understanding-component-entity-systems-r3013">component based entity systems</a> are all about.</p>
-
 <h3 id="vision-system-concepts">Vision System concepts</h3>
-
-<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png" /> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&rdquo;</em></p>
-
+<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png"> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
-
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
-
 <pre><code>public class ObservableComponent implements Component {
     public Vector2 position = new Vector2();
 }
-</code></pre>
-
-<p>The <code>Observer</code> component has a little more information.</p>
-
+</code></pre><p>The <code>Observer</code> component has a little more information.</p>
 <pre><code>public class ObserverComponent implements Component {
     public Vector2 position = new Vector2();
     public float angle = 0.0f;
     public float distance = 5.0f;
     public float fovAngle = 45.0f;
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><code>angle</code>: where the entity is looking at.</li>
 <li><code>distance</code>: how far it can see.</li>
 <li><code>fovAngle</code>: the angle it can cover. Members are initialised with default values, you can obviously change these.</li>
 </ul>
-
 <p>###The Vision Entity System</p>
-
 <p>The <code>VisionSystem</code> is where the magic happens, you can see the full outline below.</p>
-
 <pre><code>public class VisionSystem extends IteratingSystem implements EntityListener {
     public VisionSystem(World world) {}
 
@@ -247,29 +214,17 @@ public void create() {
     private void addToVision(Entity observer, Entity observable) {}
     private void removeFromVision(Entity observer, Entity observable) {}
 }
-</code></pre>
-
-<p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
-
+</code></pre><p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
 <pre><code>public VisionSystem(World world) {
     super(Family.all(ObserverComponent.class).get());
 
     this.world = world;
 }
-</code></pre>
-
-<p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
-
+</code></pre><p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
 <pre><code>private ObjectMap&lt;Entity, ObjectSet&lt;Entity&gt;&gt; vision = new ObjectMap();
-</code></pre>
-
-<p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
-
+</code></pre><p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
 <pre><code>private ImmutableArray&lt;Entity&gt; observables;
-</code></pre>
-
-<p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
-
+</code></pre><p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
 <pre><code>@Override
 public void addedToEngine(Engine engine) {
     super.addedToEngine(engine);
@@ -294,10 +249,7 @@ public void entityAdded(Entity entity) {
 public void entityRemoved(Entity entity) {
     vision.remove(entity);
 }
-</code></pre>
-
-<p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
-
+</code></pre><p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
 <pre><code>public boolean canSee(Entity observer, Entity observable) {
     ObjectSet&lt;Entity&gt; observables = vision.get(observer);
 
@@ -307,27 +259,18 @@ public void entityRemoved(Entity entity) {
 
     return observables.contains(observable);
 }
-</code></pre>
-
-<p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
-
+</code></pre><p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
 <pre><code>@Override
 protected void processEntity(Entity observer, float deltaTime) {
     updateVision(observer);
 }
-</code></pre>
-
-<p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
-
+</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer's visible entities.</p>
 <pre><code>private void updateVision(Entity observer) {
     for (Entity observable : observables) {
         updateVision(observer, observable);
     }
 }
-</code></pre>
-
-<p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
-
+</code></pre><p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
 <pre><code>private void addToVision(Entity observer, Entity observable) {
     vision.get(observer).add(observable)
 }
@@ -335,10 +278,7 @@ protected void processEntity(Entity observer, float deltaTime) {
 private void removeFromVision(Entity observer, Entity observable) {
     vision.get(observer).remove(observable)
 }
-</code></pre>
-
-<p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
-
+</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer's FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
 <pre><code>private void updateVision(Entity observer, Entity observable) {
     if (!inFov(observer, observable)) {
         removeFromVision(observer, observable);
@@ -347,16 +287,10 @@ private void removeFromVision(Entity observer, Entity observable) {
 
     raycast(observer, observable);
 }
-</code></pre>
-
-<p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
-
+</code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
 <pre><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
 private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
-</code></pre>
-
-<p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
-
+</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer's vision angle. The math is be pretty simple here.</p>
 <pre><code>private boolean inFov(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -382,15 +316,9 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre>
-
-<p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png" /> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
-
+</code></pre><p>It's time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don't need to constantly allocate memory.</p>
 <pre><code>private VisionCallback callback = new VisionCallback();
-</code></pre>
-
-<p>Its outline is pretty simple.</p>
-
+</code></pre><p>Its outline is pretty simple.</p>
 <pre><code>private class VisionCallback implements RayCastCallback {
     private Entity observer;
     private Entity observable;
@@ -403,20 +331,14 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
     @Override
     public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {}
 }
-</code></pre>
-
-<p>Before the raycast, we need to prepare the callback.</p>
-
+</code></pre><p>Before the raycast, we need to prepare the callback.</p>
 <pre><code>public void prepare(Entity observer, Entity observable) {
     this.observer = observer;
     this.observable = observable;
     this.minFraction = Float.MAX_VALUE;
     this.observableFraction = Float.MAX_VALUE;
 }
-</code></pre>
-
-<p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
-
+</code></pre><p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
 <pre><code>@Override
 public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
     Object data = fixture.getBody().getUserData();
@@ -433,17 +355,11 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
     }
     return 0;
 }
-</code></pre>
-
-<p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
-
+</code></pre><p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
 <pre><code>public boolean canSee() {
     return observableFraction &lt; 1.0f &amp;&amp; observableFraction &lt;= minFraction;
 }
-</code></pre>
-
-<p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
-
+</code></pre><p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
 <pre><code>private void raycast(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -463,35 +379,24 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
         removeFromVision(entity, target);
     }
 }
-</code></pre>
-
-<p>That&rsquo;s it, we have a nice, reusable vision system for any 2D game!</p>
-
+</code></pre><p>That's it, we have a nice, reusable vision system for any 2D game!</p>
 <h3 id="room-for-improvement">Room for improvement</h3>
-
-<p>Like I said, this is game jam code, you have been warned! Here&rsquo;s a few things I could think of to make the system more efficient and nicer in general.</p>
-
+<p>Like I said, this is game jam code, you have been warned! Here's a few things I could think of to make the system more efficient and nicer in general.</p>
 <ul>
 <li>Collision filtering: Box2D allows us to set bit masks to bodies to filter collisions. We can leverage that to select behind which bodies observables can hide.</li>
 <li>Space partitioning: we can use a <a href="https://en.wikipedia.org/wiki/Quadtree">quadtree</a> to avoid processing every observable for each observer.</li>
-<li>Deferred raycasting: we probably don&rsquo;t need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won&rsquo;t ever notice if that guard spotted him a couple of frames later.</li>
+<li>Deferred raycasting: we probably don't need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won't ever notice if that guard spotted him a couple of frames later.</li>
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
-
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
-
-<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png" /></p>
-
+<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png"></p>
 <h3 id="use-it-improve-it-give-feedback">Use it, improve it, give feedback</h3>
-
 <p>Find the full source for the vision system here:</p>
-
 <ul>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/systems/VisionSystem.java"><code>VisionSystem</code></a></li>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObserverComponent.java"><code>ObserverComponent</code></a></li>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObservableComponent.java"><code>ObservableComponent</code></a></li>
 </ul>
-
 <p>Let me know what you think, especially if you use it. Would love some feedback on it!</p>
 
       
@@ -507,20 +412,13 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png" /></p>
-
+      <p><img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png"></p>
 <p>After a <a href="https://github.com/dsaltares/libgdxjam/commits/master">crazy weekend before the deadline</a>, we finally managed to put something playable together for <a href="http://itch.io/jam/libgdxjam">LibGDXJAM</a>.</p>
-
-<p>We&rdquo;d love you to have a go, and leave some <a href="http://itch.io/jam/libgdxjam/rate/51210">feedback</a>.</p>
-
-<iframe src="https://itch.io/embed/51210" width="100%" frameborder="0"></iframe>
-
+<p>We&quot;d love you to have a go, and leave some <a href="http://itch.io/jam/libgdxjam/rate/51210">feedback</a>.</p>
+<!-- raw HTML omitted -->
 <p>We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom <a href="http://overlap2d.com/">Overlap2D</a> level loader and not so much on actual content, so you can actually finish the game in under a minute. I guess the difficulty (or lack of readability) may make it slightly longer, which is also a bit bad. The movement system could have done with a bit more fine tuning as well.</p>
-
 <p>However, we do believe the game has potential! Thanks to <a href="https://twitter.com/DrillerDev">@DrillerDev</a>, we had great character art an animations. The mechanics offer nice possibilities, which currently remain hidden due to lack of content. Not to mention the humour opportunities and the characters&rdquo; comicality.</p>
-
 <p>I will try post some technical articles on the project. We used <a href="https://github.com/libgdx/ashley">Ashley</a> and some folks may find interesting how we tackled certain details such as the scene hierarchy or the animation selection system.</p>
-
 <p>
 <link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
 
@@ -578,14 +476,12 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
   
 
 
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="../../js/load-photoswipe.js"></script>
+
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+
 
 
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -632,7 +528,6 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
     </div>
 </div>
 </p>
-
 <p>Next time we should follow the advice <a href="https://twitter.com/McFunkypants">@McFunkypants</a> gives in <a href="https://www.packtpub.com/game-development/game-jam-survival-guide">The Game Jam Survival Guide</a>!</p>
 
       
@@ -648,10 +543,8 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png" /></p>
-
-<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.1">1.7.1</a> below:</p>
-
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>There's a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.1">1.7.1</a> below:</p>
 <ul>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/5277cbe83264d0ddc851a823232f51c350e9c387">API addition</a></strong>: expose <code>IntervalSystem</code> interval value (read-only).</li>
 <li><strong><a href="https://github.com/libgdx/ashley/issues/197">Bug fix</a></strong>: fixed pending entity operations not being processed in the right order.</li>
@@ -660,10 +553,8 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <li><strong><a href="https://github.com/libgdx/ashley/issues/178">Internals</a></strong>: split Engine internals into loosely coupled, single responsibility smaller classes.</li>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/92fa5c7179bf77a39a81cf20a5328a2fc4ca8c5f">Update</a></strong>: uses Libgdx 1.8.0.</li>
 </ul>
-
 <p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.1</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.2-SNAPSHOT</code>.</p>
-
-<p>It&rsquo;s really motivating to see how many people are using Ashley in their projects,
+<p>It's really motivating to see how many people are using Ashley in their projects,
 including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=libgdxjam%20ashley&amp;src=typd">#LibGDXJAM</a>!</p>
 
       
@@ -679,25 +570,16 @@ including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=defa
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p>Oh my God, enter panic mode, just 8 days left until the <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=libgdxjam&amp;src=typd">#LibGDXJAM</a> deadline! We&rsquo;ve been <a href="https://github.com/dsaltares/libgdxjam/commits/master">hard at work</a>, especially <a href="https://twitter.com/DrillerDev">@DrillerDev</a> who&rsquo;s pushed the character design and animation.</p>
-
+      <p>Oh my God, enter panic mode, just 8 days left until the <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=libgdxjam&amp;src=typd">#LibGDXJAM</a> deadline! We've been <a href="https://github.com/dsaltares/libgdxjam/commits/master">hard at work</a>, especially <a href="https://twitter.com/DrillerDev">@DrillerDev</a> who's pushed the character design and animation.</p>
 <p>Look at this bad boy for instance, better not to mess with his alien gun.</p>
-
-<p><img src="../../img/sloppynauts/grunt-shoot.gif" alt="grunt-shoot.gif" /></p>
-
+<p><img src="../../img/sloppynauts/grunt-shoot.gif" alt="grunt-shoot.gif"></p>
 <p>Or the beholder powered alien surveillance.</p>
-
-<p><img src="../../img/sloppynauts/beholder.gif" alt="beholder.gif" /></p>
-
-<p>Please, ignore the placeholder environment art, it&rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around. We&rsquo;ve also worked on a nice look-ahead camera target tracking system. That way the player knows where the character is going and anticipate dangers.</p>
-
-<p><img src="../../img/sloppynauts/libgdx-jam-player-movement.gif" alt="libgdx-jam-player-movement.gif" /></p>
-
+<p><img src="../../img/sloppynauts/beholder.gif" alt="beholder.gif"></p>
+<p>Please, ignore the placeholder environment art, it's the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around. We've also worked on a nice look-ahead camera target tracking system. That way the player knows where the character is going and anticipate dangers.</p>
+<p><img src="../../img/sloppynauts/libgdx-jam-player-movement.gif" alt="libgdx-jam-player-movement.gif"></p>
 <p>One of the ways to avoid CCTV cameras is to prone behind a crate and push it whilst remaining hidden.</p>
-
-<p><img src="../../img/sloppynauts/libgdxjam-hide-from-beholder.gif" alt="libgdxjam-hide-from-beholder.gif" /></p>
-
-<p>We&rdquo;re now focusing on enemy behaviours and level design.</p>
+<p><img src="../../img/sloppynauts/libgdxjam-hide-from-beholder.gif" alt="libgdxjam-hide-from-beholder.gif"></p>
+<p>We&quot;re now focusing on enemy behaviours and level design.</p>
 
       
     </div>
@@ -739,8 +621,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

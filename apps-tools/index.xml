@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apps-tools on David Saltares</title>
@@ -29,13 +29,13 @@ Motivation When learning a new language, it is very common to struggle with verb
       <pubDate>Mon, 26 Dec 2011 22:38:39 +0000</pubDate>
       
       <guid>https://saltares.com/apps-tools/laterdroid/</guid>
-      <description> Simple Pocket client for Android.
+      <description>Simple Pocket client for Android.
  Role: designer and sole programmer Year: 2011 Development time: 1 week Technology: Java and the official Android SDK Download: Laterdroid 0.1 APK  Screenshots    Laterdroid add
       Laterdroid article
       Laterdroid list
       Laterdroid login
       Laterdroid sync
-     Features  Login or create a new account Synchronize and cache your reading list Browse your articles list Read offline or online Share articles Add new articles to your list  Video   </description>
+                             Features  Login or create a new account Synchronize and cache your reading list Browse your articles list Read offline or online Share articles Add new articles to your list  Video   </description>
     </item>
     
     <item>
@@ -46,7 +46,8 @@ Motivation When learning a new language, it is very common to struggle with verb
       <guid>https://saltares.com/apps-tools/tiny-backup/</guid>
       <description>Open source tool to save and restore the list of installed packages in a Debian based Linux distribution. I developed this tool to learn Python basics and the GTK library.
  Role: project leader and sole programmer Year: 2010 Development time: 1 week Technology: Python language using pyGTK Download: Tiny Backup 0.2, source code  Screenshots    Tinybackup restore
-      Tinybackup save</description>
+      Tinybackup save
+      Tinybackup</description>
     </item>
     
     <item>

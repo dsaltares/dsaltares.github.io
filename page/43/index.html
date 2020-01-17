@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.55.6" />
+	<meta name="generator" content="Hugo 0.62.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -28,7 +28,7 @@
   
   
   
-  <link href="https://saltares.com/index.xml" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
+  <link href="%7balternate%20%7bRSS%20application/rss&#43;xml%20%20index%20alternate%20%20false%20false%20true%20false%20false%200%7d%20/index.xml%20https://saltares.com/index.xml%7d" rel="alternate" type="application/rss+xml" title="David Saltares &middot; David Saltares" />
 
   <meta name="description" content="">
   <meta name="keywords" content="">
@@ -95,6 +95,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="posts">
     
@@ -109,30 +110,19 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png"></p>
 <p>Entregas</p>
-
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
 <li>_Colisiones III: Shape y Collision Dispatching _</li>
 </ul>
-
 <p>Comenzamos la tercera entrega de la serie de artículos sobre **STC, el sistema de detección de colisiones de Sion Tower. En esta ocasión vamos a entrar en detalle en **la clase <em>Shape</em>, la encargada de modelar los volúmenes colisionables básicos entre otras tareas. Los tests de colisión entre formas concretas también pertenecen a esta clase pero por su complejidad los dejaremos para el siguiente artículo.</p>
-
 <h3 id="la-clase-shape">La clase Shape</h3>
-
 <p><em>Shape</em> es una clase abstracta y como tal no puede instanciarse directamente por lo que otros objetos han de heredar de ella e implementar los métodos convenientes. <em>Shape</em> modela un volumen geométrico genérico colisionable y está pensada para que todas sus implementaciones sean tratadas de manera uniforme.</p>
-
-<p><img src="../../img/wp/shapes.png" alt="shapes.png" /></p>
-
+<p><img src="../../img/wp/shapes.png" alt="shapes.png"></p>
 <h3 id="collision-dispatching">Collision Dispatching</h3>
-
 <p>La clase <em>Shape</em> dispone de un método estático <em>getCollision</em> que recibe dos punteros a <em>Shape</em> y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.</p>
-
 <pre><code>class Shape {
 public:
 
@@ -152,12 +142,8 @@ private:
     static bool getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB);
 
 };
-</code></pre>
-
-<p>El <strong>Collision Dispatching</strong> es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques <em>if</em> con <em>dynamic_cast</em> capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de <a href="http://en.wikibooks.org/wiki/C++_Programming/RTTI">RTTI</a>.</p>
-
+</code></pre><p>El <strong>Collision Dispatching</strong> es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques <em>if</em> con <em>dynamic_cast</em> capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de <a href="http://en.wikibooks.org/wiki/C++_Programming/RTTI">RTTI</a>.</p>
 <p>Es posible conocer la clase a la que pertenece una forma génerica incorporando un método virtual puro en <em>Shape</em>. Cada especialización está obligado a implementarlo, devolviendo un valor de un enumerado indicando su tipo.</p>
-
 <pre><code>class Shape {
 public:
 
@@ -179,12 +165,8 @@ public:
 
     ...
 };
-</code></pre>
-
-<p>Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un <em>static_cast</em> sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. <em>static_cast</em> es mucho más rápido que <em>dynamic_cast</em> al no hacer comprobaciones.</p>
-
-<p>No vamos a manejar punteros a función sino que **haremos uso de las mágicas <em><a href="http://www.boost.org/doc/libs/1_45_0/doc/html/function.html">boost::function</a></em> y <a href="http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html"><em>boost:bind</em></a>**. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces <a href="http://www.boost.org/">Boost</a> deberías echarle un ojo ya que muchos de sus componentes <strong>entrarán en el próximo estándar de C++</strong>. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales <a href="http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost">aquí</a>. Para la tabla utilizaremos <em><a href="http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html">boost::unordered_map</a></em>, similar a <a href="http://www.cppreference.com/wiki/container/map/start"><em>std::map</em></a> pero mucho más eficiente.</p>
-
+</code></pre><p>Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un <em>static_cast</em> sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. <em>static_cast</em> es mucho más rápido que <em>dynamic_cast</em> al no hacer comprobaciones.</p>
+<p>No vamos a manejar punteros a función sino que <strong>haremos uso de las mágicas <em><a href="http://www.boost.org/doc/libs/1_45_0/doc/html/function.html">boost::function</a></em> y <a href="http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html"><em>boost:bind</em></a></strong>. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces <a href="http://www.boost.org/">Boost</a> deberías echarle un ojo ya que muchos de sus componentes <strong>entrarán en el próximo estándar de C++</strong>. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales <a href="http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost">aquí</a>. Para la tabla utilizaremos <em><a href="http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html">boost::unordered_map</a></em>, similar a <a href="http://www.cppreference.com/wiki/container/map/start"><em>std::map</em></a> pero mucho más eficiente.</p>
 <pre><code>class Sphere:
 public:
     ...
@@ -202,10 +184,7 @@ private:
 
     static CollisionDispatchTable  _collisionDispatcher;
 };
-</code></pre>
-
-<p>El método <em>configureCollisionDispatching</em> se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase <em>CollisionManager</em> ya lo hace por tí.</p>
-
+</code></pre><p>El método <em>configureCollisionDispatching</em> se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase <em>CollisionManager</em> ya lo hace por tí.</p>
 <pre><code>void Shape::configureCollisionDispatching() {
     _collisionDispatcher[SPHERE][SPHERE] = boost::bind(&amp;Shape::getCollisionSphereSphere, _1, _2);
     _collisionDispatcher[AABB][AABB] = boost::bind(&amp;Shape::getCollisionAABBAABB, _1, _2);
@@ -220,34 +199,19 @@ private:
     _collisionDispatcher[PLANE][AABB] = boost::bind(&amp;Shape::getCollisionPlaneAABB, _1, _2);
     _collisionDispatcher[PLANE][SPHERE] = boost::bind(&amp;Shape::getCollisionPlaneSphere, _1, _2);
 }
-</code></pre>
-
-<p>De esta forma <strong>conseguimos un Collision Dispatching muy eficiente, cómodo y extensible</strong>.</p>
-
+</code></pre><p>De esta forma <strong>conseguimos un Collision Dispatching muy eficiente, cómodo y extensible</strong>.</p>
 <h3 id="formas-disponibles">Formas disponibles</h3>
-
 <p>Como habréis deducido por los diagramas de clases, la versión 0.1 de STC incorpora <strong>tres tipos de formas diferentes</strong>: <em>Sphere</em>, <em>Plane</em> y <em>AxisAlignedBox</em>. A continuación vemos las distintas formas junto a su representación interna y un pequeño diagrama.</p>
-
 <p>La <strong>esfera</strong> se representa por un punto (centro) y un real (radio) tal y como se muestra en el siguiente esquema. Es una forma sencilla que permite tests de colisión muy rápidos. Es muy común representar formas utilizando cuatro números reales ya que los chips gráficos están optimizados para hacer operaciones en paralelo con cuatro datos.</p>
-
-<p><img src="../../img/wp/sphere.png" alt="sphere.png" /></p>
-
+<p><img src="../../img/wp/sphere.png" alt="sphere.png"></p>
 <p>El <strong>plano</strong> está formado por un punto (distancia con respecto al origen) y un vector (normal o perpendicular a sí mismo). Podéis visualizarlo en el siguiente esquema.</p>
-
-<p><img src="../../img/wp/plane.png" alt="plane.png" /></p>
-
+<p><img src="../../img/wp/plane.png" alt="plane.png"></p>
 <p>Existen dos tipos de cajas: las <em>AxisAlignedBox</em> y las <em>OrientedBox</em>. Las primeras, como indica su nombre, siempre están alineadas con los ejes y no presentan rotación. En cambio, las segundas son volúmenes rotados. Las cajas alineadas con los ejes las representamos a través de dos puntos (mínimo y máximo) como podéis ver en el siguiente diagrama.</p>
-
-<p><img src="../../img/wp/aabb.png" alt="aabb.png" /></p>
-
+<p><img src="../../img/wp/aabb.png" alt="aabb.png"></p>
 <p>Las <em>AABB</em> ofrecen tests de colisión sencillos pero <strong>no funcionan bien con objetos que rotan</strong>. Al no poder rotar la caja debemos reajustarla con la consecuente pérdida de precisión, en algunos casos inaceptable. El siguiente esquema muestra a un coche y su <em>AABB</em> de colisión en ambos estados: sin rotar y tras ser rotado.</p>
-
-<p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png" /></p>
-
+<p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png"></p>
 <h3 id="extendiendo-la-clase-shape">Extendiendo la clase Shape</h3>
-
 <p>Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase <em>Shape</em>:</p>
-
 <pre><code>class Shape {
 public:
   virtual int getType() const = 0;
@@ -261,10 +225,7 @@ public:
     const Ogre::Vector3&amp; scale = Ogre::Vector3::UNIT_SCALE,
     const Ogre::Quaternion&amp; orientation = Ogre::Quaternion::IDENTITY) = 0;
 };
-</code></pre>
-
-<p>El método <em>applyTransform</em> transforma la forma actual a partir de <em>localShape</em> incluyendo desplazamiento, escala y rotación. El método <em>getTransformedCopy</em> devuelve una copia de sí misma tras aplicar la transformación. Esto se utiliza para traducir formas de local space a world space. Deberás añadir los tests de colisión que desees y completar la inicialización de la tabla en el método <em>configureCollisionDispatching</em>. Puedo adelantar que para la versión 0.2 de STC (Sion Tower Collisions) estoy implementando la forma <em>OrientedBox</em> y sus correspondientes tests de colisión.</p>
-
+</code></pre><p>El método <em>applyTransform</em> transforma la forma actual a partir de <em>localShape</em> incluyendo desplazamiento, escala y rotación. El método <em>getTransformedCopy</em> devuelve una copia de sí misma tras aplicar la transformación. Esto se utiliza para traducir formas de local space a world space. Deberás añadir los tests de colisión que desees y completar la inicialización de la tabla en el método <em>configureCollisionDispatching</em>. Puedo adelantar que para la versión 0.2 de STC (Sion Tower Collisions) estoy implementando la forma <em>OrientedBox</em> y sus correspondientes tests de colisión.</p>
 <p>Hasta aquí la tercera entrega de los artículos sobre el sistema de detección de colisiones de Sion Tower.</p>
 
       
@@ -280,12 +241,9 @@ public:
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/lotr-vandal.jpg" alt="lotr-vandal.jpg" /></p>
-
+      <p><img src="../../img/wp/lotr-vandal.jpg" alt="lotr-vandal.jpg"></p>
 <p>Si seguís mi blog desde hace cierto tiempo sabréis que me encanta desarrollar videojuegos tanto como jugarlos y luego escribir sobre ellos. Hace pocos días se me brindó la oportunidad de trabajar para una de las webs del sector más importantes en España, <a href="http://www.vandal.net/">Vandal Online</a>. ¿Cómo iba a rechazar tamaña oferta? He empezado con un <a href="http://www.vandal.net/avances/ps3/el-senor-de-los-anillos-la-guerra-del-norte/12250/1">avance sobre El Señor de los Anillos la Guerra del Norte</a> y algunas noticias. Además, está en camino un especial bastante interesante.</p>
-
 <p>He aprendido muchas cosas mientras recopilaba información para redactar el artículo y creo que continuar en Vandal puede ser una experiencia enriquecedora. Trabajaré de forma regular cubriendo noticias aunque también redactaré análisis y especiales más elaborados. Eso no significa el final de los textos sobre videojuegos en Sion Dream. El blog es mi espacio personal, donde tienen cabida contenidos que en Vandal carecerían de sentido o interés.</p>
-
 <p>Deseadme suerte.</p>
 
       
@@ -301,26 +259,17 @@ public:
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/sion-tower-3d-sound.jpg" alt="sion-tower-3d-sound.jpg" /></p>
-
+      <p><img src="../../img/wp/sion-tower-3d-sound.jpg" alt="sion-tower-3d-sound.jpg"></p>
 <p>Hace algo más de un mes escribí un <a href="../../proyectos/pfc/sion-tower/sistema-de-audio-pseudo-3d-integrado-con-ogre/">artículo sobre el <strong>sistema de audio 3D</strong></a> <strong>de Sion Tower</strong>. Al igual que la pequeña biblioteca de colisiones que he implementado, es muy reutilizable y sería una pena que el código no le sirva a nadie más. Por ello, <strong>he decidido liberar la versión 0.1</strong> como paquete descargable desde la forja de Red Iris.</p>
-
 <h3 id="características">Características</h3>
-
 <ul>
 <li>Reproducción de música y efectos de sonido: WAV, MP3, OGG…</li>
 <li>Integración completa con el sistema de gestión de recursos de Ogre3D.</li>
 <li>Inserción de sonidos en la escena de forma que puede producirse un efecto 3D en función de la distancia y ángulo entre nodos.</li>
 </ul>
-
 <h3 id="descarga">Descarga</h3>
-
 <p>El sistema está escrito en C++ estándar y sólo depende de Ogre3D y SDL mixer por lo que <strong>funciona en una amplia variedad de plataformas</strong>. El paquete viene con el fichero de licencia (GPL v3) y la documentación completa en html generada con Doxygen.</p>
-
 <p>Por supuesto, <strong>estoy abierto a cualquier sugerencia</strong>, posible mejora, avisos de errores y todo lo que se os ocurra.</p>
-
 <ul>
 <li><a href="http://forja.rediris.es/frs/download.php/2074/siontower-3dsound-v0.1.zip">Descargar Sion Tower 3D Sound v0.1</a></li>
 </ul>
@@ -338,37 +287,23 @@ public:
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-
-<p><img src="../../img/wp/colisiones-2.png" alt="colisiones-2.png" /></p>
-
+      <p><img src="../../img/wp/colisiones-2.png" alt="colisiones-2.png"></p>
 <p>Entregas:</p>
-
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
 <li><em>Colisiones II: Diseño general de STC</em></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: La clase Shape y Collision Dispatching</a></li>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a></li>
 </ul>
-
 <p>En la primera entrega de la serie de artículos sobre el <strong>sistema de detección de colisiones de Sion Tower (STC)</strong> comenté los requisitos que debía cumplir y las alternativas que valoré antes de decidirme a implementarlo por cuenta propia. En esta ocasión me dispongo a hacer <strong>un repaso por el diseño de esta pequeña biblioteca</strong>. Tras el diagrama de clases voy a tratar los componentes de forma breve pero individualizada. En posteriores entregas del artículo tendremos espacio suficiente para conocer en profundidad cada clase y algunos puntos relevantes de su implementación.</p>
-
 <h3 id="diagrama-de-clases-de-diseño">Diagrama de clases de diseño</h3>
-
 <p>El sistema de colisiones de Sion Tower es bastante sencillo y únicamente cuenta con las clases que se muestran a continuación.</p>
-
 <p>Este primer diagrama sólo muestra las clases y sus relaciones:</p>
-
-<p><img src="../../img/wp/collisions-simplified.png" alt="collisions-simplified.png" /></p>
-
+<p><img src="../../img/wp/collisions-simplified.png" alt="collisions-simplified.png"></p>
 <p>En este segundo diagrama podemos ver los métodos que componen la interfaz de cada clase, haz click sobre la imagen para verlo ampliado.</p>
-
-<p><a href="../../img/wp/collisions-interface.png"><img src="../../img/wp/collisions-interface.png" alt="collisions-interface.png" /></a></p>
-
+<p><a href="../../img/wp/collisions-interface.png"><img src="../../img/wp/collisions-interface.png" alt="collisions-interface.png"></a></p>
 <h3 id="componentes">Componentes</h3>
-
 <p>La siguiente lista repasa de forma superficial las responsabilidades de cada clase dentro de Sion Tower Collisions.</p>
-
 <ul>
 <li><strong>Shape</strong>: clase abstracta que modela formas básicas colisionables. Es la encargada del <em>&ldquo;collision dispatching&rdquo;</em>. Mediante el método estático <em>Shape::getCollision</em> podemos saber si dos formas concretas colisionan sin necesidad de conocer su clase concreta. El sistema detecta los tipos en tiempo de ejecución (<a href="http://en.wikipedia.org/wiki/Run-time_type_information">RTTI</a>) y elije el test de colisión apropiado de manera eficiente.</li>
 <li><strong>Plane</strong>: forma especializada para modelar un plano representado por un punto y un vector normal. Dentro del juego lo utilizaremos para modelar las colisiones del suelo.</li>
@@ -378,7 +313,6 @@ public:
 <li><strong>CollisionManager</strong>: registra todos los cuerpos de la escena y permite detectar colisiones entre ellos. Habilita el registro de callbacks para ser informados de colisiones entre dos tipos concretos de cuerpos.</li>
 <li><strong>GameObject</strong>: encapsula el aspecto colisionable (<em>Body</em>) junto con el visual (<em>Ogre::Entity</em> – <em>Ogre::SceneNode</em>) de los elementos de juego. Los elementos que no tengan un comportamiento definido serán instancias de esta clase. Aquellos que deseen un comportamiento concreto deberán heredar de <em>GameObject</em>.</li>
 </ul>
-
 <p>Básicamente esto es lo que proporciona STC, <strong>no es mucho pero es fácil de extender</strong> y es independiente del resto de componentes de un videojuego.</p>
 
       
@@ -394,12 +328,9 @@ public:
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/creagamers.jpg" alt="creagamers.jpg" /></p>
-
+      <p><img src="../../img/wp/creagamers.jpg" alt="creagamers.jpg"></p>
 <p><strong>Se ha publicado un <a href="http://www.creagamers.es/iberogre-un-proyecto-espanol-de-ogre-engine/">artículo sobre IberOgre en Creagamers</a></strong>, una comunidad de desarrollo de videojuegos española. Tras contactar con el administrador hemos llegado a un acuerdo de colaboración de forma que contaremos con el respaldo de Creagamers más allá de este artículo inicial. Esto significa muchísimo para IberOgre ya que como cualquier wiki que se precie necesita de un grupo de usuarios que la siga, mejore y amplíe.</p>
-
 <p>Uno de mis próximos objetivos para IberOgre era mejorar su difusión y parece que vamos viento en popa. No obstante aún estamos lejos de contar con una base de usuarios estable, todo se andará.</p>
-
 <p>¡Muchas gracias Creagamers!</p>
 
       
@@ -442,8 +373,14 @@ var disqus_shortname = "siondream";
 }());
 </script>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

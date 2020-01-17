@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Lanzado Tiny Backup 0.2</h1>
@@ -102,20 +103,12 @@
     <br/>
     <a class="label" href="../../categories/projects">Projects</a>
     </span>
-    
-
-<p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png" /></p>
-
+    <p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png"></p>
 <p>Tiny Backup es una pequeña interfaz para algunas de las funcionalidades del <strong>comando dpkg</strong> que permite a usuarios de GNU/Linux <strong>realizar y restaurar copias</strong> de la lista de paquetes instalados en el sistema. Está <strong>desarrollado en Python utilizando PyGTK y Glade</strong> para la GUI aunque de eso ya hablé suficiente en <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">el artículo</a> que le dediqué hace algo más de un mes. En este pequeño escrito hablaré de la acogida de la primera versión y de los arreglos que incorpora la segunda.</p>
-
-<h3 id="la-recepción-de-tiny-backup-0-1">La recepción de Tiny Backup 0.1</h3>
-
+<h3 id="la-recepción-de-tiny-backup-01">La recepción de Tiny Backup 0.1</h3>
 <p>Para mi sorpresa, <strong>Tiny Backup 0.1 tuvo una buena acogida</strong> teniendo en cuenta las pequeñas dimensiones del proyecto. No tanto por el número de descargas sino por el feedback de los usuarios. Incluso recibí una invitación para hablar sobre la aplicación <strong>en el blog <a href="http://www.muylinux.com/2010/09/02/tiny-backup-tu-tambien-puedes-hacerlo">Muy Linux</a></strong> (la cual acepté de buen gusto). Generalmente las impresiones fueron buenas aunque <strong>se reportó algún que otro problema</strong>. El más sangrante era que, al ejecutar Tiny Backup desde otro directorio que no fuese el del módulo principal (desde un acceso directo, por ejemplo) no se encontraban los ficheros referenciados por rutas relativas. Un fallo bastante grave del que debí haberme percatado en su momento.</p>
-
-<h3 id="bug-encontrado-y-solucionado-para-tiny-backup-0-2">Bug encontrado y solucionado para Tiny Backup 0.2</h3>
-
+<h3 id="bug-encontrado-y-solucionado-para-tiny-backup-02">Bug encontrado y solucionado para Tiny Backup 0.2</h3>
 <p><strong>La solución</strong> pasaba por obtener la ruta absoluta del módulo en ejecución y, a partir de la misma, construir el camino hasta el fichero deseado. El no ser muy ducho en Python y no haberle dedicado el suficiente tiempo a la aplicación ha hecho que la solución se retrase más de lo debido. <strong>Gracias al lector <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/#comment-227">Cristian Arbazua</a></strong> y su afán colaborativo el bug ha sido cerrado. Sin duda, un aporte que recuerda el valor del Software Libre y anima a continuar. A continuación <strong>un pequeño ejemplo</strong> de la medida tomada:</p>
-
 <pre><code># Vamos a construir la interfaz del formulario principal
 builder = gtk.Builder()
 
@@ -127,19 +120,13 @@ path = os.path.dirname(__file__) + os.sep + 'glade/TinyBackup.glade'
 
 # Cargamos el fichero
 builder.add_from_file(path)
-</code></pre>
-
-<p>Cuando vi su aporte acudí velozmente a modificar el código, probarlo y subir una nueva versión a la <a href="http://code.google.com/p/python-tiny-backup/">forja</a>. Desde estos momentos podéis <strong><a href="http://python-tiny-backup.googlecode.com/files/tinybackup-0.2.tar.gz">descargar Tiny Backup 0.2</a></strong>.</p>
-
+</code></pre><p>Cuando vi su aporte acudí velozmente a modificar el código, probarlo y subir una nueva versión a la <a href="http://code.google.com/p/python-tiny-backup/">forja</a>. Desde estos momentos podéis <strong><a href="http://python-tiny-backup.googlecode.com/files/tinybackup-0.2.tar.gz">descargar Tiny Backup 0.2</a></strong>.</p>
 <h3 id="futuras-versiones">Futuras versiones</h3>
-
 <p>El tiempo es un bien del que ando bastante escaso últimamente y, en estos momentos, mi tiempo de desarrollo lo acapara IberOgre y Sion Tower. No obstante, se me ocurren <strong>un par de ideas para Tiny Backup 0.3</strong>:</p>
-
 <ul>
 <li><strong>Internacionalización</strong>: empecé a desarrollar Tiny Backup en inglés pero me gustaría que estuviese disponible en algunos idiomas más: español, francés, alemán, etc. Tengo entendido que con Glade es sencillo incorporar internacionalización y sería interesante aprender cómo.</li>
 <li><strong>Barra de progreso</strong>: los usuarios necesitan feedback constante por parte del software que utilizan. Si encargan una tarea pesada y no aparece una barra de progreso creerán que la aplicación se ha colgado. Si queremos restaurar una extensa lista de paquetes el proceso puede llevar bastante tiempo así que esta característica tiene bastante prioridad.</li>
 </ul>
-
 <p>Desconozco cuando podré dedicarle el tiempo suficiente para incorporar estas mejoras. En cualquier caso le vuelvo a agradecer a Cristian Arbazua su inestimable colaboración en este pequeño proyecto. <strong>¡El feedback siempre es bienvenido!</strong></p>
 
   </div>
@@ -162,8 +149,14 @@ builder.add_from_file(path)
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

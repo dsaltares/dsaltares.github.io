@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Backup a través de la red con tar y ssh</h1>
@@ -102,27 +103,17 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
     </span>
-    
-
-<p><img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png" /></p>
-
+    <p><img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png"></p>
 <p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
-
 <h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
-
 <p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>
-
 <pre><code># Comprimimos
 tar cvzf directorio directorio.tar.gz
 
 # Enviamos
 scp directorio.tar.gz usuario@host:directorio_destino
-</code></pre>
-
-<h3 id="la-solución">La solución</h3>
-
+</code></pre><h3 id="la-solución">La solución</h3>
 <p>Decidimos que <strong>el tiempo era oro</strong>, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación <strong>el script que encierra la magia</strong> (obviando datos concretos):</p>
-
 <pre><code>#!/bin/sh
 
 # Fecha de la copia
@@ -142,12 +133,8 @@ HOST_DIR=/home/siondream/backups
 
 # Hacemos el backup
 tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz&quot;
-</code></pre>
-
-<p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
-
+</code></pre><p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
 <h3 id="lo-mismo-casi-en-la-mitad-de-tiempo">Lo mismo casi en la mitad de tiempo</h3>
-
 <p>Si tienes que hacer grandes copias y enviarlas por la red, <strong>este pequeño truco es tu amigo</strong>. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve <strong>resultados impresionantes</strong>: enviar los datos mientras éstos se comprimen lleva <strong>casi la mitad de tiempo</strong> que hacerlo en etapas separadas.</p>
 
   </div>
@@ -170,8 +157,14 @@ tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

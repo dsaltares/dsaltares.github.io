@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Twigraph, grafos de followers y followings</h1>
@@ -102,32 +103,18 @@
     <br/>
     <a class="label" href="../../categories/projects">Projects</a>
     </span>
-    
-
-<p><img src="../../img/wp/twigraph-logo.png" alt="twigraph-logo.png" /></p>
-
+    <p><img src="../../img/wp/twigraph-logo.png" alt="twigraph-logo.png"></p>
 <p>En un post anterior hablé sobre cómo me introduje en la <strong>programación en Python</strong> con PyGTK y Glade desarrollando <strong><a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">Tiny Backup</a></strong>. Antes que eso ya había experimentado un acercamiento al lenguaje de la serpiente en un ejercicio no extremadamente útil aunque curioso, el resultado fue Twigraph.</p>
-
 <h3 id="twigraph">Twigraph</h3>
-
 <p><strong>Twigraph</strong> es un pequeño script que utiliza un wrapper de la API de Twitter y una biblioteca para trabajar con el lenguaje Dot de <a href="http://www.graphviz.org/">Graphviz</a>. El script toma nuestro usuario y contraseña para producir una imagen PNG con el <strong>grafo de nuestros followings y followers</strong>. Nuestro usuario es el nodo central del cual parten flechas hacia nuestros following Las flechas recibidas corresponden a los followers. No es nada del otro mundo sino una pequeña práctica personal que ha quedado como una mera anécdota.</p>
-
 <p>En un principio <strong>pensé ahondar en la recursividad</strong>, de manera que fuese posible ver qué amigos estaban conectados entre sí. Esta característica es ofrecida por Twitter actualmente pero en el momento de la creación de Twigraph no era así. El problema era el <strong>límite de peticiones</strong> que impone Twitter sobre APIs externas, el número de enlaces crecía exponencialmente y las excepciones saltaban constantemente.[</p>
-
-<p><a href="../../img/wp/twitterfriendgraph.png"><img src="../../img/wp/twitterfriendgraph.png" alt="twitterfriendgraph.png" /></a></p>
-
+<p><a href="../../img/wp/twitterfriendgraph.png"><img src="../../img/wp/twitterfriendgraph.png" alt="twitterfriendgraph.png"></a></p>
 <h3 id="python-twitter">Python Twitter</h3>
-
 <p>Hay que reconocer que el nombre de <strong><a href="http://code.google.com/p/python-twitter/">este wrapper de la API de Twitter</a></strong> para Python no es nada original. No obstante es tremendamente sencillo de utilizar y está <strong>bien <a href="http://python-twitter.googlecode.com/hg/doc/twitter.html">documentado</a></strong>. Con este wrapper podemos postear tweets, ver nuestro timeline o comenzar a seguir a otro usuario. En definitiva, tendremos acceso a la inmensa mayoría de las posibilidades de Twitter desde Python y con ejemplos de muchas de ellas.</p>
-
 <h3 id="graphviz-y-pydot">Graphviz y pydot</h3>
-
 <p>Graphviz es un software increíblemente potente para la <strong>generación de gráficas y diagramas</strong> liberado bajo <a href="http://www.graphviz.org/License.php">Commons Public License</a> (CPL). Podemos generarlas en forma de imágenes o en un formato vectorial para incluirlo en cualquier tipo de documentos como LaTeX. Cuenta con una <strong>sintaxis propia llamada dot</strong> con la que se definen los grafos a generar. Una herramienta muy potente de la que sólo conozco la superficie.</p>
-
 <p><strong><a href="http://dkbza.org/pydot.html">Pydot</a> es el wrapper de Graphviz</strong> para Python (aunque existen para multitud de lenguajes). Esta API es un poco más compleja y profunda por lo que puede resultar más difícil utilizarla. No obstante, si sólo deseamos las funciones básicas una ojeada a la <a href="http://dkbza.org/pydot/pydot.html">documentación</a> y a sus ejemplos bastará.</p>
-
 <p>Como siempre, si se quiere aprender un lenguaje o el uso de una API lo mejor es lanzarse a desarrollar un pequeño script o proyecto. Quien tenga curiosidad puede descargar Twigraph aunque aviso que no se trata el éxtasis de la elegancia.</p>
-
 <p>[<strong>Descargar twigraph.py</strong></p>
 
   </div>
@@ -150,8 +137,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

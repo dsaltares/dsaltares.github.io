@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Gource de IberOgre y Sion Tower (18/09/2010 – 13/03/2011)</h1>
@@ -103,64 +104,40 @@
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
     
-
-
 <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="//www.youtube.com/embed/6hoiOkAX8V8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+  <iframe src="https://www.youtube.com/embed/6hoiOkAX8V8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-<p><strong><a href="http://code.google.com/p/gource/">Gource</a> es una herramienta para la visualización de la evolución de un proyecto</strong> a partir del log de su sistema de control de versiones. Gource es mucho más visual que <a href="../../proyectos/pfc/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/ &quot;StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011">StatSVN</a>&rdquo;) ya que <strong>utiliza <a href="http://es.wikipedia.org/wiki/OpenGL">OpenGL</a> para renderizar de forma atractiva</strong> el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</p>
-
+<p><strong><a href="http://code.google.com/p/gource/">Gource</a> es una herramienta para la visualización de la evolución de un proyecto</strong> a partir del log de su sistema de control de versiones. Gource es mucho más visual que <a href="../../proyectos/pfc/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/" title="StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)">StatSVN</a> ya que <strong>utiliza <a href="http://es.wikipedia.org/wiki/OpenGL">OpenGL</a> para renderizar de forma atractiva</strong> el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</p>
 <h3 id="un-poco-de-reflexión">Un poco de reflexión</h3>
-
 <p>En el vídeo <strong>se aprecia perfectamente las dos partes diferenciadas del proyecto</strong>: <a href="../../category/proyectos/pfc/iberogre-wiki/">IberOgre</a> (derecha) y <a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> (izquierda). Como mencioné en el informe de StatSVN, vemos que al comienzo el ritmo de trabajo era muy bajo. Comencé por el documento de diseño del juego y algunos artículos de la wiki (no reflejados por Gource). Más adelante <strong>la situación mejoró</strong> con los ejemplos para IberOgre y la explosión de trabajo en Sion Tower a partir de enero.</p>
-
 <p>Me atrevo a decir que <strong>la evolución es favorable</strong> y trataré de que permanezca así durante los próximos meses.</p>
-
 <h3 id="compilando-e-instalando-gource-en-linux">Compilando e instalando Gource en Linux</h3>
-
 <p>La versión de Gource que se encuentra en los repositorios de Ubuntu es bastante arcaica por lo que la mejor opción es descargarlo, compilarlo e instalarlo.</p>
-
 <ul>
 <li>Descargamos <a href="http://code.google.com/p/gource/downloads/list">la última versión de Google Code</a>.</li>
 <li>Descomprimimos el paquete y accedemos al directorio desde la terminal.</li>
-
-<li><p>Instalamos las dependencias:</p>
-
-<pre><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
-</code></pre></li>
-
-<li><p>Configuramos y comprobamos que todo esta correcto:</p>
-
-<pre><code>./configure
-</code></pre></li>
-
-<li><p>Compilamos:</p>
-
-<pre><code>make
-</code></pre></li>
-
-<li><p>Instalamos:</p>
-
-<pre><code>sudo make install
-</code></pre></li>
+<li>Instalamos las dependencias:</li>
 </ul>
-
-<h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
-
+<pre><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
+</code></pre><ul>
+<li>Configuramos y comprobamos que todo esta correcto:</li>
+</ul>
+<pre><code>./configure
+</code></pre><ul>
+<li>Compilamos:</li>
+</ul>
+<pre><code>make
+</code></pre><ul>
+<li>Instalamos:</li>
+</ul>
+<pre><code>sudo make install
+</code></pre><h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
 <p>Gource se dedica a mostrar en una ventana la evolución del proyecto pero <strong>no guarda un vídeo</strong> del resultado. Para conseguirlo <strong>podemos hacer uso de <a href="http://es.wikipedia.org/wiki/FFmpeg">ffmpeg</a></strong>, la solución libre para trabajar con audio y/o vídeo. Instalamos ffmpeg en sistemas basados en Debian con el clásico comando:</p>
-
 <pre><code>sudo apt-get install ffmpeg
-</code></pre>
-
-<p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
-
+</code></pre><p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
 <pre><code>gource --seconds-per-day 1 --stop-at-end -1280x720 -o - | ffmpeg -y -f image2pipe -vcodec ppm -i - -vcodec libx264 -vpre slow -threads 4 gource.mp4
-</code></pre>
-
-<p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
-
+</code></pre><p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
 <ul>
 <li>–seconds-per-day: número de segundos de vídeo por cada día en la evolución del proyecto.</li>
 <li>–stop-at-end: cierra Gource cuando hayamos llegado al punto actual del proyecto.</li>
@@ -188,8 +165,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Ogitor: instalación en Linux y el formato DotScene</h1>
@@ -102,55 +103,33 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/ogitor.png" alt="ogitor.png" /></p>
-
+    <p><img src="../../img/wp/ogitor.png" alt="ogitor.png"></p>
 <p>Como es lógico, <strong>los niveles de Sion Tower se almacenarán en ficheros</strong> y deberán contener información para poder desplegar el escenario, oleadas de enemigos, música etc. Escribir a mano un un fichero tan complejo es peor que una tortura propia de mafiosos. Por tanto, lo ideal sería disponer de <strong>un editor libre y multiplataforma</strong> con el que crear los niveles. El sistema de Sion Tower tomará la responsabilidad parsear los ficheros del editor y cargar los niveles. Para un menor sufrimiento, es indispensable que el editor sea compatible con un formato abierto y conocido por la comunidad. Más detalles a continuación.</p>
-
 <h3 id="el-formato-dotscene">El formato DotScene</h3>
-
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml</strong> diseñado para la exportación e importación de <strong>escenas 3D</strong> en proyectos Ogre, podéis encontrar el correspondiente DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Es ampliamente utilizado por la comunidad de Ogre en ficheros con extensión <em>.scene</em> y contempla todo lo que una escena puede mostrar: mayas, luces, geometría básica y un larguísimo etcétera.</p>
-
 <p>El procesamiento de un fichero con tantos elementos podría ser complejo. No obstante, <strong>existen parsers</strong> ya desarrollados como <a href="http://www.ogre3d.org/tikiwiki/New+DotScene+Loader&amp;comzone=show"><strong>DotSceneLoader</strong></a>. En cualquier caso, creo que acabaré implementando uno propio que utilice internamente la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a>. Ofrezco dos razones principales: me gustaría personalizar mi parser y pugixml es tremendamente eficiente en tiempo/espacio (mirad este <a href="http://pugixml.org/benchmark/">impresionante benchmark</a>).</p>
-
-<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg" /></p>
-
+<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg"></p>
 <h3 id="ogitor-la-respuesta">Ogitor, la respuesta</h3>
-
 <p><strong><a href="http://www.ogitor.org/">Ogitor</a> es un editor de escenarios libre y multiplataforma</strong>. Está desarrollado con QT y, por supuesto, Ogre. Lo mejor de todo es que soporta el formato DotScene así que no tendré que preocuparme por toquetear inmensos ficheros XML. Es compatible tanto con Windows como con Linux aunque en éste último hay que compilar. Aún se encuentra en la versión 0.4 pero tiene un desarrollo activo y una <a href="http://forum.ogitor.org/">comunidad</a> dispuesta a ayudar.</p>
-
 <h3 id="instalación-de-ogitor-en-linux">Instalación de Ogitor en Linux</h3>
-
 <p>Ogitor viene perfectamente empaquetado para Windows pero <strong>en Linux estamos obligados a compilarlo</strong> desde las fuentes. Aunque… ¿desde cuándo ha sido eso un problema para tan avezados usuarios? En las siguientes líneas les detallo el proceso, no exento de pequeños detalles delicados.</p>
-
 <h4 id="dependencias">Dependencias</h4>
-
 <ul>
 <li><strong>Ogre 1.7</strong>: creo que era bastante evidente. Si no lo has hecho, puedes acudir a IberOgre por su flamante <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">artículo</a> al respecto. Es importante que instales los ejemplos.</li>
-
-<li><p><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</p>
-
-<pre><code>sudo apt-get install cmake cmake-gui
-</code></pre></li>
-
-<li><p><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</p>
-
-<pre><code>sudo apt-get install libqt4-dev
-</code></pre></li>
-
-<li><p><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</p>
-
-<pre><code>sudo apt-get install libboost-regex-dev
-</code></pre></li>
+<li><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</li>
 </ul>
-
-<p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png" /></p>
-
+<pre><code>sudo apt-get install cmake cmake-gui
+</code></pre><ul>
+<li><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</li>
+</ul>
+<pre><code>sudo apt-get install libqt4-dev
+</code></pre><ul>
+<li><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</li>
+</ul>
+<pre><code>sudo apt-get install libboost-regex-dev
+</code></pre><p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png"></p>
 <h4 id="compilación-e-instalación">Compilación e Instalación</h4>
-
 <p>Le toca el turno al editor que llevamos queriendo instalar hace un buen rato:</p>
-
 <ul>
 <li>Descargamos la última versión estable (4.2) desde la <a href="http://www.ogitor.org/Repositories">web oficial</a> y descomprimimos el paquete.</li>
 <li>Ejecutamos la interfaz de cmake introduciendo cmake-gui en la terminal.</li>
@@ -158,21 +137,13 @@
 <li>Pulsamos <em>&ldquo;Configure&rdquo;</em>. Si se produce algún error es probable que CMake no consiga encontrar alguna biblioteca, revisa que cumples todas las dependencias.</li>
 <li>Establecemos las opciones <em>OGITOR_DIST</em> a true y <em>OGRE_SAMPLES_INCLUDEPATH</em> con la ruta de las cabeceras de los ejemplos de Ogre.</li>
 <li>Hacemos click sobre <em>&ldquo;Generate&rdquo;</em>.</li>
-
-<li><p>Finalmente, los clásicos:</p>
-
+<li>Finalmente, los clásicos:</li>
+</ul>
 <pre><code>make
 sudo make install
-</code></pre></li>
-</ul>
-
-<p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
-
+</code></pre><p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
 <pre><code>[compilación-ogitor]/RunPath/bin/qtOgitor
-</code></pre>
-
-<h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
-
+</code></pre><h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
 <p>En este artículo hemos hablado sobre el ampliamente aceptado formato DotScene y hemos desgranado la instalación de Ogitor. Es probable que haya un próximo episodio en el que relate mi experiencia con Ogitor y documente la creación de niveles para Sion Tower. Ya saben, <strong>ante cualquier problema que encuentren pueden dejar un comentario</strong>.</p>
 
   </div>
@@ -195,8 +166,14 @@ sudo make install
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

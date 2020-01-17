@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">2D vision system with Ashley and Box2D</h1>
@@ -102,49 +103,31 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" /></p>
-
-<p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&rdquo;d be a shame if it went to waste. So here it is in case you&rdquo;d like to use it.</p>
-
+    <p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png"></p>
+<p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&quot;d be a shame if it went to waste. So here it is in case you&quot;d like to use it.</p>
 <p>This 2D vision system is generic enough to work with both side-scrolling and top-down games. Surely it can be further optimised and tailored to your needs… Hey, it was done for a game jam! Nevertheless, it could be a decent starting point!</p>
-
 <p>Before we get down to business, make sure you understand what Ashley is and what <a href="http://www.gamedev.net/page/resources/_/technical/game-programming/understanding-component-entity-systems-r3013">component based entity systems</a> are all about.</p>
-
 <h3 id="vision-system-concepts">Vision System concepts</h3>
-
-<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png" /> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&rdquo;</em></p>
-
+<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png"> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
-
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
-
 <pre><code>public class ObservableComponent implements Component {
     public Vector2 position = new Vector2();
 }
-</code></pre>
-
-<p>The <code>Observer</code> component has a little more information.</p>
-
+</code></pre><p>The <code>Observer</code> component has a little more information.</p>
 <pre><code>public class ObserverComponent implements Component {
     public Vector2 position = new Vector2();
     public float angle = 0.0f;
     public float distance = 5.0f;
     public float fovAngle = 45.0f;
 }
-</code></pre>
-
-<ul>
+</code></pre><ul>
 <li><code>angle</code>: where the entity is looking at.</li>
 <li><code>distance</code>: how far it can see.</li>
 <li><code>fovAngle</code>: the angle it can cover. Members are initialised with default values, you can obviously change these.</li>
 </ul>
-
 <p>###The Vision Entity System</p>
-
 <p>The <code>VisionSystem</code> is where the magic happens, you can see the full outline below.</p>
-
 <pre><code>public class VisionSystem extends IteratingSystem implements EntityListener {
     public VisionSystem(World world) {}
 
@@ -169,29 +152,17 @@
     private void addToVision(Entity observer, Entity observable) {}
     private void removeFromVision(Entity observer, Entity observable) {}
 }
-</code></pre>
-
-<p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
-
+</code></pre><p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
 <pre><code>public VisionSystem(World world) {
     super(Family.all(ObserverComponent.class).get());
 
     this.world = world;
 }
-</code></pre>
-
-<p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
-
+</code></pre><p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
 <pre><code>private ObjectMap&lt;Entity, ObjectSet&lt;Entity&gt;&gt; vision = new ObjectMap();
-</code></pre>
-
-<p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
-
+</code></pre><p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
 <pre><code>private ImmutableArray&lt;Entity&gt; observables;
-</code></pre>
-
-<p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
-
+</code></pre><p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
 <pre><code>@Override
 public void addedToEngine(Engine engine) {
     super.addedToEngine(engine);
@@ -216,10 +187,7 @@ public void entityAdded(Entity entity) {
 public void entityRemoved(Entity entity) {
     vision.remove(entity);
 }
-</code></pre>
-
-<p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
-
+</code></pre><p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
 <pre><code>public boolean canSee(Entity observer, Entity observable) {
     ObjectSet&lt;Entity&gt; observables = vision.get(observer);
 
@@ -229,27 +197,18 @@ public void entityRemoved(Entity entity) {
 
     return observables.contains(observable);
 }
-</code></pre>
-
-<p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
-
+</code></pre><p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
 <pre><code>@Override
 protected void processEntity(Entity observer, float deltaTime) {
     updateVision(observer);
 }
-</code></pre>
-
-<p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
-
+</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer's visible entities.</p>
 <pre><code>private void updateVision(Entity observer) {
     for (Entity observable : observables) {
         updateVision(observer, observable);
     }
 }
-</code></pre>
-
-<p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
-
+</code></pre><p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
 <pre><code>private void addToVision(Entity observer, Entity observable) {
     vision.get(observer).add(observable)
 }
@@ -257,10 +216,7 @@ protected void processEntity(Entity observer, float deltaTime) {
 private void removeFromVision(Entity observer, Entity observable) {
     vision.get(observer).remove(observable)
 }
-</code></pre>
-
-<p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
-
+</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer's FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
 <pre><code>private void updateVision(Entity observer, Entity observable) {
     if (!inFov(observer, observable)) {
         removeFromVision(observer, observable);
@@ -269,16 +225,10 @@ private void removeFromVision(Entity observer, Entity observable) {
 
     raycast(observer, observable);
 }
-</code></pre>
-
-<p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
-
+</code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
 <pre><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
 private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
-</code></pre>
-
-<p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
-
+</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer's vision angle. The math is be pretty simple here.</p>
 <pre><code>private boolean inFov(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -304,15 +254,9 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre>
-
-<p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png" /> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
-
+</code></pre><p>It's time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don't need to constantly allocate memory.</p>
 <pre><code>private VisionCallback callback = new VisionCallback();
-</code></pre>
-
-<p>Its outline is pretty simple.</p>
-
+</code></pre><p>Its outline is pretty simple.</p>
 <pre><code>private class VisionCallback implements RayCastCallback {
     private Entity observer;
     private Entity observable;
@@ -325,20 +269,14 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
     @Override
     public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {}
 }
-</code></pre>
-
-<p>Before the raycast, we need to prepare the callback.</p>
-
+</code></pre><p>Before the raycast, we need to prepare the callback.</p>
 <pre><code>public void prepare(Entity observer, Entity observable) {
     this.observer = observer;
     this.observable = observable;
     this.minFraction = Float.MAX_VALUE;
     this.observableFraction = Float.MAX_VALUE;
 }
-</code></pre>
-
-<p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
-
+</code></pre><p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
 <pre><code>@Override
 public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
     Object data = fixture.getBody().getUserData();
@@ -355,17 +293,11 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
     }
     return 0;
 }
-</code></pre>
-
-<p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
-
+</code></pre><p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
 <pre><code>public boolean canSee() {
     return observableFraction &lt; 1.0f &amp;&amp; observableFraction &lt;= minFraction;
 }
-</code></pre>
-
-<p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
-
+</code></pre><p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
 <pre><code>private void raycast(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -385,35 +317,24 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
         removeFromVision(entity, target);
     }
 }
-</code></pre>
-
-<p>That&rsquo;s it, we have a nice, reusable vision system for any 2D game!</p>
-
+</code></pre><p>That's it, we have a nice, reusable vision system for any 2D game!</p>
 <h3 id="room-for-improvement">Room for improvement</h3>
-
-<p>Like I said, this is game jam code, you have been warned! Here&rsquo;s a few things I could think of to make the system more efficient and nicer in general.</p>
-
+<p>Like I said, this is game jam code, you have been warned! Here's a few things I could think of to make the system more efficient and nicer in general.</p>
 <ul>
 <li>Collision filtering: Box2D allows us to set bit masks to bodies to filter collisions. We can leverage that to select behind which bodies observables can hide.</li>
 <li>Space partitioning: we can use a <a href="https://en.wikipedia.org/wiki/Quadtree">quadtree</a> to avoid processing every observable for each observer.</li>
-<li>Deferred raycasting: we probably don&rsquo;t need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won&rsquo;t ever notice if that guard spotted him a couple of frames later.</li>
+<li>Deferred raycasting: we probably don't need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won't ever notice if that guard spotted him a couple of frames later.</li>
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
-
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
-
-<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png" /></p>
-
+<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png"></p>
 <h3 id="use-it-improve-it-give-feedback">Use it, improve it, give feedback</h3>
-
 <p>Find the full source for the vision system here:</p>
-
 <ul>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/systems/VisionSystem.java"><code>VisionSystem</code></a></li>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObserverComponent.java"><code>ObserverComponent</code></a></li>
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObservableComponent.java"><code>ObservableComponent</code></a></li>
 </ul>
-
 <p>Let me know what you think, especially if you use it. Would love some feedback on it!</p>
 
   </div>
@@ -436,8 +357,14 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

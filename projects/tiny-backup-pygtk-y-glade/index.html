@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Tiny Backup, PyGTK y Glade</h1>
@@ -102,20 +103,12 @@
     <br/>
     <a class="label" href="../../categories/projects">Projects</a>
     </span>
-    
-
-<p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png" /></p>
-
+    <p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png"></p>
 <p>Si quieres conocer una biblioteca o un lenguaje nuevos lo mejor es, sin lugar a dudas, utilizarlos. Había mirado ya algunas cosas sobre Python pero hace algunos meses sentí la necesidad de programar algo pequeño para adquirir un mínimo de destreza. Había oído maravillas de lo sencillo y elegante que era diseñar la interfaz de una aplicación de escritorio con <strong><a href="http://glade.gnome.org/">Glade</a></strong> y manejarla con <strong><a href="http://www.pygtk.org/">PyGTK</a></strong> desde Python. Por tanto me puse manos a la obra y <strong>desarrollé Tiny Backup</strong> en un par de días.</p>
-
-<p><img src="../../img/wp/tiny-backup.png" alt="tiny-backup.png" /></p>
-
+<p><img src="../../img/wp/tiny-backup.png" alt="tiny-backup.png"></p>
 <h3 id="tiny-backup-y-su-funcionamiento">Tiny Backup y su funcionamiento</h3>
-
 <p>Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un <strong>listado de todos los paquetes</strong> que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por <strong>correo electrónico</strong> (por el momento es compatible con Gmail, Hotmail y Yahoo).</p>
-
 <p>Está diseñado siguiendo las directrices del patrón <strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas"><em>&ldquo;Arquitectura en tres capas&rdquo;</em></a></strong> aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios <strong>comandos básicos</strong> de GNU/Linux:</p>
-
 <pre><code># Guardar listado de paquetes
 dpkg --get-selections | grep -v deinstall &gt; paquetes_backup
 #Guardar listado de repositorios
@@ -126,18 +119,11 @@ mv repositorios_backup /etc/apt/sources.list
 gksudo apt-get update
 # Restaurar paquetes
 dpkg --set-selections &lt; paquetes_backup
-</code></pre>
-
-<p>Por supuesto, es posible configurar los ficheros destino mediante el asistente de backup y restauración. Tiny Backup es libre bajo <strong>licencia <a href="http://gplv3.fsf.org/">GPL v3</a></strong> y podéis obtenerlo a través de la <a href="http://code.google.com/p/python-tiny-backup/">forja en Google Code</a>.</p>
-
-<p><img src="../../img/wp/glade.png" alt="glade.png" /></p>
-
+</code></pre><p>Por supuesto, es posible configurar los ficheros destino mediante el asistente de backup y restauración. Tiny Backup es libre bajo <strong>licencia <a href="http://gplv3.fsf.org/">GPL v3</a></strong> y podéis obtenerlo a través de la <a href="http://code.google.com/p/python-tiny-backup/">forja en Google Code</a>.</p>
+<p><img src="../../img/wp/glade.png" alt="glade.png"></p>
 <h3 id="glade-un-gran-editor-de-interfaces">Glade, un gran editor de interfaces</h3>
-
 <p>Glade es una herramienta con licencia GPL que nos permite diseñar interfaces para aplicaciones de escritorio y guardarlas en formato XML. Posteriormente, esos ficheros pueden ser cargados mediante la clase <a href="http://library.gnome.org/devel/gtk/stable/GtkBuilder.html">GtkBuilder</a> perteneciente a la API de <a href="http://www.gtk.org/">GTK</a>. Lo que significa que es compatible con <a href="http://www.gtk.org/language-bindings.html">cualquier lenguaje que posea un port</a> de GTK entre los que, por supuesto, se encuentra Python (con PyGTK).</p>
-
 <p>La filosofía de Glade consiste en <strong>separar por completo la interfaz del código</strong> de manera que podemos editarla sin necesidad de recompilaciones. Esto difiere bastante de los clásicos IDE que generan código automáticamente (muchas veces sucio y poco elegante) para manejar la vista. Como inconveniente tenemos un aumento de tiempo en el inicio de la aplicación, no obstante, es leve y no se aprecia en exceso. Existen muchas aplicaciones open source que han hecho uso de Glade, sin ir más lejos, el reproductor de música <a href="http://www.exaile.org/screens">Exaile</a> es una de ellas.</p>
-
 <p>Entre las bondades de Glade también se encuentra la capacidad para decidir la <strong>redistribución de los componentes</strong> al redimensionar los formularios, algo muy de agradecer. Es posible que tratar de abarcar el software de buenas a primeras puede ser duro pero siguiendo un <a href="http://live.gnome.org/Glade/Tutorials">buen tutorial</a> en un par de días de puede estar utilizando sin problemas.</p>
 
   </div>
@@ -160,8 +146,14 @@ dpkg --set-selections &lt; paquetes_backup
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 

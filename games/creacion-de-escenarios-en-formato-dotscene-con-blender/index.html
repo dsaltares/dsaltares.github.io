@@ -94,6 +94,7 @@
   </div>
 </div>
 
+
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Creación de escenarios en formato DotScene con Blender</h1>
@@ -102,24 +103,14 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    
-
-<p><img src="../../img/wp/escenarios-blender.png" alt="escenarios-blender.png" /></p>
-
+    <p><img src="../../img/wp/escenarios-blender.png" alt="escenarios-blender.png"></p>
 <p>Como pudisteis ver en <a href="../../proyectos/pfc/sion-tower/sion-tower-carga-de-escenarios-desde-blender-y-colisiones/" title="Sion Tower, carga de escenarios desde Blender y colisiones">el anterior vídeo</a> ya <strong>he conseguido cargar un escenario creado con Blender</strong>. En este artículo pretendo explicar porqué he escogido Blender como editor de escenarios y cómo funciona el <strong>sistema de carga y gestión de niveles</strong>. Como veremos, aún me quedan puntos por implementar pero no quería abarcarlo todo desde el principio. Todo a su tiempo, al menos el diseño está pensado para ser escalable.</p>
-
 <h3 id="blender-vs-ogitor">Blender vs Ogitor</h3>
-
 <p>A comienzos de enero escribí <a href="../../proyectos/pfc/sion-tower/ogitor-instalacion-en-linux-y-el-formato-dotscene/" title="Ogitor: instalación en Linux y el formato DotScene">un artículo</a> en el que hablaba sobre un editor de escenarios desarrollado con QT y Ogre llamado <strong><a href="http://www.ogitor.org/HomePage">Ogitor</a></strong>. Más tarde hice pruebas para ver si soportaba todo lo que necesitaba pero me di cuenta de que <strong>se quedaba corto</strong>. Es un proyecto muy prometedor pero le falta madurez y algunas cosas por implementar.</p>
-
-<p><img src="../../img/wp/ogitor.png" alt="ogitor.png" /></p>
-
+<p><img src="../../img/wp/ogitor.png" alt="ogitor.png"></p>
 <p>En cambio, <strong><a href="http://www.blender.org/">Blender</a> es un editor 3D consagrado</strong>, flexible, estable y con una comunidad mucho mayor. Busqué más alternativas y pregunté en Twitter por un buen editor de niveles <strong>compatible con el formato DotScene</strong>. El usuario <a href="http://twitter.com/#!/makiolo">@makiolo</a> también sugirió amablemente Blender. Tras varias pruebas pude obtener el vídeo del anterior artículo. Si todo va bien y no me encuentro con ningún obstáculo insalvable utilizaré Blender.</p>
-
 <h3 id="el-formato-dotscene-y-los-escenarios-de-sion-tower">El formato DotScene y los escenarios de Sion Tower</h3>
-
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml para definir escenas 3D</strong> en Ogre, podéis acceder a su DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Contiene información sobre los nodos que componen la escena: cámaras, luces y entidades. Así mismo también ofrece datos sobre la luz ambiente y el color de fondo. A continuación tenéis el fichero xml correspondiente a la escena por defecto de Blender (un cubo, una cámara y un punto de luz):</p>
-
 <pre><code>&lt;scene formatVersion=&quot;1.0.0&quot;&gt;
   &lt;nodes&gt;
     &lt;node name=&quot;Lamp&quot;&gt;
@@ -157,10 +148,7 @@
     &lt;colourbackground r=&quot;0.056563&quot; g=&quot;0.220815&quot; b=&quot;0.400000&quot;/&gt;
   &lt;/environment&gt;
 &lt;/scene&gt;
-</code></pre>
-
-<p>Ya comenté que <strong>utilizaría la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a></strong> para procesar los ficheros xml de cada nivel. Tiene un rendimiento excelente, cuenta con una documentación clara y es muy sencilla de utilizar. No requiere instalaciones ya que simplemente hay que añadir tres ficheros al proyecto. Lo que sigue es un pequeño ejemplo para leer la información del entorno de la escena:</p>
-
+</code></pre><p>Ya comenté que <strong>utilizaría la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a></strong> para procesar los ficheros xml de cada nivel. Tiene un rendimiento excelente, cuenta con una documentación clara y es muy sencilla de utilizar. No requiere instalaciones ya que simplemente hay que añadir tres ficheros al proyecto. Lo que sigue es un pequeño ejemplo para leer la información del entorno de la escena:</p>
 <pre><code>void Level::loadAmbientInfo(const pugi::xml_document&amp; doc) {
     // Cargamos el documento
     pugi::xml_node rootNode;
@@ -191,72 +179,44 @@
     // Establecemos el ambient colour
     sceneManager-&gt;setAmbientLight(ambientColour);
 }
-</code></pre>
-
-<p>Tenemos un problema y es que no <strong>nos basta con conocer los objetos que componen la escena</strong>. Para los escenarios de Sion Tower necesitamos almacenar más datos: nombre, descripción, música que sonará durante la partida, icono, oleadas de enemigos, posición inicial del personaje, posición de la reliquia, <a href="http://en.wikipedia.org/wiki/Navigation_mesh">navigation mesh</a> (para la búsqueda de caminos), etc. DotScene proporciona un campo <em>userData</em> para albergar información personalizada pero es complicado trabajar con él desde Blender. En secciones posteriores veremos cómo he abordado este problema.</p>
-
+</code></pre><p>Tenemos un problema y es que no <strong>nos basta con conocer los objetos que componen la escena</strong>. Para los escenarios de Sion Tower necesitamos almacenar más datos: nombre, descripción, música que sonará durante la partida, icono, oleadas de enemigos, posición inicial del personaje, posición de la reliquia, <a href="http://en.wikipedia.org/wiki/Navigation_mesh">navigation mesh</a> (para la búsqueda de caminos), etc. DotScene proporciona un campo <em>userData</em> para albergar información personalizada pero es complicado trabajar con él desde Blender. En secciones posteriores veremos cómo he abordado este problema.</p>
 <h3 id="exportando-desde-blender-a-dotscene">Exportando desde Blender a DotScene</h3>
-
 <p>Para exportar una escena de Blender al formato DotScene es necesario <strong>instalar el plugin correspondiente</strong>. Las instrucciones son las siguientes:</p>
-
 <ul>
-<li><a href="http://ogreaddons.svn.sourceforge.net/viewvc/ogreaddons/trunk/blendersceneexporter/ogredotscene.py">Descargar el plugin</a>
-
-<ul>
+<li><a href="http://ogreaddons.svn.sourceforge.net/viewvc/ogreaddons/trunk/blendersceneexporter/ogredotscene.py">Descargar el plugin</a></li>
 <li>Si utilizas GNU/Linux, copia el plugin en <em>~/.blender/scripts/</em> y dale permisos de ejecución.</li>
 <li>Si utilizas Windows copia el plugin en la carpeta plugins dentro del directorio de instalación de Blender. Por defecto es <em>C:\Archivos de Programa\Blender Foundation\Blender</em>.</li>
-</ul></li>
 </ul>
-
-<p><img src="../../img/wp/exportar-dotscene.png" alt="exportar-dotscene.png" /></p>
-
+<p><img src="../../img/wp/exportar-dotscene.png" alt="exportar-dotscene.png"></p>
 <p>Cuando tengamos nuestra escena en Blender hacemos click en <em>file → export → OGRE Scene</em>. Debemos seleccionar los objetos que queramos exportar (normalmente todos) y corregir los ejes X,Z ya que en Blender se disponen al revés que en Ogre. Por último elegimos la ruta destino y pulsamos sobre <em>&ldquo;exportar&rdquo;</em>.</p>
-
 <h3 id="sistema-de-carga-de-niveles">Sistema de carga de niveles</h3>
-
 <p>El sistema de carga de niveles de Sion Tower se compone de dos clases principales: <em>Level</em> y <em>LevelManager</em>. La clase <em>Level</em> contiene la información de un nivel de juego completo (escena, oleadas de enemigos, posición inicial del personaje, etc). Una vez creado, un objeto <em>Level</em> puede encontrarse en dos estados: <strong>inicializado</strong> o <strong>cargado</strong>. Al estar inicializado sólo estará disponible su información básica como el nombre o la descripción. Si empleamos el método <em>Level::load</em> podremos acceder a los objetos del escenario, la música que deberíamos reproducir, etc aunque ocupará mucha más memoria.</p>
-
-<p><img src="../../img/wp/levels.png" alt="levels.png" /></p>
-
+<p><img src="../../img/wp/levels.png" alt="levels.png"></p>
 <p>Cuando se crea un nivel, se lee la i<strong>nformación básica</strong> de un sencillo fichero xml independiente del DotScene. Los niveles tienen un identificador de forma que el fichero DotScene debe ser i<em>d_scene.xml</em> y el que contiene información básica debe ser <em>id_info.xml</em>. Lo siguiente es un ejemplo de fichero de información básica:</p>
-
 <pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;basicinfo&gt;
     &lt;name&gt;The Hall&lt;/name&gt;
     &lt;description&gt;Some Goblins assault the main Hall of the Tower&lt;/description&gt;
     &lt;song name=&quot;music.ogg&quot; group=&quot;&quot; /&gt;
 &lt;/basicinfo&gt;
-</code></pre>
-
-<p>La clase <em>LevelManager</em> es la encargada de detectar los niveles disponibles, inicializarlos, controlar su ciclo de vida y permitir al usuario el acceso a los mismos. Sigue el patrón <a href="http://es.wikipedia.org/wiki/Singleton">Singleton</a> y en el momento de su creación toma todos los ficheros <em>_info.xml</em> del directorio <em>media/levels</em> para construir los niveles.</p>
-
-<p><img src="../../img/wp/level_system.png" alt="level_system.png" /></p>
-
+</code></pre><p>La clase <em>LevelManager</em> es la encargada de detectar los niveles disponibles, inicializarlos, controlar su ciclo de vida y permitir al usuario el acceso a los mismos. Sigue el patrón <a href="http://es.wikipedia.org/wiki/Singleton">Singleton</a> y en el momento de su creación toma todos los ficheros <em>_info.xml</em> del directorio <em>media/levels</em> para construir los niveles.</p>
+<p><img src="../../img/wp/level_system.png" alt="level_system.png"></p>
 <h3 id="convenciones-en-el-nombrado">Convenciones en el nombrado</h3>
-
 <p><strong>Los nodos</strong> que contengan entidades (mayas tridimensionales) <strong>pueden tener varios significados</strong> dentro de Sion Tower en función de su nombrado.</p>
-
 <ul>
 <li><strong>Objetos colisionables</strong>: siguen el patrón <em>&ldquo;scene – objectType – objectNumber&rdquo;</em>. El tipo de objeto nos indica el modelo colisionable que posee (table, bigWall, chair…). El número evita que tengamos entidades duplicadas.</li>
 <li><strong>Posición del jugador</strong>: la entidad <em>&ldquo;player&rdquo;</em> se utiliza para definir la posición inicial del jugador.</li>
 <li><strong>Posición de la reliquia</strong>: la entidad <em>&ldquo;relic&rdquo;</em> define la posición del objeto precioso que debe proteger nuestro protagonista.</li>
 </ul>
-
 <p>El fichero DotScene generado con Blender deberá contener información adicional aún no implementada como:</p>
-
 <ul>
 <li><strong>Navigation mesh</strong>: maya que indica la superficie por la que pueden desplazarse los enemigos. Resultará muy útil para la búsqueda de caminos y la inteligencia artificial.</li>
 <li><strong>Oleadas de enemigos</strong>: otras entidades deberán definir el tipo de enemigo, el momento en el que entrará y por dónde lo hará.</li>
 </ul>
-
-<p><img src="../../img/wp/wow-navmesh.jpg" alt="wow-navmesh.jpg" /></p>
-
+<p><img src="../../img/wp/wow-navmesh.jpg" alt="wow-navmesh.jpg"></p>
 <p>El navigation mesh puede representarse mediante pequeñas esferas, así como la posición inicial de la reliquia o el personaje, a gusto del diseñador de niveles. Lo importante es que se cumplan las reglas de nombrado.</p>
-
 <h3 id="catálogo-de-objetos-colisionables">Catálogo de objetos colisionables</h3>
-
 <p>La clase <em>LevelManager</em> lleva internamente un catálogo de objetos Body que definen los tipos de elementos colisionables que podemos encontrar en la escena. Al cagar un nivel y toparnos con una entidad del tipo <em>&ldquo;scene – objectType – objectNumber&rdquo;</em> le pedimos a <em>LevelManager</em> que nos devuelva el Body correspondiente con el identificador indicado mediante el método <em>createBodyFromCatalog()</em>. El catálogo se pruebla al crear la única instancia de <em>LevelManager</em> desde un fichero como el siguiente:</p>
-
 <pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;bodies&gt;
     &lt;body name=&quot;floor&quot; type=&quot;1&quot;&gt;
@@ -293,10 +253,7 @@
         &lt;/shape&gt;
     &lt;/body&gt;
 &lt;/bodies&gt;
-</code></pre>
-
-<h3 id="próximamente">Próximamente</h3>
-
+</code></pre><h3 id="próximamente">Próximamente</h3>
 <p>Espero terminar de pulir el sistema de niveles y conseguir el arte necesario para subir un nuevo vídeo más vistoso. <strong>¡Seguiré informando!</strong></p>
 
   </div>
@@ -319,8 +276,14 @@
 <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
 
+
 <script src="../../js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="../../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 </body>
 </html>
 
