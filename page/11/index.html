@@ -102,6 +102,38 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-2-0-released/">Ashley 1.2.0 released</a>
+      </h1>
+      <span class="post-date">Sep 14, 2014 &middot; <a href="https://saltares.com/projects/ashley-1-2-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>There have been quite a few things happening in <a href="https://github.com/libgdx/ashley">Ashley</a> during the past month, enough to call for a brand new release. <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.2.0">Ashley 1.2.0</a> can now be fetched from Maven Central and this is what you'll find new.</p>
+<ul>
+<li><strong><a href="https://github.com/libgdx/ashley/pull/51">API addition</a></strong>: people requested to put <code>Entity#getComponent(Class)</code> back in, so we accepted <a href="https://github.com/libgdx/ashley/commits/master?author=SgtCoDFish">SgtCODFish</a>‘s PR. <code>ComponentMapper</code> is still the most efficient and encouraged method to retrieve an entity's components.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/28372993d60d6e2f460f36e27df953936e550933">API addition</a></strong>: added <code>PooledEngine#clearPools()</code> to delete unused entity and component pool memory.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/188239aeaa3e99c9bd7ebab268a9e9959d2a09c2">API addition</a></strong>: adds <code>EntitySystem#setProcessing(boolean)</code> so as to be able to enable/disable systems at will.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/8f54a2a5ee97c87cba57bd187b4aeb2aef7ec831">API addition</a></strong>: adds <code>Engine#getSystems()</code>.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/f90d12932bd958061eb0ad33b925cf6457880c46">API addition</a></strong>: you can now listen to entity events on a per family basis.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/d5ace4e43a32c27fec82821b90b3e55c89ad373f">Crash fix</a></strong>: things would blow up if you deleted entities from <code>IteratingSystem#processEntity()</code>.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/pull/52">Bug fix</a></strong>: removing listeners while dispatching a <code>Signal</code> would make other listeners miss the event. Thanks to <a href="https://github.com/libgdx/ashley/commits/master?author=vlaaad">vlaaad</a> for the PR!</li>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/44">Bug fix</a></strong>: some entities were skipped if the user removed an entity from the engine mid system update. Removing an entity from a system by changing its components mid iteration also caused problems, which are now solved.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/56">Bug fix</a></strong>: there was a problem with family membership not being properly updated when removing a component from an entity was supposed to result in said entity being added to the family. This only affected families that exclude components.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/59">Internals</a></strong>: small performance improvement.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/d6fec987e1ce493c559a7e8fdea7fc8f6cd82d7b">Others</a></strong>: added benchmark suite to compare Ashley's performance with Atermis&rsquo;.</li>
+</ul>
+<p>If you're using the nightly builds, please change your dependency to <code>com.badlogicgames.ashley:ashley:1.2.1-SNAPSHOT</code>. Both the <a href="https://github.com/libgdx/ashley/wiki">wiki</a> and the <a href="http://libgdx.badlogicgames.com/ashley/docs/">javadocs</a> have been updated to reflect the latest changes.</p>
+<p>Thanks to everyone using Ashley, opening issues and, of course, sending pull requests. I'm extremely pleased with the response, it's awesome to see <a href="https://github.com/libgdx/ashley/pulse/monthly">how active things are</a>.</p>
+<p>Keep it up guys!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/ashley-1-1-0-released/">Ashley 1.1.0 released</a>
       </h1>
       <span class="post-date">Aug 10, 2014 &middot; <a href="https://saltares.com/projects/ashley-1-1-0-released/#disqus_thread">Comments</a>
@@ -175,29 +207,6 @@
 <p><a href="https://github.com/dsaltares/ashley-superjumper">Ashley Super Jumper</a> has been my weekend project. It is nothing more than a clone of the <a href="https://github.com/libgdx/libgdx-demo-superjumper">Libgdx demo game</a>. The catch is that it goes for an entity system approach rather than the classic inheritance model. Naturally, it uses Ashley.</p>
 <p>The point was to have a reference project folks could check out in order to understand how entity systems in general and Ashley in particular work.</p>
 <p>Maybe one day, I'll post a proper article explaining the design behind the entity systems at play in Super Jumper. I guess that could be useful.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/">Libgdx setup tool now supports Ashley</a>
-      </h1>
-      <span class="post-date">Jul 22, 2014 &middot; <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/gdx-setup-ashley.png" alt="gdx-setup-ashley.png"></p>
-<p><a href="https://github.com/libgdx/libgdx/commit/dfbb2dc4c5a146f5255bc358a7c8a591735bff3f">Last night</a> I added Ashley support to the official <a href="http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar">Libgdx setup tool</a>. Creating Libgdx projects that use Ashley entity framework is now even easier. Simply make sure you tick the Ashley checkbox before generating your project.</p>
-<p>By the way, if you already have a a project, adding the extra dependency is also trivial.</p>
-<ul>
-<li>Core project: <code>com.badlogicgames.ashley:ashley:1.0.1</code></li>
-<li>Android project: <code>com.badlogicgames.ashley:ashley:1.0.1</code></li>
-<li>GWT project: <code>com.badlogicgames.ashley:ashley:1.0.1:sources</code></li>
-</ul>
-<p>Remember that using Ashley in non Libgdx projects is also perfectly fine.</p>
 
       
     </div>

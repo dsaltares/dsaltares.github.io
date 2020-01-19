@@ -102,6 +102,38 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-7-0-released/">Ashley 1.7.0 released</a>
+      </h1>
+      <span class="post-date">Nov 10, 2015 &middot; <a href="https://saltares.com/projects/ashley-1-7-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>There's a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for
+<a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.0">1.7.0</a> below:</p>
+<ul>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/182">API change</a></strong>: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games.</li>
+<li><strong><a href="84de67991b343828c668985bd1cd5a4a1309cafa">Update</a></strong>: components are added/removed immediately, listeners are notified after the current system finishes updating.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/b611dd98e28f4dc15d64b7340c8d507ba29153d5">Bug fix</a></strong>: fixed entity listeners not being called if a component is added inside another listener.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/9ae5e459b437d7a51bfc48283cf5cd20e82989f9">Bug fix</a></strong>: does not allocate memory inside <code>updateFamilyMembership()</code>.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/4799007c457f714ad9fe0ad606a4a0f25b825ab7">Update</a></strong>: uses Libgdx 1.7.1.</li>
+</ul>
+<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.0</code>.
+The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.1-SNAPSHOT</code>.</p>
+<p>Next, I am going to be focusing on code quality and maintainability. Particularly, try
+and <a href="https://github.com/libgdx/ashley/issues/178">split <code>Engine</code></a> internally into smaller
+logical components whilst keeping the API intact.</p>
+<p>As usual, <a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a>
+and the wiki is up to date. Please keep up the good work sending more pull
+requests and reporting bugs!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/">Win a free digital copy of Libgdx Cookbook</a>
       </h1>
       <span class="post-date">Sep 21, 2015 &middot; <a href="https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/#disqus_thread">Comments</a>
@@ -197,45 +229,6 @@ code will be trivial. To use it, change your dependency to <code>com.badlogicgam
 The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.6.1-SNAPSHOT</code>. As usual,
 <a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a> and
 the wiki is up to date. Please keep up the good work sending more pull requests and reporting bugs.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/libgdx-at-intel-buzz-workshop-stockholm-2015-pictures-and-video/">Libgdx at Intel Buzz Workshop Stockholm 2015: pictures and video</a>
-      </h1>
-      <span class="post-date">Jul 28, 2015 &middot; <a href="https://saltares.com/games/libgdx-at-intel-buzz-workshop-stockholm-2015-pictures-and-video/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/libgdx-intel-buzz-workshop.jpg" alt="libgdx-intel-buzz-workshop.jpg"></p>
-<p>As I recently <a href="../../games/libgdx-at-intel-buzz-workshop-stockholm-2015/">mentioned</a>,
-a couple of weeks ago I flew to Stockholm to attend the
-<a href="https://software.intel.com/en-us/event/buzzworkshop">Intel Buzz Workshop</a>, a conference
-focused on mobile games development where I preached the perks of Libgdx.
-The event had a great turnout and my talk seemed to have been well received.
-Moreover, I also got to meet cool people <a href="http://www.urbandictionary.com/define.php?term=IRL">IRL</a> such as <a href="https://github.com/junkdog">Adrian</a>, the guy behind the <a href="https://github.com/junkdog/artemis-odb">Artemis ECS</a>.</p>
-<p>For those who missed it and would like to watch me ramble about how brilliant
-Libgdx is for a whole 20 minutes, here is the video.</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/WtxpxR3LK3M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>Make sure you check out the
-<a href="https://www.youtube.com/playlist?list=PLuP4XLxfL4Q6dwHc84_fb4IW6XGWGKr-v">full event playlist</a>,
-there is quite a bit of good material there! Take a look at the
-<a href="https://www.flickr.com/photos/bemyapp/sets/72157655838021780/">full event gallery</a> and be
-all jealous of how much fun people had.</p>
-<p>Conveniently, the event was on a Friday, which gave me the rest of the weekend to visit Stockholm. Lovely archipelago-city, boats, bridges, nice medieval buildings and fresh fish. Definitely do not miss the Vasa and the Nobel museums.</p>
-<p><img src="../../img/wp/stockholm-1024x454.jpg" alt="stockholm-1024x454.jpg"></p>
-<p>Finally, I couldn't possibly go without thanking the organisers,
-<a href="https://twitter.com/bemyapp">BeMyAp</a> in general and <a href="https://fr.linkedin.com/pub/johanne-mamet/47/558/199/en">Johanne</a>
-in particular who was awesome in making sure everything was flawless.
-The opportunity was much appreciated! Oh! They&quot;re preparing a <a href="http://intelbuzz.bemyapp.com/berlin/">similar event in Berlin</a> on September 22nd, sign up for it if you missed this one.</p>
 
       
     </div>

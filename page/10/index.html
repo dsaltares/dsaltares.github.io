@@ -102,6 +102,29 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/">Libgdx for Cross-platform Game Development Cookbook is out!</a>
+      </h1>
+      <span class="post-date">Oct 30, 2014 &middot; <a href="https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/general">General</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/libgdx-cookbook-cover.png" alt="libgdx-cookbook-cover.png"></p>
+<p>After over a year of long hours after my day job, sweat, blood and tears, my colleague <a href="https://twitter.com/omniyo">Alberto Cejas</a> and I are extremely proud to announce that our <strong><a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">Libgdx for Cross-platform Game Development Cookbook has finally been published</a></strong>.</p>
+<p>The cookbook has over 75 practical recipes on how to get stuff done with <a href="http://libgdx.badlogicgames.com/">Libgdx</a>. It covers pretty much everything: graphics, input, audio, physics, maps, deployment and third-party extensions among many, many more. Far from being a dumbed down guide, it offers content ranging from basic to advanced. A good chunk of it you won't find anywhere else.</p>
+<p>Conveniently, you can get a DRM free e-book copy or go for the physical edition, which also includes the digital one. Additionally, you can get physical copies from <a href="http://www.amazon.co.uk/Libgdx-Cross-platform-Game-Development-Cookbook/dp/1783287292/ref=sr_1_5?ie=UTF8&amp;qid=1414585532&amp;sr=8-5&amp;keywords=david+saltares">Amazon</a>. All the source code can be downloaded from both the publisher's website and our <a href="https://github.com/dsaltares/libgdx-cookbook">GitHub repository</a>. We'll do out best to maintain the later so it works flawlessly with the latest Libgdx version.</p>
+<p>It's been a hell of a ride with plenty of ups and downs. We are happy with the result, have high hopes on the project's success and are eager to get some feedback from readers.</p>
+<p>Many thanks to those of you who have shown interest in the project and even pre-ordered it. The response has been really positive!</p>
+<p>Also, thanks to all our technical reviewers, you greatly helped improved the final result with your feedback.</p>
+<p>Lastly, special thanks to <a href="https://twitter.com/badlogicgames">Mario</a> and the <a href="https://github.com/orgs/libgdx/teams/owners">Libgdx team</a> for fostering the best open source game development framework and community. Needless to say, this book wouldn't exist without them.</p>
+<p>Happy coding!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/">The future of affordable high end Android phones</a>
       </h1>
       <span class="post-date">Oct 19, 2014 &middot; <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/#disqus_thread">Comments</a>
@@ -205,38 +228,6 @@
 <p>For those interested, here are the options I used.</p>
 <pre><code>gource -1280x720 --seconds-per-day 0.5 --auto-skip-seconds 0.5 --key
 </code></pre>
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/ashley-1-2-0-released/">Ashley 1.2.0 released</a>
-      </h1>
-      <span class="post-date">Sep 14, 2014 &middot; <a href="https://saltares.com/projects/ashley-1-2-0-released/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
-<p>There have been quite a few things happening in <a href="https://github.com/libgdx/ashley">Ashley</a> during the past month, enough to call for a brand new release. <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.2.0">Ashley 1.2.0</a> can now be fetched from Maven Central and this is what you'll find new.</p>
-<ul>
-<li><strong><a href="https://github.com/libgdx/ashley/pull/51">API addition</a></strong>: people requested to put <code>Entity#getComponent(Class)</code> back in, so we accepted <a href="https://github.com/libgdx/ashley/commits/master?author=SgtCoDFish">SgtCODFish</a>‘s PR. <code>ComponentMapper</code> is still the most efficient and encouraged method to retrieve an entity's components.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/28372993d60d6e2f460f36e27df953936e550933">API addition</a></strong>: added <code>PooledEngine#clearPools()</code> to delete unused entity and component pool memory.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/188239aeaa3e99c9bd7ebab268a9e9959d2a09c2">API addition</a></strong>: adds <code>EntitySystem#setProcessing(boolean)</code> so as to be able to enable/disable systems at will.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/8f54a2a5ee97c87cba57bd187b4aeb2aef7ec831">API addition</a></strong>: adds <code>Engine#getSystems()</code>.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/f90d12932bd958061eb0ad33b925cf6457880c46">API addition</a></strong>: you can now listen to entity events on a per family basis.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/d5ace4e43a32c27fec82821b90b3e55c89ad373f">Crash fix</a></strong>: things would blow up if you deleted entities from <code>IteratingSystem#processEntity()</code>.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/pull/52">Bug fix</a></strong>: removing listeners while dispatching a <code>Signal</code> would make other listeners miss the event. Thanks to <a href="https://github.com/libgdx/ashley/commits/master?author=vlaaad">vlaaad</a> for the PR!</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/44">Bug fix</a></strong>: some entities were skipped if the user removed an entity from the engine mid system update. Removing an entity from a system by changing its components mid iteration also caused problems, which are now solved.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/56">Bug fix</a></strong>: there was a problem with family membership not being properly updated when removing a component from an entity was supposed to result in said entity being added to the family. This only affected families that exclude components.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/59">Internals</a></strong>: small performance improvement.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/d6fec987e1ce493c559a7e8fdea7fc8f6cd82d7b">Others</a></strong>: added benchmark suite to compare Ashley's performance with Atermis&rsquo;.</li>
-</ul>
-<p>If you're using the nightly builds, please change your dependency to <code>com.badlogicgames.ashley:ashley:1.2.1-SNAPSHOT</code>. Both the <a href="https://github.com/libgdx/ashley/wiki">wiki</a> and the <a href="http://libgdx.badlogicgames.com/ashley/docs/">javadocs</a> have been updated to reflect the latest changes.</p>
-<p>Thanks to everyone using Ashley, opening issues and, of course, sending pull requests. I'm extremely pleased with the response, it's awesome to see <a href="https://github.com/libgdx/ashley/pulse/monthly">how active things are</a>.</p>
-<p>Keep it up guys!</p>
-
       
     </div>
     

@@ -6,10 +6,20 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Easily deploy your Hugo site to Github Pages</title>
+      <link>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</link>
+      <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</guid>
+      <description>I had been using a DigitalOcean droplet to host this blog and personal projects for years. But&amp;hellip; Do I really need to spend the $6/month? It&#39;s just a static Hugo site, which Github pages can do for free. Game hosting on itch.io is also free, it even gives you a mechanism to embed your web games. Looks like I&#39;d be sorted!
+Here&#39;s a simple CD workflow for deploying a Huge site to Github pages.</description>
+    </item>
     
     <item>
       <title>Onederful Wizard</title>
