@@ -202,7 +202,7 @@ public void entityRemoved(Entity entity) {
 protected void processEntity(Entity observer, float deltaTime) {
     updateVision(observer);
 }
-</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer's visible entities.</p>
+</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
 <pre><code>private void updateVision(Entity observer) {
     for (Entity observable : observables) {
         updateVision(observer, observable);
@@ -216,7 +216,7 @@ protected void processEntity(Entity observer, float deltaTime) {
 private void removeFromVision(Entity observer, Entity observable) {
     vision.get(observer).remove(observable)
 }
-</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer's FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
+</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
 <pre><code>private void updateVision(Entity observer, Entity observable) {
     if (!inFov(observer, observable)) {
         removeFromVision(observer, observable);
@@ -228,7 +228,7 @@ private void removeFromVision(Entity observer, Entity observable) {
 </code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
 <pre><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
 private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
-</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer's vision angle. The math is be pretty simple here.</p>
+</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
 <pre><code>private boolean inFov(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -254,7 +254,7 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre><p>It's time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don't need to constantly allocate memory.</p>
+</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
 <pre><code>private VisionCallback callback = new VisionCallback();
 </code></pre><p>Its outline is pretty simple.</p>
 <pre><code>private class VisionCallback implements RayCastCallback {
@@ -317,13 +317,13 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
         removeFromVision(entity, target);
     }
 }
-</code></pre><p>That's it, we have a nice, reusable vision system for any 2D game!</p>
+</code></pre><p>That&rsquo;s it, we have a nice, reusable vision system for any 2D game!</p>
 <h3 id="room-for-improvement">Room for improvement</h3>
-<p>Like I said, this is game jam code, you have been warned! Here's a few things I could think of to make the system more efficient and nicer in general.</p>
+<p>Like I said, this is game jam code, you have been warned! Here&rsquo;s a few things I could think of to make the system more efficient and nicer in general.</p>
 <ul>
 <li>Collision filtering: Box2D allows us to set bit masks to bodies to filter collisions. We can leverage that to select behind which bodies observables can hide.</li>
 <li>Space partitioning: we can use a <a href="https://en.wikipedia.org/wiki/Quadtree">quadtree</a> to avoid processing every observable for each observer.</li>
-<li>Deferred raycasting: we probably don't need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won't ever notice if that guard spotted him a couple of frames later.</li>
+<li>Deferred raycasting: we probably don&rsquo;t need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won&rsquo;t ever notice if that guard spotted him a couple of frames later.</li>
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>

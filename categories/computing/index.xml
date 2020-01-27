@@ -17,7 +17,7 @@
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
       <guid>https://saltares.com/projects/conjugate/</guid>
-      <description>For the past few weeks working on a new toy: Conjugate. It&#39;s probably easier if I just stick a summary of the GitHub readme here.
+      <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
  I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
@@ -29,7 +29,7 @@ Reason to be When learning a new language, it is very common to struggle with ve
       <pubDate>Wed, 31 Dec 2014 13:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/computing/recover-history-with-git/</guid>
-      <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&#39;t been pushed to origin yet. However, I didn&#39;t realise at the time.
+      <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&amp;rsquo;t been pushed to origin yet. However, I didn&amp;rsquo;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
  Oh noes!
  Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.</description>
@@ -41,7 +41,7 @@ After a couple of weeks, a hundred commits and many other branches mingling abou
       <pubDate>Sun, 14 Dec 2014 21:27:11 +0000</pubDate>
       
       <guid>https://saltares.com/computing/book-review-clean-code/</guid>
-      <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&#39;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
+      <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&amp;rsquo;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
 Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, Clean Code.
 And so I read it.</description>
     </item>
@@ -63,10 +63,10 @@ The problem It is extremely common to have an event generating system other comp
       <pubDate>Fri, 14 Mar 2014 16:42:15 +0000</pubDate>
       
       <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
-      <description>Developers love Libgdx, it&#39;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&#39;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
+      <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
 Have you thought about contributing back?
  Who, me?
- Yes and here&#39;s why.
+ Yes and here&amp;rsquo;s why.
 So much win The beauty of a healthy community driven project such as Libgdx is that decisions are crowd-sourced and code is always peer reviewed.</description>
     </item>
     
@@ -88,7 +88,7 @@ Downloading dependencies while your machine is behind a proxy might prove proble
       
       <guid>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
       <description>Needless to say, C++ is a glorious language. Sadly, the attention it gets on the blog is far from representative of my appreciation towards it. Despite it being my main language at work, I only tend to talk about Libgdx side projects around here. Well, enough is enough!
-Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&#39;s actually a set of languages.</description>
+Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&amp;rsquo;s actually a set of languages.</description>
     </item>
     
     <item>
@@ -97,7 +97,7 @@ Truth be told, over the years, standard after standard, C++ has become a behemot
       <pubDate>Sun, 14 Apr 2013 07:57:55 +0000</pubDate>
       
       <guid>https://saltares.com/computing/dont-be-a-dick-with-the-community/</guid>
-      <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&#39;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
+      <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&amp;rsquo;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
     </item>
     
     <item>
@@ -115,7 +115,7 @@ Truth be told, over the years, standard after standard, C++ has become a behemot
       <pubDate>Thu, 12 Jan 2012 22:00:27 +0000</pubDate>
       
       <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
-      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&#39;ve been working on recently:
+      <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
  Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
     
@@ -125,7 +125,7 @@ Truth be told, over the years, standard after standard, C++ has become a behemot
       <pubDate>Tue, 08 Nov 2011 19:15:49 +0000</pubDate>
       
       <guid>https://saltares.com/computing/shiny-pc-graphics-in-battlefield-3/</guid>
-      <description>Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called &amp;ldquo;Shiny PC graphics in Battlefield 3&amp;rdquo; during the last nVidia GeForce LAN. It&#39;s focused on the latest improvements the Frostbite 2 engine includes and I think it&#39;s a pretty good example of where the graphics technology is going.
+      <description>Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called &amp;ldquo;Shiny PC graphics in Battlefield 3&amp;rdquo; during the last nVidia GeForce LAN. It&amp;rsquo;s focused on the latest improvements the Frostbite 2 engine includes and I think it&amp;rsquo;s a pretty good example of where the graphics technology is going.
 Click on more to see the videos.
   </description>
     </item>

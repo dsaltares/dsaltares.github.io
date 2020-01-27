@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -113,7 +113,7 @@
       <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
 <p>Small <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.2">1.7.2</a> below:</p>
 <ul>
-<li><a href="https://github.com/libgdx/ashley/issues/209"><strong>Bug fix</strong></a>: <code>Engine</code> doesn't use <code>EntitySystem</code> <code>iterator()</code>.</li>
+<li><a href="https://github.com/libgdx/ashley/issues/209"><strong>Bug fix</strong></a>: <code>Engine</code> doesn&rsquo;t use <code>EntitySystem</code> <code>iterator()</code>.</li>
 <li><a href="https://github.com/libgdx/ashley/issues/210"><strong>Bug fix</strong></a>: Fixes <code>Engine</code> left unusable, in the updating state, after an uncaught exception in a subsystem.</li>
 <li><a href="https://github.com/libgdx/ashley/issues/210"><strong>Bug fix</strong></a>: Fixes <code>FamilyManager</code> not cleaning up properly when a triggering a listener that throws.</li>
 </ul>
@@ -134,7 +134,7 @@
       
       <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
 <p><img src="../../img/others/console1.jpg" alt="console1.jpg"></p>
-<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It's incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project's dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
+<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
 <pre><code>private Console console;
 
 @Override
@@ -148,7 +148,7 @@ public void create() {
 }
 </code></pre><p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
 <pre><code>console.draw();
-</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let's specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
+</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let&rsquo;s specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
 <pre><code>public class GameCommandExecutor extends Command {
     private Console console;
 
@@ -170,9 +170,9 @@ public void create() {
 }
 </code></pre><p>At some point, we need to register the executor with the console.</p>
 <pre><code>console.setCommandExecutor(new GameCommandExecutor(console));
-</code></pre><p>Done, that's it!</p>
+</code></pre><p>Done, that&rsquo;s it!</p>
 <p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png"></p>
-<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it's fully compatible with the WebGL backend. It's also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
+<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
 
       
     </div>
@@ -286,7 +286,7 @@ public void entityRemoved(Entity entity) {
 protected void processEntity(Entity observer, float deltaTime) {
     updateVision(observer);
 }
-</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer's visible entities.</p>
+</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
 <pre><code>private void updateVision(Entity observer) {
     for (Entity observable : observables) {
         updateVision(observer, observable);
@@ -300,7 +300,7 @@ protected void processEntity(Entity observer, float deltaTime) {
 private void removeFromVision(Entity observer, Entity observable) {
     vision.get(observer).remove(observable)
 }
-</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer's FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
+</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
 <pre><code>private void updateVision(Entity observer, Entity observable) {
     if (!inFov(observer, observable)) {
         removeFromVision(observer, observable);
@@ -312,7 +312,7 @@ private void removeFromVision(Entity observer, Entity observable) {
 </code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
 <pre><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
 private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
-</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer's vision angle. The math is be pretty simple here.</p>
+</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
 <pre><code>private boolean inFov(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
@@ -338,7 +338,7 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre><p>It's time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don't need to constantly allocate memory.</p>
+</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
 <pre><code>private VisionCallback callback = new VisionCallback();
 </code></pre><p>Its outline is pretty simple.</p>
 <pre><code>private class VisionCallback implements RayCastCallback {
@@ -401,13 +401,13 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
         removeFromVision(entity, target);
     }
 }
-</code></pre><p>That's it, we have a nice, reusable vision system for any 2D game!</p>
+</code></pre><p>That&rsquo;s it, we have a nice, reusable vision system for any 2D game!</p>
 <h3 id="room-for-improvement">Room for improvement</h3>
-<p>Like I said, this is game jam code, you have been warned! Here's a few things I could think of to make the system more efficient and nicer in general.</p>
+<p>Like I said, this is game jam code, you have been warned! Here&rsquo;s a few things I could think of to make the system more efficient and nicer in general.</p>
 <ul>
 <li>Collision filtering: Box2D allows us to set bit masks to bodies to filter collisions. We can leverage that to select behind which bodies observables can hide.</li>
 <li>Space partitioning: we can use a <a href="https://en.wikipedia.org/wiki/Quadtree">quadtree</a> to avoid processing every observable for each observer.</li>
-<li>Deferred raycasting: we probably don't need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won't ever notice if that guard spotted him a couple of frames later.</li>
+<li>Deferred raycasting: we probably don&rsquo;t need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won&rsquo;t ever notice if that guard spotted him a couple of frames later.</li>
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
@@ -566,7 +566,7 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
       </span>
       
       <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
-<p>There's a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.1">1.7.1</a> below:</p>
+<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.1">1.7.1</a> below:</p>
 <ul>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/5277cbe83264d0ddc851a823232f51c350e9c387">API addition</a></strong>: expose <code>IntervalSystem</code> interval value (read-only).</li>
 <li><strong><a href="https://github.com/libgdx/ashley/issues/197">Bug fix</a></strong>: fixed pending entity operations not being processed in the right order.</li>
@@ -576,7 +576,7 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <li><strong><a href="https://github.com/libgdx/ashley/commit/92fa5c7179bf77a39a81cf20a5328a2fc4ca8c5f">Update</a></strong>: uses Libgdx 1.8.0.</li>
 </ul>
 <p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.1</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.2-SNAPSHOT</code>.</p>
-<p>It's really motivating to see how many people are using Ashley in their projects,
+<p>It&rsquo;s really motivating to see how many people are using Ashley in their projects,
 including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=libgdxjam%20ashley&amp;src=typd">#LibGDXJAM</a>!</p>
 
       

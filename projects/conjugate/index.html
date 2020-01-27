@@ -103,7 +103,7 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/projects">Projects</a>
     </span>
-    <p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It's probably easier if I just stick a summary of the GitHub readme here.</p>
+    <p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It&rsquo;s probably easier if I just stick a summary of the GitHub readme here.</p>
 <p>Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.</p>
 <p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg"></p>
 <h3 id="reason-to-be">Reason to be</h3>
@@ -114,8 +114,8 @@
 <p>Unfortunately, the available resources are somehow limited:</p>
 <ul>
 <li>Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.</li>
-<li>Apps: seriously? I don't want to install yet another app!</li>
-<li>Websites: lists are limited, the sites are old, full of ads and/or don't play well with mobile devices.</li>
+<li>Apps: seriously? I don&rsquo;t want to install yet another app!</li>
+<li>Websites: lists are limited, the sites are old, full of ads and/or don&rsquo;t play well with mobile devices.</li>
 </ul>
 <p>Conjugate tries to solve that use case.</p>
 <h3 id="project-structure">Project structure</h3>
@@ -125,20 +125,20 @@
 <li>Mobile friendly website</li>
 </ul>
 <h4 id="scraper">Scraper</h4>
-<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn't work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
-<p>The script currently supports Romanian (which I'm trying to learn) and Spanish. Luckily, it's pretty easy to add support for new languages, although no thanks to Verbix's poor use of web standards.</p>
+<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn&rsquo;t work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
+<p>The script currently supports Romanian (which I&rsquo;m trying to learn) and Spanish. Luckily, it&rsquo;s pretty easy to add support for new languages, although no thanks to Verbix&rsquo;s poor use of web standards.</p>
 <h4 id="website">Website</h4>
-<p>Currently, I'm in the process of writing the mobile friendly application. It'll be extremely simple:</p>
+<p>Currently, I&rsquo;m in the process of writing the mobile friendly application. It&rsquo;ll be extremely simple:</p>
 <ol>
 <li>Enter a verb in English (infinitive).</li>
 <li>Select a language from a dropdown.</li>
 <li>Hit &ldquo;Go&rdquo;.</li>
 </ol>
 <p><img src="../../img/conjugate/flask.png" alt="flask.png"></p>
-<p>For the backend I'm using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they're really easy to get started with. Not too sure about the frontend, but I'll probably go for a framework that makes responsive design simple enough.</p>
+<p>For the backend I&rsquo;m using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they&rsquo;re really easy to get started with. Not too sure about the frontend, but I&rsquo;ll probably go for a framework that makes responsive design simple enough.</p>
 <p>Any suggestions?</p>
 <h3 id="progress">Progress</h3>
-<p>I've been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I'd be more than happy to accept PR's if you're interested to help!</p>
+<p>I&rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&rsquo;d be more than happy to accept PR&rsquo;s if you&rsquo;re interested to help!</p>
 
   </div>
   <div id="disqus_thread"></div>

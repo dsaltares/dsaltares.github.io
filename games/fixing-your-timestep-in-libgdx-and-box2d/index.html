@@ -113,7 +113,7 @@
 <p>Everything is lost!</p>
 </blockquote>
 <h3 id="fixed-timestep">Fixed timestep</h3>
-<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let's say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we'd only step the physics one every two frames.</p>
+<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let&rsquo;s say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we&rsquo;d only step the physics one every two frames.</p>
 <blockquote>
 <p>What happens when the game runs at 50fps?</p>
 </blockquote>
@@ -137,7 +137,7 @@
         }
 }
 </code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
-<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler's suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
+<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
 <pre><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
@@ -173,7 +173,7 @@
         entity.setAngle(bodyAngle * alpha + angle * (1.0f - alpha));
     }
 }
-</code></pre><p>Although it's been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
+</code></pre><p>Although it&rsquo;s been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
 <h3 id="a-working-sample">A working sample</h3>
 <p>Libgdx community memeber, Just4phil, pointed out in the comments the advantages of using a fixed timestep with interpolation. He kindly provided a working sample that lets you switch between all approaches explained in this article. Not only that, he also linked to the source, which is really awesome. Kudos.</p>
 <p><img src="../../img/wp/just4phil-fixed-timestep.png" alt="Fixed timestep demo"></p>
@@ -182,7 +182,7 @@
 <li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java">Fixed timestep code</a></li>
 <li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java">Interpolation code</a></li>
 </ul>
-<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven't done so already.</p>
+<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven&rsquo;t done so already.</p>
 
   </div>
   <div id="disqus_thread"></div>

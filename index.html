@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -110,13 +110,13 @@
       <a class="label" href="./categories/general">General</a>
       </span>
       
-      <p>I had been using a <a href="https://www.digitalocean.com/products/droplets/">DigitalOcean</a> droplet to host this blog and personal projects for years. But&hellip; Do I really need to spend the $6/month? It's just a static <a href="https://gohugo.io/">Hugo</a> site, which <a href="https://pages.github.com/">Github pages</a> can do for free. Game hosting on <a href="https://david-saltares.itch.io/">itch.io</a> is also free, it even gives you a mechanism to embed your web games. Looks like I'd be sorted!</p>
-<p>Here's a simple CD workflow for deploying a Huge site to Github pages.</p>
+      <p>I had been using a <a href="https://www.digitalocean.com/products/droplets/">DigitalOcean</a> droplet to host this blog and personal projects for years. But&hellip; Do I really need to spend the $6/month? It&rsquo;s just a static <a href="https://gohugo.io/">Hugo</a> site, which <a href="https://pages.github.com/">Github pages</a> can do for free. Game hosting on <a href="https://david-saltares.itch.io/">itch.io</a> is also free, it even gives you a mechanism to embed your web games. Looks like I&rsquo;d be sorted!</p>
+<p>Here&rsquo;s a simple CD workflow for deploying a Huge site to Github pages.</p>
 <h3 id="setup-your-production-github-pages-repo">Setup your production Github pages repo</h3>
 <p>Create a Github repo with the name <code>&lt;username&gt;.github.io</code>. Make sure it has a <code>README.md</code> so that you can start pushing to it. Anything pushed to this repo will be accessible from <code>http://&lt;username&gt;.github.io</code>. This will be your production repository. If you have a PRO Github account, you can make the repo private. This means users will be able to access the <code>github.io</code> site but not the repo sources.</p>
 <p><img src="./img/gh-pages-workflow/production-repo.png" alt="dsaltares.github.io"></p>
 <h3 id="create-your-dev-repository">Create your dev repository</h3>
-<p>Create a new repo to host your dev Hugo site from which we will deploy to the production repo. Name it something like <code>&lt;username&gt;.github.io-dev</code>. That's where you will write your Hugo pages in Markdown.</p>
+<p>Create a new repo to host your dev Hugo site from which we will deploy to the production repo. Name it something like <code>&lt;username&gt;.github.io-dev</code>. That&rsquo;s where you will write your Hugo pages in Markdown.</p>
 <p><img src="./img/gh-pages-workflow/dev-repo.png" alt="dsaltares.github.io-dev"></p>
 <h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
 <p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
@@ -127,35 +127,35 @@
 <p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
 <p><img src="./img/gh-pages-workflow/secrets.png" alt="secrets"></p>
 <p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">name: Build and deploy
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: Build and deploy
 
-on:
-  push:
-    branches:
+<span style="color:#66d9ef">on</span>:
+  <span style="color:#66d9ef">push</span>:
+    <span style="color:#66d9ef">branches</span>:
     - master
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-    - name: Build
-      run: hugo
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        EXTERNAL_REPOSITORY: &lt;username&gt;/&lt;username&gt;.github.io
-        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        PUBLISH_BRANCH: master
-        PUBLISH_DIR: ./public
-</code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it's done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
+<span style="color:#66d9ef">jobs</span>:
+  <span style="color:#66d9ef">build</span>:
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">steps</span>:
+    - <span style="color:#66d9ef">name</span>: Checkout
+      <span style="color:#66d9ef">uses</span>: actions/checkout@v1
+    - <span style="color:#66d9ef">name</span>: Setup Hugo
+      <span style="color:#66d9ef">uses</span>: peaceiris/actions-hugo@v2
+    - <span style="color:#66d9ef">name</span>: Build
+      <span style="color:#66d9ef">run</span>: hugo
+    - <span style="color:#66d9ef">name</span>: Deploy
+      <span style="color:#66d9ef">uses</span>: peaceiris/actions-gh-pages@v2
+      <span style="color:#66d9ef">env</span>:
+        <span style="color:#66d9ef">EXTERNAL_REPOSITORY</span>: &lt;username&gt;/&lt;username&gt;.github.io
+        <span style="color:#66d9ef">ACTIONS_DEPLOY_KEY</span>: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        <span style="color:#66d9ef">PUBLISH_BRANCH</span>: master
+        <span style="color:#66d9ef">PUBLISH_DIR</span>: ./public
+</code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
 <p><img src="./img/gh-pages-workflow/actions.png" alt="actions"></p>
 <p>Even though my blog contains hundreds of posts, images and files, <code>Build and Deploy</code> takes less than 1 minute!</p>
-<h3 id="make-your-domain-point-to-yout-github-pages">Make your domain point to yout Github Pages</h3>
-<p>Obviously, this step only applies if you have your own domain. Go to your provider's admin panel and change your domain's DNS records.</p>
+<h3 id="make-your-domain-point-to-your-github-pages">Make your domain point to your Github Pages</h3>
+<p>Obviously, this step only applies if you have your own domain. Go to your provider&rsquo;s admin panel and change your domain&rsquo;s DNS records.</p>
 <ul>
 <li>Enter 4 <code>A</code> records with <code>@</code> hosts and the Github Pages IPs:
 <ul>
@@ -208,7 +208,7 @@ Integration pipeline using the <a href="https://en.wikipedia.org/wiki/Headless_s
 <a href="https://github.com/dsaltares/godot-ci-example">godot-ci-example</a> you can copy
 to use on your own projects. Here is how it works.</p>
 <p>Firstly, create a Godot project, install Gut from the Asset Library and enable it.
-This is the same as what is explained in Gut's <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
+This is the same as what is explained in Gut&rsquo;s <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
 <p><img src="./img/godot-ci/installing_gut.gif" alt="install-gut"></p>
 <p>Create a trivial test in <code>res://test/unit/test_example.gd</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">res://addons/gut/test.gd</span><span style="color:#e6db74">&#34;</span>
@@ -219,13 +219,13 @@ This is the same as what is explained in Gut's <a href="https://github.com/bitwe
 </code></pre></div><p>You can now run these tests from the command line.</p>
 <pre><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit
 </code></pre><p>Where <code>godot</code> is your Godot binary and <code>project</code> is the folder where your game lives.</p>
-<p>Alright, we now have a basic test setup we can run locally. Let's move onto the meaty
-part of the article, continuous integration. I'll be using
-<a href="https://travis-ci.org/">Travis CI</a> because it's easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
+<p>Alright, we now have a basic test setup we can run locally. Let&rsquo;s move onto the meaty
+part of the article, continuous integration. I&rsquo;ll be using
+<a href="https://travis-ci.org/">Travis CI</a> because it&rsquo;s easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
 <p>Travis looks for a <code>.travis.yml</code> file in the root of your repo. This file tells Travis how to build the project and run tests. I recommend you take a quick look at the <a href="https://docs.travis-ci.com/user/tutorial/">docs</a>.</p>
 <p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/.travis.yml"><code>.travis.yml</code></a> file is trivial.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">language: minimal
-script: ./run_tests.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">language</span>: minimal
+<span style="color:#66d9ef">script</span>: ./run_tests.sh
 </code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
 GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64
@@ -236,9 +236,9 @@ curl <span style="color:#e6db74">${</span>GODOT_URL<span style="color:#e6db74">}
 unzip <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
 chmod +x <span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>
 ./<span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span> -d -s --path ./project addons/gut/gut_cmdln.gd -gdir<span style="color:#f92672">=</span>res://test -ginclude_subdirs -gexit
-</code></pre></div><p>As you can see, it's also pretty easy to parameterize which Godot version you want
+</code></pre></div><p>As you can see, it&rsquo;s also pretty easy to parameterize which Godot version you want
 to use.</p>
-<p>And that's it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here's what a typical build would look like</a>.</p>
+<p>And that&rsquo;s it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here&rsquo;s what a typical build would look like</a>.</p>
 <pre><code>/-----------------------------------------
 Running Script res://test/unit/test_example.gd
 -----------------------------------------/
@@ -269,7 +269,7 @@ Run Summary
       </span>
       
       <p><a href="https://2017.es.pycon.org/en/">PyCon ES 2017</a> was an absolute blast!</p>
-<p>The talks were very interesting and they're all freely available on their
+<p>The talks were very interesting and they&rsquo;re all freely available on their
 <a href="https://www.youtube.com/watch?v=8QYnf8EVoRc&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C">Youtube channel</a>.</p>
 <p>Celebrating PyCon ES 2017 in <a href="https://en.wikipedia.org/wiki/C%C3%A1ceres,_Spain">Caceres</a>,
 located in southern Spain, was a great choice. Beautiful medieval city center where <a href="https://winteriscoming.net/2016/12/16/final-images-caceres-season-7-game-thrones/">some
@@ -492,15 +492,15 @@ presentation titled <em>&ldquo;Load test your backend services with locust.io&rd
       
       <p><img src="./img/pycones/logo.png" alt="pycon-es-2017"></p>
 <p><a href="https://2017.es.pycon.org/en/">PyCon ES 2017</a>, which will be running from September
-22nd to September 24th in Cáceres, Spain. I'll be attending alongside some
+22nd to September 24th in Cáceres, Spain. I&rsquo;ll be attending alongside some
 Bloomberg colleagues as we are one of the main sponsors of the event. If you
 have tickets, definitely come say hi!</p>
-<p>I'll be helping out at a couple of presentations:</p>
+<p>I&rsquo;ll be helping out at a couple of presentations:</p>
 <ul>
 <li><a href="https://2017.es.pycon.org/en/schedule/bloomberg-landing-on-a-top-tech-tier-company/">Bloomberg - Landing on a top Tech Tier Company</a></li>
 <li><a href="https://2017.es.pycon.org/en/schedule/load-test-your-backend-with-locustio/">Load test your backend with locust.io</a></li>
 </ul>
-<p>For those not coming, I'm pretty sure all the talks will be recorded
+<p>For those not coming, I&rsquo;m pretty sure all the talks will be recorded
 and made publicly available.</p>
 
       
@@ -533,7 +533,7 @@ the food and free beer!</p>
 <li><a href="https://www.youtube.com/watch?v=p-iiEDtpy6I">Franziska Hinkelmann: JavaScript engines - how do they even?</a></li>
 <li><a href="https://www.youtube.com/watch?v=HktWin_LPf4">Lin Clark: A Cartoon Intro to WebAssembly</a></li>
 <li><a href="https://www.youtube.com/watch?v=7vUs5yOuv-o">Addy Osmani: The Browser Hackers Guide To Instantly Loading Everything</a></li>
-<li><a href="https://www.youtube.com/watch?v=9SHOfZI_SsM">Alexander Reardon: Let's go big (Big numbers in JavaScript)</a></li>
+<li><a href="https://www.youtube.com/watch?v=9SHOfZI_SsM">Alexander Reardon: Let&rsquo;s go big (Big numbers in JavaScript)</a></li>
 <li><a href="https://www.youtube.com/watch?v=H4FzW9oFObs">Laura Carvajal: YES, your site too can (and should) be accessible</a></li>
 <li><a href="https://www.youtube.com/watch?v=cZTp2MaxcJg">TC39 (JavaScript standard committee) panel</a></li>
 </ul>

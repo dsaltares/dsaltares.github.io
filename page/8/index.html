@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -111,8 +111,8 @@
       </span>
       
       <p><img src="../../img/wp/ljc.jpeg" alt="ljc.jpeg"></p>
-<p>Next Tuesday 3rd of February I will be talking about <a href="http://www.meetup.com/Londonjavacommunity/">Libgdx at the London Java Community Meetup</a>. Things won't get too technical, I'll introduce the framework, explain why it's so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won't miss this golden opportunity to cheekily mention my <a href="../../libgdx-cross-platform-game-development-cookbook/">Libgdx Cookbook</a>!</p>
-<p>If you're interested, sign up and come to the <a href="https://www.google.com/maps?f=q&amp;hl=en&amp;q=116-120+Goswell+Road,+London,+gb">The Skills Matter eXchange</a>, doors open at 6.15pm and the presentation should be around 40 minutes long.</p>
+<p>Next Tuesday 3rd of February I will be talking about <a href="http://www.meetup.com/Londonjavacommunity/">Libgdx at the London Java Community Meetup</a>. Things won&rsquo;t get too technical, I&rsquo;ll introduce the framework, explain why it&rsquo;s so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won&rsquo;t miss this golden opportunity to cheekily mention my <a href="../../libgdx-cross-platform-game-development-cookbook/">Libgdx Cookbook</a>!</p>
+<p>If you&rsquo;re interested, sign up and come to the <a href="https://www.google.com/maps?f=q&amp;hl=en&amp;q=116-120+Goswell+Road,+London,+gb">The Skills Matter eXchange</a>, doors open at 6.15pm and the presentation should be around 40 minutes long.</p>
 
       
     </div>
@@ -128,7 +128,7 @@
       </span>
       
       <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
-<p><a href="https://github.com/libgdx/ashley/pulse/monthly">As you can see</a>, Ashley development has slowed down a bit. I would like to think it's because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there's still been quite a bit of progress, enough to warrant a new release.</p>
+<p><a href="https://github.com/libgdx/ashley/pulse/monthly">As you can see</a>, Ashley development has slowed down a bit. I would like to think it&rsquo;s because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there&rsquo;s still been quite a bit of progress, enough to warrant a new release.</p>
 <p><a href="https://github.com/libgdx/ashley/releases/tag/ahsley-1.3.3">Ashley 1.3.3</a> is now out.</p>
 <ul>
 <li><strong><a href="https://github.com/libgdx/ashley/commit/1c21f972998df9d5125617f3e6b0c6cc279829d2">API addition</a></strong>: added <code>getEntity()</code> method to <code>Engine</code>, it is now possible to retrieve entities by their ID. This will ease networked entity systems.</li>
@@ -137,7 +137,7 @@
 <li><strong><a href="https://github.com/libgdx/ashley/commit/9f6aa51229544f9a66c12f7f7fdcff7e6bf5dbde">Bug fix</a></strong>: fixes component not being added to an entity when done from an <code>entityRemoved()</code> family entity listener handler.</li>
 </ul>
 <p>The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.3.4-SNAPSHOT</code>.</p>
-<p><a href="http://libgdx.badlogicgames.com:8080/job/ashley/">All unit tests are passing</a>, the wiki is up to date and life is good. Enjoy Ashley and don't forget to report anything that doesn't work as expected.</p>
+<p><a href="http://libgdx.badlogicgames.com:8080/job/ashley/">All unit tests are passing</a>, the wiki is up to date and life is good. Enjoy Ashley and don&rsquo;t forget to report anything that doesn&rsquo;t work as expected.</p>
 
       
     </div>
@@ -152,13 +152,13 @@
       <a class="label" href="../../categories/computing">Computing</a>
       </span>
       
-      <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn't been pushed to <code>origin</code> yet. However, I didn't realise at the time.</p>
+      <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&rsquo;t been pushed to <code>origin</code> yet. However, I didn&rsquo;t realise at the time.</p>
 <p>After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.</p>
 <blockquote>
 <p>Oh noes!</p>
 </blockquote>
 <p>Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using <code>git reflog</code> you can list the tip of branches, including the deleted ones. Once you find the commit you were looking for, you can just use <code>git checkout</code> to get it back. This will detach you from <code>HEAD</code>, so you will probably want to create the old branch again with <code>git checkout -b name</code>.</p>
-<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let's say you know the commit message had <code>feature x</code> in it.</p>
+<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let&rsquo;s say you know the commit message had <code>feature x</code> in it.</p>
 <pre><code>git reflog --grep='feature x'
 git checkout 123456
 git checkout -b feature-x
@@ -178,12 +178,12 @@ git checkout -b feature-x
       </span>
       
       <p><img src="../../img/wp/clean-code-uncle-bob.jpg" alt="clean-code-uncle-bob.jpg"></p>
-<p>I recently had the pleasure to attend a few lectures by <a href="http://en.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a>, also known as Uncle Bob. He's a software consultant, speaker and fierce advocate of <a href="http://en.wikipedia.org/wiki/Agile_software_development">agile methodologies</a> as well as <a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a>. Not only were the talks entertaining, but also deeply inspirational.</p>
+<p>I recently had the pleasure to attend a few lectures by <a href="http://en.wikipedia.org/wiki/Robert_Cecil_Martin">Robert C. Martin</a>, also known as Uncle Bob. He&rsquo;s a software consultant, speaker and fierce advocate of <a href="http://en.wikipedia.org/wiki/Agile_software_development">agile methodologies</a> as well as <a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a>. Not only were the talks entertaining, but also deeply inspirational.</p>
 <p>Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">Clean Code</a>.</p>
 <p>And so I read it.</p>
 <p>It has definitely changed me as a developer. I cannot look at code the same way anymore.</p>
 <p>Clean Code offers a set of very simple guidelines to help us improve the quality of our codebases little by little.</p>
-<p>You start by looking at that unholy class nobody dares to touch. Once you get the gist of it, you realise some methods and variables should be named differently, for clarity's sake. Immediately after, you identify some duplication and factor that out into a different function. Later on, you decide that a particular method is too big and it should be broken down. Maybe this class is doing too many things, lets split it up into smaller classes that do one thing and one thing only.</p>
+<p>You start by looking at that unholy class nobody dares to touch. Once you get the gist of it, you realise some methods and variables should be named differently, for clarity&rsquo;s sake. Immediately after, you identify some duplication and factor that out into a different function. Later on, you decide that a particular method is too big and it should be broken down. Maybe this class is doing too many things, lets split it up into smaller classes that do one thing and one thing only.</p>
 <p>Oh my God, suddenly that monolithic satanic pile of garbage has been tamed. Future developers (including yourself) will be able to understand it and work with it much better.</p>
 <blockquote>
 <p>Hang on! How can we make sure that it still works?</p>
@@ -208,9 +208,9 @@ git checkout -b feature-x
       </span>
       
       <p><img src="../../img/wp/kingston-phones.jpg" alt="kingston-phones.jpg"></p>
-<p>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements <a href="../../games/libgdx-workshop-at-cadiz-university/">Alberto's Libgdx workshop</a> at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">book</a>.</p>
-<p>I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students. Just like in Alberto's talk, we gave two copies of our book away to a couple of lucky students!</p>
-<p>Sadly, no pictures were taken this time round, you'll have to take my word when I say that quite a few people showed up. Thanks for that!</p>
+<p>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements <a href="../../games/libgdx-workshop-at-cadiz-university/">Alberto&rsquo;s Libgdx workshop</a> at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">book</a>.</p>
+<p>I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students. Just like in Alberto&rsquo;s talk, we gave two copies of our book away to a couple of lucky students!</p>
+<p>Sadly, no pictures were taken this time round, you&rsquo;ll have to take my word when I say that quite a few people showed up. Thanks for that!</p>
 <p>As promised, here are <a href="../../docs/libgdx-talk-notes.pdf">the slides</a> in case anyone is interested.</p>
 
       

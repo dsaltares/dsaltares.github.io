@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.62.2" />
+	<meta name="generator" content="Hugo 0.63.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -113,7 +113,7 @@
       <p><img src="../../img/wp/tiled.png" alt="tiled.png"></p>
 <p>Most of my spare time for the last month or so has gone to an Android pet project, which partially explains the lack of activity around here. However, such project gave me a little idea for a short tutorial flavoured article.</p>
 <h3 id="level-design-practically-a-synonym-of-iteration">Level design, practically a synonym of iteration</h3>
-<p>Everybody knows how essential iteration is for games development. Ideas tend to look awesome on paper, yet most of them perform poorly when implemented. Throwing away whole features and reworking others surely isn't new territory for you. Level designers probably know this better than anyone. Creating a <a href="http://www.youtube.com/watch?v=HNctAEfR97A">greybox level</a> and making hundreds of changes until it flows nicely and artist can know for sure where everything is going to be.</p>
+<p>Everybody knows how essential iteration is for games development. Ideas tend to look awesome on paper, yet most of them perform poorly when implemented. Throwing away whole features and reworking others surely isn&rsquo;t new territory for you. Level designers probably know this better than anyone. Creating a <a href="http://www.youtube.com/watch?v=HNctAEfR97A">greybox level</a> and making hundreds of changes until it flows nicely and artist can know for sure where everything is going to be.</p>
 <p>Tools like <a href="http://www.crydev.net/index.php">CryEngine SandBox</a> allow lightning fast iteration by letting the creator jump into game straight from the editor to test setups. The change something and test it cycle flows incredibly nicely and no time is wasted with annoying loading screens.</p>
 <p><img src="../../img/wp/CryENGINE-inital-scene.jpg" alt="CryENGINE-inital-scene.jpg"></p>
 <h3 id="iteration-can-be-cumbersome">Iteration can be cumbersome</h3>
@@ -130,12 +130,12 @@
 <p>Wrong!</p>
 <p>You&quot;ll be doing this a ridiculous number of times, so you better do yourself a favor and try shorten the process.</p>
 <h3 id="tiled-command-tool-at-your-service">Tiled command tool at your service</h3>
-<p>Luckily enough, we can use Tiled to execute any command passing the map file we&quot;re currently editing as a parameter from its main UI panel, it's almost as good as what CryEngine does. It only requires a little effort on our side, as the game needs to accept command line parameters and interpret them, we&quot;ll get to that later.</p>
-<p>First, click on the gears icon in Tiled and then select <em>Edit Commands</em>. Create a new one and name it <em>Run level</em> for instance. The command will be executed from the Tiled folder, Program Files in my case. That's why I&quot;m using absolute paths to reach my game's executable.</p>
+<p>Luckily enough, we can use Tiled to execute any command passing the map file we&quot;re currently editing as a parameter from its main UI panel, it&rsquo;s almost as good as what CryEngine does. It only requires a little effort on our side, as the game needs to accept command line parameters and interpret them, we&quot;ll get to that later.</p>
+<p>First, click on the gears icon in Tiled and then select <em>Edit Commands</em>. Create a new one and name it <em>Run level</em> for instance. The command will be executed from the Tiled folder, Program Files in my case. That&rsquo;s why I&quot;m using absolute paths to reach my game&rsquo;s executable.</p>
 <pre><code>java -jar E:projectsmathmazemath.jar %mapfile
 </code></pre><p><img src="../../img/wp/tiled-command.png" alt="tiled-command.png"></p>
 <p>The <em>%mapfile</em> string is replaced by the absolute path to our level when the command is executed.</p>
-<p>Now it's time to make the game accept an absolute path as a parameter and load a specific level when that happens, without going through all the menus. In my case I did something similar to this.</p>
+<p>Now it&rsquo;s time to make the game accept an absolute path as a parameter and load a specific level when that happens, without going through all the menus. In my case I did something similar to this.</p>
 <pre><code>public class Main {
 	public static void main(String[] args) {
 		String level =  args.length &gt; 0 ? args[0] : &quot;&quot;;
@@ -161,7 +161,7 @@ else {
 }
 
 TiledMap map = mapLoader.load(getLevel());
-</code></pre><p>I noticed that libgdx doesn't include an absolute path file handle resolver, so I created it. Otherwise, it&quot;d think the file path is of the relative kind.</p>
+</code></pre><p>I noticed that libgdx doesn&rsquo;t include an absolute path file handle resolver, so I created it. Otherwise, it&quot;d think the file path is of the relative kind.</p>
 <pre><code>public class AbsoluteFileHandleResolver implements FileHandleResolver {
 	@Override
 	public FileHandle resolve(String fileName) {
@@ -186,7 +186,7 @@ TiledMap map = mapLoader.load(getLevel());
       
       <p><img src="../../img/freegemas/freegemas-banner.png" alt="banner-blog.png"></p>
 <p>That I know of…</p>
-<p>For those who don't know, <a href="../../games/freegemas-for-android-and-html5/" title="Freegemas libgdx">Freegemas</a> was my first <a href="http://libgdx.badlogicgames.com/">libgdx</a> project, which I made in a couple of weeks to learn how to use the framework. Actually, I&quot;m not to take the credit as it's a silly Java/libgdx port of a game made by an university mate, <a href="http://josetomastocino.com/">José Tomás Tocino</a>. Freegemas was originally <a href="https://code.google.com/p/freegemas/">written in C++ using Gosu</a> and both versions were <a href="https://code.google.com/p/freegemas-libgdx/">open sourced under the GPL license</a>.</p>
+<p>For those who don&rsquo;t know, <a href="../../games/freegemas-for-android-and-html5/" title="Freegemas libgdx">Freegemas</a> was my first <a href="http://libgdx.badlogicgames.com/">libgdx</a> project, which I made in a couple of weeks to learn how to use the framework. Actually, I&quot;m not to take the credit as it&rsquo;s a silly Java/libgdx port of a game made by an university mate, <a href="http://josetomastocino.com/">José Tomás Tocino</a>. Freegemas was originally <a href="https://code.google.com/p/freegemas/">written in C++ using Gosu</a> and both versions were <a href="https://code.google.com/p/freegemas-libgdx/">open sourced under the GPL license</a>.</p>
 <p>Both are non profit games and are clearly inspired in the successful Bejeweled.</p>
 <p>Freegemas added Android and <a href="freegemas">HTML5</a> to the list of supported platforms and was published on <a href="https://play.google.com/store/apps/details?id=com.siondream.freegemas">Google Play</a> as a free app over a year ago.</p>
 <p><img src="../../img/freegemas/freegemas-02.png" alt="javaw-2012-04-18-08-45-49-21-1024x576.png"></p>
@@ -196,7 +196,7 @@ TiledMap map = mapLoader.load(getLevel());
 <p>Indeed, this Candy thing was a 1:1 Freegemas clone only changing two elements, he changed the textures and added a shitload of aggressive adverts. Just look at the required permissions to get the extent of it.</p>
 <ul>
 <li>Full network access – Fair enough for basic ads.</li>
-<li>Phone calls – Why? The original doesn't need it.</li>
+<li>Phone calls – Why? The original doesn&rsquo;t need it.</li>
 <li>Storage – Legit to read assets from memory.</li>
 <li>Install shortcuts without user intervention – I&quot;m sorry, WHAT?</li>
 </ul>
@@ -207,20 +207,20 @@ TiledMap map = mapLoader.load(getLevel());
 <p><strong>Emma Cheneler</strong>: It crashed my mob had to take battery out to even switch mob off. Bad bad bad.</p>
 </blockquote>
 <blockquote>
-<p><strong>Helen Shaw</strong>: crashed. rebooted and messed up my phone all before i got to play the game…. DOn't DOWNLOAD…..</p>
+<p><strong>Helen Shaw</strong>: crashed. rebooted and messed up my phone all before i got to play the game…. DOn&rsquo;t DOWNLOAD…..</p>
 </blockquote>
 <p>To the plain and simple.</p>
 <blockquote>
 <p><strong>Anthony Hernandez</strong>: Hate it!!.</p>
 </blockquote>
-<p>Ironically, the joke's on my because Candy Time Crush is a clone of my our own game. I&quot;m perfectly aware of the limitations and scope of Freegemas. It was made in under 2 weeks after work for $deity's sake! However, our pet project is free, has no ads and its code has helped other people learn about libgdx since it was featured in the framework's documentation.</p>
-<p>Oh, and it doesn't make your phone crash.</p>
-<p>When I checked Barrilete Cósmico's (license offender) Google Play panel I was completely astonished. Candy Time Crush was not the only Freegemas clone, there were a total of four of them. It's ridiculous! My surprise spiked even more when I realised the download count was over 500K in aggregate, and all those apps featured the same kind of ads. What the hell?</p>
+<p>Ironically, the joke&rsquo;s on my because Candy Time Crush is a clone of my our own game. I&quot;m perfectly aware of the limitations and scope of Freegemas. It was made in under 2 weeks after work for $deity&rsquo;s sake! However, our pet project is free, has no ads and its code has helped other people learn about libgdx since it was featured in the framework&rsquo;s documentation.</p>
+<p>Oh, and it doesn&rsquo;t make your phone crash.</p>
+<p>When I checked Barrilete Cósmico&rsquo;s (license offender) Google Play panel I was completely astonished. Candy Time Crush was not the only Freegemas clone, there were a total of four of them. It&rsquo;s ridiculous! My surprise spiked even more when I realised the download count was over 500K in aggregate, and all those apps featured the same kind of ads. What the hell?</p>
 <p><img src="../../img/wp/farm-time-hero.png" alt="farm-time-hero-300x145.png"></p>
 <h3 id="of-the-gpl-license">Of the GPL license</h3>
-<p>I wanted to clarify some of the <a href="http://www.gnu.org/licenses/gpl-3.0.html">details of GPL</a> to illustrate why this is a shameless trespass of the license. The relevant portion is that you can copy, modify and redistribute the software as long as you make the new version available under a compatible license. And that's the essence of it.</p>
-<p>Taking someone else's GPL code and redistributing it with minor changes for profit without crediting the original authors could easily be flagged as unethical. Nevertheless, that's legally irrelevant. What matters is that it's perfectly legal when the developer makes the code open source the code as well.</p>
-<p>That's fine with me. Hell! It was us who went for this license in the first place.</p>
+<p>I wanted to clarify some of the <a href="http://www.gnu.org/licenses/gpl-3.0.html">details of GPL</a> to illustrate why this is a shameless trespass of the license. The relevant portion is that you can copy, modify and redistribute the software as long as you make the new version available under a compatible license. And that&rsquo;s the essence of it.</p>
+<p>Taking someone else&rsquo;s GPL code and redistributing it with minor changes for profit without crediting the original authors could easily be flagged as unethical. Nevertheless, that&rsquo;s legally irrelevant. What matters is that it&rsquo;s perfectly legal when the developer makes the code open source the code as well.</p>
+<p>That&rsquo;s fine with me. Hell! It was us who went for this license in the first place.</p>
 <p>Unsurprisingly, this guy did no such thing.</p>
 <h3 id="reactions">Reactions</h3>
 <p>After discussing it with the Freegemas original author we decided to file a <a href="https://support.google.com/bin/static.py?hl=en&amp;ts=1114905&amp;page=ts.cs">copyright infringement report</a> and send it to Google with little hope they&quot;d answer. I also emailed the author explaining the situation and listing his options.</p>
@@ -229,10 +229,10 @@ TiledMap map = mapLoader.load(getLevel());
 <li>Make their source code available under GPL.</li>
 <li>Get to a commercial agreement with us to split advertisement revenue.</li>
 </ul>
-<p>We knew the latter wasn't going to happen and we wouldn't be very happy to be a part of all that aggressive advertising anyway. Personally, I don't think Freegemas should have those pretensions, it's too simple of a game, a two week tiny hack project with educational purposes.</p>
+<p>We knew the latter wasn&rsquo;t going to happen and we wouldn&rsquo;t be very happy to be a part of all that aggressive advertising anyway. Personally, I don&rsquo;t think Freegemas should have those pretensions, it&rsquo;s too simple of a game, a two week tiny hack project with educational purposes.</p>
 <p>He got back to me in roughly ten minutes saying he was sorry and that he was unaware of the illegality of his actions and that he took our game just to learn the ads process. He said he had ceased distribution of all four games. Well, that was fast.</p>
 <p>On a side note, no one makes four identical games <em>&ldquo;just to learn&rdquo;</em>.</p>
-<p>I was surprised to see Google's response to the complaint just a couple of days later. Obviously the games had been removed so the links weren't working anymore. I said everything was fine now and that the process didn't need to carry on.</p>
+<p>I was surprised to see Google&rsquo;s response to the complaint just a couple of days later. Obviously the games had been removed so the links weren&rsquo;t working anymore. I said everything was fine now and that the process didn&rsquo;t need to carry on.</p>
 <p>End of story.</p>
 <p>Well, not really.</p>
 <p>Today I realised the developer changed his name to <a href="https://play.google.com/store/apps/developer?id=CCM">CCM</a> and <a href="https://play.google.com/store/apps/details?id=com.rotember.candytime">Candy Time Crush</a> is still listed among his published applications. However, the description mentions Freegemas as base for this game and adds the following note.</p>
@@ -241,9 +241,9 @@ TiledMap map = mapLoader.load(getLevel());
 </blockquote>
 <p>Apparently that makes it comply with GPL v3 even though it sounds quite cheeky. Well nothing left to do here.</p>
 <h3 id="morale-of-the-story">Morale of the story</h3>
-<p>It would be sad to think of the morale to be that working on open source projects is a bad thing or a waste of time. There's always going to be people who try to take credit for the work of others, regardless of the context.</p>
-<p>I love open source because it helps me broaden and enhance my skill set, it's good practice. Working in community is an enriching experience and most of the time I don't have monetisation pretensions at all. Open source and commercial software are two perfectly compatible concepts anyway. Take a look at the libgdx community, there are many developers who have paid sucessful software in the market whilst contributing back all the time. <a href="https://github.com/NathanSweet">Nathan</a> and <a href="http://esotericsoftware.com/">Spine</a> are a great example with his <a href="https://code.google.com/p/libgdx/wiki/scene2dui">Scene2D UI system</a>.</p>
-<p>The conclusion here would be that there's a big need to raise awareness towards what software licenses mean, let alone the necessity of ethics in this field. On our end, we need to make sure the implications of the license our code is published under are perfectly clear and in a visible place.</p>
+<p>It would be sad to think of the morale to be that working on open source projects is a bad thing or a waste of time. There&rsquo;s always going to be people who try to take credit for the work of others, regardless of the context.</p>
+<p>I love open source because it helps me broaden and enhance my skill set, it&rsquo;s good practice. Working in community is an enriching experience and most of the time I don&rsquo;t have monetisation pretensions at all. Open source and commercial software are two perfectly compatible concepts anyway. Take a look at the libgdx community, there are many developers who have paid sucessful software in the market whilst contributing back all the time. <a href="https://github.com/NathanSweet">Nathan</a> and <a href="http://esotericsoftware.com/">Spine</a> are a great example with his <a href="https://code.google.com/p/libgdx/wiki/scene2dui">Scene2D UI system</a>.</p>
+<p>The conclusion here would be that there&rsquo;s a big need to raise awareness towards what software licenses mean, let alone the necessity of ethics in this field. On our end, we need to make sure the implications of the license our code is published under are perfectly clear and in a visible place.</p>
 <p>Thanks to the fellow developer who reported this.</p>
 
       
@@ -333,11 +333,11 @@ TiledMap map = mapLoader.load(getLevel());
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <p>Despite the obvious room for improvement, I&quot;m quite happy with these results.</p>
-<p>Primarily, my performance compared to that of <a href="../../games/ludum-dare-24-results-are-live/" title="Ludum Dare #24 results are live!">#LD24</a> has seen a significant increase in the most relevant categories, Whoooh! This game wasn't supposed to be funny nor have highly polished graphics. My focus was on gameplay and, fortunately, people valued that positively. Actually where are my manners? Thanks everyone who's taken the time to play and rate it, you&quot;re awesome and made me happy.</p>
+<p>Primarily, my performance compared to that of <a href="../../games/ludum-dare-24-results-are-live/" title="Ludum Dare #24 results are live!">#LD24</a> has seen a significant increase in the most relevant categories, Whoooh! This game wasn&rsquo;t supposed to be funny nor have highly polished graphics. My focus was on gameplay and, fortunately, people valued that positively. Actually where are my manners? Thanks everyone who&rsquo;s taken the time to play and rate it, you&quot;re awesome and made me happy.</p>
 <p>Secondly and speaking in absolute terms, Lightbyrinth is above average in every single category and among the best 20% in many of them. This strikes me as a great surprise having seen the extremely high standards displayed in this Ludum Dare edition. This is, of course, considering the tight dev time. Moreover, the game has passed the 2.50 milestone in everything but <em>&ldquo;Humor&rdquo;</em>, which is fair enough.</p>
 <p>Summary, I&quot;m very pleased but determined to improve my jamming skills toward the next edition. More gameplay and drive to get a right feel.</p>
-<h3 id="dont-miss-these">Don't miss these</h3>
-<p>I would be an egotistical prick if I didn't point you to those who stand champions of the mighty Ludum Dare #26. Hail to them.</p>
+<h3 id="dont-miss-these">Don&rsquo;t miss these</h3>
+<p>I would be an egotistical prick if I didn&rsquo;t point you to those who stand champions of the mighty Ludum Dare #26. Hail to them.</p>
 <ul>
 <li><a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=top">Top 100 Compo</a></li>
 <li><a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=top&amp;cat=Overall(Jam)">Top 100 Jam</a></li>
@@ -347,7 +347,7 @@ TiledMap map = mapLoader.load(getLevel());
 <p><img src="../../img/wp/mono.png" alt="mono-300x300.png"></p>
 <p>Seriously, go check it out.</p>
 <h3 id="the-community-delivers-once-again">The community delivers once again</h3>
-<p>Among the things that make Ludum Dare incredibly awesome, the community stands out. There's people out there that took the time to gather most of the games to make a gigantic trailer. Hats off.</p>
+<p>Among the things that make Ludum Dare incredibly awesome, the community stands out. There&rsquo;s people out there that took the time to gather most of the games to make a gigantic trailer. Hats off.</p>
 <p>More compilations <a href="http://www.ludumdare.com/compo/2013/05/01/10-second-videos-compilation-project/">here</a>.</p>
 <p>See you in the next Ludum Dare!</p>
 
@@ -364,21 +364,21 @@ TiledMap map = mapLoader.load(getLevel());
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it's necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn't come for free.</p>
-<p>Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite. Not only phones and tablets have limited memory sizes, but theirs is also shared by many hungry apps and fancy background processes. If your app's demands causes everything else to shut down, you&quot;re going to make your users sad.</p>
+      <p>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&rsquo;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&rsquo;t come for free.</p>
+<p>Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite. Not only phones and tablets have limited memory sizes, but theirs is also shared by many hungry apps and fancy background processes. If your app&rsquo;s demands causes everything else to shut down, you&quot;re going to make your users sad.</p>
 <p>The sooner you face this, the better. Asset management can be a pain in the arse.</p>
 <p><img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg"></p>
 <p>Throughout this article, I&quot;d like to illustrate some of the challenges one has to face when dealing with many assets within a medium sized project. Later on, I&quot;ll be presenting some classic approaches to finish with one that seems to be working for me quite well. The examples are focused on the <a href="libgdx.badlogicgames.com/">libgdx framework</a>, although the concepts are widely applicable.</p>
 <h3 id="the-very-basics">The very basics</h3>
 <p>Just to make sure we&quot;re on the same page, these two are the very fundamental items to take into account when managing resources in a game.</p>
 <ul>
-<li>Don't load things twice. Eg. If you have identical looking sprites, share the texture data and render it as needed.</li>
-<li>Don't load anything that you won't need in the near future. Why would you load the final level when the user has just fired up the game for the very first time?</li>
+<li>Don&rsquo;t load things twice. Eg. If you have identical looking sprites, share the texture data and render it as needed.</li>
+<li>Don&rsquo;t load anything that you won&rsquo;t need in the near future. Why would you load the final level when the user has just fired up the game for the very first time?</li>
 </ul>
 <p>Basically, we&quot;re going to try to use the smallest portion of memory we possibly can at a given point in execution.</p>
 <h3 id="use-the-assetmanager-luke">Use the AssetManager Luke</h3>
-<p>Luckily enough, libgdx provides the splendid <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html">AssetManager</a>, so, for <em>$deity</em>&ldquo;s sake, please don't reinvent the wheel. Are you not using libgdx? Fear not, fellow developer, for most modern libraries feature similar components. Eg. In <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Basic+knowledge+about+Resources">Ogre3D</a> we have <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html">ResourceGroupManager</a> class.</p>
-<p>Take all the time you need to read the correspondent <a href="https://code.google.com/p/libgdx/wiki/AssetManager">wiki page</a> in case you were oblivious to its existence. Long story short, here's what AssetManager can do for you.</p>
+<p>Luckily enough, libgdx provides the splendid <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html">AssetManager</a>, so, for <em>$deity</em>&ldquo;s sake, please don&rsquo;t reinvent the wheel. Are you not using libgdx? Fear not, fellow developer, for most modern libraries feature similar components. Eg. In <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Basic+knowledge+about+Resources">Ogre3D</a> we have <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html">ResourceGroupManager</a> class.</p>
+<p>Take all the time you need to read the correspondent <a href="https://code.google.com/p/libgdx/wiki/AssetManager">wiki page</a> in case you were oblivious to its existence. Long story short, here&rsquo;s what AssetManager can do for you.</p>
 <ul>
 <li>Store one copy of each asset.</li>
 <li>Reference counting.</li>
@@ -420,13 +420,13 @@ TiledMap map = mapLoader.load(getLevel());
 		manager.finishLoading();
 	}
 }
-</code></pre><p>While this is a very comfortable thing to do and renders itself valid in most cases, we&quot;re still loading assets that won't be needed right away. Actually this snippet is taken almost as it was in my <a href="../../game-jams/lightbyrinth/">Ludum Dare #26 entry</a>, and it was perfectly fine. It's highly likely for you to get away with this. However, if you want to go the extra mile to achieve maximum performance, you know exactly what can be improved.</p>
+</code></pre><p>While this is a very comfortable thing to do and renders itself valid in most cases, we&quot;re still loading assets that won&rsquo;t be needed right away. Actually this snippet is taken almost as it was in my <a href="../../game-jams/lightbyrinth/">Ludum Dare #26 entry</a>, and it was perfectly fine. It&rsquo;s highly likely for you to get away with this. However, if you want to go the extra mile to achieve maximum performance, you know exactly what can be improved.</p>
 <h3 id="slightly-more-advanced-approaches">Slightly more advanced approaches</h3>
 <p>We only want to load the resources that will be used at a given time while avoiding being interned in a mental institution. Micromanaging everything is hard work and definitely not worth the headache in almost every situation. One question now arises.</p>
 <blockquote>
-<p>What's the ideal asset management granularity?</p>
+<p>What&rsquo;s the ideal asset management granularity?</p>
 </blockquote>
-<p>Obviously, the soft spot will be closely tied to the scope and genre in play but let's list a few possibilities.</p>
+<p>Obviously, the soft spot will be closely tied to the scope and genre in play but let&rsquo;s list a few possibilities.</p>
 <ul>
 <li>Everything at a time – Not an option</li>
 <li>Menus, levels</li>
@@ -436,12 +436,12 @@ TiledMap map = mapLoader.load(getLevel());
 <li>…</li>
 </ul>
 <p><img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg"></p>
-<p>Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there's a load screen masked behind a briefing before each level.</p>
+<p>Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there&rsquo;s a load screen masked behind a briefing before each level.</p>
 <h3 id="im-a-lazy-bastard-and-that-sounds-like-a-lot-of-work">I&quot;m a lazy bastard and that sounds like a lot of work</h3>
 <p>As you can see, it can get mental institution level of crazy in terms of deciding who loads what and when. Retrieving an asset you erroneously thought to be in memory could become an everyday issue. You want to simplify it.</p>
-<p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it's going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
+<p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it&rsquo;s going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
 <p><img src="../../img/wp/load-sequence.png" alt="load-sequence.png"></p>
-<p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here's an example.</p>
+<p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
 <pre><code>&lt;assets &gt;
 	&lt;group name=&quot;base&quot;&gt;
 		&lt;asset type=&quot;com.siondream.core.animation.AnimationData&quot; path=&quot;data/caveman.xml&quot; /&gt;
@@ -451,7 +451,7 @@ TiledMap map = mapLoader.load(getLevel());
 &lt;/assets&gt;
 </code></pre><p>Qualified types and reflection are used to make the <em>AssetManager#load</em> calls.</p>
 <h3 id="grouped-asset-manager-code">Grouped Asset Manager code</h3>
-<p>Here's the full implementation for my Asset class. It's kind of a small layer on top of the libgdx AssetManager. Feel free to use it, bin it or change it. However, be advised that I don't plan to offer further continued for it, this is simply to illustrate my approach.</p>
+<p>Here&rsquo;s the full implementation for my Asset class. It&rsquo;s kind of a small layer on top of the libgdx AssetManager. Feel free to use it, bin it or change it. However, be advised that I don&rsquo;t plan to offer further continued for it, this is simply to illustrate my approach.</p>
 <pre><code>public class Assets implements Disposable, AssetErrorListener {
 
 	private static final String TAG = &quot;Assets&quot;;
@@ -604,14 +604,14 @@ TiledMap map = mapLoader.load(getLevel());
       </span>
       
       <p><img src="../../img/ld26/lightbyrinth.png" alt="lightbyrinth.png"></p>
-<p>Last weekend was as sleep depriving as rewarding. While I could have easily been surrounded by the joys of procrastination and beer, I went for <a href="http://www.ludumdare.com/compo/category/ld-26/">Ludum Dare #26</a>, as announced in <a href="../../games/ludum-dare-26-im-in/">my previous post</a>. <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&amp;uid=3661">Lightbyrinth</a> is the result of that and, despite its flaws, I&quot;m fairly happy with the outcome. Please don't embarrass me by looking at the <a href="https://dl.dropboxusercontent.com/u/1439807/ld26-lightbyrinth/lightbyrinth-src.zip">source</a>, I was in a 48 hour rush.</p>
-<p>Lightbyrinth is a light based maze which tries to stick to the <em>&ldquo;Minismalism&rdquo;</em> democratically voted theme. You control a small blue sphere that has to find the exit of the labyrinth it's in. An infinite swarm of red spheres will try to stop you from doing so, reason why you should move fast. Beware though, as it's quite dark and you will only see what's in front of you.</p>
+<p>Last weekend was as sleep depriving as rewarding. While I could have easily been surrounded by the joys of procrastination and beer, I went for <a href="http://www.ludumdare.com/compo/category/ld-26/">Ludum Dare #26</a>, as announced in <a href="../../games/ludum-dare-26-im-in/">my previous post</a>. <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&amp;uid=3661">Lightbyrinth</a> is the result of that and, despite its flaws, I&quot;m fairly happy with the outcome. Please don&rsquo;t embarrass me by looking at the <a href="https://dl.dropboxusercontent.com/u/1439807/ld26-lightbyrinth/lightbyrinth-src.zip">source</a>, I was in a 48 hour rush.</p>
+<p>Lightbyrinth is a light based maze which tries to stick to the <em>&ldquo;Minismalism&rdquo;</em> democratically voted theme. You control a small blue sphere that has to find the exit of the labyrinth it&rsquo;s in. An infinite swarm of red spheres will try to stop you from doing so, reason why you should move fast. Beware though, as it&rsquo;s quite dark and you will only see what&rsquo;s in front of you.</p>
 <p><a href="https://saltares.com/ld26">Play Lightbyrinth</a></p>
-<p>The game targets both desktops and WebGL friendly browsers, it's written in Java using the mighty <a href="http://libgdx.badlogicgames.com/">libgdx</a> and the <a href="https://code.google.com/p/box2dlights/">Box2DLights</a> extension.</p>
-<p>Here's my humble postmortem of the experience.</p>
+<p>The game targets both desktops and WebGL friendly browsers, it&rsquo;s written in Java using the mighty <a href="http://libgdx.badlogicgames.com/">libgdx</a> and the <a href="https://code.google.com/p/box2dlights/">Box2DLights</a> extension.</p>
+<p>Here&rsquo;s my humble postmortem of the experience.</p>
 <p><img src="../../img/ld26/lightbyrinth-4.jpg" alt="dynamic-menu"></p>
 <h3 id="timeline">Timeline</h3>
-<p>I may have a terribly bad memory but thanks to my notes, here's an overview of my executed plan of action for those who might be interested.</p>
+<p>I may have a terribly bad memory but thanks to my notes, here&rsquo;s an overview of my executed plan of action for those who might be interested.</p>
 <p><img src="../../img/ld26/sketch.jpg" alt="sketch"></p>
 <p>Saturday April 27th</p>
 <ul>
@@ -651,22 +651,22 @@ TiledMap map = mapLoader.load(getLevel());
 <h3 id="what-went-right">What went right</h3>
 <ul>
 <li><strong>Technology</strong>: using libgdx has proven to be the right decision once again. I had the very core of the game up and running in the first few hours thanks to its maps API sweetness and awesome Box2D integration. Its rapid iteration approach is a big win as well, as I could test it on my desktop without having to deploy it on a server every time.</li>
-<li><strong>KISS</strong>: some people didn't like <em>&ldquo;Minimalism&rdquo;</em> as a theme. However, I think it ended up being the perfect way to enforce the <a href="http://en.wikipedia.org/wiki/KISS_principle"><em>Keep It Simple Stupid</em></a> philosophy. It helped me focus on gameplay and feel rather than presentation, which was a clear mistake in my previous Ludum Dare attempt. The game boils down to: spheres as characters, two types of tiles for the maps and the lights, which were part of both aesthetic and mechanics.</li>
-<li><strong>Help system</strong>: people like to play and rate games after the compo but they certainly dislike reading through walls of texts to learn all the gameplay mechanics. Therefore, adding an in game data driven tip system was a plus. Little pieces of text would momentarily show at the top as new mechanics were introduced. For variety sake's, tips were mixed with atmosphere creation messages. I&quot;m no writer and that clearly shows, but hey, it wasn't a bad idea at all.</li>
-<li><strong>Desktop and WebGL</strong>: libgdx multiplatform capabilities were extremely helpful in this case. You get Windows, Mac and Linux out of the box but that's not all. Even though I had to invest some time in order to get Box2DLights working on GWT, it paid off big time. Having a WebGL version of your compo game available makes it much easier for people to give it a try. I know not downloading other's people games when they&quot;re desktop exclusive, kind of makes me a bad person. Ain't nobody got time for that!</li>
+<li><strong>KISS</strong>: some people didn&rsquo;t like <em>&ldquo;Minimalism&rdquo;</em> as a theme. However, I think it ended up being the perfect way to enforce the <a href="http://en.wikipedia.org/wiki/KISS_principle"><em>Keep It Simple Stupid</em></a> philosophy. It helped me focus on gameplay and feel rather than presentation, which was a clear mistake in my previous Ludum Dare attempt. The game boils down to: spheres as characters, two types of tiles for the maps and the lights, which were part of both aesthetic and mechanics.</li>
+<li><strong>Help system</strong>: people like to play and rate games after the compo but they certainly dislike reading through walls of texts to learn all the gameplay mechanics. Therefore, adding an in game data driven tip system was a plus. Little pieces of text would momentarily show at the top as new mechanics were introduced. For variety sake&rsquo;s, tips were mixed with atmosphere creation messages. I&quot;m no writer and that clearly shows, but hey, it wasn&rsquo;t a bad idea at all.</li>
+<li><strong>Desktop and WebGL</strong>: libgdx multiplatform capabilities were extremely helpful in this case. You get Windows, Mac and Linux out of the box but that&rsquo;s not all. Even though I had to invest some time in order to get Box2DLights working on GWT, it paid off big time. Having a WebGL version of your compo game available makes it much easier for people to give it a try. I know not downloading other&rsquo;s people games when they&quot;re desktop exclusive, kind of makes me a bad person. Ain&rsquo;t nobody got time for that!</li>
 </ul>
 <p><img src="../../img/ld26/lightbyrinth-2.jpg" alt="game"></p>
 <h3 id="what-went-wrong">What went wrong</h3>
 <ul>
-<li><strong>Camera</strong>: all the negative feedback I got agrees on the camera. It doesn't follow the player fast enough, which makes seeing where you&quot;re headed a not very pleasant experience. Bad time management, clearly should have dropped something to work on this.</li>
-<li><strong>Design polish</strong>: let's get this out of the way, I&quot;m no designer. Nevertheless, this would be a lame excuse for level design, I&quot;m trying to get better, promise. The intent was to progressively introduce mechanics using little tips, which I did and that's great. However, I feel like the maze and enemy spawning components could have been used much more intelligently. Reminder for self: practice your level design skills.</li>
-<li><strong>Bugs</strong>: a couple of vicious bugs slipped from grasp but didn't go unnoticed by some people. It seems that you can still control the character in between levels, while there's no physics, this could make you end up inside a wall, which is no good. Again, I should have allocated more polish time.</li>
+<li><strong>Camera</strong>: all the negative feedback I got agrees on the camera. It doesn&rsquo;t follow the player fast enough, which makes seeing where you&quot;re headed a not very pleasant experience. Bad time management, clearly should have dropped something to work on this.</li>
+<li><strong>Design polish</strong>: let&rsquo;s get this out of the way, I&quot;m no designer. Nevertheless, this would be a lame excuse for level design, I&quot;m trying to get better, promise. The intent was to progressively introduce mechanics using little tips, which I did and that&rsquo;s great. However, I feel like the maze and enemy spawning components could have been used much more intelligently. Reminder for self: practice your level design skills.</li>
+<li><strong>Bugs</strong>: a couple of vicious bugs slipped from grasp but didn&rsquo;t go unnoticed by some people. It seems that you can still control the character in between levels, while there&rsquo;s no physics, this could make you end up inside a wall, which is no good. Again, I should have allocated more polish time.</li>
 </ul>
 <p><img src="../../img/ld26/lightbyrinth-3.jpg" alt="game"></p>
 <h3 id="conclusions">Conclusions</h3>
 <p>I care not about the Ludum Dare hangover, it was an amazing experience once more. I keep learning so many things about games development and extreme time management. Not to mention the wonderful community behind all this. We all know the Internet is a hazardous place full of mean people who like to destroy other folks&rdquo; work. Ludum Dare is nothing like that, of course not all the feedback was positive, but the not so good comments were all constructive and will help me get better.</p>
-<p>On a side note, Mario from libgdx, put together a simple <a href="https://github.com/badlogic/ldstats">tool</a> to search Ludum Dare games as an experiment to see how many people used the library. It's ridiculously popular, shocker!</p>
-<p>That's brilliant. Now onto some games rating.</p>
+<p>On a side note, Mario from libgdx, put together a simple <a href="https://github.com/badlogic/ldstats">tool</a> to search Ludum Dare games as an experiment to see how many people used the library. It&rsquo;s ridiculously popular, shocker!</p>
+<p>That&rsquo;s brilliant. Now onto some games rating.</p>
 <p>This time I&quot;m going to try vote as many games as possible (30 entries so far). Towards that end, I think this <a href="http://www.ludumdare.com/compo/2013/04/30/the-ludum-dare-drinking-game/comment-page-1/">Ludum Dare based drinking game</a> could help a lot!</p>
 
       

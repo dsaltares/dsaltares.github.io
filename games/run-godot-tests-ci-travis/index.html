@@ -120,7 +120,7 @@ Integration pipeline using the <a href="https://en.wikipedia.org/wiki/Headless_s
 <a href="https://github.com/dsaltares/godot-ci-example">godot-ci-example</a> you can copy
 to use on your own projects. Here is how it works.</p>
 <p>Firstly, create a Godot project, install Gut from the Asset Library and enable it.
-This is the same as what is explained in Gut's <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
+This is the same as what is explained in Gut&rsquo;s <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
 <p><img src="../../img/godot-ci/installing_gut.gif" alt="install-gut"></p>
 <p>Create a trivial test in <code>res://test/unit/test_example.gd</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">res://addons/gut/test.gd</span><span style="color:#e6db74">&#34;</span>
@@ -131,13 +131,13 @@ This is the same as what is explained in Gut's <a href="https://github.com/bitwe
 </code></pre></div><p>You can now run these tests from the command line.</p>
 <pre><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit
 </code></pre><p>Where <code>godot</code> is your Godot binary and <code>project</code> is the folder where your game lives.</p>
-<p>Alright, we now have a basic test setup we can run locally. Let's move onto the meaty
-part of the article, continuous integration. I'll be using
-<a href="https://travis-ci.org/">Travis CI</a> because it's easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
+<p>Alright, we now have a basic test setup we can run locally. Let&rsquo;s move onto the meaty
+part of the article, continuous integration. I&rsquo;ll be using
+<a href="https://travis-ci.org/">Travis CI</a> because it&rsquo;s easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
 <p>Travis looks for a <code>.travis.yml</code> file in the root of your repo. This file tells Travis how to build the project and run tests. I recommend you take a quick look at the <a href="https://docs.travis-ci.com/user/tutorial/">docs</a>.</p>
 <p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/.travis.yml"><code>.travis.yml</code></a> file is trivial.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">language: minimal
-script: ./run_tests.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">language</span>: minimal
+<span style="color:#66d9ef">script</span>: ./run_tests.sh
 </code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
 GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64
@@ -148,9 +148,9 @@ curl <span style="color:#e6db74">${</span>GODOT_URL<span style="color:#e6db74">}
 unzip <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
 chmod +x <span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>
 ./<span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span> -d -s --path ./project addons/gut/gut_cmdln.gd -gdir<span style="color:#f92672">=</span>res://test -ginclude_subdirs -gexit
-</code></pre></div><p>As you can see, it's also pretty easy to parameterize which Godot version you want
+</code></pre></div><p>As you can see, it&rsquo;s also pretty easy to parameterize which Godot version you want
 to use.</p>
-<p>And that's it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here's what a typical build would look like</a>.</p>
+<p>And that&rsquo;s it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here&rsquo;s what a typical build would look like</a>.</p>
 <pre><code>/-----------------------------------------
 Running Script res://test/unit/test_example.gd
 -----------------------------------------/

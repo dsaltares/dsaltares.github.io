@@ -103,13 +103,13 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
     </span>
-    <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn't been pushed to <code>origin</code> yet. However, I didn't realise at the time.</p>
+    <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&rsquo;t been pushed to <code>origin</code> yet. However, I didn&rsquo;t realise at the time.</p>
 <p>After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.</p>
 <blockquote>
 <p>Oh noes!</p>
 </blockquote>
 <p>Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using <code>git reflog</code> you can list the tip of branches, including the deleted ones. Once you find the commit you were looking for, you can just use <code>git checkout</code> to get it back. This will detach you from <code>HEAD</code>, so you will probably want to create the old branch again with <code>git checkout -b name</code>.</p>
-<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let's say you know the commit message had <code>feature x</code> in it.</p>
+<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let&rsquo;s say you know the commit message had <code>feature x</code> in it.</p>
 <pre><code>git reflog --grep='feature x'
 git checkout 123456
 git checkout -b feature-x

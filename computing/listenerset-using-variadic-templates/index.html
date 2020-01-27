@@ -107,7 +107,7 @@
 <p>Who has never used the <a href="http://en.wikipedia.org/wiki/Observer_pattern">Observer</a> pattern? As long as you have been involved in any medium sized project, chances are you have come across it at some point.</p>
 <h3 id="the-problem">The problem</h3>
 <p>It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis. That is registration, un-registration and notification. A lot of nonsensical boilerplate, which makes for code that is harder to read and easier to get wrong.</p>
-<p>Let's take a look at a typical input event dispatching system, simplified for the purposes of this article. We could have an <code>IInputListener</code> interface that handles a couple of events, <code>keyDown()</code> and <code>keyUp()</code>.</p>
+<p>Let&rsquo;s take a look at a typical input event dispatching system, simplified for the purposes of this article. We could have an <code>IInputListener</code> interface that handles a couple of events, <code>keyDown()</code> and <code>keyUp()</code>.</p>
 <pre><code>struct IInputListener
 {
     virtual ~IInputListener() {}
@@ -148,15 +148,15 @@ public:
 private:
     std::set&lt;IInputListener*&gt; m_listeners;
 };
-</code></pre><p>As if this wasn't enough, there is another important <em>gotcha</em> here. What happens when a listener un-registers as a result of an event? The <code>m_listeners</code> collection is modified in the middle of the <code>for</code> loop, thus current iterators are no longer valid. The second we try to increment the internal iterator to fetch the next listener.</p>
+</code></pre><p>As if this wasn&rsquo;t enough, there is another important <em>gotcha</em> here. What happens when a listener un-registers as a result of an event? The <code>m_listeners</code> collection is modified in the middle of the <code>for</code> loop, thus current iterators are no longer valid. The second we try to increment the internal iterator to fetch the next listener.</p>
 <blockquote>
 <p>BAM!</p>
 </blockquote>
 <p>Not good.</p>
-<p>The solution is simple but annoying. We can just add new listener registration and un-registration requests to a pending list while in the middle of a dispatch. Those pending lists would be processed once it's safe to modify the collection of listeners.</p>
+<p>The solution is simple but annoying. We can just add new listener registration and un-registration requests to a pending list while in the middle of a dispatch. Those pending lists would be processed once it&rsquo;s safe to modify the collection of listeners.</p>
 <p>Moreover, some people use <code>std::vector</code> instead of <code>std::set</code> for performance reasons, which is completely legit. However, that involves adding code to ensure listener uniqueness in the collection.</p>
 <p>Every time.</p>
-<p>Honestly? I'm lazy so I don't want to be the guy who implements this over and over.</p>
+<p>Honestly? I&rsquo;m lazy so I don&rsquo;t want to be the guy who implements this over and over.</p>
 <blockquote>
 <p>Okay, so what do you suggest?</p>
 </blockquote>
@@ -170,7 +170,7 @@ private:
 <li>Compatible with any kind of event listener.</li>
 </ul>
 <p>Intuitively, we could have a <code>ListenerSet&lt;Type&gt;</code> template class that handles listener duplication as well as registration and un-registration safety.</p>
-<p><strong>Note</strong>: we'll be using <code>std::set</code> rather than <code>std::vector</code> for simplicity. Both can be used as long as the appropriate precautions are taken.</p>
+<p><strong>Note</strong>: we&rsquo;ll be using <code>std::set</code> rather than <code>std::vector</code> for simplicity. Both can be used as long as the appropriate precautions are taken.</p>
 <pre><code>template &lt;class Type&gt; class ListenerSet
 {
 public:
@@ -209,14 +209,14 @@ private:
     std::set&lt;Type&gt; m_pendingAddition;
     std::set&lt;Type&gt; m_listeners;
 };
-</code></pre><p>We're missing the notification functionality, that's the tricky part. We would like to have an interface such as to be able to do something like this.</p>
+</code></pre><p>We&rsquo;re missing the notification functionality, that&rsquo;s the tricky part. We would like to have an interface such as to be able to do something like this.</p>
 <pre><code>m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
 </code></pre><p><code>ListenerSet::notify()</code> would iterate over all the registered listeners calling <code>IInputListener::keyDown</code> and passing <code>keyCode</code> as a parameter.</p>
 <blockquote>
 <p>Maybe easier said than done?</p>
 </blockquote>
-<p>True, <code>ListenerSet::notify()</code> needs to support an arbitrary number of arguments, as different event handlers won't necessarily have the same signature. Moreover, <code>IInputListener::keyDown</code>(and every other potential handler) needs to receive a <code>this</code> pointer along the remaining arguments.</p>
-<p>This is where <a href="http://www.cplusplus.com/articles/EhvU7k9E/">variadic templates</a> come into play. Basically, they're templates that can take an arbitrary number of parameters of any type.</p>
+<p>True, <code>ListenerSet::notify()</code> needs to support an arbitrary number of arguments, as different event handlers won&rsquo;t necessarily have the same signature. Moreover, <code>IInputListener::keyDown</code>(and every other potential handler) needs to receive a <code>this</code> pointer along the remaining arguments.</p>
+<p>This is where <a href="http://www.cplusplus.com/articles/EhvU7k9E/">variadic templates</a> come into play. Basically, they&rsquo;re templates that can take an arbitrary number of parameters of any type.</p>
 <p>Interestingly enough, <code>std::bind()</code> also takes an arbitrary number of parameters. That means we can create an <code>std::function&gt;</code> object that has everything we need: the event handler function pointer, <code>this</code> and the remaining arguments.</p>
 <p>Take a look at the code.</p>
 <pre><code>template &lt;class Function, class... Arguments&gt;
@@ -244,7 +244,7 @@ inline void notify(Function&amp;&amp; f, Arguments&amp;&amp;... args)
 
     m_pendingAddition.clear();
 }
-</code></pre><p>Note how we process the pending requests to add or remove listeners after we finish sending the events, that's when it's safe.</p>
+</code></pre><p>Note how we process the pending requests to add or remove listeners after we finish sending the events, that&rsquo;s when it&rsquo;s safe.</p>
 <p>Now we can do exactly what we wanted!</p>
 <pre><code>ListenerSet&lt;IInputListener*&gt; listeners;
 
@@ -253,13 +253,13 @@ listeners.addListener(new UserInterfaceInputListener());
 
 m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
 m_listenerSet.notify(&amp;IInputListener::keyUp, keyCode);
-</code></pre><p>Templates are instantiated at compile time, which means the compiler will complain if we're doing something dodgy such as trying to bind the wrong thing. Compile time checks are good.</p>
-<p>Managing a set of listeners and sending events is now a lot easier, safer and readable. Last but not least, it's significantly less error prone.</p>
+</code></pre><p>Templates are instantiated at compile time, which means the compiler will complain if we&rsquo;re doing something dodgy such as trying to bind the wrong thing. Compile time checks are good.</p>
+<p>Managing a set of listeners and sending events is now a lot easier, safer and readable. Last but not least, it&rsquo;s significantly less error prone.</p>
 <blockquote>
 <p>Hooray!!!</p>
 </blockquote>
 <h3 id="full-source">Full source</h3>
-<p>For those interested, I've made the code available as a GitHub Gist.</p>
+<p>For those interested, I&rsquo;ve made the code available as a GitHub Gist.</p>
 <p><a href="https://gist.github.com/dsaltares/11212605">ListenerSet implementation</a></p>
 
   </div>

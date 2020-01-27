@@ -17,7 +17,7 @@
       <pubDate>Sat, 10 Sep 2016 14:16:40 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
-      <description>There&#39;s a new Ashley release, check the changes for 1.7.3 below:
+      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
  API addition: Adds ‘createComponent()&amp;rdquo; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;rdquo; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;rdquo; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
@@ -38,7 +38,7 @@ We are definitely aware of the shortcomings of the game. We spent a lot of the j
       <pubDate>Sun, 10 Jan 2016 12:27:15 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-1-released/</guid>
-      <description>There&#39;s a new Ashley release, check the changes for 1.7.1 below:
+      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.1 below:
  API addition: expose IntervalSystem interval value (read-only). Bug fix: fixed pending entity operations not being processed in the right order. Bug fix: fixed adding component in empty family EntityListener causing wrong EntityListener calls. Bug fix: fixed some entity operations not being performed under special circumstances. Internals: split Engine internals into loosely coupled, single responsibility smaller classes. Update: uses Libgdx 1.</description>
     </item>
     
@@ -48,10 +48,10 @@ We are definitely aware of the shortcomings of the game. We spent a lot of the j
       <pubDate>Sun, 10 Jan 2016 11:28:19 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdxjam-update-3/</guid>
-      <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&#39;ve been hard at work, especially @DrillerDev who&#39;s pushed the character design and animation.
+      <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&amp;rsquo;ve been hard at work, especially @DrillerDev who&amp;rsquo;s pushed the character design and animation.
 Look at this bad boy for instance, better not to mess with his alien gun.
 Or the beholder powered alien surveillance.
-Please, ignore the placeholder environment art, it&#39;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
+Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
     </item>
     
     <item>
@@ -60,9 +60,9 @@ Please, ignore the placeholder environment art, it&#39;s the textures from the O
       <pubDate>Fri, 01 Jan 2016 19:39:03 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdxjam-new-years-update/</guid>
-      <description>We&amp;quot;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&#39;s eve.
-Here&#39;s a few updates.
- @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&#39;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
+      <description>We&amp;quot;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&amp;rsquo;s eve.
+Here&amp;rsquo;s a few updates.
+ @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&amp;rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
     </item>
     
     <item>
@@ -72,9 +72,9 @@ Here&#39;s a few updates.
       
       <guid>https://saltares.com/projects/libjdxjam-is-on-life-in-space/</guid>
       <description>Check the keynote and all the awkward moments from the dev team, including mine!
-The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJAM and here&#39;s our idea:
- Abe&#39;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
- A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&#39;s inhabited by big fat angry aliens with guns.</description>
+The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJAM and here&amp;rsquo;s our idea:
+ Abe&amp;rsquo;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
+ A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&amp;rsquo;s inhabited by big fat angry aliens with guns.</description>
     </item>
     
     <item>
@@ -83,7 +83,7 @@ The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJ
       <pubDate>Tue, 10 Nov 2015 21:48:23 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-7-0-released/</guid>
-      <description>There&#39;s a new Ashley release, check the changes for 1.7.0 below:
+      <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.0 below:
  API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership(). Update: uses Libgdx 1.</description>
     </item>
     
@@ -103,7 +103,7 @@ Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to
       <pubDate>Sat, 12 Sep 2015 12:44:13 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-50-off/</guid>
-      <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&#39;s website using the code LCPGDC50. You have to admit it&#39;s a total steal, considering it&#39;s the most complete and up to date Libgdx book out there.
+      <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&amp;rsquo;s website using the code LCPGDC50. You have to admit it&amp;rsquo;s a total steal, considering it&amp;rsquo;s the most complete and up to date Libgdx book out there.
  Over 75 to-the-point articles that will show you how to leverage a particular aspect of Libgdx for your game. Every article is accompanied by a runnable sample available on GitHub.</description>
     </item>
     
@@ -114,7 +114,7 @@ Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to
       
       <guid>https://saltares.com/projects/conjugate-is-now-available/</guid>
       <description>Conjugate is a free, multi-language verb conjugator service and it is now available at saltares.com/conjugate.
-It&amp;quot;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the Conjugate button to get a nice list with all its conjugated forms. You don&#39;t know how to conjugate a verb whilst on the go? No worries, Conjugate&#39;s design is responsive, which means it looks neat on any device.</description>
+It&amp;quot;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the Conjugate button to get a nice list with all its conjugated forms. You don&amp;rsquo;t know how to conjugate a verb whilst on the go? No worries, Conjugate&amp;rsquo;s design is responsive, which means it looks neat on any device.</description>
     </item>
     
     <item>
@@ -123,7 +123,7 @@ It&amp;quot;dead easy: select the target language, enter the infinitive form, ei
       <pubDate>Wed, 29 Jul 2015 22:58:27 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-6-0-released/</guid>
-      <description>A new Ashley package has shipped, making 1.6.0 the latest stable version. Here&#39;s the summary of the changes:
+      <description>A new Ashley package has shipped, making 1.6.0 the latest stable version. Here&amp;rsquo;s the summary of the changes:
  API change: Component is now an interface. API addition: adds getEngine() to EntitySystem. API addition: EntityListeners now are notified by priority order. API consistency: defines what happens when an Entity is added twice to an Engine and when we try do nested updates. We throw an exception in both cases. API consistency: adding an EntitySystem of the same class twice replaces the previous one, just like it has always happened when adding Components to an Entity.</description>
     </item>
     
@@ -133,7 +133,7 @@ It&amp;quot;dead easy: select the target language, enter the infinitive form, ei
       <pubDate>Sun, 17 May 2015 11:02:20 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/</guid>
-      <description>Haven&#39;t bought Libgdx Cross-platform Game Development Cookbook yet? Stop reading and go get it!
+      <description>Haven&amp;rsquo;t bought Libgdx Cross-platform Game Development Cookbook yet? Stop reading and go get it!
 Quick update to inform you that I just updated the samples repository to use Libgdx 1.6.0 and Ashley 1.5.0, both recently released.
 Libgdx 1.6.0 introduces changes in our font rendering API, which require a few minor tweaks to the framework calls, nothing major.
 7 months after the release of the book, we continue to support it. Rest assured, it is the most up to date Libgdx publication at this point in time.</description>
@@ -145,9 +145,9 @@ Libgdx 1.6.0 introduces changes in our font rendering API, which require a few m
       <pubDate>Sun, 17 May 2015 10:24:29 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-5-0-released/</guid>
-      <description>Thanks to the contributors, here&#39;s a new version of Ashley, which now stands at 1.5.0. A new version of your favorite component based entity framework is out.
+      <description>Thanks to the contributors, here&amp;rsquo;s a new version of Ashley, which now stands at 1.5.0. A new version of your favorite component based entity framework is out.
 The version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
- API addition: adds getFamily() method to IntervalIteratingSystem and IteratingSystem. API change: IntervalSystem‘s update() method is now final, as it doesn&#39;t make sense to override it.</description>
+ API addition: adds getFamily() method to IntervalIteratingSystem and IteratingSystem. API change: IntervalSystem‘s update() method is now final, as it doesn&amp;rsquo;t make sense to override it.</description>
     </item>
     
     <item>
@@ -156,7 +156,7 @@ The version comes with a bunch of bug fixes that, hopefully, will iron out some 
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
       <guid>https://saltares.com/projects/conjugate/</guid>
-      <description>For the past few weeks working on a new toy: Conjugate. It&#39;s probably easier if I just stick a summary of the GitHub readme here.
+      <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
  I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
@@ -168,7 +168,7 @@ Reason to be When learning a new language, it is very common to struggle with ve
       <pubDate>Thu, 19 Mar 2015 23:27:03 +0000</pubDate>
       
       <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated/</guid>
-      <description>It&#39;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
+      <description>It&amp;rsquo;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
 As promised, we have updated our samples repository to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, only a few changes were necessary to make everything work again.</description>
     </item>
     
@@ -190,8 +190,8 @@ As promised, we have updated our samples repository to use the latest versions o
       <guid>https://saltares.com/general/we-have-a-libgdx-cookbook-winner/</guid>
       <description>To celebrate the release of our Libgdx Cross-platform Game Development Cookbook we announced a raffle on Twitter earlier this week. A few RTs later and a random number generation, the winner is.
 Rafael Giordanno
-Congratulations, we&#39;ll get in touch with the winner to send him his paperback copy.
-Here&#39;s proof that everything was legit:
+Congratulations, we&amp;rsquo;ll get in touch with the winner to send him his paperback copy.
+Here&amp;rsquo;s proof that everything was legit:
  Participants list Random draw  </description>
     </item>
     
@@ -202,7 +202,7 @@ Here&#39;s proof that everything was legit:
       
       <guid>https://saltares.com/projects/get-a-free-libgdx-cookbook/</guid>
       <description>In order to spread the good word of Libgdx Cross-platform Game Development Cookbook, Alberto and I suggested Packt Publishing the idea of a raffle.
-Simply give us a retweet to enter the giveaway. We&#39;ll announce the winners on Friday 7th November.
+Simply give us a retweet to enter the giveaway. We&amp;rsquo;ll announce the winners on Friday 7th November.
 Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to enter the raffle! http://t.co/TVx4Zptc5y
 &amp;mdash; David Saltares (@d_saltares) November 3, 2014  Good luck!</description>
     </item>
@@ -247,7 +247,7 @@ Bug fix: fixed nested iteration problem caused by adding/removing entities from 
       
       <guid>https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/</guid>
       <description>As I have mentioned before, I have been working on a book titled Libgdx Cross-platform Game Development Cookbook, which is set to be released next month.
-Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&#39;s evolution. Neat, isn&#39;t it?
+Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&amp;rsquo;s evolution. Neat, isn&amp;rsquo;t it?
   For those interested, here are the options I used.
 gource -1280x720 --seconds-per-day 0.</description>
     </item>
@@ -258,8 +258,8 @@ gource -1280x720 --seconds-per-day 0.</description>
       <pubDate>Sun, 14 Sep 2014 20:00:07 +0000</pubDate>
       
       <guid>https://saltares.com/projects/ashley-1-2-0-released/</guid>
-      <description>There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&#39;ll find new.
- API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&#39;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.</description>
+      <description>There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&amp;rsquo;ll find new.
+ API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&amp;rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.</description>
     </item>
     
     <item>
@@ -278,7 +278,7 @@ gource -1280x720 --seconds-per-day 0.</description>
       <pubDate>Sat, 09 Aug 2014 21:41:53 +0000</pubDate>
       
       <guid>https://saltares.com/projects/finally-ashley-has-a-logo/</guid>
-      <description>Ashley now has a logo and it&#39;s awesome! What an amazing contribution.
+      <description>Ashley now has a logo and it&amp;rsquo;s awesome! What an amazing contribution.
 This is really good news because Ashley lacked an image to make it a bit more memorable. Now back to work, there will soon be a new release. Despite it involving some API changes, it will make for a much faster framework.</description>
     </item>
     
@@ -291,7 +291,7 @@ This is really good news because Ashley lacked an image to make it a bit more me
       <description>Ashley, your favourite entity framework now has online javadocs and a wiki.
  Wooohooo!
  The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
-I just started putting stuff into the wiki yesterday so it&#39;s pretty empty as of now. Expect more content soon!</description>
+I just started putting stuff into the wiki yesterday so it&amp;rsquo;s pretty empty as of now. Expect more content soon!</description>
     </item>
     
     <item>
@@ -312,7 +312,7 @@ The book offers step-by-step guides on how to master Libgdx subsystems to build 
       <pubDate>Mon, 27 Jan 2014 08:46:10 +0000</pubDate>
       
       <guid>https://saltares.com/general/new-beginnings/</guid>
-      <description>It&#39;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
+      <description>It&amp;rsquo;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
 In a spark of madness, after Math Maze was done, I partnered with a publisher to start writing a game development book. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery.</description>
     </item>
     
@@ -322,8 +322,8 @@ In a spark of madness, after Math Maze was done, I partnered with a publisher to
       <pubDate>Mon, 05 Nov 2012 23:09:42 +0000</pubDate>
       
       <guid>https://saltares.com/projects/my-projects-migrated-to-github/</guid>
-      <description>I&#39;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
-Even though I&#39;ve always been kind of sceptical about GitHub, I&#39;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&#39;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects).</description>
+      <description>I&amp;rsquo;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
+Even though I&amp;rsquo;ve always been kind of sceptical about GitHub, I&amp;rsquo;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&amp;rsquo;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects).</description>
     </item>
     
     <item>
@@ -332,7 +332,7 @@ Even though I&#39;ve always been kind of sceptical about GitHub, I&#39;ve finall
       <pubDate>Sun, 09 Sep 2012 19:58:44 +0000</pubDate>
       
       <guid>https://saltares.com/projects/id-generator-avoiding-string-comparisons/</guid>
-      <description>Disclaimer: IDGenerator is being used in SionEngine and it&#39;s an useful but rather simple approach to the problem described in the paragraphs below.
+      <description>Disclaimer: IDGenerator is being used in SionEngine and it&amp;rsquo;s an useful but rather simple approach to the problem described in the paragraphs below.
 Needless to say that in games development we care very much about performance. It becomes an even more critical issue when we&amp;quot;re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons.</description>
     </item>
     
@@ -342,8 +342,8 @@ Needless to say that in games development we care very much about performance. I
       <pubDate>Sun, 02 Sep 2012 09:57:18 +0000</pubDate>
       
       <guid>https://saltares.com/projects/sionengine-a-libgdx-based-system/</guid>
-      <description>Note: I&#39;ve decided to remove the repo for now as I feel that it&#39;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my GitHub profile.
-I&#39;ve been working with libgdx for a few months now and I love every aspect of it, except maybe the fact that it&#39;s only compatible with Java but don&#39;t worry about me, I&amp;quot;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&#39;s just too awesome.</description>
+      <description>Note: I&amp;rsquo;ve decided to remove the repo for now as I feel that it&amp;rsquo;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my GitHub profile.
+I&amp;rsquo;ve been working with libgdx for a few months now and I love every aspect of it, except maybe the fact that it&amp;rsquo;s only compatible with Java but don&amp;rsquo;t worry about me, I&amp;quot;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&amp;rsquo;s just too awesome.</description>
     </item>
     
     <item>
@@ -371,7 +371,7 @@ Los participantes han de ser estudiantes universitarios, de bachillerato o de ci
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
       <guid>https://saltares.com/projects/glapse-v0-3-has-been-released/</guid>
-      <description>I&#39;ve been really busy with the development of Sion Tower but it&#39;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;quot;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.
+      <description>I&amp;rsquo;ve been really busy with the development of Sion Tower but it&amp;rsquo;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;quot;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.
 Changelog  Improves video quality but the slider to configure it had to be deleted.</description>
     </item>
     
@@ -390,7 +390,7 @@ Changelog  Improves video quality but the slider to configure it had to be delet
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/projects/glapse-take-screenshots-glue-them-together/</guid>
-      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&#39;s where gLapse comes into play.</description>
+      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;rsquo;s where gLapse comes into play.</description>
     </item>
     
     <item>
