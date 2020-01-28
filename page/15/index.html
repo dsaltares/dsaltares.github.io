@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.63.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -99,6 +99,100 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/">Fix your timestep in Libgdx and Box2D</a>
+      </h1>
+      <span class="post-date">Mar 11, 2014 &middot; <a href="https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
+<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&rsquo; behaviour.</p>
+<p>I thought it would be a good idea to show how it translates to a <a href="https://github.com/libgdx/libgdx">Libgdx</a> application using the <a href="http://box2d.org/">Box2D</a> physics engine. Note that it also applies to <a href="http://bulletphysics.org/wordpress/">Bullet</a>, changes would be minimal.</p>
+<h3 id="simple-but-wrong-approaches">Simple but wrong approaches</h3>
+<p>It starts with a fix time step of 1/60th of a second, which makes for a stable simulation but fails terribly when the game runs at less than 60fps, a very common situation in mobile devices.</p>
+<p>The logical upgrade is to pass exactly how much time has passed since the last frame. Obviously, not every frame takes the same, which means the simulation could be unstable. Moreover, it will vary across devices as they can feature a wide range of specifications. This is definitely not the way to go.</p>
+<blockquote>
+<p>Everything is lost!</p>
+</blockquote>
+<h3 id="fixed-timestep">Fixed timestep</h3>
+<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let&rsquo;s say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we&rsquo;d only step the physics one every two frames.</p>
+<blockquote>
+<p>What happens when the game runs at 50fps?</p>
+</blockquote>
+<p>We need an <code>accumulator</code> where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.</p>
+<pre><code>public class SionGame extends ApplicationListener {
+    private World world;
+    private double accumulator;
+    private double currentTime;
+    private float step = 1.0f / 60.0f;
+
+    public void render() {
+        double newTime = TimeUtils.millis() / 1000.0;
+        double frameTime = Math.min(newTime - currentTime, 0.25);
+        float deltaTime = (float)frameTime;
+
+        currentTime = newTime;
+
+        while (accumulator &amp;gt;= step) {
+            world.step(step, velIterations, posIterations);
+            accumulator -= step;
+        }
+}
+</code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
+<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
+<pre><code>public class SionGame extends ApplicationListener {
+    private World world;
+    private double accumulator;
+    private double currentTime;
+    private float step = 1.0f / 60.0f;
+
+    public void render() {
+        double newTime = TimeUtils.millis() / 1000.0;
+        double frameTime = Math.min(newTime - currentTime, 0.25);
+        float deltaTime = (float)frameTime;
+
+        currentTime = newTime;
+
+        while (accumulator &amp;gt;= step) {
+            world.step(step, velIterations, posIterations);
+            accumulator -= step;
+            entityManager.update();
+        }
+
+        entityManager.interpolate(accumulator / step);
+}
+</code></pre><p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
+<pre><code>public void interpolate(float alpha) {
+    for (Entity entity : entities) {
+        Transform transform = entity.getBody().getTransform();
+        Vector2 bodyPosition = transform.getPosition();
+        Vector2 position = entity.getPosition();
+        float angle = entity.getAngle();
+        float bodyAngle = transform.getRotation();
+
+        position.x = bodyPosition.x * alpha + position.x * (1.0f - alpha);
+        position.y = bodyPosition.y * alpha + position.x * (1.0f - alpha);
+        entity.setAngle(bodyAngle * alpha + angle * (1.0f - alpha));
+    }
+}
+</code></pre><p>Although it&rsquo;s been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
+<h3 id="a-working-sample">A working sample</h3>
+<p>Libgdx community memeber, Just4phil, pointed out in the comments the advantages of using a fixed timestep with interpolation. He kindly provided a working sample that lets you switch between all approaches explained in this article. Not only that, he also linked to the source, which is really awesome. Kudos.</p>
+<p><img src="../../img/wp/just4phil-fixed-timestep.png" alt="Fixed timestep demo"></p>
+<ul>
+<li><a href="http://goo.gl/aF0wSJ">Download demo jar</a></li>
+<li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java">Fixed timestep code</a></li>
+<li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java">Interpolation code</a></li>
+</ul>
+<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven&rsquo;t done so already.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -273,27 +367,6 @@
 <h3 id="download-it">Download it</h3>
 <p>In case you are interested, <a href="https://gist.github.com/dsaltares/8904478">SmartEnums.h</a> is available as a GitHub gist.</p>
 <!-- raw HTML omitted -->
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/new-beginnings/">New beginnings</a>
-      </h1>
-      <span class="post-date">Jan 27, 2014 &middot; <a href="https://saltares.com/general/new-beginnings/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p><img src="../../img/wp/ps4-controller.png" alt="ps4-controller.png"></p>
-<p>It&rsquo;s been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.</p>
-<p>In a spark of madness, after <strong><a href="../../games/math-maze/" title="Math Maze">Math Maze</a></strong> was done, I partnered with a publisher to start writing a <strong>game development book</strong>. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery. It didn&rsquo;t matter how much safety net time I added to the schedule, I was wrong every time. Fortunately enough, the publisher has been most understanding so far and we&quot;re currently studying alternatives such as coauthorship.</p>
-<p>There has been, however, a much more serious issue at hand. Just before Christmas, I made the decision to leave <strong>Crytek UK</strong> to go to <strong>Sony Soho</strong> to work as a programmer in the R&amp;D department.</p>
-<p>I&quot;m starting today!</p>
-<p>My adventure in the games industry started at Crytek two years ago. Not that my knowledge is worth mentioning but, in comparison, I was a complete n00b back then. Everything that I know is thanks to the people there. I cannot begin to express what an honour has been to work with the team on a triple A game.</p>
-<p>As sad as leaving Crytek and all the ridiculously talented people there was, I&quot;m very excited about the new beginning and to be back in the London life.</p>
 
       
     </div>

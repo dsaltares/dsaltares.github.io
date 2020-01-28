@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.63.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -99,6 +99,24 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/primeras-colaboraciones-en-iberogre/">Primeras colaboraciones en IberOgre</a>
+      </h1>
+      <span class="post-date">Oct 11, 2010 &middot; <a href="https://saltares.com/games/primeras-colaboraciones-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><strong>Mi motivación</strong> con respecto al proyecto <strong>ha ganado enteros</strong> durante los últimos días ya que, en contra de todas mis previsiones a medio plazo, ya <strong>hay gente interesada en <a href="http://osl2.uca.es/iberogre">IberOgre</a></strong>. No sólo como lectores sino como colaboradores activos lo cual considero realmente importante. Jamás hubiera pensado que IberOgre pudiese atraer participantes en una fase tan temprana de su desarrollo (pocos se suben a un barco que no está casi terminado).</p>
+<p><strong>Alberto Cejas, compañero de carrera</strong> y con un proyecto entre manos relacionado con los videojuegos y Ogre3D <strong>ha redactado un artículo</strong> titulado &ldquo;<a href="http://osl2.uca.es/iberogre/index.php/Conceptos_Generales"><em>Conceptos Generales&rdquo;</em></a> en el que habla sobre la arquitectura y el diseño de nuestro engine de renderizado. Esto lo convierte en el primer colaborador en publicar un artículo en la wiki, espero que sea el primero de muchos. Le estoy muy agradecido y espero que siga aportando artículos tan buenos como este.</p>
+<p><strong>La importancia de Twitter</strong> como herramienta para difundir proyectos ha quedado patente en este caso. Gracias a la cuenta oficial de IberOgre y la mía personal hemos aparecido como usuarios recomendados a gente interesada en el mundo de las 3D. A partir de ahí han surgido lectores como <a href="http://twitter.com/spectrumgomas">@spectrumgomas</a> que han <strong>pedido artículos nuevos, hecho correcciones y aportado ideas</strong>. El compañero <a href="http://twitter.com/che1404">@che1404</a> incluso se ha ofrecido a escribir, a lo que he aceptado rápidamente (no vaya a ser que se arrepienta). Estos usuarios, a su vez, han retwiteado mensajes o recomendado la wiki a otros muchos. Por todo esto, infinitas gracias.</p>
+<p><strong>Espero que algún día se pueda formar una pequeña comunidad</strong> de desarrolladores de videojuegos 3D entorno a IberOgre y que aporten sus conocimientos. Puede que sea una utopía pero muestras de interés como la de los últimos días animan a seguir adelante.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -274,46 +292,6 @@ tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP
 </code></pre><p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
 <h3 id="lo-mismo-casi-en-la-mitad-de-tiempo">Lo mismo casi en la mitad de tiempo</h3>
 <p>Si tienes que hacer grandes copias y enviarlas por la red, <strong>este pequeño truco es tu amigo</strong>. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve <strong>resultados impresionantes</strong>: enviar los datos mientras éstos se comprimen lleva <strong>casi la mitad de tiempo</strong> que hacerlo en etapas separadas.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/synergy-varios-equipos-un-raton/">Synergy: varios equipos, un ratón</a>
-      </h1>
-      <span class="post-date">Sep 26, 2010 &middot; <a href="https://saltares.com/computing/synergy-varios-equipos-un-raton/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p><img src="../../img/wp/quicksynergy.png" alt="quicksynergy.png"></p>
-<p><strong>Cuando trabajamos no es extraño tener varias ventanas abiertas</strong>: navegador, documentación, código y cliente de Twitter (¡ejem!). Cambiar constantemente de ventana puede ser un suplicio por lo que muchos optan por utilizar dos pantallas conectadas a su equipo. Menos usual pero igualmente posible es tener que manejar dos ordenadores al mismo tiempo, por ejemplo, el equipo de trabajo y el de pruebas. En tal caso <strong>tu mesa puede convertirse en un verdadero caos</strong> con tanto teclado y ratón estorbando, <strong>la solución es Synergy</strong>. A continuación, un sencillo tutorial de instalación y configuración.</p>
-<h3 id="la-solución-es-synergy">La solución es Synergy</h3>
-<p><strong><a href="http://synergy2.sourceforge.net/">Synergy</a></strong> es una aplicación open source (<a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL</a>) que nos permite <strong>compartir teclado y ratón</strong> entre dos o más equipos. Incluso es posible hacerlo entre aquellos con distinto sistema operativo instalado (GNU/Linux, Windows y Mac). <strong><a href="http://code.google.com/p/quicksynergy/">QuickSynergy</a></strong> es una GUI para Synergy, también libre, que facilita su configuración y uso. Mi antiguo <a href="http://ragingbit.com/blog/">compañero de trabajo</a> lo utilizaba y me mostró sus ventajas, ahora que me estoy acostumbrando noto una gran mejoría en comodidad y rapidez. <strong>Presten atención a los siguientes pasos</strong> para poner en marcha todo este tenderete.</p>
-<p>Hay que distinguir entre <strong>dos conceptos</strong>:</p>
-<ul>
-<li><strong>Servidor</strong>: equipo que comparte el teclado y el ratón con los clientes. Sólo tendremos un servidor.</li>
-<li><strong>Cliente</strong>: equipo que recibe la señal de teclado y ratón del servidor. Podemos tener varios clientes conectados a un servidor.### Instalación</li>
-</ul>
-<p><strong>En el servidor vamos a instalar QuickSynergy</strong> mientras que <strong>en los clientes sólo necesitamos Synergy</strong> (aunque también podemos instalar el pack completo. En sistemas no basados en Debian será necesario descargar y compilar el código (en <a href="http://code.google.com/p/quicksynergy/downloads/list">su forja</a> de Google Code), pero en el resto podemos hacer:</p>
-<pre><code># Instalamos Synergy + QuickSynergy
-sudo apt-get install quicksynergy
-
-# Instalamos Synergy
-sudo apt-get install synergy
-</code></pre><h3 id="configuración-y-uso">Configuración y uso</h3>
-<p>El primer paso es <strong>poner el servidor en marcha</strong> para que comience a enviar la señal. Para ello, abrimos QuickSynergy y nos centraremos únicamente en la pestaña <em>&ldquo;Share&rdquo;</em> (compartir). Los pasos son tremendamente sencillos:</p>
-<p>1. Elegimos la posición del cliente con respecto al servidor (arriba, abajo, izquierda o derecha). 2. Introducimos la dirección IP o nombre de host del cliente. 3. Hacemos click en <em>&ldquo;Execute&rdquo;</em>.</p>
-<p><img src="../../img/wp/quicksynergy-share.png" alt="quicksynergy-share.png"></p>
-<p>Si <strong>el cliente</strong> está encendido y no tenemos fácil acceso a su teclado y ratón podemos activar Synergy a través de SSH y todos tan contentos:</p>
-<pre><code>ssh usuario@host &quot;synergyc –name nombreHost ipServidor&quot;
-</code></pre><p>En cambio, si preferimos utilizar QuickSynergy para configurar el cliente será necesario acudir a la pestaña <em>&ldquo;Use&rdquo;</em>. Introducimos la IP del servidor y hacemos click sobre <em>&ldquo;Execute&rdquo;</em>.</p>
-<p><img src="../../img/wp/quicksynergy-use.png" alt="quicksynergy-use.png"></p>
-<h3 id="reputación">Reputación++</h3>
-<p>Listo, ahora es posible compartir teclado y ratón entre varios equipos con lo que <strong>nuestro estatus como informático profesional habrá ganado enteros</strong>. Seremos aclamados y mereceremos el respeto y temor de todos nuestros compañeros.</p>
-<p><img src="../../img/wp/3-screens.png" alt="3-screens.png"></p>
 
       
     </div>

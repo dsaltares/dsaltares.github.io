@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.63.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -99,6 +99,28 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/">Sion Tower, animaciones del protagonista y el Goblin</a>
+      </h1>
+      <span class="post-date">Mar 28, 2011 &middot; <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/y6Bwx7XoGgA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<p>En este vídeo queda patente de nuevo el gran trabajo que está llevando a cabo <a href="http://ajr-portafolio.blogspot.com/">AJR</a> en Sion Tower. Se muestran <strong>las animaciones del protagonista y el Goblin</strong> del juego en una sencilla secuencia para que podáis verlas con claridad.</p>
+<p>Esto nos lleva a pensar en el proceso de exportación de los modelos <strong>desde Cinema 4D a Ogre</strong> y Blender para su liberación. Tras intercambiar decenas de correos con el desarrollador del plugin que realiza la tarea <strong>he obtenido texturas y animaciones correctas</strong>. Cuando solucione un par de detalles os mostraré un nuevo vídeo con el personaje dentro del propio juego.</p>
+<p>En temas de código estoy <strong>trabajando en la búsqueda de caminos</strong> para los enemigos mediante una malla de navegación. Será posible diseñar una maya de triángulos en Blender para indicarle al motor las zonas accesibles del escenario. Una vez cargado en el sistema, será posible trazar rutas óptimas para el movimiento de los personajes.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -286,34 +308,6 @@ if __name__ == &quot;__main__&quot;:
 <h3 id="feedback">Feedback</h3>
 <p>Una de las mejores formas en las que puedes colaborar con Sion Tower es aportando opiniones, sugerencias, ideas e informes de bugs. Todos los comentarios serán recibidos con los brazos abiertos y estudiados con la debida atención.</p>
 <p><strong>¡Muchas gracias, seguiremos trabajando duro!</strong></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/la-pesadilla-de-los-formatos-3d/">La pesadilla de los formatos 3D</a>
-      </h1>
-      <span class="post-date">Mar 18, 2011 &middot; <a href="https://saltares.com/games/la-pesadilla-de-los-formatos-3d/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/formatos3d.png" alt="formatos3d.png"></p>
-<p>En el blog de desarrollo <strong>no todo iban a ser alegrías y objetivos cumplidos</strong>, también es justo y necesario tratar los escollos del camino. La <strong>guerra de formatos</strong> y los insufribles dolores de cabeza que provocan aquellos que son privativos no es algo que nos pille de primeras. ¿Cuántas veces un escalofrío nos ha recorrido el cuerpo cuando una institución pública nos envía un formulario importante en <em>.docx</em>? De la misma manera, este problema nos lo encontramos en el mundo de la animación en tres dimensiones.</p>
-<h3 id="cinema-4d-es-privativo-pero-existen-exportadores">Cinema 4D es privativo pero existen exportadores</h3>
-<p><strong>Nuestro artista trabaja con <a href="http://es.wikipedia.org/wiki/Cinema_4D">Cinema 4D</a></strong>, un software propietario de modelado y animación. En ningún momento se me pasaría por la cabeza rechazar una colaboración por este motivo. No seré yo quien lo coloque entre la espada y la pared: <em>&ldquo;aprendes Blender o sales derechito por la puerta&rdquo;</em>. Por supuesto, no quiero criticar su trabajo, lo está haciendo genial, no hay más que mirar los resultados. <strong>El culpable es el formato</strong> cerrado y su incompatibilidad a priori con Ogre. Lógicamente, en su momento <strong>comprobé que existían exportadores</strong> desde Cinema 4D a Blender y Ogre. Además, en caso de que los plugins diesen problemas podíamos <strong>utilizar <a href="http://en.wikipedia.org/wiki/COLLADA">COLLADA</a></strong>, un formato XML abierto para el intercambio de información 3D entre distinto software de creación de contenido (DCC).</p>
-<p><img src="../../img/wp/triste.jpg" alt="triste.jpg"></p>
-<h3 id="horror-el-asunto-no-es-tan-sencillo">¡Horror! El asunto no es tan sencillo</h3>
-<p>Nuestra sorpresa y desazón fueron máximas cuando comprobamos que <strong>en la exportación a COLLADA se perdía información</strong> imperdonable como el UV mapping de las texturas y las animaciones. Lo mismo ocurría con la totalidad de formatos supuestamente preparados para el intercambio.</p>
-<p>Finalmente me he puesto en contacto con el desarrollador del plugin que exporta de Cinema 4D a Ogre más prometedor. Tras intercambiar varios correos y toneladas de problemas <strong>hemos conseguido incluir el personaje</strong> creado por AJR en la escena. No obstante, aún estamos tratando de solucionar problemas con las sombras proyectadas y las animaciones. Hemos <a href="http://www.ogre3d.org/forums/viewtopic.php?f=2&amp;t=63751">preguntado en el foro de Ogre</a> y seguimos indagando la forma de solucionarlo.</p>
-<p><img src="../../img/wp/siontower-ok.jpg" alt="siontower-ok.jpg"></p>
-<h3 id="poco-a-poco-se-solucionan-los-problemas">Poco a poco se solucionan los problemas</h3>
-<p>Una vez encontremos los flujos de trabajo y de exportación adecuados no habrá demasiados problemas, pero hasta entonces uno pasa bastante miedo. Por estos inconvenientes y sintiéndolo mucho, nos será imposible incluir el personaje animado en la demo técnica antes de la fase local del CUSL. Cuando hayamos superado este problema <strong>distribuiremos los personajes texturizados y animados en un formato abierto</strong>.</p>
-<p><img src="../../img/wp/siontower-bad.jpg" alt="siontower-bad.jpg"></p>
-<p>Sin duda, no hay que fiarse en absoluto de estos formatos.</p>
-<p><!-- raw HTML omitted --><strong>Disclaimer</strong><!-- raw HTML omitted -->: es posible que mi inexperiencia con el modelado 3D en general y con los formatos en particular me ha llevado a imprecisiones a lo largo de este artículo. Ruego no arrojen piedras.</p>
 
       
     </div>

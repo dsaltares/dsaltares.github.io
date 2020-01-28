@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.63.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -99,6 +99,53 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/internationalization-for-libgdx-projects/">Localisation for libgdx projects</a>
+      </h1>
+      <span class="post-date">Apr 29, 2012 &middot; <a href="https://saltares.com/games/internationalization-for-libgdx-projects/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><strong><!-- raw HTML omitted -->Warning<!-- raw HTML omitted --></strong>: Libgdx now counts with <a href="https://github.com/libgdx/libgdx/wiki/Internationalization-and-Localization">localisation support</a>, rendering this approach obsolete.</p>
+<p><strong><!-- raw HTML omitted -->Edit<!-- raw HTML omitted -->:</strong> I just added UTF-8 support</p>
+<p><strong><a href="http://www.altdevblogaday.com/2012/04/19/localization-notes/">Localization is a key aspect in games</a></strong>, specially if you want to reach a wider audience. I recently <a href="https://github.com/dsaltares/freegemas-gdx">ported Freegemas</a> to the libgdx platform and, as the original one, I wanted to ship it with multi-language support. There is no such a thing as <a href="http://www.gnu.org/software/gettext/">gettext</a> for Java and I didn&rsquo;t see the Android internationalization system as a good fit in a multiplatform development. That&rsquo;s why I developed my little own internationalization module.</p>
+<p><strong><a href="https://github.com/dsaltares/freegemas-gdx/blob/master/freegemas/src/com/siondream/freegemas/LanguagesManager.java">Download LanguagesManager.java</a></strong></p>
+<p>Its usage is extremely simple, first we need a <em>media/languages.xml</em> file where all the strings in our project will be located. The syntax is pretty straight forward, we lay language sections identified with the code for each language. Inside every language, we provide a list of key value pairs with the localized strings.</p>
+<pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;languages&gt;
+
+   &lt;language name=&quot;en_UK&quot; &gt;
+
+      &lt;string key=&quot;Timetrial mode&quot; value=&quot;Timetrial mode&quot; /&gt;
+      &lt;string key=&quot;How to play&quot; value=&quot;How to play&quot; /&gt;
+      &lt;string key=&quot;Exit&quot; value=&quot;Exit&quot; /&gt;
+   &lt;/language&gt;
+
+
+   &lt;language name=&quot;es_ES&quot; &gt;
+
+      &lt;string key=&quot;Timetrial mode&quot; value=&quot;Contrarreloj&quot; /&gt;
+      &lt;string key=&quot;How to play&quot; value=&quot;Ayuda&quot; /&gt;
+      &lt;string key=&quot;Exit&quot; value=&quot;Salir&quot; /&gt;
+   &lt;/language&gt;
+&lt;/languages&gt;
+</code></pre><p>We can retrieve localized strings in our project through the <em>LanguagesManager</em> class and its <em>getString()</em> method. It&rsquo;s been implemented using the <a href="http://en.wikipedia.org/wiki/Singleton_pattern">Singleton</a> design pattern as we only need one instance accessible from, potentially, everywhere in the code. When we ask our manager for a certain string we will use its key, if it finds it within the current language, it&quot;ll return it, otherwise it&quot;ll return the key itself. That&rsquo;s why using strings in a base language (English) as keys can be a good idea, those will be returned by default.</p>
+<p>For now, it uses <a href="http://en.wikipedia.org/wiki/Lazy_initialization">lazy initialization</a> which means it&quot;ll load the language the first time the <em>getInstance()</em> method is called but that might change in the future. It automatically detects the system language (no matter if we are on Android or a desktop environment) and it fallsback to English if the system language is not among the available ones in the <em>data/languages.xml</em> file. However, you can explicitly specify the language you want to load through the <em>loadLanguage()</em> method.</p>
+<pre><code>LanguagesManager lang;
+
+lang = LanguagesManager.getInstance();
+
+String option1 = lang.getString(&quot;Timetrial mode&quot;);
+String option2 = lang.getString(&quot;How to play&quot;);
+String option3 = lang.getString(&quot;Exit&quot;);
+</code></pre><p>Freegemas libgdx is open source (<a href="http://www.gnu.org/licenses/quick-guide-gplv3.html">GPL v3</a>) as is this internationalization module which means you&quot;re more than welcome to download it, use it and improve it. If you do the latest, make sure you distribute it the same way as me.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -200,25 +247,6 @@
   <iframe src="https://www.youtube.com/embed/Dvb__ZmDC-A" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/official-open-source-playstation-move-library/">Official open source PlayStation Move library</a>
-      </h1>
-      <span class="post-date">Nov 27, 2011 &middot; <a href="https://saltares.com/games/official-open-source-playstation-move-library/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/playstationmove.jpg" alt="playstationmove.jpg"></p>
-<p>Just a quick update: Sony has released <strong><a href="http://code.google.com/p/moveme">moveme</a></strong>, an <strong>official and open source PlayStation Move API</strong> that enables developers to create Windows and Linux applications controlled using Sony&rsquo;s famous wand. You can read more about the library in the following paragraphs.</p>
-<p>They have published a <strong>C/C++</strong> version and a <strong>C#</strong> one. Within the Google Code repository you can find the sources for all the versions, some <strong>sample programs</strong> and a brief but <strong>accessible documentation</strong>. This small API provides functions to connect with several PlayStation Move controllers; to get the wand&rsquo;s info such as position, orientation or button presses and even to manage rumble effects. It looks like Sony has published the library the proper way.</p>
-<p>It&rsquo;s <strong>surprising</strong> that such a secretive company like Sony publishes a library to work with their proprietary controller. However, given the unofficial Kinect SDK situation, it&rsquo;s certainly more desirable providing your own version before the unofficial one comes around. Furthermore, no one can deny that Kinect SDK has given Microsoft&rsquo;s device more popularity across the Net.</p>
-<p>It&rsquo;s a pity that I don&rsquo;t own one of these controllers. Otherwise I could maybe create a Move compatible version of <a href="../../games/sion-tower/" title="Sion Tower">Sion Tower</a>. Who knows?</p>
 
       
     </div>

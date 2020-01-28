@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.1" />
+	<meta name="generator" content="Hugo 0.63.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -99,6 +99,26 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/extenso-tutorial-de-ois-en-iberogre/">Extenso tutorial de OIS en IberOgre</a>
+      </h1>
+      <span class="post-date">Sep 11, 2010 &middot; <a href="https://saltares.com/games/extenso-tutorial-de-ois-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/OIS.png" alt="OIS.png"></p>
+<p>Tras algunas semanas sin anunciar ninguna novedad en <a href="http://osl2.uca.es/iberogre"><strong>IberOgre</strong></a> traigo <strong>buenas noticias</strong>. Para empezar, he eliminado parte de la incertidumbre inicial y planificado los próximos artículos. Además, mi compañero, <strong>Alberto Cejas, va a comenzar a colaborar</strong> en la wiki. Sé que las palabras no valen por sí solas y por ello ya está publicado un <strong>nuevo artículo</strong> en la wiki de Ogre3D en español: <em><a href="http://osl2.uca.es/iberogre/index.php/Manejo_b%C3%A1sico_de_OIS">&ldquo;Manejo básico de OIS&rdquo;</a></em> catalogado en la sección <em><a href="http://osl2.uca.es/iberogre/index.php/Secci%C3%B3n:Otras_tecnolog%C3%ADas">&ldquo;Otras tecnologías&rdquo;</a></em>.</p>
+<p><strong><a href="http://sourceforge.net/projects/wgois/">OIS</a></strong> (Object Oriented Input System) es una biblioteca multiplataforma (Windows, GNU/Linux y Mac) open source (licencia <a href="http://www.opensource.org/licenses/zlib-license.php">zlib/libpng</a>) para la <strong>gestión de eventos</strong> y dispositivos de entrada. Ogre3D no es un motor de videojuegos en 3D, simplemente es un engine de renderizado por lo que componentes como sonido, red y entrada no están incluidos. Es perfectamente válido utilizar el subsistema de entrada de SDL para capturar eventos pero OIS es la librería más extendida en la comunidad de Ogre.</p>
+<p>Entre las características de OIS destaca la orientación a objetos (¡qué sorpresa!) y la <strong>inclusión de listeners</strong>. Utilizando el <a href="http://es.wikipedia.org/wiki/Observer_%28patr%C3%B3n_de_dise%C3%B1o%29">patrón de diseño <em>&ldquo;Observador&rdquo;</em></a> ya implementado podemos crear clases capaces de ser notificadas de cambios en el estado interno del ratón, teclado o cualquier joystick conectado al equipo. Da resultados bastante buenos pero <strong>la documentación oficial es prácticamente inexistente</strong>. No existe una documentación oficial, únicamente podemos acceder al html generado por Doxygen de las clases si lo generamos nosotros mismos a partir del código. Por si fuera poco, muchas de los métodos no están completamente explicados y muchas secciones son confusas. Afortunadamente, en la wiki oficial de Ogre3D encontramos un <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Using%20OIS">pequeño tutorial</a> (en inglés, obviamente).</p>
+<p><strong>En IberOgre se utilizará OIS</strong> como librería para capturar eventos del usuario por lo que era necesario incluir un tutorial al respecto. Creo que cubre un vacío hasta ahora complicado de salvar (aprender con escasa documentación nunca es agradable). El artículo está publicado aunque en proceso de corregir pequeños errores, si alguien detecta algún problema le agradecería que diera la voz de alarma.</p>
+<p><strong>Espero que os sea útil</strong>.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -293,33 +313,6 @@
 <h3 id="conclusiones">Conclusiones</h3>
 <p>Warhammer Fantasy goza de <strong>apariciones dignas de admiración</strong> en el mundo de los videojuegos pero como la mayoría de licencias tiene puntos negros en su expediente. Varias de sus entregas son productos de coleccionista y muchos sentirán cierta nostalgia al hacerles una visita. Espero que os haya parecido mínimamente interesante este pequeño tocho que acabo de soltar, al menos yo me lo he pasado bien recopilando la información y mis recuerdos.</p>
 <p>Quizás algún día me anime a hacer el equivalente en Warhammer 40.000.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/twigraph-grafos-de-followers-y-followings/">Twigraph, grafos de followers y followings</a>
-      </h1>
-      <span class="post-date">Aug 27, 2010 &middot; <a href="https://saltares.com/projects/twigraph-grafos-de-followers-y-followings/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p><img src="../../img/wp/twigraph-logo.png" alt="twigraph-logo.png"></p>
-<p>En un post anterior hablé sobre cómo me introduje en la <strong>programación en Python</strong> con PyGTK y Glade desarrollando <strong><a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">Tiny Backup</a></strong>. Antes que eso ya había experimentado un acercamiento al lenguaje de la serpiente en un ejercicio no extremadamente útil aunque curioso, el resultado fue Twigraph.</p>
-<h3 id="twigraph">Twigraph</h3>
-<p><strong>Twigraph</strong> es un pequeño script que utiliza un wrapper de la API de Twitter y una biblioteca para trabajar con el lenguaje Dot de <a href="http://www.graphviz.org/">Graphviz</a>. El script toma nuestro usuario y contraseña para producir una imagen PNG con el <strong>grafo de nuestros followings y followers</strong>. Nuestro usuario es el nodo central del cual parten flechas hacia nuestros following Las flechas recibidas corresponden a los followers. No es nada del otro mundo sino una pequeña práctica personal que ha quedado como una mera anécdota.</p>
-<p>En un principio <strong>pensé ahondar en la recursividad</strong>, de manera que fuese posible ver qué amigos estaban conectados entre sí. Esta característica es ofrecida por Twitter actualmente pero en el momento de la creación de Twigraph no era así. El problema era el <strong>límite de peticiones</strong> que impone Twitter sobre APIs externas, el número de enlaces crecía exponencialmente y las excepciones saltaban constantemente.[</p>
-<p><a href="../../img/wp/twitterfriendgraph.png"><img src="../../img/wp/twitterfriendgraph.png" alt="twitterfriendgraph.png"></a></p>
-<h3 id="python-twitter">Python Twitter</h3>
-<p>Hay que reconocer que el nombre de <strong><a href="http://code.google.com/p/python-twitter/">este wrapper de la API de Twitter</a></strong> para Python no es nada original. No obstante es tremendamente sencillo de utilizar y está <strong>bien <a href="http://python-twitter.googlecode.com/hg/doc/twitter.html">documentado</a></strong>. Con este wrapper podemos postear tweets, ver nuestro timeline o comenzar a seguir a otro usuario. En definitiva, tendremos acceso a la inmensa mayoría de las posibilidades de Twitter desde Python y con ejemplos de muchas de ellas.</p>
-<h3 id="graphviz-y-pydot">Graphviz y pydot</h3>
-<p>Graphviz es un software increíblemente potente para la <strong>generación de gráficas y diagramas</strong> liberado bajo <a href="http://www.graphviz.org/License.php">Commons Public License</a> (CPL). Podemos generarlas en forma de imágenes o en un formato vectorial para incluirlo en cualquier tipo de documentos como LaTeX. Cuenta con una <strong>sintaxis propia llamada dot</strong> con la que se definen los grafos a generar. Una herramienta muy potente de la que sólo conozco la superficie.</p>
-<p><strong><a href="http://dkbza.org/pydot.html">Pydot</a> es el wrapper de Graphviz</strong> para Python (aunque existen para multitud de lenguajes). Esta API es un poco más compleja y profunda por lo que puede resultar más difícil utilizarla. No obstante, si sólo deseamos las funciones básicas una ojeada a la <a href="http://dkbza.org/pydot/pydot.html">documentación</a> y a sus ejemplos bastará.</p>
-<p>Como siempre, si se quiere aprender un lenguaje o el uso de una API lo mejor es lanzarse a desarrollar un pequeño script o proyecto. Quien tenga curiosidad puede descargar Twigraph aunque aviso que no se trata el éxtasis de la elegancia.</p>
-<p>[<strong>Descargar twigraph.py</strong></p>
 
       
     </div>

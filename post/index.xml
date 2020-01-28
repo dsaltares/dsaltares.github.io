@@ -6,10 +6,20 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Fri, 17 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jan 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FOSDEM 2020 - Survival Guide</title>
+      <link>https://saltares.com/fosdem-2020-survival-guide/</link>
+      <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/fosdem-2020-survival-guide/</guid>
+      <description>This weekend FOSDEM 2020 will take place in Brussels. FOSDEM is a yearly conference about open source software. It&amp;rsquo;s totally free and no registration is required. As a consequence, it&amp;rsquo;s massive and chaotic, but also a lot of fun! I attended in 2017 and loved it, so I really look forward to this year&amp;rsquo;s edition.
+If this is your first time, here&amp;rsquo;s a few tips that may come in handy.</description>
+    </item>
     
     <item>
       <title>Easily deploy your Hugo site to Github Pages</title>

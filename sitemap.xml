@@ -4,26 +4,31 @@
   
   <url>
     <loc>https://saltares.com/categories/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://saltares.com/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <loc>https://saltares.com/fosdem-2020-survival-guide/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://saltares.com/categories/general/</loc>
-    <lastmod>2020-01-17T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://saltares.com/post/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</loc>
     <lastmod>2020-01-17T00:00:00+00:00</lastmod>
   </url>
   
