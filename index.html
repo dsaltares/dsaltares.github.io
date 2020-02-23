@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.63.2" />
+	<meta name="generator" content="Hugo 0.65.3" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -356,10 +356,10 @@ to use on your own projects. Here is how it works.</p>
 This is the same as what is explained in Gut&rsquo;s <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
 <p><img src="./img/godot-ci/installing_gut.gif" alt="install-gut"></p>
 <p>Create a trivial test in <code>res://test/unit/test_example.gd</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">res://addons/gut/test.gd</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#34;res://addons/gut/test.gd&#34;</span>
 
 <span style="color:#66d9ef">func</span> test_assert_true_with_true():
-	assert_true(true, <span style="color:#e6db74"></span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">Should pass, true is true</span><span style="color:#e6db74">&#34;</span>)
+	assert_true(true, <span style="color:#e6db74">&#34;Should pass, true is true&#34;</span>)
 
 </code></pre></div><p>You can now run these tests from the command line.</p>
 <pre><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit

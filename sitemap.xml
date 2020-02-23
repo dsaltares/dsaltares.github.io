@@ -3,12 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://saltares.com/categories/</loc>
-    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+    <loc>https://saltares.com/game-jams/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://saltares.com/</loc>
+    <loc>https://saltares.com/game-jams/plague/</loc>
+    <lastmod>2020-02-23T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://saltares.com/categories/</loc>
     <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url>
   
@@ -30,11 +35,6 @@
   <url>
     <loc>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</loc>
     <lastmod>2020-01-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://saltares.com/game-jams/</loc>
-    <lastmod>2019-08-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -90,6 +90,11 @@
   <url>
     <loc>https://saltares.com/general/migration-from-wordpress-to-hugo/</loc>
     <lastmod>2016-12-04T12:18:32+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://saltares.com/</loc>
+    <lastmod>2016-11-13T17:05:16+00:00</lastmod>
   </url>
   
   <url>
