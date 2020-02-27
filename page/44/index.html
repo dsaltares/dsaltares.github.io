@@ -102,6 +102,34 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-3d-sound-v0-1/">Sion Tower 3D Sound v0.1</a>
+      </h1>
+      <span class="post-date">Feb 9, 2011 &middot; <a href="https://saltares.com/games/sion-tower-3d-sound-v0-1/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/sion-tower-3d-sound.jpg" alt="sion-tower-3d-sound.jpg"></p>
+<p>Hace algo más de un mes escribí un <a href="../../proyectos/pfc/sion-tower/sistema-de-audio-pseudo-3d-integrado-con-ogre/">artículo sobre el <strong>sistema de audio 3D</strong></a> <strong>de Sion Tower</strong>. Al igual que la pequeña biblioteca de colisiones que he implementado, es muy reutilizable y sería una pena que el código no le sirva a nadie más. Por ello, <strong>he decidido liberar la versión 0.1</strong> como paquete descargable desde la forja de Red Iris.</p>
+<h3 id="características">Características</h3>
+<ul>
+<li>Reproducción de música y efectos de sonido: WAV, MP3, OGG…</li>
+<li>Integración completa con el sistema de gestión de recursos de Ogre3D.</li>
+<li>Inserción de sonidos en la escena de forma que puede producirse un efecto 3D en función de la distancia y ángulo entre nodos.</li>
+</ul>
+<h3 id="descarga">Descarga</h3>
+<p>El sistema está escrito en C++ estándar y sólo depende de Ogre3D y SDL mixer por lo que <strong>funciona en una amplia variedad de plataformas</strong>. El paquete viene con el fichero de licencia (GPL v3) y la documentación completa en html generada con Doxygen.</p>
+<p>Por supuesto, <strong>estoy abierto a cualquier sugerencia</strong>, posible mejora, avisos de errores y todo lo que se os ocurra.</p>
+<ul>
+<li><a href="http://forja.rediris.es/frs/download.php/2074/siontower-3dsound-v0.1.zip">Descargar Sion Tower 3D Sound v0.1</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a>
       </h1>
       <span class="post-date">Feb 9, 2011 &middot; <a href="https://saltares.com/games/colisiones-ii-diseno-general-de-stc/#disqus_thread">Comments</a>
@@ -244,38 +272,6 @@
 </ul>
 <h3 id="documentación-adicional">Documentación adicional</h3>
 <p>Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/">HTC Desire HD, eliminar aplicaciones de Vodafone</a>
-      </h1>
-      <span class="post-date">Feb 3, 2011 &middot; <a href="https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p><img src="../../img/wp/htc-desire-hd.png" alt="htc-desire-hd.png"></p>
-<p>Cuando hace más de un año compré mi HTC Magic sólo había tres teléfonos Android en el mercado y todos del mismo fabricante. Alucinaba en colores con su conectividad, prestaciones y pantalla. ¡Tenía un teléfono más potente que mi primer ordenador! Como cualquier otro cacharro no tardó en quedarse anticuado y actualmente se resiente al trabajar casi con cualquier aplicación. Por ello <strong>he decidido renovarme y adquirir el HTC Desire HD</strong>, una auténtica bestia parda. Cuando pase cierto tiempo trasteando con ella dejaré caer un pequeño análisis personal, mientras tanto comento la forma de eliminar esas odiosas aplicaciones de Vodafone.</p>
-<h3 id="el-caca-soft">El caca-soft</h3>
-<p><strong>El placer por desprecintar el teléfono</strong> nuevo de turno es un claro símbolo consumista pero nos encanta a los amantes de los cacharros. Estaba maravillado por la potencia del HTC Desire HD, era capaz de mantener decenas de aplicaciones abiertas sin inmutarse lo más mínimo. De pronto me dije: &ldquo;<em>Oh wait…!&quot;</em>, había descubierto las <strong>aplicaciones pre-instaladas</strong> de Vodafone. Raudo y veloz me dispuse a desinstalarlas pero (¡horror!) están bloqueadas y no pueden ser eliminadas. Mi odio hacia las aplicaciones que mancillan un flamante dispositivo no conoce límites. <strong>En la intimidad las llamo caca-soft</strong>.</p>
-<h3 id="eliminar-aplicaciones-pre-instaladas-de-vodafone">Eliminar aplicaciones pre-instaladas de Vodafone</h3>
-<p>Una busqueda en Google confirmó mis sospechas, es necesario tener permisos root para poder eliminar aplicaciones bloqueadas. El HTC Desire HD es un terminal relativamente nuevo y aún no existe ningún sistema del tipo <em>&ldquo;dale a un botón y ya eres root&rdquo;</em>. Hacía falta hacer un downgrade de la ROM y varias operaciones de seguridad cuestionable. Me negaba.</p>
-<p>Con la inestimable ayuda del foro HTC Manía encontré la respuesta. <strong>Es posible eliminar las aplicaciones que instala nuestro operador</strong> de telefonía sin cambiar la ROM ni tener acceso root. El proceso implica una restauración de fábrica. Las aplicaciones y los contactos están sincronizados, por tanto no los perderás. No obstante, los accesos directos y la configuración volverán a su estado inicial. Para librarte de una vez por todas del caca-soft <strong>sigue los siguientes pasos</strong>:</p>
-<ol>
-<li>Apaga el teléfono y retira la tarjeta SIM.</li>
-<li>Entra en modo recovery, lo conseguirás pulsando el botón <em>&ldquo;bajar volumen&rdquo;</em> mientras enciendes el terminal.</li>
-<li>Selecciona la opción <em>&ldquo;factory reset&rdquo;</em>. Para desplazarte por el menú puedes emplear las teclas de volumen, cuando quieras elegir una opción presiona ligeramente el botón de encendido.</li>
-<li>El teléfono se reiniciará.</li>
-<li>Sigue el proceso de configuración inicial y sincronización con Google utilizando una red Wi-Fi.</li>
-<li>Apaga el teléfono e introduce la SIM.</li>
-<li>Cuando arranques de nuevo se te preguntará si deseas sincronizar el teléfono con la tarjeta. Cancela la operación para siempre y no se instalarán las aplicaciones del operador.</li>
-</ol>
-<p>Es cierto que <strong>las aplicaciones de HTC Sense no pueden ser eliminadas</strong> a través de este proceso y requieren disponer de acceso root. Pero al menos ya sufrirás esas aplicaciones que te impone tu operador, carecen de utilidad y a veces consumen recursos en segundo plano.</p>
-<p>Eso es todo, <strong>ahora vivirás mejor</strong>.</p>
 
       
     </div>
