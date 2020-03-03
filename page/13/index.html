@@ -102,9 +102,43 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/ashley-1-0-1-released/">Ashley 1.0.1 released</a>
+      </h1>
+      <span class="post-date">Jul 20, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/games/ashley-1-0-1-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>Finally! During the past couple of months me and a bunch of awesome <a href="https://github.com/libgdx/ashley/blob/master/AUTHORS">collaborators</a> have been working on a proper Ashley release and now it&rsquo;s done. Here is the list of the new shiny features.</p>
+<p>Mind that some of them break the previous API. However, this is our first official release, we&rsquo;ll push hard to keep the API backwards compatible from now on.</p>
+<ul>
+<li><a href="https://github.com/libgdx/ashley/commit/3cd93f2c17fd65470a60dfa2af7d84c2ee7e7865">Gradle</a>: we got rid of the Eclipse projects and now use Gradle to manage our dependencies and build process.</li>
+<li>Maven Central: Ashley is now available from Maven Central, which makes it dead easy for your project to depend on it. In Gradle, add the following dependency: <code>compile &quot;com.badlogicgames.ashley:ashley:1.0.1&quot;</code>.</li>
+<li><a href="http://libgdx.badlogicgames.com:8080/job/ashley/">Jenkins build</a>: Mario kindly offered us some server time to make sure Ashley is always stable.</li>
+<li><a href="https://github.com/libgdx/ashley/tree/master/ashley/tests/com/badlogic/ashley">Unit tests</a>: there are unit tests for pretty much every component in Ashley. They are run after every commit by our Jenkins job.</li>
+<li><a href="https://github.com/libgdx/ashley/tree/master/ashley/src/com/badlogic/ashley/utils">Immutable collections</a>: core Ashley classes now return <code>ImmutableArray</code> and <code>ImmutableIntMap</code> references, making it harder for client code to break the system.</li>
+<li><a href="https://github.com/libgdx/ashley/commit/9492d14a3e5cf4ad0d87305f8f7bb298bb8d687a">Family filtering</a>: now we get the collection of entities that have a set of components, have at least one component from a given set and do not have a single component from another given set.</li>
+<li><a href="http://www.gwtproject.org/">GWT</a> compatibility: you can now use Ashley for HTML5 games through the magic of GWT and Libgdx.</li>
+<li><a href="https://github.com/libgdx/ashley/commit/81d9a2e5f38df186f4b147b82ede274c950795b6">Depends on gdx core</a>: this has allowed us to remove all the duplicated optimised container classes and gives us a GWT compatible reflection API. Some might say it&rsquo;s a big dependency but we do believe the pros outweigh the cons.</li>
+<li>Cleanup and bug fixes.</li>
+</ul>
+<p>I try to keep an up-to-date <a href="https://github.com/libgdx/ashley/blob/master/TODO.md">TODO</a> list with a very informal roadmap. Here is what to expect next:</p>
+<ul>
+<li>Performance tests and comparison with Artemis</li>
+<li>Make javadocs available online</li>
+<li>Complete wiki</li>
+</ul>
+<p>Feel free to send your suggestions by opening an <a href="https://github.com/libgdx/ashley/issues?state=open">issue</a>!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/ashley-entity-framework/">Ashley entity framework</a>
       </h1>
-      <span class="post-date">Jul 20, 2014 &middot; <a href="https://saltares.com/games/ashley-entity-framework/#disqus_thread">Comments</a>
+      <span class="post-date">Jul 20, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ashley-entity-framework/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -128,7 +162,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/">Libgdx Cross-platform Development Cookbook announced</a>
       </h1>
-      <span class="post-date">Jun 30, 2014 &middot; <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/#disqus_thread">Comments</a>
+      <span class="post-date">Jun 30, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/projects">Projects</a>
@@ -148,7 +182,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/general/homefront-the-revolution-e3-stage-demo/">Homefront: The Revolution E3 stage demo</a>
       </h1>
-      <span class="post-date">Jun 11, 2014 &middot; <a href="https://saltares.com/general/homefront-the-revolution-e3-stage-demo/#disqus_thread">Comments</a>
+      <span class="post-date">Jun 11, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/homefront-the-revolution-e3-stage-demo/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/general">General</a>
@@ -165,7 +199,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/general/homefront-the-revolution-announced/">Homefront: The Revolution announced!</a>
       </h1>
-      <span class="post-date">Jun 2, 2014 &middot; <a href="https://saltares.com/general/homefront-the-revolution-announced/#disqus_thread">Comments</a>
+      <span class="post-date">Jun 2, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/homefront-the-revolution-announced/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/general">General</a>
@@ -178,29 +212,6 @@
   <iframe src="https://www.youtube.com/embed/qEDNU6oOQqI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/ludum-dare-29-beneath-the-surface/">Ludum Dare #29: Beneath the surface</a>
-      </h1>
-      <span class="post-date">Apr 29, 2014 &middot; <a href="https://saltares.com/games/ludum-dare-29-beneath-the-surface/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/ld29/beneath-the-surface-title.png" alt="beneath-the-surface-title.png"></p>
-<p>As I mentioned here a few days ago, last weekend I entered the 29th edition of the <a href="http://www.ludumdare.com">Ludum Dare</a> game jam, which had <em>Beneath the surface</em> as a theme. To be completely honest, I was only bothered to work on the project for about 4 hours each day. That probably explains why is my worst <a href="../../game-jams/">game jam</a> entry so far.</p>
-<p>Beneath the surface is a very simple, classic text adventure where the player needs to escape an underground cave by using commands in the form of <code>verb object</code> like:</p>
-<blockquote>
-<p>Open door</p>
-</blockquote>
-<p><img src="../../img/ld29/beneath-the-surface.png" alt="beneath-the-surface.png"></p>
-<p>The game is too basic and needed more user testing before the deadline. I was quite unhappy with it but then thought I&rsquo;d rather submit it than dropping out completely. But hey, at least I managed to work on shaders a little bit, an area I really need to get better at.</p>
-<p>Maybe next time I&rsquo;ll manage to pull off something better.</p>
 
       
     </div>

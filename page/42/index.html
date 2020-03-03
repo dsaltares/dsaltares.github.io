@@ -102,9 +102,50 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/">Screencast y edición de vídeo en Linux</a>
+      </h1>
+      <span class="post-date">Feb 21, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/sreencast.png" alt="sreencast.png"></p>
+<p>Muchas veces he querido <strong>grabar un vídeo de cualquier proyecto personal</strong> (como los que he publicado de Sion Tower) pero siempre he tenido muchos problemas a la hora de hacerlo con Software Libre en mi preciada Ubuntu. Hasta ahora me había visto obligado a recurrir a productos privativos pero por fin he encontrado herramientas libres con la suficiente madurez para conseguir exactamente lo que quiero. En este artículo voy a comentar <strong>mi receta de la salvación para hacer un buen screencast</strong>.</p>
+<p><img src="../../img/wp/xvidcap-logo.png" alt="xvidcap-logo.png"></p>
+<h3 id="screencast-con-xvidcap">Screencast con XVidCap</h3>
+<p><strong><a href="http://xvidcap.sourceforge.net/">XvidCap</a></strong> es una sencilla aplicación para entornos X Window consistente en una barra con controles de grabación básicos. Podemos grabar el escritorio completo, una porción rectangular o lo que ocurre en una ventana concreta utilizando el selector que incorpora. Dentro de su panel de opciones es posible elegir los cuadros por segundo de grabación así como los codecs de audio y vídeo a emplear.</p>
+<p><strong>Su rendimiento es excelente</strong>, grabando la demo técnica de Sion Tower a 1280×720 alcanzaba los 15 fps lo cual es suficiente para que se vea fluido. Estuve probando varias configuraciones y lo mejor era seleccionar el formato MPEG y unos fps reducidos de forma que la tasa de aciertos en la captura fuese mayor. La única pega que le encuentro es que <strong>no captura el sonido de forma correcta</strong>. O bien lo desactivaba o lo único que escuchaba era un ruido insoportable, esto lo solucioné con la siguiente herramienta.</p>
+<p><img src="../../img/wp/xvidcap.png" alt="xvidcap.png"></p>
+<p>Está en los repositorios de Ubuntu, para instalarlo basta:</p>
+<pre><code>sudo apt-get install xvidcap
+</code></pre><p><img src="../../img/wp/audacity-logo.png" alt="audacity-logo.png"></p>
+<h3 id="grabación-de-audio-con-audacity">Grabación de audio con Audacity</h3>
+<p><strong><a href="http://audacity.sourceforge.net/">Audacity</a> es el software de edición de sonido libre por excelencia</strong>, es compatible con infinidad de formatos y permite las operaciones básicas además de otras más avanzadas como la aplicación de efectos.</p>
+<p>Antes de comenzar la captura con XVidCap activo la grabación de audio en Audacity de manera que una aplicación se encarga del vídeo y la otra del sonido. Una vez he terminado el vídeo, exporto la grabación a OGG. En post-producción me limito a cortar y sincronizar ambas pistas.</p>
+<p><img src="../../img/wp/audacity.png" alt="audacity.png"></p>
+<p>También está en los repos, así que:</p>
+<pre><code>sudo apt-get install audacity
+</code></pre><p><img src="../../img/wp/openshot-logo.png" alt="openshot-logo.png"></p>
+<h3 id="edición-de-vídeo-con-openshot-13">Edición de vídeo con OpenShot 1.3</h3>
+<p>He probado muchísimos editores de vídeo en Linux con resultados cuanto menos decepcionantes: Pitivi, Cinelerra, Kino, Avidemux… Todos ellos han fracasado a la hora de ajustarse a mis necesidades que tampoco son nada del otro mundo. Cuando probé por primera vez la última versión de <strong><a href="http://www.openshotvideo.com/">OpenShot Video Editor</a></strong> mis ojos se abrieron como platos, pues era l<strong>a respuesta a todas mis plegarias</strong>.</p>
+<p>OpenShot Video Editor tiene una <strong>interfaz extremadamente intuitiva</strong>, de hecho, tardé menos de 15 minutos en editar la demo técnica de Sion Tower y dejarla exactamente como yo quería. Sólo tuve dudas al aplicar transiciones y su <a href="http://www.openshotusers.com/help/1.3/es/"><strong>fantástico manual</strong></a> me lo solucionó al instante. Cuenta con la clásica línea de tiempo sobre la que colocamos a nuestro antojo cualquier combinación de vídeo, audio o imágenes. Permite <strong>añadir transiciones, aplicar efectos</strong> y configurar multitud de parámetros. A pesar de las posibilidades que ofrece, lo básico queda a la vista y no es necesario bucear por oscuros menús.</p>
+<p>Es <strong>compatible con Inkscape y Blender</strong> (2.5 en adelante) lo que nos permite introducir contenido adicional como carteles y gráficos vectoriales en 2D o 3D. A medida que trabajamos podremos observar el resultado a través de su vista previa. Una vez estemos satisfechos exportaremos el proyecto utilizando cualquiera de la infinidad de perfiles disponibles. Cabe destacar que ofrece la posibilidad de <strong>subir el vídeo directamente a YouTube o Vimeo</strong> introduciendo nuestras credenciales.</p>
+<p><strong>Una maravilla oiga</strong>.</p>
+<p><img src="../../img/wp/openshot.png" alt="openshot.png"></p>
+<p>La última versión no está en los repositorios y debe ser instalada añadiendo el PPA correspondiente:</p>
+<pre><code>sudo add-apt-repository ppa:jonoomph/openshot-edge
+sudo apt-get update
+sudo apt-get install openshot openshot-doc
+</code></pre>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/pes-2011-para-android/">PES 2011 para Android</a>
       </h1>
-      <span class="post-date">Feb 20, 2011 &middot; <a href="https://saltares.com/hobbies/pes-2011-para-android/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 20, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/hobbies/pes-2011-para-android/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/hobbies">Hobbies</a>
@@ -135,7 +176,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/general/sion-tower-carga-de-escenarios-desde-blender-y-colisiones/">Sion Tower, carga de escenarios desde Blender y colisiones</a>
       </h1>
-      <span class="post-date">Feb 19, 2011 &middot; <a href="https://saltares.com/general/sion-tower-carga-de-escenarios-desde-blender-y-colisiones/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 19, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/general/sion-tower-carga-de-escenarios-desde-blender-y-colisiones/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/general">General</a>
@@ -156,7 +197,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-2/">STC: Sion Tower Collisions v0.2</a>
       </h1>
-      <span class="post-date">Feb 19, 2011 &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-2/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 19, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-2/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -187,7 +228,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/">Colisiones V: Body, CollisionManager y GameObject</a>
       </h1>
-      <span class="post-date">Feb 17, 2011 &middot; <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 17, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -218,195 +259,6 @@
 <p><img src="../../img/wp/gameobject.png" alt="gameobject-300x106.png"></p>
 <h3 id="próximas-versiones">Próximas versiones</h3>
 <p>El sistema de detección de colisiones de Sion Tower presenta un amplio margen de mejora. Tengo anotada una buena lista y ya he conseguido implementar algunas de ellas. En la futura versión 0.2 de la mini biblioteca encontraréis la forma <em>OrientedBox</em> (OBB), nuevos tests de colisión, una API más extensible y muchas correcciones de bugs.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a>
-      </h1>
-      <span class="post-date">Feb 15, 2011 &middot; <a href="https://saltares.com/games/colisiones-iv-tests-de-colision/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/colisiones-4.png" alt="colisiones-4.png"></p>
-<p>Entregas:</p>
-<ul>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: Shape y Collision Dispatching</a></li>
-<li><em>Colisiones IV: Tests de colisión</em></li>
-</ul>
-<p>En la cuarta entrega de la serie de artículos de documentación sobre el <strong>sistema de detección de colisiones de Sion Tower</strong> (STC) trataremos en profundidad los <strong>tests de colisión</strong>. Hasta ahora habíamos visto como funciona la clase abstracta Shape y sus implementaciones así como el Collision Dispatching. Este texto no pretende demostrar la validez de los algoritmos expuestos por la mediana complejidad que algunos entrañan, para una explicación más extensa sugiero acudir a las referencias contenidas en la sección de bibliografía.</p>
-<p>Para cada test se ofrece una breve explicación, un diagrama aclaratorio y el algoritmo en C++ utilizando Ogre3D y las clases que hemos visto hasta el momento.</p>
-<h3 id="teorema-del-plano-de-separación">Teorema del plano de separación</h3>
-<p>El <strong>Teorema del eje de separación</strong> (<a href="http://en.wikipedia.org/wiki/Separating_axis_theorem">separating axis theorem</a>) resulta extremadamente útil en la detección de colisiones. Este teorema asegura que dados dos objetos convexos en un plano 2D existe una línea sobre la cual, las proyecciones de los dos objetos no se solapan si y sólo si los objetos son disjuntos (no tienen puntos en común). Esta línea se conoce como eje de separación. En un espacio tridimensional el eje de separación se convierte en un plano de separación. El siguiente diagrama ilustra el teorema.</p>
-<p><img src="../../img/wp/separatin-axis.png" alt="separatin-axis.png"></p>
-<p>En muchos tests <strong>buscaremos el plano de separación</strong>, puede que existan varios pero en el momento que encontremos el primero podremos asegurar que los objetos no colisionan (suponiendo que sus formas son convexas). En cualquier videojuego lo normal es que dos objetos cualesquiera no colisionen, por lo que es más eficiente descartar posibles intersecciones cuanto antes. Buscando planos de separación.</p>
-<h3 id="test-sphere-sphere">Test Sphere-Sphere</h3>
-<p>El test entre dos esferas es el más sencillo y rápido de todos. Basta con comprobar si la distancia entre los centros de ambas esferas es menor que la suma de sus radios, en tal caso existiría colisión.</p>
-<p><img src="../../img/wp/test-sphere-sphere.png" alt="test-sphere-sphere.png"></p>
-<p>Para calcular la distancia entre dos puntos es necesario una raíz cuadrada pero éstas son extremadamente caras. Podemos comparar la distancia al cuadrado con el cuadrado de la suma de los radios, una expresión equivalente y de mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que son esferas)
-    Sphere* sphereA = static_cast&lt;sphere *&gt;(shapeA);
-    Sphere* sphereB = static_cast&lt;/sphere&gt;&lt;sphere *&gt;(shapeB);
-
-    // Hacemos el test
-    Ogre::Vector3 s = sphereA-&gt;getCenter() - sphereB-&gt;getCenter();
-    Ogre::Real totalRadius = sphereA-&gt;getRadius() + sphereB-&gt;getRadius();
-
-    return (s.squaredLength() &lt; = totalRadius * totalRadius);
-}
-</code></pre><h3 id="test-aabb-aabb">Test AABB-AABB</h3>
-<p>En la intersección entre cajas alineadas con los ejes emplearemos el teorema del plano de separación. Proyectamos las cajas sobre cada uno de los tres ejes y si algunas de las proyecciones no se solapan podremos asegurar que no existe colisión entre las AABB. El siguiente diagrama ilustra el test.</p>
-<p><img src="../../img/wp/test-aabb-aabb.png" alt="test-aabb-aabb.png"></p>
-<pre><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que son AABBs)
-    AxisAlignedBox* aabb1= static_cast&lt;axisalignedbox *&gt;(shapeA);
-    AxisAlignedBox* aabb2 = static_cast&lt;/axisalignedbox&gt;&lt;axisalignedbox *&gt;(shapeB);
-
-    // Hacemos el test
-    return (aabb1-&gt;getMaxPos().x &gt; aabb2-&gt;getMinPos().x &amp;&amp;
-            aabb1-&gt;getMinPos().x &lt; aabb2-&gt;getMaxPos().x &amp;&amp;
-            aabb1-&gt;getMaxPos().y &gt; aabb2-&gt;getMinPos().y &amp;&amp;
-            aabb1-&gt;getMinPos().y &lt; aabb2-&gt;getMaxPos().y &amp;&amp;
-            aabb1-&gt;getMaxPos().z &gt; aabb2-&gt;getMinPos().z &amp;&amp;
-            aabb1-&gt;getMinPos().z &lt; aabb2-&gt;getMaxPos().z);
-}
-</code></pre><h3 id="test-plane-plane">Test Plane-Plane</h3>
-<p>Los planos son infinitos por lo que la única situación en la que dos planos no colisionan es cuando estos son paralelos y no están a la misma distancia del origen. La orientación de los planos está definida por su vector normal. Si las dos normales son paralelas y la distancia con respecto al origen no coincide podremos asegurar que los planos no colisionan. Dos vectores son paralelos si su producto escalar es igual a 1.</p>
-<p><img src="../../img/wp/test-plane-plane.png" alt="test-plane-plane.png"></p>
-<pre><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que son Planes)
-    Plane* planeA = static_cast&lt;plane *&gt;(shapeA);
-    Plane* planeB = static_cast&lt;/plane&gt;&lt;plane *&gt;(shapeB);
-
-    // Hacemos el test
-    Ogre::Vector3 normalA = planeA-&gt;getNormal().normalisedCopy();
-    Ogre::Vector3 normalB = planeB-&gt;getNormal().normalisedCopy();
-    return normalA.dotProduct(normalB) != 1;
-}
-</code></pre><h3 id="test-sphere-aabb">Test Sphere-AABB</h3>
-<p>En este test se pueden producir dos casos en los que existe intersección entre los objetos. El primero se da cuando el centro de la esfera está contenida en el AABB mientras que el segundo tiene lugar cuando el centro está fuera de la caja pero existe intersección (el diagrama ilustra el segundo caso). En primer lugar comprobamos si el centro de la esfera está dentro de la caja. Posteriormente recorremos los vértices del AABB y elegimos el más cercano al centro de la esfera. Si la distancia entre ambos es menor que el radio de la esfera las dos formas colisionan.</p>
-<p><img src="../../img/wp/test-sphere-aabb.png" alt="test-sphere-aabb.png"></p>
-<p>De nuevo, utilizamos el cuadrado de la distancia para conseguir una mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que A es Sphere y B es AABB)
-    Sphere* sphere;
-    AxisAlignedBox* aabb;
-    if (shapeA-&gt;getType() == SPHERE) {
-        sphere = static_cast&lt;sphere *&gt;(shapeA);
-        aabb = static_cast&lt;axisalignedbox *&gt;(shapeB);
-    } else {
-        sphere = static_cast&lt;sphere *&gt;(shapeB);
-        aabb = static_cast&lt;axisalignedbox *&gt;(shapeA);
-    }
-
-    // Hacemos el test
-    Ogre::Real s = 0;
-    Ogre::Real d = 0;
-    Ogre::Vector3 center = sphere-&gt;getCenter();
-    Ogre::Vector3 minPos = aabb-&gt;getMinPos();
-    Ogre::Vector3 maxPos = aabb-&gt;getMaxPos();
-
-    // Comprobamos si el centro de la esfera está dentro del AABB
-    bool centerInsideAABB = (center.x &lt; = maxPos.x &amp;&amp;
-                             center.x &gt;= minPos.x &amp;&amp;
-                             center.y &lt; = maxPos.y &amp;&amp;
-                             center.y &gt;= minPos.y &amp;&amp;
-                             center.z &lt; = maxPos.z &amp;&amp;
-                             center.z &gt;= minPos.z);
-
-    if (centerInsideAABB)
-        return true;
-
-    // Comprobamos si la esfera y el AABB se intersectan
-    for (int i = 0; i &lt; 3; ++i) {
-        if (sphere-&gt;getCenter()[i] &lt; aabb-&gt;getMinPos()[i]) {
-            s = sphere-&gt;getCenter()[i] - aabb-&gt;getMinPos()[i];
-            d += s * s;
-        } else if (sphere-&gt;getCenter()[i] &gt; aabb-&gt;getMaxPos()[i]) {
-            s = sphere-&gt;getCenter()[i] - aabb-&gt;getMaxPos()[i];
-            d += s * s;
-        }
-    }
-
-    return (d &lt; = sphere-&gt;getRadius() * sphere-&gt;getRadius());
-}
-</code></pre><h3 id="test-sphere-plane">Test Sphere-Plane</h3>
-<p>Comprobar si una esfera colisiona con un plano es tan sencillo como obtener la distancia entre ambos y compararla con el radio de la esfera como hemos hecho en otras ocasiones. La distancia entre el centro y el punto que conocemos del plano no es la distancia real entre ambas formas. Para calcular la distancia real tendremos que proyectar el vector p-c (punto del plano – centro de la esfera) sobre la normal del plano.</p>
-<p><img src="../../img/wp/test-sphere-plane.png" alt="test-sphere-plane.png"></p>
-<p>Sólo nos es necesario el cuadrado de la distancia y lo comprobaremos con el cuadrado del radio (para evitarnos utilizar una raíz cuadrada).</p>
-<pre><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que A es Plane y B es Sphere)
-    Plane* plane;
-    Sphere* sphere;
-    if (shapeA-&gt;getType() == PLANE) {
-        plane = static_cast&lt;plane *&gt;(shapeA);
-        sphere = static_cast&lt;sphere *&gt;(shapeB);
-    } else {
-        plane = static_cast&lt;plane *&gt;(shapeB);
-        sphere = static_cast&lt;sphere *&gt;(shapeA);
-    }
-
-    // Hacemos el test
-
-    // Distancia del centro de la esfera al plano
-    Ogre::Vector3 v = sphere-&gt;getCenter() - plane-&gt;getPosition();
-    Ogre::Vector3 n = plane-&gt;getNormal().normalisedCopy();
-    Ogre::Real d = abs(n.dotProduct(v));
-
-    // Si d &lt; = radio, hay colisión
-    return d &lt;= sphere-&gt;getRadius();
-}
-</code></pre><h3 id="test-aabb-plane">Test AABB-Plane</h3>
-<p>En el test entre AABB y plano calculamos el vértice más lejano y el más cercano al plano (pmin y pmax respectivamente). Si cada punto está a un lado distinto del plano podemos asegurar que ambas formas colisionan.</p>
-<p><img src="../../img/wp/test-plane-aabb.png" alt="test-plane-aabb.png"></p>
-<pre><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
-    // Hacemos la conversión (estamos seguros de que A es Plane y B es AABB)
-    Plane* plane;
-    AxisAlignedBox* aabb;
-    if (shapeA-&gt;getType() == PLANE) {
-        plane = static_cast&lt;plane *&gt;(shapeA);
-        aabb = static_cast&lt;axisalignedbox *&gt;(shapeB);
-    } else {
-        plane = static_cast&lt;plane *&gt;(shapeB);
-        aabb = static_cast&lt;axisalignedbox *&gt;(shapeA);
-    }
-
-    // Hacemos el test
-    Ogre::Vector3 p;
-    Ogre::Vector3 n;
-
-    for (int i = 0; i &lt; 3; ++i) {
-        if (plane-&gt;getNormal()[i] &gt;= 0) {
-            p[i] = aabb-&gt;getMaxPos()[i];
-            n[i] = aabb-&gt;getMinPos()[i];
-        } else {
-            p[i] = aabb-&gt;getMaxPos()[i];
-            n[i] = aabb-&gt;getMinPos()[i];
-        }
-    }
-
-    // Si p está en un lado diferente del plano que n, hay intersección
-    Ogre::Real d1 = plane-&gt;getNormal().dotProduct(p - plane-&gt;getPosition());
-    Ogre::Real d2 = plane-&gt;getNormal().dotProduct(n - plane-&gt;getPosition());
-
-    return ((d1 &lt; = 0 &amp;&amp; d2 &gt;= 0) || (d1 &gt;= 0 &amp;&amp; d2 &lt; = 0));
-}
-</code></pre><h3 id="bibliografía">Bibliografía</h3>
-<p>Como podéis comprobar, hay un poco más de fundamento detrás de estos tests de lo que se ha explicado en la secciones anteriores. Para obtener más información sobre este interesante tema, recomiendo las siguientes lecturas (todo en inglés):</p>
-<ul>
-<li><a href="http://realtimecollisiondetection.net/">Real Time Collision Detection</a> (Christer Ericson ): excepcional libro que cubre todo lo relacionado sobre la detección de colisiones en 3D escrito por un trabajador de Sony Computer Entertainment America.</li>
-<li><a href="http://www.gamasutra.com/view/feature/3383/simple_intersection_tests_for_games.php">Gamasutra &ldquo;Simple intersection tests for games&rdquo;</a> (Miguel Gomez): repaso por varios tests de intersección entre distintos tipos de formas (cubre cuerpos en movimiento).</li>
-<li><a href="http://www.gamasutra.com/view/feature/3190/advanced_collision_detection_.php">Gamasutra &ldquo;Advanced collision detection techniques&rdquo;</a> (Nick Bobic): técnicas de detección de colisiones, particionado del espacio y otras optimizaciones.</li>
-<li><a href="http://www.metanetsoftware.com/technique/tutorialA.html">Metanet software &ldquo;Collision detection and response&rdquo;</a>: explicación teórica sobre la detección de colisione. Cuenta con ejemplos gráficos interactivos para ilustrar cada concepto. Me la recomendó el compañero José Tomás Tocino.</li>
-</ul>
-<p>En el siguiente artículo lo dedicaremos a las clases Body y CollisionManager del sistema de detección de colisiones de Sion Tower.</p>
 
       
     </div>

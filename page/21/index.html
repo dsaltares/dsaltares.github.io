@@ -102,9 +102,34 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/1gam-february-weekly-progress-3/">#1GAM February: weekly progress 3</a>
+      </h1>
+      <span class="post-date">Feb 26, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress-3/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>It pleases me to say that this past week I&rsquo;ve been able to keep it real and stick to my humble set of tasks:</p>
+<p><strong>Victory and defeat mechanic</strong>: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it&rsquo;s empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state. The whole entity creation – deletion cycle has allowed me to spot some bugs and flaws in the entity system design, which is good.</p>
+<p><strong>Placeholder HUD</strong>: I&rsquo;ve used the simple and yet powerful libgdx scene 2D elements to compose a minimalistic HUD which shows remaining astronauts, spaceship energy and elapsed time. Relax, it won&rsquo;t look this bad forever as the assets will be replaced by the final art in due time. I just wanted to get something functional.</p>
+<p><strong>Improved control and abduction system</strong>: this is where I&rsquo;ve put most of the effort. Speed limits, collision restitution, impulses and so on have all been tweaked to make the spaceship control feel good. Luckily enough, I&rsquo;ve made it a lot smoother and pleasant, which was paramount to make the game fun. However, beware! For abducting all the astronauts shall not be an easy task.</p>
+<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
+<p>This week I&quot;ll be working on:</p>
+<ul>
+<li>Refucktoring: some modules need a small cleanup.</li>
+<li>Animated toasts: adding some effects for victory, defeat, abduction and collision situations.</li>
+<li>Level system with locked/unlocked levels.</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/1gam-february-weekly-progress-2/">#1GAM February: weekly progress 2</a>
       </h1>
-      <span class="post-date">Feb 18, 2013 &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress-2/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 18, 2013 &middot; 1 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress-2/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -139,7 +164,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/1gam-february-weekly-progress/">#1GAM February: weekly progress</a>
       </h1>
-      <span class="post-date">Feb 10, 2013 &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 10, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -176,7 +201,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/1gam-february-game-design/">#1GAM February: game design</a>
       </h1>
-      <span class="post-date">Feb 3, 2013 &middot; <a href="https://saltares.com/games/1gam-february-game-design/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 3, 2013 &middot; 3 minute read &middot; <a href="https://saltares.com/games/1gam-february-game-design/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -207,7 +232,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/beware-memory-allocation/">Beware memory allocation</a>
       </h1>
-      <span class="post-date">Jan 29, 2013 &middot; <a href="https://saltares.com/games/beware-memory-allocation/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 29, 2013 &middot; 7 minute read &middot; <a href="https://saltares.com/games/beware-memory-allocation/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -345,99 +370,6 @@ if (effect.isComplete()) {
 <p><img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png"></p>
 <p>Before throwing that rotten tomato you&quot;re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it&rsquo;s running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you&rsquo;ve missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.</p>
 <p>Promise.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/2d-character-creation-and-animation-for-dummies/">2D Character creation and animation. For dummies</a>
-      </h1>
-      <span class="post-date">Jan 22, 2013 &middot; <a href="https://saltares.com/general/2d-character-creation-and-animation-for-dummies/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a>
-      </span>
-      
-      <blockquote>
-<p>Hang on a second… An art article written by a programmer? How do you dare? This is madness</p>
-</blockquote>
-<p>Well yes, so deal with it.</p>
-<p>Life is hard for us programmers, who can&rsquo;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&quot;d never call that art. Actually, it&rsquo;s more appropriate to address them as utter crap. Cry no more, fellow coder, because it&rsquo;s all about workflow.</p>
-<p><img src="../../img/wp/happy-coder.png" alt="happy-coder.png"></p>
-<blockquote>
-<p>Are you telling me I can create decent looking characters and environments? But I suck at drawing!</p>
-</blockquote>
-<p>Indeed, you probably do suck at drawing, just as much as I do. However, you&quot;d be surprised about how much can be achieved with a few tricks, the right tools and an a sensible scope. Please, do yourself a favour and abandon the idea of creating cutting edge 3D, hyper realistic characters and stick with more simple, colourful and cartoon 2D elements. With a considerably small time investment, you&quot;ll be able to make games that don&rsquo;t look as if they were created with Ye Olde Microsoft Paint. No eyes have to bleed anymore! Yay!</p>
-<p><img src="../../img/wp/sad-mr-ms-paint.png" alt="sad-mr-ms-paint.png"></p>
-<p>In order to get to where I now stand, I&rsquo;ve had to go through a lengthy and painful try/error process. Maybe I can spare you some, that&quot;d be nice, wouldn&rsquo;t it? Here&rsquo;s a disclaimer though, this is one of the many ways of doing things. I&quot;m sure a real artist would kick me in the balls upon such an insult to his profession, but hey, it has worked for me so far. Just check <a href="../../games/ld24-evolution-postmortem/">Evolution, my Ludum Dare #24 entry</a>. Hideous playability but decent looking for a 48h jam. I&quot;m going to use it as an example throughout the article, feel free to grab any ideas you fancy, add your own and ditch the rest.</p>
-<p><img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03-300x168.jpg"></p>
-<h3 id="the-initial-sketch">The initial sketch</h3>
-<p>Firstly, let&rsquo;s make the assumption we&quot;re working on a character for our game, although this could perfectly apply to environments as well. The very first step is to draw a basic sketch on paper. I&quot;m fully aware that drawing on paper in a world of graphic tablets might strike some people as old school. Nevertheless, paper is just simpler and cheaper, a good fit for our purposes.</p>
-<p>A rule of thumb would be to stick to basic shapes, keeping in mind at all times a lovely cartoon style. Trying to emulate reality will surely result in disaster, in turn, shamelessly making things look funny could easily save the day. Don&rsquo;t worry if you can&rsquo;t go any further than poor stick men, you stand a good chance by choosing minimalistic designs. Look at De Blob&rsquo;s main character! It&rsquo;s basically made out of stylized circles and rectangles. Yet all the critics said it&rsquo;s a visually interesting game. Simplicity is your friend, embrace it and it&quot;ll hide your lack of talent.</p>
-<p><img src="../../img/wp/deblob.png" alt="deblob.png"></p>
-<p>Once you&rsquo;ve finished your sketch, it&rsquo;s time for you to scan it. In the absence of a proper scanner, you can always take a picture. Don&rsquo;t worry if it&rsquo;s your phone&rsquo;s camera, we&quot;ll only use it as a reference so that&quot;ll suffice.</p>
-<p><img src="../../img/wp/caveman-sketch.jpg" alt="caveman-sketch.jpg"></p>
-<h3 id="lets-talk-vectors">Let&rsquo;s talk vectors</h3>
-<p>Hold on, don&rsquo;t go fire up Photoshop CS [insert version number here] just yet! That won&rsquo;t be necessary. We&quot;re going to adopt a vector based approach using the open source solution <a href="http://inkscape.org/">Inkscape</a>. Beware! For the beautiful math behind <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curves</a> shall serve us as disguise for our lame sketch. Elegant and stylized lines, simple shapes and the colourful palette. I love it.</p>
-<p>Now it&rsquo;s a good time to mention that my workflow has been highly influenced by the <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a> blog, which provides numerous techniques to easily create assets using this sweet piece of software. Seriously, if you want to get started with this tool, check it out now. When I went through his very first tutorial, which only consists of making a funny looking alien face, I couldn&rsquo;t but be amazed at the ridiculous effort/outcome ratio.</p>
-<p><img src="../../img/wp/2d-game-art-for-programmers.png" alt="2d-game-art-for-programmers.png"></p>
-<p>The principle behind this process only requires a little bit of practice. We programmers, love algorithms, so I&quot;ll explain all you need to know using a Python like pseudo code snippet.</p>
-<pre><code>import Inkscape
-import Awesomeness
-
-# Open Inkscape
-inkscape = Inkscape.newDocument()
-
-# Prepare the awesomeness (patience and practice)
-awesomeness = Awesomeness.bringItOn()
-
-# Create a layer and import our sketch, use it as a guide
-sketchLayer = inkscape.createLayer(&quot;sketch&quot;)
-sketchLayer.loadBitmap(&quot;sketch.png&quot;)
-
-# For every movable part in our character (further animation)
-# Create a layer and draw it using vectors following the guide
-for part in character.parts():
-    partLayer = inkscape.createLayer(part)
-    partLayer.setAlpha(0.5)
-    awesomeness.drawBodyPartUsingGuide(sketchLayer, partLayer)
-
-# You should really save in between too, just in case 🙂
-inkscape.saveDocument(&quot;character.svg&quot;)
-</code></pre><p>Now we&quot;re talking, aren&rsquo;t we? That&rsquo;s right, create a layer for every animated body part in your character, say head, torso, legs, feet, arms… The granularity depends on the desired level of movement detail. However I&quot;d advise you to keep it simple at first. Set the layer alpha transparency to something less than 1.0 so you can see your reference underneath it. Now listen, this might sound trickier than it really is, you just need to practice. Use circle or rectangle elements to model your character&rsquo;s body parts, convert them to paths and work with the Bezier nodes to adjust the shapes to the correspondent outline. If you&quot;re just staring at the screen with no idea of what I&quot;m talking about, please go to <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a>, follow the first articles and you&quot;ll see the light.</p>
-<p><img src="../../img/wp/caveman-outline.jpg" alt="caveman-outline.jpg"></p>
-<p>Having finished the basic outline, you can start worrying about colour. Use bright but not too intense tones and the result will be noticeably better. Things like (0, 0, 255) for blue are strictly forbidden. A good idea is to grab some image as a reference and copy the colours, or use some of the multiple web design oriented palette creators out there.</p>
-<p>Moving onto shading. You&quot;ll excuse me for redirecting you once more to <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a>. There you can get ahold of some basic shading techniques, believe me, some shine here and a shadow there, will completely transform your creation. As far as I&quot;m aware, the principle is straightforward. Position an imaginary light source in your scene and try to figure out, with a minimalistic approach in mind, how would it affect your newly born creation. Add more bezier magic and paint it slightly brighter or darker than the base. Iterate, play with it until you&quot;re satisfied.</p>
-<p><img src="../../img/wp/caveman-inkscape.jpg" alt="caveman-inkscape.jpg"></p>
-<h3 id="3-2-1-action">3, 2, 1… Action!</h3>
-<p>Depending on the game you have in mind, you might not need animations at all! In that case your character would be perfectly ready for production use (happy face). Otherwise, you&quot;ll need to export every body part as a separate PNG file. The size doesn&rsquo;t really matter but it&rsquo;s preferable to overshoot the resolution rather than falling short, downscaling algorithms are decent nowadays. Rest assured, once you export the first part, Inkscape will keep the aspect ratio and proportions of all the others.</p>
-<p>We could animate our character by moving all its parts little by little and exporting every frame by hand from Inkscape itself, although it pains me just to think about it. So tedious! Instead, we&quot;ll use some 2D animation software to set keyframes with different poses so its tweening engine can work out the rest. Adobe Flash CS can easily do the job but if you&quot;re looking for an inexpensive solution, <a href="http://www.synfig.org/cms/">Synfig studio</a> is worth checking out. Last time I took a look, it lacked features but our requirements are more than covered with either.</p>
-<p><img src="../../img/wp/caveman-flash.jpg" alt="caveman-flash.jpg"></p>
-<p>Regardless of your choice, the algorithm here is simple too! We&quot;ll explain a walking cycle as an example. Proceed as follows:</p>
-<ul>
-<li>Import each body part in a different layer.</li>
-<li>1st keyframe: configure the parts so the character stays in an idle pose.</li>
-<li>2nd keyframe: character with its right leg and arm aiming forward while the left arm and leg are left behind.</li>
-<li>3rd keyframe: back to idle pose.</li>
-<li>4th keyframe: a reverse version of the second keyframe.</li>
-<li>5th keyframe: back to idle.</li>
-<li>Create motion tweens between keyframes, the software will fill in the gaps.</li>
-</ul>
-<p><img src="../../img/wp/caveman-walking-cycle.gif" alt="caveman-walking-cycle.gif"></p>
-<p>You&quot;d be surprised at the amount of existing literature on walking cycles and I know I&quot;m not being accurate, but this could get you started. Decomposing movement in keyframes is not easy peasy. Nevertheless, you should always try to avoid visual fidelity. Look at games like Super Mario, they&quot;re extremely simplistic and full of metaphors. Mario&rsquo;s jumping animation could have three frames and still looks good! They don&rsquo;t try to model reality, they don&rsquo;t need to and neither do you.</p>
-<p><img src="../../img/wp/mario-jump.png" alt="mario-jump.png"></p>
-<p>When you export the resulting animations you&quot;ll probably get a ton of individual PNG images which will make your engine very sad.</p>
-<h3 id="create-your-sprite-sheet">Create your sprite sheet</h3>
-<p>Animated characters are usually stored as sprite sheets containing all frames of every animation. Offtimes, you&quot;ll come across with several characters gathered in a big sprite sheet. This reduces file access times and makes rendering a lot faster because you don&rsquo;t need to be switching between textures all the time. The renderer will draw different portions of the same texture lighting fast and everybody happy.</p>
-<blockquote>
-<p>Does that mean I need to merge the countless PNGs by hand?</p>
-</blockquote>
-<p>Luckily, we can count on the wonderful <a href="http://code.google.com/p/libgdx-texturepacker-gui/">Libgdx TexturePacker GUI</a> to do the job. It&rsquo;s free, open source and dead easy to use it. It has a few parameters you can play with, but nothing complex. Grab it and create your awesome sprite sheet.</p>
-<p><img src="../../img/wp/texturepacker-gui-3.1.jpg" alt="texturepacker-gui-3.1.jpg"></p>
-<h3 id="this-is-it">This is it!</h3>
-<p>Oh boy that was a long article! Since it took me a long time to figure this out, I thought it was worth sharing some of that experience with my fellow coders. It&quot;d be truly awesome if someone left a comment saying how wrong I am along a suggestion on how to improve my art &ldquo;algorithm&rdquo;.</p>
-<p>Until next time fellas!</p>
 
       
     </div>

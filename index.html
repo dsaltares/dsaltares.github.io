@@ -102,9 +102,107 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/">Continuous Delivery pipeline for Godot and itch.io</a>
+      </h1>
+      <span class="post-date">Mar 2, 2020 &middot; 4 minute read &middot; <a href="https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="./categories/games-development">Games Development</a>
+      </span>
+      
+      <p>During the recent <a href="./plague-godot-wild-jam-18/">Godot Wild Jam 18</a>, I implemented a full <a href="https://en.wikipedia.org/wiki/Continuous_delivery">Continuous Delivery</a> system to automatically publish <a href="https://github.com/dsaltares/godot-wild-jam-18">Plague</a>, our entry, on <a href="https://itch.io/">itch.io</a>. The pipeline relies on Github Actions, the same <a href="easily-deploy-your-hugo-site-to-github-pages/">mechanism I use to build and deploy this very blog</a>.</p>
+<p>Setting up your own is easy peasy and possibly free!</p>
+<h3 id="-pipeline-overview">⚒️ Pipeline overview</h3>
+<ol>
+<li>Someone pushes to the master branch on the remote repo.</li>
+<li>The game is exported for all available platforms. In this case: Windows, Linux, MacOS and HTML5.</li>
+<li>A new Github release is created with attached files, one per platform.</li>
+<li>The release artifacts are pushed as new versions of the game to itch.io.</li>
+</ol>
+<p><a href="./img/cd-godot-itch/pipeline.png"><img src="./img/cd-godot-itch/pipeline.png" alt="pipeline"></a></p>
+<h3 id="-configure-godot-exports">🤖 Configure Godot exports</h3>
+<p>First, you need to setup the export settings in your Godot project. The <a href="https://docs.godotengine.org/en/3.2/getting_started/workflow/export/exporting_projects.html">official exporting guide</a> explains it perfectly. The thing to keep in mind here is that the preset name will determine the name of the published artifact. For example, a preset called <code>plague-mac</code> will result in a release with an attached file called <code>plague-mac.zip</code>.</p>
+<p>In the case of our jam entry, we targetted MacOS, Windows, Linux and HTML5.</p>
+<p><a href="./img/cd-godot-itch/godot-export-setup.gif"><img src="./img/cd-godot-itch/godot-export-setup.gif" alt="godot-export-setup"></a></p>
+<h3 id="-export-the-game">📦 Export the game</h3>
+<p>Create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/export_game.yaml"><code>.github/workflows/export_game.yaml</code></a> file in your repo. We will tell our new action to run on every push to master. We don&rsquo;t want new releases on commits that do not actually change the game. Our Godot project lives in the <code>game</code> folder, so we tell the action to only run if there are changes in that folder.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">on</span>:
+  <span style="color:#66d9ef">push</span>:
+    <span style="color:#66d9ef">branches</span>:
+      - master
+    <span style="color:#66d9ef">paths</span>:
+      - <span style="color:#e6db74">&#39;game/**&#39;</span>
+</code></pre></div><p>For the actual export step, we will leverage the <a href="https://github.com/firebelley/godot-export">Godot Export</a> Github action. The <a href="https://github.com/firebelley/godot-export/blob/master/README.md"><code>README.md</code></a> explains its usage very well.</p>
+<p>Here&rsquo;s our config in case it helps you. We setup the base version to be published, the links to download the Godot headless executable as well as the templates and tell it our project is located in the <code>game</code> folder in the repo. Whenever you interact with the same repo the action is being triggered from, you can use the <code>secrets.GITHUB_TOKEN</code>, which is automatically populated.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">jobs</span>:
+  <span style="color:#66d9ef">export_game</span>:
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">name</span>: Export game
+    <span style="color:#66d9ef">steps</span>:
+    - <span style="color:#66d9ef">name</span>: checkout
+      <span style="color:#66d9ef">uses</span>: actions/checkout@v2<span style="color:#ae81ff">.0.0</span>
+    - <span style="color:#66d9ef">name</span>: export
+      <span style="color:#66d9ef">uses</span>: firebelley/godot-export@v1<span style="color:#ae81ff">.1.0</span>
+      <span style="color:#66d9ef">with</span>:
+        <span style="color:#66d9ef">base_version</span>: <span style="color:#ae81ff">0.1.0</span>
+        <span style="color:#66d9ef">godot_executable_download_url</span>: https://downloads.tuxfamily.org/godotengine/<span style="color:#ae81ff">3.2</span>/Godot_v3<span style="color:#ae81ff">.2</span>-stable_linux_headless<span style="color:#ae81ff">.64</span>.zip
+        <span style="color:#66d9ef">godot_export_templates_download_url</span>: https://downloads.tuxfamily.org/godotengine/<span style="color:#ae81ff">3.2</span>/Godot_v3<span style="color:#ae81ff">.2</span>-stable_export_templates.tpz
+        <span style="color:#66d9ef">godot_template_version</span>: <span style="color:#ae81ff">3.2</span>.stable
+        <span style="color:#66d9ef">relative_project_path</span>: ./game
+      <span style="color:#66d9ef">env</span>:
+        <span style="color:#66d9ef">GITHUB_TOKEN</span>: ${{ secrets.GITHUB_TOKEN }}
+</code></pre></div><p>Whenever you push these changes to your repo, you should already start seeing <a href="https://github.com/dsaltares/godot-wild-jam-18/actions">jobs being triggered</a> and <a href="https://github.com/dsaltares/godot-wild-jam-18/releases">releases being published</a>.</p>
+<p><a href="./img/cd-godot-itch/export-job.png"><img src="./img/cd-godot-itch/export-job.png" alt="export-job"></a></p>
+<h3 id="-ship-the-game">🚢 Ship the game</h3>
+<p><a href="https://itch.io/docs/butler/">Butler</a> is the itch.io CLI, which lets you upload builds of your game. Our publish Github action will need to talk to itch.io using a valid API key. In order to get one, <a href="https://itch.io/docs/butler/installing.html">install butler</a> and <a href="https://itch.io/docs/butler/login.html#running-butler-from-ci-builds-travis-ci-gitlab-ci-etc">generate a key</a> via <code>butler login</code>. Refer to the docs for the details.</p>
+<p>Then, copy your Butler API key and go to <code>https://github.com/org/repo/settings/secrets</code> and create a <code>BUTLER_CREDENTIALS</code> entry with the contents of the key.</p>
+<p>Now create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/publish_game.yaml"><code>.github/workflows/publish_game.yaml</code></a> file in your repo. This action will run every time a new release is created or edited.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">on</span>:
+  <span style="color:#66d9ef">release</span>:
+    <span style="color:#66d9ef">types</span>: [created, edited]
+</code></pre></div><p>Our workflow needs to contain a job per platform we want to publish. Each job will leverage the <a href="https://github.com/dsaltares/fetch-gh-release-asset">Fetch GH Release Asset</a> and <a href="https://github.com/josephbmanley/butler-publish-itchio-action">Butler Push</a> actions. We first download the latest release artifact for the platform we want to export and then we call the butler action to push the build to itch.io. When pushing multiple times to the <code>windows</code> <a href="https://itch.io/docs/butler/pushing.html#channel-names">channel</a>, each will be considered a new version of the same &ldquo;product.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">jobs</span>:
+  <span style="color:#66d9ef">release_windows</span>:
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">steps</span>:
+      - <span style="color:#66d9ef">name</span>: download widows
+        <span style="color:#66d9ef">uses</span>: dsaltares/fetch-gh-release-asset@master
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">file</span>: plague-windows.zip
+        <span style="color:#66d9ef">env</span>:
+          <span style="color:#66d9ef">GITHUB_TOKEN</span>: <span style="color:#e6db74">&#34;${{ secrets.GITHUB_TOKEN }}&#34;</span>
+      - <span style="color:#66d9ef">name</span>: release windows
+        <span style="color:#66d9ef">uses</span>: josephbmanley/butler-publish-itchio-action@master
+        <span style="color:#66d9ef">env</span>:
+          <span style="color:#66d9ef">BUTLER_CREDENTIALS</span>: ${{ secrets.BUTLER_CREDENTIALS }}
+          <span style="color:#66d9ef">CHANNEL</span>: windows
+          <span style="color:#66d9ef">ITCH_GAME</span>: plague
+          <span style="color:#66d9ef">ITCH_USER</span>: dsaltares
+          <span style="color:#66d9ef">PACKAGE</span>: plague-windows.zip
+</code></pre></div><p>That&rsquo;s it! Once you push the publish workflow and make a change to the game, Github will export, create a new release and update your game on itch.io.</p>
+<p><a href="./img/cd-godot-itch/publish-job.png"><img src="./img/cd-godot-itch/publish-job.png" alt="publish-job"></a></p>
+<p>On your itch.io game page, you should see something like:</p>
+<p><a href="./img/cd-godot-itch/itch-downloads.png"><img src="./img/cd-godot-itch/itch-downloads.png" alt="itch-downloads"></a></p>
+<h3 id="-advantages">✅ Advantages</h3>
+<p>Now you can enjoy:</p>
+<ul>
+<li>⏳ Automated! Do not waste time exporting your game regularly and updating various stores.</li>
+<li>🚀 It&rsquo;s fast. Exporting and publishing for a jam sized game takes only 2 minutes.</li>
+<li>🎥 Restrospect. Check out how your game looked at an arbitrary point in the past without opening the editor.</li>
+<li>💰 Cost effective. You get unlimited GH Actions minutes for open source projects and 3000 minutes for the Pro plan. That could easily equal 600 builds a month!</li>
+<li>🤸 Flexible. No need to publish on every push, you can change the triggers to publish on every push to a <code>release</code> branch or simply on a fixed schedule.</li>
+<li>🔭 Extensible. Add jobs to publish to other stores or platforms.</li>
+</ul>
+<p>It would be amazing if you let me know your thoughts on this solution. Maybe you have a much better automated process or ideas on how to improve this one!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/plague-godot-wild-jam-18/">Plague - Godot Wild Jam 18</a>
       </h1>
-      <span class="post-date">Feb 27, 2020 &middot; <a href="https://saltares.com/plague-godot-wild-jam-18/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 27, 2020 &middot; 1 minute read &middot; <a href="https://saltares.com/plague-godot-wild-jam-18/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="./categories/games-development">Games Development</a>
@@ -143,7 +241,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/fosdem-2020-survival-guide/">FOSDEM 2020 - Survival Guide</a>
       </h1>
-      <span class="post-date">Jan 28, 2020 &middot; <a href="https://saltares.com/fosdem-2020-survival-guide/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 28, 2020 &middot; 3 minute read &middot; <a href="https://saltares.com/fosdem-2020-survival-guide/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="./categories/general">General</a>
@@ -288,7 +386,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/">Easily deploy your Hugo site to Github Pages</a>
       </h1>
-      <span class="post-date">Jan 17, 2020 &middot; <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 17, 2020 &middot; 3 minute read &middot; <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="./categories/general">General</a>
@@ -369,7 +467,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/run-godot-tests-ci-travis/">Run automated tests for your Godot game on CI</a>
       </h1>
-      <span class="post-date">Nov 26, 2018 &middot; <a href="https://saltares.com/games/run-godot-tests-ci-travis/#disqus_thread">Comments</a>
+      <span class="post-date">Nov 26, 2018 &middot; 3 minute read &middot; <a href="https://saltares.com/games/run-godot-tests-ci-travis/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="./categories/games-development">Games development</a>
@@ -438,228 +536,6 @@ Run Summary
   pending:          0
 +++ 1 passed 0 failed.  Tests finished in:  0.0 +++
 </code></pre><p>Happy testing!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/">Load test your backend services with locust.io at Pycon ES 2017</a>
-      </h1>
-      <span class="post-date">Oct 24, 2017 &middot; <a href="https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="./categories/general">General</a>
-      </span>
-      
-      <p><a href="https://2017.es.pycon.org/en/">PyCon ES 2017</a> was an absolute blast!</p>
-<p>The talks were very interesting and they&rsquo;re all freely available on their
-<a href="https://www.youtube.com/watch?v=8QYnf8EVoRc&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C">Youtube channel</a>.</p>
-<p>Celebrating PyCon ES 2017 in <a href="https://en.wikipedia.org/wiki/C%C3%A1ceres,_Spain">Caceres</a>,
-located in southern Spain, was a great choice. Beautiful medieval city center where <a href="https://winteriscoming.net/2016/12/16/final-images-caceres-season-7-game-thrones/">some
-scenes in Game of Thrones were filmed</a>,
-plus cheap and delicious food.</p>
-<p>
-<link rel="stylesheet" href="./css/hugo-easy-gallery.css" />
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_caceres/caceres_01.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_caceres/caceres_01.jpg" alt="Caceres 01" />
-				    </div>
-			      <figcaption>
-		          <p>Caceres 01</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_caceres/caceres_01.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_caceres/caceres_02.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_caceres/caceres_02.jpg" alt="Caceres 02" />
-				    </div>
-			      <figcaption>
-		          <p>Caceres 02</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_caceres/caceres_02.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_caceres/caceres_03.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_caceres/caceres_03.jpg" alt="Caceres 03" />
-				    </div>
-			      <figcaption>
-		          <p>Caceres 03</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_caceres/caceres_03.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-</p>
-<p>
-
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_food/food_01.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_food/food_01.jpg" alt="Food 01" />
-				    </div>
-			      <figcaption>
-		          <p>Food 01</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_food/food_01.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_food/food_02.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_food/food_02.jpg" alt="Food 02" />
-				    </div>
-			      <figcaption>
-		          <p>Food 02</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_food/food_02.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_food/food_03.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_food/food_03.jpg" alt="Food 03" />
-				    </div>
-			      <figcaption>
-		          <p>Food 03</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_food/food_03.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_food/food_04.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_food/food_04.jpg" alt="Food 04" />
-				    </div>
-			      <figcaption>
-		          <p>Food 04</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_food/food_04.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-</p>
-<p>The conference itself was hosted at an old monastery, repurposed for these kind
-of events. I honestly have never been to a conference with such a cool venue!</p>
-<p>
-
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_venue/venue_01.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_venue/venue_01.jpg" alt="Venue 01" />
-				    </div>
-			      <figcaption>
-		          <p>Venue 01</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_venue/venue_01.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/pycones/gallery_venue/venue_02.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/pycones/gallery_venue/venue_02.jpg" alt="Venue 02" />
-				    </div>
-			      <figcaption>
-		          <p>Venue 02</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/pycones/gallery_venue/venue_02.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-</p>
-<p>My colleague <a href="https://twitter.com/andyalmonte31">Andy</a> and I gave a
-presentation titled <em>&ldquo;Load test your backend services with locust.io&rdquo;</em>, watch it!</p>
-
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/cuATUqwW6T8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
-</div>
-
-<p>Finally, take a look at some of my favorite talks in the conference, (most of them in Spanish):</p>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=ayQK6app_wA&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C&amp;index=33">Keynote</a> (English)</li>
-<li><a href="https://www.youtube.com/watch?v=RtyxhWH58cA&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C&amp;index=20">Introducción a GraphQL</a> (Spanish)</li>
-<li><a href="https://www.youtube.com/watch?v=Sbd0N8mP1PM&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C&amp;index=21">pytest más allá de la documentación</a> (Spanish)</li>
-<li><a href="https://www.youtube.com/watch?v=9RIUYeaKX1Q&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C&amp;index=26">Factories, what the hell?</a> (Spanish)</li>
-<li><a href="https://www.youtube.com/watch?v=0sgw0054KVY&amp;list=PLahUDl6AAwrhc_qBiZpn07_7tDZnapO9C&amp;index=59">Parallel and non parallel stuff</a> (Spanish)</li>
-</ul>
 
       
     </div>

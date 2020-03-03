@@ -102,9 +102,65 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/ogitor-instalacion-en-linux-y-el-formato-dotscene/">Ogitor: instalación en Linux y el formato DotScene</a>
+      </h1>
+      <span class="post-date">Jan 5, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/ogitor-instalacion-en-linux-y-el-formato-dotscene/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/ogitor.png" alt="ogitor.png"></p>
+<p>Como es lógico, <strong>los niveles de Sion Tower se almacenarán en ficheros</strong> y deberán contener información para poder desplegar el escenario, oleadas de enemigos, música etc. Escribir a mano un un fichero tan complejo es peor que una tortura propia de mafiosos. Por tanto, lo ideal sería disponer de <strong>un editor libre y multiplataforma</strong> con el que crear los niveles. El sistema de Sion Tower tomará la responsabilidad parsear los ficheros del editor y cargar los niveles. Para un menor sufrimiento, es indispensable que el editor sea compatible con un formato abierto y conocido por la comunidad. Más detalles a continuación.</p>
+<h3 id="el-formato-dotscene">El formato DotScene</h3>
+<p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml</strong> diseñado para la exportación e importación de <strong>escenas 3D</strong> en proyectos Ogre, podéis encontrar el correspondiente DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Es ampliamente utilizado por la comunidad de Ogre en ficheros con extensión <em>.scene</em> y contempla todo lo que una escena puede mostrar: mayas, luces, geometría básica y un larguísimo etcétera.</p>
+<p>El procesamiento de un fichero con tantos elementos podría ser complejo. No obstante, <strong>existen parsers</strong> ya desarrollados como <a href="http://www.ogre3d.org/tikiwiki/New+DotScene+Loader&amp;comzone=show"><strong>DotSceneLoader</strong></a>. En cualquier caso, creo que acabaré implementando uno propio que utilice internamente la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a>. Ofrezco dos razones principales: me gustaría personalizar mi parser y pugixml es tremendamente eficiente en tiempo/espacio (mirad este <a href="http://pugixml.org/benchmark/">impresionante benchmark</a>).</p>
+<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg"></p>
+<h3 id="ogitor-la-respuesta">Ogitor, la respuesta</h3>
+<p><strong><a href="http://www.ogitor.org/">Ogitor</a> es un editor de escenarios libre y multiplataforma</strong>. Está desarrollado con QT y, por supuesto, Ogre. Lo mejor de todo es que soporta el formato DotScene así que no tendré que preocuparme por toquetear inmensos ficheros XML. Es compatible tanto con Windows como con Linux aunque en éste último hay que compilar. Aún se encuentra en la versión 0.4 pero tiene un desarrollo activo y una <a href="http://forum.ogitor.org/">comunidad</a> dispuesta a ayudar.</p>
+<h3 id="instalación-de-ogitor-en-linux">Instalación de Ogitor en Linux</h3>
+<p>Ogitor viene perfectamente empaquetado para Windows pero <strong>en Linux estamos obligados a compilarlo</strong> desde las fuentes. Aunque… ¿desde cuándo ha sido eso un problema para tan avezados usuarios? En las siguientes líneas les detallo el proceso, no exento de pequeños detalles delicados.</p>
+<h4 id="dependencias">Dependencias</h4>
+<ul>
+<li><strong>Ogre 1.7</strong>: creo que era bastante evidente. Si no lo has hecho, puedes acudir a IberOgre por su flamante <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">artículo</a> al respecto. Es importante que instales los ejemplos.</li>
+<li><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</li>
+</ul>
+<pre><code>sudo apt-get install cmake cmake-gui
+</code></pre><ul>
+<li><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</li>
+</ul>
+<pre><code>sudo apt-get install libqt4-dev
+</code></pre><ul>
+<li><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</li>
+</ul>
+<pre><code>sudo apt-get install libboost-regex-dev
+</code></pre><p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png"></p>
+<h4 id="compilación-e-instalación">Compilación e Instalación</h4>
+<p>Le toca el turno al editor que llevamos queriendo instalar hace un buen rato:</p>
+<ul>
+<li>Descargamos la última versión estable (4.2) desde la <a href="http://www.ogitor.org/Repositories">web oficial</a> y descomprimimos el paquete.</li>
+<li>Ejecutamos la interfaz de cmake introduciendo cmake-gui en la terminal.</li>
+<li>Indicamos el directorio de los fuentes y donde queremos guardar el proyecto configurado, mejor crear una carpeta a tal efecto.</li>
+<li>Pulsamos <em>&ldquo;Configure&rdquo;</em>. Si se produce algún error es probable que CMake no consiga encontrar alguna biblioteca, revisa que cumples todas las dependencias.</li>
+<li>Establecemos las opciones <em>OGITOR_DIST</em> a true y <em>OGRE_SAMPLES_INCLUDEPATH</em> con la ruta de las cabeceras de los ejemplos de Ogre.</li>
+<li>Hacemos click sobre <em>&ldquo;Generate&rdquo;</em>.</li>
+<li>Finalmente, los clásicos:</li>
+</ul>
+<pre><code>make
+sudo make install
+</code></pre><p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
+<pre><code>[compilación-ogitor]/RunPath/bin/qtOgitor
+</code></pre><h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
+<p>En este artículo hemos hablado sobre el ampliamente aceptado formato DotScene y hemos desgranado la instalación de Ogitor. Es probable que haya un próximo episodio en el que relate mi experiencia con Ogitor y documente la creación de niveles para Sion Tower. Ya saben, <strong>ante cualquier problema que encuentren pueden dejar un comentario</strong>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/batman-arkham-asylum/">Batman Arkham Asylum</a>
       </h1>
-      <span class="post-date">Jan 3, 2011 &middot; <a href="https://saltares.com/hobbies/batman-arkham-asylum/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 3, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/hobbies/batman-arkham-asylum/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/hobbies">Hobbies</a>
@@ -139,7 +195,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/">Sherlock Holmes en la actualidad</a>
       </h1>
-      <span class="post-date">Dec 31, 2010 &middot; <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/#disqus_thread">Comments</a>
+      <span class="post-date">Dec 31, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/hobbies">Hobbies</a>
@@ -159,7 +215,7 @@
       <h1 class="post-title">
         <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/">Sistema de audio pseudo-3D integrado con Ogre</a>
       </h1>
-      <span class="post-date">Dec 30, 2010 &middot; <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/#disqus_thread">Comments</a>
+      <span class="post-date">Dec 30, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
@@ -214,7 +270,7 @@ Sound3D::update3DSound();
       <h1 class="post-title">
         <a href="https://saltares.com/hobbies/boardwalk-empire/">Boardwalk Empire</a>
       </h1>
-      <span class="post-date">Dec 29, 2010 &middot; <a href="https://saltares.com/hobbies/boardwalk-empire/#disqus_thread">Comments</a>
+      <span class="post-date">Dec 29, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/boardwalk-empire/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/hobbies">Hobbies</a>
@@ -233,118 +289,6 @@ Sound3D::update3DSound();
 <p><img src="../../img/wp/Boardwalk-Empire-01.jpg" alt="Boardwalk-Empire-01.jpg"></p>
 <h3 id="damas-y-caballeros-aún-hay-más">Damas y caballeros, aún hay más</h3>
 <p>Como muchos sabréis, HBO ha confirmado una <strong>segunda temporada</strong> de Boardwalk Empire ante su buena acogida. La serie fue nominada a un Globo de Oro por mejor serie dramática entre otros galardones. ¿Me he quedado con ganas de más? Sin duda, aunque necesito digerirla un poco antes de una nueva temporada, me vendrá bien el descanso. Si estáis dispuestos a sentaros pacientemente y disfrutar de un buen guión, adelante, es una producción con <em>&ldquo;qualité&rdquo;</em>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/">Movimiento relativo a la cámara</a>
-      </h1>
-      <span class="post-date">Dec 26, 2010 &middot; <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png"></p>
-<p>En la mayoría de videojuegos en tercera persona, <strong>la dirección hacia la que se mueve el personaje depende de la orientación de la cámara</strong>. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido. En este artículo <strong>explico un sencillo algoritmo para conseguirlo</strong>.</p>
-<h3 id="qué-queremos-conseguir">¿Qué queremos conseguir?</h3>
-<p>El siguiente diagrama muestra el <strong>sistema de coordenadas de Ogre</strong>. Imaginad que nuestro personaje se encuentra en el origen <em>p = (0, 0, 0)</em> y que la cámara está en el <em>c = (0, 0, 50)</em> mirando hacia el origen. Nuestras teclas de movimiento son las clásicas: WASD. Al pulsar W el personaje debe moverse en la dirección negativa del eje Z, en cambio, si pulsamos D deberá hacerlo en la dirección positiva del eje X.</p>
-<p>En cambio, si la cámara se situase en <em>c = (50, 0, 0)</em> mirando a <em>(0, 0, 0)</em> las teclas no tendrían el mismo efecto en términos absolutos, aunque se mantiene idéntico si tomamos como punto de referencia a la cámara. Si pulsamos W el personaje se desplazará en la dirección negativa del eje X. En el caso de que pulsemos D, el personaje se dirigirá en la dirección negativa del eje Z.</p>
-<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png"></p>
-<p>Por supuesto, <strong>el personaje deberá girarse</strong> para mirar hacia la dirección del desplazamiento. A continuación, detallamos la manera de implementar este sistema de movimiento.</p>
-<h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
-<p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>
-<p>Partimos de los siguientes objetos:</p>
-<pre><code>Ogre::SceneNode* nodoPersonaje; // Nodo que representa al personaje
-Ogre::Vector3 direccionObjetivo; // Relativa a la cámara
-Ogre::Vector3 direccionActual; // Relativa a la cámara
-Ogre::Vector3 velocidad; // Velocidad del personaje
-bool andando; // true si el personaje se está desplazando
-OIS::Keyboard* teclado; // Teclado para controlar al personaje
-</code></pre><h3 id="algoritmo-desplazamiento-del-personaje">Algoritmo: desplazamiento del personaje</h3>
-<p>En cada frame debemos <strong>tomar la dirección de la cámara</strong> y quedarnos con su componente x y z ya que nos movemos en el plano. Esa será nuestra dirección <em>&ldquo;hacia delante&rdquo;</em>. Es muy sencillo obtener la dirección &ldquo;<em>hacia la derecha&rdquo;</em>, simplemente intercambiamos las componentes x y z cambiándole el signo a la z de <em>&ldquo;hacia delante&rdquo;</em>.</p>
-<p><strong>La dirección objetivo</strong> de este frame se puede calcular consultando las <strong>pulsaciones de las teclas</strong> y <strong>combinando los dos vectores</strong> anteriores utilizando sumas o restas. Nos podremos mover en 8 direcciones distintas. Por ejemplo, si deseamos dirigirnos hacia atrás a la izquierda tendremos: <em>direccionObjetivo = -delante – derecha</em>. Finalmente, <strong>la dirección objetivo debe ser normalizada</strong>, es decir, que el módulo del vector sea igual a 1. Esto es muy importante si no queremos que la velocidad del personaje se vea alterada. Finalmente, aplicamos el desplazamiento teniendo en cuenta la velocidad, la dirección y el tiempo en milisegundos desde el último frame. Esta técnica se conoce como <strong>LERP</strong> (Linear Interpolation).</p>
-<h3 id="algoritmo-orientación-del-personaje">Algoritmo: orientación del personaje</h3>
-<p>Sólo nos queda corregir la orientación del personaje para que mire hacia la dirección en la que se desplaza. Ogre pone a nuestra disposición el método <em>Vector3::getRotationTo</em> que, dado un vector nos devuelve el cuaternio a aplicar de forma que tras la rotación quede alineado con el segundo. <strong>Los cuaternios se utilizan para representar rotaciones</strong> en el espacio y están compuestos por un ángulo y un eje (en este caso el y). Si multiplicamos la rotación necesaria por la que ya posee el nodo del personaje, éste mirará hacia donde deseamos. Es importante el orden de los operadores ya que el producto de cuaternios no es conmutativo.</p>
-<h3 id="algoritmo-código-completo">Algoritmo: código completo</h3>
-<p>He aquí el código completo:</p>
-<pre><code>using namespace Ogre;
-
-void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
-    // Tomamos la dirección de la cámara
-    Vector3 delante = camara-&gt;getDirection(); 
-    delante.y = 0;
-
-    // Vector relativo a la cámara, ortogonal hacia su derecha
-    Vector3 derecha(-delante.z, 0, delante.x);
-
-    // Calculamos la dirección objetivo en función de la pulsación de las
-    // teclas.
-    if (teclado-&gt;isKeyDown(OIS::KC_W) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_D)) {
-        direccionObjetivo = delante + derecha;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_W) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_A)) {
-        direccionObjetivo = delante - derecha;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_S) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_D)) {
-        direccionObjetivo = -delante + derecha;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_S) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_A)) {
-        direccionObjetivo = -delante - derecha;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_W)) {
-        direccionObjetivo = delante;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_S)) {
-        direccionObjetivo = -delante;
-        andando = true;
-    }
-    else if (teclado-&gt;isKeyDown(OIS::KC_D)) {
-        direccionObjetivo = derecha;
-        andando = true;
-    } 
-    else if (teclado-&gt;isKeyDown(OIS::KC_A)){
-        direccionObjetivo = -derecha;
-        andando = true;
-    }
-    else
-        andando = false;
-
-    // Normalizamos el vector direccion
-    direccionObjetivo.normalise();
-
-    // Si debemos desplazarnos, aplicamos la traslación y calculamos la
-    // rotación a aplicar
-    if (andando) {
-        nodoPersonaje-&gt;translate(velocidad * direccionObjetivo * deltaT,
-                                 Node::TS_WORLD);
-        if (direccionObjetivo != direccionActual) {
-            Quaternion rotacion = direccionActual.getRotationTo(direccionObjetivo,
-                                                                Vector3(0, 1, 0));
-            Quaternion rotacionActual = nodoPersonaje-&gt;getOrientation()
-            nodoPersonaje-&gt;setOrientation(orientacion * rotacionActual);
-            direccionActual = direccionObjetivo;
-        }
-    }
-}
-</code></pre><h3 id="posibles-mejoras">Posibles mejoras</h3>
-<p>Este algoritmo no está pensado para incluirse en un juego completo puesto que debe ser refinado. Sólo tenemos en cuenta la animación externa del personaje (desplazamiento y orientación). El algoritmo se olvida completamente de la animación interna. Si quieres un mejor resultado deberías incluirla (andar, detenerse, etc).</p>
-<p>La rotación es brusca, lo ideal sería aplicarla poco a poco de forma que el personaje se girase suavemente. Para hacerlo deberíamos dividir la rotación en partes y aplicar una en cada frame.</p>
-<h3 id="referencias">Referencias</h3>
-<p>Seguramente quieras consultar fuentes mucho más fiables que yo:</p>
-<ul>
-<li><em>Game Engine Architecture (Jason Gregory)</em>: libro que cubre todos los aspectos a la hora de desarrollar un motor de juego. Contiene una sección de matemáticas muy bien explicada.</li>
-<li><a href="http://en.wikipedia.org/wiki/Lerp_%28computing%29"><em>LERP (Wikipedia)</em></a></li>
-<li><a href="http://www.cprogramming.com/tutorial/3d/quaternions.html"><em>Quaternios (Confuted)</em></a>: si esto de los cuaternios te ha sonado a chino te recomiendo que consultes este artículo en el que se hace una pequeña introducción.</li>
-<li><a href="http://www.ogre3d.org/docs/api/html/index.html"><em>Documentación oficial de Ogre</em></a>: para obtener más detalles sobre las clases y los métodos empleados.</li>
-</ul>
 
       
     </div>

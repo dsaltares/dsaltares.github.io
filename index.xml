@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Continuous Delivery pipeline for Godot and itch.io</title>
+      <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</link>
+      <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</guid>
+      <description>During the recent Godot Wild Jam 18, I implemented a full Continuous Delivery system to automatically publish Plague, our entry, on itch.io. The pipeline relies on Github Actions, the same mechanism I use to build and deploy this very blog.
+Setting up your own is easy peasy and possibly free!
+⚒️ Pipeline overview  Someone pushes to the master branch on the remote repo. The game is exported for all available platforms.</description>
+    </item>
+    
+    <item>
       <title>Plague - Godot Wild Jam 18</title>
       <link>https://saltares.com/plague-godot-wild-jam-18/</link>
       <pubDate>Thu, 27 Feb 2020 14:35:30 +0200</pubDate>
