@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.65.3" />
+	<meta name="generator" content="Hugo 0.67.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,30 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-1-0-released/">Ashley 1.1.0 released</a>
+      </h1>
+      <span class="post-date">Aug 10, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-1-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>Just under a month of the first official release we are ready to release a new stable version: Ashley 1.1.0. Here is the list of changes.</p>
+<ul>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/8c98e9799bb6cc65cf61669eed36d7f8f04a2da4#diff-d41d8cd98f00b204e9800998ecf8427e">Performance improvements</a></strong>: massive performance gains with O(1) component retrieval through <code>ComponentMapper</code> and the use of <a href="https://github.com/libgdx/ashley/commit/db641f9697719e97d31017e46ea2003a43eb83cd"><code>Array&lt;Entity&gt;</code></a> rather than <code>IntMap&lt;Entity&gt;</code>. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/wiki">Complete Ashley manual</a></strong>: now the wiki has a lot more content, it fully covers Ashley. The rest is sugar.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/3182782dfd71e13f0bf1c03490512d91921117a3">API Cleanup</a></strong>: renames <code>Family.getFamilyFor()</code> to <code>Family.getFor()</code> for simplicity.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/569f089f9236dc8c2da09f4fe3b4d33880745d8a">Configurable pools</a></strong>: <code>PooledEngine</code> now accepts the initial and maximum sizes for the entity and components pools. This will add a lot more flexibility to bigger games.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/aa97ecbf8344ea6de5afeb608ac65ccd12e80965">Libgdx 1.3.0</a></strong>: Ashley now depends on gdx-core 1.3.0.</li>
+</ul>
+<p>Keep the feedback coming and happy coding!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/finally-ashley-has-a-logo/">Finally, Ashley has a logo</a>
       </h1>
       <span class="post-date">Aug 9, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/finally-ashley-has-a-logo/#disqus_thread">Comments</a>
@@ -178,31 +202,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/5-years-old/">5 years old</a>
-      </h1>
-      <span class="post-date">Jul 21, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/general/5-years-old/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a>
-      </span>
-      
-      <p>This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&rsquo;s from July 2009 and thought a recap was in order.</p>
-<p>It might have been possible to say that 5 years can make a blog be referred to as <em>veteran</em>. If we were in 2010. That is no longer the case. There are many <a href="http://blog.codinghorror.com/">blogs</a> out there that have been delivering high quality content for over 10 years now (and beyond). However, I believe that having kept doing this all this time is something one can be proud of.</p>
-<p>In absolute terms, the numbers are far from impressive, although they mean a lot to me. There&rsquo;s some really awesome content out there, why would people spend some of their valuable time reading this? This blog has had over <strong>300K hits</strong>! Add it to the list of unsolved mysteries. I&rsquo;ve posted <strong>235 entries</strong>, which, to be fair, it isn&rsquo;t that much considering we&rsquo;re talking about a 5 year span. There&rsquo;s an average of <strong>3.75 comments per entry</strong>, not a lot but decent given that a lot of the discussion has moved to social networks like Twitter.</p>
-<p>Embarrassingly, I started writing in Spanish about films, TV shows and concerts with the assertiveness of a true connoisseur. Past me was clearly a fool. In 2010, the topic started shifting towards technology and computery stuff. Once I moved to the UK in September 2011, all articles were in English and I&rsquo;d only write about programming and games development.</p>
-<p>Currently, the most popular articles in English are:</p>
-<ul>
-<li><a href="../../general/2d-character-creation-and-animation-for-dummies/">2D Character creation and animation… For dummies</a></li>
-<li><a href="../../games/populate-your-box2d-world-using-the-libgdx-maps-api/">Populate your Box2D world using the libgdx maps API</a></li>
-<li><a href="../../games/freegemas-cloned-in-google-play-4-times/">Freegemas cloned in Google Play… 4 times</a></li>
-</ul>
-<p>Well, hopefully, I&rsquo;ll be able to keep doing this for a lot longer.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -222,7 +221,7 @@
             </li>
             
             <li>
-                <a href="../../page/60/">»»</a>
+                <a href="../../page/61/">»»</a>
             </li>
         </ul>
     </div>

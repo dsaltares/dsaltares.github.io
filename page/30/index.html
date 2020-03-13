@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.65.3" />
+	<meta name="generator" content="Hugo 0.67.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,31 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/abre-la-seccion-de-matematicas-en-iberogre/">Abre la sección de matemáticas en IberOgre</a>
+      </h1>
+      <span class="post-date">Jul 12, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/abre-la-seccion-de-matematicas-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/puntos-vectores-matrices-cuaterniones-iberogre.png" alt="puntos-vectores-matrices-cuaterniones-iberogre.png"></p>
+<p>Uno de los objetivos de <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a> era proporcionar los <strong>conceptos mínimos de matemáticas</strong> para desarrollar juegos en 3D. Hasta ahora la sección creada a tal efecto estaba vacía pero lo he solucionado con la publicación de <em><a href="http://osl2.uca.es/iberogre/index.php/Introducci%C3%B3n,_puntos_y_vectores">&ldquo;Introducción, puntos y vectores&rdquo;</a></em>, <em><a href="http://osl2.uca.es/iberogre/index.php/Matrices">&ldquo;Matrices&rdquo;</a> y <a href="http://osl2.uca.es/iberogre/index.php/Cuaternios">&ldquo;Cuaterniones&rdquo;</a></em>. No se llega mucho más allá de lo que uno haya podido aprender en el instituto pero el enfoque se enfoca especialmente al desarrollo de videojuegos.</p>
+<p>En líneas generales los temas tratados son los siguientes:</p>
+<ul>
+<li>Introducción a la resolución de problemas 3D.</li>
+<li>Representación de puntos en el espacio.</li>
+<li>Vectores: operaciones y aplicaciones.</li>
+<li>Matrices: operaciones y su aplicación para representar transformaciones.</li>
+<li>Cuaterniones: operaciones y uso a la hora de trabajar con rotaciones tridimensionales.</li>
+</ul>
+<p>El ejemplo final carecía de sentido así que la estructura ha cambiado un poco. Tras esta terna de artículos me centraré en terminar el videojuego Sion Tower. ¡Estad atentos al blog y a la wiki!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/sion-tower-gui-y-sistema-de-apuntado/">Sion Tower: GUI y sistema de apuntado</a>
       </h1>
       <span class="post-date">Jul 10, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-gui-y-sistema-de-apuntado/#disqus_thread">Comments</a>
@@ -110,9 +135,16 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      
-<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-  <iframe src="https://www.youtube.com/embed/RMEgwNDu3Ag" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+      <div class="videoWrapper">
+  <iframe
+    width="560"
+    height="315"
+    src="https://www.youtube.com/embed/RMEgwNDu3Ag"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
 </div>
 
 <p>En este nuevo vídeo podéis ver la discreta pero funcional <strong>interfaz de Sion Tower</strong>. Está completamente creada utilizando <a href="http://mygui.info/">MyGUI</a>, una biblioteca muy sencilla pero no exenta de problemas de los que hablaré en el futuro. También podéis observar el nuevo <strong>sistema de apuntado</strong>. Mientras que antes el personaje lanzaba un hechizo hacia donde estuviese mirando, ahora podemos apuntar con el ratón. Al contar únicamente con ocho direcciones, era muy complicado acertar. Espero que os guste y, como siempre, se aceptan sugerencias.</p>
@@ -192,82 +224,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/terreno-montanoso-en-blender/">Terreno montañoso en Blender</a>
-      </h1>
-      <span class="post-date">Jul 3, 2011 &middot; 5 minute read &middot; <a href="https://saltares.com/games/terreno-montanoso-en-blender/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>Me gustaría pedir disculpas por el descenso en el ritmo de publicación, el motivo es muy sencillo: estoy <strong>trabajando de forma intensa en la interfaz de <a href="../../proyectos/sion-tower/">Sion Tower</a></strong>. Para el menú principal he creado un <strong>escenario montañoso</strong> con los enemigos aproximándose a la Torre Sagrada en medio de una intensa lluvia. <strong>Modelar las montañas con Blender</strong> es terriblemente sencillo una vez se conoce la técnica apropiada y aquí vamos a comentarla en detalle.</p>
-<h3 id="creación-de-la-malla">Creación de la malla</h3>
-<p>Lo primero que debes hacer es abrir Blender y eliminar el cubo por defecto. Utilizaremos una rejilla o malla de vértices para modelar el terreno. El proceso es simple, habrá que modificar la posición <em>Z</em> (vertical) de varios vértices para crear elevaciones. Finalmente, utilizaremos suavizado para evitar los bordes abruptos.</p>
-<p>Para <strong>añadir la rejilla</strong> seleccionamos <em>Add → Mesh → Grid</em> e indicamos el número de vértices. A mayor resolución más calidad pero el coste computacional en Blender y en un videojuego crecerá de forma cuadrática. En Sion Tower me ha bastado con <em>50×50</em>, el suavizado final se encargará de mejorar el resultado. Después, en modo edición, debes escalar la rejilla hasta que se ajuste a la escala de tu juego o entorno.</p>
-<p><img src="../../img/wp/blender-grid.jpg" alt="blender-grid.jpg"></p>
-<h3 id="modelado-de-las-montañas">Modelado de las montañas</h3>
-<p>La clave está en utilizar el modo de <strong>edición proporcional</strong> que activamos pulsando la tecla <em>O</em>. Veremos que el modo también puede activarse en la barra de herramientas <em>Proportional – On</em>. Este modo hará que, al modificar un vértice, los vecinos dentro de un radio de acción también se vean ligeramente afectados. Justo al lado establecemos el <em>Falloff</em> a <em>Smooth Falloff</em>. Para activar el suavizado, seleccionamos todos los vértices con <em>A</em> y pulsamos en <em>Set Smooth</em>.</p>
-<p><img src="../../img/wp/blender-elevacion.jpg" alt="blender-elevacion.jpg"></p>
-<p>El proceso a seguir para <strong>crear o modificar elevaciones</strong> es:</p>
-<ol>
-<li>Seleccionar un vértice con el botón derecho y ajustar el radio de acción con la rueda del ratón a nuestro gusto.</li>
-<li>Desplazar el vértice pulsando la tecla <em>G</em>, es importante restringirlo al eje vertical con la tecla <em>Z</em>, de lo contrario se producen efectos extraños.</li>
-<li>Repetir el proceso con vértices y radios de acción diferentes hasta conseguir el resultado deseado.</li>
-</ol>
-<p><img src="../../img/wp/blender-terrain.jpg" alt="blender-terrain.jpg"></p>
-<p>Recuerda que <strong>las montañas son estructuras naturales</strong> y que, por tanto, muestran multitud de irregularidades. En la asimetría y lo brusco está el secreto.</p>
-<h3 id="texturizar-el-terreno">Texturizar el terreno</h3>
-<p>Continuamos la creación del terreno <strong>añadiendo una textura</strong>:</p>
-<ol>
-<li>Seleccionamos el terreno, acudimos al panel de materiales (<em>F5</em>) y añadimos un material nuevo.</li>
-<li>Las montañas no tienen un aspecto de material plástico, por lo que establecemos su color especular a .</li>
-<li>Nos dirigimos al panel de texturas (<em>F6</em>) y añadimos una nueva textura de tipo imagen con césped.</li>
-<li>Cargamos la textura de fichero y establecemos las propiedades <em>XRepeat</em> e <em>YRepeat</em> que, como sus propios nombres indican, hacen repetir la textura.</li>
-</ol>
-<p><img src="../../img/wp/grass.jpg" alt="grass.jpg"></p>
-<p>Si pulsas <em>F12</em> verás el renderizado de tus montañas y no tardarás de percatarte de dos problemas: la iluminación y… <strong>¡parecen las montañas de los hobbits estando verdes!</strong> En primer lugar, deberás jugar con las fuentes de luz. Ahora nos centraremos en mezclar varias texturas.</p>
-<p><img src="../../img/wp/terrain.jpg" alt="terrain.jpg"></p>
-<h3 id="texturas-stencil">Texturas stencil</h3>
-<p>Un terreno de corte más realista tiene <strong>varias texturas</strong>: hierba, tierra, rocas o incluso nieve. Las transiciones entre las mismas deben ser suaves y su situación debe ser lógica: la hierba abunda en los valles mientras la roca en los picos montañosos. En esta sección aprenderemos a aplicar varias texturas a nuestro terreno mezclándolas entre sí de manera apropiada.</p>
-<p>Imaginad que tendremos una <strong>pila de capas con varias texturas</strong> ordenadas: hierba, roca y nieve. En medio colocaremos dos texturas en escala de grises llamadas stencil que indicarán al sistema de renderizado cómo han de mezclarse las capas entre sí. Un color negro indica que sólo ha de visualizarse la capa superior, blanco significa que sólo se vera la capa inferior. Lo interesante es que un valor intermedio o gris significará que las capas se mezclarán siguiendo la ponderación del color.</p>
-<p><img src="../../img/wp/blender-stencil-3d.jpg" alt="blender-stencil-3d.jpg"></p>
-<p>Seguimos el siguiente proceso:</p>
-<ul>
-<li>Cambiamos del modo edición al <em>Vertex Paint</em>.</li>
-<li>Seleccionamos el panel de edición (<em>F9</em>) y veremos una paleta de colores. Elegimos el color negro y pulsamos sobre <em>set VertCol</em> y la malla quedará completamente negra (se visualizaría la capa inferior).</li>
-<li>Elegimos el color blanco y configuramos tanto la opacidad como el tamaño.</li>
-<li>Comenzamos a pintar el terreno: los picos deberían ser completamente blancos (roca), las lomas de un tono intermedio y los valles prácticamente negros (hierba).</li>
-<li>Cuando estemos satisfechos seleccionaremos la vista <em>Top</em> y el modo de proyección ortográfico. Hemos de hacer una captura de pantalla y aislar la el resultado con cualquier software de edición de imágenes como Gimp.</li>
-</ul>
-<p><img src="../../img/wp/blender-stencil.jpg" alt="blender-stencil.jpg"></p>
-<ul>
-<li>Volvemos al modo edición y creamos una nueva textura debajo de la hierba de tipo imagen cargando la textura stencil hierba-roca. Esta textura no debe repetirse.</li>
-<li>En el panel <em>Map To</em> deseleccionamos <em>Col</em> y activamos <em>Stencil</em> y <em>No RGB</em>.</li>
-<li>Creamos una nueva textura para la roca, cargamos la imagen y aplicamos repetición.</li>
-</ul>
-<p><img src="../../img/wp/rock.jpg" alt="rock.jpg"></p>
-<p><img src="../../img/wp/blender-stencil-aplicando.jpg" alt="blender-stencil-aplicando.jpg"></p>
-<p>Si renderizas con <em>F12</em> verás un resultado mucho más satisfactorio.</p>
-<p><img src="../../img/wp/terrain-rock.jpg" alt="terrain-rock.jpg"></p>
-<h3 id="resultado-final">Resultado final</h3>
-<p>Si repites el proceso stencil para añadir una <strong>nueva capa con nieve</strong> el resultado tendrá mucha más calidad:</p>
-<p><img src="../../img/wp/terrain-snow.jpg" alt="terrain-snow.jpg"></p>
-<p>La escena final para el <strong>menú principal de Sion Tower</strong> ha quedado de la siguiente manera:</p>
-<p><img src="../../img/wp/siontower-menu.jpg" alt="siontower-menu.jpg"></p>
-<p><!-- raw HTML omitted --><strong>Nota importante</strong><!-- raw HTML omitted -->: A la hora de exportar a Ogre el modelo con las texturas stencil he tenido muchos problemas. Al final la solución ha pasado por mezclar yo mismo las capas stencil con las de texturas utilizando Gimp y aplicarlas a la maya utilizando mapeado UV.</p>
-<p><img src="../../img/wp/blender-stencil-precomputado.jpg" alt="blender-stencil-precomputado.jpg"></p>
-<h3 id="referencias">Referencias</h3>
-<p>Para realizar el proceso y redactar el artículo he seguido estos dos estupendos tutoriales con varios añadidos personales:</p>
-<ul>
-<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_I:_Basic_Terrain">Blender 3D: Noob to Pro – Landscape Modeling I: Basic Terrain</a></li>
-<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_II:_Texture_Stenciling">Blender 3D: Noob to Pro – Landscape Modeling II: Texture Stenciling</a></li>
-</ul>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -287,7 +243,7 @@
             </li>
             
             <li>
-                <a href="../../page/60/">»»</a>
+                <a href="../../page/61/">»»</a>
             </li>
         </ul>
     </div>

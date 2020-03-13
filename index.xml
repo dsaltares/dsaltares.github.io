@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Plague: a Godot Wild Jam 18 game postmortem</title>
+      <link>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/</link>
+      <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/</guid>
+      <description>A few weeks ago, Jay Cano and I took part in the week-long Godot Wild Jam 18 and submitted Plague. Here are some of my personal thoughts on how we did and maybe some lessons for the future!
+📈 Results Out of 43 submissions, we ranked 6th overall. That is the top 13th percentile. More importantly, we ranked 3th for fun or top 6th percentile. For the sake of comparison, Onederful Wizard, which we submitted to the GMTK 2019, ranked 294 out of 2617 entries (top 11th percentile).</description>
+    </item>
+    
+    <item>
       <title>Continuous Delivery pipeline for Godot and itch.io</title>
       <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
