@@ -102,6 +102,40 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/backups-de-wikis-con-wikiteam/">Backups de wikis con Wikiteam</a>
+      </h1>
+      <span class="post-date">Jun 4, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/backups-de-wikis-con-wikiteam/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/backups-wikiteam1.png" alt="backups-wikiteam1.png"></p>
+<p><strong><a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a> está alojada en los servidores de la <a href="http://osl.uca.es/">OSLUCA</a></strong> a los que no tengo acceso y, aunque sé que se hacen <strong>copias de seguridad</strong> diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: <strong><a href="http://code.google.com/p/wikiteam/">Wikiteam</a></strong>. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.</p>
+<h3 id="qué-hace-wikiteam">¿Qué hace Wikiteam?</h3>
+<p><strong>Wikiteam</strong> es un script GPL v3 escrito en Python que <strong>descarga todo el contenido de una wiki</strong> que utilice el sistema Mediawiki (actualmente el más extendido). No sólo es capaz de obtener el estado actual de una wiki sino que también recupera <strong>todo el historial</strong> de cambios así como las <strong>imágenes y ficheros</strong> que se hayan subido. El único (pero comprensible) problema es que no recupera los usuarios ya que no requiere acceso a la base de datos.</p>
+<p>El objetivo principal de Wikiteam es <strong>permitir que cualquier usuario pueda hacer una copia de una wiki</strong>. Si el sitio deja de existir por cualquier motivo, el conocimiento no se habrá perdido ya que este usuario podría restaurar la copia en un nuevo servidor. De hecho, en la forja del proyecto tienen disponibles backups de diversas wikis.</p>
+<h3 id="hacer-backups-con-wikiteam">Hacer backups con Wikiteam</h3>
+<p>Generar copias de seguridad es harto sencillo y sólo requiere ejecutar el script con los parámetros adecuados. Sigue los siguientes pasos:</p>
+<ol>
+<li><a href="http://code.google.com/p/wikiteam/source/browse/trunk/dumpgenerator.py">Descarga el script</a> desde su forja de Google Code.</li>
+<li>Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:</li>
+</ol>
+<pre><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
+</code></pre><p>El significado de los parámetros es el siguiente:</p>
+<ul>
+<li><strong>api</strong>: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: <a href="http://osl2.uca.es/iberogre/api.php">http://osl2.uca.es/iberogre/api.php</a></li>
+<li><strong>xml</strong>: recupera todas las páginas de la wiki junto a su historial-</li>
+<li><strong>images</strong>: recupera todas las imágenes y ficheros de la wiki.</li>
+</ul>
+<h3 id="restaurar-backups-con-wikiteam">Restaurar backups con Wikiteam</h3>
+<p>Volcar las copias en otra instancia de Mediawiki es ligeramente más complejo y requiere, evidentemente, de acceso al servidor. Lo recomendable es que sigas <a href="http://www.mediawiki.org/wiki/Manual:Importing_XML_dumps">el proceso detallado en la propia wiki de Mediawiki</a>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/">gLapse: take screenshots, glue them together</a>
       </h1>
       <span class="post-date">Jun 1, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/#disqus_thread">Comments</a>
@@ -246,50 +280,6 @@
 
 <p>Este nuevo vídeo nos muestra <strong>una prueba del sistema de lanzamiento de proyectiles mágicos en Sion Tower</strong>. El protagonista puede lanzar hechizos de varios tipos que impactan con los elementos sólidos del escenario produciendo una pequeña explosión. Para los efectos visuales se utiliza el <strong><a href="http://osl2.uca.es/iberogre/index.php/Sistemas_de_part%C3%ADculas">sistema de partículas de Ogre</a></strong> y, aunque aún queda margen para la mejora, el resultado es aceptable. Sion Tower cuenta con un sistema de audio 3D pero no se han incluido efectos ya que estoy a la espera del colaborador encargado de dicho apartado.</p>
 <p><strong>¡Próximamente más novedades!</strong></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sistema-de-actores/">Sistema de actores</a>
-      </h1>
-      <span class="post-date">May 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-actores/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png"></p>
-<p>Tras publicar varios artículos en <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a>, he decidido <strong>retomar el trabajo en Sion Tower</strong> con el objetivo de tener una versión inicial a finales de julio. La primera tarea que he llevado a cabo es una <strong>refactorización del sistema de actores</strong> con el objetivo de hacerlo más extensible y evitar la duplicación de código en la medida de lo posible aunque crezca la verticalidad en la jerarquía. Por el momento no todas las clases están implementadas pero sí diseñadas. A continuación, una pequeña explicación del sistema.</p>
-<p>El sistema de actores está compuesto por las siguientes clases:</p>
-<ul>
-<li><strong>GameObject</strong>: encapsula un <em>SceneNode</em> de Ogre con un <em>Body</em> del <a href="../../proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-2/" title="STC: Sion Tower Collisions v0.2">sistema de colisiones</a>. Modela de forma genérica todos los objetos del juego.</li>
-<li><strong>GameMesh</strong>: hereda de <em>GameObject</em> y le añade un <em>Entity</em>, se utiliza para modelar los elementos del juego formados por mallas poligonales, como el escenario.</li>
-<li><strong>Actor</strong>: hereda de <em>GameMesh</em> y añade estados, animaciones y manejadores de estados para los personajes del juego (enemigos y protagonista).</li>
-<li><strong>Player</strong>: hereda de <em>Actor</em> y modela al protagonista del juego añadiendo su lógica de control particular.</li>
-<li><strong>Enemy</strong>: también hereda de <em>Actor</em> y modela de forma genérica el comportamiento de los enemigos.</li>
-<li><strong>Spell</strong>: hereda de <em>GameObject</em> y añade sistemas de partículas para modelar los hechizos del juego junto a sus explosiones.</li>
-</ul>
-<p><img src="../../img/wp/actors-clases.png" alt="actors-clases.png"></p>
-<p>En <em>GameObject</em> contamos con el enumerado <em>Type</em> para distinguir entre tipos de objetos de juego. Se cuenta con un método <em>getType</em> virtual puro que cada clase deberá implementar devolviendo el valor del enumerado correspondiente. De esta forma podemos <strong>conocer el tipo de un objeto</strong> de juego a partir de un <em>GameObject</em>* y hacer casting sin peligro en caso de ser absolutamente necesario. También es posible utilizar el tipo de objeto para hacer un filtrado en la detección de colisiones.</p>
-<pre><code>class GameObject {
-    public:
-
-        enum Type {
-            SIMPLEMESH = 0,
-            FLOOR = 1,
-            SCENE = 2,
-            PLAYER = 3,
-            ENEMY = 4,
-            SPELL = 5
-        };
-
-        virtual Type getType() const = 0;
-
-        ...
-};
-</code></pre><p>Podéis conocer a fondo el sistema en <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/actors/?root=cusl5-iberogre">la rama correspondiente de la Forja de Red Iris</a>. En breve, os mostraré un vídeo con el sistema de lanzamiento de proyectiles mágicos funcionando.</p>
 
       
     </div>

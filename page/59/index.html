@@ -102,6 +102,65 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/periplo-por-un-entorno-de-trabajo-para-ogre/">Periplo por un entorno de trabajo para Ogre</a>
+      </h1>
+      <span class="post-date">Aug 6, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/periplo-por-un-entorno-de-trabajo-para-ogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>Estos días he estado tratando de establecer un <strong>entorno de trabajo multiplataforma</strong> para trabajar en los ejemplos de <strong><a href="http://osl.uca.es/iberogre/">IberOgre</a></strong> y en el propio <strong>Sion Tower</strong>. Lo ideal, para mí, era poder compilar con herramientas libres y sin tener que depender de ningún IDE. Al no ser la forma habitual de desarrollar de la comunidad de Ogre, la documentación era escasa y acertar ha sido sorprendentemente complicado. Les contaré mi periplo:</p>
+<p><img src="../../img/wp/VisualStudio.png" alt="VisualStudio.png"></p>
+<h3 id="herramientas-privativas">Herramientas privativas</h3>
+<p>La wiki oficial de Ogre da mucho soporte a <strong><a href="http://es.wikipedia.org/wiki/Microsoft_Visual_Studio">Microsoft Visual Studio</a></strong> pero al ser privativo <strong>no encajaba con la filosofía</strong> de IberOgre y lo descarté. No creo que utilizar herramientas no libres sea bueno en un proyecto que pretende ser accesible con facilidad. Suficientes trabas pone ya el hecho de tener que interiorizar conceptos complejos como para encontrarse en la necesidad de piratear software, violar licencias etc.</p>
+<p>Cualquier desarrollador debería poder, siguiendo el manual de IberOgre, establecer un entorno de trabajo sin costes de ningún tipo y sin problemas con licencias. Ogre3D es software LGPL y creo que, en el marco en el que estamos moviéndonos, sería recomendable mantenerse en la línea.</p>
+<p><img src="../../img/wp/cmake.png" alt="cmake.png"></p>
+<h3 id="cmake-el-generador-de-makefiles">CMake, el generador de makefiles</h3>
+<p><a href="http://es.wikipedia.org/wiki/CMake"><strong>CMake</strong></a> es una herramienta multiplataforma y open source capaz de g<strong>enerar makefiles específicos</strong> para cada plataforma. Debemos crear un fichero CMakeLists.txt con las instrucciones pertinentes: código a compilar, librerías requeridas y demás dependencias. Parecía algo estupendo, con un solo fichero de CMake podría generar makefiles para compilar proyectos tanto en GNU/Linux (GCC) como en Windows (MinGW).</p>
+<p>Finalmente, los inconvenientes de CMake me hicieron prescindir de él. Existe poca documentación y su <strong>curva de aprendizaje</strong> es alta. Además no crea objetivos <em>&ldquo;clean&rdquo;</em> que verdaderamente limpien los ficheros que se generan en la compilación. Estos inconvenientes no compensaban añadir una capa de abstracción más al proceso.</p>
+<p><img src="../../img/wp/codeblocks-logo.png" alt="codeblocks-logo.png"></p>
+<h3 id="codeblocks-el-ide-libre">Code::Blocks, el IDE libre</h3>
+<p><a href="http://es.wikipedia.org/wiki/Code::Blocks"><strong>Code::Blocks</strong></a> es un entorno de desarrollo integrado libre con versiones para Linux y Windows. Además, cuenta con <strong>asistentes para la creación de proyectos</strong> de Ogre. Mi desesperación en ese momento era considerable y estaba dispuesto a usar un IDE si merecía la pena.</p>
+<p>Todo no podía ser bueno y comencé a encontrarme con varios obstáculos. Los asistentes generaban proyectos que escribían en el directorio de instalación de Ogre y que precisaban de múltiples ajustes. Por si fuera poco el asistente de Windows <strong>no era compatible con la versión 1.7</strong> del motor (la más reciente) y tuve que descargar la nueva versión del wizard desde aquí.</p>
+<p>Code::Blocks utiliza el compilador GCC en Linux y, si lo deseas, MinGW en Windows. Era muy posible que internamente utilizase make (o algo parecido) para compilar sus proyectos. Si ese era el caso, <strong>seguramente existiera un exportador</strong> que tomara un proyecto de Code::Blocks y lo convirtiera en un makefile.</p>
+<h3 id="makefile-a-partir-de-un-proyecto-de-codeblocks">Makefile a partir de un proyecto de Code::Blocks</h3>
+<p>Al encontrar, <strong>cbp2mak</strong>, el deseado exportador vislumbré un rayo de esperanza. Quizás, finalmente pudiera utilizar un makefile para cada plataforma que se ajustara exactamente a mis necesidades. El proceso es muy sencillo, <a href="http://bblean.berlios.de/cbp2mak-0.2.zip">descargamos cbp2mak</a> y ejecutamos las siguientes instrucciones:</p>
+<pre><code>unzip cbp2mak-0.2.zip
+cd cbp2mak.zip
+make
+
+./cbp2mak -C ruta_al_proyecto proyecto.cbp
+</code></pre><p>El makefile resultante es un poco extraño y complejo pero, utilizando ese como base he podido crear unos a mi medida. Un proyecto de Code::Blocks es un <strong>XML</strong> en el fondo, podemos abrirlo con un editor y ver qué flags utiliza para el compilador y el enlazador.</p>
+<p><img src="../../img/wp/gnu.png" alt="gnu.png"></p>
+<h3 id="el-resultado">El resultado</h3>
+<p>En contra de todo pronóstico, <strong>el resultado ha sido excelente</strong>. A continuación, coloco un ejemplo de cómo sería una jerarquía de directorios para un proyecto básico en Ogre:</p>
+<pre><code>|- proyecto
+|
+|- src
+|   |- ficheros.cpp
+|
+|- include
+|   |- ficheros.h
+|
+|- plugins (en caso de ser necesarios)
+|
+|- makefile-linux
+|- makefile-windows
+</code></pre><p>Para <strong>compilar</strong> sólo tendríamos que hacer (según el sistema operativo):</p>
+<pre><code>make -f makefile-linux depend
+make -f makefile-linux
+
+mingw32-make -f makefile-windows depend
+mingw32-make -f makefile-windows
+</code></pre><p>Para personalizar el nombre del proyecto sólo tenemos que modificar el valor de una variable en cada makefile. Por supuesto, esto supone tener una serie de paquetes en el sistema y ciertas variables de entorno, todo el proceso de instalación acabará ampliamente detallado en IberOgre.</p>
+<p><strong>Ahora a seguir trabajando duro</strong> y llenar de contenido el wiki.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/guia-de-estilo-para-c-de-google/">Guía de estilo para C&#43;&#43; de Google</a>
       </h1>
       <span class="post-date">Aug 3, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/guia-de-estilo-para-c-de-google/#disqus_thread">Comments</a>
@@ -174,25 +233,6 @@
 <p>La película no deja de ser un intento de mezclar la acción de forma épica y espectacular con la crítica hacia el drama de Irak. Un cóctel que no acaba de funcionar acertadamente. Matt Damon es un actor correcto, ha funcionado bien en la trilogía Bourne. No obstante, desde mi punto de vista no consigue dotar al conjunto del dramatismo que se merece. El ritmo es correcto y logra entretener, que no es poco. Por lo demás tendremos tiroteos, asaltos y explosiones en la forma en la que estamos acostumbrados en el <strong>cine bélico palomitero</strong>.</p>
 <p>Podéis imaginaros el resto.</p>
 
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/contrasenas-seguras-con-keepassx/">Contraseñas seguras con KeePassX</a>
-      </h1>
-      <span class="post-date">Jul 26, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/contrasenas-seguras-con-keepassx/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p><img src="../../img/wp/keypassx.png" alt="keypassx.png"></p>
-<p>Usar en todas las webs y servicios en los que tengamos una cuenta la misma contraseña es altamente peligroso. Lo ideal sería utilizar <strong>contraseñas largas</strong>, que combinasen caracteres alfanuméricos con diversos símbolos. Entonces es cuando surge el dilema, <em>¿cómo me voy a acordar de todo?</em></p>
-<p>La necesidad de utilizar un <strong>gestor de contraseñas</strong> se hace evidente y <strong><a href="http://www.keepassx.org/start/">KeePassX</a></strong> cumple bien su función. Se trata de un software en el que podemos almacenar todas nuestras contraseñas de manera segura, protegidas por una clave maestra y un fichero encriptado. Definimos entradas para cada servicio a los que asociamos una URL, un usuario y una contraseña entre otros metadatos. Cuenta con multitud de funcionalidades útiles como copiado de contraseña al portapapeles.</p>
-<p>KeePassX es <strong>software libre</strong> (licencia GPL) y existen versiones para Windows, GNU/Linux y Mac. En el caso de sistemas Linux la instalación es tremendamente sencilla ya que se encuentra en los repositorios y, si tenemos una distribución basada en Debian basta:</p>
-<pre><code>sudo apt-get install keepassx
-</code></pre>
       
     </div>
     

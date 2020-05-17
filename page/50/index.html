@@ -102,6 +102,31 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/primera-version-del-gdd-de-sion-tower/">Primera versión del GDD de Sion Tower</a>
+      </h1>
+      <span class="post-date">Nov 28, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/primera-version-del-gdd-de-sion-tower/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/gdd-siontower.png" alt="gdd-siontower.png"></p>
+<p>He sudado un poco de tinta para conseguirlo pero ya <strong>he publicado la primera versión del documento de diseño de Sion Tower</strong>, el videojuego que acompañará a IberOgre. Hace algunas semanas os hablaba del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document (GDD)</a> en general y desde entonces he estado redactando el mío. Ha sido un paso duro (no disfruto con el papeleo) pero <strong>necesario para aclararme las ideas</strong>.</p>
+<p>El documento se divide en varias secciones diferenciadas:</p>
+<ul>
+<li><strong>Introducción</strong>: pequeña sección de un par de páginas en el que se habla del planteamiento del juego, sus características, género, público objetivo y mecánicas a grandes rasgos.</li>
+<li><strong>Mecánicas de juego</strong>: se especifica los elementos de los que se compone el juego y se detalla la forma en la que el jugador interactuará con el mismo. Después, se listan los personajes junto con sus descripciones, habilidades y atributos. Finalmente se aclaran aspectos relacionados con las físicas, colisiones y movimiento.</li>
+<li><strong>Interfaz</strong>: un diagrama general con las distintas pantallas y sus transiciones seguido de un boceto detallado de cada una de ellas.</li>
+<li><strong>Arte</strong>: lista con los recursos necesarios para el juego. Iconos, GUI, texturas, modelos 3D, fondos, letreros, efectos de sonido y canciones.</li>
+</ul>
+<p><strong>Seguramente necesite retoques</strong> para completar las lagunas que vayan surgiendo en la mecánica de juego (estoy seguro de que me he dejado algo). No obstante, quería tener una primera versión lo antes posible para c<strong>omenzar a buscar colaboradores</strong> en el plano artístico. Si les presento una lista de tareas disponibles estoy seguro de que la búsqueda será menos complicada (que no sencilla).</p>
+<p><strong>Sería genial que el documento estuviera lleno de bocetos</strong> artísticos para ilustrar la descripción del juego, ¿alguien se anima? Si le echáis una ojeada y veis cualquier cosa extraña o algo que no os parezca, estaré encantado de hacer correcciones o debatirlo en los comentarios. Mientras tanto, <a href="http://forja.rediris.es/frs/download.php/2019/gdd.pdf"><strong>podéis descargar el GDD aquí</strong></a>, en la <a href="http://forja.rediris.es/frs/?group_id=820">sección de ficheros de la forja</a>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/">¿Realmente existen los diseñadores estrella?</a>
       </h1>
       <span class="post-date">Nov 27, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/#disqus_thread">Comments</a>
@@ -196,39 +221,6 @@
 </code></pre><h3 id="fácil-verdad">¿Fácil, verdad?</h3>
 <p>He probado este nuevo proceso en un netbook con Ubuntu 10.04 y va de maravilla. Los makefiles utilizados en la wiki funcionan a la perfección, por lo que si sigues los artículos no tendrás ningún problema.</p>
 <p><strong>Ahora todos viviremos más tranquilos</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/">Gestión de recursos en Ogre3D</a>
-      </h1>
-      <span class="post-date">Nov 14, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>Estos últimos días he estado trabajando en la redacción del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document</a> (GDD) de Sion Tower y en la preparación del taller <a href="../../proyectos/pfc/desarrollo-de-videojuegos-con-un-pong/"><em>&ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo;</em></a> que organizamos en la <a href="../../proyectos/presentacion-de-la-advuca/">ADVUCA</a>. <strong>Ya era hora de retomar IberOgre</strong>. Para poder continuar con el artículo <a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas"><em>&ldquo;Creación básica de escenas&rdquo;</em></a> tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: <a href="http://osl2.uca.es/iberogre/index.php/Gesti%C3%B3n_de_recursos"><em>&ldquo;Gestión de recursos&rdquo;</em></a>. ¡Hallelujah!</p>
-<p>Por supuesto, os remito a que leáis el artículo completo pero en este, nuestro amado blog, os comentaré a modo de resumen los temas tratados.</p>
-<h3 id="la-importancia-de-un-gestor-de-recursos">La importancia de un gestor de recursos</h3>
-<p>En un videojuego mínimamente elaborado <strong>se necesita un gestor responsable de</strong>:</p>
-<ul>
-<li>Mantener una sola instancia de cada sprite, modelo, textura o efecto de sonido.</li>
-<li>Controlar el ciclo de vida de los recursos.</li>
-<li>Gestión uniforme de los distintos tipos de recursos.</li>
-<li>Cuidar la integridad.</li>
-</ul>
-<p>Si no disponemos de un gestor de recursos, nuestro videojuego podría hacer un uso ingente de memoria y no funcionar en un sistema corriente (a menos que trabajes en la NASA). <strong>En el artículo de IberOgre hacemos una argumentación</strong> sobre la necesidad de controlar la memoria que utilizan nuestros recursos.</p>
-<h3 id="gestión-del-ciclo-de-vida-de-los-recursos">Gestión del ciclo de vida de los recursos</h3>
-<p>¿Por qué mantener en memoria el escenario del nivel 10 cuando aún no hemos terminado el nivel 1? Es ridículo. Nuestro gestor de recursos debe proporcionarnos un <strong>sistema para controlar el ciclo de vida</strong> de los mismos. Por supuesto, Ogre cuenta con un excelente sistema a tal efecto. <strong>En IberOgre ofrecemos información para llevar a cabo este control</strong> según las distintas aproximaciones de nuestro motor de renderizado favorito.</p>
-<h3 id="automatización-del-proceso">Automatización del proceso</h3>
-<p>Gracias a los <strong>ficheros de configuración de Ogre</strong> podemos automatizar parte de la gestión de recursos. Siempre es mejor mantener nuestros datos externos al código (para evitar recompilaciones innecesarias y lentas) y declarar los recursos que utilizaremos en un fichero externo.</p>
-<p>Además, explicamos como <strong>crear grupos de recursos</strong> para gestionarlos masivamente. Es muy cómodo separar nuestros recursos por niveles y cargar o descargarlos todos según los vayamos necesitando.</p>
-<h3 id="feedback-please">¡Feedback, please!</h3>
-<p>Es muy común creer que se está explicando conceptos de forma correcta cuando uno mismo los comprende. No obstante, es posible que esté escribiendo artículos confusos y densos. <strong>¡Necesito feedback!</strong> Estaría encantado de que alguien leyera IberOgre y comenzara a lanzarme tomates en forma de quejas sin piedad en el blog o por correo electrónico. Algunos lectores como <a href="http://twitter.com/#!/spectrumgomas">@spectrumgomas</a> o <a href="http://twitter.com/#!/che1404">@che1404</a> ya han contribuido sugiriendo temas y correcciones.</p>
-<p><strong>No se corten, ¡a la yugular y sin piedad!</strong></p>
 
       
     </div>
