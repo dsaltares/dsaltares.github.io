@@ -98,7 +98,7 @@
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Continuous Delivery pipeline for Godot and itch.io</h1>
-    <span class="post-date">Mar 2, 2020 &middot; 4 minute read &middot; <a href="https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/#disqus_thread">Comments</a>
+    <span class="post-date">Mar 2, 2020 &middot; 5 minute read &middot; <a href="https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/#disqus_thread">Comments</a>
     
     <br/>
     <a class="label" href="../categories/games-development">Games Development</a>
@@ -115,7 +115,7 @@
 <p><a href="../img/cd-godot-itch/pipeline.png"><img src="../img/cd-godot-itch/pipeline.png" alt="pipeline"></a></p>
 <h3 id="-configure-godot-exports">🤖 Configure Godot exports</h3>
 <p>First, you need to setup the export settings in your Godot project. The <a href="https://docs.godotengine.org/en/3.2/getting_started/workflow/export/exporting_projects.html">official exporting guide</a> explains it perfectly. The thing to keep in mind here is that the preset name will determine the name of the published artifact. For example, a preset called <code>plague-mac</code> will result in a release with an attached file called <code>plague-mac.zip</code>.</p>
-<p>In the case of our jam entry, we targetted MacOS, Windows, Linux and HTML5.</p>
+<p>In the case of our jam entry, we targeted MacOS, Windows, Linux and HTML5.</p>
 <p><a href="../img/cd-godot-itch/godot-export-setup.gif"><img src="../img/cd-godot-itch/godot-export-setup.gif" alt="godot-export-setup"></a></p>
 <h3 id="-export-the-game">📦 Export the game</h3>
 <p>Create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/export_game.yaml"><code>.github/workflows/export_game.yaml</code></a> file in your repo. We will tell our new action to run on every push to master. We don&rsquo;t want new releases on commits that do not actually change the game. Our Godot project lives in the <code>game</code> folder, so we tell the action to only run if there are changes in that folder.</p>
@@ -126,7 +126,8 @@
     <span style="color:#66d9ef">paths</span>:
       - <span style="color:#e6db74">&#39;game/**&#39;</span>
 </code></pre></div><p>For the actual export step, we will leverage the <a href="https://github.com/firebelley/godot-export">Godot Export</a> Github action. The <a href="https://github.com/firebelley/godot-export/blob/master/README.md"><code>README.md</code></a> explains its usage very well.</p>
-<p>Here&rsquo;s our config in case it helps you. We setup the base version to be published, the links to download the Godot headless executable as well as the templates and tell it our project is located in the <code>game</code> folder in the repo. Whenever you interact with the same repo the action is being triggered from, you can use the <code>secrets.GITHUB_TOKEN</code>, which is automatically populated.</p>
+<p>For the action to work, you need to create a deploy key, which will give the export action write access to create a new release. First, <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">generate a key pair</a>. Then, go to <code>https://github.com/&lt;org&gt;/&lt;repo&gt;/settings/keys/new</code> and check write access. Then go to <code>https://github.com/&lt;org&gt;/&lt;repo&gt;/settings/secrets/new</code> and paste the key.</p>
+<p>Here&rsquo;s our config in case it helps you. We setup the base version to be published, the links to download the Godot headless executable as well as the templates and tell it our project is located in the <code>game</code> folder in the repo.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">jobs</span>:
   <span style="color:#66d9ef">export_game</span>:
     <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
@@ -143,7 +144,7 @@
         <span style="color:#66d9ef">godot_template_version</span>: <span style="color:#ae81ff">3.2</span>.stable
         <span style="color:#66d9ef">relative_project_path</span>: ./game
       <span style="color:#66d9ef">env</span>:
-        <span style="color:#66d9ef">GITHUB_TOKEN</span>: ${{ secrets.GITHUB_TOKEN }}
+        <span style="color:#66d9ef">GITHUB_TOKEN</span>: ${{ secrets.EXPORT_GITHUB_TOKEN }}
 </code></pre></div><p>Whenever you push these changes to your repo, you should already start seeing <a href="https://github.com/dsaltares/godot-wild-jam-18/actions">jobs being triggered</a> and <a href="https://github.com/dsaltares/godot-wild-jam-18/releases">releases being published</a>.</p>
 <p><a href="../img/cd-godot-itch/export-job.png"><img src="../img/cd-godot-itch/export-job.png" alt="export-job"></a></p>
 <h3 id="-ship-the-game">🚢 Ship the game</h3>
@@ -154,6 +155,7 @@
   <span style="color:#66d9ef">release</span>:
     <span style="color:#66d9ef">types</span>: [created, edited]
 </code></pre></div><p>Our workflow needs to contain a job per platform we want to publish. Each job will leverage the <a href="https://github.com/dsaltares/fetch-gh-release-asset">Fetch GH Release Asset</a> and <a href="https://github.com/josephbmanley/butler-publish-itchio-action">Butler Push</a> actions. We first download the latest release artifact for the platform we want to export and then we call the butler action to push the build to itch.io. When pushing multiple times to the <code>windows</code> <a href="https://itch.io/docs/butler/pushing.html#channel-names">channel</a>, each will be considered a new version of the same &ldquo;product.</p>
+<p>Here you can use the <code>secrets.GITHUB_TOKEN</code>, which is automatically populated.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">jobs</span>:
   <span style="color:#66d9ef">release_windows</span>:
     <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
@@ -176,6 +178,7 @@
 <p><a href="../img/cd-godot-itch/publish-job.png"><img src="../img/cd-godot-itch/publish-job.png" alt="publish-job"></a></p>
 <p>On your itch.io game page, you should see something like:</p>
 <p><a href="../img/cd-godot-itch/itch-downloads.png"><img src="../img/cd-godot-itch/itch-downloads.png" alt="itch-downloads"></a></p>
+<p>One last thing to remember is that you need to manually tag your HTML build as browser playable from the itch.io website as <a href="https://itch.io/docs/butler/pushing.html#html--playable-in-browser-games">specified in the Butler docs.</a>. You will only need to do this once as long as future HTML builds have the same channel.</p>
 <h3 id="-advantages">✅ Advantages</h3>
 <ul>
 <li>⏳ Automated. Do not waste time exporting your game regularly and updating various stores.</li>
