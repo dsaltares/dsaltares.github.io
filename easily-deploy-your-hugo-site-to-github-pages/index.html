@@ -120,30 +120,30 @@
 <p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
 <p><img src="../img/gh-pages-workflow/secrets.png" alt="secrets"></p>
 <p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: Build and deploy
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
 
-<span style="color:#66d9ef">on</span>:
-  <span style="color:#66d9ef">push</span>:
-    <span style="color:#66d9ef">branches</span>:
-    - master
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+    - <span style="color:#ae81ff">master</span>
 
-<span style="color:#66d9ef">jobs</span>:
-  <span style="color:#66d9ef">build</span>:
-    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
-    <span style="color:#66d9ef">steps</span>:
-    - <span style="color:#66d9ef">name</span>: Checkout
-      <span style="color:#66d9ef">uses</span>: actions/checkout@v1
-    - <span style="color:#66d9ef">name</span>: Setup Hugo
-      <span style="color:#66d9ef">uses</span>: peaceiris/actions-hugo@v2
-    - <span style="color:#66d9ef">name</span>: Build
-      <span style="color:#66d9ef">run</span>: hugo
-    - <span style="color:#66d9ef">name</span>: Deploy
-      <span style="color:#66d9ef">uses</span>: peaceiris/actions-gh-pages@v2
-      <span style="color:#66d9ef">env</span>:
-        <span style="color:#66d9ef">EXTERNAL_REPOSITORY</span>: &lt;username&gt;/&lt;username&gt;.github.io
-        <span style="color:#66d9ef">ACTIONS_DEPLOY_KEY</span>: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-        <span style="color:#66d9ef">PUBLISH_BRANCH</span>: master
-        <span style="color:#66d9ef">PUBLISH_DIR</span>: ./public
+<span style="color:#f92672">jobs</span>:
+  <span style="color:#f92672">build</span>:
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">steps</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+      <span style="color:#f92672">env</span>:
+        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;username&gt;.github.io</span>
+        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
 </code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
 <p><img src="../img/gh-pages-workflow/actions.png" alt="actions"></p>
 <p>Even though my blog contains hundreds of posts, images and files, <code>Build and Deploy</code> takes less than 1 minute!</p>

@@ -136,8 +136,8 @@ part of the article, continuous integration. I&rsquo;ll be using
 <a href="https://travis-ci.org/">Travis CI</a> because it&rsquo;s easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
 <p>Travis looks for a <code>.travis.yml</code> file in the root of your repo. This file tells Travis how to build the project and run tests. I recommend you take a quick look at the <a href="https://docs.travis-ci.com/user/tutorial/">docs</a>.</p>
 <p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/.travis.yml"><code>.travis.yml</code></a> file is trivial.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">language</span>: minimal
-<span style="color:#66d9ef">script</span>: ./run_tests.sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">language</span>: <span style="color:#ae81ff">minimal</span>
+<span style="color:#f92672">script</span>: <span style="color:#ae81ff">./run_tests.sh</span>
 </code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
 GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64

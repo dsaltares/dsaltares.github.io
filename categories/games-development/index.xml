@@ -6,11 +6,7 @@
     <description>Recent content in Games development on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://saltares.com/categories/games-development/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/games-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doodle: a crazy drawing &amp; guessing game</title>
       <link>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</link>
@@ -82,7 +78,7 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
       
       <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
- API addition: Adds ‘createComponent()&amp;rdquo; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;rdquo; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;rdquo; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
+ API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
     <item>
@@ -508,7 +504,7 @@ So much win The beauty of a healthy community driven project such as Libgdx is t
       
       <guid>https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/</guid>
       <description>Fix your Timestep is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.
-Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&amp;rsquo; behaviour.</description>
+Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&#39; behaviour.</description>
     </item>
     
     <item>
