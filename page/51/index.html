@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.80.0" />
+	<meta name="generator" content="Hugo 0.82.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,37 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/instalar-ogre-en-ubuntu-de-forma-sencilla/">Instalar Ogre en Ubuntu de forma sencilla</a>
+      </h1>
+      <span class="post-date">Nov 18, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/instalar-ogre-en-ubuntu-de-forma-sencilla/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/ogre_17_logo.gif" alt="ogre_17_logo.gif"></p>
+<p>Si sigues el proyecto <a href="http://osl.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a> desde sus comienzos es probable que recuerdes <a href="../../proyectos/pfc/sion-tower/periplo-por-un-entorno-de-trabajo-para-ogre/">este artículo</a> en el que contaba como <strong>las pasé canutas para instalar Ogre 1.7</strong> en mi entorno de producción (siempre quise decir esto, ¡suena tan rimbombante!). Mi objetivo era utilizar herramientas libres y no depender de ningún IDE en concreto a la hora de compilar proyectos. El caso es que ya no hay que compilar Ogre sino que tenemos unos <strong>flamantes paquetes .deb</strong> a nuestra disposición.</p>
+<h3 id="gracias-a-la-comunidad">Gracias a la comunidad</h3>
+<p><strong>Miembros de la comunidad</strong> de Ogre llevaban lanzando paquetes deb no oficiales desde hacía algún tiempo (¡y yo sin saberlo!). Por fin aparecen en la web oficial de Ogre como <strong>sistema de instalación en Ubuntu</strong> a partir de la reciente <a href="http://www.ogre3d.org/download">versión 1.7.2</a>. Se trata de una aportación de gran valor que facilita mucho la vida a los usuarios de la biblioteca.</p>
+<h3 id="proceso-de-instalación">Proceso de instalación</h3>
+<p>**He actualizado el artículo <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">&ldquo;Instalación de Ogre3D 1.7 en GNU/Linux&rdquo;</a> añadiendo una sección dedicada a Ubuntu con este nuevo método. A continuación hago un pequeño resumen para que veas lo sencillo que es:</p>
+<p>En primer lugar debes añadir el repositorio PPA del <em>&ldquo;team-ogre&rdquo;</em> a tu sistema:</p>
+<pre><code>sudo add-apt-repository ppa:ogre-team/ogre
+</code></pre><p>Para actualizar tu lista de paquetes disponibles recurre al clásico:</p>
+<pre><code>sudo apt-get update
+</code></pre><p>Genial, sólo te queda:</p>
+<pre><code>sudo apt-get install libogre-dev
+</code></pre><p>En IberOgre utilizamos OIS (Object Oriented Input System) para gestionar la entrada del usuario. Puedes descargar la última versión desde <a href="http://sourceforge.net/projects/wgois/">su web en Sourceforge</a> aunque tendrás que compilarla con las <a href="http://en.wikipedia.org/wiki/GNU_build_system">autotools</a>. En realidad, nos basta con la versión de los repositorios:</p>
+<pre><code>sudo apt-get install libois-dev
+</code></pre><h3 id="fácil-verdad">¿Fácil, verdad?</h3>
+<p>He probado este nuevo proceso en un netbook con Ubuntu 10.04 y va de maravilla. Los makefiles utilizados en la wiki funcionan a la perfección, por lo que si sigues los artículos no tendrás ningún problema.</p>
+<p><strong>Ahora todos viviremos más tranquilos</strong>.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -227,25 +258,6 @@
 <p>El haber pegado carteles por la facultad ha hecho subir las inscripciones como la espuma y estamos muy ilusionados con el proyecto. No podemos olvidar <strong>el apoyo de la <a href="http://osl.uca.es/">Oficina de Software Libre (OSLUCA)</a></strong> el cual está siendo inestimable ya que, hasta el momento, tenemos poca experiencia en organizar este tipo de actividades. Estos días seguiremos trabajando duro en ultimar los detalles aunque sea inevitable que aparezcan imprevistos a la hora de la verdad.</p>
 <p><strong>¡Os mantendremos informados!</strong> Mientras tanto os dejo el cartel, podéis hacer click para verlo ampliado.</p>
 <p><img src="../../img/wp/cartel-taller-212x300.jpg" alt="cartel-taller-212x300.jpg"></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/los-ojos-de-julia/">Los ojos de Julia</a>
-      </h1>
-      <span class="post-date">Nov 7, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/los-ojos-de-julia/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/los-ojos-de-julia.jpg" alt="los-ojos-de-julia.jpg"></p>
-<p><a href="http://www.imdb.com/title/tt1512685/"><em>Los ojos de Julia</em></a> se ha enfrentado a las obligadas comparaciones con el anterior largometraje de terror protagonizada por Belén Rueda, <a href="http://www.imdb.com/title/tt0464141/"><em>El orfanato</em></a>. Ya saben, aquello de <em>&ldquo;la anterior era mucho mejor…&quot;</em>. Bah, pamplinas y lo dice alguien a quien le gustó mucho El orfanato. <strong>Hacía tiempo que todos los presentes de la sala se estremecían al unísono</strong>. Incluso algunos graciosos trataban de paliar su estrés soltando alguna ridícula burla en todo un alarde de testosterona. A continuación, unas breves impresiones.</p>
-<p>Julia sufre una <strong>enfermedad degenerativa en la vista</strong> mientras que su hermana gemela ya se había quedado completamente ciega. Cuando ésta aparece colgada de una soga en el sótano de su casa Julia es la única que, irónicamente, ve más allá y piensa que <strong>su hermana no se ha suicidado</strong>. Entonces es cuando inicia una b<strong>úsqueda solitaria por la oscuridad</strong> con el fin de aclarar la bruma que envuelve a la muerte de su hermana.</p>
-<p><em>Los ojos de Julia</em> nos pone en la piel de alguien que no ve en absoluto pero puede percibir una amenaza constante que otros no pueden ver. Funciona porque <strong>recurre al miedo más básico</strong>, el miedo a la oscuridad. No el tipo de oscuridad que se esfuma cuando encendemos la luz, hablamos de negrura permanente. Es posible que algo horrible esté ocurriendo a nuestro alrededor mientras <strong>sólo podemos imaginar</strong>. La mente nos juega malas pasadas, creemos que hay algo cuando en realidad no lo hay o viceversa.</p>
-<p>Estamos ante un <strong>largometraje de tensión y sensaciones</strong> por el que merece la pena dejarse unos pocos euros. Sin lugar a dudas <strong>me ha dejado impresionado</strong> y puede que por ello me haya excedido ligeramente. Por favor, guarden el lanzamiento de tomates para los comentarios.</p>
 
       
     </div>
