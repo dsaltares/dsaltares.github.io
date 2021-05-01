@@ -8,13 +8,13 @@
     <loc>https://saltares.com/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://saltares.com/categories/general/</loc>
-    <lastmod>2021-04-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/post/</loc>
+    <lastmod>2021-04-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/categories/work/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/games/doodle/</loc>
@@ -45,6 +45,9 @@
     <lastmod>2020-02-23T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/fosdem-2020-survival-guide/</loc>
+    <lastmod>2020-01-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/categories/general/</loc>
     <lastmod>2020-01-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</loc>
