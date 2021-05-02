@@ -105,6 +105,29 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/math-maze-closed-alpha/">Math Maze closed alpha</a>
+      </h1>
+      <span class="post-date">Jul 24, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/math-maze-closed-alpha/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/math-maze/math-maze-banner.jpg" alt="math-maze"></p>
+<p>Math Maze is what&rsquo;s been keeping me busy after work for the past three months and now it&rsquo;s dangerously approaching a state I&quot;m happy with. Woohooo!</p>
+<blockquote>
+<p>Is your head agile enough to succeed at this math based brain teaser game? Reach the exit of the labyrinth as fast as you can by using operations that will open the conditional blockages. Freshen up your mental calculus without even realising!</p>
+</blockquote>
+<p>I just wanted to make a really simple Android game so as to be able to polish it without giving up my job nor my social life. Then I came across with this <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&amp;uid=4628">Ludum Dare game</a> and loved the concept. Reduced scope, perfect for short play sessions on a mobile device and an interesting educational flavour that convinced me to target kids.</p>
+<p>Last week I launched a closed alpha through Google Play and Google Plus. Involving relatives and friends as soon as I could has proven to be of huge help. The alpha resulted in very positive feedback and loads of design suggestions which are going to help me make a better game. Also a couple of bugs were found, so I would expect the final version to be pretty solid. Actually, I even put together a questionnaire and may even publish some of the conclusions I got from it.</p>
+<p>All they say about how important is early external playtesting is true. Do it.</p>
+<p>So far it&rsquo;s been excellent. Math Maze is coming together nicely and I&quot;m learning loads about libgdx, user experience for kids and general game development. Don&rsquo;t take me wrong, it&rsquo;s a tiny game, but I&quot;m humbly happy with it. If I could focus on some PR towards launch, that&quot;d be just fantastic.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/about-epic-dropping-uscript/">About Epic dropping UScript</a>
       </h1>
       <span class="post-date">Jul 15, 2013 &middot; 3 minute read &middot; <a href="https://saltares.com/games/about-epic-dropping-uscript/#disqus_thread">Comments</a>
@@ -382,245 +405,6 @@ TiledMap map = mapLoader.load(getLevel());
 <p>Among the things that make Ludum Dare incredibly awesome, the community stands out. There&rsquo;s people out there that took the time to gather most of the games to make a gigantic trailer. Hats off.</p>
 <p>More compilations <a href="http://www.ludumdare.com/compo/2013/05/01/10-second-videos-compilation-project/">here</a>.</p>
 <p>See you in the next Ludum Dare!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/managing-groups-of-assets/">Managing groups of Assets</a>
-      </h1>
-      <span class="post-date">May 12, 2013 &middot; 7 minute read &middot; <a href="https://saltares.com/games/managing-groups-of-assets/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&rsquo;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&rsquo;t come for free.</p>
-<p>Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite. Not only phones and tablets have limited memory sizes, but theirs is also shared by many hungry apps and fancy background processes. If your app&rsquo;s demands causes everything else to shut down, you&quot;re going to make your users sad.</p>
-<p>The sooner you face this, the better. Asset management can be a pain in the arse.</p>
-<p><img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg"></p>
-<p>Throughout this article, I&quot;d like to illustrate some of the challenges one has to face when dealing with many assets within a medium sized project. Later on, I&quot;ll be presenting some classic approaches to finish with one that seems to be working for me quite well. The examples are focused on the <a href="libgdx.badlogicgames.com/">libgdx framework</a>, although the concepts are widely applicable.</p>
-<h3 id="the-very-basics">The very basics</h3>
-<p>Just to make sure we&quot;re on the same page, these two are the very fundamental items to take into account when managing resources in a game.</p>
-<ul>
-<li>Don&rsquo;t load things twice. Eg. If you have identical looking sprites, share the texture data and render it as needed.</li>
-<li>Don&rsquo;t load anything that you won&rsquo;t need in the near future. Why would you load the final level when the user has just fired up the game for the very first time?</li>
-</ul>
-<p>Basically, we&quot;re going to try to use the smallest portion of memory we possibly can at a given point in execution.</p>
-<h3 id="use-the-assetmanager-luke">Use the AssetManager Luke</h3>
-<p>Luckily enough, libgdx provides the splendid <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html">AssetManager</a>, so, for <em>$deity</em>&ldquo;s sake, please don&rsquo;t reinvent the wheel. Are you not using libgdx? Fear not, fellow developer, for most modern libraries feature similar components. Eg. In <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Basic+knowledge+about+Resources">Ogre3D</a> we have <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html">ResourceGroupManager</a> class.</p>
-<p>Take all the time you need to read the correspondent <a href="https://code.google.com/p/libgdx/wiki/AssetManager">wiki page</a> in case you were oblivious to its existence. Long story short, here&rsquo;s what AssetManager can do for you.</p>
-<ul>
-<li>Store one copy of each asset.</li>
-<li>Reference counting.</li>
-<li>Inter asset dependencies handling.</li>
-<li>Asynchronous asset loading, keeps your app responsive.</li>
-<li>Easily extensible, implement your custom loaders for arbitrary types of assets.### The naive approach</li>
-</ul>
-<p>The most straightforward approach is to use AssetManager to load all your assets upfront and make the manager globally available. That way you&quot;d be able to easily retrieve resources.</p>
-<p><img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg"></p>
-<pre><code>public class MyGame extends Game {
-
-	private AssetManager manager;
-
-	@Override
-	public void create() {
-		super.create()
-
-		manager = new AssetManager();
-		loadAssets();
-	}
-
-	@Override
-	public void dispose() {
-		manager.dispose();
-	}
-
-	public AssetManager getAssetManager() {
-		return manager;
-	}
-
-	private void loadAssets() {
-		manager.load(&quot;data/player.png&quot;, Texture.class);
-		manager.load(&quot;data/enemy.png&quot;, Texture.class);
-		manager.load(&quot;data/bullet.png&quot;, Texture.class);
-		manager.load(&quot;data/ui/uiskin.json&quot;, Skin.class);
-
-		// ...
-
-		manager.finishLoading();
-	}
-}
-</code></pre><p>While this is a very comfortable thing to do and renders itself valid in most cases, we&quot;re still loading assets that won&rsquo;t be needed right away. Actually this snippet is taken almost as it was in my <a href="../../game-jams/lightbyrinth/">Ludum Dare #26 entry</a>, and it was perfectly fine. It&rsquo;s highly likely for you to get away with this. However, if you want to go the extra mile to achieve maximum performance, you know exactly what can be improved.</p>
-<h3 id="slightly-more-advanced-approaches">Slightly more advanced approaches</h3>
-<p>We only want to load the resources that will be used at a given time while avoiding being interned in a mental institution. Micromanaging everything is hard work and definitely not worth the headache in almost every situation. One question now arises.</p>
-<blockquote>
-<p>What&rsquo;s the ideal asset management granularity?</p>
-</blockquote>
-<p>Obviously, the soft spot will be closely tied to the scope and genre in play but let&rsquo;s list a few possibilities.</p>
-<ul>
-<li>Everything at a time – Not an option</li>
-<li>Menus, levels</li>
-<li>Individual menu screen, individual level, all characters</li>
-<li>Individual menu screen, individual level, needed characters</li>
-<li>Individual menu screen, streaming level chunks, needed characters</li>
-<li>…</li>
-</ul>
-<p><img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg"></p>
-<p>Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there&rsquo;s a load screen masked behind a briefing before each level.</p>
-<h3 id="im-a-lazy-bastard-and-that-sounds-like-a-lot-of-work">I&quot;m a lazy bastard and that sounds like a lot of work</h3>
-<p>As you can see, it can get mental institution level of crazy in terms of deciding who loads what and when. Retrieving an asset you erroneously thought to be in memory could become an everyday issue. You want to simplify it.</p>
-<p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it&rsquo;s going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
-<p><img src="../../img/wp/load-sequence.png" alt="load-sequence.png"></p>
-<p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
-<pre><code>&lt;assets &gt;
-	&lt;group name=&quot;base&quot;&gt;
-		&lt;asset type=&quot;com.siondream.core.animation.AnimationData&quot; path=&quot;data/caveman.xml&quot; /&gt;
-		&lt;asset type=&quot;com.siondream.core.physics.PhysicsData&quot; path=&quot;data/caveman_physics.xml&quot; /&gt;
-		&lt;asset type=&quot;com.badlogic.gdx.scenes.scene2d.ui.Skin&quot; path=&quot;data/ui/uiskin.json&quot; /&gt;
-	&lt;/group&gt;
-&lt;/assets&gt;
-</code></pre><p>Qualified types and reflection are used to make the <em>AssetManager#load</em> calls.</p>
-<h3 id="grouped-asset-manager-code">Grouped Asset Manager code</h3>
-<p>Here&rsquo;s the full implementation for my Asset class. It&rsquo;s kind of a small layer on top of the libgdx AssetManager. Feel free to use it, bin it or change it. However, be advised that I don&rsquo;t plan to offer further continued for it, this is simply to illustrate my approach.</p>
-<pre><code>public class Assets implements Disposable, AssetErrorListener {
-
-	private static final String TAG = &quot;Assets&quot;;
-	private Logger logger;
-	private AssetManager manager;
-	private ObjectMap&lt;String, Array&lt;Asset&gt;&gt; groups;
-
-	public Assets(String assetFile) {
-		logger = new Logger(TAG, Logger.INFO);
-
-		manager = new AssetManager();
-		manager.setErrorListener(this);
-		manager.setLoader(PhysicsData.class, new PhysicsLoader(new InternalFileHandleResolver()));
-		manager.setLoader(AnimationData.class, new AnimationLoader(new InternalFileHandleResolver()));
-
-		loadGroups(assetFile);
-	}
-
-	public void loadGroup(String groupName) {
-		logger.info(&quot;loading group &quot; + groupName);
-
-		Array&lt;Asset&gt; assets = groups.get(groupName, null);
-
-		if (assets != null) {
-			for (Asset asset : assets) {
-				manager.load(asset.path, asset.type);
-			}
-		}
-		else {
-			logger.error(&quot;error loading group &quot; + groupName + &quot;, not found&quot;);
-		}
-	}
-
-	public void unloadGroup(String groupName) {
-		logger.info(&quot;unloading group &quot; + groupName);
-
-		Array&lt;Asset&gt; assets = groups.get(groupName, null);
-
-		if (assets != null) {
-			for (Asset asset : assets) {
-				if (manager.isLoaded(asset.path, asset.type)) {
-					manager.unload(asset.path);
-				}
-			}
-		}
-		else {
-			logger.error(&quot;error unloading group &quot; + groupName + &quot;, not found&quot;);
-		}
-	}
-
-	public synchronized &lt;T&gt; T get(String fileName) {
-		return manager.get(fileName);
-	}
-
-	public synchronized &lt;T&gt; T get(String fileName, Class&lt;T&gt; type) {
-		return manager.get(fileName, type);
-	}
-
-	public boolean update() {
-		return manager.update();
-	}
-
-	public void finishLoading() {
-		manager.finishLoading();
-	}
-
-	public float getProgress() {
-		return manager.getProgress();
-	}
-
-	@Override
-	public void dispose() {
-		logger.info(&quot;shutting down&quot;);
-		manager.dispose();
-	}
-
-	@Override
-	public void error(String fileName, Class type, Throwable throwable) {
-		logger.error(&quot;error loading &quot; + fileName);
-	}
-
-	private void loadGroups(String assetFile) {
-		groups = new ObjectMap&lt;String, Array&lt;Asset&gt;&gt;();
-
-		logger.info(&quot;loading file &quot; + assetFile);
-
-		try {
-			XmlReader reader = new XmlReader();
-			Element root = reader.parse(Gdx.files.internal(assetFile));
-
-			for (Element groupElement : root.getChildrenByName(&quot;group&quot;)) {
-				String groupName = groupElement.getAttribute(&quot;name&quot;, &quot;base&quot;);
-
-				if (groups.containsKey(groupName)) {
-					logger.error(&quot;group &quot; + groupName + &quot; already exists, skipping&quot;);
-					continue;
-				}
-
-				logger.info(&quot;registering group &quot; + groupName);
-
-				Array&lt;Asset&gt; assets = new Array&lt;Asset&gt;();
-
-				for (Element assetElement : groupElement.getChildrenByName(&quot;asset&quot;)) {
-					assets.add(new Asset(assetElement.getAttribute(&quot;type&quot;, &quot;&quot;),
-										 assetElement.getAttribute(&quot;path&quot;, &quot;&quot;)));
-				}
-
-				groups.put(groupName, assets);
-			}
-		}
-		catch (Exception e) {
-			logger.error(&quot;error loading file &quot; + assetFile + &quot; &quot; + e.getMessage());
-		}
-	}
-
-	private class Asset {
-		public Class&lt;?&gt; type;
-		public String path;
-
-		public Asset(String type, String path) {
-			try {
-				this.type = Class.forName(type);
-				this.path = path;
-			} catch (ClassNotFoundException e) {
-				logger.error(&quot;asset type &quot; + type + &quot; not found&quot;);
-			}
-		}
-	}
-}
-</code></pre><h3 id="conclusions-and-further-improvements">Conclusions and further improvements</h3>
-<p>This small grouped asset manager will do the trick for me. Nevertheless I believe it could be improved in a few ways.</p>
-<ul>
-<li>JSON format for faster parsing.</li>
-<li>Automatically scan asset folders.</li>
-<li>Associate file extensions to asset types. * …</li>
-</ul>
-<p>Anyhow, I hope I made my point of showing some different approaches to asset management along their pros and cons. I&quot;d love to hear your thoughts on the topic, and were you to find yourself disagreeing with me, by all means, share your point of view.</p>
 
       
     </div>

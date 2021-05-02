@@ -105,6 +105,53 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/">Backup a través de la red con tar y ssh</a>
+      </h1>
+      <span class="post-date">Oct 1, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png"></p>
+<p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
+<h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
+<p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>
+<pre><code># Comprimimos
+tar cvzf directorio directorio.tar.gz
+
+# Enviamos
+scp directorio.tar.gz usuario@host:directorio_destino
+</code></pre><h3 id="la-solución">La solución</h3>
+<p>Decidimos que <strong>el tiempo era oro</strong>, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación <strong>el script que encierra la magia</strong> (obviando datos concretos):</p>
+<pre><code>#!/bin/sh
+
+# Fecha de la copia
+FECHA=$(date +&quot;%F-%H-%M-%S&quot;)
+
+# Directorio a copiar
+DIR_BACKUP=/home/david
+
+# Máquina remota
+HOST=backups.saltares.com
+
+# Usuario de la máquina remota
+USER=siondream
+
+# Directorio destino
+HOST_DIR=/home/siondream/backups
+
+# Hacemos el backup
+tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz&quot;
+</code></pre><p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
+<h3 id="lo-mismo-casi-en-la-mitad-de-tiempo">Lo mismo casi en la mitad de tiempo</h3>
+<p>Si tienes que hacer grandes copias y enviarlas por la red, <strong>este pequeño truco es tu amigo</strong>. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve <strong>resultados impresionantes</strong>: enviar los datos mientras éstos se comprimen lleva <strong>casi la mitad de tiempo</strong> que hacerlo en etapas separadas.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/synergy-varios-equipos-un-raton/">Synergy: varios equipos, un ratón</a>
       </h1>
       <span class="post-date">Sep 26, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/computing/synergy-varios-equipos-un-raton/#disqus_thread">Comments</a>
@@ -225,26 +272,6 @@ builder.add_from_file(path)
 <p><strong>Se le ha achacado mucho lo arquetípico de su protagonista</strong>, un tipo serio, introvertido, desvivido por su trabajo, malhumorado, perspicaz, arriesgado, etc. Parece que lo han sacado de un molde, llevan toda la razón. No obstante, <strong><a href="http://www.imdb.com/name/nm0252961/">Idris Elba</a></strong>, el actor que lo interpreta <strong>hace un estupendo trabajo</strong>, dota de gran fuerza al personaje y compensa las críticas. Supongo que recordarán a Idris Elba por magnífico trabajo que hizo encarnando a <strong>Russel Stringer Bell en <a href="http://www.imdb.com/title/tt0306414/">The Wire</a></strong>.</p>
 <p><strong>El ritmo que consigue <em>Luther</em> es sorprendente</strong>: la intensidad, el peligro y los giros de guión son constantes. Se decanta por el arriesgado enfoque de mostrar quien es el enemigo y dejar el misterio en <strong>cómo lo atraparán (o no)</strong>. Para ello las trampas y el juego psicológico están a la orden del día. Es evidente que si te gustan las tramas policíacas debes darle una oportunidad sobre todo por su corta duración.</p>
 <p>Sopesando sus fallos y virtudes, Luther sale bastante bien parada, por tanto <strong>les recomiendo un visionado</strong> máxime si no disponen de excedentes de tiempo para una producción de mayor duración. Por supuesto, siempre en versión original ya que disfrutarán del particular acento inglés que siempre me llama la atención, <em>&ldquo;fellas&rdquo;</em>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/miniserie-the-pillars-of-the-earth/">Miniserie The Pillars of the Earth</a>
-      </h1>
-      <span class="post-date">Sep 12, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/miniserie-the-pillars-of-the-earth/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/the-pillars-of-the-earth.jpg" alt="the-pillars-of-the-earth.jpg"></p>
-<p>Hace bastante tiempo tuve la ocasión de leer <strong>el best-seller por antonomasia de <a href="http://es.wikipedia.org/wiki/Ken_Follett">Ken Follet</a> <a href="http://es.wikipedia.org/wiki/Los_pilares_de_la_Tierra"><em>&ldquo;Los Pilares de la Tierra&rdquo;</em></a></strong>. Un libro extenso que, lejos de ser una obra maestra, te conduce en un fantástico viaje por la Inglaterra del S.XII y los inicios de la arquitectura gótica en Europa utilizando el desarrollo de sus personajes como medio de transporte. Desconocía que se estaba rodando una <strong><a href="http://en.wikipedia.org/wiki/The_Pillars_of_the_Earth_%28TV_miniseries%29">miniserie</a></strong> basada en la novela y me he lanzado a verla durante los últimos días, a continuación unas breves impresiones.</p>
-<p>No me gustaría entretenerme en exponer mi opinión de la obra completa, sino de la miniserie como adaptación del original. Por supuesto, el texto está <strong>libre de spoilers</strong>. Ocho episodios de una hora aproximadamente que se antojan insuficientes componen el resumen del mastodóntico libro. El texto de Follet se recrea en los espléndidos avances arquitectónicos mostrándonos su belleza y majestuosidad. Por otro lado, esta adaptación toma la <strong>guerra de sucesión inglesa</strong> así como el entramado de odio, venganza y amor entre los personajes como <strong>eje principal</strong>. Un cambio de prioridades que deja cojo al conjunto aunque permite que conectemos más con los personajes.</p>
-<p><img src="../../img/wp/the-pillars-of-the-earth-2.jpg" alt="the-pillars-of-the-earth-2.jpg"></p>
-<p>Si obviamos el cambio de enfoque encontraremos <strong>una versión televisiva más que digna</strong>. Esta historia llena de detalles demuestra hasta dónde puede llegar la ambición humana, ya saben, aquello de <em>&ldquo;el fin justifica los medios&rdquo;</em>. Monjes corruptos, nobles crueles pero supersticiosos, una corona en juego, el resurgir de las cenizas de Kingsbridge y la construcción de una catedral gótica nos mantendrán suficientemente entretenidos.</p>
-<p>Los sibaritas de la pequeña pantalla deben estar avisados, no es una producción sobresaliente aunque merece una oportunidad, máxime si se sabe disfrutar de una historia de estas características. Si bien <strong>las licencias que se toman los productores de la serie son abundantes</strong> las considero comprensibles al tratarse de medios notablemente distintos. Sé que las puntuaciones en webs especializadas de poco sirven, pero para que se hagan una idea les diré que tiene <a href="http://www.imdb.com/title/tt1453159/"><strong>un 8.8 en IMDB</strong></a>. En España se estrena el martes, emitiéndose los episodios en packs dobles. En cualquier caso, siempre recomiendo el <strong>visionado en versión original</strong> (curioso el marcado acento inglés).</p>
 
       
     </div>

@@ -6,7 +6,19 @@
     <description>Recent content in General on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 28 Jan 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Schedule posts with Hugo</title>
+      <link>https://saltares.com/schedule-posts-with-hugo/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/schedule-posts-with-hugo/</guid>
+      <description>Back in 2020, I migrated this blog to Hugo and Github pages. I also set up a &amp;ldquo;push to publish&amp;rdquo; CD pipeline with Github pages.
+Happy days.
+🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.
+It&amp;rsquo;s actually trivial to set up!</description>
+    </item>
+    
     <item>
       <title>FOSDEM 2020 - Survival Guide</title>
       <link>https://saltares.com/fosdem-2020-survival-guide/</link>

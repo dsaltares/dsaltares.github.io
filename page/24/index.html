@@ -105,6 +105,25 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/talk-how-do-i-get-into-the-games-industry/">Talk: How do I get into the Games Industry?</a>
+      </h1>
+      <span class="post-date">Nov 30, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/games/talk-how-do-i-get-into-the-games-industry/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>I&rsquo;ve recently been to Spain, not only to spend some quality time with family and friends but to deliver a presentation at my home University. It was basically about how the Games Industry work, how we make games at Crytek UK and what should a Computing Science student do in order to find a job in such a field. Anyways, it was quite nice coming back to where all this began and I&quot;d like to thank my professor Manuel Palomo for making this possible.</p>
+<p><img src="../../img/wp/crytek-uca-talk.jpg" alt="crytek-uca-talk.jpg"></p>
+<p>To be honest, it shocked me to see a conference room full of people with even some crazy individuals standing at the back to listen to whatever nonsense I had to say. I got some positive feedback in person and over Twitter so that made me quite happy and stop thinking I bored everyone to death.</p>
+<p>I&rsquo;ve been asked several times if it was possible to share the slides and after getting my bosses approval here they are. I guess they lose part of the charm without the talking part but hey, it&rsquo;s better than nothing isn&rsquo;t it?</p>
+<!-- raw HTML omitted -->
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/gleed2d-level-loading-system-for-libgdx/">GLEED2D level loading system for libgdx</a>
       </h1>
       <span class="post-date">Nov 7, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gleed2d-level-loading-system-for-libgdx/#disqus_thread">Comments</a>
@@ -297,67 +316,6 @@ private static final int m_jump = IDGenerator.getID(&quot;jump&quot;);
 </code></pre><p>Now, at the time of picking an animation we use an int instead of a string and therefore, a beautiful smile is drawn on our faces.</p>
 <pre><code>caveman.setAnimation(m_walk);
 </code></pre><p>Of course, this can be extensively use in your project, hope it helps. By the way, know than more and hopefully better is yet to come.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/abstracting-platform-specific-code-in-libgdx/">Abstracting platform specific code in libgdx</a>
-      </h1>
-      <span class="post-date">Sep 8, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/abstracting-platform-specific-code-in-libgdx/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>One of the main reasons I&quot;m working with <a href="http://libgdx.badlogicgames.com/">libgdx</a> is its multiplatform capabilities. With very little effort you can target desktop (Windows/Linux/Mac), Android and WebGL able browsers. The problem comes with the <em>&ldquo;little&rdquo;</em> in the previous sentence. The developer is supposed to share the code base between all targets but sometimes it&quot;s necessary to provide platform specific behaviour, maybe because a feature is not available in every device or just to adapt the product better to the target. Anyway, how do we achieve that in a fairly elegant fashion?</p>
-<h3 id="project-structure">Project structure</h3>
-<p>As many of you may already know, a multiplatform libgdx project is often arranged the following way:</p>
-<ul>
-<li><strong>game</strong>: shared code base</li>
-<li><strong>game-desktop</strong>: desktop launcher</li>
-<li><strong>game-android</strong>: Android launcher</li>
-<li><strong>game-html</strong>: HTML5 launcher</li>
-</ul>
-<p>Every platform specific project depends on the base one and they all instantiate the main class from there, typically belonging to an <code>ApplicationListener</code> derived class (we shall name it <em>Game</em> from now on). Yes, it is perfectly fine to add platform specific code in the derived projects. However, it would be desirable to handle platform specific behaviour using an homogeneous approach, from our base project.</p>
-<h3 id="the-platformresolver-interface">The PlatformResolver interface</h3>
-<p>This interface belongs to the shared code base and it contains methods to provide platform specific behaviour depending on our needs. Here there&quot;s just a very basic example but this interface could vary on a per game basis. A good idea would be to implement this class as a <a href="http://en.wikipedia.org/wiki/Facade_pattern">Facade</a> providing access to platform specific subsystems such as input management or Facebook connectivity to mention a couple.</p>
-<pre><code>public interface PlatformResolver {
-    public String getDefaultLanguage();
-    public FacebookAPI getFacebookAPI();
-    public InputManager getInputManager();
-}
-</code></pre><p>Our main game class would hold an instance to a specific <em>PlatformResolver</em> yet to be determined. It&quot;s each platform&quot;s responsibility to tell the game which instance should it use to solve platform specific issues.</p>
-<pre><code>public class Game implements ApplicationListener {
-    protected static PlatformResolver m_platformResolver = null;
-
-    public static PlatformResolver getPlatformResolver() {
-        return m_platformResolver;
-    }
-
-    public static void setPlatformResolver(PlatformResolver platformResolver) {
-        m_platformResolver = platformResolver;
-    }
-}
-</code></pre><h3 id="platformresolver-in-use">PlatformResolver in use</h3>
-<p>In each descendent project we would have something similar to:</p>
-<pre><code>public class AndroidResolver implements PlatformResolver {}
-public class DesktopResolver implements PlatformResolver {}
-public class WebGLResolver implements PlatformResolver {}
-</code></pre><p>Like I mentioned before, it&quot;s necessary to tell the <em>Game</em> which platform resolver to use, we do that in every platform&quot;s launcher. The desktop one could serve as a perfectly valid example:</p>
-<pre><code>public static void main(String[] args) {
-    // Configure platform dependent code
-    Game.setPlatformResolver(new DesktopResolver());
-
-    // Launch the game
-    new LwjglApplication(new Game(), cfg);
-}
-</code></pre><p>Later on during execution we could need to determine the system&quot;s default language but that depends on the platform we are working with… Fear no more! We can happily ask our <em>PlatformResolver</em>:</p>
-<pre><code>String defaultLang = Game.getPlatformResolver().getDefaultLanguage();
-</code></pre><h3 id="the-possibilities">The possibilities</h3>
-<p>We are currently using this very same approach for <a href="https://github.com/dsaltares/sionengine">SionEngine</a> and it&quot;s proven to be flawless so far. You can abstract virtually any platform specific behaviour using something similar.</p>
-<p>Soon there will be more and better on libgdx related stuff! Feel free to criticize and throw rocks at me because of this post.</p>
 
       
     </div>
