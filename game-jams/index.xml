@@ -6,7 +6,18 @@
     <description>Recent content in Game jams on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 23 Feb 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/game-jams/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/game-jams/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chronolooper</title>
+      <link>https://saltares.com/game-jams/chronolooper/</link>
+      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/game-jams/chronolooper/</guid>
+      <description>.Get &#34;linkText&#34;    They put you in a facility and ran all sorts of experiments because you can control time. Now you are stuck in a time loop!
+🎮 The game Plague is an infinite action platformer with procedurally generated levels. It&amp;rsquo;s got gamepad support and you can play it from your browser.
+💻 Ludum Dare 47 Chronolooper was developed using Godot Engine for Ludum Dare 47, a 72h jam.</description>
+    </item>
+    
     <item>
       <title>Plague</title>
       <link>https://saltares.com/game-jams/plague/</link>
