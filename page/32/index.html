@@ -105,6 +105,53 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/">Búsqueda de caminos: Floyd vs A*</a>
+      </h1>
+      <span class="post-date">Jun 22, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/avsfloyd.png" alt="avsfloyd.png"></p>
+<p>Las últimas semanas he estado trabajando en la <strong>IA de Sion Tower</strong> y por el momento el resultado es satisfactorio. Antes utilizaba el algoritmo <strong>A</strong> para la búsqueda de caminos de los enemigos, pero me di cuenta de que el rendimiento podía ser mucho mejor si precomputaba las búsquedas con una alternativa como <strong>Floyd</strong>. En este artículo hablo de las dos aproximaciones y comparo los resultados obtenidos.</p>
+<p><!-- raw HTML omitted --><strong>Aclaración</strong><!-- raw HTML omitted -->: en el texto no voy a entrar en detalles sobre los algoritmos <a href="http://en.wikipedia.org/wiki/A*_search_algorithm">A*</a> ni <a href="http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd</a>. Si no los conoces deberías consultar los sendos artículos de Wikipedia o tu libro de algoritmia preferido.</p>
+<h3 id="aproximación-1-algoritmo-a">Aproximación 1: algoritmo A*</h3>
+<p>Como ya he dicho alguna vez, utilizo una malla de navegación diseñada con Blender para definir el área transitable por los enemigos. <strong>Cada vez que algún monstruo desea saber el camino</strong> hacia el personaje se realizaban los siguientes pasos:</p>
+<ol>
+<li>Ejecutar A* desde la celda del enemigo hasta la del personaje.</li>
+<li>Recuperar camino devuelto por A*.</li>
+<li>Simplificar el camino eliminando celdas intermedias para evitar zig-zag.</li>
+<li>Suavizado del camino mediante spline cúbico.</li>
+</ol>
+<p>Los pasos 1 y 3 resultaban especialmente costosos en términos de tiempo mientras que los pasos 2 y 4 eran muy rápidos. Traté de minimizar la necesidad de recalcular rutas hacia el protagonista pero cuando el jugador se desplaza demasiado, resulta inevitable.</p>
+<h3 id="aproximación-2-algoritmo-de-floyd">Aproximación 2: algoritmo de Floyd</h3>
+<p>Al ejecutar A* cada vez que un enemigo deseaba rehacer su ruta estábamos incurriendo en muchos cálculos redundantes. **¿Por qué no precomputar los caminos mínimos?** Eso es precisamente lo que hace el algoritmo de Floyd, calcula los costes y el camino para viajar entre todos los pares de nodos x e y de un grafo. El resultado lo almacena en una matriz de costes mínimos (que no nos interesa) y otra de caminos (con la que nos quedaremos).</p>
+<p>Al tener una matriz con los caminos ya calculados, <strong>recuperar una ruta es mucho más eficiente</strong> en tiempo. Incluso podemos eliminar la simplificación de caminos en cada consulta si también precalculamos todas las simplificaciones posibles. No obstante, se requieren una serie de <strong>pasos iniciales</strong>:</p>
+<ol>
+<li>Construcción de la matriz de costes iniciales a partir de la malla.</li>
+<li>Ejecución del algoritmo de Floyd.</li>
+<li>Simplificar todos los caminos actualizando la matriz de caminos mínimos.</li>
+</ol>
+<p>Cuando un enemigo quiera conocer una ruta, simplemente realizamos los siguientes pasos cuyo tiempo es mínimo:</p>
+<ol>
+<li>Recuperar el camino.</li>
+<li>Suavizar el camino mediante un spline cúbico.</li>
+</ol>
+<h3 id="comparativa-a-vs-floyd">Comparativa: A* vs Floyd</h3>
+<p>Todas las mediciones de tiempo que se muestran a continuación se han realizado sobre el mismo equipo, bajo la misma carga de trabajo y con la misma malla de navegación de 113 celdas.</p>
+<p><strong>Coste inicial</strong>: Utilizar Floyd conlleva una serie de cálculos iniciales que A* no son necesarios. No obstante, podemos ver que son bastante reducidos ya que suponen 2.18ms una sola vez al cargar cada nivel.</p>
+<p><strong>Consumo de memoria</strong>: podría preocuparnos el coste de almacenar la matriz de caminos mínimos. Para 113 celdas tenemos una matriz de 113 * 113 = 12769 enteros para indexar las celdas que componen los caminos. Esto equivale a 50KB, una cantidad reducida comparada con el tamaño de un modelo 3D animado. Es cierto que la aproximación de Floyd no es tan escalable como A* por el coste en memoria. Mi escenario de 113 celdas es pequeño, si aumentamos a 1000 celdas, la matriz ocuparía 4MB. Es O(n2) con respecto al número de celdas.</p>
+<p><strong>Tiempo para construir un camino</strong>: aquí es donde Floyd le saca una gran ventaja a A*. Recuperar un camino utilizando A* requiere en término medio 0.5ms mientras que utilizando Floyd necesitamos 0.02ms. La diferencia es muy significativa. Imaginad que tenemos 5 enemigos en pantalla que piden un camino en el mismo frame. Con A* el coste ascendería a 5 * 0.5ms = 2.5ms mientras que con Floyd invertimos 5 * 0.02ms = 0.1ms. En un juego mono-hilo que va a 60 FPS sólo disponemos de 16.6ms para realizar todos los cálculos (IA, colisiones, renderizado).</p>
+<p>¡2.4 ms de diferencia por frame es una excelente optimización!</p>
+<h3 id="conclusión-express">Conclusión express</h3>
+<p>Precomputar caminos es mucho menos escalable que hacer los cálculos de forma dinámica pero la mejora de rendimiento es enorme. A pesar de ello, para escenarios grandes puede hacerse una búsqueda de caminos jerárquica (un tema un poco más complejo). Hay que tener cuidado ya que al utilizar Floyd, un cambio en el escenario implicaría una nueva precomputación completa.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/podcasts-que-merecen-la-pena-ii/">Podcasts que merecen la pena II</a>
       </h1>
       <span class="post-date">Jun 16, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/podcasts-que-merecen-la-pena-ii/#disqus_thread">Comments</a>
@@ -230,30 +277,6 @@
 <pre><code>make &amp;&amp; sudo make install
 </code></pre><h3 id="have-fun-prototyping">Have fun prototyping</h3>
 <p>I&quot;m using SFXR for <a href="../../en/proyectos/sion-tower/">Sion Tower</a>, the strategy action game I&quot;m developing right now and I&quot;m quite happy with it. A colleague of mine who studied sound production is working on the effects for the game. In the meanwhile, testing the sound system with SFXR is working great!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/x-men-first-class/">X-Men: First class</a>
-      </h1>
-      <span class="post-date">Jun 11, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/x-men-first-class/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/xmen-titulo.jpg" alt="xmen-titulo.jpg"></p>
-<p><strong>Tras la lamentable X-Men 3: The last stand</strong>, no tenía demasiadas esperanzas puestas en esta precuela. Sobre todo prescindiendo de todos los actores con cierto caché de episodios anteriores como Ian McKellen (Magneto), Patrick Stewart (Charles Xavier) o Hale Berry (Tormenta). Una licencia que vende y una reducción de presupuesto parecían <strong>los ingredientes idóneos para el enésimo truñaco</strong>. Nada más lejos de la realidad, <strong><a href="http://www.imdb.com/title/tt1270798/">X-Men: First class</a> es una buena película de superhéroes</strong>.</p>
-<p><img src="../../img/wp/xmen-chess.jpg" alt="xmen-chess.jpg"></p>
-<p><strong>X-Men: First class nos relata el origen de la patrulla X</strong> y las raíces del antagonismo entre Charles Xavier (<a href="http://www.imdb.com/name/nm0564215/">James McAvoy</a>) y Erik (<a href="http://www.imdb.com/name/nm1055413/">Michael Fassbender</a>). Con eso ya me tenían prácticamente ganado porque es una de las etapas del cómic que más me interesan. Desde la perspectiva de Magneto, que asume gran parte del protagonismo, experimentamos <strong>las heridas de una reciente Segunda Guerra Mundial</strong>, los coletazos del nazismo y el paralelismo con los florecientes mutantes: <em>&ldquo;la raza superior&rdquo;</em>.</p>
-<p>Si se va con una mente abierta, <strong>a First class se le perdonan las innumerables licencias</strong> que se toman los guionistas. Obviando la estupidez que implicaría comentarlas todas, hay que reconocer que algunas añaden una chispa a la trama, como la participación de los mutantes en la <strong>crisis de los misiles cubanos</strong>. Siempre me ha parecido una tontería criticar las adaptaciones que introducen variaciones con respecto a la obra original. <em><a href="http://en.wikipedia.org/wiki/X-Men">X-Men #1</a></em> fue publicado en 1963, hay una <strong>necesidad de adaptar</strong> la historia a la actualidad para llegar al gran público.</p>
-<p><img src="../../img/wp/xmen-first-class-magneto.jpg" alt="xmen-first-class-magneto.jpg"></p>
-<p>No temo equivocarme afirmando que <strong>el renovado reparto hace un gran trabajo</strong>, quizás sea porque esperaba más bien poco de ellos. Destacan sobre todo Xavier y Erik, los cuales protagonizan las secuencias más épicas de todo el metraje. El dramatismo que aporta el Holocausto y su relación con el fenómeno mutante ofrece el caldo de cultivo perfecto para que el mensaje llegue al espectador. Ah, se me olvidaba, quizás os encontréis con algún <em>cameo</em> especial.</p>
-<p>Incluso teniendo un fondo que invita a la reflexión, es una <strong>película sencilla y digerible</strong>. La intensidad de la historia y las secuencias de acción hacen que sus 132 minutos de duración se pasen sin darnos cuenta. Aquí hay que hacer un apunte obligado, los efectos especiales han perdido enteros, se notan los recortes. No soy un sibarita al respecto, pero en algunos momentos no llegan ni a mediocres.</p>
-<p><img src="../../img/wp/xmen-first-class-misiles.jpg" alt="xmen-first-class-misiles.jpg"></p>
-<p>Lo dicho, a X-Men: First class le perdono sus pequeños detalles sin ningún problema. No abundan las películas por las que merezca la pena dejarse unos euros en la entrada y en esta ocasión no me he arrepentido en absoluto. En cartelera no hay ahora mismo una película de acción mejor que esta, <strong>recomendada</strong>.</p>
 
       
     </div>

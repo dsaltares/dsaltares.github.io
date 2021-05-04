@@ -105,6 +105,118 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/">Movimiento relativo a la cámara</a>
+      </h1>
+      <span class="post-date">Dec 26, 2010 &middot; 5 minute read &middot; <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png"></p>
+<p>En la mayoría de videojuegos en tercera persona, <strong>la dirección hacia la que se mueve el personaje depende de la orientación de la cámara</strong>. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido. En este artículo <strong>explico un sencillo algoritmo para conseguirlo</strong>.</p>
+<h3 id="qué-queremos-conseguir">¿Qué queremos conseguir?</h3>
+<p>El siguiente diagrama muestra el <strong>sistema de coordenadas de Ogre</strong>. Imaginad que nuestro personaje se encuentra en el origen <em>p = (0, 0, 0)</em> y que la cámara está en el <em>c = (0, 0, 50)</em> mirando hacia el origen. Nuestras teclas de movimiento son las clásicas: WASD. Al pulsar W el personaje debe moverse en la dirección negativa del eje Z, en cambio, si pulsamos D deberá hacerlo en la dirección positiva del eje X.</p>
+<p>En cambio, si la cámara se situase en <em>c = (50, 0, 0)</em> mirando a <em>(0, 0, 0)</em> las teclas no tendrían el mismo efecto en términos absolutos, aunque se mantiene idéntico si tomamos como punto de referencia a la cámara. Si pulsamos W el personaje se desplazará en la dirección negativa del eje X. En el caso de que pulsemos D, el personaje se dirigirá en la dirección negativa del eje Z.</p>
+<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png"></p>
+<p>Por supuesto, <strong>el personaje deberá girarse</strong> para mirar hacia la dirección del desplazamiento. A continuación, detallamos la manera de implementar este sistema de movimiento.</p>
+<h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
+<p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>
+<p>Partimos de los siguientes objetos:</p>
+<pre><code>Ogre::SceneNode* nodoPersonaje; // Nodo que representa al personaje
+Ogre::Vector3 direccionObjetivo; // Relativa a la cámara
+Ogre::Vector3 direccionActual; // Relativa a la cámara
+Ogre::Vector3 velocidad; // Velocidad del personaje
+bool andando; // true si el personaje se está desplazando
+OIS::Keyboard* teclado; // Teclado para controlar al personaje
+</code></pre><h3 id="algoritmo-desplazamiento-del-personaje">Algoritmo: desplazamiento del personaje</h3>
+<p>En cada frame debemos <strong>tomar la dirección de la cámara</strong> y quedarnos con su componente x y z ya que nos movemos en el plano. Esa será nuestra dirección <em>&ldquo;hacia delante&rdquo;</em>. Es muy sencillo obtener la dirección &ldquo;<em>hacia la derecha&rdquo;</em>, simplemente intercambiamos las componentes x y z cambiándole el signo a la z de <em>&ldquo;hacia delante&rdquo;</em>.</p>
+<p><strong>La dirección objetivo</strong> de este frame se puede calcular consultando las <strong>pulsaciones de las teclas</strong> y <strong>combinando los dos vectores</strong> anteriores utilizando sumas o restas. Nos podremos mover en 8 direcciones distintas. Por ejemplo, si deseamos dirigirnos hacia atrás a la izquierda tendremos: <em>direccionObjetivo = -delante – derecha</em>. Finalmente, <strong>la dirección objetivo debe ser normalizada</strong>, es decir, que el módulo del vector sea igual a 1. Esto es muy importante si no queremos que la velocidad del personaje se vea alterada. Finalmente, aplicamos el desplazamiento teniendo en cuenta la velocidad, la dirección y el tiempo en milisegundos desde el último frame. Esta técnica se conoce como <strong>LERP</strong> (Linear Interpolation).</p>
+<h3 id="algoritmo-orientación-del-personaje">Algoritmo: orientación del personaje</h3>
+<p>Sólo nos queda corregir la orientación del personaje para que mire hacia la dirección en la que se desplaza. Ogre pone a nuestra disposición el método <em>Vector3::getRotationTo</em> que, dado un vector nos devuelve el cuaternio a aplicar de forma que tras la rotación quede alineado con el segundo. <strong>Los cuaternios se utilizan para representar rotaciones</strong> en el espacio y están compuestos por un ángulo y un eje (en este caso el y). Si multiplicamos la rotación necesaria por la que ya posee el nodo del personaje, éste mirará hacia donde deseamos. Es importante el orden de los operadores ya que el producto de cuaternios no es conmutativo.</p>
+<h3 id="algoritmo-código-completo">Algoritmo: código completo</h3>
+<p>He aquí el código completo:</p>
+<pre><code>using namespace Ogre;
+
+void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
+    // Tomamos la dirección de la cámara
+    Vector3 delante = camara-&gt;getDirection(); 
+    delante.y = 0;
+
+    // Vector relativo a la cámara, ortogonal hacia su derecha
+    Vector3 derecha(-delante.z, 0, delante.x);
+
+    // Calculamos la dirección objetivo en función de la pulsación de las
+    // teclas.
+    if (teclado-&gt;isKeyDown(OIS::KC_W) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_D)) {
+        direccionObjetivo = delante + derecha;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_W) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_A)) {
+        direccionObjetivo = delante - derecha;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_S) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_D)) {
+        direccionObjetivo = -delante + derecha;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_S) &amp;&amp; teclado-&gt;isKeyDown(OIS::KC_A)) {
+        direccionObjetivo = -delante - derecha;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_W)) {
+        direccionObjetivo = delante;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_S)) {
+        direccionObjetivo = -delante;
+        andando = true;
+    }
+    else if (teclado-&gt;isKeyDown(OIS::KC_D)) {
+        direccionObjetivo = derecha;
+        andando = true;
+    } 
+    else if (teclado-&gt;isKeyDown(OIS::KC_A)){
+        direccionObjetivo = -derecha;
+        andando = true;
+    }
+    else
+        andando = false;
+
+    // Normalizamos el vector direccion
+    direccionObjetivo.normalise();
+
+    // Si debemos desplazarnos, aplicamos la traslación y calculamos la
+    // rotación a aplicar
+    if (andando) {
+        nodoPersonaje-&gt;translate(velocidad * direccionObjetivo * deltaT,
+                                 Node::TS_WORLD);
+        if (direccionObjetivo != direccionActual) {
+            Quaternion rotacion = direccionActual.getRotationTo(direccionObjetivo,
+                                                                Vector3(0, 1, 0));
+            Quaternion rotacionActual = nodoPersonaje-&gt;getOrientation()
+            nodoPersonaje-&gt;setOrientation(orientacion * rotacionActual);
+            direccionActual = direccionObjetivo;
+        }
+    }
+}
+</code></pre><h3 id="posibles-mejoras">Posibles mejoras</h3>
+<p>Este algoritmo no está pensado para incluirse en un juego completo puesto que debe ser refinado. Sólo tenemos en cuenta la animación externa del personaje (desplazamiento y orientación). El algoritmo se olvida completamente de la animación interna. Si quieres un mejor resultado deberías incluirla (andar, detenerse, etc).</p>
+<p>La rotación es brusca, lo ideal sería aplicarla poco a poco de forma que el personaje se girase suavemente. Para hacerlo deberíamos dividir la rotación en partes y aplicar una en cada frame.</p>
+<h3 id="referencias">Referencias</h3>
+<p>Seguramente quieras consultar fuentes mucho más fiables que yo:</p>
+<ul>
+<li><em>Game Engine Architecture (Jason Gregory)</em>: libro que cubre todos los aspectos a la hora de desarrollar un motor de juego. Contiene una sección de matemáticas muy bien explicada.</li>
+<li><a href="http://en.wikipedia.org/wiki/Lerp_%28computing%29"><em>LERP (Wikipedia)</em></a></li>
+<li><a href="http://www.cprogramming.com/tutorial/3d/quaternions.html"><em>Quaternios (Confuted)</em></a>: si esto de los cuaternios te ha sonado a chino te recomiendo que consultes este artículo en el que se hace una pequeña introducción.</li>
+<li><a href="http://www.ogre3d.org/docs/api/html/index.html"><em>Documentación oficial de Ogre</em></a>: para obtener más detalles sobre las clases y los métodos empleados.</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/the-humble-indie-bundle-2/">The Humble Indie Bundle 2</a>
       </h1>
       <span class="post-date">Dec 18, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/the-humble-indie-bundle-2/#disqus_thread">Comments</a>
@@ -222,37 +334,6 @@
 </ul>
 <h3 id="el-trabajo-duro-continua">El trabajo duro continua</h3>
 <p>Durante la última semana he estado trabajando fuerte y se ha notado en la forja de Red Iris. <strong>Un porcentaje de actividad que rozaba el 100% y me situaba entre los 5 proyectos más activos</strong>. ¡Creo que para contar con un único desarrollador es mucho decir! Espero continuar siendo productivo y generar más contenido pronto.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/">Sistema de gestión de tareas en Red Iris</a>
-      </h1>
-      <span class="post-date">Dec 5, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/gestion-tareas.png" alt="gestion-tareas.png"></p>
-<p><strong>Gestionar de forma eficiente el tiempo que le dedico al proyecto es complicado</strong>. Tras una dura mañana de trabajo, redactar un artículo para IberOgre o programar un módulo de Sion Tower se vuelve una carrera cuesta arriba. Aún así no me ha ido del todo mal hasta el momento, pues la wiki tiene varios artículos publicados y el GDD del videojuego está avanzado. En cualquier caso, espero no ser el único que tenga estos problemas. Al grano, con el objetivo de aumentar mi rendimiento h<strong>e decido utilizar el <a href="https://forja.rediris.es/pm/?group_id=820">sistema de tareas que ofrece la forja de Red Iris</a></strong>.</p>
-<h3 id="por-qué-el-sistema-de-red-iris">¿Por qué el sistema de Red Iris?</h3>
-<p>Sé que no es el mejor software para administrar y controlar las tareas de un proyecto pero tiene sus ventajas. La primera es su <strong>carácter público</strong>. No tendría sentido trabajar en software libre y mantener las tareas en un fichero privado de mi disco duro. De esta manera los interesados pueden ver en qué se trabaja actualmente y cuáles serán las características o artículos que se harán públicos en el futuro próximo.</p>
-<p>Además, cualquier interesado conocerá los puntos flacos y las tareas que se han quedado descolgadas esperando un empujón. Por tanto, creo que es una <strong>buena estrategia para atraer colaboradores</strong> y facilitarles su integración. ¡Aún estoy a la caza de artistas!</p>
-<h3 id="organización-de-las-tareas">Organización de las tareas</h3>
-<p>Para una mayor claridad, he organizado las tareas de la siguiente forma:</p>
-<ul>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1457&amp;group_id=820&amp;func=browse"><strong>Artículos IberOgre</strong></a>: artículos que tengo pensado incluir en la wiki así como los puntos a mejorar en los ya existentes.</li>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1458&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Diseño</strong></a>: tareas de diseño del videojuego.</li>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1661&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Análisis</strong></a>: tareas relacionadas con la fase de análisis del videojuego.</li>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1662&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Sistema de menús</strong></a>: tareas para el sistema de menús. El juego cuenta con muchas pantallas intermedias, por lo que se merece una categoría independiente.</li>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1663&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Juego</strong></a>: tareas relacionadas con la implementación del sistema de juego.</li>
-<li><a href="https://forja.rediris.es/pm/task.php?group_project_id=1664&amp;group_id=820&amp;func=browse"><strong>Sion Tower – Arte</strong></a>: tareas relacionadas con el apartado gráfico y sonoro del juego.</li>
-</ul>
-<p>De cara al Hackathon que se celebrará en la Universidad de Cádiz para los participantes del V CUSL y otros proyectos, crearé las tareas que necesito. ¡Seguro que será una experiencia que merece la pena!</p>
-<p><strong>Espero poder aumentar mi productividad</strong> estableciendo tareas cortas y objetivos realizables a corto plazo. Trabajando poco a poco pero de forma constante conseguiré buenos resultados.</p>
 
       
     </div>

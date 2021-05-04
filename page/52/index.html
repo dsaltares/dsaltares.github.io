@@ -105,6 +105,60 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/postmortem-grannys-bloodbath/">Postmortem: Granny&#39;s Bloodbath</a>
+      </h1>
+      <span class="post-date">Nov 11, 2010 &middot; 7 minute read &middot; <a href="https://saltares.com/games/postmortem-grannys-bloodbath/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/grannysbloodbath-banner.png" alt="grannysbloodbath-banner.png"></p>
+<p><strong><a href="../../proyectos/grannys-bloodbath/">Granny&rsquo;s Bloodbath</a></strong> fue el proyecto que desarrollamos tres compañeros <strong>para la asignatura Diseño de Videojuegos</strong> en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de <strong>plataformas y acción de scroll horizontal</strong> en el que manejamos a una <strong>abuelita que trata de sobrevivir a una invasión zombie</strong>. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss. En este articulo diseccionaré el desarrollo de Granny&rsquo;s Bloodbath a modo de reflexión.</p>
+<p><img src="../../img/wp/grannysbloodbath-1.png" alt="grannysbloodbath-1.png"></p>
+<h3 id="datos-técnicos">Datos técnicos</h3>
+<p>Granny&rsquo;s Bloodbath está <strong>desarrollado en C++ utilizando la librería multimedia <a href="http://www.libsdl.org/">SDL</a></strong>, varias de sus extensiones y el parser <a href="http://www.grinninglizard.com/tinyxml/">TinyXML++</a>. Inicialmente estaban previstas versiones para Windows y GNU/Linux aunque finalmente tratamos de portarlo a Playstation Portable. Por razones de tiempo sólo pudimos publicar una versión beta pero el resultado fue satisfactorio. Además, publiqué  en Wikibooks, un artículo sobre <a href="http://es.wikibooks.org/wiki/Desarrollo_de_videojuegos_para_PSP_con_C%2B%2B_y_SDL">desarrollo de juegos en PSP utilizando SDL</a>. El grupo lo formábamos 3 proyectos de ingenieros y ningún artista (craso error).</p>
+<p><img src="../../img/wp/portpsp.png" alt="portpsp.png"></p>
+<h3 id="sobre-el-postmortem">Sobre el Postmortem</h3>
+<p>Antes de entrar en faena creo que debería comentar <strong>qué es un Postmortem</strong> para que los que no hayan oído hablar del término puedan subirse al tren. Tras el lanzamiento y recepción de un videojuego suele redactarse una reflexión en la que se analiza <strong>tanto lo que salió bien durante el desarrollo como los errores cometidos</strong> por el equipo. Se tocan temas de diseño, gestión de poyectos, programación etc. No es que me esté dando delirios de grandeza, simplemente escribo esto para reflexionar sobre mi experiencia con Granny&rsquo;s Bloodbath y si a alguien le sirve de algo, mucho mejor</p>
+<p><img src="../../img/wp/grannysbloodbath-4.png" alt="grannysbloodbath-4.png"></p>
+<h3 id="lo-que-salió-bien">Lo que salió bien</h3>
+<h4 id="planificación-inicial">Planificación inicial</h4>
+<p>Desde el principio <strong>supimos que debíamos acotar las dimensiones del proyecto</strong> a nuestras circunstancias: 3 meses de desarrollo y muchas más asignaturas a las que atender. Nos decantamos por la biblioteca SDL y teníamos un largo trecho por delante para crear una capa por encima orientada a objetos que nos facilitase la vida. Partiendo de esa base confeccionamos una planificación utilizando <a href="http://live.gnome.org/Planner">Planner</a> y <strong>redactamos un GDD</strong> (Game Design Document) tosco pero muy fácil de comprender.</p>
+<p>Definir exactamente lo que estaba dentro y fuera del proyecto fue un punto fundamental para el <em>&ldquo;éxito&rdquo;</em>. <strong>Fue complicado</strong> conocer de antemano las mecánicas que debíamos implementar y los recursos artísticos necesarios pero más tarde nos ayudó más de lo que pensábamos. <strong>Hubo consenso en el equipo</strong>, durante todo el desarrollo permanecimos en el mismo barco y respetamos el acuerdo inicial. Ahora acudo al documento de diseño y me parece tremendamente pobre pero, sin lugar a dudas, era mejor eso que nada. Lo tenéis [aquí por si os interesa.</p>
+<p><img src="../../img/wp/grannysbloodbath-2.png" alt="grannysbloodbath-2.png"></p>
+<h4 id="disfrutamos-mucho">Disfrutamos mucho</h4>
+<p>No estábamos trabajando en Granny&rsquo;s Bloodbath por trabajo y los requisitos para aprobar la asignatura estaban por debajo del resultado obtenido. Entonces, ¿por qué trabajamos tan duro? El desarrollo de videojuegos nos gustaba a los tres miembros del equipo y e<strong>stábamos deseosos de aprender</strong> (aunque el entusiasmo no estuviera repartido de forma equitativa). <strong>Escogimos una idea muy divertida y creemos que original</strong>, aunque ahora haya juegos, series y películas de zombies hasta debajo de las piedras.</p>
+<p><strong>El hecho de disfrutar de lo que hicimos fue clave</strong> para la consecución del proyecto. Parece una idea obvia pero no lo es tanto. Mantener la moral del equipo alta incluso en los momentos más estresantes del desarrollo no es tarea fácil. ¡No penséis que fui el jefe del equipo! Nuestra jerarquía era completamente horizontal y nos apoyamos los unos a los otros.</p>
+<p><img src="../../img/wp/grannysbloodbath-3.png" alt="grannysbloodbath-3.png"></p>
+<h4 id="motor-modular-y-separado-de-los-datos">Motor modular y separado de los datos</h4>
+<p>SDL es una biblioteca muy sencilla pero compatible con gran cantidad de plataformas sin tocar casi ninguna línea de código. La pega es que es de muy bajo nivel. Por comodidad <strong>tuvimos que crear capas de abstracción superiores</strong> conformando un motor orientado a objetos y, a riesgo de perder modestia, diría que no hicimos un mal trabajo. Entre otros, creamos un módulo de <strong>gestión de recursos</strong> multimedia que funcionaba realmente bien. Esto nos permitía no duplicar recursos y utilizar lo estrictamente necesario en un momento dado. Tuvimos que <strong>adaptar el motor a PSP</strong> y fue muy sencillo, se cambió la implementación de la gestión de entrada sin afectar al resto del código.</p>
+<p>Hicimos un <strong>uso extensivo del formato XML</strong> para separar del código fuente todos los datos: atributos de los personajes, cajas de colisión, animaciones, niveles, escenas narrativas e incluso el guión del juego. Esto nos permite <strong>modificar una gran cantidad de parámetros sin tener que recompilar</strong> todo el proyecto. Ajustar velocidades, modificar posiciones de enemigos o cambiar el orden de los niveles era muy sencillo y cualquiera podría hacerlo sin conocimientos de programación. <strong>No desarrollamos herramientas de diseño</strong> ya que se salía completamente de las dimensiones del proyecto.</p>
+<p><img src="../../img/wp/grannysbloodbath-5.png" alt="grannysbloodbath-5.png"></p>
+<h4 id="testeo">Testeo</h4>
+<p>Como todos sabréis hacer pruebas de forma exhaustiva es primordial para desarrollar software de calidad. En esta ocasión no me refiero a pruebas unitarias o de integración sino de jugabilidad. En un juego <strong>es imprescindible pulir las mecánicas</strong> para obtener la mayor diversión posible porque de eso es lo que se trata. Todo debe ser intuitivo y directo, nada de controles confusos o mecánicas que distraigan al usuario. <strong>Los desarrolladores acabamos demasiado implicados</strong> y no podemos aportar una visión objetiva del conjunto, se necesita gente de fuera.</p>
+<p>A medida que avanzaba el desarrollo <strong>engañamos a familiares y amigos para que echaran una partida</strong> a Granny&rsquo;s Bloodbath. Incluso tuvimos una pequeña presencia en alguna red social. Gracias a eso pudimos recibir feedback, detectar a tiempo fallos de conceptos y conseguir una versión final más depurada.</p>
+<p><img src="../../img/wp/grannysbloodbath-9.png" alt="grannysbloodbath-9.png"></p>
+<h3 id="lo-que-salió-mal">Lo que salió mal</h3>
+<h4 id="problemas-de-diseño">Problemas de diseño</h4>
+<p>A pesar de las pruebas, cometimos ciertos <strong>fallos de diseño</strong> bastante graves. <strong>El scroll horizontal daba muy poco margen</strong> al jugador para anticipar los movimientos de los enemigos. Éstos aparecían en nuestras narices y era muy complicado hacerles frente. Por otra parte, l<strong>os elementos sobre los que podías saltar</strong> (coches, muebles, cajas, etc ) <strong>no contrastaban</strong> en absoluto con el resto del escenario. El jugador podía confundirse y no aprovechar todas las posibilidades.</p>
+<p>Como he mencionado antes, es indispensable que el jugador se haga rápidamente con los controles y la mecánica le resulte natural y cómoda. Desde luego, es uno de los apartados más difíciles de aprender. <strong>Trataremos de aplicarnos el cuento</strong> para la próxima vez.</p>
+<p><img src="../../img/wp/grannysbloodbath-8.png" alt="grannysbloodbath-8.png"></p>
+<h4 id="distintas-expectativas">Distintas expectativas</h4>
+<p>Es cierto que los tres componentes del equipo queríamos aprender y compartíamos la misma visión del juego. No obstante, <strong>no hubo una dedicación (en términos de tiempo) equitativa</strong> en el equipo. Supongo que no fue problema de organización, ni de motivación. Creo que este tipo de problemas vienen de serie cuando trabajas en un proyecto tan pequeño, sin repercusión alguna ni un trabajo de por medio. Cada uno invierte en él lo que quiere o puede.</p>
+<p><img src="../../img/wp/grannysbloodbath-7.png" alt="grannysbloodbath-7.png"></p>
+<h4 id="no-externalizar-el-trabajo-artístico">No externalizar el trabajo artístico</h4>
+<p><strong>No somos artistas</strong> 2D ni muchísimo menos aunque decidimos encargarnos nosotros mismos de los sprites, niveles y GUI (el sonido lo obtuvimos de Jamendo y otros bancos libres). Esto <strong>nos retrasó muchísimo</strong> y nos restó ingentes cantidades de tiempo y fuerzas. El trabajo gráfico fue mucho más grande de lo que pudimos prever. Otros compañeros de la asignatura consiguieron colaboraciones externas para el plano artístico. ¡Mi intención no es criticarlos! <strong>Fueron más inteligentes</strong> y se centraron en lo que mejor sabían hacer.</p>
+<p>Sin duda, <strong>deberíamos haber buscado activamente colaboradores</strong>. Quizás sea una de las lecciones más valiosas aprendidas durante el desarrollo de Granny&rsquo;s Bloodbath (al menos en lo que a mí respecta). No existe un concepto más básico: los desarrolladores no podemos trabajar solos, necesitamos muchos artistas.</p>
+<p><img src="../../img/wp/grannysbloodbath-6.png" alt="grannysbloodbath-6.png"></p>
+<h3 id="conclusiones">Conclusiones</h3>
+<p>¡Oh, veo que has aguantado este artículo tan extenso como un campeón! Uhmm… quizás hayas hecho scroll hasta aquí abajo para ir directamente a las conclusiones. Granny&rsquo;s Bloodbath era el proyecto más grande al que nos habíamos enfrentado hasta el momento y aprendimos muchísimo. Creo que no es descabellado decir que <strong>no salió mal teniendo en cuenta los recursos</strong> (tiempo, equipo y conocimientos) con los que contábamos. <strong>Espero que este artículo me ayude a recordar nuestras equivocaciones</strong> y tenerlas siempre presentes para que no se vuelvan a repetir.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/desarrollo-de-videojuegos-con-un-pong/">Desarrollo de videojuegos con un Pong</a>
       </h1>
       <span class="post-date">Nov 10, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/desarrollo-de-videojuegos-con-un-pong/#disqus_thread">Comments</a>
@@ -212,46 +266,6 @@
 <p>No somos grandes expertos pero <strong>tenemos muchas ganas de crear una comunidad activa</strong> en el desarrollo de videojuegos dentro (y fuera) de nuestra Universidad. Por supuesto, seguiremos aprendiendo porque nos queda un larguísimo camino que recorrer.</p>
 <h3 id="próximamente">Próximamente</h3>
 <p>Próximamente comentaré más novedades como el taller que estamos organizando y la página web actualmente en construcción. Mientras tanto, <strong>podéis seguirnos por Twitter en <a href="http://twitter.com/#!/advuca">@advuca</a></strong>. Hala, con este grandioso <em>&ldquo;cliffhanger&rdquo;</em> termino por hoy y me despido.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/game-design-document/">Game design document</a>
-      </h1>
-      <span class="post-date">Nov 1, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/game-design-document/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/game-design-document.jpg" alt="game-design-document.jpg"></p>
-<p><strong>En Sion Tower no quiero perder demasiado tiempo con papeleo</strong> pero <strong>necesito llevar cierta organización</strong> dada la mediana envergadura del proyecto, conozco el valor de la Ingeniería del Software. Debo definir cuantos detalles pueda y conseguir que las mecánicas estén enfocadas a los objetivos que deseo y no otros, que pocas cosas se coloquen por casualidad. Además, si pretendo contactar con artistas en busca de colaboraciones no puedo ir con las manos vacías, hay que mostrar al menos un documento o prototipo que demuestre lo que se necesita y que el asunto es serio. Ahí es donde entra en juego el <em>Game design document</em>.</p>
-<h3 id="qué-es-el-game-design-document">¿Qué es el Game design document?</h3>
-<p>Como su propio nombre indica, es un documento en el que <strong>se recogen todos los detalles relativos al diseño del juego</strong>. Se especifican elementos como la jugabilidad, historia, personajes, posibilidades, entorno, ambientación etc. Es una especie de <em><a href="http://es.wikipedia.org/wiki/Especificaci%C3%B3n_de_Requisitos_Software">Especificación de Requisitos Software (ERS)</a></em> bastante más laxo y orientado al mundo del videojuego. Comienza dando simples pinceladas sobre el juego que se va a modelar hasta llegar al máximo nivel de detalle, definiendo controles, pantallas de juego y mecánicas concretas. En él <strong>se plasman todas y cada una de las ideas</strong> que aparecerán en el juego.</p>
-<h3 id="para-qué-sirve">¿Para qué sirve?</h3>
-<p>Se han escrito muchos artículos sobre los GDD y la lista de <strong>sus utilidades</strong> podría extenderse mucho por lo que, a continuación, listo algunas de ellas:</p>
-<ul>
-<li><strong>Concretar ideas</strong>: podemos divagar largo y tendido sobre las características con las que contará nuestro juego pero sólo serán eso, divagaciones. En el momento de plasmar ese pequeño caos en un papel aclararemos nuestros pensamientos y los de nuestro equipo. Así mismo, podremos discernir (de forma muy preliminar) las buenas ideas de las malas.</li>
-<li><strong>Estar en el mismo barco</strong>: no es extraño que entre compañeros de equipo comencemos a hacer un <em>brainstorming</em> y cada uno se vaya a su casa con una idea diametralmente opuesta del juego. Durante la elaboración del GDD detectaremos puntos de desacuerdo y podremos zanjarlos. De esta manera nos aseguramos de que todos los compañeros están en el mismo barco y tienen un objetivo común.</li>
-<li><strong>Preparar el desarrollo</strong>: como en cualquier proceso de construcción de software, la fase de ingeniería nos prepara para la implementación. Gracias al GDD nos embarcaremos en etapas posteriores conociendo a la bestia a la que nos enfrentamos.</li>
-<li><strong>Comunicación</strong>: tanto en desarrollos comerciales como el que nos ocupa en este momento la comunicación con el exterior es importante. En el caso de un juego comercial, el equipo querrá conseguir la financiación de una editora (o <em>&ldquo;publisher&rdquo;</em>). En mi caso, pretendo conseguir colaboraciones para el apartado artístico. Con el GDD puedo conseguir que la gente comprenda mi idea y compruebe que es un proyecto serio y no una mera bravuconada.</li>
-</ul>
-<h3 id="por-qué-no-un-documento-ers">¿Por qué no un documento ERS?</h3>
-<p>En el proceso de desarrollo de un sistema más <em>&ldquo;convencional&rdquo;</em> suele utilizarse el clásico documento de Especificación de Requisitos Software. Es posible encorsetarse a un estándar o a otro pero lo cierto es que u**n videojuego es un sistema software <em>&ldquo;especial&rdquo;</em>. Si se mira cualquier guión de ERS nos daremos cuenta de que <strong>es muy complicado definir las mecánicas de un juego en los apartados disponibles</strong>.</p>
-<p>La estructura de un Game design document no tiene porqué ser fija ya que no existe ningún estándar sobre el mismo. De hecho, suelen variar los puntos que tratan en función del género al que pertenezca el juego en cuestión. Este tipo de documento <strong>se acerca mucho más a mis necesidades</strong> para un desarrollo más ágil y tener una pequeña carta de presentación.</p>
-<h3 id="mi-escasa-experiencia">Mi escasa experiencia</h3>
-<p><strong>En proyectos anteriores como <a href="../../proyectos/grannys-bloodbath/">Granny&rsquo;s Bloodbath</a></strong> el equipo elaboró un documento de diseño aunque no teníamos tanta información sobre cómo hacerlo. Aún así, logramos definir el juego con mucho detalle, lo que nos ayudó enormemente en el desarrollo. Estuvimos medianamente organizados desde el principio y no perdimos el tiempo con discusiones, pues ya habíamos llegado a un acuerdo previamente.</p>
-<p>Ahora tengo una pizca más de conocimiento sobre el Game design document y valoro más, si cabe, su utilidad. Como podréis comprobar en la <a href="https://forja.rediris.es/projects/cusl5-iberogre/">forja del proyecto</a> <strong>estoy trabajando en su redacción</strong>. La experiencia está siendo completamente positiva, me está ayudando a <strong>ordenar mis ideas</strong> y a concretarlas en papel. Cuando se está obligado a plasmar conceptos nos vamos dando cuenta de las cosas que podrían funcionar y de las ideas que son completamente absurdas.</p>
-<h3 id="referencias">Referencias</h3>
-<p>Para informarme sobre las generalidades y los detalles de los Game design documents he consultado los siguientes artículos. Los <strong>recomiendo encarecidamente a cualquier interesado</strong> en el tema, pues aportan mucha más riqueza sobre el tema que esta mísera parrafada:</p>
-<ul>
-<li><a href="http://www.gamasutra.com/view/feature/3384/the_anatomy_of_a_design_document_.php">The Anatomy of a Design Document Part 1</a> (Gamasutra, Tim Ryan)</li>
-<li><a href="http://www.gamasutra.com/view/feature/3411/the_anatomy_of_a_design_document_.php">The Anatomy of a Design Document Part 2</a> (Gamasutra, Tim Ryan)</li>
-<li><a href="http://www.google.es/url?url=http://www-personal.engin.umd.umich.edu/~bmaxim/cis488/BaldwinGameDesignDocumentTemplate.doc&amp;rct=j&amp;sa=U&amp;ei=OY3NTOOFK8-dOpHnnJEB&amp;sqi=2&amp;ved=0CBwQFjAA&amp;sig2=neDZkwkd6bcKQ-CMr9VRXA&amp;q=game+design+document+template&amp;usg=AFQjCNHGRaFPUKkLZPbB9xcpTi0ozNrtSw&amp;cad=rja">Game Design Document Template</a> (Mark Baldwin)</li>
-<li><a href="http://www.fourdoorlemon.com/2010/10/16/game-design-docs/">Game Design Docs – pros and cons</a> (Four Door Lemon)</li>
-</ul>
 
       
     </div>
