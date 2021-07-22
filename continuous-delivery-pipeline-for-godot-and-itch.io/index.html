@@ -122,7 +122,7 @@
 <p><a href="../img/cd-godot-itch/godot-export-setup.gif"><img src="../img/cd-godot-itch/godot-export-setup.gif" alt="godot-export-setup"></a></p>
 <h3 id="-export-the-game">📦 Export the game</h3>
 <p>Create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/export_game.yaml"><code>.github/workflows/export_game.yaml</code></a> file in your repo. We will tell our new action to run on every push to master. We don&rsquo;t want new releases on commits that do not actually change the game. Our Godot project lives in the <code>game</code> folder, so we tell the action to only run if there are changes in that folder.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
   <span style="color:#f92672">push</span>:
     <span style="color:#f92672">branches</span>:
       - <span style="color:#ae81ff">master</span>
@@ -131,7 +131,7 @@
 </code></pre></div><p>For the actual export step, we will leverage the <a href="https://github.com/firebelley/godot-export">Godot Export</a> Github action. The <a href="https://github.com/firebelley/godot-export/blob/master/README.md"><code>README.md</code></a> explains its usage very well.</p>
 <p>For the action to work, you need to create a personal access token, which will give the export action write access to create a new release. First, <a href="https://github.com/settings/tokens">create a new token</a>. Then go to <code>https://github.com/&lt;org&gt;/&lt;repo&gt;/settings/secrets/new</code>, paste the key and name the secret <code>EXPORT_GITHUB_TOKEN</code>.</p>
 <p>Here&rsquo;s our config in case it helps you. We setup the base version to be published, the links to download the Godot headless executable as well as the templates and tell it our project is located in the <code>game</code> folder in the repo.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
   <span style="color:#f92672">export_game</span>:
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Export game</span>
@@ -154,12 +154,12 @@
 <p><a href="https://itch.io/docs/butler/">Butler</a> is the itch.io CLI, which lets you upload builds of your game. Our publish Github action will need to talk to itch.io using a valid API key. In order to get one, <a href="https://itch.io/docs/butler/installing.html">install butler</a> and <a href="https://itch.io/docs/butler/login.html#running-butler-from-ci-builds-travis-ci-gitlab-ci-etc">generate a key</a> via <code>butler login</code>. Refer to the docs for the details.</p>
 <p>Then, copy your Butler API key and go to <code>https://github.com/org/repo/settings/secrets</code> and create a <code>BUTLER_CREDENTIALS</code> entry with the contents of the key.</p>
 <p>Now create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/publish_game.yaml"><code>.github/workflows/publish_game.yaml</code></a> file in your repo. This action will run every time a new release is created or edited.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
   <span style="color:#f92672">release</span>:
     <span style="color:#f92672">types</span>: [<span style="color:#ae81ff">created, edited]</span>
 </code></pre></div><p>Our workflow needs to contain a job per platform we want to publish. Each job will leverage the <a href="https://github.com/dsaltares/fetch-gh-release-asset">Fetch GH Release Asset</a> and <a href="https://github.com/josephbmanley/butler-publish-itchio-action">Butler Push</a> actions. We first download the latest release artifact for the platform we want to export and then we call the butler action to push the build to itch.io. When pushing multiple times to the <code>windows</code> <a href="https://itch.io/docs/butler/pushing.html#channel-names">channel</a>, each will be considered a new version of the same &ldquo;product.</p>
 <p>Here you can use the <code>secrets.GITHUB_TOKEN</code>, which is automatically populated.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
   <span style="color:#f92672">release_windows</span>:
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">steps</span>:

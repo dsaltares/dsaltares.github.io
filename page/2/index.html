@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.85.0" />
+	<meta name="generator" content="Hugo 0.86.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -129,7 +129,7 @@
 <p><a href="../../img/cd-godot-itch/godot-export-setup.gif"><img src="../../img/cd-godot-itch/godot-export-setup.gif" alt="godot-export-setup"></a></p>
 <h3 id="-export-the-game">📦 Export the game</h3>
 <p>Create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/export_game.yaml"><code>.github/workflows/export_game.yaml</code></a> file in your repo. We will tell our new action to run on every push to master. We don&rsquo;t want new releases on commits that do not actually change the game. Our Godot project lives in the <code>game</code> folder, so we tell the action to only run if there are changes in that folder.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
   <span style="color:#f92672">push</span>:
     <span style="color:#f92672">branches</span>:
       - <span style="color:#ae81ff">master</span>
@@ -138,7 +138,7 @@
 </code></pre></div><p>For the actual export step, we will leverage the <a href="https://github.com/firebelley/godot-export">Godot Export</a> Github action. The <a href="https://github.com/firebelley/godot-export/blob/master/README.md"><code>README.md</code></a> explains its usage very well.</p>
 <p>For the action to work, you need to create a personal access token, which will give the export action write access to create a new release. First, <a href="https://github.com/settings/tokens">create a new token</a>. Then go to <code>https://github.com/&lt;org&gt;/&lt;repo&gt;/settings/secrets/new</code>, paste the key and name the secret <code>EXPORT_GITHUB_TOKEN</code>.</p>
 <p>Here&rsquo;s our config in case it helps you. We setup the base version to be published, the links to download the Godot headless executable as well as the templates and tell it our project is located in the <code>game</code> folder in the repo.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
   <span style="color:#f92672">export_game</span>:
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Export game</span>
@@ -161,12 +161,12 @@
 <p><a href="https://itch.io/docs/butler/">Butler</a> is the itch.io CLI, which lets you upload builds of your game. Our publish Github action will need to talk to itch.io using a valid API key. In order to get one, <a href="https://itch.io/docs/butler/installing.html">install butler</a> and <a href="https://itch.io/docs/butler/login.html#running-butler-from-ci-builds-travis-ci-gitlab-ci-etc">generate a key</a> via <code>butler login</code>. Refer to the docs for the details.</p>
 <p>Then, copy your Butler API key and go to <code>https://github.com/org/repo/settings/secrets</code> and create a <code>BUTLER_CREDENTIALS</code> entry with the contents of the key.</p>
 <p>Now create a <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/.github/workflows/publish_game.yaml"><code>.github/workflows/publish_game.yaml</code></a> file in your repo. This action will run every time a new release is created or edited.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">on</span>:
   <span style="color:#f92672">release</span>:
     <span style="color:#f92672">types</span>: [<span style="color:#ae81ff">created, edited]</span>
 </code></pre></div><p>Our workflow needs to contain a job per platform we want to publish. Each job will leverage the <a href="https://github.com/dsaltares/fetch-gh-release-asset">Fetch GH Release Asset</a> and <a href="https://github.com/josephbmanley/butler-publish-itchio-action">Butler Push</a> actions. We first download the latest release artifact for the platform we want to export and then we call the butler action to push the build to itch.io. When pushing multiple times to the <code>windows</code> <a href="https://itch.io/docs/butler/pushing.html#channel-names">channel</a>, each will be considered a new version of the same &ldquo;product.</p>
 <p>Here you can use the <code>secrets.GITHUB_TOKEN</code>, which is automatically populated.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">jobs</span>:
   <span style="color:#f92672">release_windows</span>:
     <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
     <span style="color:#f92672">steps</span>:
@@ -419,7 +419,7 @@
 <p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
 <p><img src="../../img/gh-pages-workflow/secrets.png" alt="secrets"></p>
 <p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
 
 <span style="color:#f92672">on</span>:
   <span style="color:#f92672">push</span>:
@@ -503,7 +503,7 @@ to use on your own projects. Here is how it works.</p>
 This is the same as what is explained in Gut&rsquo;s <a href="https://github.com/bitwes/Gut/wiki/Install">Install</a> and <a href="https://github.com/bitwes/Gut/wiki/Command-Line">Command Line</a> wiki pages.</p>
 <p><img src="../../img/godot-ci/installing_gut.gif" alt="install-gut"></p>
 <p>Create a trivial test in <code>res://test/unit/test_example.gd</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#34;res://addons/gut/test.gd&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#34;res://addons/gut/test.gd&#34;</span>
 
 <span style="color:#66d9ef">func</span> test_assert_true_with_true():
 	assert_true(true, <span style="color:#e6db74">&#34;Should pass, true is true&#34;</span>)
@@ -516,10 +516,10 @@ part of the article, continuous integration. I&rsquo;ll be using
 <a href="https://travis-ci.org/">Travis CI</a> because it&rsquo;s easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
 <p>Travis looks for a <code>.travis.yml</code> file in the root of your repo. This file tells Travis how to build the project and run tests. I recommend you take a quick look at the <a href="https://docs.travis-ci.com/user/tutorial/">docs</a>.</p>
 <p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/.travis.yml"><code>.travis.yml</code></a> file is trivial.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">language</span>: <span style="color:#ae81ff">minimal</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">language</span>: <span style="color:#ae81ff">minimal</span>
 <span style="color:#f92672">script</span>: <span style="color:#ae81ff">./run_tests.sh</span>
 </code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
 GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64
 GODOT_ZIP<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>.zip
 GODOT_URL<span style="color:#f92672">=</span>https://downloads.tuxfamily.org/godotengine/<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
