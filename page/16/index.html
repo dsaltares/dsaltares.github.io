@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -208,7 +208,7 @@
 <p>What happens when the game runs at 50fps?</p>
 </blockquote>
 <p>We need an <code>accumulator</code> where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.</p>
-<pre><code>public class SionGame extends ApplicationListener {
+<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
     private double currentTime;
@@ -228,7 +228,7 @@
 }
 </code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
 <p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities' transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
-<pre><code>public class SionGame extends ApplicationListener {
+<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
     private double currentTime;
@@ -250,7 +250,7 @@
         entityManager.interpolate(accumulator / step);
 }
 </code></pre><p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
-<pre><code>public void interpolate(float alpha) {
+<pre tabindex="0"><code>public void interpolate(float alpha) {
     for (Entity entity : entities) {
         Transform transform = entity.getBody().getTransform();
         Vector2 bodyPosition = transform.getPosition();
@@ -330,7 +330,7 @@
       
       <p>Many Java projects use <a href="http://en.wikipedia.org/wiki/Apache_Ant">Ant</a> to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.</p>
 <p>Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.</p>
-<pre><code>&lt;setproxy proxyhost=&quot;host&quot; proxyport=&quot;port&quot; proxypassword=&quot;password&quot;/&gt;
+<pre tabindex="0"><code>&lt;setproxy proxyhost=&quot;host&quot; proxyport=&quot;port&quot; proxypassword=&quot;password&quot;/&gt;
 </code></pre><p>Users behind a proxy would now be able to download dependencies with Ant. More documentation about the <code>setproxy</code> task is available inside the <a href="https://ant.apache.org/manual/Tasks/setproxy.html">official user manual</a>.</p>
 <p>This comes from me trying to get the Libgdx development environment in my office&rsquo;s desktop. We obviously have a proxy, which put this little bump on the road.</p>
 

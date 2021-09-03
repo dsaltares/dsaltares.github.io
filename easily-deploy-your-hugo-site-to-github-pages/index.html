@@ -117,7 +117,7 @@
 <h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
 <p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
 <p>Generate a public/private key pair.</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
 </code></pre><p>Now, go to the production repo Settings, Deploy keys and paste the contents of <code>publish_key.pub</code> here.</p>
 <p><img src="../img/gh-pages-workflow/deploy-keys.png" alt="deploy_keys"></p>
 <p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
@@ -166,7 +166,7 @@
 <p>The screenshot below shows the Namecheap DNS config panel for my account.</p>
 <p><img src="../img/gh-pages-workflow/dns-config.png" alt="dsaltares.github.io"></p>
 <p>Finally, go to your dev repo and create a <code>static/CNAME</code> file with your domain name. For example, mine contains:</p>
-<pre><code>saltares.com
+<pre tabindex="0"><code>saltares.com
 </code></pre><p>Once that is done and deployed to production, you should see the following in your production repository Settings, inside the Github Pages section. Tick the &ldquo;Enforce HTTPS&rdquo; to redirect all traffic from <code>http://&lt;domain&gt;</code> to <code>https://&lt;domain&gt;</code>.</p>
 <p><img src="../img/gh-pages-workflow/gh-pages-section.png" alt="gh-pages-section"></p>
 <p>Note that this may take up to 24h to work as your new DNS settings propagate, so be patient!</p>

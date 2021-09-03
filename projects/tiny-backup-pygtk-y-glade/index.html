@@ -112,7 +112,7 @@
 <h3 id="tiny-backup-y-su-funcionamiento">Tiny Backup y su funcionamiento</h3>
 <p>Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un <strong>listado de todos los paquetes</strong> que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por <strong>correo electrónico</strong> (por el momento es compatible con Gmail, Hotmail y Yahoo).</p>
 <p>Está diseñado siguiendo las directrices del patrón <strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas"><em>&ldquo;Arquitectura en tres capas&rdquo;</em></a></strong> aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios <strong>comandos básicos</strong> de GNU/Linux:</p>
-<pre><code># Guardar listado de paquetes
+<pre tabindex="0"><code># Guardar listado de paquetes
 dpkg --get-selections | grep -v deinstall &gt; paquetes_backup
 #Guardar listado de repositorios
 cp /etc/apt/sources.list repositorios_backup

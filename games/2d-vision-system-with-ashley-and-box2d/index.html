@@ -114,11 +114,11 @@
 <p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png"> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
-<pre><code>public class ObservableComponent implements Component {
+<pre tabindex="0"><code>public class ObservableComponent implements Component {
     public Vector2 position = new Vector2();
 }
 </code></pre><p>The <code>Observer</code> component has a little more information.</p>
-<pre><code>public class ObserverComponent implements Component {
+<pre tabindex="0"><code>public class ObserverComponent implements Component {
     public Vector2 position = new Vector2();
     public float angle = 0.0f;
     public float distance = 5.0f;
@@ -131,7 +131,7 @@
 </ul>
 <p>###The Vision Entity System</p>
 <p>The <code>VisionSystem</code> is where the magic happens, you can see the full outline below.</p>
-<pre><code>public class VisionSystem extends IteratingSystem implements EntityListener {
+<pre tabindex="0"><code>public class VisionSystem extends IteratingSystem implements EntityListener {
     public VisionSystem(World world) {}
 
     public boolean canSee(Entity observer, Entity observable) {}
@@ -156,17 +156,17 @@
     private void removeFromVision(Entity observer, Entity observable) {}
 }
 </code></pre><p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
-<pre><code>public VisionSystem(World world) {
+<pre tabindex="0"><code>public VisionSystem(World world) {
     super(Family.all(ObserverComponent.class).get());
 
     this.world = world;
 }
 </code></pre><p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
-<pre><code>private ObjectMap&lt;Entity, ObjectSet&lt;Entity&gt;&gt; vision = new ObjectMap();
+<pre tabindex="0"><code>private ObjectMap&lt;Entity, ObjectSet&lt;Entity&gt;&gt; vision = new ObjectMap();
 </code></pre><p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
-<pre><code>private ImmutableArray&lt;Entity&gt; observables;
+<pre tabindex="0"><code>private ImmutableArray&lt;Entity&gt; observables;
 </code></pre><p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
-<pre><code>@Override
+<pre tabindex="0"><code>@Override
 public void addedToEngine(Engine engine) {
     super.addedToEngine(engine);
     observables = engine.getEntitiesFor(
@@ -191,7 +191,7 @@ public void entityRemoved(Entity entity) {
     vision.remove(entity);
 }
 </code></pre><p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
-<pre><code>public boolean canSee(Entity observer, Entity observable) {
+<pre tabindex="0"><code>public boolean canSee(Entity observer, Entity observable) {
     ObjectSet&lt;Entity&gt; observables = vision.get(observer);
 
     if (observables == null) {
@@ -201,18 +201,18 @@ public void entityRemoved(Entity entity) {
     return observables.contains(observable);
 }
 </code></pre><p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
-<pre><code>@Override
+<pre tabindex="0"><code>@Override
 protected void processEntity(Entity observer, float deltaTime) {
     updateVision(observer);
 }
 </code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
-<pre><code>private void updateVision(Entity observer) {
+<pre tabindex="0"><code>private void updateVision(Entity observer) {
     for (Entity observable : observables) {
         updateVision(observer, observable);
     }
 }
 </code></pre><p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
-<pre><code>private void addToVision(Entity observer, Entity observable) {
+<pre tabindex="0"><code>private void addToVision(Entity observer, Entity observable) {
     vision.get(observer).add(observable)
 }
 
@@ -220,7 +220,7 @@ private void removeFromVision(Entity observer, Entity observable) {
     vision.get(observer).remove(observable)
 }
 </code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
-<pre><code>private void updateVision(Entity observer, Entity observable) {
+<pre tabindex="0"><code>private void updateVision(Entity observer, Entity observable) {
     if (!inFov(observer, observable)) {
         removeFromVision(observer, observable);
         return;
@@ -229,10 +229,10 @@ private void removeFromVision(Entity observer, Entity observable) {
     raycast(observer, observable);
 }
 </code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
-<pre><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
+<pre tabindex="0"><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
 private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
 </code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
-<pre><code>private boolean inFov(Entity entity, Entity target) {
+<pre tabindex="0"><code>private boolean inFov(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
 
@@ -258,9 +258,9 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
     return true;
 }
 </code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
-<pre><code>private VisionCallback callback = new VisionCallback();
+<pre tabindex="0"><code>private VisionCallback callback = new VisionCallback();
 </code></pre><p>Its outline is pretty simple.</p>
-<pre><code>private class VisionCallback implements RayCastCallback {
+<pre tabindex="0"><code>private class VisionCallback implements RayCastCallback {
     private Entity observer;
     private Entity observable;
     private float minFraction;
@@ -273,14 +273,14 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
     public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {}
 }
 </code></pre><p>Before the raycast, we need to prepare the callback.</p>
-<pre><code>public void prepare(Entity observer, Entity observable) {
+<pre tabindex="0"><code>public void prepare(Entity observer, Entity observable) {
     this.observer = observer;
     this.observable = observable;
     this.minFraction = Float.MAX_VALUE;
     this.observableFraction = Float.MAX_VALUE;
 }
 </code></pre><p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
-<pre><code>@Override
+<pre tabindex="0"><code>@Override
 public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
     Object data = fixture.getBody().getUserData();
 
@@ -297,11 +297,11 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
     return 0;
 }
 </code></pre><p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
-<pre><code>public boolean canSee() {
+<pre tabindex="0"><code>public boolean canSee() {
     return observableFraction &lt; 1.0f &amp;&amp; observableFraction &lt;= minFraction;
 }
 </code></pre><p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
-<pre><code>private void raycast(Entity entity, Entity target) {
+<pre tabindex="0"><code>private void raycast(Entity entity, Entity target) {
     ObserverComponent observer = observerMapper.get(entity);
     ObservableComponent observable = observableMapper.get(target);
 

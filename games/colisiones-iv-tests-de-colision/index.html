@@ -124,7 +124,7 @@
 <p>El test entre dos esferas es el más sencillo y rápido de todos. Basta con comprobar si la distancia entre los centros de ambas esferas es menor que la suma de sus radios, en tal caso existiría colisión.</p>
 <p><img src="../../img/wp/test-sphere-sphere.png" alt="test-sphere-sphere.png"></p>
 <p>Para calcular la distancia entre dos puntos es necesario una raíz cuadrada pero éstas son extremadamente caras. Podemos comparar la distancia al cuadrado con el cuadrado de la suma de los radios, una expresión equivalente y de mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son esferas)
     Sphere* sphereA = static_cast&lt;sphere *&gt;(shapeA);
     Sphere* sphereB = static_cast&lt;/sphere&gt;&lt;sphere *&gt;(shapeB);
@@ -138,7 +138,7 @@
 </code></pre><h3 id="test-aabb-aabb">Test AABB-AABB</h3>
 <p>En la intersección entre cajas alineadas con los ejes emplearemos el teorema del plano de separación. Proyectamos las cajas sobre cada uno de los tres ejes y si algunas de las proyecciones no se solapan podremos asegurar que no existe colisión entre las AABB. El siguiente diagrama ilustra el test.</p>
 <p><img src="../../img/wp/test-aabb-aabb.png" alt="test-aabb-aabb.png"></p>
-<pre><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son AABBs)
     AxisAlignedBox* aabb1= static_cast&lt;axisalignedbox *&gt;(shapeA);
     AxisAlignedBox* aabb2 = static_cast&lt;/axisalignedbox&gt;&lt;axisalignedbox *&gt;(shapeB);
@@ -154,7 +154,7 @@
 </code></pre><h3 id="test-plane-plane">Test Plane-Plane</h3>
 <p>Los planos son infinitos por lo que la única situación en la que dos planos no colisionan es cuando estos son paralelos y no están a la misma distancia del origen. La orientación de los planos está definida por su vector normal. Si las dos normales son paralelas y la distancia con respecto al origen no coincide podremos asegurar que los planos no colisionan. Dos vectores son paralelos si su producto escalar es igual a 1.</p>
 <p><img src="../../img/wp/test-plane-plane.png" alt="test-plane-plane.png"></p>
-<pre><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son Planes)
     Plane* planeA = static_cast&lt;plane *&gt;(shapeA);
     Plane* planeB = static_cast&lt;/plane&gt;&lt;plane *&gt;(shapeB);
@@ -168,7 +168,7 @@
 <p>En este test se pueden producir dos casos en los que existe intersección entre los objetos. El primero se da cuando el centro de la esfera está contenida en el AABB mientras que el segundo tiene lugar cuando el centro está fuera de la caja pero existe intersección (el diagrama ilustra el segundo caso). En primer lugar comprobamos si el centro de la esfera está dentro de la caja. Posteriormente recorremos los vértices del AABB y elegimos el más cercano al centro de la esfera. Si la distancia entre ambos es menor que el radio de la esfera las dos formas colisionan.</p>
 <p><img src="../../img/wp/test-sphere-aabb.png" alt="test-sphere-aabb.png"></p>
 <p>De nuevo, utilizamos el cuadrado de la distancia para conseguir una mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Sphere y B es AABB)
     Sphere* sphere;
     AxisAlignedBox* aabb;
@@ -215,7 +215,7 @@
 <p>Comprobar si una esfera colisiona con un plano es tan sencillo como obtener la distancia entre ambos y compararla con el radio de la esfera como hemos hecho en otras ocasiones. La distancia entre el centro y el punto que conocemos del plano no es la distancia real entre ambas formas. Para calcular la distancia real tendremos que proyectar el vector p-c (punto del plano – centro de la esfera) sobre la normal del plano.</p>
 <p><img src="../../img/wp/test-sphere-plane.png" alt="test-sphere-plane.png"></p>
 <p>Sólo nos es necesario el cuadrado de la distancia y lo comprobaremos con el cuadrado del radio (para evitarnos utilizar una raíz cuadrada).</p>
-<pre><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es Sphere)
     Plane* plane;
     Sphere* sphere;
@@ -240,7 +240,7 @@
 </code></pre><h3 id="test-aabb-plane">Test AABB-Plane</h3>
 <p>En el test entre AABB y plano calculamos el vértice más lejano y el más cercano al plano (pmin y pmax respectivamente). Si cada punto está a un lado distinto del plano podemos asegurar que ambas formas colisionan.</p>
 <p><img src="../../img/wp/test-plane-aabb.png" alt="test-plane-aabb.png"></p>
-<pre><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es AABB)
     Plane* plane;
     AxisAlignedBox* aabb;

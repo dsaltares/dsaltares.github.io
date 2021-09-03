@@ -123,7 +123,7 @@
 <h3 id="gwt-build-process-101">GWT build process 101</h3>
 <p>Bare in mind this is a guide so you can fix your library problem and move on, those who seek a proper explanation, I&quot;d recommend <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideOrganizingProjects">the official documentation</a>.</p>
 <p>Let&rsquo;s get going! You will find a very special file named <em>GwtDefinition.gwt.xml</em> under the main package folder in the HTML5 project. It&quot;ll look something like this.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;module&gt;
     &lt;entry-point class=&quot;com.siondream.mygame.client.GwtLauncher&quot;/&gt;
     &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
@@ -132,7 +132,7 @@
     &lt;inherits name=&quot;com.badlogic.gdx.backends.gdx_backends_gwt&quot;/&gt;
 &lt;/module&gt;
 </code></pre><p>Its main purpose is to tell the GTW compiler what modules the application depends on, and therefore, inherits from. As you can see, it&rsquo;s also used to specify the entry point class and add configuration params such as the assets folder location. I&rsquo;ve obviously made <em>MyGame</em> module up, this would correspond to your core project. Look under the src folder of your core project and you should find a <em>MyGame.gwt.xml</em> file.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
 &lt;module&gt;
 	&lt;source path=&quot;com/siondream/mygame&quot; /&gt;
@@ -149,13 +149,13 @@
 <p>Crap!</p>
 </blockquote>
 <p>Well, it&rsquo;s actually not too bad. In my particular case, I went to the treelayout Google Code repository, checked out the source using Tortoise SVN and imported the project, easy peasy. The next step would be to add a module definition file under the src folder in the treelayout project, let&rsquo;s name it <em>TreeLayout.gwt.xml</em>.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
 &lt;module&gt;
 	&lt;source path=&quot;org/abego/treelayout&quot; /&gt;
 &lt;/module&gt;
 </code></pre><p>Hang on, we&quot;re almost there! Finally, add the inheritance entry to the <em>GwtDefinitions.xml</em> file.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;module&gt;
     &lt;entry-point class=&quot;com.siondream.tranches.client.GwtLauncher&quot;/&gt;
     &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
@@ -168,10 +168,10 @@
 <p><strong>Note</strong>: after someone saying, <em>&ldquo;it just should just work&rdquo;</em>, I&rsquo;ve come to realise that such situation is hardly ever the case.</p>
 <h3 id="errors-expect-them">Errors, expect them</h3>
 <p>Before carrying on with this section, I would always recommend to add these options to the GWT compiler.</p>
-<pre><code>-optimize 9 -strict
+<pre tabindex="0"><code>-optimize 9 -strict
 </code></pre><p>Optimize speaks for itself but strict means that the build process will bail out as soon as it encounters an error, rather than trying to keep going.</p>
 <p>As long as you&rsquo;ve followed the process, your library should be detected by the GWT compiler. However, like I&rsquo;ve said before, <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideCodingBasicsCompatibility">GWT doesn&rsquo;t support every Java feature</a>. Every time you use an unsupported class or method you&quot;ll get an error that looks like the following one.</p>
-<pre><code>[ERROR] Line 84: No source code is available for type java.util.Formatter; did you forget to inherit a required module?
+<pre tabindex="0"><code>[ERROR] Line 84: No source code is available for type java.util.Formatter; did you forget to inherit a required module?
 </code></pre><blockquote>
 <p>This is going to hurt, isn&rsquo;t it?</p>
 </blockquote>

@@ -126,7 +126,7 @@
 <p><strong>Las barras de vida son <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html">Billboards</a></strong> de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con <strong>una sencilla textura que cuenta con las dos partes</strong> de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.</p>
 <p><img src="../../img/wp/barra-de-vida.png" alt="barra-de-vida.png"></p>
 <p>Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase <em>Enemy</em> tenemos los siguientes atributos.</p>
-<pre><code>class Enemy: public Actor {
+<pre tabindex="0"><code>class Enemy: public Actor {
     ...
 
     private:
@@ -135,7 +135,7 @@
         Ogre::SceneNode* _lifeNode;
 };
 </code></pre><p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
-<pre><code>void Enemy::createLifeBar() {
+<pre tabindex="0"><code>void Enemy::createLifeBar() {
     _bbSetLife = _sceneManager-&gt;createBillboardSet();
     _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
     _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
@@ -147,7 +147,7 @@
     _lifeNode-&gt;attachObject(_bbSetLife);
 }
 </code></pre><p>El material <em>&ldquo;lifeBar&rdquo;</em> no podía ser más sencillo:</p>
-<pre><code>material lifeBar
+<pre tabindex="0"><code>material lifeBar
 {
 	technique
 	{
@@ -163,7 +163,7 @@
 	}
 }
 </code></pre><p>En cada iteración o cuando el enemigo sea herido hemos de llamar a <em>updateLifeBar</em>.</p>
-<pre><code>void Enemy::updateLifeBar() {
+<pre tabindex="0"><code>void Enemy::updateLifeBar() {
     Ogre::Real ratio = _energy / _maxEnergy;
 
     if (ratio &lt; 0.0f)

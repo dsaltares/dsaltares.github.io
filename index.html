@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -198,7 +198,7 @@
         <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
 
 </code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
-<pre><code>date: 3059-05-01T00:00:00+00:00
+<pre tabindex="0"><code>date: 3059-05-01T00:00:00+00:00
 </code></pre><p>That could be a post for future generations 😅.</p>
 <p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>
 <p>📆 This post itself was scheduled!</p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -242,7 +242,7 @@
 </ul>
 <p>The most straightforward approach is to use AssetManager to load all your assets upfront and make the manager globally available. That way you&quot;d be able to easily retrieve resources.</p>
 <p><img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg"></p>
-<pre><code>public class MyGame extends Game {
+<pre tabindex="0"><code>public class MyGame extends Game {
 
 	private AssetManager manager;
 
@@ -296,7 +296,7 @@
 <p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it&rsquo;s going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
 <p><img src="../../img/wp/load-sequence.png" alt="load-sequence.png"></p>
 <p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
-<pre><code>&lt;assets &gt;
+<pre tabindex="0"><code>&lt;assets &gt;
 	&lt;group name=&quot;base&quot;&gt;
 		&lt;asset type=&quot;com.siondream.core.animation.AnimationData&quot; path=&quot;data/caveman.xml&quot; /&gt;
 		&lt;asset type=&quot;com.siondream.core.physics.PhysicsData&quot; path=&quot;data/caveman_physics.xml&quot; /&gt;
@@ -306,7 +306,7 @@
 </code></pre><p>Qualified types and reflection are used to make the <em>AssetManager#load</em> calls.</p>
 <h3 id="grouped-asset-manager-code">Grouped Asset Manager code</h3>
 <p>Here&rsquo;s the full implementation for my Asset class. It&rsquo;s kind of a small layer on top of the libgdx AssetManager. Feel free to use it, bin it or change it. However, be advised that I don&rsquo;t plan to offer further continued for it, this is simply to illustrate my approach.</p>
-<pre><code>public class Assets implements Disposable, AssetErrorListener {
+<pre tabindex="0"><code>public class Assets implements Disposable, AssetErrorListener {
 
 	private static final String TAG = &quot;Assets&quot;;
 	private Logger logger;

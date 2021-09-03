@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -166,13 +166,13 @@
 <h3 id="proceso-de-instalación">Proceso de instalación</h3>
 <p>**He actualizado el artículo <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">&ldquo;Instalación de Ogre3D 1.7 en GNU/Linux&rdquo;</a> añadiendo una sección dedicada a Ubuntu con este nuevo método. A continuación hago un pequeño resumen para que veas lo sencillo que es:</p>
 <p>En primer lugar debes añadir el repositorio PPA del <em>&ldquo;team-ogre&rdquo;</em> a tu sistema:</p>
-<pre><code>sudo add-apt-repository ppa:ogre-team/ogre
+<pre tabindex="0"><code>sudo add-apt-repository ppa:ogre-team/ogre
 </code></pre><p>Para actualizar tu lista de paquetes disponibles recurre al clásico:</p>
-<pre><code>sudo apt-get update
+<pre tabindex="0"><code>sudo apt-get update
 </code></pre><p>Genial, sólo te queda:</p>
-<pre><code>sudo apt-get install libogre-dev
+<pre tabindex="0"><code>sudo apt-get install libogre-dev
 </code></pre><p>En IberOgre utilizamos OIS (Object Oriented Input System) para gestionar la entrada del usuario. Puedes descargar la última versión desde <a href="http://sourceforge.net/projects/wgois/">su web en Sourceforge</a> aunque tendrás que compilarla con las <a href="http://en.wikipedia.org/wiki/GNU_build_system">autotools</a>. En realidad, nos basta con la versión de los repositorios:</p>
-<pre><code>sudo apt-get install libois-dev
+<pre tabindex="0"><code>sudo apt-get install libois-dev
 </code></pre><h3 id="fácil-verdad">¿Fácil, verdad?</h3>
 <p>He probado este nuevo proceso en un netbook con Ubuntu 10.04 y va de maravilla. Los makefiles utilizados en la wiki funcionan a la perfección, por lo que si sigues los artículos no tendrás ningún problema.</p>
 <p><strong>Ahora todos viviremos más tranquilos</strong>.</p>

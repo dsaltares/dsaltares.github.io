@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -128,15 +128,15 @@
 <li><strong>Ogre 1.7</strong>: creo que era bastante evidente. Si no lo has hecho, puedes acudir a IberOgre por su flamante <a href="http://osl2.uca.es/iberogre/index.php/Instalaci%C3%B3n_de_Ogre3D_1.7_en_GNU/Linux">artículo</a> al respecto. Es importante que instales los ejemplos.</li>
 <li><strong>CMake</strong>: para configurar y compilar Ogitor necesitamos la herramienta <a href="http://www.cmake.org/">CMake</a>. A tal efecto, instala los paquetes cmake y el frontend cmake-gui:</li>
 </ul>
-<pre><code>sudo apt-get install cmake cmake-gui
+<pre tabindex="0"><code>sudo apt-get install cmake cmake-gui
 </code></pre><ul>
 <li><strong>QT4</strong>: para compilar Ogitor es imprescindible la versión de desarrollo de la cuarta edición de <a href="http://es.wikipedia.org/wiki/Qt_%28biblioteca%29">QT.</a> El paquete necesario se llama libqt4-dev:</li>
 </ul>
-<pre><code>sudo apt-get install libqt4-dev
+<pre tabindex="0"><code>sudo apt-get install libqt4-dev
 </code></pre><ul>
 <li><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</li>
 </ul>
-<pre><code>sudo apt-get install libboost-regex-dev
+<pre tabindex="0"><code>sudo apt-get install libboost-regex-dev
 </code></pre><p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png"></p>
 <h4 id="compilación-e-instalación">Compilación e Instalación</h4>
 <p>Le toca el turno al editor que llevamos queriendo instalar hace un buen rato:</p>
@@ -149,10 +149,10 @@
 <li>Hacemos click sobre <em>&ldquo;Generate&rdquo;</em>.</li>
 <li>Finalmente, los clásicos:</li>
 </ul>
-<pre><code>make
+<pre tabindex="0"><code>make
 sudo make install
 </code></pre><p><strong>El ejecutable</strong> de Ogitor se habrá creado en:</p>
-<pre><code>[compilación-ogitor]/RunPath/bin/qtOgitor
+<pre tabindex="0"><code>[compilación-ogitor]/RunPath/bin/qtOgitor
 </code></pre><h3 id="nos-vemos-en-el-siguiente-episodio">Nos vemos en el siguiente episodio</h3>
 <p>En este artículo hemos hablado sobre el ampliamente aceptado formato DotScene y hemos desgranado la instalación de Ogitor. Es probable que haya un próximo episodio en el que relate mi experiencia con Ogitor y documente la creación de niveles para Sion Tower. Ya saben, <strong>ante cualquier problema que encuentren pueden dejar un comentario</strong>.</p>
 
@@ -240,7 +240,7 @@ sudo make install
 <li>SongManager</li>
 </ul>
 <p>La forma de trabajar con los nuevos recursos es semejante al estilo de Ogre. Queda completamente integrado:</p>
-<pre><code>// Al arrancar la aplicación
+<pre tabindex="0"><code>// Al arrancar la aplicación
 SoundFXManager* soundFXManager = new SoundFXManager();
 
 // Durante la carga de algún estado
@@ -257,7 +257,7 @@ delete soundFXManager;
 <p>No todos los sonidos tienen porqué reproducirse con efecto 3D por lo que he modelado este pequeño sistema de forma independiente. <strong>La clase Sound3D</strong> tiene un SoundFXPtr y dos punteros a SceneNode. Uno de los nodos es el emisor y el otro el que escucha. El volumen varía en función de la distancia entre ambos nodos mientras que el ángulo entre ambos elementos produce un efecto estéreo. El siguiente diagrama lo ilustra:</p>
 <p><img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png"></p>
 <p>SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado a tal efecto. Un mismo Sound3D puede estar reproduciéndose en canales distintos al mismo tiempo. La clase Sound3D controla internamente qué sonido tiene asociado cada canal. Se pone a disposición del desarrollador un <strong>método estático para actualizar todos los sonidos 3D</strong> en reproducción. Preferiblemente una vez por cada iteración del game loop deberíamos hacer:</p>
-<pre><code>// Actualizar todos los sonidos 3D en reproducción
+<pre tabindex="0"><code>// Actualizar todos los sonidos 3D en reproducción
 Sound3D::update3DSound();
 </code></pre><h3 id="a-vista-de-pájaro">A vista de pájaro</h3>
 <p>El siguiente <strong>diagrama de clases</strong> simplificado ilustra a grandes rasgos los elementos de este sistema de audio y sus relaciones.</p>

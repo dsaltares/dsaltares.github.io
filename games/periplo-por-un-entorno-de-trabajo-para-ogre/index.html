@@ -122,7 +122,7 @@
 <p>Code::Blocks utiliza el compilador GCC en Linux y, si lo deseas, MinGW en Windows. Era muy posible que internamente utilizase make (o algo parecido) para compilar sus proyectos. Si ese era el caso, <strong>seguramente existiera un exportador</strong> que tomara un proyecto de Code::Blocks y lo convirtiera en un makefile.</p>
 <h3 id="makefile-a-partir-de-un-proyecto-de-codeblocks">Makefile a partir de un proyecto de Code::Blocks</h3>
 <p>Al encontrar, <strong>cbp2mak</strong>, el deseado exportador vislumbré un rayo de esperanza. Quizás, finalmente pudiera utilizar un makefile para cada plataforma que se ajustara exactamente a mis necesidades. El proceso es muy sencillo, <a href="http://bblean.berlios.de/cbp2mak-0.2.zip">descargamos cbp2mak</a> y ejecutamos las siguientes instrucciones:</p>
-<pre><code>unzip cbp2mak-0.2.zip
+<pre tabindex="0"><code>unzip cbp2mak-0.2.zip
 cd cbp2mak.zip
 make
 
@@ -131,7 +131,7 @@ make
 <p><img src="../../img/wp/gnu.png" alt="gnu.png"></p>
 <h3 id="el-resultado">El resultado</h3>
 <p>En contra de todo pronóstico, <strong>el resultado ha sido excelente</strong>. A continuación, coloco un ejemplo de cómo sería una jerarquía de directorios para un proyecto básico en Ogre:</p>
-<pre><code>|- proyecto
+<pre tabindex="0"><code>|- proyecto
 |
 |- src
 |   |- ficheros.cpp
@@ -144,7 +144,7 @@ make
 |- makefile-linux
 |- makefile-windows
 </code></pre><p>Para <strong>compilar</strong> sólo tendríamos que hacer (según el sistema operativo):</p>
-<pre><code>make -f makefile-linux depend
+<pre tabindex="0"><code>make -f makefile-linux depend
 make -f makefile-linux
 
 mingw32-make -f makefile-windows depend

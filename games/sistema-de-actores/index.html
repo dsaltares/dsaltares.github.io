@@ -119,7 +119,7 @@
 </ul>
 <p><img src="../../img/wp/actors-clases.png" alt="actors-clases.png"></p>
 <p>En <em>GameObject</em> contamos con el enumerado <em>Type</em> para distinguir entre tipos de objetos de juego. Se cuenta con un método <em>getType</em> virtual puro que cada clase deberá implementar devolviendo el valor del enumerado correspondiente. De esta forma podemos <strong>conocer el tipo de un objeto</strong> de juego a partir de un <em>GameObject</em>* y hacer casting sin peligro en caso de ser absolutamente necesario. También es posible utilizar el tipo de objeto para hacer un filtrado en la detección de colisiones.</p>
-<pre><code>class GameObject {
+<pre tabindex="0"><code>class GameObject {
     public:
 
         enum Type {

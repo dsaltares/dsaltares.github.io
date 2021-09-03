@@ -119,7 +119,7 @@
 <p><img src="../../img/wp/shapes.png" alt="shapes.png"></p>
 <h3 id="collision-dispatching">Collision Dispatching</h3>
 <p>La clase <em>Shape</em> dispone de un método estático <em>getCollision</em> que recibe dos punteros a <em>Shape</em> y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
 
     ...
@@ -140,7 +140,7 @@ private:
 };
 </code></pre><p>El <strong>Collision Dispatching</strong> es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques <em>if</em> con <em>dynamic_cast</em> capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de <a href="http://en.wikibooks.org/wiki/C++_Programming/RTTI">RTTI</a>.</p>
 <p>Es posible conocer la clase a la que pertenece una forma génerica incorporando un método virtual puro en <em>Shape</em>. Cada especialización está obligado a implementarlo, devolviendo un valor de un enumerado indicando su tipo.</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
 
     ...
@@ -163,7 +163,7 @@ public:
 };
 </code></pre><p>Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un <em>static_cast</em> sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. <em>static_cast</em> es mucho más rápido que <em>dynamic_cast</em> al no hacer comprobaciones.</p>
 <p>No vamos a manejar punteros a función sino que <strong>haremos uso de las mágicas <em><a href="http://www.boost.org/doc/libs/1_45_0/doc/html/function.html">boost::function</a></em> y <a href="http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html"><em>boost:bind</em></a></strong>. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces <a href="http://www.boost.org/">Boost</a> deberías echarle un ojo ya que muchos de sus componentes <strong>entrarán en el próximo estándar de C++</strong>. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales <a href="http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost">aquí</a>. Para la tabla utilizaremos <em><a href="http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html">boost::unordered_map</a></em>, similar a <a href="http://www.cppreference.com/wiki/container/map/start"><em>std::map</em></a> pero mucho más eficiente.</p>
-<pre><code>class Sphere:
+<pre tabindex="0"><code>class Sphere:
 public:
     ...
 
@@ -181,7 +181,7 @@ private:
     static CollisionDispatchTable  _collisionDispatcher;
 };
 </code></pre><p>El método <em>configureCollisionDispatching</em> se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase <em>CollisionManager</em> ya lo hace por tí.</p>
-<pre><code>void Shape::configureCollisionDispatching() {
+<pre tabindex="0"><code>void Shape::configureCollisionDispatching() {
     _collisionDispatcher[SPHERE][SPHERE] = boost::bind(&amp;Shape::getCollisionSphereSphere, _1, _2);
     _collisionDispatcher[AABB][AABB] = boost::bind(&amp;Shape::getCollisionAABBAABB, _1, _2);
     _collisionDispatcher[PLANE][PLANE] = boost::bind(&amp;Shape::getCollisionPlanePlane, _1, _2);
@@ -208,7 +208,7 @@ private:
 <p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png"></p>
 <h3 id="extendiendo-la-clase-shape">Extendiendo la clase Shape</h3>
 <p>Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase <em>Shape</em>:</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
   virtual int getType() const = 0;
   virtual void applyTransform(

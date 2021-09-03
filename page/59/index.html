@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -119,7 +119,7 @@
 <h3 id="tiny-backup-y-su-funcionamiento">Tiny Backup y su funcionamiento</h3>
 <p>Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un <strong>listado de todos los paquetes</strong> que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por <strong>correo electrónico</strong> (por el momento es compatible con Gmail, Hotmail y Yahoo).</p>
 <p>Está diseñado siguiendo las directrices del patrón <strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas"><em>&ldquo;Arquitectura en tres capas&rdquo;</em></a></strong> aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios <strong>comandos básicos</strong> de GNU/Linux:</p>
-<pre><code># Guardar listado de paquetes
+<pre tabindex="0"><code># Guardar listado de paquetes
 dpkg --get-selections | grep -v deinstall &gt; paquetes_backup
 #Guardar listado de repositorios
 cp /etc/apt/sources.list repositorios_backup
@@ -227,7 +227,7 @@ dpkg --set-selections &lt; paquetes_backup
 <p>Code::Blocks utiliza el compilador GCC en Linux y, si lo deseas, MinGW en Windows. Era muy posible que internamente utilizase make (o algo parecido) para compilar sus proyectos. Si ese era el caso, <strong>seguramente existiera un exportador</strong> que tomara un proyecto de Code::Blocks y lo convirtiera en un makefile.</p>
 <h3 id="makefile-a-partir-de-un-proyecto-de-codeblocks">Makefile a partir de un proyecto de Code::Blocks</h3>
 <p>Al encontrar, <strong>cbp2mak</strong>, el deseado exportador vislumbré un rayo de esperanza. Quizás, finalmente pudiera utilizar un makefile para cada plataforma que se ajustara exactamente a mis necesidades. El proceso es muy sencillo, <a href="http://bblean.berlios.de/cbp2mak-0.2.zip">descargamos cbp2mak</a> y ejecutamos las siguientes instrucciones:</p>
-<pre><code>unzip cbp2mak-0.2.zip
+<pre tabindex="0"><code>unzip cbp2mak-0.2.zip
 cd cbp2mak.zip
 make
 
@@ -236,7 +236,7 @@ make
 <p><img src="../../img/wp/gnu.png" alt="gnu.png"></p>
 <h3 id="el-resultado">El resultado</h3>
 <p>En contra de todo pronóstico, <strong>el resultado ha sido excelente</strong>. A continuación, coloco un ejemplo de cómo sería una jerarquía de directorios para un proyecto básico en Ogre:</p>
-<pre><code>|- proyecto
+<pre tabindex="0"><code>|- proyecto
 |
 |- src
 |   |- ficheros.cpp
@@ -249,7 +249,7 @@ make
 |- makefile-linux
 |- makefile-windows
 </code></pre><p>Para <strong>compilar</strong> sólo tendríamos que hacer (según el sistema operativo):</p>
-<pre><code>make -f makefile-linux depend
+<pre tabindex="0"><code>make -f makefile-linux depend
 make -f makefile-linux
 
 mingw32-make -f makefile-windows depend
@@ -274,7 +274,7 @@ mingw32-make -f makefile-windows
 <p>Cuando se programa es de suma importancia que el estilo sea uniforme, máxime, si trabajamos en un equipo de varias personas. Por si no supusiera suficiente esfuerzo comprender código ajeno aunque éste cuente con comentarios, hacerlo cuando cada desarrollador sigue su propio criterio puede ser una pesadilla. Es ahí donde entran en juego las <strong>guías de estilo</strong>. Hay muchas y ninguna tiene por qué ser mejor que otra a priori, no obstante, es recomendable ceñirse a una.</p>
 <p>Hace varias semanas me recomendaron la <strong><a href="http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml">guía de estilo para C++ de Google</a></strong>. Sus directrices están perfectamente detalladas, no limitándose a plantear una simple lista sino que podemos descubrir decenas de buenas prácticas perfectamente justificadas. Se nos presenta el problema junto con las ventajas e inconvenientes de tomar una decisión concreta. Finalmente, de manera razonada, llegamos a una convención. Leyéndola he descubierto detalles sobre C++ y la programación en general que desconocía, la recomiendo encarecidamente aunque no esté completamente de acuerdo en todos sus puntos.</p>
 <p>Acompañando a la guía se ofrece <a href="http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py">cpplint.py</a>, un script en Python para <strong>validar nuestro código</strong> siguiendo el estilo de Google. Utilizarlo puede ser una buena manera de tratar ser disciplinado con nuestro propio trabajo. Funciona con ficheros .h y .cpp, para ejecutarlo nos situamos en el directorio donde se aloje el script y tecleamos la siguiente orden:</p>
-<pre><code>python cpplint.py fichero.cpp
+<pre tabindex="0"><code>python cpplint.py fichero.cpp
 </code></pre><p>He comprobado que ofrece resultados completos y claros por lo que voy a utilizarlo en mis proyectos actuales: <em>IberOgre</em> y <em>Sion Tower</em>. Sion Tower es un videojuego en el que trabajaré en solitario pero IberOgre, al ser una wiki colaborativa, cobra importancia mantener un estilo limpio y consistente.</p>
 
       

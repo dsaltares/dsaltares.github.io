@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -157,11 +157,11 @@
 <ul>
 <li>Si tenías la versión de Wine de los repositorios oficiales debes desinstalarla:</li>
 </ul>
-<pre><code>sudo apt-get remove wine --purge
+<pre tabindex="0"><code>sudo apt-get remove wine --purge
 </code></pre><ul>
 <li>Añade el PPA con la última versión de Wine, actualiza e instálalo de nuevo:</li>
 </ul>
-<pre><code>sudo add-apt-repository ppa:ubuntu-wine/ppa
+<pre tabindex="0"><code>sudo add-apt-repository ppa:ubuntu-wine/ppa
 sudo apt-get update
 sudo apt-get install wine
 </code></pre><ul>
@@ -169,7 +169,7 @@ sudo apt-get install wine
 <li>Descomprime el fichero.</li>
 <li>Accede desde una terminal, dale permisos de ejecución e instala:</li>
 </ul>
-<pre><code>chmod +x install.sh
+<pre tabindex="0"><code>chmod +x install.sh
 ./install.sh
 </code></pre><p><img src="../../img/wp/musicmanager.png" alt="musicmanager.png"></p>
 <p>¡Listo! <strong>Ya puedes utilizar Google Music Manager en Linux</strong> desde <em>Aplicaciones -&gt; Internet -&gt; Google Music Manager</em>.</p>
@@ -217,7 +217,7 @@ sudo apt-get install wine
 <p><strong>Las barras de vida son <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html">Billboards</a></strong> de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con <strong>una sencilla textura que cuenta con las dos partes</strong> de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.</p>
 <p><img src="../../img/wp/barra-de-vida.png" alt="barra-de-vida.png"></p>
 <p>Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase <em>Enemy</em> tenemos los siguientes atributos.</p>
-<pre><code>class Enemy: public Actor {
+<pre tabindex="0"><code>class Enemy: public Actor {
     ...
 
     private:
@@ -226,7 +226,7 @@ sudo apt-get install wine
         Ogre::SceneNode* _lifeNode;
 };
 </code></pre><p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
-<pre><code>void Enemy::createLifeBar() {
+<pre tabindex="0"><code>void Enemy::createLifeBar() {
     _bbSetLife = _sceneManager-&gt;createBillboardSet();
     _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
     _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
@@ -238,7 +238,7 @@ sudo apt-get install wine
     _lifeNode-&gt;attachObject(_bbSetLife);
 }
 </code></pre><p>El material <em>&ldquo;lifeBar&rdquo;</em> no podía ser más sencillo:</p>
-<pre><code>material lifeBar
+<pre tabindex="0"><code>material lifeBar
 {
 	technique
 	{
@@ -254,7 +254,7 @@ sudo apt-get install wine
 	}
 }
 </code></pre><p>En cada iteración o cuando el enemigo sea herido hemos de llamar a <em>updateLifeBar</em>.</p>
-<pre><code>void Enemy::updateLifeBar() {
+<pre tabindex="0"><code>void Enemy::updateLifeBar() {
     Ogre::Real ratio = _energy / _maxEnergy;
 
     if (ratio &lt; 0.0f)
@@ -306,7 +306,7 @@ sudo apt-get install wine
 <li><a href="http://code.google.com/p/wikiteam/source/browse/trunk/dumpgenerator.py">Descarga el script</a> desde su forja de Google Code.</li>
 <li>Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:</li>
 </ol>
-<pre><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
+<pre tabindex="0"><code>python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
 </code></pre><p>El significado de los parámetros es el siguiente:</p>
 <ul>
 <li><strong>api</strong>: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: <a href="http://osl2.uca.es/iberogre/api.php">http://osl2.uca.es/iberogre/api.php</a></li>

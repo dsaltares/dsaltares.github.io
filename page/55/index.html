@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -139,14 +139,14 @@
 <p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
 <h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
 <p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>
-<pre><code># Comprimimos
+<pre tabindex="0"><code># Comprimimos
 tar cvzf directorio directorio.tar.gz
 
 # Enviamos
 scp directorio.tar.gz usuario@host:directorio_destino
 </code></pre><h3 id="la-solución">La solución</h3>
 <p>Decidimos que <strong>el tiempo era oro</strong>, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación <strong>el script que encierra la magia</strong> (obviando datos concretos):</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 # Fecha de la copia
 FECHA=$(date +&quot;%F-%H-%M-%S&quot;)
@@ -192,7 +192,7 @@ tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP
 <li><strong>Cliente</strong>: equipo que recibe la señal de teclado y ratón del servidor. Podemos tener varios clientes conectados a un servidor.### Instalación</li>
 </ul>
 <p><strong>En el servidor vamos a instalar QuickSynergy</strong> mientras que <strong>en los clientes sólo necesitamos Synergy</strong> (aunque también podemos instalar el pack completo. En sistemas no basados en Debian será necesario descargar y compilar el código (en <a href="http://code.google.com/p/quicksynergy/downloads/list">su forja</a> de Google Code), pero en el resto podemos hacer:</p>
-<pre><code># Instalamos Synergy + QuickSynergy
+<pre tabindex="0"><code># Instalamos Synergy + QuickSynergy
 sudo apt-get install quicksynergy
 
 # Instalamos Synergy
@@ -202,7 +202,7 @@ sudo apt-get install synergy
 <p>1. Elegimos la posición del cliente con respecto al servidor (arriba, abajo, izquierda o derecha). 2. Introducimos la dirección IP o nombre de host del cliente. 3. Hacemos click en <em>&ldquo;Execute&rdquo;</em>.</p>
 <p><img src="../../img/wp/quicksynergy-share.png" alt="quicksynergy-share.png"></p>
 <p>Si <strong>el cliente</strong> está encendido y no tenemos fácil acceso a su teclado y ratón podemos activar Synergy a través de SSH y todos tan contentos:</p>
-<pre><code>ssh usuario@host &quot;synergyc –name nombreHost ipServidor&quot;
+<pre tabindex="0"><code>ssh usuario@host &quot;synergyc –name nombreHost ipServidor&quot;
 </code></pre><p>En cambio, si preferimos utilizar QuickSynergy para configurar el cliente será necesario acudir a la pestaña <em>&ldquo;Use&rdquo;</em>. Introducimos la IP del servidor y hacemos click sobre <em>&ldquo;Execute&rdquo;</em>.</p>
 <p><img src="../../img/wp/quicksynergy-use.png" alt="quicksynergy-use.png"></p>
 <h3 id="reputación">Reputación++</h3>
@@ -228,7 +228,7 @@ sudo apt-get install synergy
 <p>Para mi sorpresa, <strong>Tiny Backup 0.1 tuvo una buena acogida</strong> teniendo en cuenta las pequeñas dimensiones del proyecto. No tanto por el número de descargas sino por el feedback de los usuarios. Incluso recibí una invitación para hablar sobre la aplicación <strong>en el blog <a href="http://www.muylinux.com/2010/09/02/tiny-backup-tu-tambien-puedes-hacerlo">Muy Linux</a></strong> (la cual acepté de buen gusto). Generalmente las impresiones fueron buenas aunque <strong>se reportó algún que otro problema</strong>. El más sangrante era que, al ejecutar Tiny Backup desde otro directorio que no fuese el del módulo principal (desde un acceso directo, por ejemplo) no se encontraban los ficheros referenciados por rutas relativas. Un fallo bastante grave del que debí haberme percatado en su momento.</p>
 <h3 id="bug-encontrado-y-solucionado-para-tiny-backup-02">Bug encontrado y solucionado para Tiny Backup 0.2</h3>
 <p><strong>La solución</strong> pasaba por obtener la ruta absoluta del módulo en ejecución y, a partir de la misma, construir el camino hasta el fichero deseado. El no ser muy ducho en Python y no haberle dedicado el suficiente tiempo a la aplicación ha hecho que la solución se retrase más de lo debido. <strong>Gracias al lector <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/#comment-227">Cristian Arbazua</a></strong> y su afán colaborativo el bug ha sido cerrado. Sin duda, un aporte que recuerda el valor del Software Libre y anima a continuar. A continuación <strong>un pequeño ejemplo</strong> de la medida tomada:</p>
-<pre><code># Vamos a construir la interfaz del formulario principal
+<pre tabindex="0"><code># Vamos a construir la interfaz del formulario principal
 builder = gtk.Builder()
 
 # ANTES: Tomamos la ruta relativa donde se encuentra el Glade

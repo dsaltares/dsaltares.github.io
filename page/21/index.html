@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -130,7 +130,7 @@
 <h3 id="gwt-build-process-101">GWT build process 101</h3>
 <p>Bare in mind this is a guide so you can fix your library problem and move on, those who seek a proper explanation, I&quot;d recommend <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideOrganizingProjects">the official documentation</a>.</p>
 <p>Let&rsquo;s get going! You will find a very special file named <em>GwtDefinition.gwt.xml</em> under the main package folder in the HTML5 project. It&quot;ll look something like this.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;module&gt;
     &lt;entry-point class=&quot;com.siondream.mygame.client.GwtLauncher&quot;/&gt;
     &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
@@ -139,7 +139,7 @@
     &lt;inherits name=&quot;com.badlogic.gdx.backends.gdx_backends_gwt&quot;/&gt;
 &lt;/module&gt;
 </code></pre><p>Its main purpose is to tell the GTW compiler what modules the application depends on, and therefore, inherits from. As you can see, it&rsquo;s also used to specify the entry point class and add configuration params such as the assets folder location. I&rsquo;ve obviously made <em>MyGame</em> module up, this would correspond to your core project. Look under the src folder of your core project and you should find a <em>MyGame.gwt.xml</em> file.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
 &lt;module&gt;
 	&lt;source path=&quot;com/siondream/mygame&quot; /&gt;
@@ -156,13 +156,13 @@
 <p>Crap!</p>
 </blockquote>
 <p>Well, it&rsquo;s actually not too bad. In my particular case, I went to the treelayout Google Code repository, checked out the source using Tortoise SVN and imported the project, easy peasy. The next step would be to add a module definition file under the src folder in the treelayout project, let&rsquo;s name it <em>TreeLayout.gwt.xml</em>.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
 &lt;module&gt;
 	&lt;source path=&quot;org/abego/treelayout&quot; /&gt;
 &lt;/module&gt;
 </code></pre><p>Hang on, we&quot;re almost there! Finally, add the inheritance entry to the <em>GwtDefinitions.xml</em> file.</p>
-<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
 &lt;module&gt;
     &lt;entry-point class=&quot;com.siondream.tranches.client.GwtLauncher&quot;/&gt;
     &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
@@ -175,10 +175,10 @@
 <p><strong>Note</strong>: after someone saying, <em>&ldquo;it just should just work&rdquo;</em>, I&rsquo;ve come to realise that such situation is hardly ever the case.</p>
 <h3 id="errors-expect-them">Errors, expect them</h3>
 <p>Before carrying on with this section, I would always recommend to add these options to the GWT compiler.</p>
-<pre><code>-optimize 9 -strict
+<pre tabindex="0"><code>-optimize 9 -strict
 </code></pre><p>Optimize speaks for itself but strict means that the build process will bail out as soon as it encounters an error, rather than trying to keep going.</p>
 <p>As long as you&rsquo;ve followed the process, your library should be detected by the GWT compiler. However, like I&rsquo;ve said before, <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideCodingBasicsCompatibility">GWT doesn&rsquo;t support every Java feature</a>. Every time you use an unsupported class or method you&quot;ll get an error that looks like the following one.</p>
-<pre><code>[ERROR] Line 84: No source code is available for type java.util.Formatter; did you forget to inherit a required module?
+<pre tabindex="0"><code>[ERROR] Line 84: No source code is available for type java.util.Formatter; did you forget to inherit a required module?
 </code></pre><blockquote>
 <p>This is going to hurt, isn&rsquo;t it?</p>
 </blockquote>
@@ -265,13 +265,13 @@
 <li>Create a database for tt-rss. It can be either MySQL or PostgreSQL.</li>
 <li>Install the SQL schema into your newly created database.</li>
 </ul>
-<pre><code>[tt-rss]/schema/ttrss_schema_mysql.sql
+<pre tabindex="0"><code>[tt-rss]/schema/ttrss_schema_mysql.sql
 [tt-rss]/schema/trss_schema_pgsql.sql
 </code></pre><ul>
 <li>Copy <code>[tt-rss]/config.php-dist</code> to <code>[tt-rss]/config.php</code>.</li>
 <li>Go through the file and set the options to match your server. These are the most common ones.</li>
 </ul>
-<pre><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
+<pre tabindex="0"><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
     define('DB_HOST', &quot;localhost&quot;);
     define('DB_USER', &quot;******&quot;);
     define('DB_NAME', &quot;******&quot;);
@@ -281,7 +281,7 @@
 </code></pre><ul>
 <li>Add this to your server cron to schedule feeds updates with the frequency you prefer.</li>
 </ul>
-<pre><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
+<pre tabindex="0"><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
 </code></pre><ul>
 <li>Login with <code>&lt;admin&gt;</code>/`<!-- raw HTML omitted --> and immediately change your password you fool!</li>
 </ul>
@@ -355,27 +355,27 @@
 <p>Don&rsquo;t forget to hit <em>&ldquo;save&rdquo;</em>.</p>
 <h3 id="create-bodies-from-your-level-data--my-level-has-collidable-static-geometry-data-how-do-i-get-that-in-my-game">Create bodies from your level data &gt; My level has collidable static geometry data, how do I get that in my game?</h3>
 <p>To tackle that problem I implemented a simple class named <em>MapBodyManager</em> with the following interface.</p>
-<pre><code>public class MapBodyManager {
+<pre tabindex="0"><code>public class MapBodyManager {
     public MapBodyManager(World world, int unitsPerPixel, String materialsFile);
     public void createPhysics(Map map, String layerName);
     public void destroyPhysics();
 }
 </code></pre><p>I believe it to be simple enough but I&quot;ll explain the details just in case. The constructor takes the Box2D world so it knows where to dump the new bodies into and where to delete them from later on. Most level editors work in pixels, while Box2D measures stuff in metres (take that imperial system!), hence the need for the <em>unitsPerPixel</em> conversion rate. We&quot;ll get to the materials stuff in just a minute.</p>
 <p>Once your level is loaded, you just need to do this.</p>
-<pre><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
+<pre tabindex="0"><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
 Map map = assetManager.get(&quot;data/level.xml&quot;, Map.class);
 mapBodyManager.createPhysics(map, &quot;physics&quot;);
 </code></pre><p>This will automatically create a static body per shape in your <em>&ldquo;physics&rdquo;</em> layer as shown in the screenshot below.</p>
 <p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
 <p>So the player heroically beats the level and makes it to the next one. You surely will want to get rid of all those bodies (reference to murder not intended) before adding any more. Interestingly enough, our handy <em>MapBodyManager</em> keeps track of all registered bodies, so voilá, easy as cake.</p>
-<pre><code>mapBodyManager.destroyPhysics();
+<pre tabindex="0"><code>mapBodyManager.destroyPhysics();
 </code></pre><h3 id="material-system">Material system</h3>
 <p>Those who are no strangers to Box2D will know that body&rsquo;s fixtures have properties that determine how they interact with other entities. These are mainly: density, restitution and friction. Mass is usually determined by the area of the shape involved and the fixture&rsquo;s density. Again, check out Box2D documentation for more details on this. We could just create all our static bodies with default properties but…</p>
 <blockquote>
 <p>I want to have icy, sandy and elastic surfaces in my game so characters can slide, be slower and bounce!</p>
 </blockquote>
 <p>How can our <em>MapBodyManager</em> deal with all this? It&rsquo;s actually dead easy, I went for a very simple material system where each one of these materials are defined by a set of properties in a straightforward JSON file. Let&rsquo;s say that the game world we want to model has regular, ice and elastic elements, we might be able to get away with something such as this.</p>
-<pre><code>[
+<pre tabindex="0"><code>[
   { &quot;name&quot; : &quot;ice&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.0, &quot;friction&quot; : 0.1 },
   { &quot;name&quot; : &quot;elastic&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.8, &quot;friction&quot; : 0.8 }
 ]

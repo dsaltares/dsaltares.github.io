@@ -148,13 +148,13 @@
 <li>Create a database for tt-rss. It can be either MySQL or PostgreSQL.</li>
 <li>Install the SQL schema into your newly created database.</li>
 </ul>
-<pre><code>[tt-rss]/schema/ttrss_schema_mysql.sql
+<pre tabindex="0"><code>[tt-rss]/schema/ttrss_schema_mysql.sql
 [tt-rss]/schema/trss_schema_pgsql.sql
 </code></pre><ul>
 <li>Copy <code>[tt-rss]/config.php-dist</code> to <code>[tt-rss]/config.php</code>.</li>
 <li>Go through the file and set the options to match your server. These are the most common ones.</li>
 </ul>
-<pre><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
+<pre tabindex="0"><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
     define('DB_HOST', &quot;localhost&quot;);
     define('DB_USER', &quot;******&quot;);
     define('DB_NAME', &quot;******&quot;);
@@ -164,7 +164,7 @@
 </code></pre><ul>
 <li>Add this to your server cron to schedule feeds updates with the frequency you prefer.</li>
 </ul>
-<pre><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
+<pre tabindex="0"><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
 </code></pre><ul>
 <li>Login with <code>&lt;admin&gt;</code>/`<!-- raw HTML omitted --> and immediately change your password you fool!</li>
 </ul>

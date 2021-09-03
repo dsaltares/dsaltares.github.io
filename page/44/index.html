@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -131,7 +131,7 @@
 <p>El test entre dos esferas es el más sencillo y rápido de todos. Basta con comprobar si la distancia entre los centros de ambas esferas es menor que la suma de sus radios, en tal caso existiría colisión.</p>
 <p><img src="../../img/wp/test-sphere-sphere.png" alt="test-sphere-sphere.png"></p>
 <p>Para calcular la distancia entre dos puntos es necesario una raíz cuadrada pero éstas son extremadamente caras. Podemos comparar la distancia al cuadrado con el cuadrado de la suma de los radios, una expresión equivalente y de mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionSphereSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son esferas)
     Sphere* sphereA = static_cast&lt;sphere *&gt;(shapeA);
     Sphere* sphereB = static_cast&lt;/sphere&gt;&lt;sphere *&gt;(shapeB);
@@ -145,7 +145,7 @@
 </code></pre><h3 id="test-aabb-aabb">Test AABB-AABB</h3>
 <p>En la intersección entre cajas alineadas con los ejes emplearemos el teorema del plano de separación. Proyectamos las cajas sobre cada uno de los tres ejes y si algunas de las proyecciones no se solapan podremos asegurar que no existe colisión entre las AABB. El siguiente diagrama ilustra el test.</p>
 <p><img src="../../img/wp/test-aabb-aabb.png" alt="test-aabb-aabb.png"></p>
-<pre><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionAABBAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son AABBs)
     AxisAlignedBox* aabb1= static_cast&lt;axisalignedbox *&gt;(shapeA);
     AxisAlignedBox* aabb2 = static_cast&lt;/axisalignedbox&gt;&lt;axisalignedbox *&gt;(shapeB);
@@ -161,7 +161,7 @@
 </code></pre><h3 id="test-plane-plane">Test Plane-Plane</h3>
 <p>Los planos son infinitos por lo que la única situación en la que dos planos no colisionan es cuando estos son paralelos y no están a la misma distancia del origen. La orientación de los planos está definida por su vector normal. Si las dos normales son paralelas y la distancia con respecto al origen no coincide podremos asegurar que los planos no colisionan. Dos vectores son paralelos si su producto escalar es igual a 1.</p>
 <p><img src="../../img/wp/test-plane-plane.png" alt="test-plane-plane.png"></p>
-<pre><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlanePlane(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que son Planes)
     Plane* planeA = static_cast&lt;plane *&gt;(shapeA);
     Plane* planeB = static_cast&lt;/plane&gt;&lt;plane *&gt;(shapeB);
@@ -175,7 +175,7 @@
 <p>En este test se pueden producir dos casos en los que existe intersección entre los objetos. El primero se da cuando el centro de la esfera está contenida en el AABB mientras que el segundo tiene lugar cuando el centro está fuera de la caja pero existe intersección (el diagrama ilustra el segundo caso). En primer lugar comprobamos si el centro de la esfera está dentro de la caja. Posteriormente recorremos los vértices del AABB y elegimos el más cercano al centro de la esfera. Si la distancia entre ambos es menor que el radio de la esfera las dos formas colisionan.</p>
 <p><img src="../../img/wp/test-sphere-aabb.png" alt="test-sphere-aabb.png"></p>
 <p>De nuevo, utilizamos el cuadrado de la distancia para conseguir una mayor eficiencia.</p>
-<pre><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionSphereAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Sphere y B es AABB)
     Sphere* sphere;
     AxisAlignedBox* aabb;
@@ -222,7 +222,7 @@
 <p>Comprobar si una esfera colisiona con un plano es tan sencillo como obtener la distancia entre ambos y compararla con el radio de la esfera como hemos hecho en otras ocasiones. La distancia entre el centro y el punto que conocemos del plano no es la distancia real entre ambas formas. Para calcular la distancia real tendremos que proyectar el vector p-c (punto del plano – centro de la esfera) sobre la normal del plano.</p>
 <p><img src="../../img/wp/test-sphere-plane.png" alt="test-sphere-plane.png"></p>
 <p>Sólo nos es necesario el cuadrado de la distancia y lo comprobaremos con el cuadrado del radio (para evitarnos utilizar una raíz cuadrada).</p>
-<pre><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlaneSphere(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es Sphere)
     Plane* plane;
     Sphere* sphere;
@@ -247,7 +247,7 @@
 </code></pre><h3 id="test-aabb-plane">Test AABB-Plane</h3>
 <p>En el test entre AABB y plano calculamos el vértice más lejano y el más cercano al plano (pmin y pmax respectivamente). Si cada punto está a un lado distinto del plano podemos asegurar que ambas formas colisionan.</p>
 <p><img src="../../img/wp/test-plane-aabb.png" alt="test-plane-aabb.png"></p>
-<pre><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
+<pre tabindex="0"><code>bool Shape::getCollisionPlaneAABB(Shape* shapeA, Shape* shapeB) {
     // Hacemos la conversión (estamos seguros de que A es Plane y B es AABB)
     Plane* plane;
     AxisAlignedBox* aabb;
@@ -379,7 +379,7 @@
 <p><img src="../../img/wp/shapes.png" alt="shapes.png"></p>
 <h3 id="collision-dispatching">Collision Dispatching</h3>
 <p>La clase <em>Shape</em> dispone de un método estático <em>getCollision</em> que recibe dos punteros a <em>Shape</em> y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
 
     ...
@@ -400,7 +400,7 @@ private:
 };
 </code></pre><p>El <strong>Collision Dispatching</strong> es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques <em>if</em> con <em>dynamic_cast</em> capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de <a href="http://en.wikibooks.org/wiki/C++_Programming/RTTI">RTTI</a>.</p>
 <p>Es posible conocer la clase a la que pertenece una forma génerica incorporando un método virtual puro en <em>Shape</em>. Cada especialización está obligado a implementarlo, devolviendo un valor de un enumerado indicando su tipo.</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
 
     ...
@@ -423,7 +423,7 @@ public:
 };
 </code></pre><p>Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un <em>static_cast</em> sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. <em>static_cast</em> es mucho más rápido que <em>dynamic_cast</em> al no hacer comprobaciones.</p>
 <p>No vamos a manejar punteros a función sino que <strong>haremos uso de las mágicas <em><a href="http://www.boost.org/doc/libs/1_45_0/doc/html/function.html">boost::function</a></em> y <a href="http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html"><em>boost:bind</em></a></strong>. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces <a href="http://www.boost.org/">Boost</a> deberías echarle un ojo ya que muchos de sus componentes <strong>entrarán en el próximo estándar de C++</strong>. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales <a href="http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost">aquí</a>. Para la tabla utilizaremos <em><a href="http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html">boost::unordered_map</a></em>, similar a <a href="http://www.cppreference.com/wiki/container/map/start"><em>std::map</em></a> pero mucho más eficiente.</p>
-<pre><code>class Sphere:
+<pre tabindex="0"><code>class Sphere:
 public:
     ...
 
@@ -441,7 +441,7 @@ private:
     static CollisionDispatchTable  _collisionDispatcher;
 };
 </code></pre><p>El método <em>configureCollisionDispatching</em> se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase <em>CollisionManager</em> ya lo hace por tí.</p>
-<pre><code>void Shape::configureCollisionDispatching() {
+<pre tabindex="0"><code>void Shape::configureCollisionDispatching() {
     _collisionDispatcher[SPHERE][SPHERE] = boost::bind(&amp;Shape::getCollisionSphereSphere, _1, _2);
     _collisionDispatcher[AABB][AABB] = boost::bind(&amp;Shape::getCollisionAABBAABB, _1, _2);
     _collisionDispatcher[PLANE][PLANE] = boost::bind(&amp;Shape::getCollisionPlanePlane, _1, _2);
@@ -468,7 +468,7 @@ private:
 <p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png"></p>
 <h3 id="extendiendo-la-clase-shape">Extendiendo la clase Shape</h3>
 <p>Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase <em>Shape</em>:</p>
-<pre><code>class Shape {
+<pre tabindex="0"><code>class Shape {
 public:
   virtual int getType() const = 0;
   virtual void applyTransform(

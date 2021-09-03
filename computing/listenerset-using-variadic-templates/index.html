@@ -111,14 +111,14 @@
 <h3 id="the-problem">The problem</h3>
 <p>It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis. That is registration, un-registration and notification. A lot of nonsensical boilerplate, which makes for code that is harder to read and easier to get wrong.</p>
 <p>Let&rsquo;s take a look at a typical input event dispatching system, simplified for the purposes of this article. We could have an <code>IInputListener</code> interface that handles a couple of events, <code>keyDown()</code> and <code>keyUp()</code>.</p>
-<pre><code>struct IInputListener
+<pre tabindex="0"><code>struct IInputListener
 {
     virtual ~IInputListener() {}
     virtual bool keyDown(KeyCode code) = 0;
     virtual bool keyUp(KeyCode code) = 0;
 };
 </code></pre><p>Our <code>InputSystem</code> class could hold an <code>std::set</code> of <code>IInputListener</code> pointers. Registration and un-registration is made possible through <code>addListener()</code> and <code>removeListener()</code> respectively. Bad news is that, every single time we want to send an event to the listeners, we are forced to iterate over the collection. Also, God kills a kitten.</p>
-<pre><code>class InputSystem
+<pre tabindex="0"><code>class InputSystem
 {
 public:
     void addListener(IInputListener* listener)
@@ -174,7 +174,7 @@ private:
 </ul>
 <p>Intuitively, we could have a <code>ListenerSet&lt;Type&gt;</code> template class that handles listener duplication as well as registration and un-registration safety.</p>
 <p><strong>Note</strong>: we&rsquo;ll be using <code>std::set</code> rather than <code>std::vector</code> for simplicity. Both can be used as long as the appropriate precautions are taken.</p>
-<pre><code>template &lt;class Type&gt; class ListenerSet
+<pre tabindex="0"><code>template &lt;class Type&gt; class ListenerSet
 {
 public:
     ListenerSet() {}
@@ -213,7 +213,7 @@ private:
     std::set&lt;Type&gt; m_listeners;
 };
 </code></pre><p>We&rsquo;re missing the notification functionality, that&rsquo;s the tricky part. We would like to have an interface such as to be able to do something like this.</p>
-<pre><code>m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
+<pre tabindex="0"><code>m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
 </code></pre><p><code>ListenerSet::notify()</code> would iterate over all the registered listeners calling <code>IInputListener::keyDown</code> and passing <code>keyCode</code> as a parameter.</p>
 <blockquote>
 <p>Maybe easier said than done?</p>
@@ -222,7 +222,7 @@ private:
 <p>This is where <a href="http://www.cplusplus.com/articles/EhvU7k9E/">variadic templates</a> come into play. Basically, they&rsquo;re templates that can take an arbitrary number of parameters of any type.</p>
 <p>Interestingly enough, <code>std::bind()</code> also takes an arbitrary number of parameters. That means we can create an <code>std::function&gt;</code> object that has everything we need: the event handler function pointer, <code>this</code> and the remaining arguments.</p>
 <p>Take a look at the code.</p>
-<pre><code>template &lt;class Function, class... Arguments&gt;
+<pre tabindex="0"><code>template &lt;class Function, class... Arguments&gt;
 inline void notify(Function&amp;&amp; f, Arguments&amp;&amp;... args)
 {
     m_notifying = true;
@@ -249,7 +249,7 @@ inline void notify(Function&amp;&amp; f, Arguments&amp;&amp;... args)
 }
 </code></pre><p>Note how we process the pending requests to add or remove listeners after we finish sending the events, that&rsquo;s when it&rsquo;s safe.</p>
 <p>Now we can do exactly what we wanted!</p>
-<pre><code>ListenerSet&lt;IInputListener*&gt; listeners;
+<pre tabindex="0"><code>ListenerSet&lt;IInputListener*&gt; listeners;
 
 listeners.addListener(new PlayerInputListener());
 listeners.addListener(new UserInterfaceInputListener());

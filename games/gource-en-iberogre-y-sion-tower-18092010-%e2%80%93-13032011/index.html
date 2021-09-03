@@ -129,24 +129,24 @@
 <li>Descomprimimos el paquete y accedemos al directorio desde la terminal.</li>
 <li>Instalamos las dependencias:</li>
 </ul>
-<pre><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
+<pre tabindex="0"><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
 </code></pre><ul>
 <li>Configuramos y comprobamos que todo esta correcto:</li>
 </ul>
-<pre><code>./configure
+<pre tabindex="0"><code>./configure
 </code></pre><ul>
 <li>Compilamos:</li>
 </ul>
-<pre><code>make
+<pre tabindex="0"><code>make
 </code></pre><ul>
 <li>Instalamos:</li>
 </ul>
-<pre><code>sudo make install
+<pre tabindex="0"><code>sudo make install
 </code></pre><h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
 <p>Gource se dedica a mostrar en una ventana la evolución del proyecto pero <strong>no guarda un vídeo</strong> del resultado. Para conseguirlo <strong>podemos hacer uso de <a href="http://es.wikipedia.org/wiki/FFmpeg">ffmpeg</a></strong>, la solución libre para trabajar con audio y/o vídeo. Instalamos ffmpeg en sistemas basados en Debian con el clásico comando:</p>
-<pre><code>sudo apt-get install ffmpeg
+<pre tabindex="0"><code>sudo apt-get install ffmpeg
 </code></pre><p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
-<pre><code>gource --seconds-per-day 1 --stop-at-end -1280x720 -o - | ffmpeg -y -f image2pipe -vcodec ppm -i - -vcodec libx264 -vpre slow -threads 4 gource.mp4
+<pre tabindex="0"><code>gource --seconds-per-day 1 --stop-at-end -1280x720 -o - | ffmpeg -y -f image2pipe -vcodec ppm -i - -vcodec libx264 -vpre slow -threads 4 gource.mp4
 </code></pre><p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
 <ul>
 <li>–seconds-per-day: número de segundos de vídeo por cada día en la evolución del proyecto.</li>

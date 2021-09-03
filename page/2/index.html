@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -413,7 +413,7 @@
 <h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
 <p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
 <p>Generate a public/private key pair.</p>
-<pre><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
 </code></pre><p>Now, go to the production repo Settings, Deploy keys and paste the contents of <code>publish_key.pub</code> here.</p>
 <p><img src="../../img/gh-pages-workflow/deploy-keys.png" alt="deploy_keys"></p>
 <p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
@@ -462,7 +462,7 @@
 <p>The screenshot below shows the Namecheap DNS config panel for my account.</p>
 <p><img src="../../img/gh-pages-workflow/dns-config.png" alt="dsaltares.github.io"></p>
 <p>Finally, go to your dev repo and create a <code>static/CNAME</code> file with your domain name. For example, mine contains:</p>
-<pre><code>saltares.com
+<pre tabindex="0"><code>saltares.com
 </code></pre><p>Once that is done and deployed to production, you should see the following in your production repository Settings, inside the Github Pages section. Tick the &ldquo;Enforce HTTPS&rdquo; to redirect all traffic from <code>http://&lt;domain&gt;</code> to <code>https://&lt;domain&gt;</code>.</p>
 <p><img src="../../img/gh-pages-workflow/gh-pages-section.png" alt="gh-pages-section"></p>
 <p>Note that this may take up to 24h to work as your new DNS settings propagate, so be patient!</p>
@@ -509,7 +509,7 @@ This is the same as what is explained in Gut&rsquo;s <a href="https://github.com
 	assert_true(true, <span style="color:#e6db74">&#34;Should pass, true is true&#34;</span>)
 
 </code></pre></div><p>You can now run these tests from the command line.</p>
-<pre><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit
+<pre tabindex="0"><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit
 </code></pre><p>Where <code>godot</code> is your Godot binary and <code>project</code> is the folder where your game lives.</p>
 <p>Alright, we now have a basic test setup we can run locally. Let&rsquo;s move onto the meaty
 part of the article, continuous integration. I&rsquo;ll be using
@@ -531,7 +531,7 @@ chmod +x <span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db7
 </code></pre></div><p>As you can see, it&rsquo;s also pretty easy to parameterize which Godot version you want
 to use.</p>
 <p>And that&rsquo;s it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here&rsquo;s what a typical build would look like</a>.</p>
-<pre><code>/-----------------------------------------
+<pre tabindex="0"><code>/-----------------------------------------
 Running Script res://test/unit/test_example.gd
 -----------------------------------------/
 * test_assert_true_with_true

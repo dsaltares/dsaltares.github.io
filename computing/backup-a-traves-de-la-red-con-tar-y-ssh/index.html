@@ -110,14 +110,14 @@
 <p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
 <h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
 <p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>
-<pre><code># Comprimimos
+<pre tabindex="0"><code># Comprimimos
 tar cvzf directorio directorio.tar.gz
 
 # Enviamos
 scp directorio.tar.gz usuario@host:directorio_destino
 </code></pre><h3 id="la-solución">La solución</h3>
 <p>Decidimos que <strong>el tiempo era oro</strong>, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación <strong>el script que encierra la magia</strong> (obviando datos concretos):</p>
-<pre><code>#!/bin/sh
+<pre tabindex="0"><code>#!/bin/sh
 
 # Fecha de la copia
 FECHA=$(date +&quot;%F-%H-%M-%S&quot;)

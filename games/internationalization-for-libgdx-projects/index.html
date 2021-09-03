@@ -111,7 +111,7 @@
 <p><strong><a href="http://www.altdevblogaday.com/2012/04/19/localization-notes/">Localization is a key aspect in games</a></strong>, specially if you want to reach a wider audience. I recently <a href="https://github.com/dsaltares/freegemas-gdx">ported Freegemas</a> to the libgdx platform and, as the original one, I wanted to ship it with multi-language support. There is no such a thing as <a href="http://www.gnu.org/software/gettext/">gettext</a> for Java and I didn&rsquo;t see the Android internationalization system as a good fit in a multiplatform development. That&rsquo;s why I developed my little own internationalization module.</p>
 <p><strong><a href="https://github.com/dsaltares/freegemas-gdx/blob/master/freegemas/src/com/siondream/freegemas/LanguagesManager.java">Download LanguagesManager.java</a></strong></p>
 <p>Its usage is extremely simple, first we need a <em>media/languages.xml</em> file where all the strings in our project will be located. The syntax is pretty straight forward, we lay language sections identified with the code for each language. Inside every language, we provide a list of key value pairs with the localized strings.</p>
-<pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+<pre tabindex="0"><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;languages&gt;
 
    &lt;language name=&quot;en_UK&quot; &gt;
@@ -131,7 +131,7 @@
 &lt;/languages&gt;
 </code></pre><p>We can retrieve localized strings in our project through the <em>LanguagesManager</em> class and its <em>getString()</em> method. It&rsquo;s been implemented using the <a href="http://en.wikipedia.org/wiki/Singleton_pattern">Singleton</a> design pattern as we only need one instance accessible from, potentially, everywhere in the code. When we ask our manager for a certain string we will use its key, if it finds it within the current language, it&quot;ll return it, otherwise it&quot;ll return the key itself. That&rsquo;s why using strings in a base language (English) as keys can be a good idea, those will be returned by default.</p>
 <p>For now, it uses <a href="http://en.wikipedia.org/wiki/Lazy_initialization">lazy initialization</a> which means it&quot;ll load the language the first time the <em>getInstance()</em> method is called but that might change in the future. It automatically detects the system language (no matter if we are on Android or a desktop environment) and it fallsback to English if the system language is not among the available ones in the <em>data/languages.xml</em> file. However, you can explicitly specify the language you want to load through the <em>loadLanguage()</em> method.</p>
-<pre><code>LanguagesManager lang;
+<pre tabindex="0"><code>LanguagesManager lang;
 
 lang = LanguagesManager.getInstance();
 

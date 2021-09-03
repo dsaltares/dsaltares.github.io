@@ -121,7 +121,7 @@
 <p>What happens when the game runs at 50fps?</p>
 </blockquote>
 <p>We need an <code>accumulator</code> where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.</p>
-<pre><code>public class SionGame extends ApplicationListener {
+<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
     private double currentTime;
@@ -141,7 +141,7 @@
 }
 </code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
 <p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities' transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
-<pre><code>public class SionGame extends ApplicationListener {
+<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
     private double currentTime;
@@ -163,7 +163,7 @@
         entityManager.interpolate(accumulator / step);
 }
 </code></pre><p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
-<pre><code>public void interpolate(float alpha) {
+<pre tabindex="0"><code>public void interpolate(float alpha) {
     for (Entity entity : entities) {
         Transform transform = entity.getBody().getTransform();
         Vector2 bodyPosition = transform.getPosition();

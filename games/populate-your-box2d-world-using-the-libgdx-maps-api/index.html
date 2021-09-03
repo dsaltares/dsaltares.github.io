@@ -129,27 +129,27 @@
 <p>Don&rsquo;t forget to hit <em>&ldquo;save&rdquo;</em>.</p>
 <h3 id="create-bodies-from-your-level-data--my-level-has-collidable-static-geometry-data-how-do-i-get-that-in-my-game">Create bodies from your level data &gt; My level has collidable static geometry data, how do I get that in my game?</h3>
 <p>To tackle that problem I implemented a simple class named <em>MapBodyManager</em> with the following interface.</p>
-<pre><code>public class MapBodyManager {
+<pre tabindex="0"><code>public class MapBodyManager {
     public MapBodyManager(World world, int unitsPerPixel, String materialsFile);
     public void createPhysics(Map map, String layerName);
     public void destroyPhysics();
 }
 </code></pre><p>I believe it to be simple enough but I&quot;ll explain the details just in case. The constructor takes the Box2D world so it knows where to dump the new bodies into and where to delete them from later on. Most level editors work in pixels, while Box2D measures stuff in metres (take that imperial system!), hence the need for the <em>unitsPerPixel</em> conversion rate. We&quot;ll get to the materials stuff in just a minute.</p>
 <p>Once your level is loaded, you just need to do this.</p>
-<pre><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
+<pre tabindex="0"><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
 Map map = assetManager.get(&quot;data/level.xml&quot;, Map.class);
 mapBodyManager.createPhysics(map, &quot;physics&quot;);
 </code></pre><p>This will automatically create a static body per shape in your <em>&ldquo;physics&rdquo;</em> layer as shown in the screenshot below.</p>
 <p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
 <p>So the player heroically beats the level and makes it to the next one. You surely will want to get rid of all those bodies (reference to murder not intended) before adding any more. Interestingly enough, our handy <em>MapBodyManager</em> keeps track of all registered bodies, so voilá, easy as cake.</p>
-<pre><code>mapBodyManager.destroyPhysics();
+<pre tabindex="0"><code>mapBodyManager.destroyPhysics();
 </code></pre><h3 id="material-system">Material system</h3>
 <p>Those who are no strangers to Box2D will know that body&rsquo;s fixtures have properties that determine how they interact with other entities. These are mainly: density, restitution and friction. Mass is usually determined by the area of the shape involved and the fixture&rsquo;s density. Again, check out Box2D documentation for more details on this. We could just create all our static bodies with default properties but…</p>
 <blockquote>
 <p>I want to have icy, sandy and elastic surfaces in my game so characters can slide, be slower and bounce!</p>
 </blockquote>
 <p>How can our <em>MapBodyManager</em> deal with all this? It&rsquo;s actually dead easy, I went for a very simple material system where each one of these materials are defined by a set of properties in a straightforward JSON file. Let&rsquo;s say that the game world we want to model has regular, ice and elastic elements, we might be able to get away with something such as this.</p>
-<pre><code>[
+<pre tabindex="0"><code>[
   { &quot;name&quot; : &quot;ice&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.0, &quot;friction&quot; : 0.1 },
   { &quot;name&quot; : &quot;elastic&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.8, &quot;friction&quot; : 0.8 }
 ]

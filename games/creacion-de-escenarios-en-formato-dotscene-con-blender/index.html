@@ -114,7 +114,7 @@
 <p>En cambio, <strong><a href="http://www.blender.org/">Blender</a> es un editor 3D consagrado</strong>, flexible, estable y con una comunidad mucho mayor. Busqué más alternativas y pregunté en Twitter por un buen editor de niveles <strong>compatible con el formato DotScene</strong>. El usuario <a href="http://twitter.com/#!/makiolo">@makiolo</a> también sugirió amablemente Blender. Tras varias pruebas pude obtener el vídeo del anterior artículo. Si todo va bien y no me encuentro con ningún obstáculo insalvable utilizaré Blender.</p>
 <h3 id="el-formato-dotscene-y-los-escenarios-de-sion-tower">El formato DotScene y los escenarios de Sion Tower</h3>
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml para definir escenas 3D</strong> en Ogre, podéis acceder a su DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Contiene información sobre los nodos que componen la escena: cámaras, luces y entidades. Así mismo también ofrece datos sobre la luz ambiente y el color de fondo. A continuación tenéis el fichero xml correspondiente a la escena por defecto de Blender (un cubo, una cámara y un punto de luz):</p>
-<pre><code>&lt;scene formatVersion=&quot;1.0.0&quot;&gt;
+<pre tabindex="0"><code>&lt;scene formatVersion=&quot;1.0.0&quot;&gt;
   &lt;nodes&gt;
     &lt;node name=&quot;Lamp&quot;&gt;
       &lt;position x=&quot;4.076245&quot; y=&quot;5.903862&quot; z=&quot;-1.005454&quot;/&gt;
@@ -152,7 +152,7 @@
   &lt;/environment&gt;
 &lt;/scene&gt;
 </code></pre><p>Ya comenté que <strong>utilizaría la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a></strong> para procesar los ficheros xml de cada nivel. Tiene un rendimiento excelente, cuenta con una documentación clara y es muy sencilla de utilizar. No requiere instalaciones ya que simplemente hay que añadir tres ficheros al proyecto. Lo que sigue es un pequeño ejemplo para leer la información del entorno de la escena:</p>
-<pre><code>void Level::loadAmbientInfo(const pugi::xml_document&amp; doc) {
+<pre tabindex="0"><code>void Level::loadAmbientInfo(const pugi::xml_document&amp; doc) {
     // Cargamos el documento
     pugi::xml_node rootNode;
 
@@ -196,7 +196,7 @@
 <p>El sistema de carga de niveles de Sion Tower se compone de dos clases principales: <em>Level</em> y <em>LevelManager</em>. La clase <em>Level</em> contiene la información de un nivel de juego completo (escena, oleadas de enemigos, posición inicial del personaje, etc). Una vez creado, un objeto <em>Level</em> puede encontrarse en dos estados: <strong>inicializado</strong> o <strong>cargado</strong>. Al estar inicializado sólo estará disponible su información básica como el nombre o la descripción. Si empleamos el método <em>Level::load</em> podremos acceder a los objetos del escenario, la música que deberíamos reproducir, etc aunque ocupará mucha más memoria.</p>
 <p><img src="../../img/wp/levels.png" alt="levels.png"></p>
 <p>Cuando se crea un nivel, se lee la i<strong>nformación básica</strong> de un sencillo fichero xml independiente del DotScene. Los niveles tienen un identificador de forma que el fichero DotScene debe ser i<em>d_scene.xml</em> y el que contiene información básica debe ser <em>id_info.xml</em>. Lo siguiente es un ejemplo de fichero de información básica:</p>
-<pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre tabindex="0"><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;basicinfo&gt;
     &lt;name&gt;The Hall&lt;/name&gt;
     &lt;description&gt;Some Goblins assault the main Hall of the Tower&lt;/description&gt;
@@ -220,7 +220,7 @@
 <p>El navigation mesh puede representarse mediante pequeñas esferas, así como la posición inicial de la reliquia o el personaje, a gusto del diseñador de niveles. Lo importante es que se cumplan las reglas de nombrado.</p>
 <h3 id="catálogo-de-objetos-colisionables">Catálogo de objetos colisionables</h3>
 <p>La clase <em>LevelManager</em> lleva internamente un catálogo de objetos Body que definen los tipos de elementos colisionables que podemos encontrar en la escena. Al cagar un nivel y toparnos con una entidad del tipo <em>&ldquo;scene – objectType – objectNumber&rdquo;</em> le pedimos a <em>LevelManager</em> que nos devuelva el Body correspondiente con el identificador indicado mediante el método <em>createBodyFromCatalog()</em>. El catálogo se pruebla al crear la única instancia de <em>LevelManager</em> desde un fichero como el siguiente:</p>
-<pre><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre tabindex="0"><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
 &lt;bodies&gt;
     &lt;body name=&quot;floor&quot; type=&quot;1&quot;&gt;
         &lt;shape type=&quot;plane&quot;&gt;

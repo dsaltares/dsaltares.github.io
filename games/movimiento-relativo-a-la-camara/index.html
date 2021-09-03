@@ -116,7 +116,7 @@
 <h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
 <p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>
 <p>Partimos de los siguientes objetos:</p>
-<pre><code>Ogre::SceneNode* nodoPersonaje; // Nodo que representa al personaje
+<pre tabindex="0"><code>Ogre::SceneNode* nodoPersonaje; // Nodo que representa al personaje
 Ogre::Vector3 direccionObjetivo; // Relativa a la cámara
 Ogre::Vector3 direccionActual; // Relativa a la cámara
 Ogre::Vector3 velocidad; // Velocidad del personaje
@@ -129,7 +129,7 @@ OIS::Keyboard* teclado; // Teclado para controlar al personaje
 <p>Sólo nos queda corregir la orientación del personaje para que mire hacia la dirección en la que se desplaza. Ogre pone a nuestra disposición el método <em>Vector3::getRotationTo</em> que, dado un vector nos devuelve el cuaternio a aplicar de forma que tras la rotación quede alineado con el segundo. <strong>Los cuaternios se utilizan para representar rotaciones</strong> en el espacio y están compuestos por un ángulo y un eje (en este caso el y). Si multiplicamos la rotación necesaria por la que ya posee el nodo del personaje, éste mirará hacia donde deseamos. Es importante el orden de los operadores ya que el producto de cuaternios no es conmutativo.</p>
 <h3 id="algoritmo-código-completo">Algoritmo: código completo</h3>
 <p>He aquí el código completo:</p>
-<pre><code>using namespace Ogre;
+<pre tabindex="0"><code>using namespace Ogre;
 
 void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
     // Tomamos la dirección de la cámara

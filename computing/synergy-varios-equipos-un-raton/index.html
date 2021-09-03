@@ -116,7 +116,7 @@
 <li><strong>Cliente</strong>: equipo que recibe la señal de teclado y ratón del servidor. Podemos tener varios clientes conectados a un servidor.### Instalación</li>
 </ul>
 <p><strong>En el servidor vamos a instalar QuickSynergy</strong> mientras que <strong>en los clientes sólo necesitamos Synergy</strong> (aunque también podemos instalar el pack completo. En sistemas no basados en Debian será necesario descargar y compilar el código (en <a href="http://code.google.com/p/quicksynergy/downloads/list">su forja</a> de Google Code), pero en el resto podemos hacer:</p>
-<pre><code># Instalamos Synergy + QuickSynergy
+<pre tabindex="0"><code># Instalamos Synergy + QuickSynergy
 sudo apt-get install quicksynergy
 
 # Instalamos Synergy
@@ -126,7 +126,7 @@ sudo apt-get install synergy
 <p>1. Elegimos la posición del cliente con respecto al servidor (arriba, abajo, izquierda o derecha). 2. Introducimos la dirección IP o nombre de host del cliente. 3. Hacemos click en <em>&ldquo;Execute&rdquo;</em>.</p>
 <p><img src="../../img/wp/quicksynergy-share.png" alt="quicksynergy-share.png"></p>
 <p>Si <strong>el cliente</strong> está encendido y no tenemos fácil acceso a su teclado y ratón podemos activar Synergy a través de SSH y todos tan contentos:</p>
-<pre><code>ssh usuario@host &quot;synergyc –name nombreHost ipServidor&quot;
+<pre tabindex="0"><code>ssh usuario@host &quot;synergyc –name nombreHost ipServidor&quot;
 </code></pre><p>En cambio, si preferimos utilizar QuickSynergy para configurar el cliente será necesario acudir a la pestaña <em>&ldquo;Use&rdquo;</em>. Introducimos la IP del servidor y hacemos click sobre <em>&ldquo;Execute&rdquo;</em>.</p>
 <p><img src="../../img/wp/quicksynergy-use.png" alt="quicksynergy-use.png"></p>
 <h3 id="reputación">Reputación++</h3>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -272,7 +272,7 @@
 </blockquote>
 <p>Worry no more as you can make them private data members. As cheeky as it may sound, this will spare you a fair amount of problems.</p>
 <p>I&quot;m currently working on a GLEED level system refactor and I think the renderer class could serve us as an perfect example. I use two Rectangle objects (Axis Aligned Bounding Boxes) to perform frustum culling: the first one represents the camera while the second one corresponds to the texture we might or might not render. Those two Rectangle objects don&rsquo;t naturally belong to the GLEEDMapRenderer themselves, but why would I allocate memory for new instances every single frame. That&quot;d make the GC sad. Instead, take a look at this simplified snippet.</p>
-<pre><code>public class GleedMapRenderer implements MapRenderer, Disposable {
+<pre tabindex="0"><code>public class GleedMapRenderer implements MapRenderer, Disposable {
 
 	// Renderer data
 	private GleedMap m_map;
@@ -339,7 +339,7 @@
 <p>Attention! The object pool game programming design pattern is on its way to rescue the programmer in distress!</p>
 <p>I&quot;d encourage you to read through <a href="http://gameprogrammingpatterns.com/object-pool.html">this wonderful article</a> to get to know this common pattern. In brief, we basically keep a collection of pre-created objects (pool) that will be retrieved as necessary. We could have a pool with 1000 particle effects, every time we need an explosion in our game we just ask the pool for one. Right after we&quot;re done with it, we put it back. As a consequence, we won&rsquo;t require to allocate memory every time we need a fancy explosion since the pool will be created during launch.</p>
 <p>Luckily enough, libgdx provides the Pool abstract class and the Poolable interface to achieve this behavior (had we seen ourselves in the need to come up with an implementation, it wouldn&rsquo;t have been the end of the world either).</p>
-<pre><code>abstract public class Pool {
+<pre tabindex="0"><code>abstract public class Pool {
 	public Pool ();
 	public Pool (int initialCapacity);
 	public Pool (int initialCapacity, int max);
@@ -358,7 +358,7 @@
 </code></pre><p>As you can probably deduce after reading the previous snippet, in order to make a resource poolable it&rsquo;s required to implement the reset() method of such interface. Then you need to create a new <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html">Pool</a> class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this <a href="http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d">sample to have efficient bullets</a>.</p>
 <p><img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png"></p>
 <p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
-<pre><code>// Create prototype effect
+<pre tabindex="0"><code>// Create prototype effect
 ParticleEffect effect = new ParticleEffect();
 effect.load(Gdx.files.internal(&quot;data/particleStars&quot;), Gdx.files.internal(&quot;data&quot;));
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.87.0" />
+	<meta name="generator" content="Hugo 0.88.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -179,7 +179,7 @@
 <p>En Ogre hay <strong>decenas de formas de hacer las cosas</strong> dependiendo del grado de control que quieras tomar sobre el proceso. Podemos indicarle el motor que lleve a cabo determinada tarea y que lo haga con el <strong>comportamiento por defecto</strong> o, aunque también es posible <strong>indicar de forma explícita decenas de parámetros</strong> para que se comporte exactamente como deseamos. Es cierto que características como está hacen que la curva de aprendizaje tenga una pendiente abrumadora en los primeros compases. No obstante, no he visto ningún engine con <strong>la flexibilidad de Ogre</strong>.</p>
 <p>Podría citar muchos ejemplos en los que reluce esta filosofía como, por ejemplo, <strong>la secuencia de inicialización de Ogre</strong> en la que se nos presentan dos vías principales. Lo que sigue es un pequeño ejemplo pasando por alto ciertas reglas de estilo con el objetivo de no extenderme demasiado.</p>
 <p><em>Método automático:</em></p>
-<pre><code>// Creamos la raíz con ficheros de plugin y configuración válidos
+<pre tabindex="0"><code>// Creamos la raíz con ficheros de plugin y configuración válidos
 Root* raiz = new Root(&quot;plugins.cfg&quot;, &quot;ogre.cfg&quot;, &quot;ogre.log&quot;);
 
 // Ventana de Ogre
@@ -191,7 +191,7 @@ raiz-&gt;restoreConfig();
 // Inicializamos la librería
 ventana = Ogre-&gt;initialize(true,&quot;SionDream - Ogre automático&quot;);
 </code></pre><p><em>Método manual:</em></p>
-<pre><code>// Creamos la raíz
+<pre tabindex="0"><code>// Creamos la raíz
 Root* raiz = new Root();
 
 // Ventana de Ogre
