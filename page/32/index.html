@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.88.1" />
+	<meta name="generator" content="Hugo 0.89.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -126,7 +126,7 @@
 </ol>
 <p>Los pasos 1 y 3 resultaban especialmente costosos en términos de tiempo mientras que los pasos 2 y 4 eran muy rápidos. Traté de minimizar la necesidad de recalcular rutas hacia el protagonista pero cuando el jugador se desplaza demasiado, resulta inevitable.</p>
 <h3 id="aproximación-2-algoritmo-de-floyd">Aproximación 2: algoritmo de Floyd</h3>
-<p>Al ejecutar A* cada vez que un enemigo deseaba rehacer su ruta estábamos incurriendo en muchos cálculos redundantes. **¿Por qué no precomputar los caminos mínimos?** Eso es precisamente lo que hace el algoritmo de Floyd, calcula los costes y el camino para viajar entre todos los pares de nodos x e y de un grafo. El resultado lo almacena en una matriz de costes mínimos (que no nos interesa) y otra de caminos (con la que nos quedaremos).</p>
+<p>Al ejecutar A* cada vez que un enemigo deseaba rehacer su ruta estábamos incurriendo en muchos cálculos redundantes. <strong>¿Por qué no precomputar los caminos mínimos?</strong> Eso es precisamente lo que hace el algoritmo de Floyd, calcula los costes y el camino para viajar entre todos los pares de nodos x e y de un grafo. El resultado lo almacena en una matriz de costes mínimos (que no nos interesa) y otra de caminos (con la que nos quedaremos).</p>
 <p>Al tener una matriz con los caminos ya calculados, <strong>recuperar una ruta es mucho más eficiente</strong> en tiempo. Incluso podemos eliminar la simplificación de caminos en cada consulta si también precalculamos todas las simplificaciones posibles. No obstante, se requieren una serie de <strong>pasos iniciales</strong>:</p>
 <ol>
 <li>Construcción de la matriz de costes iniciales a partir de la malla.</li>
