@@ -105,6 +105,82 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/terreno-montanoso-en-blender/">Terreno montañoso en Blender</a>
+      </h1>
+      <span class="post-date">Jul 3, 2011 &middot; 5 minute read &middot; <a href="https://saltares.com/games/terreno-montanoso-en-blender/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>Me gustaría pedir disculpas por el descenso en el ritmo de publicación, el motivo es muy sencillo: estoy <strong>trabajando de forma intensa en la interfaz de <a href="../../proyectos/sion-tower/">Sion Tower</a></strong>. Para el menú principal he creado un <strong>escenario montañoso</strong> con los enemigos aproximándose a la Torre Sagrada en medio de una intensa lluvia. <strong>Modelar las montañas con Blender</strong> es terriblemente sencillo una vez se conoce la técnica apropiada y aquí vamos a comentarla en detalle.</p>
+<h3 id="creación-de-la-malla">Creación de la malla</h3>
+<p>Lo primero que debes hacer es abrir Blender y eliminar el cubo por defecto. Utilizaremos una rejilla o malla de vértices para modelar el terreno. El proceso es simple, habrá que modificar la posición <em>Z</em> (vertical) de varios vértices para crear elevaciones. Finalmente, utilizaremos suavizado para evitar los bordes abruptos.</p>
+<p>Para <strong>añadir la rejilla</strong> seleccionamos <em>Add → Mesh → Grid</em> e indicamos el número de vértices. A mayor resolución más calidad pero el coste computacional en Blender y en un videojuego crecerá de forma cuadrática. En Sion Tower me ha bastado con <em>50×50</em>, el suavizado final se encargará de mejorar el resultado. Después, en modo edición, debes escalar la rejilla hasta que se ajuste a la escala de tu juego o entorno.</p>
+<p><img src="../../img/wp/blender-grid.jpg" alt="blender-grid.jpg"></p>
+<h3 id="modelado-de-las-montañas">Modelado de las montañas</h3>
+<p>La clave está en utilizar el modo de <strong>edición proporcional</strong> que activamos pulsando la tecla <em>O</em>. Veremos que el modo también puede activarse en la barra de herramientas <em>Proportional – On</em>. Este modo hará que, al modificar un vértice, los vecinos dentro de un radio de acción también se vean ligeramente afectados. Justo al lado establecemos el <em>Falloff</em> a <em>Smooth Falloff</em>. Para activar el suavizado, seleccionamos todos los vértices con <em>A</em> y pulsamos en <em>Set Smooth</em>.</p>
+<p><img src="../../img/wp/blender-elevacion.jpg" alt="blender-elevacion.jpg"></p>
+<p>El proceso a seguir para <strong>crear o modificar elevaciones</strong> es:</p>
+<ol>
+<li>Seleccionar un vértice con el botón derecho y ajustar el radio de acción con la rueda del ratón a nuestro gusto.</li>
+<li>Desplazar el vértice pulsando la tecla <em>G</em>, es importante restringirlo al eje vertical con la tecla <em>Z</em>, de lo contrario se producen efectos extraños.</li>
+<li>Repetir el proceso con vértices y radios de acción diferentes hasta conseguir el resultado deseado.</li>
+</ol>
+<p><img src="../../img/wp/blender-terrain.jpg" alt="blender-terrain.jpg"></p>
+<p>Recuerda que <strong>las montañas son estructuras naturales</strong> y que, por tanto, muestran multitud de irregularidades. En la asimetría y lo brusco está el secreto.</p>
+<h3 id="texturizar-el-terreno">Texturizar el terreno</h3>
+<p>Continuamos la creación del terreno <strong>añadiendo una textura</strong>:</p>
+<ol>
+<li>Seleccionamos el terreno, acudimos al panel de materiales (<em>F5</em>) y añadimos un material nuevo.</li>
+<li>Las montañas no tienen un aspecto de material plástico, por lo que establecemos su color especular a .</li>
+<li>Nos dirigimos al panel de texturas (<em>F6</em>) y añadimos una nueva textura de tipo imagen con césped.</li>
+<li>Cargamos la textura de fichero y establecemos las propiedades <em>XRepeat</em> e <em>YRepeat</em> que, como sus propios nombres indican, hacen repetir la textura.</li>
+</ol>
+<p><img src="../../img/wp/grass.jpg" alt="grass.jpg"></p>
+<p>Si pulsas <em>F12</em> verás el renderizado de tus montañas y no tardarás de percatarte de dos problemas: la iluminación y… <strong>¡parecen las montañas de los hobbits estando verdes!</strong> En primer lugar, deberás jugar con las fuentes de luz. Ahora nos centraremos en mezclar varias texturas.</p>
+<p><img src="../../img/wp/terrain.jpg" alt="terrain.jpg"></p>
+<h3 id="texturas-stencil">Texturas stencil</h3>
+<p>Un terreno de corte más realista tiene <strong>varias texturas</strong>: hierba, tierra, rocas o incluso nieve. Las transiciones entre las mismas deben ser suaves y su situación debe ser lógica: la hierba abunda en los valles mientras la roca en los picos montañosos. En esta sección aprenderemos a aplicar varias texturas a nuestro terreno mezclándolas entre sí de manera apropiada.</p>
+<p>Imaginad que tendremos una <strong>pila de capas con varias texturas</strong> ordenadas: hierba, roca y nieve. En medio colocaremos dos texturas en escala de grises llamadas stencil que indicarán al sistema de renderizado cómo han de mezclarse las capas entre sí. Un color negro indica que sólo ha de visualizarse la capa superior, blanco significa que sólo se vera la capa inferior. Lo interesante es que un valor intermedio o gris significará que las capas se mezclarán siguiendo la ponderación del color.</p>
+<p><img src="../../img/wp/blender-stencil-3d.jpg" alt="blender-stencil-3d.jpg"></p>
+<p>Seguimos el siguiente proceso:</p>
+<ul>
+<li>Cambiamos del modo edición al <em>Vertex Paint</em>.</li>
+<li>Seleccionamos el panel de edición (<em>F9</em>) y veremos una paleta de colores. Elegimos el color negro y pulsamos sobre <em>set VertCol</em> y la malla quedará completamente negra (se visualizaría la capa inferior).</li>
+<li>Elegimos el color blanco y configuramos tanto la opacidad como el tamaño.</li>
+<li>Comenzamos a pintar el terreno: los picos deberían ser completamente blancos (roca), las lomas de un tono intermedio y los valles prácticamente negros (hierba).</li>
+<li>Cuando estemos satisfechos seleccionaremos la vista <em>Top</em> y el modo de proyección ortográfico. Hemos de hacer una captura de pantalla y aislar la el resultado con cualquier software de edición de imágenes como Gimp.</li>
+</ul>
+<p><img src="../../img/wp/blender-stencil.jpg" alt="blender-stencil.jpg"></p>
+<ul>
+<li>Volvemos al modo edición y creamos una nueva textura debajo de la hierba de tipo imagen cargando la textura stencil hierba-roca. Esta textura no debe repetirse.</li>
+<li>En el panel <em>Map To</em> deseleccionamos <em>Col</em> y activamos <em>Stencil</em> y <em>No RGB</em>.</li>
+<li>Creamos una nueva textura para la roca, cargamos la imagen y aplicamos repetición.</li>
+</ul>
+<p><img src="../../img/wp/rock.jpg" alt="rock.jpg"></p>
+<p><img src="../../img/wp/blender-stencil-aplicando.jpg" alt="blender-stencil-aplicando.jpg"></p>
+<p>Si renderizas con <em>F12</em> verás un resultado mucho más satisfactorio.</p>
+<p><img src="../../img/wp/terrain-rock.jpg" alt="terrain-rock.jpg"></p>
+<h3 id="resultado-final">Resultado final</h3>
+<p>Si repites el proceso stencil para añadir una <strong>nueva capa con nieve</strong> el resultado tendrá mucha más calidad:</p>
+<p><img src="../../img/wp/terrain-snow.jpg" alt="terrain-snow.jpg"></p>
+<p>La escena final para el <strong>menú principal de Sion Tower</strong> ha quedado de la siguiente manera:</p>
+<p><img src="../../img/wp/siontower-menu.jpg" alt="siontower-menu.jpg"></p>
+<p><!-- raw HTML omitted --><strong>Nota importante</strong><!-- raw HTML omitted -->: A la hora de exportar a Ogre el modelo con las texturas stencil he tenido muchos problemas. Al final la solución ha pasado por mezclar yo mismo las capas stencil con las de texturas utilizando Gimp y aplicarlas a la maya utilizando mapeado UV.</p>
+<p><img src="../../img/wp/blender-stencil-precomputado.jpg" alt="blender-stencil-precomputado.jpg"></p>
+<h3 id="referencias">Referencias</h3>
+<p>Para realizar el proceso y redactar el artículo he seguido estos dos estupendos tutoriales con varios añadidos personales:</p>
+<ul>
+<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_I:_Basic_Terrain">Blender 3D: Noob to Pro – Landscape Modeling I: Basic Terrain</a></li>
+<li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_II:_Texture_Stenciling">Blender 3D: Noob to Pro – Landscape Modeling II: Texture Stenciling</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/">Búsqueda de caminos: Floyd vs A*</a>
       </h1>
       <span class="post-date">Jun 22, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/#disqus_thread">Comments</a>
@@ -242,45 +318,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sound-effect-prototyping-with-sfxr/">Sound effect prototyping with SFXR</a>
-      </h1>
-      <span class="post-date">Jun 12, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sound-effect-prototyping-with-sfxr/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/sfxr-title.png" alt="sfxr-title.png"></p>
-<p>When you&quot;re <strong>developing a game as a team</strong>, organization can be pretty challenging. You have to write code so every art asset fits in perfectly. You&rsquo;ve probably used yourself ugly squares to represent some character&rsquo;s sprite in early development stages but… <strong>What happens with audio?</strong> That&rsquo;s when <a href="http://www.drpetter.se/project_sfxr.html">SFXR</a> comes into play.</p>
-<h3 id="what-is-sfxr">What is SFXR?</h3>
-<p><strong>SFXR is a simple sound effect prototyping open source tool</strong>. It was initially developed for the <a href="http://www.ludumdare.com/compo/2007/12/13/sfxr-sound-effects-for-all/">10th Ludum Dare 48h gamedev competition</a>. People neither had the time nor expertise to produce their own SFX so they generated them almost automatically with SFXR.</p>
-<p>SFXR only has one big panel in which you can produce your sound effects. Using the left buttons you can <strong>select pre-defined sounds</strong> for simple actions like shooting, jumping or getting a power-up. If you want more customization it&rsquo;s possible to adjust some sound properties such as speed, wave form and other stuff I have no idea about. You can monitor the current state of your effect by clicking the <em>&ldquo;Play sound&rdquo;</em> button. When you&quot;re done, click the <em>&ldquo;Export .wav&rdquo;</em> button and that&rsquo;s it!</p>
-<p><img src="../../img/wp/sfxr.png" alt="sfxr.png"></p>
-<h3 id="downloading-sfxr">Downloading SFXR</h3>
-<p>SFXR is <strong>multi platform</strong> so you won&rsquo;t have any problems to get it running on your system. Simply, download the correspondent version:</p>
-<ul>
-<li><a href="http://www.drpetter.se/files/sfxr-sdl-1.1.tar.gz">SFXR for GNU/Linux</a></li>
-<li><a href="http://www.drpetter.se/files/sfxr.zip">SFXR for Windows</a></li>
-<li><a href="http://thirdcog.eu/apps/cfxr">SFXR port for Mac (CFXR)</a></li>
-<li><a href="http://www.superflashbros.net/as3sfxr/">SFXR for web (using Flash)</a></li>
-</ul>
-<p>If you want to use the <strong>GNU/Linux version</strong> you must install the SDL and GTK libraries. For Debian like distributions users, please follow these simple steps:</p>
-<ul>
-<li>Install the dependencies:</li>
-</ul>
-<pre tabindex="0"><code>sudo apt-get install libsdl1.2-dev libgtk2.0-dev
-</code></pre><ul>
-<li>Build and install (optional):</li>
-</ul>
-<pre tabindex="0"><code>make &amp;&amp; sudo make install
-</code></pre><h3 id="have-fun-prototyping">Have fun prototyping</h3>
-<p>I&quot;m using SFXR for <a href="../../en/proyectos/sion-tower/">Sion Tower</a>, the strategy action game I&quot;m developing right now and I&quot;m quite happy with it. A colleague of mine who studied sound production is working on the effects for the game. In the meanwhile, testing the sound system with SFXR is working great!</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -300,7 +337,7 @@
             </li>
             
             <li>
-                <a href="../../page/61/">»»</a>
+                <a href="../../page/62/">»»</a>
             </li>
         </ul>
     </div>

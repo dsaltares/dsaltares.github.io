@@ -105,6 +105,25 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/using-ant-behind-a-proxy/">Using Ant behind a proxy</a>
+      </h1>
+      <span class="post-date">Mar 10, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/using-ant-behind-a-proxy/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p>Many Java projects use <a href="http://en.wikipedia.org/wiki/Apache_Ant">Ant</a> to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.</p>
+<p>Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.</p>
+<pre tabindex="0"><code>&lt;setproxy proxyhost=&quot;host&quot; proxyport=&quot;port&quot; proxypassword=&quot;password&quot;/&gt;
+</code></pre><p>Users behind a proxy would now be able to download dependencies with Ant. More documentation about the <code>setproxy</code> task is available inside the <a href="https://ant.apache.org/manual/Tasks/setproxy.html">official user manual</a>.</p>
+<p>This comes from me trying to get the Libgdx development environment in my office&rsquo;s desktop. We obviously have a proxy, which put this little bump on the road.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/new-look/">New look</a>
       </h1>
       <span class="post-date">Mar 9, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/new-look/#disqus_thread">Comments</a>
@@ -338,24 +357,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/learning-libgdx-game-development/">Learning LibGDX Game Development</a>
-      </h1>
-      <span class="post-date">Sep 29, 2013 &middot; 1 minute read &middot; <a href="https://saltares.com/games/learning-libgdx-game-development/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><a href="http://www.packtpub.com/learning-libgdx-game-development/book"><img src="../../img/wp/Learning-LibGDX-Game-Development.png" alt="Learning-LibGDX-Game-Development.png"></a></p>
-<p>Just a quick update this time. A while back I <a href="../../games/book-learning-libgdx-game-development/">mentioned</a> that I had been doing some technical reviewing on a LibGDX book, and now it&rsquo;s finally out.</p>
-<p><a href="http://www.packtpub.com/learning-libgdx-game-development/book">Learning LibGDX Game Development</a> by Andreas Oehlke explains the basic features of the mighty framework whilst building a simple platformer from scratch. Even though it isn&rsquo;t an advanced read, it&quot;ll surely help whoever doesn&rsquo;t have a huge deal of experience in games development and wants to give LibGDX a try. I really like that approach for novices, as it illustrates quite clearly how the jigsaw fits together.</p>
-<p>Check it out on the Packt website to see whether or not you&quot;re interested and stay tuned because they usually feature loads of bargains/bundles, specially during the weekends.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -375,7 +376,7 @@
             </li>
             
             <li>
-                <a href="../../page/61/">»»</a>
+                <a href="../../page/62/">»»</a>
             </li>
         </ul>
     </div>

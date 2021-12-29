@@ -105,6 +105,83 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/populate-your-box2d-world-using-the-libgdx-maps-api/">Populate your Box2D world using the libgdx maps API</a>
+      </h1>
+      <span class="post-date">Mar 9, 2013 &middot; 7 minute read &middot; <a href="https://saltares.com/games/populate-your-box2d-world-using-the-libgdx-maps-api/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>This text proposes an effective approach to painlessly create static collidable geometry in 2D levels with the help of Box2D and the new libgdx maps API.</p>
+<p>All the source code is available for direct download below the post.</p>
+<h3 id="new-libgdx-maps-api">New libgdx maps API</h3>
+<p>The mighty libgdx library saw itself to yet another addition a couple of weeks ago, <a href="http://www.badlogicgames.com/wordpress/?p=2870">a shiny brand new maps API</a>. Nex and me had been working on it for a while and people seem to be quite happy with it. Actually, by now, loads of folks have contributed too, which is kind of the beauty of open source, isn&rsquo;t it? You might as well read the <a href="http://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps">wiki page</a> and check out the <a href="https://code.google.com/p/libgdx/wiki/GraphicsTileMaps?ts=1361648294&amp;updated=GraphicsTileMaps#Examples">sample code</a>, luckily enough, there&rsquo;s plenty which is not always the case.</p>
+<p>It primarily focuses on modelling how maps data is represented as well as in providing a way of easily implementing loaders and renderers for specific formats. The API comes with built in loaders and renderers for the <a href="http://www.mapeditor.org/">TMX</a>, <a href="http://tide.codeplex.com/">Tide</a> and <a href="http://gleed2d.codeplex.com/">Gleed</a> formats. However, the latter might be deprecated at some point in the future due its absolute paths horribleness. Believe me, I&rsquo;ve tried to work my way around it but there is just no elegant solution. Although there hasn&rsquo;t been any releases since it&rsquo;s inclusion, it&rsquo;s accessible in the <a href="http://libgdx.badlogicgames.com/nightlies/">nightly builds</a>. For those interested in the implementation, please go to the Github repository.</p>
+<p><img src="../../img/wp/maps-api-300x125.png" alt="maps-api-300x125.png"></p>
+<p>Take this cutie as an example, <a href="https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/superkoalio/SuperKoalio.java">a minimalistic platformer using the new API</a> in just under 300 lines.</p>
+<p><img src="../../img/wp/koalio-300x216.png" alt="koalio-300x216.png"></p>
+<p>Enjoy.</p>
+<h3 id="use-your-level-editor-to-place-world-physics-geometry">Use your level editor to place world physics geometry</h3>
+<p>Let&rsquo;s say you&quot;re working on a 2D game which mechanics require some sort of collision detection. Most likely, you&quot;ll be leveraging an editor such as Tiled or Gleed to boost your level creation process. How are you planning to implement collision detection in a way it doesn&rsquo;t become an excruciating pain in the ass to maintain? Can we also make it efficient, please?</p>
+<blockquote>
+<p>At last! After all, this is what the article is really about.</p>
+</blockquote>
+<p>If you&quot;re going for tile based levels, you could add properties to the map to determine tiles walkability, a perfectly valid approach when presented with just a bunch of tiles. However, adding or changing tiles can become tedious really soon. Why don&rsquo;t you take advantage of Box2D collision detection algorithms and <a href="http://en.wikipedia.org/wiki/Space_partitioning">space partitioning</a> techniques? No worries, you could do so regardless of the need of running a real time physics simulation, just create the bodies, move them according to the game logic and query the world for intersections without stepping it. In case of dealing with a physics based game, then, by all means, make full use of Box2D.</p>
+<p><img src="../../img/wp/tiled-caveman-300x154.png" alt="tiled-caveman-300x154.png"></p>
+<p>I&quot;m going to assume basic knowledge of this popular physics library, if you don&rsquo;t consider yourself minimally familiar with it, please <a href="http://box2d.org/manual.pdf">take some time to get the basics</a>.</p>
+<p>Alright, your textures are all set in your level and it looks stunningly beautiful! Sadly, you lack any kind of collision data. A good practice is to create a separate layer named <em>&ldquo;physics&rdquo;</em> or similar for sanity reasons. Now you can start placing shapes (rectangles, circles, polygons or polylines) so they adjust to the non walkable areas. Here&rsquo;s an example in my WIP casual abduction game.</p>
+<p><img src="../../img/wp/gleed-abduction-collisions-300x158.png" alt="gleed-abduction-collisions-300x158.png"></p>
+<p>As you could have guessed, having thousands of shapes won&rsquo;t do your game&rsquo;s performance any favours. It&quot;d be a good idea to keep the shape count under control while preserving a decent granularity. Ideally, the editor would have a <em>&ldquo;generate physics&rdquo;</em> option that would automatically create collision data from a texture layer using <a href="http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/alg.html">contour tracing</a>. Sadly, that&rsquo;s not the case in the state of the art open source software we have today.</p>
+<p>Don&rsquo;t forget to hit <em>&ldquo;save&rdquo;</em>.</p>
+<h3 id="create-bodies-from-your-level-data--my-level-has-collidable-static-geometry-data-how-do-i-get-that-in-my-game">Create bodies from your level data &gt; My level has collidable static geometry data, how do I get that in my game?</h3>
+<p>To tackle that problem I implemented a simple class named <em>MapBodyManager</em> with the following interface.</p>
+<pre tabindex="0"><code>public class MapBodyManager {
+    public MapBodyManager(World world, int unitsPerPixel, String materialsFile);
+    public void createPhysics(Map map, String layerName);
+    public void destroyPhysics();
+}
+</code></pre><p>I believe it to be simple enough but I&quot;ll explain the details just in case. The constructor takes the Box2D world so it knows where to dump the new bodies into and where to delete them from later on. Most level editors work in pixels, while Box2D measures stuff in metres (take that imperial system!), hence the need for the <em>unitsPerPixel</em> conversion rate. We&quot;ll get to the materials stuff in just a minute.</p>
+<p>Once your level is loaded, you just need to do this.</p>
+<pre tabindex="0"><code>MapBodyManager mapBodyManager = new MapBodyManager(world, 1.0f, Gdx.files.internal(&quot;data/materials.json&quot;));
+Map map = assetManager.get(&quot;data/level.xml&quot;, Map.class);
+mapBodyManager.createPhysics(map, &quot;physics&quot;);
+</code></pre><p>This will automatically create a static body per shape in your <em>&ldquo;physics&rdquo;</em> layer as shown in the screenshot below.</p>
+<p><img src="../../img/wp/abduction.jpg" alt="abduction.jpg"></p>
+<p>So the player heroically beats the level and makes it to the next one. You surely will want to get rid of all those bodies (reference to murder not intended) before adding any more. Interestingly enough, our handy <em>MapBodyManager</em> keeps track of all registered bodies, so voilá, easy as cake.</p>
+<pre tabindex="0"><code>mapBodyManager.destroyPhysics();
+</code></pre><h3 id="material-system">Material system</h3>
+<p>Those who are no strangers to Box2D will know that body&rsquo;s fixtures have properties that determine how they interact with other entities. These are mainly: density, restitution and friction. Mass is usually determined by the area of the shape involved and the fixture&rsquo;s density. Again, check out Box2D documentation for more details on this. We could just create all our static bodies with default properties but…</p>
+<blockquote>
+<p>I want to have icy, sandy and elastic surfaces in my game so characters can slide, be slower and bounce!</p>
+</blockquote>
+<p>How can our <em>MapBodyManager</em> deal with all this? It&rsquo;s actually dead easy, I went for a very simple material system where each one of these materials are defined by a set of properties in a straightforward JSON file. Let&rsquo;s say that the game world we want to model has regular, ice and elastic elements, we might be able to get away with something such as this.</p>
+<pre tabindex="0"><code>[
+  { &quot;name&quot; : &quot;ice&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.0, &quot;friction&quot; : 0.1 },
+  { &quot;name&quot; : &quot;elastic&quot;, &quot;density&quot; : 1.0, &quot;restitution&quot; : 0.8, &quot;friction&quot; : 0.8 }
+]
+</code></pre><p>Assigning materials to elements in our editor is also fairly simple. Add a <em>&ldquo;material&rdquo;</em> custom property per shape you  want to behave in a non default manner. Every editor has its own GUI element for this and all of them are almost identical.</p>
+<p><img src="../../img/wp/material.png" alt="material.png"></p>
+<p>The <em>MapBodyManager</em> will automatically pick up each shape&rsquo;s material and create bodies with the desired properties. Adding new materials is trivial and, whilst reassigning them is not comfortable, it&rsquo;s not a deal breaker either.</p>
+<p>This makes you happy, doesn&rsquo;t it?</p>
+<blockquote>
+<p>Yay! ### Source code</p>
+</blockquote>
+<p>Did you read this all or did you just scrolled down after realising you could download the source at the end? If you belong to the first group, I have to say you&quot;re awesome and deserve my most sincere admiration.</p>
+<p>Nevertheless, you&quot;ll be very disappointed to see there&rsquo;s no arcane magic going on behind the scenes as the implementation is not shocking in any way. Here it goes for those who are bored enough and wouldn&rsquo;t mind to procrastinate some more by reading a piece useless code.</p>
+<p>As promised.</p>
+<p><a href="https://github.com/dsaltares/sioncore/blob/master/src/com/siondream/core/physics/MapBodyManager.java">MapBodyManager.java</a></p>
+<p>To be honest, I&rsquo;ve only tested this with Gleed created maps and I don&rsquo;t intend to maintain this utility class any further than what I deem necessary to carry on with my projects. The API is homogeneous and should be fully compatible with Tiled and Tide as it is. Worst case scenario, if you bump into problems, the fixes are likely to be simple. Obviously, you&quot;re not forced to use it, feel free to mimic the approach and pick ideas from it, you&quot;ll probably come up with something better after some thought.</p>
+<ul>
+<li><!-- raw HTML omitted --><strong>Edit 1</strong><!-- raw HTML omitted -->: updated the code to support latest Libgdx API and fixed bugs.</li>
+<li><!-- raw HTML omitted --><strong>Edit 2</strong><!-- raw HTML omitted -->: changed materials file format from XML to JSON.</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/1gam-february-weekly-progress-3/">#1GAM February: weekly progress 3</a>
       </h1>
       <span class="post-date">Feb 26, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress-3/#disqus_thread">Comments</a>
@@ -238,152 +315,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/beware-memory-allocation/">Beware memory allocation</a>
-      </h1>
-      <span class="post-date">Jan 29, 2013 &middot; 7 minute read &middot; <a href="https://saltares.com/games/beware-memory-allocation/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non <a href="http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage collected languages</a>, say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey&rsquo;s about memory won&rsquo;t necessarily make your game crash. Nonetheless, it can be silently devastating to the point of dragging your frame rate below ground absent previous notice.</p>
-<p>You don&rsquo;t want that now, do you?</p>
-<p>Please, let me take a step back and point out the irony of having to be extremely careful with memory usage in the presence of a garbage collector (GC) when dealing with real time problems. It&rsquo;s often said that it takes the responsibility off you. In a beautiful world where code tastes like lollipop it would, but this is really not the case. At least not entirely.</p>
-<p>This article is aimed at developers who code in GC environments to make real time applications. Concepts here also apply to broader fields in spite of the focus mainly being Java and games development using the libgdx framework. Actually, I decided to write this post after seeing the same performance related questions <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=3572">over</a> and <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=6785&amp;hilit=performance+garbage">over</a> again in the libgdx forums. Most of them are closely tied to memory allocation.</p>
-<p><img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg"></p>
-<h3 id="be-aware-of-the-gc-and-why-its-critical-in-mobileconsoles">Be aware of the GC and why it&rsquo;s critical in mobile/consoles</h3>
-<p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&quot;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
-<p>Note: I just told a white lie. JVM&rsquo;s GC actually follows several strategies to free up unused memory as pointed out in <a href="http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect">this Stack Overflow post</a>.</p>
-<p>A common mistake, which I&rsquo;ve made myself with <a href="../../freegemas/">Freegemas</a>, is to believe my game is well optimized because it runs flawlessly on an i7 machine. Don&rsquo;t fool yourself, go on and deploy your libgdx app on a mid tier Android phone and see what happens.</p>
-<blockquote>
-<p>Oh well… This is disappointing…</p>
-</blockquote>
-<p>Mobile devices and consoles typically fall short on memory. You miss those 16GB of RAM, don&rsquo;t you? Moreover, every time the GC decides to intervene, the stall becomes more noticeable due to the less powerful CPU.</p>
-<blockquote>
-<p>Oh noes!</p>
-</blockquote>
-<p>Long story short, we need to prevent this from happening as much as we possibly can.</p>
-<h3 id="cache-temporal-variables-as-data-members">Cache temporal variables as data members</h3>
-<p>It goes without saying that some memory allocation is needed. Don&rsquo;t worry about loading your assets at sensible times as well as creating game objects to get things ready. Nevertheless, avoid making use of the new operator inside your game loop at any cost.</p>
-<blockquote>
-<p>Sometimes I do need some auxiliary, yet costly, objects to perform calculations every frame.</p>
-</blockquote>
-<p>Worry no more as you can make them private data members. As cheeky as it may sound, this will spare you a fair amount of problems.</p>
-<p>I&quot;m currently working on a GLEED level system refactor and I think the renderer class could serve us as an perfect example. I use two Rectangle objects (Axis Aligned Bounding Boxes) to perform frustum culling: the first one represents the camera while the second one corresponds to the texture we might or might not render. Those two Rectangle objects don&rsquo;t naturally belong to the GLEEDMapRenderer themselves, but why would I allocate memory for new instances every single frame. That&quot;d make the GC sad. Instead, take a look at this simplified snippet.</p>
-<pre tabindex="0"><code>public class GleedMapRenderer implements MapRenderer, Disposable {
-
-	// Renderer data
-	private GleedMap m_map;
-	private SpriteBatch m_batch;
-	private boolean m_ownSpriteBatch;
-	private float m_mpp;
-
-	// Aux data for fustrum culling
-	private Rectangle m_box = new Rectangle();
-	private Rectangle m_camera = new Rectangle();
-
-	public void render(OrthographicCamera camera) {
-		m_camera.x = camera.position.x - camera.viewportWidth * 0.5f * camera.zoom;
-		m_camera.y = camera.position.y - camera.viewportHeight * 0.5f * camera.zoom;
-		m_camera.width = camera.viewportWidth *  camera.zoom;
-		m_camera.height = camera.viewportHeight *  camera.zoom;
-
-		setProjectionMatrix(camera.combined);
-
-		MapLayers layers = m_map.getLayers();
-
-		for (MapLayer layer : layers) {
-			renderLayer(layer);
-		}
-	}
-
-	private void renderLayer(MapLayer layer) {
-
-		if (!layer.getVisible()) {
-			return;
-		}
-
-		MapObjects objects = layer.getObjects();
-		int numObjects = objects.getNumObjects();
-
-		for (int j = 0; j &lt; numObjects; ++j) {
-			MapObject mapObject = objects.getObject(j);
-
-			if (mapObject == null || !mapObject.getVisible()) {
-				continue;
-			}
-
-			if (!(mapObject instanceof TextureMapObject)) {
-				continue;
-			}
-
-			TextureMapObject texture = (TextureMapObject)mapObject;
-
-			setBounds(texture);
-
-			// If the image is in the frustum, draw it (culling)
-			if (m_camera.overlaps(m_box) ||
-			    m_camera.contains(m_box) ||
-			    m_box.contains(m_camera)) {
-
-				...
-			}
-		}
-	}
-}
-</code></pre><p>As illustrated above, the Rectangle instances are created along the renderer and properly set every frame. Consequently, what initially would have involved memory allocations, assignments and GC activity is reduced to just a few unavoidable assignments. Let&rsquo;s mention it once again, in spite of rectangles being cheap, you don&rsquo;t want to mess with the GC on mobile devices!</p>
-<h3 id="consider-object-pooling">Consider object pooling</h3>
-<p>Unfortunately, at some point you will find yourself in the need of constantly creating dozens of big sized objects. It&rsquo;s a common problem when dealing with spawning game entities, particle effects and the like. Say you&quot;re making a space shooter, of course you want hundreds of flashy explosions and lasers! You&quot;ll face a problem, that can drive the GC crazy as particles pop up or disappear.</p>
-<p>Attention! The object pool game programming design pattern is on its way to rescue the programmer in distress!</p>
-<p>I&quot;d encourage you to read through <a href="http://gameprogrammingpatterns.com/object-pool.html">this wonderful article</a> to get to know this common pattern. In brief, we basically keep a collection of pre-created objects (pool) that will be retrieved as necessary. We could have a pool with 1000 particle effects, every time we need an explosion in our game we just ask the pool for one. Right after we&quot;re done with it, we put it back. As a consequence, we won&rsquo;t require to allocate memory every time we need a fancy explosion since the pool will be created during launch.</p>
-<p>Luckily enough, libgdx provides the Pool abstract class and the Poolable interface to achieve this behavior (had we seen ourselves in the need to come up with an implementation, it wouldn&rsquo;t have been the end of the world either).</p>
-<pre tabindex="0"><code>abstract public class Pool {
-	public Pool ();
-	public Pool (int initialCapacity);
-	public Pool (int initialCapacity, int max);
-
-	abstract protected T newObject ();
-
-	public T obtain ();
-	public void free (T object);
-	public void freeAll (Array objects);
-	public void clear ();
-
-	static public interface Poolable {
-		public void reset ();
-	}
-}
-</code></pre><p>As you can probably deduce after reading the previous snippet, in order to make a resource poolable it&rsquo;s required to implement the reset() method of such interface. Then you need to create a new <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html">Pool</a> class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this <a href="http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d">sample to have efficient bullets</a>.</p>
-<p><img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png"></p>
-<p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
-<pre tabindex="0"><code>// Create prototype effect
-ParticleEffect effect = new ParticleEffect();
-effect.load(Gdx.files.internal(&quot;data/particleStars&quot;), Gdx.files.internal(&quot;data&quot;));
-
-// Create effects pool using thay prototype
-ParticleEffectPool effectPool = new ParticleEffectPool(effect, 20, 100);
-// Add new effect and enable it
-ParticleEffect effect = effectPool.obtain();
-effect.start();
-
-// Put effect back in pool (first check if it has finished)
-if (effect.isComplete()) {
-	effectPool.free(effect);
-}
-</code></pre><p>Here we go, GC friendly particles. Neat, isn&rsquo;t it?</p>
-<h3 id="still-in-trouble-do-some-profiling">Still in trouble? Do some profiling</h3>
-<blockquote>
-<p>Alright, I&quot;m pretty sure your advice is utter bullshit, my app is still laggy! I want my money back.</p>
-</blockquote>
-<p><img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png"></p>
-<p>Before throwing that rotten tomato you&quot;re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it&rsquo;s running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you&rsquo;ve missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.</p>
-<p>Promise.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -403,7 +334,7 @@ if (effect.isComplete()) {
             </li>
             
             <li>
-                <a href="../../page/61/">»»</a>
+                <a href="../../page/62/">»»</a>
             </li>
         </ul>
     </div>

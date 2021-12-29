@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://saltares.com/categories/</loc>
+    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/</loc>
+    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/categories/development/</loc>
+    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/how-to-do-debug-your-web-application-running-on-a-real-android-device-during-local-development/</loc>
+    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/post/</loc>
+    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://saltares.com/categories/</loc>
-    <lastmod>2021-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/</loc>
-    <lastmod>2021-05-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://saltares.com/categories/leadership/</loc>
-    <lastmod>2021-05-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/post/</loc>
     <lastmod>2021-05-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/categories/general/</loc>
@@ -76,9 +82,6 @@
   </url><url>
     <loc>https://saltares.com/general/jsconf-eu-2017-recommended-talks/</loc>
     <lastmod>2017-05-29T15:39:53+01:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/categories/game-development/</loc>
-    <lastmod>2017-04-20T22:07:01+01:00</lastmod>
   </url><url>
     <loc>https://saltares.com/games/ludum-dare-38-theme-ideas/</loc>
     <lastmod>2017-04-20T22:07:01+01:00</lastmod>

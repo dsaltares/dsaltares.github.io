@@ -105,6 +105,26 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/ajr-patrocina-sion-tower/">AJR patrocina Sion Tower</a>
+      </h1>
+      <span class="post-date">Feb 22, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ajr-patrocina-sion-tower/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/sion-tower/collage-protagonista.jpg" alt="personaje-siontower.jpg"></p>
+<p>Vengo con una fantástica noticia para el proyecto Sion Tower: <strong>¡tenemos patrocinador!</strong> Antonio Jiménez Rodríguez (AJR) es socio de una empresa de diseño gráfico de Cádiz y se ha interesado por el proyecto.</p>
+<p><strong>Antonio Jiménez colaborará modelando, texturizando y animando los personajes</strong>, una aportación de lo más impresionante. Hará un encomiable esfuerzo compatibilizando sus compromisos profesionales con la colaboración en un proyecto de Software Libre como es Sion Tower. Por el momento nos muestra al protagonista del juego en varias poses demostrando su talento. Podéis encontrar más información sobre sus trabajos en <a href="http://ajr-portafolio.blogspot.com/">su blog personal</a>.</p>
+<p><img src="../../img/wp/ajr1.png" alt="ajr1-300x90.png"></p>
+<p>Es muy común que a los programadores se nos resista el arte de nuestros proyectos y por ello considero <strong>un paso gigante</strong> la incorporación de Antonio Jiménez. Desde aquí, le doy las gracias colocándolo en la sección de patrocinadores de IberOgre y Sion Tower (barra lateral del blog).</p>
+<p>¡Pronto mostraremos más!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/">Screencast y edición de vídeo en Linux</a>
       </h1>
       <span class="post-date">Feb 21, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/computing/screencast-y-edicion-de-video-en-linux/#disqus_thread">Comments</a>
@@ -234,45 +254,6 @@ sudo apt-get install openshot openshot-doc
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/">Colisiones V: Body, CollisionManager y GameObject</a>
-      </h1>
-      <span class="post-date">Feb 17, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/colisiones-5.png" alt="colisiones-5.png"></p>
-<p>Entregas</p>
-<ul>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: Shape y Collision Dispatching</a></li>
-<li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a></li>
-<li><em>Colisiones V: Body, CollisionManager y GameObject</em></li>
-</ul>
-<p>Esta es la <strong>quinta y última entrega</strong> de la serie de artículos sobre el sistema de detección de colisiones de Sion Tower (STC). <strong>Trataremos las últimas clases</strong> que nos queda por ver: <em>Body</em>, <em>CollisionManager</em> y <em>GameObject</em>. Finalmente hablaré de las correcciones y mejoras que implementaré lo antes posible de cara a una futura versión.</p>
-<h3 id="la-clase-body">La clase Body</h3>
-<p>Un <em>Body</em> representa la <strong>parte colisionable de un objeto</strong> y está formado por un vector de formas (<em>Shape</em>) y una transformación (traslación con respecto al origen, escala y rotación). Los cuerpos tienen un tipo (entero) que permite agruparlos y filtrarlos en la detección de colisiones. Para manejar las colisiones entre dos cuerpos, debemos cruzar las formas de ambos en coordenadas del mundo, en ningún caso locales al objeto. Aplicar la transformación de cada cuerpo a cada forma en todas las iteraciones del bucle de juego es demasiado costoso. Por ello, he decidido almacenar un segundo vector de formas en coordenadas del mundo, en el eterno dilema de la eficiencia tempo/memoria ha ganado el tiempo en este caso.</p>
-<p><img src="../../img/wp/body1.png" alt="body1.png"></p>
-<p>¿Por qué no tener un sólo vector de formas en coordenadas del mundo? En la carga de niveles utilizaré una fábrica que guardará instancias de objetos como muros, mobiliario y otros elementos. Necesitaré copiarlos y por eso es más cómodo emplear coordenadas locales y luego transformarlas una sola vez.</p>
-<h3 id="la-clase-collisionmanager">La clase CollisionManager</h3>
-<p>El gestor de colisiones sigue el patrón de diseño <a href="http://es.wikipedia.org/wiki/Singleton">Singleton</a> y <strong>lleva el registro de todos los cuerpos colisionables</strong> de la escena. Es posible añadir o eliminar cuerpos según nos convenga. Una vez en cada iteración del bucle de juego es recomendable llamar al método <em>checkCollisions</em>.</p>
-<p>Sólo se comprobarán colisiones entre cuerpos para cuyo tipo exista un callback. Los callbacks son objetos función de Boost que reciben dos punteros a <em>Body</em> y no devuelven nada. Utilizando <em>boost:bind</em> podemos crear un objeto <em>boost:function</em> y añadir el callback para dos cuerpos de un tipo determinado. Por ejemplo, podemos hacer que el método <em>callbackSpellEnemy</em> sea llamado cuando colisionen cuerpos de los supuestos tipos <em>Spell</em> (cuyo número podría ser el 4) y <em>Enemy</em> (cuyo número podría ser el 8).</p>
-<p>En el método <em>checkCollisions</em> no sólo se filtran los cuerpos para los que existe un callback definido sino que no se comprueban aquellos que están a una distancia prudencial. Soy consciente de que para cantidades ingentes de elementos este <strong>particionado</strong> no es suficiente aunque por el momento funciona correctamente.</p>
-<p><img src="../../img/wp/collisionmanager.png" alt="collisionmanager-250x300.png"></p>
-<h3 id="la-clase-gameobject">La clase GameObject</h3>
-<p>La última clase que nos quedaba por repasar era <em>GameObject</em>, como ya he mencionado se encarga de <strong>encapsular la parte visual (<em>SceneNode</em> + <em>Entity</em>) y colisionable (<em>Body</em>) de los elementos</strong> de juego. Proporciona métodos para actualizar posición, escala y rotación pero si lo deseamos se nos permite acceder al nodo o al cuerpo que contiene. Si hacemos modificaciones sobre el nodo o el cuerpo tendremos que sincronizar la otra parte empleando los métodos <em>synchronizeBody</em> o <em>synchronizeNode</em> según corresponda.</p>
-<p>Cuenta con un método virtual update que no hace nada y está diseñado para ser sobrecargado. No es una clase abstracta de la que no puedan existir instancias aunque lo usual es heredar de ella y aportar un comportamiento concreto.</p>
-<p><img src="../../img/wp/gameobject.png" alt="gameobject-300x106.png"></p>
-<h3 id="próximas-versiones">Próximas versiones</h3>
-<p>El sistema de detección de colisiones de Sion Tower presenta un amplio margen de mejora. Tengo anotada una buena lista y ya he conseguido implementar algunas de ellas. En la futura versión 0.2 de la mini biblioteca encontraréis la forma <em>OrientedBox</em> (OBB), nuevos tests de colisión, una API más extensible y muchas correcciones de bugs.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -292,7 +273,7 @@ sudo apt-get install openshot openshot-doc
             </li>
             
             <li>
-                <a href="../../page/61/">»»</a>
+                <a href="../../page/62/">»»</a>
             </li>
         </ul>
     </div>
