@@ -25,7 +25,7 @@
       <guid>https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/</guid>
       <description>After a crazy weekend before the deadline, we finally managed to put something playable together for LibGDXJAM.
 We&amp;quot;d love you to have a go, and leave some feedback.
-We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute. I guess the difficulty (or lack of readability) may make it slightly longer, which is also a bit bad.</description>
+ We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute.</description>
     </item>
     
     <item>
@@ -358,7 +358,7 @@ Los participantes han de ser estudiantes universitarios, de bachillerato o de ci
       <pubDate>Tue, 05 Jul 2011 01:28:09 +0000</pubDate>
       
       <guid>https://saltares.com/projects/english-glapse-v0-3-has-been-released/</guid>
-      <description></description>
+      <description>I&amp;#8217;ve been really busy with the development of Sion Tower but it&amp;#8217;s also been possible to spend some time working in gLapse. After introducing new stuff and fixing broken pieces, I&amp;#8217;m proud to announce the third release of the GNU/Linux time lapse tool: gLapse v0.3! Continue reading to find about its new features and to get download links.  Changelog   Improves video quality but the slider to configure it had to be deleted.</description>
     </item>
     
     <item>
@@ -377,7 +377,7 @@ Changelog  Improves video quality but the slider to configure it had to be delet
       <pubDate>Wed, 01 Jun 2011 22:00:26 +0000</pubDate>
       
       <guid>https://saltares.com/projects/english-glapse-take-screenshots-glue-them-together/</guid>
-      <description>gLapse GUI (click to view at full size)</description>
+      <description>Several days ago I was a bit tired of working on IberOgre, the Spanish Ogre wiki so I started procrastinating. Then I discovered the Ludum Dare 48h game development competition and I was amazed about the idea. Lots of developers use to record their progress in time lapse videos to show how their mini games evolved. There are very good Windows tools to do that but on GNU/Linux systems you have to use command line scripts and that&amp;#8217;s where gLapse comes into play.</description>
     </item>
     
     <item>

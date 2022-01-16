@@ -101,7 +101,7 @@
 <div class="content container">
   <div class="post">
     <h1 class="post-title">Smart enums in C&#43;&#43; or: &#34;what is this madness?&#34;</h1>
-    <span class="post-date">Feb 9, 2014 &middot; 4 minute read &middot; <a href="https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/#disqus_thread">Comments</a>
+    <span class="post-date">Feb 9, 2014 &middot; 5 minute read &middot; <a href="https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/#disqus_thread">Comments</a>
     
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
@@ -116,22 +116,40 @@
 <p>One of the beauties of C++ is that I can always learn something new about it, which almost makes up for its ever growing syntax complexity.</p>
 <h3 id="lets-talk-macros">Let&rsquo;s talk macros</h3>
 <p>Let&rsquo;s talk about macros. Everyone knows about the <a href="www.cplusplus.com/doc/tutorial/preprocessor/">preprocessor</a> and the basic usage of macros, right?</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define PI 3.14
+#define SQR(x) x * x</pre>
 <p>Actually, let&rsquo;s talk about macros that take other macros as arguments.</p>
 <blockquote>
 <p>Sorry what?</p>
 </blockquote>
 <h3 id="the-problem">The problem</h3>
 <p>Let us imagine we define the following perfectly standard enum to represent kinds of animals in a farm.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">enum Animal
+{
+    eAnimal_Dog,
+    eAnimal_Cat,
+    eAnimal_Cow,
+    eAnimal_Count,
+};</pre>
 <p>Our application can request a server a list of animals a given farm has. The server sends the animal names as strings, so we need to convert them to enum values. Alright, let&rsquo;s define a function to do that.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">Animal getAnimalFromString(const char* str)
+{
+    if (!strcmp(str, "Dog")) return eAnimal_Dog;
+    if (!strcmp(str, "Cat")) return eAnimal_Cat;
+    if (!strcmp(str, "Cow")) return eAnimal_Cow;
+    return eAnimal_Count;
+}</pre>
 <p>Err… That is not the most elegant piece of code you&rsquo;ve ever seen, is it? We also might have to convert from an enum value to a string literal in case we want to send a report back to the server.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">const char* getStringFromAnimal(Animal animal)
+{
+    switch (animal)
+    {
+    case eAnimal_Dog: return "Dog";
+    case eAnimal_Cat: return "Cat";
+    case eAnimal_Cow: return "Cow";
+    default: return "None";
+    }
+}</pre>
 <p>That was horrendous enough, but just the thought of adding new species to the catalogue makes me shiver badly. Why not simply use strings to represent animal species? Enums are nice because they heavily reduce the domain of values a variable can have and prevent us from making silly typos everywhere.</p>
 <blockquote>
 <p>There must be a better solution.</p>
@@ -142,52 +160,75 @@
 <p>The preprocessor!</p>
 </blockquote>
 <p>Take a look at this way of defining our list of animals.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define ANIMAL_LIST(m)   \
+    m(Animal, Dog)  \
+    m(Animal, Cat)  \
+    m(Animal, Cow)</pre>
 <p><code>_ANIMAL_LIST_</code> is a higher order macro that takes a macro m as a parameter. Then it passes each one of our animal species to m.</p>
 <p>The previous macro is not really useful by itself. Let&rsquo;s make things slightly more interesting</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define SMARTENUM_VALUE(typeName, value) e##typeName##_##value,
+#define SMARTENUM_DEFINE_ENUM(typeName, values) enum typeName { values(SMARTENUM_VALUE) e##typeName##_Count, };</pre>
 <p><code>SMARTENUM_DEFINE_ENUM</code> takes the enum name and the list of values as parameters and defines an enum for us. It also appends the total count.</p>
-<!-- raw HTML omitted -->
+<p style="padding-left: 30px;">
+  <strong>Note</strong>: ## is used by the preprocessor to concatenate parameters with other pieces of text.
+</p>
 <p>When we write</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">SMARTENUM_DEFINE_ENUM(Animal, ANIMAL_LIST)</pre>
 <p>The preprocessor expands it to</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">enum Animal { eAnimal_Dog, eAnimal_Cat, eAnimal_Cow, eAnimal_Count };</pre>
 <p>Okay, that was a lot of gibber jabber for very little gain.</p>
 <p>Hang on a minute, we can go further. Let&rsquo;s write a small mechanism to convert an enum value to a string literal.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define SMARTENUM_STRING(typeName, value) #value,
+#define SMARTENUM_DEFINE_NAMES(typeName, values) const char* typeName##Array [] = { values(SMARTENUM_STRING) };
+#define getStringFromEnumValue(typeName, value) typeName##Array[##value]</pre>
 <p><code>SMARTENUM_DEFINE_NAMES</code> takes an enum type and the list of values and generates an array with the string representations of our list values. Interestingly enough, the values in the array map directly to those of the enum. This allows us to write the third macro, which accesses the array at the right position to return the corresponding string literal for a given enum value.</p>
-<!-- raw HTML omitted -->
+<p style="padding-left: 30px;">
+  <strong>Note</strong>: # is used by the preprocessor to convert a piece of text in a string literal.
+</p>
 <p>When we write</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">SMARTENUM_DEFINE_NAMES(Animal, ANIMAL_LIST)</pre>
 <p>The preprocessor expands it to</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">const char* AnimalArray [] = { "Dog", "Cat", "Cow"}</pre>
 <p>So</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">const char* animalName = getStringFromEnumValue(Animal, eAnimal_Cow);</pre>
 <p>Will result in</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">const char* animalName = "Cow";</pre>
 <p>Aha!</p>
 <p>Getting an enum value from a string literal is slightly trickier but still achievable. We&rsquo;ve come this far, so it&rsquo;d be a shame not to finish the job.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define SMARTENUM_DEFINE_GET_VALUE_FROM_STRING(typeName, name)       \
+    typeName get##typeName##FromString(const char* str)     \
+    {                               \
+        for (int i = 0; i &lt; e##typeName##_Count; ++i)    \
+            if (!strcmp(##typeName##Array[i], str))     \
+                return (##typeName##)i;         \
+        return e##typeName##_Count;             \
+    }
+
+#define getEnumValueFromString(typeName, name)  get##typeName##FromString(##name)</pre>
 <p>The first abomination generates a function that iterates over the previously defined array of names doing string comparisons until it finds the desired enum value. The second one is nothing more than a convenience macro to spare the user from remembering the preprocessor generated function name.</p>
 <p>Now if we do</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">SMARTENUM_DEFINE_GET_VALUE_FROM_STRING(Animal, ANIMAL_LIST)</pre>
 <p>We can simply go</p>
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">Animal animal = getEnumValueFromString(Animal, animalname);</pre>
 <p>Neat, isn&rsquo;t it?</p>
 <h3 id="for-future-references">For future references</h3>
 <p>Now, every time we want to define an enum type that we need to convert to and from strings we&rsquo;ll be lucky to be able to do the following.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<pre class="prettyprint lang-cpp linenumstrigger linenums">#define CAR_LIST(m)  \
+    m(Car, Fiat)    \
+    m(Car, Ford)    \
+    m(Car, Audi)
+
+SMARTENUM_DEFINE_ENUM(Car, CAR_LIST)
+SMARTENUM_DEFINE_NAMES(Car, CAR_LIST)
+SMARTENUM_DEFINE_GET_VALUE_FROM_STRING(Car, CAR_LIST)</pre>
 <p>Voilà!</p>
 <p>Admittedly, using macros like this doesn&rsquo;t make for readable code and sometimes results in debugging complications. However, I&rsquo;ve been able to debug my code normally in Visual Studio 2012 when using similar macros.</p>
 <p>String conversion of enums is just the tip of the iceberg, this approach can be used to generate all sorts of repetitive boilerplate code.</p>
 <h3 id="download-it">Download it</h3>
 <p>In case you are interested, <a href="https://gist.github.com/dsaltares/8904478">SmartEnums.h</a> is available as a GitHub gist.</p>
-<!-- raw HTML omitted -->
+<p style="padding-left: 30px;">
+  <strong>Note</strong>: this post was inspired by the article <a href="http://journal.stuffwithstuff.com/2012/01/24/higher-order-macros-in-c/">Higher Order Macros in C++</a>
+</p>
 
   </div>
   <div id="disqus_thread"></div>
