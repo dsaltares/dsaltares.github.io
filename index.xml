@@ -23,7 +23,7 @@ The developer experience worsens because you now need a network connection to lo
 &lt;p&gt;Of course, there is a catch&amp;hellip;&lt;/p&gt;
 &lt;p&gt;The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.&lt;/p&gt;
 &lt;p&gt;You can fix that with a local SMTP server! Let&amp;rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;set-up-nextauthjs-with-the-emailprovider&#34;&gt;Set up NextAuth.js with the &lt;code&gt;EmailProvider&lt;/code&gt;&lt;/h3&gt;
+&lt;h3 id=&#34;-set-up-nextauthjs-with-the-emailprovider&#34;&gt;🔐 Set up NextAuth.js with the &lt;code&gt;EmailProvider&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Let&amp;rsquo;s assume you already have a Next.js application. If you don&amp;rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the &lt;code&gt;EmailProvider&lt;/code&gt; in &lt;code&gt;/pages/api/auth/[...nextauth].js&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth&amp;#39;&lt;/span&gt;;
 &lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth/providers/email&amp;#39;&lt;/span&gt;;
@@ -46,7 +46,7 @@ The developer experience worsens because you now need a network connection to lo
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the &lt;code&gt;EmailProvider&lt;/code&gt; to work, you also need to install the &lt;code&gt;nodemailer&lt;/code&gt; package.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn add nodemailer
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember that you also need to provide an &lt;a href=&#34;https://next-auth.js.org/adapters/overview&#34;&gt;Adapter&lt;/a&gt; to NextAuth.js so that it can persist data. In &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9&#34;&gt;my example&lt;/a&gt;, I use the &lt;a href=&#34;https://next-auth.js.org/adapters/prisma&#34;&gt;&lt;code&gt;PrismaAdapter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;set-up-your-local-smtp-server&#34;&gt;Set up your local SMTP server&lt;/h3&gt;
+&lt;h3 id=&#34;-set-up-your-local-smtp-server&#34;&gt;📬 Set up your local SMTP server&lt;/h3&gt;
 &lt;p&gt;We&amp;rsquo;re going to use &lt;a href=&#34;https://github.com/mailhog/MailHog&#34;&gt;MailHog&lt;/a&gt;, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!&lt;/p&gt;
 &lt;p&gt;Create a &lt;code&gt;docker-compose.yaml&lt;/code&gt; file or update your existing one and define the MailHog service.&lt;/p&gt;
 &lt;p&gt;Using Docker Compose to run your database locally is a pretty good idea! In my &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;example repo&lt;/a&gt; I went for a containerised PostgreSQL database.&lt;/p&gt;
@@ -72,7 +72,7 @@ The developer experience worsens because you now need a network connection to lo
 EMAIL_SERVER_PORT=1025
 EMAIL_SERVER_USER=email-user
 EMAIL_SERVER_PASSWORD=email-pass
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;local-workflow&#34;&gt;Local workflow&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;-local-workflow&#34;&gt;💻 Local workflow&lt;/h3&gt;
 &lt;p&gt;Bring up your containers and start the local development server.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;

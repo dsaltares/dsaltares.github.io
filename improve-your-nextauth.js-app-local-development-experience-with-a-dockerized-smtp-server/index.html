@@ -112,7 +112,7 @@
 <p>Of course, there is a catch&hellip;</p>
 <p>The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.</p>
 <p>You can fix that with a local SMTP server! Let&rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">here</a>.</p>
-<h3 id="set-up-nextauthjs-with-the-emailprovider">Set up NextAuth.js with the <code>EmailProvider</code></h3>
+<h3 id="-set-up-nextauthjs-with-the-emailprovider">🔐 Set up NextAuth.js with the <code>EmailProvider</code></h3>
 <p>Let&rsquo;s assume you already have a Next.js application. If you don&rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the <code>EmailProvider</code> in <code>/pages/api/auth/[...nextauth].js</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
 <span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
@@ -135,7 +135,7 @@
 </code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn add nodemailer
 </code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
-<h3 id="set-up-your-local-smtp-server">Set up your local SMTP server</h3>
+<h3 id="-set-up-your-local-smtp-server">📬 Set up your local SMTP server</h3>
 <p>We&rsquo;re going to use <a href="https://github.com/mailhog/MailHog">MailHog</a>, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!</p>
 <p>Create a <code>docker-compose.yaml</code> file or update your existing one and define the MailHog service.</p>
 <p>Using Docker Compose to run your database locally is a pretty good idea! In my <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">example repo</a> I went for a containerised PostgreSQL database.</p>
@@ -161,7 +161,7 @@
 EMAIL_SERVER_PORT=1025
 EMAIL_SERVER_USER=email-user
 EMAIL_SERVER_PASSWORD=email-pass
-</code></pre><h3 id="local-workflow">Local workflow</h3>
+</code></pre><h3 id="-local-workflow">💻 Local workflow</h3>
 <p>Bring up your containers and start the local development server.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
 </code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
