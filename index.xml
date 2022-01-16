@@ -6,7 +6,26 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
+      <link>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</guid>
+      <description> NextAuth.js Local development problem MailHog Docker compose file yarn docker:up NextAuth.js email provider .env file  </description>
+      <content>&lt;ul&gt;
+&lt;li&gt;NextAuth.js&lt;/li&gt;
+&lt;li&gt;Local development problem&lt;/li&gt;
+&lt;li&gt;MailHog&lt;/li&gt;
+&lt;li&gt;Docker compose file&lt;/li&gt;
+&lt;li&gt;yarn docker:up&lt;/li&gt;
+&lt;li&gt;NextAuth.js email provider&lt;/li&gt;
+&lt;li&gt;.env file&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
     <item>
       <title>How to test and debug your localhost web app on a real Android device</title>
       <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
@@ -3262,29 +3281,6 @@ As promised, we have updated our samples repository to use the latest versions o
 &lt;blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;http://www.amazon.com/review/RIXAWPKQKCKOY/ref=cm_cr_dp_title?ie=UTF8&amp;amp;ASIN=1783287292&amp;amp;channel=detail-glance&amp;amp;nodeID=283155&amp;amp;store=books&#34;&gt;This cookbook is certainly a great resource for learning and improving your libgdx skills and in my opinion it is the best book on libgdx at the moment [.]&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Ashley 1.4.0 released</title>
-      <link>https://saltares.com/projects/ashley-1-4-0-released/</link>
-      <pubDate>Sat, 14 Mar 2015 16:04:37 +0000</pubDate>
-      
-      <guid>https://saltares.com/projects/ashley-1-4-0-released/</guid>
-      <description>A new version of Ashley, your favourite component based entity framework is out. The 1.4.0 version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
- API deprecation: finallt removed the Family.getFor() methods. In order to retrieve a family, you can do Family.all().one().exclude().get(). API change: makes family Builder package protected. Bug fix: EntityOperation and ComponentOperation are now properly reset when put back into their pools.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/ashley/ashley-logo.png&#34; alt=&#34;ashley-logo.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;A new version of &lt;a href=&#34;https://github.com/libgdx/ashley&#34;&gt;Ashley&lt;/a&gt;, your favourite component based entity framework is out. The &lt;a href=&#34;https://github.com/libgdx/ashley/releases/tag/ashley-1.4.0&#34;&gt;1.4.0&lt;/a&gt; version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/commit/d6222d9ee0cca6f06dd61b04bae6d092497425a5&#34;&gt;API deprecation&lt;/a&gt;&lt;/strong&gt;: finallt removed the &lt;code&gt;Family.getFor()&lt;/code&gt; methods. In order to retrieve a family, you can do &lt;code&gt;Family.all().one().exclude().get()&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/issues/137&#34;&gt;API change&lt;/a&gt;&lt;/strong&gt;: makes family &lt;code&gt;Builder&lt;/code&gt; package protected.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/commit/356cf4097f7c870cccc67cffca62ff3f32f103da&#34;&gt;Bug fix&lt;/a&gt;&lt;/strong&gt;: &lt;code&gt;EntityOperation&lt;/code&gt; and &lt;code&gt;ComponentOperation&lt;/code&gt; are now properly reset when put back into their pools. This doesn&amp;rsquo;t affect the API at all and it&amp;rsquo;s an implementation detail fix.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/commit/eff243f65e98a57c5e1a8045f85465cd1acf085d&#34;&gt;Bug fix&lt;/a&gt;&lt;/strong&gt;: fixes &lt;code&gt;PooledEngine&lt;/code&gt; always returning new components.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/issues/135&#34;&gt;Bug fix&lt;/a&gt;&lt;/strong&gt;: fixes GWT build.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/libgdx/ashley/commit/cf7a02006d2269cd64976de6e7b56bd7553708de&#34;&gt;Bug fix&lt;/a&gt;&lt;/strong&gt;: avoids removing a &lt;code&gt;PooledEntity&lt;/code&gt; twice.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;To use it, change your dependency to &lt;code&gt;com.badlogicgames.gdx:ashley:1.4.0&lt;/code&gt;. The new nightly dependency is &lt;code&gt;com.badlogicgames.gdx:ashley:1.4.1-SNAPSHOT&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;As usual, &lt;a href=&#34;http://libgdx.badlogicgames.com:8080/job/ashley/&#34;&gt;all unit tests are passing&lt;/a&gt; and the wiki is up to date. Please keep up the good work sending more pull requests and reporting bugs.&lt;/p&gt;
 </content>
     </item>
     

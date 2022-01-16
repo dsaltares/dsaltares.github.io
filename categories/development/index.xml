@@ -6,7 +6,16 @@
     <description>Recent content in Development on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
+      <link>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</link>
+      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</guid>
+      <description> NextAuth.js Local development problem MailHog Docker compose file yarn docker:up NextAuth.js email provider .env file  </description>
+    </item>
+    
     <item>
       <title>How to test and debug your localhost web app on a real Android device</title>
       <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>

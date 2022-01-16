@@ -3,13 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://saltares.com/categories/</loc>
-    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/</loc>
-    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/categories/development/</loc>
-    <lastmod>2021-12-29T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</loc>
+    <lastmod>2022-01-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</loc>
     <lastmod>2021-12-29T00:00:00+00:00</lastmod>
