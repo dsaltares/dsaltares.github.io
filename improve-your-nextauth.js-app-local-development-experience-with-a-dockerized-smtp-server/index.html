@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server &middot; Engineering Leadership &amp; Software Development</title>
+
+  
+  <link rel="stylesheet" href="../css/poole.css">
+  <link rel="stylesheet" href="../css/hyde.css">
+  <link rel="stylesheet" href="../css/poole-overrides.css">
+  <link rel="stylesheet" href="../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../css/hyde-x.css">
+  <link rel="stylesheet" href="../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../touch-icon-144-precomposed.png">
+  <link href="../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Tutorial on how to improve your local development experience when using NextAuth.js by spinning up a MailHog SMTP server container.">
+  <meta name="keywords" content="local development,nextauth.js local development,mailhog testing SMTP server,docker SMTP server">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  
+  <link rel="canonical" href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/" itemprop="url" />
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../"><img src="../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../">David Saltares</a></h1>
+      <p class="lead">Engineering Leadership &amp; Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a aria-label="Github profile" href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a aria-label="Twitter profile" href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      
+      <a aria-label="RSS" href="../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>
+        &copy; 2022 David Saltares.<br/>
+        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a><br/>
+        Hosted on <a href="https://pages.github.com/">Github Pages</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Improve your NextAuth.js app local development experience with a dockerized SMTP server</h1>
+    <span class="post-date">Jan 16, 2022 &middot; 3 minute read &middot; <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../categories/development">Development</a>
+    </span>
+    <p><img src="../img/nextjs/nextauth.png" alt="NextAuth.js logo"></p>
+<p><a href="https://next-auth.js.org/">NextAuth.js</a> makes it shockingly easy to add authentication to <a href="https://nextjs.org/">Next.js</a> apps. It&rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including <a href="https://en.wikipedia.org/wiki/One-time_password">one time passwords</a> or &ldquo;magic links&rdquo;.</p>
+<p>Working with NextAuth.js is trivial, it sounds too good to be true!</p>
+<p>Of course, there is a catch&hellip;</p>
+<p>The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.</p>
+<p>You can fix that with a local SMTP server! Let&rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">here</a>.</p>
+<h3 id="set-up-nextauthjs-with-the-emailprovider">Set up NextAuth.js with the <code>EmailProvider</code></h3>
+<p>Let&rsquo;s assume you already have a Next.js application. If you don&rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the <code>EmailProvider</code> in <code>/pages/api/auth/[...nextauth].js</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">NextAuth</span>({
+  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
+    <span style="color:#a6e22e">EmailProvider</span>({
+      <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">host</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_HOST</span>,
+        <span style="color:#a6e22e">port</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PORT</span>,
+        <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_USER</span>,
+          <span style="color:#a6e22e">pass</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PASSWORD</span>,
+        },
+      },
+      <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NextAuth &lt;noreply@example.com&gt;&#39;</span>,
+    }),
+  ]
+});
+</code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn add nodemailer
+</code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
+<h3 id="set-up-your-local-smtp-server">Set up your local SMTP server</h3>
+<p>We&rsquo;re going to use <a href="https://github.com/mailhog/MailHog">MailHog</a>, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!</p>
+<p>Create a <code>docker-compose.yaml</code> file or update your existing one and define the MailHog service.</p>
+<p>Using Docker Compose to run your database locally is a pretty good idea! In my <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">example repo</a> I went for a containerised PostgreSQL database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
+
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">mailhog</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mailhog/mailhog</span>
+    <span style="color:#f92672">logging</span>:
+      <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#39;none&#39;</span> <span style="color:#75715e"># disable saving logs</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#ae81ff">1025</span>:<span style="color:#ae81ff">1025</span> <span style="color:#75715e"># smtp server</span>
+      - <span style="color:#ae81ff">8025</span>:<span style="color:#ae81ff">8025</span> <span style="color:#75715e"># web ui</span>
+</code></pre></div><p>Add a couple of convenience scripts to your <code>package.json</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;docker:up&#34;</span>: <span style="color:#e6db74">&#34;docker compose up -d&#34;</span>,
+    <span style="color:#f92672">&#34;docker:down&#34;</span>: <span style="color:#e6db74">&#34;docker compose down&#34;</span>
+  }
+}
+</code></pre></div><p>Edit your local <code>.env</code> file to configure the NextAuth.js <code>EmailProvider</code>. Leave everything as below.</p>
+<pre tabindex="0"><code>EMAIL_SERVER_HOST=localhost
+EMAIL_SERVER_PORT=1025
+EMAIL_SERVER_USER=email-user
+EMAIL_SERVER_PASSWORD=email-pass
+</code></pre><h3 id="local-workflow">Local workflow</h3>
+<p>Bring up your containers and start the local development server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
+</code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
+<p><img src="../img/nextjs/nextauth-login.png" alt="NextAuth.js login screen"></p>
+<p>Now you can open <code>http://localhost:8025/</code> and see the email with the magic link.</p>
+<p><img src="../img/nextjs/mailhog.png" alt="MailHog inbox"></p>
+<p>🎉 That&rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+</body>
+</html>
+

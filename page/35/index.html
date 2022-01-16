@@ -105,6 +105,50 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-actores/">Sistema de actores</a>
+      </h1>
+      <span class="post-date">May 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-actores/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png"></p>
+<p>Tras publicar varios artículos en <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a>, he decidido <strong>retomar el trabajo en Sion Tower</strong> con el objetivo de tener una versión inicial a finales de julio. La primera tarea que he llevado a cabo es una <strong>refactorización del sistema de actores</strong> con el objetivo de hacerlo más extensible y evitar la duplicación de código en la medida de lo posible aunque crezca la verticalidad en la jerarquía. Por el momento no todas las clases están implementadas pero sí diseñadas. A continuación, una pequeña explicación del sistema.</p>
+<p>El sistema de actores está compuesto por las siguientes clases:</p>
+<ul>
+<li><strong>GameObject</strong>: encapsula un <em>SceneNode</em> de Ogre con un <em>Body</em> del <a href="../../proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-2/" title="STC: Sion Tower Collisions v0.2">sistema de colisiones</a>. Modela de forma genérica todos los objetos del juego.</li>
+<li><strong>GameMesh</strong>: hereda de <em>GameObject</em> y le añade un <em>Entity</em>, se utiliza para modelar los elementos del juego formados por mallas poligonales, como el escenario.</li>
+<li><strong>Actor</strong>: hereda de <em>GameMesh</em> y añade estados, animaciones y manejadores de estados para los personajes del juego (enemigos y protagonista).</li>
+<li><strong>Player</strong>: hereda de <em>Actor</em> y modela al protagonista del juego añadiendo su lógica de control particular.</li>
+<li><strong>Enemy</strong>: también hereda de <em>Actor</em> y modela de forma genérica el comportamiento de los enemigos.</li>
+<li><strong>Spell</strong>: hereda de <em>GameObject</em> y añade sistemas de partículas para modelar los hechizos del juego junto a sus explosiones.</li>
+</ul>
+<p><img src="../../img/wp/actors-clases.png" alt="actors-clases.png"></p>
+<p>En <em>GameObject</em> contamos con el enumerado <em>Type</em> para distinguir entre tipos de objetos de juego. Se cuenta con un método <em>getType</em> virtual puro que cada clase deberá implementar devolviendo el valor del enumerado correspondiente. De esta forma podemos <strong>conocer el tipo de un objeto</strong> de juego a partir de un <em>GameObject</em>* y hacer casting sin peligro en caso de ser absolutamente necesario. También es posible utilizar el tipo de objeto para hacer un filtrado en la detección de colisiones.</p>
+<pre tabindex="0"><code>class GameObject {
+    public:
+
+        enum Type {
+            SIMPLEMESH = 0,
+            FLOOR = 1,
+            SCENE = 2,
+            PLAYER = 3,
+            ENEMY = 4,
+            SPELL = 5
+        };
+
+        virtual Type getType() const = 0;
+
+        ...
+};
+</code></pre><p>Podéis conocer a fondo el sistema en <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/actors/?root=cusl5-iberogre">la rama correspondiente de la Forja de Red Iris</a>. En breve, os mostraré un vídeo con el sistema de lanzamiento de proyectiles mágicos funcionando.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/sistema-de-overlays-en-iberogre/">Sistema de overlays en IberOgre</a>
       </h1>
       <span class="post-date">May 20, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sistema-de-overlays-en-iberogre/#disqus_thread">Comments</a>
@@ -218,32 +262,6 @@
 <p>No puedo finalizar el artículo sin <strong>darle las gracias a toda la organización del CUSL</strong>. Son unas personas muy abiertas, han estado atentos a todo y han invertido tiempo y sudor para que esto salga adelante. Gracias a Ana Rey por las fotos (<a href="http://creativecommons.org/licenses/by-sa/2.0/">Creative Commons 2.0 by-sa</a>).</p>
 <p>¡Nos vemos en la <a href="../../proyectos/pfc/barralibrecamp-2011-en-cadiz/" title="!BarraLibreCamp 2011 en Cádiz">!BarraLibreCamp</a> de Cádiz!</p>
 <p><!-- raw HTML omitted --><strong>Editado</strong><!-- raw HTML omitted -->: si queréis colaborar con la difusión del V CUSL, podéis darle un <a href="http://www.meneame.net/story/premios-v-concurso-universitario-software-libre">meneo a la noticia</a>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/extender-el-sistema-de-gestion-de-recursos-de-ogre/">Extender el sistema de gestión de recursos de Ogre</a>
-      </h1>
-      <span class="post-date">May 10, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/extender-el-sistema-de-gestion-de-recursos-de-ogre/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/extender-recursos-iberogre.jpg" alt="extender-recursos-iberogre.jpg"></p>
-<p>Acabo de publicar un <strong>nuevo artículo</strong> en IberOgre titulado <strong><a href="http://osl2.uca.es/iberogre/index.php/Extender_la_gesti%C3%B3n_de_recursos,_audio">&ldquo;Extender la gestión de recursos, audio&rdquo;</a></strong>. Es un completo texto en el que se exponen todos los conocimientos necesarios para integrar los recursos de tu propio juego (niveles, audio, scripts de IA, etc) dentro del sistema de gestión de recursos de Ogre. La teoría se lleva a la práctica creando un sistema de audio sobre <a href="http://www.libsdl.org/">SDL</a>, característica inexistente en Ogre de forma inicial.</p>
-<p>Los <strong>contenidos</strong> de forma esquemática son:</p>
-<ul>
-<li>Instalación de SDL y SDL_mixer en GNU/Linux y Windows.</li>
-<li>Inicialización y cierre de SDL.</li>
-<li>Conceptos sobre la extensión del sistema de recursos.</li>
-<li>Primer ejemplo: música.</li>
-<li>Segundo ejemplo: efectos de sonido.</li>
-<li>Ejemplo final: escenario de monólogos en el que tomamos el papel del regidor. Podemos reproducir las melodías del supuesto programa o añadir efectos de público como risas o aplausos.</li>
-</ul>
-<p>El sistema de audio está tomado del que posee Sion Tower, la música proviene de <a href="http://www.jamendo.com/es/album/41851">Jamendo</a> y los efectos de <a href="http://www.freesound.org/index.php">The Freesound Project</a>. Como siempre, se aceptan cualquier tipo de comentarios.</p>
 
       
     </div>

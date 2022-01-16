@@ -105,6 +105,37 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-2/">STC: Sion Tower Collisions v0.2</a>
+      </h1>
+      <span class="post-date">Feb 19, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-2/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/stc-v02.png" alt="stc-v02.png"></p>
+<p>Tras unas semanas de duro trabajo <strong>acabo de liberar la versión 0.2 de STC</strong>, el sistema de detección de colisiones de Sion Tower. Mientras implementaba la carga de niveles con elementos colisionables (de la que hablaré otro día) he probado más a fondo la primera versión descubriendo muchos puntos en los que la mejora era necesaria.</p>
+<p>Muchas líneas del blog han versado sobre este tema. Si aún no conoces las funcionalidades de STC puedes leer el <a href="../../proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-1/">lanzamiento de su primera versión</a>. Si deseas documentación en profundidad sobre su diseño e implementación, puedes acudir a <a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">la serie de artículos al respecto</a>. Más detalles sobre la nueva versión a continuación.</p>
+<h3 id="changelog">Changelog</h3>
+<ul>
+<li>Clase <em>OrientedBox</em>.</li>
+<li>Nuevos tests de colisión para la forma <em>OrientedBox</em>.</li>
+<li>Método <em>CollisionManager::addCollisionTest</em> para poder añadir o modificar tests de colisión a gusto del usuario.</li>
+<li>Mejoras de rendimiento.</li>
+<li>Correcciones de bugs.</li>
+<li>3 tipos de callbacks: comenzar colisión, durante colisión y finalizar colisión.</li>
+</ul>
+<h3 id="descarga">Descarga</h3>
+<p>Como siempre, podéis descargar el código fuente desde la Forja de Red Iris (incluye documentación generada con Doxygen):</p>
+<ul>
+<li><a href="http://forja.rediris.es/frs/download.php/2092/siontower-collisions-v0.2.zip">Descargar STC v0.2</a></li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/">Colisiones V: Body, CollisionManager y GameObject</a>
       </h1>
       <span class="post-date">Feb 17, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/colisiones-v-body-collisionmanager-y-gameobject/#disqus_thread">Comments</a>
@@ -364,33 +395,6 @@
 <p>Estaremos de acuerdo en que hay diversos tipos de cine, por ejemplo, algunas películas buscan entretener a través el humor o la acción sin que nos hagan pensar demasiado. En cambio, otras pretenden evocar sentimientos o inducirnos a la meditación. Comprendo perfectamente que las últimas sean más duras de seguir y requieran esfuerzo extra por parte del espectador. <em>Más allá de la vida</em> busca que reflexionemos sobre la vida y la muerte aunque <strong>se muestra terriblemente torpe</strong> es ese aspecto. Es lenta, <strong>dolorosamente lenta</strong> y para colmo sales de la sala con la sensación de que no te han contado nada.</p>
 <p>A su favor he de decir que algunas escenas están bien llevadas, son creíbles y su carga dramática nos alcanza. No deben confundirse porque en absoluto representa la tónica general. En la mayor parte de los casos <strong>recurre al tópico fácil</strong> sin tratar de ir más allá (menudo juego de palabras que me he sacado de la manga). El <strong>inexpresivo Matt Damon</strong> no pega ni con cola en un largometraje dramático como este. Nadie puede negar que es un actor estupendo para la trilogía Bourne pero en este caso no consigue conectar con el personaje ni con la audiencia, a mí me ha dejado completamente indiferente.</p>
 <p>Creo que puedo resumir de forma acertada mi reseña diciendo que la película son <strong>dos horas que se viven como cuatro</strong>. Tiene un único objetivo en el que fracasa estrepitosamente. Imagino que la nominación a los mejores efectos visuales corresponden a los primeros cinco minutos de película en los que aparece el tsunami porque el resto no tiene nada. Debe estar muy malita la cosa en Hollywood para que Más allá de la vida aparezca en esta categoría. <strong>Si pueden evitarla, no lo duden, háganlo</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sion-tower-video-de-colisiones-y-audio-3d/">Sion Tower, vídeo de colisiones y audio 3D</a>
-      </h1>
-      <span class="post-date">Feb 11, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-video-de-colisiones-y-audio-3d/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/jK32IioGmGk"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>Como una imagen vale más que mil palabras he grabado este sencillo vídeo en el que se muestran tanto el sistema de detección de colisiones como la reproducción de audio 3D de Sion Tower. Estas semanas pienso trabajar duro en la carga del escenario a partir de un fichero DotScene, será interesante grabar otro vídeo dentro de cierto tiempo para comprobar la mejora.</p>
 
       
     </div>

@@ -105,6 +105,39 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/">Gestión de recursos en Ogre3D</a>
+      </h1>
+      <span class="post-date">Nov 14, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>Estos últimos días he estado trabajando en la redacción del <a href="../../proyectos/pfc/sion-tower/game-design-document/">Game Design Document</a> (GDD) de Sion Tower y en la preparación del taller <a href="../../proyectos/pfc/desarrollo-de-videojuegos-con-un-pong/"><em>&ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo;</em></a> que organizamos en la <a href="../../proyectos/presentacion-de-la-advuca/">ADVUCA</a>. <strong>Ya era hora de retomar IberOgre</strong>. Para poder continuar con el artículo <a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas"><em>&ldquo;Creación básica de escenas&rdquo;</em></a> tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: <a href="http://osl2.uca.es/iberogre/index.php/Gesti%C3%B3n_de_recursos"><em>&ldquo;Gestión de recursos&rdquo;</em></a>. ¡Hallelujah!</p>
+<p>Por supuesto, os remito a que leáis el artículo completo pero en este, nuestro amado blog, os comentaré a modo de resumen los temas tratados.</p>
+<h3 id="la-importancia-de-un-gestor-de-recursos">La importancia de un gestor de recursos</h3>
+<p>En un videojuego mínimamente elaborado <strong>se necesita un gestor responsable de</strong>:</p>
+<ul>
+<li>Mantener una sola instancia de cada sprite, modelo, textura o efecto de sonido.</li>
+<li>Controlar el ciclo de vida de los recursos.</li>
+<li>Gestión uniforme de los distintos tipos de recursos.</li>
+<li>Cuidar la integridad.</li>
+</ul>
+<p>Si no disponemos de un gestor de recursos, nuestro videojuego podría hacer un uso ingente de memoria y no funcionar en un sistema corriente (a menos que trabajes en la NASA). <strong>En el artículo de IberOgre hacemos una argumentación</strong> sobre la necesidad de controlar la memoria que utilizan nuestros recursos.</p>
+<h3 id="gestión-del-ciclo-de-vida-de-los-recursos">Gestión del ciclo de vida de los recursos</h3>
+<p>¿Por qué mantener en memoria el escenario del nivel 10 cuando aún no hemos terminado el nivel 1? Es ridículo. Nuestro gestor de recursos debe proporcionarnos un <strong>sistema para controlar el ciclo de vida</strong> de los mismos. Por supuesto, Ogre cuenta con un excelente sistema a tal efecto. <strong>En IberOgre ofrecemos información para llevar a cabo este control</strong> según las distintas aproximaciones de nuestro motor de renderizado favorito.</p>
+<h3 id="automatización-del-proceso">Automatización del proceso</h3>
+<p>Gracias a los <strong>ficheros de configuración de Ogre</strong> podemos automatizar parte de la gestión de recursos. Siempre es mejor mantener nuestros datos externos al código (para evitar recompilaciones innecesarias y lentas) y declarar los recursos que utilizaremos en un fichero externo.</p>
+<p>Además, explicamos como <strong>crear grupos de recursos</strong> para gestionarlos masivamente. Es muy cómodo separar nuestros recursos por niveles y cargar o descargarlos todos según los vayamos necesitando.</p>
+<h3 id="feedback-please">¡Feedback, please!</h3>
+<p>Es muy común creer que se está explicando conceptos de forma correcta cuando uno mismo los comprende. No obstante, es posible que esté escribiendo artículos confusos y densos. <strong>¡Necesito feedback!</strong> Estaría encantado de que alguien leyera IberOgre y comenzara a lanzarme tomates en forma de quejas sin piedad en el blog o por correo electrónico. Algunos lectores como <a href="http://twitter.com/#!/spectrumgomas">@spectrumgomas</a> o <a href="http://twitter.com/#!/che1404">@che1404</a> ya han contribuido sugiriendo temas y correcciones.</p>
+<p><strong>No se corten, ¡a la yugular y sin piedad!</strong></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/tricicle-garrick/">Tricicle: Garrick</a>
       </h1>
       <span class="post-date">Nov 13, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/hobbies/tricicle-garrick/#disqus_thread">Comments</a>
@@ -213,42 +246,6 @@
 <p>Julia sufre una <strong>enfermedad degenerativa en la vista</strong> mientras que su hermana gemela ya se había quedado completamente ciega. Cuando ésta aparece colgada de una soga en el sótano de su casa Julia es la única que, irónicamente, ve más allá y piensa que <strong>su hermana no se ha suicidado</strong>. Entonces es cuando inicia una b<strong>úsqueda solitaria por la oscuridad</strong> con el fin de aclarar la bruma que envuelve a la muerte de su hermana.</p>
 <p><em>Los ojos de Julia</em> nos pone en la piel de alguien que no ve en absoluto pero puede percibir una amenaza constante que otros no pueden ver. Funciona porque <strong>recurre al miedo más básico</strong>, el miedo a la oscuridad. No el tipo de oscuridad que se esfuma cuando encendemos la luz, hablamos de negrura permanente. Es posible que algo horrible esté ocurriendo a nuestro alrededor mientras <strong>sólo podemos imaginar</strong>. La mente nos juega malas pasadas, creemos que hay algo cuando en realidad no lo hay o viceversa.</p>
 <p>Estamos ante un <strong>largometraje de tensión y sensaciones</strong> por el que merece la pena dejarse unos pocos euros. Sin lugar a dudas <strong>me ha dejado impresionado</strong> y puede que por ello me haya excedido ligeramente. Por favor, guarden el lanzamiento de tomates para los comentarios.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/spotify-vs-grooveshark/">Spotify vs Grooveshark</a>
-      </h1>
-      <span class="post-date">Nov 6, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/computing/spotify-vs-grooveshark/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p><img src="../../img/wp/spotify-vs-grooveshark.png" alt="spotify-vs-grooveshark.png"></p>
-<p><strong>Llevo bastante tiempo utilizando <a href="http://www.spotify.com/es/">Spotify</a></strong> en Linux a través de <a href="http://www.winehq.org/">Wine</a> y últimamente me estaba dando más disgustos que alegrías por problemas relacionados con el sonido. Raudo y veloz <strong>acudí a su alternativa más evidente, <a href="http://listen.grooveshark.com/">Grooveshark</a></strong>. En este artículo <strong>comentaré mi experiencia</strong> con ambos servicios de música por streaming de forma que puedan decidirse por alguno de los dos en caso de duda.</p>
-<h3 id="la-aplicación">La aplicación</h3>
-<p><strong>Spotify</strong> cuenta con clientes de escritorio compatibles con Windows y Mac. Hace poco tiempo han lanzado una beta del cliente para GNU/Linux pero sólo está disponible si eres usuario Premium. Como ya he mencionado, he estado utilizando la versión para Windows a través de Wine. El sistema es <strong>rápido y bastante intuitivo</strong>, buscar canciones es sencillo. Podemos guardar listas de reproducción, compartirlas y acceder a las búsquedas recientes. Desconozco su funcionamiento en Mac, en Windows funciona sin problemas y <strong>bajo wine falla mucho el sonido</strong> (aunque es posible que sea de mi tarjeta).</p>
-<p><img src="../../img/wp/spotify.png" alt="spotify-300x157.png"></p>
-<p><strong>Grooveshark</strong>, en cambio, es una <strong>aplicación web</strong> escrita en ActionScript y Java lo que lo hace bastante más pesado que Spotify. Como ventaja, es <strong>compatible con todos los sistemas operativos</strong> en los que funcionen estos dos lenguajes de programación (prácticamente todos). En el fondo su interfaz es muy similar a la de Spotify, en este apartado andan a la par.</p>
-<p><img src="../../img/wp/grooveshark.png" alt="grooveshark-300x133.png"></p>
-<h3 id="catálogo-de-música">Catálogo de música</h3>
-<p><strong>Spotify</strong> llega a acuerdos con las discográficas para poder distribuir sus canciones a través de su servicio. El catálogo es tremendamente amplio pero existen <strong>ausencias imperdonables</strong> como Led Zeppelin, AC/DC o The Beatles. A su favor hay que reconocer que <strong>la música está muy bien indexada</strong>, no hay duplicidades y sus metadatos (autor, álbum, año, etc) siempre son correctos. Navegar por los contenidos se hace muy cómodo</p>
-<p>Por su parte, <strong>Grooveshark</strong> se vale de las canciones que suben los usuarios. La <strong>oferta es más rica</strong> aunque la <strong>catalogación</strong> es, en demasiados casos, <strong>deficiente</strong>. Si el usuario que sube la música comete errores en los metadatos, éstos permanecerán una vez las canciones se encuentren flotando en la nube. Si nos curramos listas de reproducción limpias o utilizamos las de nuestros amigos de confianza no tendremos problemas. No obstante, no es tan directo y elegante como en Spotify.</p>
-<p><img src="../../img/wp/facebook-logo.jpg" alt="facebook-logo.jpg"></p>
-<h3 id="vertiente-social">Vertiente social</h3>
-<p>Hoy en día si las aplicaciones no están conectadas con el <em>&ldquo;Feisbuk&rdquo;</em> no son nada y en esta ocasión no podía ser menos. <strong>Spotify</strong> nos ofrece <strong>conectarnos con nuestros amigos</strong> de la gran red social que usen el servicio. Esto nos permite acceder a sus listas de reproducción y descubrir grupos nuevos cada día. ¡También podemos comprobar si nuestro amigote &ldquo;<em>el duro&rdquo;</em> escucha Hannah Montana en secreto! El sistema está muy integrado en la aplicación y funciona de maravilla.</p>
-<p>En <strong>Grooveshark</strong> podemos tener amigos pero son exclusivos de la aplicación, no podemos <em>&ldquo;importarlos&rdquo;</em> del exterior. Tenemos acceso a sus listas, canciones preferidas etc. La novedad de Grooveshark es que podemos escuchar &ldquo;<em>radios&rdquo;</em>, <strong>listas de reproducción que se componen de forma inteligente</strong> a través de un motor de recomendaciones que sigue las canciones que nos gusten.</p>
-<p><img src="../../img/wp/spotify-premium.jpg" alt="spotify-premium.jpg"></p>
-<h3 id="cuentas-premium">Cuentas Premium</h3>
-<p>En <strong>Spotify</strong> tendremos que <strong>soportar horribles anuncios</strong> de vez en cuando a menos que pasemos por caja. Por 5€ al mes tenemos música ilimitada sin anuncios y por 10€ al mes podremos escuchar listas de reproducción offline y utilizar los clientes para <strong>plataformas móviles</strong> (Android, iPhone, Windows Phone y Symbian). No he utilizado ningún servicio de pago porque con la cuenta gratuita voy &ldquo;sobrado&rdquo; pero hay que reconocer que los precios no son desorbitados.</p>
-<p><strong>Grooveshark</strong> es más permisivo al respecto porque <strong>¡no tiene anuncios sonoros!</strong> No tener interrupciones en la reproducción es de agradecer (en la interfaz sí tiene anuncios). Eso sí, podemos pagar 3€ al mes para utilizar los <strong>clientes móviles</strong> (Android y Blackberry) y disponer de ventajas como personalización de la interfaz y otras <strong>pijadas inmensas</strong>.</p>
-<p><img src="../../img/wp/grooveshark-android.png" alt="grooveshark-android.png"></p>
-<h3 id="conclusiones">Conclusiones</h3>
-<p>Spotify ofrece un catálogo más controlado y ordenado mientras que Grooveshark no inserta anuncios en la reproducción de nuestras listas. Eso, junto con la amplia gama de música y su carácter completamente multiplataforma hace que haya elegido como servicio de música por streaming a Grooveshark.</p>
-<p>¿Alguien prefiere Spotify? En tal caso le animo a que nos exponga sus razones.</p>
 
       
     </div>

@@ -6,23 +6,80 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 10 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
-      <link>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</link>
-      <pubDate>Mon, 10 Jan 2022 00:00:00 +0000</pubDate>
+      <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/2022-01-03-nextauth-mailhog-local-development/</guid>
-      <description> NextAuth.js Local development problem MailHog Docker compose file yarn docker:up NextAuth.js email provider .env file  </description>
-      <content>&lt;ul&gt;
-&lt;li&gt;NextAuth.js&lt;/li&gt;
-&lt;li&gt;Local development problem&lt;/li&gt;
-&lt;li&gt;MailHog&lt;/li&gt;
-&lt;li&gt;Docker compose file&lt;/li&gt;
-&lt;li&gt;yarn docker:up&lt;/li&gt;
-&lt;li&gt;NextAuth.js email provider&lt;/li&gt;
-&lt;li&gt;.env file&lt;/li&gt;
-&lt;/ul&gt;
+      <guid>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
+      <description>NextAuth.js makes it shockingly easy to add authentication to Next.js apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including one time passwords or &amp;ldquo;magic links&amp;rdquo;.
+Working with NextAuth.js is trivial, it sounds too good to be true!
+Of course, there is a catch&amp;hellip;
+The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;./img/nextjs/nextauth.png&#34; alt=&#34;NextAuth.js logo&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://next-auth.js.org/&#34;&gt;NextAuth.js&lt;/a&gt; makes it shockingly easy to add authentication to &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including &lt;a href=&#34;https://en.wikipedia.org/wiki/One-time_password&#34;&gt;one time passwords&lt;/a&gt; or &amp;ldquo;magic links&amp;rdquo;.&lt;/p&gt;
+&lt;p&gt;Working with NextAuth.js is trivial, it sounds too good to be true!&lt;/p&gt;
+&lt;p&gt;Of course, there is a catch&amp;hellip;&lt;/p&gt;
+&lt;p&gt;The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.&lt;/p&gt;
+&lt;p&gt;You can fix that with a local SMTP server! Let&amp;rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;set-up-nextauthjs-with-the-emailprovider&#34;&gt;Set up NextAuth.js with the &lt;code&gt;EmailProvider&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Let&amp;rsquo;s assume you already have a Next.js application. If you don&amp;rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the &lt;code&gt;EmailProvider&lt;/code&gt; in &lt;code&gt;/pages/api/auth/[...nextauth].js&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth&amp;#39;&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth/providers/email&amp;#39;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt;({
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;providers&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt;({
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_HOST&lt;/span&gt;,
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PORT&lt;/span&gt;,
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;auth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+          &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_USER&lt;/span&gt;,
+          &lt;span style=&#34;color:#a6e22e&#34;&gt;pass&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PASSWORD&lt;/span&gt;,
+        },
+      },
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NextAuth &amp;lt;noreply@example.com&amp;gt;&amp;#39;&lt;/span&gt;,
+    }),
+  ]
+});
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the &lt;code&gt;EmailProvider&lt;/code&gt; to work, you also need to install the &lt;code&gt;nodemailer&lt;/code&gt; package.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn add nodemailer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember that you also need to provide an &lt;a href=&#34;https://next-auth.js.org/adapters/overview&#34;&gt;Adapter&lt;/a&gt; to NextAuth.js so that it can persist data. In &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9&#34;&gt;my example&lt;/a&gt;, I use the &lt;a href=&#34;https://next-auth.js.org/adapters/prisma&#34;&gt;&lt;code&gt;PrismaAdapter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;set-up-your-local-smtp-server&#34;&gt;Set up your local SMTP server&lt;/h3&gt;
+&lt;p&gt;We&amp;rsquo;re going to use &lt;a href=&#34;https://github.com/mailhog/MailHog&#34;&gt;MailHog&lt;/a&gt;, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!&lt;/p&gt;
+&lt;p&gt;Create a &lt;code&gt;docker-compose.yaml&lt;/code&gt; file or update your existing one and define the MailHog service.&lt;/p&gt;
+&lt;p&gt;Using Docker Compose to run your database locally is a pretty good idea! In my &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;example repo&lt;/a&gt; I went for a containerised PostgreSQL database.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;3.9&amp;#39;&lt;/span&gt;
+
+&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+  &lt;span style=&#34;color:#f92672&#34;&gt;mailhog&lt;/span&gt;:
+    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mailhog/mailhog&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;logging&lt;/span&gt;:
+      &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# disable saving logs&lt;/span&gt;
+    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+      - &lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# smtp server&lt;/span&gt;
+      - &lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# web ui&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add a couple of convenience scripts to your &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
+  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;: {
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:up&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose up -d&amp;#34;&lt;/span&gt;,
+    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:down&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose down&amp;#34;&lt;/span&gt;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit your local &lt;code&gt;.env&lt;/code&gt; file to configure the NextAuth.js &lt;code&gt;EmailProvider&lt;/code&gt;. Leave everything as below.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;EMAIL_SERVER_HOST=localhost
+EMAIL_SERVER_PORT=1025
+EMAIL_SERVER_USER=email-user
+EMAIL_SERVER_PASSWORD=email-pass
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;local-workflow&#34;&gt;Local workflow&lt;/h3&gt;
+&lt;p&gt;Bring up your containers and start the local development server.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/nextjs/nextauth-login.png&#34; alt=&#34;NextAuth.js login screen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now you can open &lt;code&gt;http://localhost:8025/&lt;/code&gt; and see the email with the magic link.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/nextjs/mailhog.png&#34; alt=&#34;MailHog inbox&#34;&gt;&lt;/p&gt;
+&lt;p&gt;🎉 That&amp;rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.&lt;/p&gt;
 </content>
     </item>
     
@@ -1925,7 +1982,7 @@ Overview  Gain an in-depth understanding of every Libgdx subsystem, including 2D
       
       <guid>https://saltares.com/about/</guid>
       <description>👋 Hi! I am David Saltares, an Engineering leader with over 10 years of experience in the industry, both within startups and big tech. I currently work as VP Engineering at Aula, where I grew my team from 7 to 20+ in a very short period of time while delivering large projects such as a brand new content editor and a fully featured quizzing solution. During that time of change, my team even improved their eNPS score.</description>
-      <content>&lt;p&gt;👋 Hi! I am David Saltares, an Engineering leader with over 10 years of experience in the industry, both within startups and big tech. I currently work as VP Engineering at Aula, where I grew my team from &lt;a href=&#34;./content/post/2021-04-26-how-to-hire-8-engineers-in-8-weeks.md&#34;&gt;7 to 20+&lt;/a&gt; in a very short period of time while &lt;a href=&#34;https://portal.aula.education/tabs/3-released&#34;&gt;delivering large projects&lt;/a&gt; such as a brand new content editor and a fully featured quizzing solution. During that time of change, my team even improved their eNPS score.&lt;/p&gt;
+      <content>&lt;p&gt;👋 Hi! I am David Saltares, an Engineering leader with over 10 years of experience in the industry, both within startups and big tech. I currently work as VP Engineering at &lt;a href=&#34;https://www.aula.education/&#34;&gt;Aula&lt;/a&gt;, where I grew my team from &lt;a href=&#34;./content/post/2021-04-26-how-to-hire-8-engineers-in-8-weeks.md&#34;&gt;7 to 20+&lt;/a&gt; in a very short period of time while &lt;a href=&#34;https://portal.aula.education/tabs/3-released&#34;&gt;delivering large projects&lt;/a&gt; such as a brand new content editor and a fully featured quizzing solution. During that time of change, my team even improved their eNPS score.&lt;/p&gt;
 &lt;p&gt;My belief is that trust-based, empowered and autonomous teams are the key to high performance. My role is to amplify, unblock, coach and mostly get out of the way, so they can do what they do best. People, not resources, make products! Additionally, &lt;a href=&#34;https://hbr.org/2016/11/why-diverse-teams-are-smarter&#34;&gt;diverse and inclusive teams make better products&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;Over here, I talk mostly about &lt;a href=&#34;./categories/leadership/&#34;&gt;engineering leadership&lt;/a&gt;, &lt;a href=&#34;./categories/development/&#34;&gt;software development&lt;/a&gt; and &lt;a href=&#34;./categories/games-development/&#34;&gt;hobbyist games development&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You can find more about my experience on &lt;a href=&#34;https://www.linkedin.com/in/davidsaltares/&#34;&gt;LinkedIn&lt;/a&gt;. If you&amp;rsquo;re interested in my open source work, check &lt;a href=&#34;https://github.com/dsaltares&#34;&gt;Github&lt;/a&gt;. And, if you want to chat, send me a &lt;a href=&#34;https://twitter.com/d_saltares&#34;&gt;tweet&lt;/a&gt;.&lt;/p&gt;

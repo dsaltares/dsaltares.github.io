@@ -105,6 +105,31 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/my-projects-migrated-to-github/">My projects migrated to GitHub</a>
+      </h1>
+      <span class="post-date">Nov 5, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/my-projects-migrated-to-github/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/wp/github_logo_social_coding_outlined.png" alt="github_logo_social_coding_outlined.png"></p>
+<p>I&rsquo;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.</p>
+<p>Even though I&rsquo;ve always been kind of sceptical about GitHub, I&rsquo;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&rsquo;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects). This way I&quot;ll also force myself to use Git, which is full of love and we&quot;re here to learn aren&rsquo;t we?</p>
+<p>I&rsquo;ve successfully exported the following projects, now available from my <a href="https://github.com/dsaltares">profile</a>:</p>
+<ul>
+<li><a href="https://github.com/dsaltares/glapse">gLapse</a></li>
+<li><a href="https://github.com/dsaltares/urbanrace">Urban Race</a></li>
+<li><a href="https://github.com/dsaltares/freegemas-gdx">Freegemas gdx</a></li>
+</ul>
+<p>In order to carry out the migration whilst keeping the full commit history I&rsquo;ve used <a href="https://github.com/nirvdrum/svn2git">svn2git</a>. It&rsquo;s just a ridiculously easy to use Ruby script built upon the git svn tool. I could write a post on how to do it, but it&quot;d be pointless since it&rsquo;s very well detailed in the project&rsquo;s readme.</p>
+<p>Expect updates soonish!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/ludum-dare-24-results-are-live/">Ludum Dare #24 results are live!</a>
       </h1>
       <span class="post-date">Sep 18, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ludum-dare-24-results-are-live/#disqus_thread">Comments</a>
@@ -316,47 +341,6 @@ public class WebGLResolver implements PlatformResolver {}
 <li>[Whatever feature I need for the project I might be working on at that moment and deserves to make its way to the engine code]</li>
 </ul>
 <p>I will probably post about the components in SionEngine as I commit them. That way I&quot;ll think about their design and implementation twice and maybe, just maybe, they might be helpful to somebody else. Just the ones that are not absolutely lame, of course. Still need to make a decision on the license!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/ld24-evolution-postmortem/">LD#24: Evolution Postmortem</a>
-      </h1>
-      <span class="post-date">Aug 27, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/ld24-evolution-postmortem/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/ld24/evolution.png" alt="evolution.png"></p>
-<h3 id="play-the-gamehttpwwwludumdarecomcompoludum-dare-24actionpreviewuid3661"><a href="http://www.ludumdare.com/compo/ludum-dare-24/?action=preview&amp;uid=3661"><strong>Play the game!</strong></a></h3>
-<p>Ludum Dare #24 is over after an exhausting crazy weekend but, above all, it´s been a ton of fun. Joining the Dare has proven to be an excellent idea and I believe it&quot;d be right to say it&rsquo;s has not gone too bad after all, considering it was my first time. Here&rsquo;s a little postmortem on the experience.</p>
-<h3 id="evolution--the-survival-of-the-fittest"><strong>Evolution – The survival of the fittest</strong></h3>
-<p>The competition&rsquo;s theme was Evolution so I went for a classic 2D platformer starred by a funny caveman who has to get through the level while killing dinosaurs by jumping on them or throwing rocks which he collects himself. Yes, I&quot;m aware I&quot;m not going to get many points for sticking to the theme.</p>
-<p>Evolution is written in Java using the wonderful libgdx framework and my personal code base (which I made available prior to the Dare).</p>
-<p><img src="../../img/ld24/evolution-caveman-01.jpg" alt="evolution-caveman-01.jpg"></p>
-<h3 id="what-went-right"><strong>What went right</strong></h3>
-<ul>
-<li><strong>Completion</strong>: I guess having delivered something at my first attempt it&rsquo;s a win, even though the game lacks in many aspects. Time management was not completely disastrous.</li>
-<li><strong>Graphics</strong>: Evolution has received very positive feedback art wise and being a programmer it feels a bit bizarre. The process followed to create and animate character was: sketching on paper, vectorizing and colouring with Inkscape, animation with Flash and Texture Packer to produce spritesheets. I&quot;ll keep working on this line.</li>
-<li><strong>Multi platform</strong>: libgdx was a good decision, not only is a very nice and powerful framework but also allows to target several platforms with no to very little effort.</li>
-<li><strong>Box2D</strong>: using this popular physics engine empowered me to implement the basic movement through the level extremely quickly.</li>
-<li><strong>Code base</strong>: although I discovered a fair amount of bugs in my code base, it behaved quite nicely. I also got a ton of ideas to improve it.</li>
-</ul>
-<p><img src="../../img/ld24/evolution-caveman-02.jpg" alt="evolution-caveman-02.jpg"></p>
-<h3 id="what-went-wrong"><strong>What went wrong</strong></h3>
-<ul>
-<li><strong>Gameplay polish</strong>: I didn&rsquo;t invest enough time to polish the gameplay, tweak values and play test the game and that reflects on the final build. It&rsquo;s a noob mistake and that makes me sad.</li>
-<li><strong>Content</strong>: I decided to invest the last moments of the competition in the little polishing I did instead of content creation which resulted in having just one level. However, I think it was the right call, I simply didn&rsquo;t have time for everything.</li>
-<li><strong>Asset pipeline</strong>: too much time was wasted in getting the export process right for some of the assets. On the bright side, I&rsquo;ve learnt a lot and it won&rsquo;t happen next time.</li>
-<li><strong>HTML5 port</strong>: it would have been awesome to have a browser version of my game with no third party plugins requirements so people could just play. Too bad my HTML5 port had a bad crash.</li>
-</ul>
-<p><img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03.jpg"></p>
-<h3 id="conclusions"><strong>Conclusions</strong></h3>
-<p>I can&rsquo;t stress enough how awesome of an experience it was. So many emotions mixed in the pot: stress, joy, thrill, exhaustion and so many more. I learned so much and felt great for having been able to deliver something in such a short timespan. I will definitely try to be in next time.</p>
-<p>Looking forward to get more feedback during the voting phase, best of luck to all my fellow Ludum Darers!</p>
 
       
     </div>

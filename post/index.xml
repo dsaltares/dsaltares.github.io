@@ -6,7 +6,19 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
+      <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
+      <description>NextAuth.js makes it shockingly easy to add authentication to Next.js apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including one time passwords or &amp;ldquo;magic links&amp;rdquo;.
+Working with NextAuth.js is trivial, it sounds too good to be true!
+Of course, there is a catch&amp;hellip;
+The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
+    </item>
+    
     <item>
       <title>How to test and debug your localhost web app on a real Android device</title>
       <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
@@ -529,17 +541,6 @@ And so I read it.</description>
       <guid>https://saltares.com/games/libgdx-at-kingston-university/</guid>
       <description>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements Alberto&amp;rsquo;s Libgdx workshop at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released book.
 I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students.</description>
-    </item>
-    
-    <item>
-      <title>Libgdx workshop at Cadiz University</title>
-      <link>https://saltares.com/games/libgdx-workshop-at-cadiz-university/</link>
-      <pubDate>Tue, 25 Nov 2014 20:19:01 +0000</pubDate>
-      
-      <guid>https://saltares.com/games/libgdx-workshop-at-cadiz-university/</guid>
-      <description>Alberto Cejas, colleague and co-author of Libgdx Cross-platform Game Development Cookbook delivered a Libgdx workshop at Cadiz University (Spain) last Friday 21st of November.
-During a 2 hour session, the students put together a bunch of pieces to build Flappy Plane, a Flappy Bird clone originally developed by Mario Zechner. Moreover, there was free stuff! Alberto did a small raffle and gave two copies of our book away.
-We&amp;rsquo;re really happy with the turnout, just take a look at the gallery below!</description>
     </item>
     
   </channel>

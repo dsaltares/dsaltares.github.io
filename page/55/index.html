@@ -105,6 +105,89 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/%c2%bfpor-que-ogre/">¿Por qué Ogre?</a>
+      </h1>
+      <span class="post-date">Oct 10, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/%c2%bfpor-que-ogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/porque.jpg" alt="porque.jpg"></p>
+<p><strong>Antes de decidirme a utilizar Ogre</strong> frente a otros motores de renderizado (<a href="http://irrlicht.sourceforge.net/">Irrlicht</a>) o incluso motores de juego completos (<a href="http://www.panda3d.org/">Panda 3D</a>) estuve mirando lo que ofrecía cada uno. Es complicado guiarse por foros y comunidades ya que <strong>cada uno barre para casa</strong>, a veces con un ferviente fanatismo, ya os podéis imaginar. Ni de lejos soy un experto en desarrollo de videojuegos 3D y puede que haya pasado detalles por alto pero lo que más me llamó la atención de Ogre fue su <strong>capacidad de adaptación</strong> a todo tipo de situaciones. Tas el salto, mis razones.</p>
+<p><img src="../../img/wp/pacific-storm.jpg" alt="pacific-storm.jpg"></p>
+<h3 id="pon-el-piloto-automático-o-toma-el-control">Pon el piloto automático o toma el control</h3>
+<p>En Ogre hay <strong>decenas de formas de hacer las cosas</strong> dependiendo del grado de control que quieras tomar sobre el proceso. Podemos indicarle el motor que lleve a cabo determinada tarea y que lo haga con el <strong>comportamiento por defecto</strong> o, aunque también es posible <strong>indicar de forma explícita decenas de parámetros</strong> para que se comporte exactamente como deseamos. Es cierto que características como está hacen que la curva de aprendizaje tenga una pendiente abrumadora en los primeros compases. No obstante, no he visto ningún engine con <strong>la flexibilidad de Ogre</strong>.</p>
+<p>Podría citar muchos ejemplos en los que reluce esta filosofía como, por ejemplo, <strong>la secuencia de inicialización de Ogre</strong> en la que se nos presentan dos vías principales. Lo que sigue es un pequeño ejemplo pasando por alto ciertas reglas de estilo con el objetivo de no extenderme demasiado.</p>
+<p><em>Método automático:</em></p>
+<pre tabindex="0"><code>// Creamos la raíz con ficheros de plugin y configuración válidos
+Root* raiz = new Root(&quot;plugins.cfg&quot;, &quot;ogre.cfg&quot;, &quot;ogre.log&quot;);
+
+// Ventana de Ogre
+RenderWindow* ventana;
+
+// Restauramos la configuración
+raiz-&gt;restoreConfig();
+
+// Inicializamos la librería
+ventana = Ogre-&gt;initialize(true,&quot;SionDream - Ogre automático&quot;);
+</code></pre><p><em>Método manual:</em></p>
+<pre tabindex="0"><code>// Creamos la raíz
+Root* raiz = new Root();
+
+// Ventana de Ogre
+RenderWindow* ventana;
+
+// Seleccionamos el plugin de renderizado de Open GL
+raiz-&gt;loadPlugin(&quot;RenderSystem_GL&quot;);
+String nombreGL(&quot;OpenGL Rendering Subsystem&quot;);
+RenderSystemList *listaRender = raiz-&gt;getAvaiableRenderers();
+RenderSystemList::iterator i;
+bool stop = false;
+
+for (i = listaRender-&gt;begin(); i != listaRender-&gt;end() &amp;&amp; !stop; i++) {
+    if ((*i)-&gt;getName = nombreGL) {
+        raiz-&gt;setRenderSystem(*i);
+        stop = true;
+    }
+}
+
+if (raiz-&gt;getRenderSystem() == NULL) {
+    // Mensaje de error
+    delete raiz;
+    exit(1);
+}
+
+// Inicializamos Ogre
+raiz-&gt;initialise(false);
+
+// Creamos la ventana
+ventana = raiz-&gt;createRenderWindow(
+  &quot;SionDream - Ogre inicialización manual&quot;,
+  1280, 720,
+  true,
+  0
+);
+</code></pre><p>Podríamos haber ido más allá hasta lograr <strong>embeber una ventana de Ogre en una de QT</strong> para conseguir un render dentro de una aplicación de diseño de interiores, por ejemplo. Parámetros como la sincronización vertical y decenas de pijadas más, pueden ser personalizados.</p>
+<p><img src="../../img/wp/venetica.jpg" alt="venetica.jpg"></p>
+<h3 id="extensibilidad-a-través-de-plugins">Extensibilidad a través de plugins</h3>
+<p>La arquitectura de Ogre ofrece un <strong>sistema de plugins</strong> de forma que podemos sobreescribir la gestión por defecto de un subsistema por el que necesitemos. Como se ha visto en el ejemplo anterior, el propio sistema de renderizado viene en forma de plugin (Open GL o Direct3D). Ogre provee una interfaz para llevar a cabo una determinada tarea por lo que es posible proporcionar <strong>distintas implementaciones</strong> para dicha interfaz.</p>
+<p>Que Ogre se base en gran parte en plugins no quiere decir que nos toque desarrollar los nuestros. <strong>La comunidad se ha encargado de desarrollar multitud</strong> de extensiones para efectos de partículas, colisiones, gestión del scene graph etc. Simplemente debemos escoger el que se ajuste a nuestras necesidades.</p>
+<p><img src="../../img/wp/victory.jpg" alt="victory.jpg"></p>
+<h3 id="construye-escenas-de-todo-tipo">Construye escenas de todo tipo</h3>
+<p><strong>El SceneManager</strong> es la interfaz que se encarga de ordenar y <strong>gestionar el scene graph</strong> para su renderizado entre otros. Una de las características que más me llamó la atención de Ogre fue la existencia de una gran variedad de SceneManager especializados en situaciones diferentes.</p>
+<p>Imagina que estamos desarrollando <strong>un título de acción</strong> en el que nuestro protagonista debe recorrer los pasillos de una instalación acabando con monstruos procedentes de un experimento fallido, ¿alguien dijo Half-Life?. Necesitaremos representar <strong>escenarios cerrados con una gran densidad de elementos</strong>. ¡Bien! Existe un SceneManager específico para este caso de manera que obtendremos un rendimiento mucho mayor utilizándolo.</p>
+<p>Puede que nuestro proyecto consista en <strong>un juego de rol</strong> en el que nuestro héroe debe recorrer grandes extensiones de terreno acabando con criaturas mitológicas. Un mundo abierto difiere muchísimo de la instalación pasillera del caso anterior. <strong>El escenario es cientos de veces mayor</strong> pero precisa de menos detalle. Estamos de suerte porque en Ogre existe un plugin para gestionar entornos abiertos virtualmente infinitos.</p>
+<p><img src="../../img/wp/haunted.jpg" alt="haunted.jpg"></p>
+<h3 id="multitud-de-features-adicionales">Multitud de features adicionales</h3>
+<p>Ogre cuenta con muchas características adicionales listadas <a href="http://osl.uca.es/iberogre/index.php/Conociendo_Ogre3D#Caracter.C3.ADsticas">aquí</a> aunque en este artículo he expuesto lo que más útil y sorprendente me ha parecido. Supongo que cada uno tendrá sus features preferidas. En cualquier caso, consideraba interesante exponer en el blog las razones de mi elección las cuales c<strong>ompensan ampliamente la empinada curva de dificultad</strong>.</p>
+<p>Próximamente más novedades sobre IberOgre.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/battlestar-galactica/">Battlestar Galactica</a>
       </h1>
       <span class="post-date">Oct 7, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/battlestar-galactica/#disqus_thread">Comments</a>
@@ -234,45 +317,6 @@ sudo apt-get install synergy
 <h3 id="reputación">Reputación++</h3>
 <p>Listo, ahora es posible compartir teclado y ratón entre varios equipos con lo que <strong>nuestro estatus como informático profesional habrá ganado enteros</strong>. Seremos aclamados y mereceremos el respeto y temor de todos nuestros compañeros.</p>
 <p><img src="../../img/wp/3-screens.png" alt="3-screens.png"></p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/lanzado-tiny-backup-0-2/">Lanzado Tiny Backup 0.2</a>
-      </h1>
-      <span class="post-date">Sep 25, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/projects/lanzado-tiny-backup-0-2/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png"></p>
-<p>Tiny Backup es una pequeña interfaz para algunas de las funcionalidades del <strong>comando dpkg</strong> que permite a usuarios de GNU/Linux <strong>realizar y restaurar copias</strong> de la lista de paquetes instalados en el sistema. Está <strong>desarrollado en Python utilizando PyGTK y Glade</strong> para la GUI aunque de eso ya hablé suficiente en <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">el artículo</a> que le dediqué hace algo más de un mes. En este pequeño escrito hablaré de la acogida de la primera versión y de los arreglos que incorpora la segunda.</p>
-<h3 id="la-recepción-de-tiny-backup-01">La recepción de Tiny Backup 0.1</h3>
-<p>Para mi sorpresa, <strong>Tiny Backup 0.1 tuvo una buena acogida</strong> teniendo en cuenta las pequeñas dimensiones del proyecto. No tanto por el número de descargas sino por el feedback de los usuarios. Incluso recibí una invitación para hablar sobre la aplicación <strong>en el blog <a href="http://www.muylinux.com/2010/09/02/tiny-backup-tu-tambien-puedes-hacerlo">Muy Linux</a></strong> (la cual acepté de buen gusto). Generalmente las impresiones fueron buenas aunque <strong>se reportó algún que otro problema</strong>. El más sangrante era que, al ejecutar Tiny Backup desde otro directorio que no fuese el del módulo principal (desde un acceso directo, por ejemplo) no se encontraban los ficheros referenciados por rutas relativas. Un fallo bastante grave del que debí haberme percatado en su momento.</p>
-<h3 id="bug-encontrado-y-solucionado-para-tiny-backup-02">Bug encontrado y solucionado para Tiny Backup 0.2</h3>
-<p><strong>La solución</strong> pasaba por obtener la ruta absoluta del módulo en ejecución y, a partir de la misma, construir el camino hasta el fichero deseado. El no ser muy ducho en Python y no haberle dedicado el suficiente tiempo a la aplicación ha hecho que la solución se retrase más de lo debido. <strong>Gracias al lector <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/#comment-227">Cristian Arbazua</a></strong> y su afán colaborativo el bug ha sido cerrado. Sin duda, un aporte que recuerda el valor del Software Libre y anima a continuar. A continuación <strong>un pequeño ejemplo</strong> de la medida tomada:</p>
-<pre tabindex="0"><code># Vamos a construir la interfaz del formulario principal
-builder = gtk.Builder()
-
-# ANTES: Tomamos la ruta relativa donde se encuentra el Glade
-path = 'glade/TinyBackup.glade'
-
-# AHORA: Tomamos la ruta absoluta  donde se encuentra el Glade
-path = os.path.dirname(__file__) + os.sep + 'glade/TinyBackup.glade'
-
-# Cargamos el fichero
-builder.add_from_file(path)
-</code></pre><p>Cuando vi su aporte acudí velozmente a modificar el código, probarlo y subir una nueva versión a la <a href="http://code.google.com/p/python-tiny-backup/">forja</a>. Desde estos momentos podéis <strong><a href="http://python-tiny-backup.googlecode.com/files/tinybackup-0.2.tar.gz">descargar Tiny Backup 0.2</a></strong>.</p>
-<h3 id="futuras-versiones">Futuras versiones</h3>
-<p>El tiempo es un bien del que ando bastante escaso últimamente y, en estos momentos, mi tiempo de desarrollo lo acapara IberOgre y Sion Tower. No obstante, se me ocurren <strong>un par de ideas para Tiny Backup 0.3</strong>:</p>
-<ul>
-<li><strong>Internacionalización</strong>: empecé a desarrollar Tiny Backup en inglés pero me gustaría que estuviese disponible en algunos idiomas más: español, francés, alemán, etc. Tengo entendido que con Glade es sencillo incorporar internacionalización y sería interesante aprender cómo.</li>
-<li><strong>Barra de progreso</strong>: los usuarios necesitan feedback constante por parte del software que utilizan. Si encargan una tarea pesada y no aparece una barra de progreso creerán que la aplicación se ha colgado. Si queremos restaurar una extensa lista de paquetes el proceso puede llevar bastante tiempo así que esta característica tiene bastante prioridad.</li>
-</ul>
-<p>Desconozco cuando podré dedicarle el tiempo suficiente para incorporar estas mejoras. En cualquier caso le vuelvo a agradecer a Cristian Arbazua su inestimable colaboración en este pequeño proyecto. <strong>¡El feedback siempre es bienvenido!</strong></p>
 
       
     </div>

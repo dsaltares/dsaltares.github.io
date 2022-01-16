@@ -105,6 +105,83 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/">Improve your NextAuth.js app local development experience with a dockerized SMTP server</a>
+      </h1>
+      <span class="post-date">Jan 16, 2022 &middot; 3 minute read &middot; <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="./categories/development">Development</a>
+      </span>
+      
+      <p><img src="./img/nextjs/nextauth.png" alt="NextAuth.js logo"></p>
+<p><a href="https://next-auth.js.org/">NextAuth.js</a> makes it shockingly easy to add authentication to <a href="https://nextjs.org/">Next.js</a> apps. It&rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including <a href="https://en.wikipedia.org/wiki/One-time_password">one time passwords</a> or &ldquo;magic links&rdquo;.</p>
+<p>Working with NextAuth.js is trivial, it sounds too good to be true!</p>
+<p>Of course, there is a catch&hellip;</p>
+<p>The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.</p>
+<p>You can fix that with a local SMTP server! Let&rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">here</a>.</p>
+<h3 id="set-up-nextauthjs-with-the-emailprovider">Set up NextAuth.js with the <code>EmailProvider</code></h3>
+<p>Let&rsquo;s assume you already have a Next.js application. If you don&rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the <code>EmailProvider</code> in <code>/pages/api/auth/[...nextauth].js</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">NextAuth</span>({
+  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
+    <span style="color:#a6e22e">EmailProvider</span>({
+      <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">host</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_HOST</span>,
+        <span style="color:#a6e22e">port</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PORT</span>,
+        <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> {
+          <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_USER</span>,
+          <span style="color:#a6e22e">pass</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PASSWORD</span>,
+        },
+      },
+      <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NextAuth &lt;noreply@example.com&gt;&#39;</span>,
+    }),
+  ]
+});
+</code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn add nodemailer
+</code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
+<h3 id="set-up-your-local-smtp-server">Set up your local SMTP server</h3>
+<p>We&rsquo;re going to use <a href="https://github.com/mailhog/MailHog">MailHog</a>, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!</p>
+<p>Create a <code>docker-compose.yaml</code> file or update your existing one and define the MailHog service.</p>
+<p>Using Docker Compose to run your database locally is a pretty good idea! In my <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">example repo</a> I went for a containerised PostgreSQL database.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
+
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">mailhog</span>:
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mailhog/mailhog</span>
+    <span style="color:#f92672">logging</span>:
+      <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#39;none&#39;</span> <span style="color:#75715e"># disable saving logs</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#ae81ff">1025</span>:<span style="color:#ae81ff">1025</span> <span style="color:#75715e"># smtp server</span>
+      - <span style="color:#ae81ff">8025</span>:<span style="color:#ae81ff">8025</span> <span style="color:#75715e"># web ui</span>
+</code></pre></div><p>Add a couple of convenience scripts to your <code>package.json</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+    <span style="color:#f92672">&#34;docker:up&#34;</span>: <span style="color:#e6db74">&#34;docker compose up -d&#34;</span>,
+    <span style="color:#f92672">&#34;docker:down&#34;</span>: <span style="color:#e6db74">&#34;docker compose down&#34;</span>
+  }
+}
+</code></pre></div><p>Edit your local <code>.env</code> file to configure the NextAuth.js <code>EmailProvider</code>. Leave everything as below.</p>
+<pre tabindex="0"><code>EMAIL_SERVER_HOST=localhost
+EMAIL_SERVER_PORT=1025
+EMAIL_SERVER_USER=email-user
+EMAIL_SERVER_PASSWORD=email-pass
+</code></pre><h3 id="local-workflow">Local workflow</h3>
+<p>Bring up your containers and start the local development server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
+</code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
+<p><img src="./img/nextjs/nextauth-login.png" alt="NextAuth.js login screen"></p>
+<p>Now you can open <code>http://localhost:8025/</code> and see the email with the magic link.</p>
+<p><img src="./img/nextjs/mailhog.png" alt="MailHog inbox"></p>
+<p>🎉 That&rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/">How to test and debug your localhost web app on a real Android device</a>
       </h1>
       <span class="post-date">Dec 29, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/#disqus_thread">Comments</a>
@@ -329,26 +406,6 @@
 <li>🚀 And more!</li>
 </ul>
 <p>Good luck!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/doodle-a-crazy-drawing-guessing-game/">Doodle: a crazy drawing &amp; guessing game</a>
-      </h1>
-      <span class="post-date">May 17, 2020 &middot; 1 minute read &middot; <a href="https://saltares.com/doodle-a-crazy-drawing-guessing-game/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="./categories/games-development">Games Development</a>
-      </span>
-      
-      <p>✏️ Introducing <a href="https://doodle.saltares.com">Doodle</a>, a crazy drawing &amp; guessing chain game. Think Pictionary meets Telephone. Better played with your friends over a video call!</p>
-<p><a href="./img/doodle/gallery/brainstorming.png"><img src="./img/doodle/gallery/brainstorming.png" alt="doodle brainstorming"></a></p>
-<p>🏠 Doodle is a little side project I made during covid-19 confinement to play with friends while we cannot meet face to face. Initially, I thought the crisis would end before I finished it, which would make me lose interest. Little did I know! Not only did I finish it, Doodle has already lightened up the mood in a few remote evenings.</p>
-<p>💻 The game is entirely written in Typescript, which I had never used before. I&rsquo;ve had lots of fun building it, getting feedback and playing with friends. I hope to soon post a more detailed post-mortem on the whole process. Maybe even a couple of articles about things I learned.</p>
-<p>🤓 In the meantime, you can check out the source code on <a href="https://github.com/dsaltares/doodle">Github</a>.</p>
-<p>🙌 Give it a try and be sure to let me know any thoughts or feedback!</p>
 
       
     </div>
