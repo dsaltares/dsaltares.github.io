@@ -6,7 +6,17 @@
     <description>Recent content in Apps &amp; tools on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sat, 08 Aug 2015 22:19:46 +0000</lastBuildDate><atom:link href="https://saltares.com/apps-tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/apps-tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Team Findr</title>
+      <link>https://saltares.com/apps-tools/teamfindr/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/apps-tools/teamfindr/</guid>
+      <description>⚽ Team Findr is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.
+🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend Cristi, did an entire UX pass and UI redesign.</description>
+    </item>
+    
     <item>
       <title>Conjugate</title>
       <link>https://saltares.com/apps-tools/conjugate/</link>

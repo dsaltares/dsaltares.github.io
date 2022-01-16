@@ -2,6 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://saltares.com/apps-tools/</loc>
+    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://saltares.com/categories/</loc>
     <lastmod>2022-01-16T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,6 +18,9 @@
     <lastmod>2022-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/post/</loc>
+    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/apps-tools/teamfindr/</loc>
     <lastmod>2022-01-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</loc>
@@ -151,9 +157,6 @@
   </url><url>
     <loc>https://saltares.com/projects/libgdx-cookbook-50-off/</loc>
     <lastmod>2015-09-12T12:44:13+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/apps-tools/</loc>
-    <lastmod>2015-08-08T22:19:46+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/apps-tools/conjugate/</loc>
     <lastmod>2015-08-08T22:19:46+00:00</lastmod>

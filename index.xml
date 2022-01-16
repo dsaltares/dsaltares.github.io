@@ -84,6 +84,125 @@ EMAIL_SERVER_PASSWORD=email-pass
     </item>
     
     <item>
+      <title>Team Findr</title>
+      <link>https://saltares.com/apps-tools/teamfindr/</link>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/apps-tools/teamfindr/</guid>
+      <description>⚽ Team Findr is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.
+🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend Cristi, did an entire UX pass and UI redesign.</description>
+      <content>&lt;p&gt;⚽ &lt;a href=&#34;https://teamfindr.saltares.com&#34;&gt;Team Findr&lt;/a&gt; is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/teamfindr/teamfindr_00001.png&#34; alt=&#34;team findr screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend &lt;a href=&#34;https://www.linkedin.com/in/cristian-iordan-26b1abb7/&#34;&gt;Cristi&lt;/a&gt;, did an entire UX pass and UI redesign.&lt;/p&gt;
+&lt;h3 id=&#34;-screenshots&#34;&gt;📸 Screenshots&lt;/h3&gt;
+&lt;p&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;./css/hugo-easy-gallery.css&#34; /&gt;
+
+&lt;div class=&#34;gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;
+				&lt;div class=&#34;box&#34;&gt;
+				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/teamfindr/gallery//teamfindr_00002.png&#39;);&#34; &gt;
+				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00002.png&#34; alt=&#34;Teamfindr 00002&#34; /&gt;
+				    &lt;/div&gt;
+			      &lt;figcaption&gt;
+		          &lt;p&gt;Teamfindr 00002&lt;/p&gt;
+			      &lt;/figcaption&gt;
+				    &lt;a href=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00002.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+				  &lt;/figure&gt;
+				&lt;/div&gt;
+				&lt;div class=&#34;box&#34;&gt;
+				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/teamfindr/gallery//teamfindr_00003.png&#39;);&#34; &gt;
+				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00003.png&#34; alt=&#34;Teamfindr 00003&#34; /&gt;
+				    &lt;/div&gt;
+			      &lt;figcaption&gt;
+		          &lt;p&gt;Teamfindr 00003&lt;/p&gt;
+			      &lt;/figcaption&gt;
+				    &lt;a href=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00003.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+				  &lt;/figure&gt;
+				&lt;/div&gt;
+				&lt;div class=&#34;box&#34;&gt;
+				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
+				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/teamfindr/gallery//teamfindr_00004.png&#39;);&#34; &gt;
+				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00004.png&#34; alt=&#34;Teamfindr 00004&#34; /&gt;
+				    &lt;/div&gt;
+			      &lt;figcaption&gt;
+		          &lt;p&gt;Teamfindr 00004&lt;/p&gt;
+			      &lt;/figcaption&gt;
+				    &lt;a href=&#34;https://saltares.com/img/teamfindr/gallery//teamfindr_00004.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
+				  &lt;/figure&gt;
+				&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+  
+
+
+
+
+
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css&#34; integrity=&#34;sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=&#34; crossorigin=&#34;anonymous&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css&#34; integrity=&#34;sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=&#34; crossorigin=&#34;anonymous&#34; /&gt;
+
+
+
+&lt;div class=&#34;pswp&#34; tabindex=&#34;-1&#34; role=&#34;dialog&#34; aria-hidden=&#34;true&#34;&gt;
+
+&lt;div class=&#34;pswp__bg&#34;&gt;&lt;/div&gt;
+
+&lt;div class=&#34;pswp__scroll-wrap&#34;&gt;
+    
+    &lt;div class=&#34;pswp__container&#34;&gt;
+      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
+      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div class=&#34;pswp__ui pswp__ui--hidden&#34;&gt;
+    &lt;div class=&#34;pswp__top-bar&#34;&gt;
+      
+      &lt;div class=&#34;pswp__counter&#34;&gt;&lt;/div&gt;
+      &lt;button class=&#34;pswp__button pswp__button--close&#34; title=&#34;Close (Esc)&#34;&gt;&lt;/button&gt;
+      &lt;button class=&#34;pswp__button pswp__button--share&#34; title=&#34;Share&#34;&gt;&lt;/button&gt;
+      &lt;button class=&#34;pswp__button pswp__button--fs&#34; title=&#34;Toggle fullscreen&#34;&gt;&lt;/button&gt;
+      &lt;button class=&#34;pswp__button pswp__button--zoom&#34; title=&#34;Zoom in/out&#34;&gt;&lt;/button&gt;
+      
+      
+      &lt;div class=&#34;pswp__preloader&#34;&gt;
+        &lt;div class=&#34;pswp__preloader__icn&#34;&gt;
+          &lt;div class=&#34;pswp__preloader__cut&#34;&gt;
+            &lt;div class=&#34;pswp__preloader__donut&#34;&gt;&lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;pswp__share-modal pswp__share-modal--hidden pswp__single-tap&#34;&gt;
+      &lt;div class=&#34;pswp__share-tooltip&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&#34;pswp__button pswp__button--arrow--left&#34; title=&#34;Previous (arrow left)&#34;&gt;
+    &lt;/button&gt;
+    &lt;button class=&#34;pswp__button pswp__button--arrow--right&#34; title=&#34;Next (arrow right)&#34;&gt;
+    &lt;/button&gt;
+    &lt;div class=&#34;pswp__caption&#34;&gt;
+      &lt;div class=&#34;pswp__caption__center&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h3 id=&#34;-technical-details&#34;&gt;💻 Technical details&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/dsaltares/teamfindr&#34;&gt;Team Findr is open source&lt;/a&gt; under the MIT license. Contributions are welcome! The application is entirely written in Typescript and it has two main components.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;web-app&lt;/code&gt;: client side React application. It uses &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API&#34;&gt;Service Workers&lt;/a&gt;, &lt;a href=&#34;https://react-query.tanstack.com/&#34;&gt;React Query&lt;/a&gt;, &lt;a href=&#34;https://mui.com/getting-started/usage/&#34;&gt;MaterialUI&lt;/a&gt;, &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; and &lt;a href=&#34;https://formik.org/&#34;&gt;Formik&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;api&lt;/code&gt;: REST API, deployed to an EC2 machine. It uses &lt;a href=&#34;https://expressjs.com/&#34;&gt;express&lt;/a&gt;, &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;mongodb&lt;/a&gt; and &lt;a href=&#34;https://www.passportjs.org/&#34;&gt;Passport&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    </item>
+    
+    <item>
       <title>How to test and debug your localhost web app on a real Android device</title>
       <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
       <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
@@ -3320,24 +3439,6 @@ Here&amp;rsquo;s a brief of my experience with Hostgator and the migration proce
 &lt;p&gt;&lt;img src=&#34;./img/others/namecheap.png&#34; alt=&#34;namecheap.png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;After digging around for a bit, I registered &lt;code&gt;saltares.com&lt;/code&gt; with &lt;a href=&#34;https://www.namecheap.com/&#34;&gt;Namecheap&lt;/a&gt;. Despite being put off by the name, a lot of people recommended it and now I can see why. The DNS setup propagated extremely quickly and there is no fuss. Additionally, it&amp;rsquo;s really easy to find a &lt;a href=&#34;http://www.namecheapcoupons.com/&#34;&gt;discount code&lt;/a&gt;, so I got the domain during a year for £6, not bad.&lt;/p&gt;
 &lt;p&gt;All of this should have been seamless for everyone, so please contact me if something is not working quite well. Requests to &lt;code&gt;siondream.com&lt;/code&gt; now point to my droplet, so the old domain points to the same thing as &lt;code&gt;saltares.com&lt;/code&gt;.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Libgdx Cookbook samples updated</title>
-      <link>https://saltares.com/projects/libgdx-cookbook-samples-updated/</link>
-      <pubDate>Thu, 19 Mar 2015 23:27:03 +0000</pubDate>
-      
-      <guid>https://saltares.com/projects/libgdx-cookbook-samples-updated/</guid>
-      <description>It&amp;rsquo;s been a few months since Libgdx Cross-platform Game Development Cookbook came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
-As promised, we have updated our samples repository to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, only a few changes were necessary to make everything work again.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/libgdx-cookbook-cover.png&#34; alt=&#34;libgdx-cookbook-cover.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;It&amp;rsquo;s been a few months since &lt;a href=&#34;https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook&#34;&gt;Libgdx Cross-platform Game Development Cookbook&lt;/a&gt; came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.&lt;/p&gt;
-&lt;p&gt;As promised, we have updated our &lt;a href=&#34;https://github.com/dsaltares/libgdx-cookbook&#34;&gt;samples repository&lt;/a&gt; to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, &lt;a href=&#34;https://github.com/dsaltares/libgdx-cookbook/commit/380ee2ea90481f2b80b62df2dccd312db0af7964&#34;&gt;only a few changes&lt;/a&gt; were necessary to make everything work again.&lt;/p&gt;
-&lt;p&gt;I&amp;rsquo;m very pleased to see that, 5 months after the book came out, it&amp;rsquo;s still as relevant as it was on launch day. Moreover, &lt;a href=&#34;http://www.amazon.com/Libgdx-Cross-platform-Game-Development-Cookbook/dp/1783287292/ref=sr_1_1?ie=UTF8&amp;amp;qid=1426806867&amp;amp;sr=8-1&amp;amp;keywords=libgdx+cookbook&#34;&gt;people seem to like it!&lt;/a&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;http://www.amazon.com/review/RIXAWPKQKCKOY/ref=cm_cr_dp_title?ie=UTF8&amp;amp;ASIN=1783287292&amp;amp;channel=detail-glance&amp;amp;nodeID=283155&amp;amp;store=books&#34;&gt;This cookbook is certainly a great resource for learning and improving your libgdx skills and in my opinion it is the best book on libgdx at the moment [.]&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
 </content>
     </item>
     
