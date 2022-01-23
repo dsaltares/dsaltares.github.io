@@ -6,7 +6,19 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sticky nav bar on scroll with React hooks</title>
+      <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</guid>
+      <description>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.
+Like so.
+ Making the navigation bar position: fixed; top 0; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.
+I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a useSticky hook.</description>
+    </item>
+    
     <item>
       <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
       <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
@@ -531,16 +543,6 @@ After a couple of weeks, a hundred commits and many other branches mingling abou
       <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&amp;rsquo;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
 Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, Clean Code.
 And so I read it.</description>
-    </item>
-    
-    <item>
-      <title>Libgdx at Kingston University</title>
-      <link>https://saltares.com/games/libgdx-at-kingston-university/</link>
-      <pubDate>Wed, 26 Nov 2014 18:00:09 +0000</pubDate>
-      
-      <guid>https://saltares.com/games/libgdx-at-kingston-university/</guid>
-      <description>Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements Alberto&amp;rsquo;s Libgdx workshop at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released book.
-I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students.</description>
     </item>
     
   </channel>

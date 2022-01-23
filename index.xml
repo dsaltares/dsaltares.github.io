@@ -6,7 +6,97 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Sticky nav bar on scroll with React hooks</title>
+      <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>
+      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</guid>
+      <description>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.
+Like so.
+ Making the navigation bar position: fixed; top 0; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.
+I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a useSticky hook.</description>
+      <content>&lt;p&gt;Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.&lt;/p&gt;
+&lt;p&gt;Like so.&lt;/p&gt;
+&lt;iframe
+  src=&#34;https://codesandbox.io/embed/sticky-scrolling-header-vwsso?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview&#34;
+  style=&#34;width:100%; height:500px; border:1px solid #000; border-radius: 4px; overflow:hidden;&#34;
+  title=&#34;sticky-scrolling-header&#34;
+  allow=&#34;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&#34;
+  sandbox=&#34;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&#34;
+  &gt;
+&lt;/iframe&gt;
+&lt;p&gt;Making the navigation bar &lt;code&gt;position: fixed; top 0;&lt;/code&gt; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.&lt;/p&gt;
+&lt;p&gt;I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a &lt;code&gt;useSticky&lt;/code&gt; &lt;a href=&#34;https://reactjs.org/docs/hooks-intro.html&#34;&gt;hook&lt;/a&gt;. Here&amp;rsquo;s how you&amp;rsquo;d use it.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classnames&amp;#34;&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./useSticky&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;();
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
+    &amp;lt;&amp;gt;
+      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt;&amp;gt;
+        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Header&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;
+      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt;&amp;gt;
+      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;ref&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;}
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; })}
+      &amp;gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;Sticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nav&lt;/span&gt;
+      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;&amp;gt;
+      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;
+        &lt;span style=&#34;color:#a6e22e&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{{
+          &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;clientHeight&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;px`&lt;/span&gt;
+            &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0px&amp;#39;&lt;/span&gt;
+        }}
+      /&amp;gt;
+      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;/&amp;gt;
+  );
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You stick (no pun intended) the &lt;code&gt;stickyRef&lt;/code&gt; into the thing that you want to fix to the top after you scroll past it. Then, &lt;code&gt;sticky&lt;/code&gt; will indicate whether it should be fixed at the top or not. I then use that to apply a &lt;code&gt;sticky&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;fixed&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;top&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The extra &lt;code&gt;div&lt;/code&gt; below the &lt;code&gt;nav&lt;/code&gt; adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.&lt;/p&gt;
+&lt;p&gt;🌟 The magic happens in the &lt;code&gt;useSticky&lt;/code&gt; hook itself.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;);
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+    }
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;offsetTop&lt;/span&gt;);
+  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;]);
+
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
+        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+      }
+
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;(window.&lt;span style=&#34;color:#a6e22e&#34;&gt;scrollY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;);
+    };
+    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;addEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; () =&amp;gt; window.&lt;span style=&#34;color:#a6e22e&#34;&gt;removeEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
+  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;]);
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; };
+};
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first effect measures the vertical offset of the element we want to fix at the top after it&amp;rsquo;s scrolled past. The second one listens to the &lt;code&gt;scroll&lt;/code&gt; event and determines whether we have scrolled past the element&amp;rsquo;s top edge and it needs to become sticky.&lt;/p&gt;
+&lt;p&gt;🙌 Hope this is useful!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
       <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
@@ -3415,30 +3505,6 @@ Reason to be When learning a new language, it is very common to struggle with ve
 &lt;p&gt;Any suggestions?&lt;/p&gt;
 &lt;h3 id=&#34;progress&#34;&gt;Progress&lt;/h3&gt;
 &lt;p&gt;I&amp;rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&amp;rsquo;d be more than happy to accept PR&amp;rsquo;s if you&amp;rsquo;re interested to help!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>New domain and hosting</title>
-      <link>https://saltares.com/general/new-domain-and-hosting/</link>
-      <pubDate>Sun, 22 Mar 2015 14:36:18 +0000</pubDate>
-      
-      <guid>https://saltares.com/general/new-domain-and-hosting/</guid>
-      <description>It&amp;rsquo;s been over 5 years since I registered siondream.com. At that time, I also signed up for a shared hosting plan with Hostgator. Unfortunately, I&amp;rsquo;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
-Welcome to saltares.com!
-Here&amp;rsquo;s a brief of my experience with Hostgator and the migration process.</description>
-      <content>&lt;p&gt;It&amp;rsquo;s been &lt;a href=&#34;./general/5-years-old/&#34;&gt;over 5 years&lt;/a&gt; since I registered &lt;code&gt;siondream.com&lt;/code&gt;. At that time, I also signed up for a shared hosting plan with &lt;a href=&#34;http://hostgator.com/&#34;&gt;Hostgator&lt;/a&gt;. Unfortunately, I&amp;rsquo;m no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.&lt;/p&gt;
-&lt;p&gt;Welcome to &lt;code&gt;saltares.com&lt;/code&gt;!&lt;/p&gt;
-&lt;p&gt;Here&amp;rsquo;s a brief of my experience with Hostgator and the migration process.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/others/hostgator.png&#34; alt=&#34;hostgator.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Hostgator wasn&amp;rsquo;t actually that bad. It had excellent client support and my plan offered &amp;ldquo;unlimited&amp;rdquo; disk space and monthly data transfer at a fair price. However, at the end of the day, both were limited by the number of people you shared your instance with. In all honestly, the uptime could have been better as it wasn&amp;rsquo;t rare for me to get notifications about the blog being unreachable.&lt;/p&gt;
-&lt;p&gt;The worst part about Hostgator were the access limitations. I couldn&amp;rsquo;t just run whatever software I wanted on the server. Whilst it supported PHP, I believe Java or Python weren&amp;rsquo;t among the list. I simply didn&amp;rsquo;t have the permissions to install anything.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/others/digitalocean.png&#34; alt=&#34;digitalocean.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;A few friends have &lt;a href=&#34;https://www.digitalocean.com/&#34;&gt;Digital Ocean&lt;/a&gt; droplets and are very happy with the service, so I went for it and got my Ubuntu SSD machine. I took advantage of the &lt;a href=&#34;https://education.github.com/pack&#34;&gt;GitHub student pack&lt;/a&gt;, which offers a $100 voucher, meaning I don&amp;rsquo;t have to pay at all for the first 20 months.&lt;/p&gt;
-&lt;p&gt;Yes, you have to set absolutely everything up yourself, including a web server, PHP, MySQL, etc. Conveniently, Digital Ocean&amp;rsquo;s website has a myriad of &lt;a href=&#34;https://www.digitalocean.com/community/tutorials&#34;&gt;tutorials&lt;/a&gt; with detailed steps on how to do all of this. Great way to polish up my rusty Linux skills.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/others/namecheap.png&#34; alt=&#34;namecheap.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;After digging around for a bit, I registered &lt;code&gt;saltares.com&lt;/code&gt; with &lt;a href=&#34;https://www.namecheap.com/&#34;&gt;Namecheap&lt;/a&gt;. Despite being put off by the name, a lot of people recommended it and now I can see why. The DNS setup propagated extremely quickly and there is no fuss. Additionally, it&amp;rsquo;s really easy to find a &lt;a href=&#34;http://www.namecheapcoupons.com/&#34;&gt;discount code&lt;/a&gt;, so I got the domain during a year for £6, not bad.&lt;/p&gt;
-&lt;p&gt;All of this should have been seamless for everyone, so please contact me if something is not working quite well. Requests to &lt;code&gt;siondream.com&lt;/code&gt; now point to my droplet, so the old domain points to the same thing as &lt;code&gt;saltares.com&lt;/code&gt;.&lt;/p&gt;
 </content>
     </item>
     

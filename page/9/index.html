@@ -105,6 +105,56 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/conjugate/">Conjugate</a>
+      </h1>
+      <span class="post-date">May 4, 2015 &middot; 2 minute read &middot; <a href="https://saltares.com/projects/conjugate/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It&rsquo;s probably easier if I just stick a summary of the GitHub readme here.</p>
+<p>Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.</p>
+<p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg"></p>
+<h3 id="reason-to-be">Reason to be</h3>
+<p>When learning a new language, it is very common to struggle with verb conjugations. For example:</p>
+<blockquote>
+<p>I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</p>
+</blockquote>
+<p>Unfortunately, the available resources are somehow limited:</p>
+<ul>
+<li>Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.</li>
+<li>Apps: seriously? I don&rsquo;t want to install yet another app!</li>
+<li>Websites: lists are limited, the sites are old, full of ads and/or don&rsquo;t play well with mobile devices.</li>
+</ul>
+<p>Conjugate tries to solve that use case.</p>
+<h3 id="project-structure">Project structure</h3>
+<p>The project is divided in two parts:</p>
+<ul>
+<li>Scraper</li>
+<li>Mobile friendly website</li>
+</ul>
+<h4 id="scraper">Scraper</h4>
+<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn&rsquo;t work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
+<p>The script currently supports Romanian (which I&rsquo;m trying to learn) and Spanish. Luckily, it&rsquo;s pretty easy to add support for new languages, although no thanks to Verbix&rsquo;s poor use of web standards.</p>
+<h4 id="website">Website</h4>
+<p>Currently, I&rsquo;m in the process of writing the mobile friendly application. It&rsquo;ll be extremely simple:</p>
+<ol>
+<li>Enter a verb in English (infinitive).</li>
+<li>Select a language from a dropdown.</li>
+<li>Hit &ldquo;Go&rdquo;.</li>
+</ol>
+<p><img src="../../img/conjugate/flask.png" alt="flask.png"></p>
+<p>For the backend I&rsquo;m using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they&rsquo;re really easy to get started with. Not too sure about the frontend, but I&rsquo;ll probably go for a framework that makes responsive design simple enough.</p>
+<p>Any suggestions?</p>
+<h3 id="progress">Progress</h3>
+<p>I&rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&rsquo;d be more than happy to accept PR&rsquo;s if you&rsquo;re interested to help!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/new-domain-and-hosting/">New domain and hosting</a>
       </h1>
       <span class="post-date">Mar 22, 2015 &middot; 2 minute read &middot; <a href="https://saltares.com/general/new-domain-and-hosting/#disqus_thread">Comments</a>
@@ -202,33 +252,6 @@
 <p>Understandably, this affects Chris' motivation to produce more awesome work for free. He was in the middle of publishing a series of articles on <a href="http://2dgameartforprogrammers.blogspot.co.uk/2015/03/complete-game-character-design.html">how to design art for a whole game from scratch</a>. He cannot get enough kudos for that.</p>
 <p>It&rsquo;s enraging to see how easy it is for an company of doubious morale to take possession of something it&rsquo;s not theirs and re-publish it for profit. Fortunately, Chris is talking to his lawyer and Viope seem to have taken the course down for the time being.</p>
 <p>Hope it gets fixed soon mate.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/libgdx-at-the-ljc-slides-video-coming-soon/">Libgdx at the LJC: slides and video</a>
-      </h1>
-      <span class="post-date">Feb 4, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/games/libgdx-at-the-ljc-slides-video-coming-soon/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/ljc.jpeg" alt="ljc.jpeg"></p>
-<p>Yesterday, I had the pleasure to deliver a talk about Libgdx at the <a href="http://www.meetup.com/Londonjavacommunity/">London Java Community Meetup</a>. To my surprise, there was a pretty decent turnout. The audience was lovely, seemed engaged and asked quite a few questions. No awkward silence at the end.</p>
-<blockquote>
-<p>Woohoo!</p>
-</blockquote>
-<p>Thanks a lot to everyone who attended, and to the organisers who made it possible. We must catch up next time at the pub afterwards!</p>
-<p>If you&rsquo;re in the London area, you should definitely join the Meetup group and attend some of the talks. The atmosphere is friendly and there&rsquo;s at least one every week, the next ones are on <a href="http://ceylon-lang.org/">Ceylon</a> and design patterns.</p>
-<p>Here&rsquo;s the video and the slides:</p>
-<ul>
-<li><a href="https://skillsmatter.com/skillscasts/6150-libgdx-for-cross-platform-game-development">Video</a></li>
-<li>[Plain slides</li>
-<li>[Slides with notes</li>
-</ul>
 
       
     </div>

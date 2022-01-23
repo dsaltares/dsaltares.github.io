@@ -105,6 +105,47 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a>
+      </h1>
+      <span class="post-date">Feb 9, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/colisiones-ii-diseno-general-de-stc/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/colisiones-2.png" alt="colisiones-2.png"></p>
+<p>Entregas:</p>
+<ul>
+<li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
+<li><em>Colisiones II: Diseño general de STC</em></li>
+<li><a href="../../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: La clase Shape y Collision Dispatching</a></li>
+<li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">Colisiones IV: Tests de colisión</a></li>
+</ul>
+<p>En la primera entrega de la serie de artículos sobre el <strong>sistema de detección de colisiones de Sion Tower (STC)</strong> comenté los requisitos que debía cumplir y las alternativas que valoré antes de decidirme a implementarlo por cuenta propia. En esta ocasión me dispongo a hacer <strong>un repaso por el diseño de esta pequeña biblioteca</strong>. Tras el diagrama de clases voy a tratar los componentes de forma breve pero individualizada. En posteriores entregas del artículo tendremos espacio suficiente para conocer en profundidad cada clase y algunos puntos relevantes de su implementación.</p>
+<h3 id="diagrama-de-clases-de-diseño">Diagrama de clases de diseño</h3>
+<p>El sistema de colisiones de Sion Tower es bastante sencillo y únicamente cuenta con las clases que se muestran a continuación.</p>
+<p>Este primer diagrama sólo muestra las clases y sus relaciones:</p>
+<p><img src="../../img/wp/collisions-simplified.png" alt="collisions-simplified.png"></p>
+<p>En este segundo diagrama podemos ver los métodos que componen la interfaz de cada clase, haz click sobre la imagen para verlo ampliado.</p>
+<p><a href="../../img/wp/collisions-interface.png"><img src="../../img/wp/collisions-interface.png" alt="collisions-interface.png"></a></p>
+<h3 id="componentes">Componentes</h3>
+<p>La siguiente lista repasa de forma superficial las responsabilidades de cada clase dentro de Sion Tower Collisions.</p>
+<ul>
+<li><strong>Shape</strong>: clase abstracta que modela formas básicas colisionables. Es la encargada del <em>&ldquo;collision dispatching&rdquo;</em>. Mediante el método estático <em>Shape::getCollision</em> podemos saber si dos formas concretas colisionan sin necesidad de conocer su clase concreta. El sistema detecta los tipos en tiempo de ejecución (<a href="http://en.wikipedia.org/wiki/Run-time_type_information">RTTI</a>) y elije el test de colisión apropiado de manera eficiente.</li>
+<li><strong>Plane</strong>: forma especializada para modelar un plano representado por un punto y un vector normal. Dentro del juego lo utilizaremos para modelar las colisiones del suelo.</li>
+<li><strong>Sphere</strong>: forma especializada para modelar una esfera a partir de un punto (centro) y un radio. Nos será de extrema utilidad para modelar el volumen colisionable de los proyectiles mágicos.</li>
+<li><strong>AABB</strong>: forma especializada para modelar una caja de colisión alineada con los ejes (<a href="http://en.wikipedia.org/wiki/Bounding_volume#Common_types_of_bounding_volume">Axis Aligned Bounding Box</a>), se representa mediante su punto mínimo y máximo. Será útil para modelar elementos que no roten ya que los AABB pierden mucha precisión en estas situaciones.</li>
+<li><strong>Body</strong>: cuerpo colisionable formado por varios objetos <em>Shape</em> y una transformación (translación con respecto al origen, escala y rotación). Representará la parte física de los objetos del juego dentro de la escena (<em>world space</em>). Proporciona el método estático <em>Body::getCollision</em> para conocer si dos cuerpos se interseccionan. Los cuerpos tienen un tipo para poder distinguir entre clases de cuerpos de cara al filtrado de colisiones.</li>
+<li><strong>CollisionManager</strong>: registra todos los cuerpos de la escena y permite detectar colisiones entre ellos. Habilita el registro de callbacks para ser informados de colisiones entre dos tipos concretos de cuerpos.</li>
+<li><strong>GameObject</strong>: encapsula el aspecto colisionable (<em>Body</em>) junto con el visual (<em>Ogre::Entity</em> – <em>Ogre::SceneNode</em>) de los elementos de juego. Los elementos que no tengan un comportamiento definido serán instancias de esta clase. Aquellos que deseen un comportamiento concreto deberán heredar de <em>GameObject</em>.</li>
+</ul>
+<p>Básicamente esto es lo que proporciona STC, <strong>no es mucho pero es fácil de extender</strong> y es independiente del resto de componentes de un videojuego.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/iberogre-en-creagamers/">IberOgre en Creagamers</a>
       </h1>
       <span class="post-date">Feb 8, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/iberogre-en-creagamers/#disqus_thread">Comments</a>
@@ -238,25 +279,6 @@
 </ol>
 <p>Es cierto que <strong>las aplicaciones de HTC Sense no pueden ser eliminadas</strong> a través de este proceso y requieren disponer de acceso root. Pero al menos ya sufrirás esas aplicaciones que te impone tu operador, carecen de utilidad y a veces consumen recursos en segundo plano.</p>
 <p>Eso es todo, <strong>ahora vivirás mejor</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/inicializacion-y-cierre-de-ogre/">Inicialización y cierre de Ogre</a>
-      </h1>
-      <span class="post-date">Feb 1, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/inicializacion-y-cierre-de-ogre/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/inicializacion-cierre-ogre.png" alt="inicializacion-cierre-ogre.png"></p>
-<p>Muchos seguidores de <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal"><strong>IberOgre</strong></a> estabais <strong>esperando un artículo a modo de introducción</strong> para aprender a inicializar el motor. Un artículo de lo más básico era imprescindible y estaba planificado desde el principio. No obstante, debido a diversos motivos no me ha sido posible publicarlo hasta <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre">ahora</a>. El retraso ha sido imperdonable pero al menos me queda l<strong>a satisfacción de haber cumplido el objetivo</strong> más prioritario de la <a href="../../proyectos/pfc/proximos-objetivos-en-iberogre-y-sion-tower/">lista de objetivos</a> que publiqué hace unos días.</p>
-<p><strong>El artículo <a href="http://osl2.uca.es/iberogre/index.php/Inicializaci%C3%B3n_y_cierre_de_Ogre"><em>&ldquo;Inicialización y cierre de Ogre&rdquo;</em></a></strong> sería el primero en el que el lector comienza a trabajar de primera mano con la biblioteca. Es un choque complicado ante la increíble variedad de aproximaciones posibles ante un mismo problema, de hecho cuando yo tuve que dar mis primeros pasos me sentí abrumado. Por ello y siempre teniendo la perspectiva del principiante, he tratado de explicar los conceptos de la forma más clara posible. El lector que avance con paciencia por el artículo y se detenga en los ejemplos no debería tener ningún problema en comprender la secuencia de inicialización de Ogre. Se explican la carga de plugins, los ficheros de configuración y el sistema de logging. Creo que ha quedado un artículo bastante completo, pero <strong>siempre podéis mejorarlo haciendo comentarios y sugerencias</strong>.</p>
-<p>Para terminar quiero decir que estoy horrorizado porque hace unos días recibí un correo de la Universidad de Cádiz recordando la fecha para la <strong>fase local del concurso</strong>. Tendrá lugar del 21 al 25 de marzo lo que quiere decir que… ¡Quedan menos de dos meses! Esto me dará la motivación suficiente para ampliar IberOgre y conseguir al menos una demo técnica de Sion Tower. Vislumbro muchísimo desarrollo por delante, horas de depuración, trabajo de arte y algún que otro golpe contra la pared.</p>
-<p><strong>¡Suerte a todos mis compañeros concursantes de Cádiz!</strong></p>
 
       
     </div>

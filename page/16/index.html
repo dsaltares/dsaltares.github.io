@@ -105,6 +105,178 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/listenerset-using-variadic-templates/">ListenerSet using variadic templates</a>
+      </h1>
+      <span class="post-date">Apr 24, 2014 &middot; 5 minute read &middot; <a href="https://saltares.com/computing/listenerset-using-variadic-templates/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><strong>Important</strong>: variadic templates are only available from C++11, make sure your compiler supports it.</p>
+<p>Who has never used the <a href="http://en.wikipedia.org/wiki/Observer_pattern">Observer</a> pattern? As long as you have been involved in any medium sized project, chances are you have come across it at some point.</p>
+<h3 id="the-problem">The problem</h3>
+<p>It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis. That is registration, un-registration and notification. A lot of nonsensical boilerplate, which makes for code that is harder to read and easier to get wrong.</p>
+<p>Let&rsquo;s take a look at a typical input event dispatching system, simplified for the purposes of this article. We could have an <code>IInputListener</code> interface that handles a couple of events, <code>keyDown()</code> and <code>keyUp()</code>.</p>
+<pre tabindex="0"><code>struct IInputListener
+{
+    virtual ~IInputListener() {}
+    virtual bool keyDown(KeyCode code) = 0;
+    virtual bool keyUp(KeyCode code) = 0;
+};
+</code></pre><p>Our <code>InputSystem</code> class could hold an <code>std::set</code> of <code>IInputListener</code> pointers. Registration and un-registration is made possible through <code>addListener()</code> and <code>removeListener()</code> respectively. Bad news is that, every single time we want to send an event to the listeners, we are forced to iterate over the collection. Also, God kills a kitten.</p>
+<pre tabindex="0"><code>class InputSystem
+{
+public:
+    void addListener(IInputListener* listener)
+    {
+        m_listeners.insert(listener);
+    }
+
+    void removeListener(IInputListener* listener)
+    {
+        m_listeners.erase(listener);
+    }
+
+    void update()
+    {
+        // Touch down detected
+        for (auto listener : m_listeners)
+        {
+            listener-&gt;keyDown(code);
+        }
+
+        ...
+
+        // Touch up detected
+        for (auto listener : m_listeners)
+        {
+            listener-&gt;keyUp(code);
+        }
+    }
+
+private:
+    std::set&lt;IInputListener*&gt; m_listeners;
+};
+</code></pre><p>As if this wasn&rsquo;t enough, there is another important <em>gotcha</em> here. What happens when a listener un-registers as a result of an event? The <code>m_listeners</code> collection is modified in the middle of the <code>for</code> loop, thus current iterators are no longer valid. The second we try to increment the internal iterator to fetch the next listener.</p>
+<blockquote>
+<p>BAM!</p>
+</blockquote>
+<p>Not good.</p>
+<p>The solution is simple but annoying. We can just add new listener registration and un-registration requests to a pending list while in the middle of a dispatch. Those pending lists would be processed once it&rsquo;s safe to modify the collection of listeners.</p>
+<p>Moreover, some people use <code>std::vector</code> instead of <code>std::set</code> for performance reasons, which is completely legit. However, that involves adding code to ensure listener uniqueness in the collection.</p>
+<p>Every time.</p>
+<p>Honestly? I&rsquo;m lazy so I don&rsquo;t want to be the guy who implements this over and over.</p>
+<blockquote>
+<p>Okay, so what do you suggest?</p>
+</blockquote>
+<h3 id="the-way-towards-the-solution">The way towards the solution</h3>
+<p>Following our intuition, we realise that a way to generalise this behaviour is in order. Ideally, it would meet the following criteria.</p>
+<ul>
+<li>Avoids all code duplication.</li>
+<li>Ensures listener uniqueness.</li>
+<li>It is safe, can register, un-register while notifying.</li>
+<li>Avoids manually going through the listener collection to send an event.</li>
+<li>Compatible with any kind of event listener.</li>
+</ul>
+<p>Intuitively, we could have a <code>ListenerSet&lt;Type&gt;</code> template class that handles listener duplication as well as registration and un-registration safety.</p>
+<p><strong>Note</strong>: we&rsquo;ll be using <code>std::set</code> rather than <code>std::vector</code> for simplicity. Both can be used as long as the appropriate precautions are taken.</p>
+<pre tabindex="0"><code>template &lt;class Type&gt; class ListenerSet
+{
+public:
+    ListenerSet() {}
+    virtual ~ListenerSet() {}
+
+    inline void addListener(Type listener)
+    {
+        if (m_notifying)
+        {
+            m_pendingAddition.insert(listener);
+            m_pendingRemoval.erase(listener);
+        }
+        else
+        {
+            m_listeners.insert(listener);
+        }
+    }
+
+    inline void removeListener(Type listener)
+    {
+        if (m_notifying)
+        {
+            m_pendingRemoval.insert(listener);
+            m_pendingAddition.erase(listener);
+        }
+        else
+        {
+            m_listeners.erase(listener);
+        }
+    }
+
+private:
+    bool m_notifying;
+    std::set&lt;Type&gt; m_pendingRemoval;
+    std::set&lt;Type&gt; m_pendingAddition;
+    std::set&lt;Type&gt; m_listeners;
+};
+</code></pre><p>We&rsquo;re missing the notification functionality, that&rsquo;s the tricky part. We would like to have an interface such as to be able to do something like this.</p>
+<pre tabindex="0"><code>m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
+</code></pre><p><code>ListenerSet::notify()</code> would iterate over all the registered listeners calling <code>IInputListener::keyDown</code> and passing <code>keyCode</code> as a parameter.</p>
+<blockquote>
+<p>Maybe easier said than done?</p>
+</blockquote>
+<p>True, <code>ListenerSet::notify()</code> needs to support an arbitrary number of arguments, as different event handlers won&rsquo;t necessarily have the same signature. Moreover, <code>IInputListener::keyDown</code>(and every other potential handler) needs to receive a <code>this</code> pointer along the remaining arguments.</p>
+<p>This is where <a href="http://www.cplusplus.com/articles/EhvU7k9E/">variadic templates</a> come into play. Basically, they&rsquo;re templates that can take an arbitrary number of parameters of any type.</p>
+<p>Interestingly enough, <code>std::bind()</code> also takes an arbitrary number of parameters. That means we can create an <code>std::function&gt;</code> object that has everything we need: the event handler function pointer, <code>this</code> and the remaining arguments.</p>
+<p>Take a look at the code.</p>
+<pre tabindex="0"><code>template &lt;class Function, class... Arguments&gt;
+inline void notify(Function&amp;&amp; f, Arguments&amp;&amp;... args)
+{
+    m_notifying = true;
+    for (Type listener : m_listeners)
+    {
+        auto callback = std::bind(f, listener, args...);
+        callback(listener);
+    }
+    m_notifying = false;
+
+    for (Type listener : m_pendingRemoval)
+    {
+        m_listeners.erase(listener);
+    }
+
+    m_pendingRemoval.clear();
+
+    for (Type listener : m_pendingAddition)
+    {
+        m_listeners.insert(listener);
+    }
+
+    m_pendingAddition.clear();
+}
+</code></pre><p>Note how we process the pending requests to add or remove listeners after we finish sending the events, that&rsquo;s when it&rsquo;s safe.</p>
+<p>Now we can do exactly what we wanted!</p>
+<pre tabindex="0"><code>ListenerSet&lt;IInputListener*&gt; listeners;
+
+listeners.addListener(new PlayerInputListener());
+listeners.addListener(new UserInterfaceInputListener());
+
+m_listenerSet.notify(&amp;IInputListener::keyDown, keyCode);
+m_listenerSet.notify(&amp;IInputListener::keyUp, keyCode);
+</code></pre><p>Templates are instantiated at compile time, which means the compiler will complain if we&rsquo;re doing something dodgy such as trying to bind the wrong thing. Compile time checks are good.</p>
+<p>Managing a set of listeners and sending events is now a lot easier, safer and readable. Last but not least, it&rsquo;s significantly less error prone.</p>
+<blockquote>
+<p>Hooray!!!</p>
+</blockquote>
+<h3 id="full-source">Full source</h3>
+<p>For those interested, I&rsquo;ve made the code available as a GitHub Gist.</p>
+<p><a href="https://gist.github.com/dsaltares/11212605">ListenerSet implementation</a></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/castilla-la-mancha-university-talk/">Castilla: La Mancha University talk</a>
       </h1>
       <span class="post-date">Apr 23, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/castilla-la-mancha-university-talk/#disqus_thread">Comments</a>
@@ -233,100 +405,6 @@
 </ol>
 <p>When in doubt, you can always ask in the <a href="http://www.badlogicgames.com/forum/">forums</a> or discuss in the #libgdx IRC channel at <code>irc.freenode.net</code>.</p>
 <p>Happy coding!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/">Fix your timestep in Libgdx and Box2D</a>
-      </h1>
-      <span class="post-date">Mar 11, 2014 &middot; 4 minute read &middot; <a href="https://saltares.com/games/fixing-your-timestep-in-libgdx-and-box2d/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
-<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games' behaviour.</p>
-<p>I thought it would be a good idea to show how it translates to a <a href="https://github.com/libgdx/libgdx">Libgdx</a> application using the <a href="http://box2d.org/">Box2D</a> physics engine. Note that it also applies to <a href="http://bulletphysics.org/wordpress/">Bullet</a>, changes would be minimal.</p>
-<h3 id="simple-but-wrong-approaches">Simple but wrong approaches</h3>
-<p>It starts with a fix time step of 1/60th of a second, which makes for a stable simulation but fails terribly when the game runs at less than 60fps, a very common situation in mobile devices.</p>
-<p>The logical upgrade is to pass exactly how much time has passed since the last frame. Obviously, not every frame takes the same, which means the simulation could be unstable. Moreover, it will vary across devices as they can feature a wide range of specifications. This is definitely not the way to go.</p>
-<blockquote>
-<p>Everything is lost!</p>
-</blockquote>
-<h3 id="fixed-timestep">Fixed timestep</h3>
-<p>If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let&rsquo;s say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we&rsquo;d only step the physics one every two frames.</p>
-<blockquote>
-<p>What happens when the game runs at 50fps?</p>
-</blockquote>
-<p>We need an <code>accumulator</code> where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.</p>
-<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
-    private World world;
-    private double accumulator;
-    private double currentTime;
-    private float step = 1.0f / 60.0f;
-
-    public void render() {
-        double newTime = TimeUtils.millis() / 1000.0;
-        double frameTime = Math.min(newTime - currentTime, 0.25);
-        float deltaTime = (float)frameTime;
-
-        currentTime = newTime;
-
-        while (accumulator &amp;gt;= step) {
-            world.step(step, velIterations, posIterations);
-            accumulator -= step;
-        }
-}
-</code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
-<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities' transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
-<pre tabindex="0"><code>public class SionGame extends ApplicationListener {
-    private World world;
-    private double accumulator;
-    private double currentTime;
-    private float step = 1.0f / 60.0f;
-
-    public void render() {
-        double newTime = TimeUtils.millis() / 1000.0;
-        double frameTime = Math.min(newTime - currentTime, 0.25);
-        float deltaTime = (float)frameTime;
-
-        currentTime = newTime;
-
-        while (accumulator &amp;gt;= step) {
-            world.step(step, velIterations, posIterations);
-            accumulator -= step;
-            entityManager.update();
-        }
-
-        entityManager.interpolate(accumulator / step);
-}
-</code></pre><p>I entirely made <code>EntityManager</code> up, it simply should maintain a collection of your game entities. We assume <code>entityManager.update()</code> iterates over the list of game entities and updates their position and rotation according to the current physics state. On the other hand, <code>entityManager.interpolate()</code> should do something like the following.</p>
-<pre tabindex="0"><code>public void interpolate(float alpha) {
-    for (Entity entity : entities) {
-        Transform transform = entity.getBody().getTransform();
-        Vector2 bodyPosition = transform.getPosition();
-        Vector2 position = entity.getPosition();
-        float angle = entity.getAngle();
-        float bodyAngle = transform.getRotation();
-
-        position.x = bodyPosition.x * alpha + position.x * (1.0f - alpha);
-        position.y = bodyPosition.y * alpha + position.x * (1.0f - alpha);
-        entity.setAngle(bodyAngle * alpha + angle * (1.0f - alpha));
-    }
-}
-</code></pre><p>Although it&rsquo;s been simplified for the purpose of this text, the following snippet comes from <a href="https://github.com/siondream/sioncore">SionCore</a>.</p>
-<h3 id="a-working-sample">A working sample</h3>
-<p>Libgdx community memeber, Just4phil, pointed out in the comments the advantages of using a fixed timestep with interpolation. He kindly provided a working sample that lets you switch between all approaches explained in this article. Not only that, he also linked to the source, which is really awesome. Kudos.</p>
-<p><img src="../../img/wp/just4phil-fixed-timestep.png" alt="Fixed timestep demo"></p>
-<ul>
-<li><a href="http://goo.gl/aF0wSJ">Download demo jar</a></li>
-<li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java">Fixed timestep code</a></li>
-<li><a href="https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java">Interpolation code</a></li>
-</ul>
-<p>Again, read <a href="http://gafferongames.com/game-physics/fix-your-timestep/">the original article</a> if you haven&rsquo;t done so already.</p>
 
       
     </div>

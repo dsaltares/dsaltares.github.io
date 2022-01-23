@@ -105,6 +105,97 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/">Sticky nav bar on scroll with React hooks</a>
+      </h1>
+      <span class="post-date">Jan 23, 2022 &middot; 2 minute read &middot; <a href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="./categories/development">Development</a>
+      </span>
+      
+      <p>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.</p>
+<p>Like so.</p>
+<iframe
+  src="https://codesandbox.io/embed/sticky-scrolling-header-vwsso?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+  style="width:100%; height:500px; border:1px solid #000; border-radius: 4px; overflow:hidden;"
+  title="sticky-scrolling-header"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  >
+</iframe>
+<p>Making the navigation bar <code>position: fixed; top 0;</code> was not going to cut it because the header had to come first unless we scrolled past the navigation bar.</p>
+<p>I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a <code>useSticky</code> <a href="https://reactjs.org/docs/hooks-intro.html">hook</a>. Here&rsquo;s how you&rsquo;d use it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">classNames</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;classnames&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./useSticky&#34;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">stickyRef</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useSticky</span>();
+  <span style="color:#66d9ef">return</span> (
+    &lt;&gt;
+      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Header</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;/<span style="color:#f92672">header</span>&gt;
+      &lt;<span style="color:#f92672">nav</span>
+        <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stickyRef</span>}
+        <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classNames</span>(<span style="color:#e6db74">&#34;nav&#34;</span>, { <span style="color:#a6e22e">sticky</span> })}
+      &gt;
+        <span style="color:#a6e22e">Sticky</span> <span style="color:#a6e22e">nav</span>
+      &lt;/<span style="color:#f92672">nav</span>&gt;
+      &lt;<span style="color:#f92672">div</span>
+        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
+          <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sticky</span>
+            <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">clientHeight</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>
+            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0px&#39;</span>
+        }}
+      /&gt;
+      &lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span> /&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre></div><p>You stick (no pun intended) the <code>stickyRef</code> into the thing that you want to fix to the top after you scroll past it. Then, <code>sticky</code> will indicate whether it should be fixed at the top or not. I then use that to apply a <code>sticky</code> class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">sticky</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>The extra <code>div</code> below the <code>nav</code> adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.</p>
+<p>🌟 The magic happens in the <code>useSticky</code> hook itself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stickyRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">setSticky</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">setOffset</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+
+  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">setOffset</span>(<span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">offsetTop</span>);
+  }, [<span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">setOffset</span>]);
+
+  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleScroll</span> <span style="color:#f92672">=</span> () =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+        <span style="color:#66d9ef">return</span>;
+      }
+
+      <span style="color:#a6e22e">setSticky</span>(window.<span style="color:#a6e22e">scrollY</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">offset</span>);
+    };
+    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+    <span style="color:#66d9ef">return</span> () =&gt; window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+  }, [<span style="color:#a6e22e">setSticky</span>, <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">offset</span>]);
+  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">sticky</span> };
+};
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">useSticky</span>;
+</code></pre></div><p>The first effect measures the vertical offset of the element we want to fix at the top after it&rsquo;s scrolled past. The second one listens to the <code>scroll</code> event and determines whether we have scrolled past the element&rsquo;s top edge and it needs to become sticky.</p>
+<p>🙌 Hope this is useful!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/">Improve your NextAuth.js app local development experience with a dockerized SMTP server</a>
       </h1>
       <span class="post-date">Jan 16, 2022 &middot; 3 minute read &middot; <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/#disqus_thread">Comments</a>
@@ -326,86 +417,6 @@ EMAIL_SERVER_PASSWORD=email-pass
 </code></pre><p>That could be a post for future generations 😅.</p>
 <p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>
 <p>📆 This post itself was scheduled!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/how-to-hire-8-engineers-in-8-weeks/">How to hire 8 engineers in 8 weeks</a>
-      </h1>
-      <span class="post-date">Apr 26, 2021 &middot; 6 minute read &middot; <a href="https://saltares.com/how-to-hire-8-engineers-in-8-weeks/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="./categories/leadership">Leadership</a>
-      </span>
-      
-      <p>Hiring engineers is top of mind for any engineering leader, this year at Aula it is the same for me. As VP Engineering I have the daunting task of tripling the size of our Engineering team. Happy to say we are well on track, in the last 8 weeks we have successfully hired 8 wonderful engineers and more than doubled our size!</p>
-<p>I wrote this post for other engineering leaders who’ve just been given the opportunity to rapidly grow their organisations.</p>
-<p>Where does one even start?</p>
-<h2 id="-context">💜 Context</h2>
-<p>At <a href="https://www.aula.education/">Aula</a>, we’re building the Learning Experience Platform for higher education.</p>
-<p>Aula took the decision to grow its Engineering and Product organisation at the beginning of 2021. We’re building the features that will make educators fall in love with our platform and enable them to create engaging learning experiences for their students.</p>
-<p>Check out our <a href="https://portal.aula.education/tabs/9-vision">platform vision</a> to learn more about what we are building.</p>
-<p>Not only do we want to grow fast but we want to ensure that we are focusing on building a high performing, diverse and inclusive team.</p>
-<p>We thought as many engineering leaders are facing the same challenges we should share what we have learned along the way to help you do it too. And of course, if you want to come and join us in this adventure, <a href="https://aulaeducation.recruitee.com/">we are still hiring</a>.</p>
-<h2 id="-prioritise-hiring">🔝 Prioritise hiring</h2>
-<p>Giving my team the capacity to achieve our goals was the best way I could help, so I made hiring my number 1 priority.</p>
-<p>Not having a huge Recruitment team meant I had to get stuck into the process of recruitment myself.</p>
-<p>Look at your calendar, if at least 50% of your time is not spent on hiring related activities, hiring is not your top priority and you need to fix it. Prioritising hiring will mean saying no to other things.</p>
-<p>My recommendation here is to roll up your sleeves and jump into your <a href="https://en.wikipedia.org/wiki/Applicant_tracking_system">ATS</a>. Being hands on in recruitment will help you understand the candidates attracted to your organisation, refine the recruiting process and ensure that everything is kept moving forward. I spend 30 minutes every morning checking CV’s, looking at interview feedback and ensuring that I know exactly what is happening in my recruitment pipeline.</p>
-<p><a href="https://www.notion.so/aulaeducation/Mission-and-Virtues-at-Aula-9f2c356b2d8e44f9bfdb772ec3ca396c">Uncomfortably focused</a> is one of our virtues here at Aula. I know that the team has suffered in the short term because I haven’t been able to spend as much time as I would have liked supporting them. However in the long run, bringing in new team members to support what we are building has led to everyone being happier.</p>
-<h2 id="-get-ready-to-talk-to-a-lot-of-people">💬 Get ready to talk to a lot of people</h2>
-<p>Recruiting is a people game, doing this successfully means you&rsquo;re about to meet a lot of new people.</p>
-<p>One of the most important things is to make the time to do that. If you want your business to start growing, then this is the first thing you should do is make sure you are ok with the idea that hiring starts with conversations.</p>
-<p>In the first quarter of 2021, we had more than 1100 people enter the top of our recruiting funnel and spoke with more than 200 engineers who could potentially fit the job.</p>
-<p>I send messages on LinkedIn, emails to potential candidates and ask friends in my network for help.</p>
-<p>This can be tremendously draining for an introvert such as myself. Well, it may be draining for just about anyone! Make sure to take breaks and rest well.</p>
-<h2 id="-standardise-the-process">♻️ Standardise the process</h2>
-<p>Standardising your hiring process is one of the most high leverage things you can do.</p>
-<p>Create wiki pages where you list the questions and problems for each stage of the process. Detail what the team wants to learn from the candidate with each question and what a poor/ok/great answer could look like. Create scorecards for each stage every interviewer will fill in.</p>
-<p>Ask every candidate the exact same questions.</p>
-<p>This will benefit you in at least three ways:</p>
-<p>⚖️ Consistency allows you to get better insights, compare and evaluate candidates much more easily.
-📚 A documented process will help team members with little interviewer experience get trained.
-🤔 Standardised interviews will reduce the biases of the process. To minimise bias, you should also have two interviewers at each stage.</p>
-<h2 id="-build-great-relationships-with-your-recruiters">🤝 Build great relationships with your recruiters</h2>
-<p>There is no way you will double the size of your team alone. Having a top notch recruitment team is essential.</p>
-<p>Make sure your whole team understands the profile you’re looking for and why they would join your company. The recruiters you are working with are an extension of your voice in the market and will be pitching candidates.</p>
-<p>We do engineering hiring standups 3 times a week, run retrospectives every month, constantly give each other feedback and document everything.</p>
-<h2 id="-build-great-content">✍️ Build great content</h2>
-<p>In order for your jobs to stand out, you need to tell a story. From the job ad to all your interactions with candidates through the process. You will have to raise awareness about what you’re all about and tell this story a thousand times.</p>
-<p>The best way is to write it or film it and put it out there!</p>
-<p>At Aula, we have built great pieces of content that continue to help us through this journey:</p>
-<ul>
-<li>🧠 <a href="https://www.notion.so/aulaeducation/The-Aula-Brain-4da091a8797840108311d99815b3b36f">The Aula Brain</a> - our public handbook.</li>
-<li>👩‍💻 <a href="https://dev.to/aulaeducation/aula-behind-the-scenes-of-the-learning-experience-platform-our-stack-1gno">A blog post about our tech stack</a>.</li>
-<li>🛣️ <a href="https://portal.aula.education/">Our public roadmap</a>.</li>
-<li>💼 <a href="https://www.notion.so/aulaeducation/How-we-work-b1af4d53998949e5b05697158261c27a">How our Product Development team works together</a>.</li>
-<li>📽️ <a href="https://www.youtube.com/watch?v=zIXtXYkqqJg&amp;feature=emb_logo">Camila’s story</a>.</li>
-</ul>
-<p>Language matters. Make sure you avoid gender bias from your content as much as possible. I recommend you run your content through an analyser such as <a href="http://gender-decoder.katmatfield.com/">Gender Decoder</a>.</p>
-<h2 id="-automate-as-much-as-possible">⚙️ Automate as much as possible</h2>
-<p>There will be an enormous amount of repetitive work. It’s best to automate as much of it up front.</p>
-<p>A lot of our interview scheduling is done through <a href="https://calendly.com/">Calendly</a>. So much email back and forth has been avoided by this!</p>
-<p>Every time a candidate is moved through the pipeline, our ATS automatically sends emails and assigns tasks for the next steps. This saves time but also lifts a huge mental burden.</p>
-<p>Don’t remove the human element from the process, especially when it comes to giving feedback. Candidates invest valuable time interviewing with you. Anyone who is rejected deserves a customised message with specific feedback.</p>
-<h2 id="-pre-book-interview-slots">📆 Pre-book interview slots</h2>
-<p>The engineers in your team will have to do a ton of interviews. This takes a lot of time and focus from sprint work. It’s not just the interview slot but the prior prep and evaluation that comes after as well.</p>
-<p>Context switching can kill productivity and increase stress.</p>
-<p>To help engineers focus, have pre-booked weekly interview slots. Predictability will facilitate better time management.</p>
-<h2 id="-track-everything--iterate">🔍 Track everything &amp; iterate</h2>
-<p>Use the data to make better decisions and set targets.</p>
-<p>Track everything. Measure your data and analyse it to make better decisions that can help you optimise to achieve your goals. Data can help you make changes to attract more applicants, avoid losing candidates or screen better and save engineering interviewer time.</p>
-<h2 id="-thats-it">🙌 That’s it!</h2>
-<p>Really keen to hear if you think I missed anything important and let me know if you found this useful.</p>
-<p>There&rsquo;s so much more that could be covered!</p>
-<ul>
-<li>🏫 Interviewer training</li>
-<li>👩‍🎓 Onboarding</li>
-<li>🚀 And more!</li>
-</ul>
-<p>Good luck!</p>
 
       
     </div>

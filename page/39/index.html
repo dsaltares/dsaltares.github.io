@@ -105,6 +105,54 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-busqueda-de-caminos/">Sistema de búsqueda de caminos</a>
+      </h1>
+      <span class="post-date">Apr 5, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/sistema-de-busqueda-de-caminos/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/titulo-navmesh.png" alt="titulo-navmesh.png"></p>
+<p>Hace unos días publicaba un <a href="../../proyectos/pfc/sion-tower/sion-tower-navigation-mesh-y-a/" title="Sion Tower, navigation mesh y A*">vídeo</a> mostrando el <strong>sistema de búsqueda de caminos empleando mallas de navegación</strong> y el algoritmo A estrella para Sion Tower. Pudisteis ver que el personaje recorría el camino de forma brusca, actualmente el problema se ha solucionado gracias a la <strong>inclusión de splines en una colaboración</strong> del compañero <a href="http://ragingbit.com/blog/">Javier Santacruz</a> (<a href="http://twitter.com/#!/arld101">@arld101</a>). ¡La primera colaboración en forma de código! En este artículo nos centraremos en ilustrar a grandes rasgos <strong>como funciona la búsqueda</strong> de caminos internamente.</p>
+<h3 id="conceptos-generales">Conceptos generales</h3>
+<p>El problema inicial era la <strong>necesidad de que los enemigos pudiesen moverse</strong> por el escenario hacia un objetivo evitando los obstáculos estáticos. El ejemplo más común sería el de perseguir al protagonista para atacarle. Para ello es necesario definir las zonas transitables de alguna manera y la respuesta es emplear una malla de navegación.</p>
+<p>En <a href="http://www.blender.org/">Blender</a> se crea una <strong>malla compuesta de triángulos interconectados</strong> tal y como se ilustra en la imagen que ya he mostrado en alguna ocasión. El sistema de carga de niveles procesa la malla y genera un grafo de forma interna. Realizar búsqueda de caminos dentro del grafo es un problema conocido y relativamente sencillo de resolver como veremos más adelante. Además el sistema soporta celdas con inclinación (como en las escaleras) aunque al algoritmo esto le es indiferente.</p>
+<p><img src="../../img/wp/blender-navmesh.jpg" alt="blender-navmesh.jpg"></p>
+<h3 id="clases-implicadas">Clases implicadas</h3>
+<p>El sistema de búsqueda de caminos de Sion Tower está compuesto por las clases del siguiente diagrama:</p>
+<p><img src="../../img/wp/clases-navmesh.png" alt="clases-navmesh.png"></p>
+<ul>
+<li><em>Cell</em>: representa una celda triangular de la malla.*   <em>NavigationMesh</em>: malla de navegación formada por un grafo de <em>Cells</em>. Permite localizar elementos en celdas de la malla, conocer la altura a la que debe colocarse un personaje para pegarlo al suelo, realizar consultas de línea de visión y búsqueda de caminos.*   <em>CellNode</em>: nodo de la búsqueda de caminos. Tiene asociado una <em>Cell</em>, y los costes de la heurística.*   <em>Level</em>: ya hablamos de ella en <a href="../../proyectos/pfc/sion-tower/creacion-de-escenarios-en-formato-dotscene-con-blender/" title="Creación de escenarios en formato DotScene con Blender">otra ocasión</a>. Se encarga de cargar y almacenar la información de los niveles desde ficheros en formato XML. Entre la información del nivel, carga un <em>NavigationMesh</em>.</li>
+</ul>
+<h3 id="algoritmo-a">Algoritmo A*</h3>
+<p>El <strong><a href="http://en.wikipedia.org/wiki/A*_search_algorithm">algoritmo A*</a></strong> es de sobra conocido por muchos y puede obtenerse mucha información sobre el mismo en decenas de fuentes. En la búsqueda de Sion Tower le indicamos una posición de comienzo y una de destino al método <em>buildPath</em> de <em>NavigationMesh</em> y se nos devuelve una lista de puntos por los que hay que pasar. De forma esquematizada <strong>se hace lo siguiente</strong>:</p>
+<ol>
+<li>Encontrar las celdas en las que se encuentran las posiciones de inicio y destino</li>
+<li>Crear un <a href="http://en.wikipedia.org/wiki/Heap_(data_structure)">montículo</a> con un <em>CellNode</em> asociado a la primera celda.</li>
+<li>Bucle:
+<ol>
+<li>Sacar el nodo más prometedor del montículo.</li>
+<li>Si el nodo corresponde a la celda final, hemos terminado.</li>
+<li>Introducimos en el montículo los nodos cuyas celdas son vecinas a las del nodo actual.</li>
+<li>Comenzar de nuevo el paso 3.</li>
+</ol>
+</li>
+<li>Reconstruir el camino de puntos empleando un spline para evitar cambios bruscos.</li>
+</ol>
+<h3 id="colaboración-para-suavizar-el-camino">Colaboración para suavizar el camino</h3>
+<p>El compañero Francisco Javier Santacruz se interesó en suavizar la ruta resultante de la búsqueda y rápidamente se puso manos a la obra. Tras un par de días de trabajo me envió un parche que apliqué gustosamente por sus <strong>impresionantes resultados</strong>.</p>
+<p>La forma de suavizar la ruta consiste en generar muchos puntos intermedios <strong>siguiendo un <a href="http://es.wikipedia.org/wiki/Spline">spline</a></strong>. Los splines son curvas definidas mediante polinomios: ¡por fin las clases de Métodos Numéricos sirven para algo! En el caso que nos ocupa utilizó el <a href="http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline">spline de Catmull-Roll</a>, un tipo de interpolación cúbica. En la prueba que me mandó se visualizaba la ruta del personaje ya suavizada como una línea en el suelo dibujada con primitivas de Ogre. Simplemente restan por hacer unos pequeños ajustes, <strong>¡muchas gracias!</strong></p>
+<p><img src="../../img/wp/siontower-navmesh.jpg" alt="siontower-navmesh.jpg"></p>
+<h3 id="conclusiones">Conclusiones</h3>
+<p>Implementar el sistema de búsqueda de caminos con una malla de navegación <strong>ha sido muy enriquecedor</strong> ya que era una materia completamente desconocida por mí hasta el momento. He aprendido mucho sobre las distintas aproximaciones existentes y la forma de aplicarla a un juego tridimensional. Además he obtenido la primera colaboración en términos de código a través de un parche. Los que estéis interesados en los detalles podéis acudir a <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/navmesh-javi/?root=cusl5-iberogre">la rama correspondiente de la forja</a>.</p>
+<p>¡Seguiré informando!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/">Colisiones y física con OgreBullet en IberOgre</a>
       </h1>
       <span class="post-date">Apr 4, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/#disqus_thread">Comments</a>
@@ -211,35 +259,6 @@
     <source src='../../audio/sion-tower-defeat.ogg' />
 </audio>
 <p>Recomiendo encarecidamente que leáis los <a href="http://estudioevergreen.wordpress.com/2011/03/15/%c2%a1victoria/">artículos de su blog</a> en los que explican de forma más razonada los motivos que les llevan a componer estas piezas de una manera en concreto. Como ya he mencionado en artículos anteriores, el arte de Sion Tower es libre bajo <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">Creative Commons 3.0 by-nc-sa</a>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/">Sion Tower, animaciones del protagonista y el Goblin</a>
-      </h1>
-      <span class="post-date">Mar 28, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/y6Bwx7XoGgA"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>En este vídeo queda patente de nuevo el gran trabajo que está llevando a cabo <a href="http://ajr-portafolio.blogspot.com/">AJR</a> en Sion Tower. Se muestran <strong>las animaciones del protagonista y el Goblin</strong> del juego en una sencilla secuencia para que podáis verlas con claridad.</p>
-<p>Esto nos lleva a pensar en el proceso de exportación de los modelos <strong>desde Cinema 4D a Ogre</strong> y Blender para su liberación. Tras intercambiar decenas de correos con el desarrollador del plugin que realiza la tarea <strong>he obtenido texturas y animaciones correctas</strong>. Cuando solucione un par de detalles os mostraré un nuevo vídeo con el personaje dentro del propio juego.</p>
-<p>En temas de código estoy <strong>trabajando en la búsqueda de caminos</strong> para los enemigos mediante una malla de navegación. Será posible diseñar una maya de triángulos en Blender para indicarle al motor las zonas accesibles del escenario. Una vez cargado en el sistema, será posible trazar rutas óptimas para el movimiento de los personajes.</p>
 
       
     </div>

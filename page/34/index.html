@@ -105,6 +105,104 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/aparicion-de-enemigos-y-barras-de-vida/">Aparición de enemigos y barras de vida</a>
+      </h1>
+      <span class="post-date">Jun 4, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/aparicion-de-enemigos-y-barras-de-vida/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/titulo-enemyspawn.jpg" alt="titulo-enemyspawn.jpg"></p>
+<p>Estos días he estado trabajando en la <strong>carga de enemigos</strong> dentro de Sion Tower y en las <strong>barras de vida</strong> que veis sobre sus cabezas. Tras algún que otro comedero de cabeza he acabado con un sistema bastante sencillo y que funciona exactamente como yo quería. En los siguientes párrafos explico cómo están diseñadas la aparición (spawn) de enemigos y las barras de vida para finalizar con un <strong>vídeo del resultado</strong>.</p>
+<h3 id="aparición-de-enemigos">Aparición de enemigos</h3>
+<p>Como ya he mencionado en varias ocasiones, <strong>Blender será el editor de niveles de Sion Tower</strong>. Desde esta potente herramienta definimos los objetos que componen el escenario, las zonas transitables por el enemigo (malla de navegación) y ahora los puntos y el momento en el que llegan las oleadas de enemigos. Todo esto se consigue gracias al formato de exportación DotScene y a una <strong>convención de nombres</strong>.</p>
+<p><strong>De la aparición</strong> o spawn de un enemigo concreto <strong>necesitamos conocer</strong>:</p>
+<ul>
+<li>Posición inicial.</li>
+<li>Orientación inicial.</li>
+<li>Tipo de enemigo.</li>
+<li>Momento en el que aparece.</li>
+</ul>
+<p><img src="../../img/wp/blender-enemy.jpg" alt="blender-enemy.jpg"></p>
+<p>En Blender utilizamos una pequeñas pirámides horizontales para indicar la aparición de enemigos. Los dos primeros puntos ya los da la propia posición y orientación del objeto mientras que el resto lo conseguimos con el nombre del mismo. Los nombres tienen la estructura <em>&ldquo;enemy.tipo.tiempo&rdquo;</em>. Por ejemplo, un Goblin que aparezca en el segundo 1 se llamaría <em>&ldquo;enemy.goblin.1&rdquo;</em> tal y como podéis ver en la siguiente figura.</p>
+<p><img src="../../img/wp/nombre-objeto-blender.png" alt="nombre-objeto-blender.png"></p>
+<p>La clase <em>Level</em> guarda un vector de objetos <em>EnemySpawn</em> que simplemente contienen la información de los cuatro puntos anteriores. El cada iteración de <em>StateGame</em> se consulta si en el momento actual debería aparecer algún enemigo y en caso afirmativo se crea uno con las propiedades adecuadas.</p>
+<p>Si colocamos los enemigos en el centro del escenario aparecerán súbitamente (como se muestra en el vídeo). Lo ideal es colocarlos en las puertas y que ellos mismos se desplacen para atacar al protagonista.</p>
+<h3 id="barra-de-vida">Barra de vida</h3>
+<p><strong>Las barras de vida son <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html">Billboards</a></strong> de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con <strong>una sencilla textura que cuenta con las dos partes</strong> de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.</p>
+<p><img src="../../img/wp/barra-de-vida.png" alt="barra-de-vida.png"></p>
+<p>Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase <em>Enemy</em> tenemos los siguientes atributos.</p>
+<pre tabindex="0"><code>class Enemy: public Actor {
+    ...
+
+    private:
+        Ogre::BillboardSet* _bbSetLife;
+        Ogre::Billboard* _lifeBar;
+        Ogre::SceneNode* _lifeNode;
+};
+</code></pre><p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
+<pre tabindex="0"><code>void Enemy::createLifeBar() {
+    _bbSetLife = _sceneManager-&gt;createBillboardSet();
+    _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
+    _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
+    _lifeBar-&gt;setDimensions(1, 0.1);
+    _lifeBar-&gt;setTexcoordRect(0.0f, 0.0f, 0.5f, 1.0f);
+
+    _lifeNode = _node-&gt;createChildSceneNode();
+
+    _lifeNode-&gt;attachObject(_bbSetLife);
+}
+</code></pre><p>El material <em>&ldquo;lifeBar&rdquo;</em> no podía ser más sencillo:</p>
+<pre tabindex="0"><code>material lifeBar
+{
+	technique
+	{
+		pass
+		{	
+			emissive 0.7 0.7 0.7 1.0
+
+			texture_unit
+			{
+				texture life.png
+			}
+		}
+	}
+}
+</code></pre><p>En cada iteración o cuando el enemigo sea herido hemos de llamar a <em>updateLifeBar</em>.</p>
+<pre tabindex="0"><code>void Enemy::updateLifeBar() {
+    Ogre::Real ratio = _energy / _maxEnergy;
+
+    if (ratio &lt; 0.0f)
+        ratio = 0.0f;
+
+    Ogre::Real u1 = (1.0f - ratio) / 2.0f;
+    Ogre::Real v1 = 0.0f;
+    Ogre::Real u2 = 0.5f + (1.0f - ratio) / 2.0f;
+    Ogre::Real v2 = 1.0f;
+
+    _lifeBar-&gt;setTexcoordRect(u1, v1, u2, v2);
+}
+</code></pre><h3 id="vídeo">Vídeo</h3>
+<p>En el siguiente vídeo se muestra el sistema de spawn de enemigos junto a sus barras de vida. Todo esto es <em>&ldquo;work in progress&rdquo;</em> y aún queda mucho espacio para la mejora. Se esperan cambios en las animaciones del personaje, añadir efectos de sonido, incluir la IA de los enemigos… Sean comprensivos.</p>
+<div
+  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/Pt3-Xf-n1KA"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/backups-de-wikis-con-wikiteam/">Backups de wikis con Wikiteam</a>
       </h1>
       <span class="post-date">Jun 4, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/backups-de-wikis-con-wikiteam/#disqus_thread">Comments</a>
@@ -304,34 +402,6 @@
 <h3 id="a-la-próxima-me-apunto">¡A la próxima me apunto!</h3>
 <p>Obviando la cantidad de cosas nuevas que se aprenden, <strong>lo mejor de estos eventos es la convivencia</strong> y el buen ambiente que se respira. Nada como discutir sobre temas variados, últimas noticias y abrir un poco las miras. ¡Además vino mucha gente de Granada, Sevilla y Málaga!</p>
 <p>Lo tengo clarísimo, para la próxima que haya por aquí cerca, me apunto sin dudarlo. Gracias a <a href="http://www.flickr.com/photos/anarey/sets/72157626820864868/with/5766457066/">Ana Rey</a> por sus fotografías (CC by-sa).</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sion-tower-prueba-de-hechizos/">Sion Tower, prueba de hechizos</a>
-      </h1>
-      <span class="post-date">May 24, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-prueba-de-hechizos/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/dNBw27ia_uE"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>Este nuevo vídeo nos muestra <strong>una prueba del sistema de lanzamiento de proyectiles mágicos en Sion Tower</strong>. El protagonista puede lanzar hechizos de varios tipos que impactan con los elementos sólidos del escenario produciendo una pequeña explosión. Para los efectos visuales se utiliza el <strong><a href="http://osl2.uca.es/iberogre/index.php/Sistemas_de_part%C3%ADculas">sistema de partículas de Ogre</a></strong> y, aunque aún queda margen para la mejora, el resultado es aceptable. Sion Tower cuenta con un sistema de audio 3D pero no se han incluido efectos ya que estoy a la espera del colaborador encargado de dicho apartado.</p>
-<p><strong>¡Próximamente más novedades!</strong></p>
 
       
     </div>

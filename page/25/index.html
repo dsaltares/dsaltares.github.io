@@ -105,6 +105,69 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/gleed2d-level-loading-system-for-libgdx/">GLEED2D level loading system for libgdx</a>
+      </h1>
+      <span class="post-date">Nov 7, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gleed2d-level-loading-system-for-libgdx/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><span style="color: #ff0000;"><strong>Update</strong></span>: the system had been <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed">moved into the official libgdx repository</a> as an extension but then it was removed. Gleed doesn&rsquo;t support basic features such as relative paths for textures.</p>
+<p>I&quot;m happy to announce that I&rsquo;ve made my first contribution to a relatively big open source project. I feel honoured to contribute to the brilliant <a href="https://github.com/libgdx/libgdx">libgdx framework</a> with these humble loader and renderer for GLEED2D levels. Hold on, what the hell is that? Please, read on.</p>
+<h3 id="about-gleed">About GLEED</h3>
+<p><a href="http://gleed2d.codeplex.com/">GLEED2D</a> is a non tiled based open source general purpose level editor. You can place textures and shapes, rotate and scale them. As usual, elements are laid in layers and it is also possible to add custom properties which makes it adequate for all kinds of purposes. Level are saved in an easy to parse XML format. It&rsquo;s based on XNA 3 but XNA 4 and Mono versions are on the works. What&rsquo;s good aboutGLEED2D is that it allows you to create smooth levels in a very nice way. Shapes can be used to define collision areas, triggers and so on.</p>
+<p>This means you can set a few rules and conventions of your own and be able to fire up scripts, set the player spawn point and all sorts of level design sweetness.</p>
+<p><img src="../../img/wp/gleed-editor.png" alt="gleed-editor.png"></p>
+<h3 id="features">Features</h3>
+<ul>
+<li>Full XML GLEED2D spec: layers, custom properties, textures, shapes (circle, rectangle, polygon), visibility, color tints…</li>
+<li>Transforms: object positioning, rotation and scaling.</li>
+<li>LevelRenderer class with frustum culling</li>
+<li>AssetManager integration through the LevelLoader class</li>
+<li>Use multiple Texture files or a single TextureAtlas for performance gain.</li>
+</ul>
+<h3 id="possible-improvements">Possible improvements</h3>
+<ul>
+<li>Make the renderer use a SpriteCache (tricky due to texture rotation)</li>
+<li>Create a JSON exporter and loader for performance gain</li>
+<li>Load levels without using the AssetManager? Some people don&rsquo;t use it but they really should since levels tend to be heavy to load</li>
+<li>Suggest more!</li>
+</ul>
+<p><img src="../../img/wp/gleed-level-ingame.jpg" alt="gleed-level-ingame.jpg"></p>
+<h3 id="usage">Usage</h3>
+<p>When creating the level you need to specify the textures root folder or atlas file as a top level custom property:</p>
+<ul>
+<li>If using individual textures create the &ldquo;assetRoot&rdquo; property</li>
+<li>If using an atlas create the &ldquo;atlas&rdquo; property</li>
+</ul>
+<pre tabindex="0"><code>// Set loader in the Asset manager
+m_assetManager.setLoader(Level.class, new LevelLoader(new InternalFileHandleResolver()));
+
+...
+
+// Tell the manager to load the level
+m_assetManager.load(&quot;data/braidtest.xml&quot;, Level.class);
+
+...
+
+// When it's ready, fetch the level and create renderer
+m_level = m_assetManager.get(&quot;data/braidtest.xml&quot;, Level.class);
+m_levelRenderer = new LevelRenderer(m_level, null, Game.mpp);
+
+...
+
+// Render all layers
+m_levelRenderer.render(m_camera);
+</code></pre><p>However, if you get lost, there are Javadoc comments <a href="https://github.com/dsaltares/sionengine/tree/master/sionengine/src/com/siondream/engine/gleed">everywhere in the code</a>.</p>
+<h3 id="where-do-i-get-it">Where do I get it?</h3>
+<p>It should be soon in the <a href="libgdx.badlogicgames.com/nightlies/">libgdx nightly builds</a> but if you&quot;re really eager to use it and can&rsquo;t wait any longer (seriously?) you can go to the libgdx repository and find it in the <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed">extensions section</a>. Remember to leave some feedback of any flavour: rotten tomatoes, rocks and so on and so forth.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/my-projects-migrated-to-github/">My projects migrated to GitHub</a>
       </h1>
       <span class="post-date">Nov 5, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/my-projects-migrated-to-github/#disqus_thread">Comments</a>
@@ -295,52 +358,6 @@ public class WebGLResolver implements PlatformResolver {}
 </code></pre><h3 id="the-possibilities">The possibilities</h3>
 <p>We are currently using this very same approach for <a href="https://github.com/dsaltares/sionengine">SionEngine</a> and it&quot;s proven to be flawless so far. You can abstract virtually any platform specific behaviour using something similar.</p>
 <p>Soon there will be more and better on libgdx related stuff! Feel free to criticize and throw rocks at me because of this post.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/sionengine-a-libgdx-based-system/">SionEngine, a libgdx based system</a>
-      </h1>
-      <span class="post-date">Sep 2, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/projects/sionengine-a-libgdx-based-system/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>Note: I&rsquo;ve decided to remove the repo for now as I feel that it&rsquo;s still too rough around the edges. Other open source projects that share this codebase are, however, available on my <a href="https://github.com/dsaltares">GitHub profile</a>.</p>
-<p><img src="../../img/wp/libgdx-glossy.png" alt="libgdx.png"></p>
-<p>I&rsquo;ve been working with <strong><a href="http://libgdx.badlogicgames.com/">libgdx</a></strong> for a few months now and I love every aspect of it, except maybe the fact that it&rsquo;s only compatible with Java but don&rsquo;t worry about me, I&quot;ll survive. Being able to target desktop (Windows/Linux/Mac), Android and HTML5 with very little effort it&rsquo;s just too awesome. Beware GWT&rsquo;s dark magic though. Thing is I&rsquo;ve already made a couple of very small games with it (<a href="../../games/freegemas-for-android-and-html5/">Freegemas</a> and <a href="../../games/ld24-evolution-postmortem/">Evolution</a>) which has provided me with certain code base. Since it&rsquo;s not absolutely despicable rubbish I&rsquo;ve decided to push its development further as I make more games and, why not, make it open source.</p>
-<p><img src="../../img/wp/github_logo_social_coding_outlined.png" alt="github_logo_social_coding_outlined.png"></p>
-<h3 id="github-repository">GitHub repository</h3>
-<p>Finally, I&rsquo;ve set up a <strong><a href="https://github.com/dsaltares/sionengine">GitHub repository for the so called SionEngine</a></strong>, feel free to check it out. However, as I&quot;m working on an incremental integration of my code base, it&rsquo;s a bit empty just now. I honestly don&rsquo;t expect people come and say, <em>&ldquo;oh this is awesome!&quot;</em> and use this system. It&rsquo;s just that I need somewhere to host it (preferably for free) and it&rsquo;s been proven that the open source approach forces me to write cleaner code and do things the proper way if there&rsquo;s such a thing.</p>
-<p>For the past couple of years I&rsquo;ve been using Google Code mostly and I&rsquo;ve looked GitHub with a bit of skepticism but the idea of having every personal project centralized in one nice and clean place is quite appealing. Let&rsquo;s see how this goes, I might be moving older projects to my GitHub profile as well.</p>
-<p><img src="../../img/wp/libgdx-targets.png" alt="libgdx-targets.png"></p>
-<h3 id="current-features">Current features</h3>
-<p>Like I said, I&quot;m currently moving all the stuff to the GitHub repository so not everything is there just now. However, in the following days you should be able to find:</p>
-<ul>
-<li>Every libgdx feature, of course.</li>
-<li>Reflection based multiplatform testing environment.</li>
-<li>Simple internationalization support.</li>
-<li>Stack based and memory safe state manager.</li>
-<li><a href="http://www.aurelienribon.com/blog/projects/universal-tween-engine/">Universal Tween Engine</a> integration with some Tweeners built in.</li>
-<li>In house entity component system (wich will be replaced by Artemis).</li>
-<li>Animated sprites.</li>
-<li><a href="http://box2d.org/">Box2D</a> integration.</li>
-<li>XML based settings system.</li>
-<li>Easy way of introducing seamless platform dependent code.</li>
-</ul>
-<p><img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03.jpg"></p>
-<h3 id="coming-soon">Coming soon</h3>
-<ul>
-<li><a href="http://gamadu.com/artemis/">Artemis Entity Framework</a> integration</li>
-<li>Smooth transitions between states</li>
-<li>Inkscape XML level loading.</li>
-<li>Console to modify settings at runtime.</li>
-<li>[Whatever feature I need for the project I might be working on at that moment and deserves to make its way to the engine code]</li>
-</ul>
-<p>I will probably post about the components in SionEngine as I commit them. That way I&quot;ll think about their design and implementation twice and maybe, just maybe, they might be helpful to somebody else. Just the ones that are not absolutely lame, of course. Still need to make a decision on the license!</p>
 
       
     </div>

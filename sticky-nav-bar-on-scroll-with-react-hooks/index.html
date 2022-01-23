@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+  <title>Sticky nav bar on scroll with React hooks &middot; Engineering Leadership &amp; Software Development</title>
+
+  
+  <link rel="stylesheet" href="../css/poole.css">
+  <link rel="stylesheet" href="../css/hyde.css">
+  <link rel="stylesheet" href="../css/poole-overrides.css">
+  <link rel="stylesheet" href="../css/hyde-overrides.css">
+  <link rel="stylesheet" href="../css/hyde-x.css">
+  <link rel="stylesheet" href="../css/highlight/zenburn.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../touch-icon-144-precomposed.png">
+  <link href="../img/favicon.png" rel="icon">
+
+  
+  
+  
+  
+
+  <meta name="description" content="Tutorial for how to create a sticky navbar below a header that stays at the top of the page when scrolling using React and hooks">
+  <meta name="keywords" content="React,webdev tutorial,React hooks,sticky header">
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-4440744-3', 'auto');
+    ga('send', 'pageview');
+  </script>
+  
+
+  
+  <link rel="canonical" href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/" itemprop="url" />
+</head>
+<body>
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="../"><img src="../img/profile.jpg"
+             alt="profile-picture" id="profile-img" title="David Saltares"></a>
+      <h1><a href="../">David Saltares</a></h1>
+      <p class="lead">Engineering Leadership &amp; Software Development</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item"><a href="../">Blog</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../about">About</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../apps-tools">Apps &amp; Tools</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../game-jams">Game Jams</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../games">Games</a></li>
+      
+      <li class="sidebar-nav-item"><a href="../libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a></li>
+      
+    </ul>
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-nav-item">
+      <a aria-label="Github profile" href="http://github.com/dsaltares"><i class="fa fa-github-square fa-2x"></i></a>
+      
+      
+      <a aria-label="LinkedIn profile" href="https://www.linkedin.com/in/davidsaltares"><i class="fa fa-linkedin-square fa-2x"></i></a>
+      
+      
+      <a aria-label="Twitter profile" href="http://twitter.com/d_saltares"><i class="fa fa-twitter-square fa-2x"></i></a>
+      
+      <a aria-label="RSS" href="../index.xml" type="application/rss+xml"><i class="fa fa-rss-square fa-2x"></i></a>
+      </li>
+    </ul>
+
+    
+
+    <div class="copyright">
+      <p>
+        &copy; 2022 David Saltares.<br/>
+        Powered by <a href="http://gohugo.io">Hugo</a> and <a href="https://github.com/zyro/hyde-x">Hyde-X.</a><br/>
+        Hosted on <a href="https://pages.github.com/">Github Pages</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="post">
+    <h1 class="post-title">Sticky nav bar on scroll with React hooks</h1>
+    <span class="post-date">Jan 23, 2022 &middot; 2 minute read &middot; <a href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/#disqus_thread">Comments</a>
+    
+    <br/>
+    <a class="label" href="../categories/development">Development</a>
+    </span>
+    <p>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.</p>
+<p>Like so.</p>
+<iframe
+  src="https://codesandbox.io/embed/sticky-scrolling-header-vwsso?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+  style="width:100%; height:500px; border:1px solid #000; border-radius: 4px; overflow:hidden;"
+  title="sticky-scrolling-header"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+  >
+</iframe>
+<p>Making the navigation bar <code>position: fixed; top 0;</code> was not going to cut it because the header had to come first unless we scrolled past the navigation bar.</p>
+<p>I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a <code>useSticky</code> <a href="https://reactjs.org/docs/hooks-intro.html">hook</a>. Here&rsquo;s how you&rsquo;d use it.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">classNames</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;classnames&#34;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./useSticky&#34;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">stickyRef</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useSticky</span>();
+  <span style="color:#66d9ef">return</span> (
+    &lt;&gt;
+      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Header</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+      &lt;/<span style="color:#f92672">header</span>&gt;
+      &lt;<span style="color:#f92672">nav</span>
+        <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stickyRef</span>}
+        <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classNames</span>(<span style="color:#e6db74">&#34;nav&#34;</span>, { <span style="color:#a6e22e">sticky</span> })}
+      &gt;
+        <span style="color:#a6e22e">Sticky</span> <span style="color:#a6e22e">nav</span>
+      &lt;/<span style="color:#f92672">nav</span>&gt;
+      &lt;<span style="color:#f92672">div</span>
+        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
+          <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sticky</span>
+            <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">clientHeight</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>
+            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0px&#39;</span>
+        }}
+      /&gt;
+      &lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span> /&gt;
+    &lt;/&gt;
+  );
+}
+</code></pre></div><p>You stick (no pun intended) the <code>stickyRef</code> into the thing that you want to fix to the top after you scroll past it. Then, <code>sticky</code> will indicate whether it should be fixed at the top or not. I then use that to apply a <code>sticky</code> class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">sticky</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+}
+</code></pre></div><p>The extra <code>div</code> below the <code>nav</code> adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.</p>
+<p>🌟 The magic happens in the <code>useSticky</code> hook itself.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#f92672">=</span> () =&gt; {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stickyRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">setSticky</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">setOffset</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+
+  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+      <span style="color:#66d9ef">return</span>;
+    }
+    <span style="color:#a6e22e">setOffset</span>(<span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">offsetTop</span>);
+  }, [<span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">setOffset</span>]);
+
+  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleScroll</span> <span style="color:#f92672">=</span> () =&gt; {
+      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+        <span style="color:#66d9ef">return</span>;
+      }
+
+      <span style="color:#a6e22e">setSticky</span>(window.<span style="color:#a6e22e">scrollY</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">offset</span>);
+    };
+    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+    <span style="color:#66d9ef">return</span> () =&gt; window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+  }, [<span style="color:#a6e22e">setSticky</span>, <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">offset</span>]);
+  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">sticky</span> };
+};
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">useSticky</span>;
+</code></pre></div><p>The first effect measures the vertical offset of the element we want to fix at the top after it&rsquo;s scrolled past. The second one listens to the <code>scroll</code> event and determines whether we have scrolled past the element&rsquo;s top edge and it needs to become sticky.</p>
+<p>🙌 Hope this is useful!</p>
+
+  </div>
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+
+(function() {
+    
+    
+    if (window.location.hostname == "localhost")
+        return;
+
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    var disqus_shortname = 'siondream';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+<script src="../js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script src="../js/load-photoswipe.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+</body>
+</html>
+
