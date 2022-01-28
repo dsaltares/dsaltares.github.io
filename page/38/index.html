@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -105,6 +105,25 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/barralibrecamp-2011-en-cadiz/">!BarraLibreCamp 2011 en Cádiz</a>
+      </h1>
+      <span class="post-date">Apr 21, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/barralibrecamp-2011-en-cadiz/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/notbarralibrecamp.png" alt="notbarralibrecamp.png"></p>
+<p>El próximo día <strong>27 de mayo se celebra la <a href="http://osl.uca.es/node/1171">!BarraLibreCamp 2011</a> en la Escuela Superior de Ingeniería en Cádiz</strong>. La !BarraLibreCamp es la <a href="http://es.wikipedia.org/wiki/BarCamp">BarCamp</a> de Software Libre andaluza. Básicamente es una jornada llena de <strong>seminarios y talleres informales</strong> en el que todos los participantes deberían intervenir. Escribo este comentario por aquí para difundir un poco el evento y animar al personal a que se de una vuelta.</p>
+<p>Una BarCamp tiene como principal punto fuerte que <strong>todo participante debería aportar algo</strong> en forma de actividad, comida o ayuda a la organización. Te unes a la <a href="https://groups.google.com/group/notbarralibrecamp">lista de correo</a>, te apuntas a la <a href="http://osl.uca.es/wikiosluca/doku.php?id=notbarralibrecamp">wiki</a> y propones una actividad. Sugerí impartir un <strong>pequeño taller sobre <a href="http://www.box2d.org/">Box2D</a></strong>, una conocida biblioteca libre de colisiones y físicas para videojuegos bidimensionales. La idea ha gustado y ya tengo preparado parte del material. Por razones de tiempo no puede ser nada del otro mundo aunque creo que servirá como buen punto de partida para los interesados.</p>
+<p>El año pasado la !BarraLibreCamp se celebró en Granada y me lo pasé de maravilla. Se respiraba un ambiente de camaradería, participación y competición sana que daba gusto. ¡Recuerdo como me lincharon en el flamewar <em>&ldquo;Java vs Python&rdquo;</em> cuando defendí C++ para el desarrollo de videojuegos!</p>
+<p><strong>¡Nos vemos en la !BarraLibreCamp 2011 en Cádiz!</strong></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/game-dev-story-para-android/">Game Dev Story para Android</a>
       </h1>
       <span class="post-date">Apr 14, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/game-dev-story-para-android/#disqus_thread">Comments</a>
@@ -203,50 +222,6 @@
 <p>Parece ser que el <strong>espíritu educativo</strong> y de documentación que tiene el proyecto es lo que adquiere más importancia entre los usuarios. El documento de diseño ha sido publicado en varios blogs como ejemplo, gracias a esta difusión ha alcanzado la mencionada cifra de descargas.</p>
 <p>Cabe destacar que IberOgre y Sion Tower se ha mantenido prácticamente durante todo el concurso <strong>entre los proyectos más activos</strong> de Red Iris. En numerosas ocasiones ha alcanzado el 100% de actividad según el baremo de la forja y raras veces ha bajado del 85%.</p>
 <p>Os dejo, toca desarrollar que dentro de poco comienzan las evaluaciones.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/gestion-de-estados-de-juego/">Gestión de estados de juego</a>
-      </h1>
-      <span class="post-date">Apr 6, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/gestion-de-estados-de-juego/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/titulo-statemanager.png" alt="titulo-statemanager.png"></p>
-<p><strong>Sion Tower cuenta con varios estados y transiciones</strong> los cuales están especificados en el <a href="http://forja.rediris.es/frs/download.php/2019/gdd.pdf">Documento de Diseño (GDD)</a> que publiqué hace tiempo. Por supuesto, me refiero a estados como <em>&ldquo;Juego&rdquo;</em>, <em>&ldquo;Menú&rdquo;</em>, <em>&ldquo;Selección de nivel&rdquo;</em>. Me parece interesante comentar a vista de pájaro estos estados así como el sistema subyacente que los gestiona. Puede ser una buena manera para saber hasta dónde pretende llegar el juego. En este artículo hablaremos de las clases <em>State</em> y <em>StateManager</em> entre otras.</p>
-<h3 id="diagrama-de-estados">Diagrama de estados</h3>
-<p>En el siguiente diagrama se muestran los distintos estados en los que se puede encontrar Sion Tower:</p>
-<p><img src="../../img/wp/flowchart.png" alt="flowchart.png"></p>
-<ul>
-<li><strong>Menú principal</strong>: se muestra el logo del juego y la torre desde el exterior. El usuario puede elegir entre <em>&ldquo;Selección de perfil&rdquo;</em>, <em>&ldquo;Créditos&rdquo;</em> o <em>&ldquo;Salir&rdquo;</em>.</li>
-<li><strong>Créditos</strong>: en la pantalla de créditos se sustituyen las opciones del menú principal por los nombres de los implicados en el desarrollo, como era de esperar. La única opción es volver al menú.</li>
-<li><strong>Selección de perfil</strong>: el usuario puede seleccionar su partida entre la lista de partidas guardadas. Así podrá recuperar los niveles desbloqueados y las habilidades adquiridas por el personaje.</li>
-<li><strong>Selección de nivel</strong>: se muestra una lista de los niveles disponibles según el perfil elegido. De cada nivel aparece el nombre, una descripción y un icono.</li>
-<li><strong>Selección de habilidades</strong>: no es posible utilizar todas las habilidades en cada nivel, el usuario debe seleccionar un número limitado de ellas.</li>
-<li><strong>Juego</strong>: la pantalla de juego, donde se desarrolla la acción. Si el usuario vence a los enemigos se pasa a la pantalla de victoria, en caso contrario le aparece un mensaje y se reinicia el nivel.</li>
-<li><strong>Fin de nivel</strong>: cuando el usuario vence se muestran los puntos obtenidos y otros logros como haber desbloqueado alguna habilidad nueva.</li>
-</ul>
-<p>Para detalles adicionales podéis acudir al documento de diseño que incluye bocetos completos de cada uno de los estados.</p>
-<h3 id="diagrama-de-clases">Diagrama de clases</h3>
-<p>A continuación podéis ver un diagrama UML con las clases que gestionan los estados del juego. Es bastante grande así que lo mejor es hacer click sobre la imagen para ampliarla.</p>
-<p><img src="../../img/wp/statemanager.png" alt="statemanager.png"></p>
-<h3 id="la-clase-state">La clase State</h3>
-<p><em>State</em> es una clase abstracta que <strong>modela un estado de juego genérico</strong>. Cuenta con los métodos virtuales <em>load</em> y <em>clear</em> para cargar y liberar los elementos que contiene sin necesidad de destruir el estado completamente. Todos los estados poseen un método <em>update</em> que recibe el tiempo en ms desde el último frame (<em>deltaT</em>) para actualizar lógicamente los elementos de dicho estado. Los estados están preparados para recibir los eventos que captura el <em>StateManager</em>, por ello cuenta con los manejadores típicos de la biblioteca OIS (<a href="http://osl2.uca.es/iberogre/index.php/Manejo_b%C3%A1sico_de_OIS">más sobre OIS en IberOgre</a>).</p>
-<p><strong>Por cada estado de juego tendríamos una clase</strong> que herede de <em>State</em> como podrían ser <em>StateGame</em>, <em>StateMenu</em> o <em>StateCredits</em>. Por ejemplo, el estado de juego controlaría al personaje, los enemigos y el escenario. Como podéis ver es un sistema muy genérico y extensible para otros proyectos. De hecho estoy pensando en liberarlo de forma independiente.</p>
-<p><img src="../../img/wp/menu-principal.png" alt="menu-principal.png"></p>
-<h3 id="la-clase-statemanager">La clase StateManager</h3>
-<p>La clase <em>StateManager</em> lleva internamente una <strong>pila de estados</strong> lo que nos permite volver atrás por los menús del juego de forma muy sencilla. <strong>El tope de la pila sería el estado activo</strong> mientras que el resto pueden estar en pausa o ejecutándose en segundo plano. A través de los metodos <em>changeState</em>, <em>pushState</em>, <em>popState</em> y <em>popAllStates</em> se nos permite gestionar los cambios entre estados. No hay que tener cuidado con el momento en el que se hace un <em>popState</em>, no se destruye ningún estado en ese preciso instante. El <em>StateManager</em> espera a un momento seguro para hacerlo, <strong>no más segmentos violados</strong> en ese aspecto.</p>
-<p><img src="../../img/wp/statestack.png" alt="statestack.png"></p>
-<p><em>StateManager</em> inicia el bucle de juego con el método <em>start</em> y se comporta como un <em>FrameListener</em>. En cada iteración se disparan los eventos <em>frameStarted</em>, <em>frameEnded</em> y <em>frameRenderingQueued</em> para actualizar lógicamente los estados activos de la pila. Así mismo recibe eventos de ventana, de teclado y de ratón que transmite a los eventos que controla.</p>
-<p><strong>La idea de la pila de estados</strong> y las transiciones seguras la tomé de uno de los proyectos de mi compañero <a href="http://josetomastocino.com/">José Tomás Tocino</a>. Lo utilizaba en un juego con <a href="http://www.libgosu.org/">Gosu</a> mientras que yo lo he adaptado a Ogre y OIS.</p>
-<h3 id="conclusiones">Conclusiones</h3>
-<p>Con esto terminamos la documentación de la gestión de estados de Sion Tower. Habréis comprobado que <strong>de una forma sencilla y ordenada</strong> podemos añadir, modificar y manejar nuestros estados de juego. Sed libres (GPL 3) de reutilizar este código alojado en la <a href="http://forja.rediris.es/scm/?group_id=820">forja de Red Iris</a>.</p>
-<p><strong>¡Se aceptan sugerencias, críticas y lanzamiento de fruta podrida!</strong></p>
 
       
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,29 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/urban-race-has-been-freed/">Urban Race has been freed</a>
+      </h1>
+      <span class="post-date">Apr 30, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/games/urban-race-has-been-freed/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/urbanrace.jpg" alt="urbanrace.jpg"></p>
+<p>A few months ago I developed <a href="../../games/urban-race/">Urban Race</a>, a very simple (and quite lame) time attack racing game using XNA. It was a University project so I couldn&rsquo;t release the source until it was graded but then, I totally forgot about it. Recently, a reader asked me to publish the source and here we are. Please, bare in mind it&rsquo;s for educational purposes, it was developed in one month without previous knowledge of neither C# or XNA and it&rsquo;s not intended to be a fully playable product.</p>
+<ul>
+<li><a href="http://code.google.com/p/urban-race/">Urban Race in Google Code</a></li>
+<li><a href="http://urban-race.googlecode.com/files/urbanrace-essay.pdf">Urban Race essay (documentation)</a></li>
+<li><a href="http://urban-race.googlecode.com/files/urbanrace-1.0-win.zip">Urban Race 1.0 for Windows</a></li>
+</ul>
+<p>I usually document my projects with Doxygen and several articles or tutorials, this time has been different. At least I&rsquo;ve uploaded a PDF file with the documentation I submitted for my project to be graded. You&quot;ll have to excuse me for lack of further and more accessible documentation but I don&rsquo;t have much time now and, prior to this moment, I didn&rsquo;t think this game was worth making public.</p>
+<p>Anyways, you can freely access the source, reuse components and re-share. Bare in mind that the code is under <a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a> and the media is under <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons 3.0 BY-NC</a> so, please, stick to their conditions.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -209,54 +232,6 @@ String option3 = lang.getString(&quot;Exit&quot;);
 <p>For further information please go to each project&rsquo;s page, you&quot;ll find a more detailed description, screenshots, videos and download links. I was thinking of <strong>making both projects open source</strong> and upload them to a Google Code repository but I guess that&quot;ll have to wait until they&quot;re graded by the professors.</p>
 <p><em>And now for something completely different…</em></p>
 <p><strong>Huge events</strong> have taken place recently, <strong>the dream has come true</strong>. Unfortunately, I can&rsquo;t make anything public yet, I&rsquo;ve only told my family and friends. However, I&quot;ll soon post something on that matter.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/getting-started-with-xna-urban-race/">Getting started with XNA: Urban Race</a>
-      </h1>
-      <span class="post-date">Dec 7, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/getting-started-with-xna-urban-race/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/urbanrace.jpg" alt="urbanrace.jpg"></p>
-<p>As if I didn&rsquo;t have enough work, I recently started another project which has an early deadline. For the Advanced Games Programming module here at Kingston University we have to develop a <strong>game for Windows and Xbox 360</strong> using C# and the <a href="http://en.wikipedia.org/wiki/Microsoft_XNA">XNA framework</a>. The final deadline was in a month counting from the start date and, halfway through the development, we had to show a demo. That&rsquo;s how <strong>Urban Race</strong> began just a week ago, in this post I&quot;ll talk about the game and my <strong>first impressions on XNA</strong>.</p>
-<h3 id="pitching-urban-race">Pitching Urban Race</h3>
-<p>Urban Race is a <strong>time attack racing game</strong> set in several tracks within a city environment. The player has to drive through the track collecting time bonuses so he can reach the goal before the time expires.</p>
-<p>The controls are extremely simple: using the arrow keys you can accelerate, brake and steer the car. I haven&rsquo;t though about the controls in Xbox 360 yet but they&quot;ll be similar to those in every racing game in that console.</p>
-<p><img src="../../img/urban-race/urbanrace-5.jpg" alt="urbanrace-ingame.jpg"></p>
-<h3 id="xna-first-impressions">XNA first impressions</h3>
-<p>It&rsquo;s really easy to criticize everything M$ does but I have to admit that <strong>XNA is a fine games development framework</strong> and it&rsquo;s specially well integrated within Visual Studio. 7 days ago I didn&rsquo;t know anything about C# (although I knew Java and C++) nor XNA itself and I&rsquo;ve managed to get lots of stuff done: game objects model, Blender level loading, collision detection and basic response, games states management, etc.</p>
-<p>Speaking of framework specific matters, I have to say that <strong>the API is very friendly although it lacks some essential features</strong>. It would be nice if it had scene graph management, dynamic shadows or a proper animation module. All of that seems quite essential for a high level games development framework but it&rsquo;s not built in. Apart from that, it&rsquo;s surprisingly easy how much you can achieve in so little time with, initially, a total lack of knowledge.</p>
-<p>However, I&quot;m fairly happy with it and its <strong>integration with Visual Studio</strong>. I&quot;m not talking only about the excellent auto-complete or syntax checking features but the content pipeline management. Every game asset is controlled by Visual Studio, being the IDE responsible of binary exporting and reference checking. When you run your game it tells you which non existing asset are you trying to load. At first, relying on Visual Studio being in control of your assets might be a little uncomfortable and dangerous (and it is) but in the end it&rsquo;s been a good thing for me.</p>
-<p><img src="../../img/wp/urbanrace-blender.jpg" alt="urbanrace-blender.jpg"></p>
-<h3 id="tools-for-the-trade">Tools for the trade</h3>
-<p>Here is a list of tools I&rsquo;ve been using to create my game:</p>
-<ul>
-<li><span class="Apple-style-span" style="line-height: 18px;"><strong>Visual Studio</strong>: IDE (the only option in this case).</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;"><strong>Blender</strong>: open source 3D modelling, texturing and animation tool. I&rsquo;ve used it as my level editor as well exporting to the <a href="http://www.ogre3d.org/tikiwiki/DotScene">Dotscene xml format</a>.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;"><strong>The Gimp</strong>: open source 2D graphic tool that I&rsquo;ve used for texturing my models.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;"><strong>Inkscape</strong>: open source 2D vector tool which I&rsquo;ve used to design my track&rsquo;s pieces since they needed to be geometrically exact so they could fit together.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;"><strong>Fraps</strong>: recording my game running.</span></li>
-</ul>
-<h3 id="video-after-7-days-of-work">Video after 7 days of work</h3>
-<p>I created a video showing the development progress in Urban Race after 7 days of work. You can see the crappy physics and camera behavior (none of those are final) among other features such as level loading or collision detection.</p>
-<div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/Dvb__ZmDC-A"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
 
       
     </div>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,67 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/abstracting-platform-specific-code-in-libgdx/">Abstracting platform specific code in libgdx</a>
+      </h1>
+      <span class="post-date">Sep 8, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/abstracting-platform-specific-code-in-libgdx/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>One of the main reasons I&quot;m working with <a href="http://libgdx.badlogicgames.com/">libgdx</a> is its multiplatform capabilities. With very little effort you can target desktop (Windows/Linux/Mac), Android and WebGL able browsers. The problem comes with the <em>&ldquo;little&rdquo;</em> in the previous sentence. The developer is supposed to share the code base between all targets but sometimes it&quot;s necessary to provide platform specific behaviour, maybe because a feature is not available in every device or just to adapt the product better to the target. Anyway, how do we achieve that in a fairly elegant fashion?</p>
+<h3 id="project-structure">Project structure</h3>
+<p>As many of you may already know, a multiplatform libgdx project is often arranged the following way:</p>
+<ul>
+<li><strong>game</strong>: shared code base</li>
+<li><strong>game-desktop</strong>: desktop launcher</li>
+<li><strong>game-android</strong>: Android launcher</li>
+<li><strong>game-html</strong>: HTML5 launcher</li>
+</ul>
+<p>Every platform specific project depends on the base one and they all instantiate the main class from there, typically belonging to an <code>ApplicationListener</code> derived class (we shall name it <em>Game</em> from now on). Yes, it is perfectly fine to add platform specific code in the derived projects. However, it would be desirable to handle platform specific behaviour using an homogeneous approach, from our base project.</p>
+<h3 id="the-platformresolver-interface">The PlatformResolver interface</h3>
+<p>This interface belongs to the shared code base and it contains methods to provide platform specific behaviour depending on our needs. Here there&quot;s just a very basic example but this interface could vary on a per game basis. A good idea would be to implement this class as a <a href="http://en.wikipedia.org/wiki/Facade_pattern">Facade</a> providing access to platform specific subsystems such as input management or Facebook connectivity to mention a couple.</p>
+<pre tabindex="0"><code>public interface PlatformResolver {
+    public String getDefaultLanguage();
+    public FacebookAPI getFacebookAPI();
+    public InputManager getInputManager();
+}
+</code></pre><p>Our main game class would hold an instance to a specific <em>PlatformResolver</em> yet to be determined. It&quot;s each platform&quot;s responsibility to tell the game which instance should it use to solve platform specific issues.</p>
+<pre tabindex="0"><code>public class Game implements ApplicationListener {
+    protected static PlatformResolver m_platformResolver = null;
+
+    public static PlatformResolver getPlatformResolver() {
+        return m_platformResolver;
+    }
+
+    public static void setPlatformResolver(PlatformResolver platformResolver) {
+        m_platformResolver = platformResolver;
+    }
+}
+</code></pre><h3 id="platformresolver-in-use">PlatformResolver in use</h3>
+<p>In each descendent project we would have something similar to:</p>
+<pre tabindex="0"><code>public class AndroidResolver implements PlatformResolver {}
+public class DesktopResolver implements PlatformResolver {}
+public class WebGLResolver implements PlatformResolver {}
+</code></pre><p>Like I mentioned before, it&quot;s necessary to tell the <em>Game</em> which platform resolver to use, we do that in every platform&quot;s launcher. The desktop one could serve as a perfectly valid example:</p>
+<pre tabindex="0"><code>public static void main(String[] args) {
+    // Configure platform dependent code
+    Game.setPlatformResolver(new DesktopResolver());
+
+    // Launch the game
+    new LwjglApplication(new Game(), cfg);
+}
+</code></pre><p>Later on during execution we could need to determine the system&quot;s default language but that depends on the platform we are working with… Fear no more! We can happily ask our <em>PlatformResolver</em>:</p>
+<pre tabindex="0"><code>String defaultLang = Game.getPlatformResolver().getDefaultLanguage();
+</code></pre><h3 id="the-possibilities">The possibilities</h3>
+<p>We are currently using this very same approach for <a href="https://github.com/dsaltares/sionengine">SionEngine</a> and it&quot;s proven to be flawless so far. You can abstract virtually any platform specific behaviour using something similar.</p>
+<p>Soon there will be more and better on libgdx related stuff! Feel free to criticize and throw rocks at me because of this post.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -235,29 +296,6 @@
 <p>They are generally normal, <strong>non tormented</strong>, cheerful people who don&rsquo;t have problems to socialize over a couple of beers. Most of them, actually, love beer. It&rsquo;s important to remark the line between medium/big studios where the mere commoners do not take the financial risk and the two people company who basically bet their future on its success. I&quot;d also be pretty stressed about it. Indie Game: The Movie is exclusively about the latter.</p>
 <p>What&rsquo;s good about this film is how <strong>it shows the passion and love</strong> these developers feel about what they do. You learn that, despite all the extenuating and brain melting crunching hours, the outcome of people having fun and experiencing all kinds of feelings with something you&rsquo;ve created is amazing. Of course there&rsquo;s also some people who like to play the misunderstood bohemian artist role, if you saw it already, you know what I&quot;m talking about [cough] Braid! [/cough].</p>
 <p>Forget about my negative comments, Indie Game: The Movie is definitely worth a watch for several reasons. To know more about the making of a video game and to understand why their authors are so excited about them could be two good examples. Furthermore, it&rsquo;s very well put together, reasonably cheap ($10), comes completely DRM free, allows streaming, 1080p download version and includes subtitles.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/urban-race-has-been-freed/">Urban Race has been freed</a>
-      </h1>
-      <span class="post-date">Apr 30, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/games/urban-race-has-been-freed/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/wp/urbanrace.jpg" alt="urbanrace.jpg"></p>
-<p>A few months ago I developed <a href="../../games/urban-race/">Urban Race</a>, a very simple (and quite lame) time attack racing game using XNA. It was a University project so I couldn&rsquo;t release the source until it was graded but then, I totally forgot about it. Recently, a reader asked me to publish the source and here we are. Please, bare in mind it&rsquo;s for educational purposes, it was developed in one month without previous knowledge of neither C# or XNA and it&rsquo;s not intended to be a fully playable product.</p>
-<ul>
-<li><a href="http://code.google.com/p/urban-race/">Urban Race in Google Code</a></li>
-<li><a href="http://urban-race.googlecode.com/files/urbanrace-essay.pdf">Urban Race essay (documentation)</a></li>
-<li><a href="http://urban-race.googlecode.com/files/urbanrace-1.0-win.zip">Urban Race 1.0 for Windows</a></li>
-</ul>
-<p>I usually document my projects with Doxygen and several articles or tutorials, this time has been different. At least I&rsquo;ve uploaded a PDF file with the documentation I submitted for my project to be graded. You&quot;ll have to excuse me for lack of further and more accessible documentation but I don&rsquo;t have much time now and, prior to this moment, I didn&rsquo;t think this game was worth making public.</p>
-<p>Anyways, you can freely access the source, reuse components and re-share. Bare in mind that the code is under <a href="http://www.gnu.org/licenses/gpl-3.0.html">GPL v3</a> and the media is under <a href="http://creativecommons.org/licenses/by-nc/3.0/">Creative Commons 3.0 BY-NC</a> so, please, stick to their conditions.</p>
 
       
     </div>

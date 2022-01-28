@@ -6,7 +6,18 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Jan 2022 13:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Remote work panel at UOC (Spanish)</title>
+      <link>https://saltares.com/remote-work-panel-at-uoc-spanish/</link>
+      <pubDate>Thu, 27 Jan 2022 13:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/remote-work-panel-at-uoc-spanish/</guid>
+      <description>It&amp;rsquo;s already been a while but, back in November last year, I participated in a panel about remote work organised by the Universitat Oberta de Catalunya (UOC). It was fantastic to share thoughts and opinions with other folks that had different backgrounds and experiences.
+📽️ You can watch the entire session here although it is in Spanish.
+  </description>
+    </item>
+    
     <item>
       <title>Sticky nav bar on scroll with React hooks</title>
       <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>

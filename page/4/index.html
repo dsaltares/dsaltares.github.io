@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,32 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/come-to-pycon-es-2017/">Come to PyCon ES 2017!</a>
+      </h1>
+      <span class="post-date">Sep 12, 2017 &middot; 1 minute read &middot; <a href="https://saltares.com/general/come-to-pycon-es-2017/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      <p><img src="../../img/pycones/logo.png" alt="pycon-es-2017"></p>
+<p><a href="https://2017.es.pycon.org/en/">PyCon ES 2017</a>, which will be running from September
+22nd to September 24th in Cáceres, Spain. I&rsquo;ll be attending alongside some
+Bloomberg colleagues as we are one of the main sponsors of the event. If you
+have tickets, definitely come say hi!</p>
+<p>I&rsquo;ll be helping out at a couple of presentations:</p>
+<ul>
+<li><a href="https://2017.es.pycon.org/en/schedule/bloomberg-landing-on-a-top-tech-tier-company/">Bloomberg - Landing on a top Tech Tier Company</a></li>
+<li><a href="https://2017.es.pycon.org/en/schedule/load-test-your-backend-with-locustio/">Load test your backend with locust.io</a></li>
+</ul>
+<p>For those not coming, I&rsquo;m pretty sure all the talks will be recorded
+and made publicly available.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -301,79 +327,6 @@ the rules are pretty lose.</p>
 <p>I have a very rough idea of what I want to do, so it&rsquo;s time to get
 to work.</p>
 <p>Will report back!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/migration-from-wordpress-to-hugo/">Migration from Wordpress to Hugo</a>
-      </h1>
-      <span class="post-date">Dec 4, 2016 &middot; 3 minute read &middot; <a href="https://saltares.com/general/migration-from-wordpress-to-hugo/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a>
-      </span>
-      
-      <p><img src="../../img/others/hugo-logo.png" alt="hugo-logo"></p>
-<p>At long last, I got around to do something I had been meaning to do for a very
-long time. I migrated this Wordpress blog over to a statically generated site
-powered by <a href="http://gohugo.io/">Hugo</a>.</p>
-<p>That&rsquo;s 6 years or over 300 posts worth of content.</p>
-<h3 id="why-not-stay-with-wordpress">Why not stay with Wordpress?</h3>
-<p>First of all, I wanted to move away from Wordpress because it&rsquo;s heavy and requires
-quite a bit of setup: PHP, database, plugins and so on. Markdown based static site
-generators have been around for a while and being able to keep everything in plain
-text and under a familiar source control system such as Git is awesome.</p>
-<p>I use git and Markdown all the time both at home and at work.</p>
-<h3 id="why-hugo">Why Hugo?</h3>
-<p>Hugo is an <a href="https://github.com/spf13/hugo">open source</a> static site generator
-written in Go. It&rsquo;s cross-platform and ships as a dependency free binary. Comprehensive
-<a href="http://gohugo.io/overview/introduction/">documentation</a>, wide range of
-<a href="themes.gohugo.io">themes</a> as well as active and helpful <a href="https://discuss.gohugo.io/">community</a>
-are great additions.</p>
-<p>Whilst <a href="https://jekyllrb.com/">Jekyll</a> was the more established solution, it
-required Ruby and I really wanted to keep my environment as simple as possible.</p>
-<p>Other alternatives lacked features, support, had a more complex setup or a combination
-of the former.</p>
-<p>We&rsquo;ve got a winner!</p>
-<h3 id="exporting-wordpress-content">Exporting Wordpress content</h3>
-<p>The process went on like this.</p>
-<ol>
-<li>Exported all posts and pages to XML with the standard Wordpress Export tool.</li>
-<li>Used <a href="https://github.com/thomasf/exitwp">Exitwp</a> to convert content to Markdown.</li>
-<li>Lots of regex search and replace in Sublime.</li>
-</ol>
-<p>Back in 2010 I used the WYSIWYG editor in Wordpress and later on I moved to use
-the <a href="https://jetpack.com/support/markdown/">Markdown module in Jetpack</a>. The mix
-really confused Exitwp and required me to do a lot of manual editing and that took
-quite a while.</p>
-<h3 id="pushing-to-production">Pushing to production</h3>
-<p>This <a href="https://www.digitalocean.com/community/tutorials/how-to-deploy-a-hugo-site-to-production-with-git-hooks-on-ubuntu-14-04">excellent tutorial</a>
-proved most useful to get a streamlined publishing pipeline.</p>
-<p>Essentially, this involved the following:</p>
-<ol>
-<li>Install Hugo on my production server</li>
-<li>Put the site sources in a local git repository</li>
-<li>Create a git bare repository in the production server</li>
-<li>Add a <code>post-receive</code> hook on the production repository that runs <code>hugo</code> and builds the site.</li>
-</ol>
-<p>Give the article a proper read if you want to know more. The publish hook also
-uses <code>rsync</code> to back everything up in case something goes amiss.</p>
-<p>To create a new post, test it locally and publish it, I simply do:</p>
-<pre tabindex="0"><code>hugo new post/category/name.md
-hugo serve --buildDrafts
-git add content
-git push prod
-</code></pre><h3 id="results">Results</h3>
-<p>So far I love it!</p>
-<p>Here are some poor man&rsquo;s stats on loading times for <a href="../../">the homepage</a>, mind
-that I haven&rsquo;t tried to optimized neither of the two.</p>
-<ul>
-<li>Wordpress: ~3.7s</li>
-<li>Hugo: ~2.1s</li>
-</ul>
-<p>Please, let me know if you find anything broken, I would really appreciate it!</p>
 
       
     </div>

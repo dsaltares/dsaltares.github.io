@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.0" />
+	<meta name="generator" content="Hugo 0.92.1" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -102,6 +102,34 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/remote-work-panel-at-uoc-spanish/">Remote work panel at UOC (Spanish)</a>
+      </h1>
+      <span class="post-date">Jan 27, 2022 &middot; 1 minute read &middot; <a href="https://saltares.com/remote-work-panel-at-uoc-spanish/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="./categories/leadership">Leadership</a>
+      </span>
+      
+      <p>It&rsquo;s already been a while but, back in November last year, I participated in a panel about remote work organised by the <a href="https://www.uoc.edu/portal/en/index.html">Universitat Oberta de Catalunya (UOC)</a>. It was fantastic to share thoughts and opinions with other folks that had different backgrounds and experiences.</p>
+<p>📽️ You can watch the entire session here although it is in Spanish.</p>
+<div
+  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/tEUE3VjcDN0"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -366,57 +394,6 @@ EMAIL_SERVER_PASSWORD=email-pass
 <h3 id="-thanks">🙌 Thanks</h3>
 <p>You made it!</p>
 <p>Any good tips to make your remote meetings more inclusive?</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/schedule-posts-with-hugo/">Schedule posts with Hugo</a>
-      </h1>
-      <span class="post-date">May 2, 2021 &middot; 2 minute read &middot; <a href="https://saltares.com/schedule-posts-with-hugo/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="./categories/general">General</a>
-      </span>
-      
-      <p>Back in 2020, I migrated this blog to <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/">Hugo and Github pages</a>. I also set up a <em>&ldquo;push to publish&rdquo;</em> CD pipeline with Github pages.</p>
-<p>Happy days.</p>
-<p>🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.</p>
-<p>It&rsquo;s actually trivial to set up!</p>
-<p>Simply add a <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events">schedule trigger</a> to your Github Action like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
-
-<span style="color:#f92672">on</span>:
-  <span style="color:#f92672">push</span>:
-    <span style="color:#f92672">branches</span>:
-    - <span style="color:#ae81ff">master</span>
-  <span style="color:#f92672">schedule</span>:
-    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 0 * * *&#39;</span> <span style="color:#75715e"># Once per day at midnight</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">build</span>:
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">steps</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
-      <span style="color:#f92672">env</span>:
-        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">dsaltares/dsaltares.github.io</span>
-        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
-        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
-        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
-
-</code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
-<pre tabindex="0"><code>date: 3059-05-01T00:00:00+00:00
-</code></pre><p>That could be a post for future generations 😅.</p>
-<p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>
-<p>📆 This post itself was scheduled!</p>
 
       
     </div>
