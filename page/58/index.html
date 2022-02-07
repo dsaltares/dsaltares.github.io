@@ -107,6 +107,80 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/instalar-android-2-2-en-htc-magic-1-6/">Instalar Android 2.2 en HTC Magic 1.6</a>
+      </h1>
+      <span class="post-date">Aug 30, 2010 &middot; 5 minute read &middot; <a href="https://saltares.com/computing/instalar-android-2-2-en-htc-magic-1-6/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/android-2-2-htc-magic.png" alt="android-2-2-htc-magic.png"></p>
+<p>Uno de los <strong>mayores problemas de <a href="http://es.wikipedia.org/wiki/Android">Android</a></strong> es la <strong>segmentación de versiones</strong> que sufre. No es raro ver usuarios con la 1.5 Cupcake instalada mientras que los más afortunados se encuentran en la 2.0 Froyo. Como seguramente sepas, esto se debe a numerosos factores como el retraso que imponen las operadoras o capas de interfaz que han de ser actualizadas aunque esto da contenido para otro artículo. Hace más de un año me hice con una HTC Magic a través de Vodafone y, desgraciadamente, aún estoy abandonado en la 1.6 Donut. Si no fuera por las ROMS cocinadas me vería condenado a no poder actualizar mi teléfono de por vida.</p>
+<p>Llevaba cierto tiempo queriendo <strong>instalar una ROM modificada</strong> pero, al pensar que mi teléfono podría convertirse en un bonito posavasos tremendamente caro, me entraban escalofríos. En internet circulan centenares de confusos tutoriales con dependencias entre sí y conceptos que no tengo tiempo para investigar. <strong>¿Acceso root, recovery mode, brick? ¡Qué narices es eso!</strong> No puedo perder una semana guerreando con el teléfono para poder usarlo en condiciones. Finalmente en una tarde de tiempo libre me lancé al vacío y, picando de varios sitios de internet, he dado con un sistema seguro y sencillo. Si eres de esos que quieres un <strong>tutorial para pasar una Magic de la versión Android 1.6 a la última 2.2</strong>, estás en el lugar acertado. No tengas miedo y adelante.</p>
+<p><img src="../../img/wp/Key-64.png" alt="Key-64.png"></p>
+<h3 id="conseguir-acceso-root">Conseguir acceso root</h3>
+<p>Los usuarios de GNU/Linux conocerán en qué consiste el <strong>acceso root</strong>, el resto simplemente debéis saber que es el usuario con el <strong>mayor nivel de privilegios</strong>. Si no lo tienes muy claro, hay un <a href="http://www.elandroidelibre.com/todo-debes-saber-sobre-root">artículo de El Androide Libre</a> que lo explica. En los terminales con Android 1.5 era sencillo conseguir acceso root pero la cosa se complicaba con la llegada de la 1.6. Hace poco apareció un nuevo método increíblemente sencillo. Los pasos se enumeran a continuación:</p>
+<ol>
+<li>Habilitar la instalación de aplicaciones externas: <em>Ajustes → Aplicaciones → Orígenes desconocidos</em>.</li>
+<li>Descargar la aplicación <a href="http://www.megaupload.com/?d=W3OGVL6E">Universal Androot 1.6</a></li>
+<li>Copiamos Universal Androot a la tarjeta SD del teléfono.</li>
+<li>Abrimos el instalador con nuestro explorador de ficheros. <a href="http://www.estrongs.com/products.html">ES File Explorer</a> o <a href="http://www.metago.net/astro/fm/">Astro File Manager</a> son perfectamente válidos.</li>
+<li>Ejecutamos Universal Androot, seleccionamos nuestro terminal y seleccionamos el botón para rootear.</li>
+<li>Voilá, HTC Magic 1.6 con acceso root.</li>
+</ol>
+<p><img src="../../img/wp/rom-manager1.png" alt="rom-manager1.png"></p>
+<h3 id="la-magia-de-rom-manager">La magia de ROM Manager</h3>
+<p><a href="http://www.clockworkmod.com/">ROM Manager</a> es una aplicación que <strong>ayuda a gente torpe</strong> como yo en tareas peligrosas como hacer o restaurar copias de seguridad, instalar ROMS o modificar el recovery. Si trasteas con tu teléfono haciendo el ganso por cuenta propia te mereces lo que te pase, así que corre a instalarla (tienes el código QR correspondiente). Existe una versión de pago (3,99$) que amplía la lista de ROMS disponibles pero a nosotros nos basta con la versión gratuita.</p>
+<p><img src="../../img/wp/rom-manager.png" alt="rom-manager.png"></p>
+<h3 id="copia-de-seguridad">Copia de seguridad</h3>
+<p>El sentido común nos dicta que antes de arrojarnos al vacío sería recomendable <strong>hacer una imagen completa</strong>: ROM actual, aplicaciones instaladas y configuración personal. Los pasos son los siguientes:</p>
+<ol>
+<li>
+<p>Ejecutamos ROM Manager</p>
+</li>
+<li>
+<p>Seleccionamos Copiar ROM actual</p>
+</li>
+<li>
+<p>Nos dirá que debemos modificar el recovery (sistema de respaldo con el que podemos arrancar el teléfono) y aceptamos gustosamente.</p>
+</li>
+<li>
+<p>Le damos un nombre a la copia de seguridad y al confirmar se reiniciará nuestra HTC Magic.</p>
+</li>
+<li>
+<p>Tras finalizar el proceso volverá a reiniciarse con normalidad.</p>
+<p><img src="../../img/wp/cyanogen.png" alt="cyanogen.png"></p>
+</li>
+</ol>
+<h3 id="instalar-cyanogenmod-6-la-hora-de-la-verdad">Instalar CyanogenMod 6, la hora de la verdad</h3>
+<p>En este momento es probable que una gota de sudor frío te recorra la frente porque vamos a instalar nuestra nueva y flamante ROM con Android 2.2. <strong>He elegido <a href="http://www.cyanogenmod.com/">CyanogenMod</a></strong> por ser una de las más famosas, con más comunidad, soporte y estar en la lista de ROMS en la versión gratuita de ROM Manager. Si estáis de acuerdo seguid los pasos que se listan a continuación, en caso contrario, siempre puedes descargar la ROM que desees y usar la opción <em>&ldquo;Instalar ROM desde la SD&rdquo;</em>.</p>
+<ol>
+<li>Ejecutar ROM Manager</li>
+<li>Seleccionar la opción <em>Descargar ROM → CyanogenMod → CyanogenMod 6.0.0</em></li>
+<li>Se nos ofrece la opción de seleccionar si deseamos el paquete de aplicaciones de Google ya que por problemas de copyright no están disponibles por defecto.</li>
+<li>Al confirmar se reiniciará nuestra HTC Magic, entrará en modo recovery, instalará CyanogenMod y volverá a reiniciarse.</li>
+<li>Si todo a ido bien deberá aparecer el logo de CyanogenMod y arrancar con normalidad. Es posible que el primer inicio tarde bastante. En este paso se pondrá aprueba tu paciencia y sangre fría.</li>
+</ol>
+<p><img src="../../img/wp/sos.png" alt="sos.png"></p>
+<h3 id="socorro">¡Socorro!</h3>
+<p>Si ocurre algún problema durante el proceso <strong>no debes entrar en shock</strong> ya que tu teléfono se salvará. En caso de llegar a este terrorífico punto sigue los siguientes pasos:</p>
+<ol>
+<li>Enciende el teléfono y mantén pulsado los botones de cuelgue y home al mismo tiempo para entrar en el famoso modo recovery.</li>
+<li>Reinstala una ROM descargada o recupera la copia de seguridad que, espero, hayas realizado en apartados anteriores.</li>
+<li>Todo volverá a la normalidad.</li>
+</ol>
+<p>**<span style="color: #ff0000;">Editado:</span> **El lector eldire aconsejó que si el terminal se quedaba bloqueado en la copia de seguridad deberíamos flashear Clockworkmode utilizando ROM Manager y seleccionar el modelo Ion/Touch. En el caso de que, al instalar la ROM, vuelva a ocurrir, la solución pasa por volver a flashear Clockworkmode como estaba al principio. Espero que esto solucione los problemas que están teniendo algunos usuarios.</p>
+<p><img src="../../img/wp/froyo.png" alt="froyo.png"></p>
+<h3 id="proceso-finalizado">¡Proceso finalizado!</h3>
+<p><strong>¡Enhorabuena, eres el orgulloso usuario de una HTC Magic con Android 2.2!</strong> Ahora deberías instalar las aplicaciones que tenías antes, configurarlas y hacer una nueva copia de seguridad por si las moscas porque nunca se es lo suficientemente paranoico con estos menesteres. Respira tranquilo.</p>
+<p>Espero que te haya sido útil este tutorial, ojalá ayude a alguien a evitar el mar de confusión que puede llegar a ser la red en este aspecto. Si encuentras cualquier fallo no dudes en dejar un comentario y actualizaré el artículo.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/videojuegos-de-warhammer-fantasy/">Videojuegos de Warhammer Fantasy</a>
       </h1>
       <span class="post-date">Aug 28, 2010 &middot; 6 minute read &middot; <a href="https://saltares.com/hobbies/videojuegos-de-warhammer-fantasy/#disqus_thread">Comments</a>
@@ -217,39 +291,6 @@
 <p>DiCaprio muestra una <strong>mejor interpretación</strong> en Shutter Island pero aún así no me termina de convencer y no es que le tenga tirria por <a href="http://www.imdb.com/title/tt0120338/">Titanic</a> ni nada parecido, supongo que es cuestión de gustos. Curiosamente el trasfondo de los personajes de sus dos últimos trabajos es sospechosamente similar aunque en esta ocasión desde el guión le llega uno con más fuerza. La película no destaca por sus actuaciones y su interés radica en la inquietante trama.</p>
 <p><img src="../../img/wp/shutter-island-03.jpg" alt="shutter-island-03.jpg"></p>
 <p>Echando la vista atrás no consigo recordar porqué deje pasar Shutter Island pero ahora me arrepiento ya que esta notable película <strong>merece ser vista en el cine</strong>. Un thriller lleno de misterio, personajes que ponen los pelos de punta y un aire a obra antigua que me ha encandilado. Por supuesto queda recomendada.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/sony-psp-y-el-gaming-en-android/">Sony, PSP y el gaming en Android</a>
-      </h1>
-      <span class="post-date">Aug 22, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/hobbies/sony-psp-y-el-gaming-en-android/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/psp-android.png" alt="psp-android.png"></p>
-<p>Hace un par de semanas blogs especializados como <a href="http://www.elandroidelibre.com/2010/08/sony-ericsson-quiere-ser-el-rey-de-los-juegos-en-android.html">El Androide Libre</a> publicaban <strong>rumores sobre una posible asociación entre Google y Sony</strong> para crear un terminal Android dedicado al gaming. Sé que llego tarde, como de costumbre, pero me pareció una oportunidad interesante para mostrar mi opinión al respecto. Evidentemente aún no ha sido confirmado nada y en este artículo no puedo sino dejar llevar mi imaginación por un mundo ficticio de color rosa.</p>
-<p>Los datos son escasos pero básicamente indican que este supuesto terminal vendría bajo el sello <em>&ldquo;Playstation&rdquo;</em>, es decir, sería la sucesora de la actual PSP. Entre sus características se encontrarían un procesador S</p>
-<p>napDragon, una pantalla de 4 pulgadas, cámara de 5 megapíxels y la versión 3.0 de Android. Al contar con el apoyo de Sony recibiría franquicias como <a href="http://es.wikipedia.org/wiki/God_of_War">God of War</a>, <a href="http://en.wikipedia.org/wiki/LittleBigPlanet">Little Big Planet</a> o <a href="http://es.wikipedia.org/wiki/Call_of_Duty">Call of Duty</a>. Teóricamente se confirmaría de cara a la campaña navideña convirtiéndose en la <strong>competencia directa de iPhone</strong>.</p>
-<p><img src="../../img/wp/gta-chinatown-wars.jpg" alt="gta-chinatown-wars.jpg"></p>
-<h3 id="un-paso-lógico">Un paso lógico</h3>
-<p>El incremento de potencia y el aumento de demanda de los <strong>smartphones</strong> posibilitan <strong>videojuegos más avanzados y profundos</strong>, por ello vemos títulos de amplio presupuesto como <a href="http://es.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars">GTA</a></p>
-<p><a href="http://es.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars">Chinatown Wars</a> en iPhone a la vez que en PSP o NDS. El supuesto paso de Sony y Google puede parecer sorprendente aunque en el fondo me parece tremendamente lógico. Nintendo tiene una parcela ganada en el terreno portátil, no obstante, PSP al estar dirigida a un público ligeramente más adulto y habituado a jugar se enfrenta a Apple cada vez de forma más directa.</p>
-<p><strong>El mercado de aplicaciones en iPhone es mastodóntico</strong> gracias a la store y la comunidad que hay detrás. Sony ya se ha aventurado en el mundo de la distribución digital con <strong>PSP Go</strong> obteniendo <strong>resultados catastróficos</strong>. El elevado precio de la consola, la imposibilidad de recuperar títulos ya adquiridos y el deficiente acceso a los juegos la condenaron casi de forma inmediata.</p>
-<p><strong>Google desea expandir</strong> cada vez más <strong>su sistema operativo</strong> para móviles y su punto débil es el terreno multimedia dentro del cual se encuentran los videojuegos. Desde hace meses Google ha comprado varios pequeños estudios de la industria. Maniobras que, unidas a esta, denotan el impulso que se le pretende dar al gaming en Android para equipararlo con iPhone.</p>
-<p><img src="../../img/wp/android_market.jpg" alt="android_market.jpg"></p>
-<h3 id="las-posibilidades">Las posibilidades</h3>
-<p>Como <strong>soñar es gratis</strong> puedo escribir en este apartado lo que me venga en gana aunque trataré de hacerlo con un mínimo de sensatez porque los eventos jamás se desarrollan exactamente como nos gustaría. Combinar las características de una consola cerrada clásica (distribuidoras, estudios y proyectos grandes que la apoyen) con el tinte libre y de aplicaciones pequeñas que tiene Android puede ser complicado. Para empezar con buen pie pienso firmemente en <strong>la necesidad de una reforma en el Android market</strong> de forma que sea mucho más sencillo acceder a aplicaciones.</p>
-<p>Muchos usuarios <strong>se decantan por iPhone debido a los juegos</strong>, amenizar el camino al trabajo o a la universidad con unas partidillas no tiene precio. Desgraciadamente deben dejar en el camino las libertades que proporciona Android. Si a dicho público se le pudiera ofrecer un dispositivo que aunara las posibilidades de <strong>personalización y flexibilidad con juegos</strong> de sellos importantes podrían cambiar de opinión. Mi caso es similar: me encantaría disfrutar de los juegos de iPhone pero al otorgarle más valor a las ventajas de Android, me decanté por este último.</p>
-<p>Más que la llegada de Sony al mercado de los smarphones considero más interesante el posible <strong>crecimiento de Android gracias a los videojuegos</strong>. Las facilidades de publicación de software en el market en contraposición con el filtro que impone Apple <strong>atraerían a desarrolladores jóvenes y a estudios pequeños</strong>. Sin duda, una ventana abierta a su propia madure</p>
-<p>z y expansión. Las empresas que acaban de formarse asumen riesgos importantes y suelen tener problemas de financiación, desarrollar en Android en este futuro deseable aumentaría sus posibilidades de poder lanzar un pequeño juego rentable en un corto periodo de tiempo.</p>
-<h3 id="mi-previsión">Mi previsión</h3>
-<p>Suponiendo que el acuerdo entre las dos compañías y el dispositivo sean reales <strong>me surgen numerosas dudas</strong>. Sería determinante conocer si los juegos <em>&ldquo;Playstation&rdquo;</em> se distribuirían a través del market al que estamos acostumbrados. Además, está por ver si se proporcionará un SDK específico para videojuegos y si la política de publicación en el market al usar este supuesto SDK cambiarán con respecto a la actual. ¿Será Sony un publisher más en el market o tratará de tomar un control más directo? Podría producirse un cambio a mejor pero los interrogantes y los puntos en los que el asunto se puede ir al traste son demasiados.</p>
-<p><strong>No pretendo hacer de adivino místico</strong>, simplemente me ha parecido interesante exponer mis impresiones sobre los rumores que han surgido.</p>
 
       
     </div>
