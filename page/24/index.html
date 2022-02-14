@@ -104,6 +104,152 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/beware-memory-allocation/">Beware memory allocation</a>
+      </h1>
+      <span class="post-date">Jan 29, 2013 &middot; 7 minute read &middot; <a href="https://saltares.com/games/beware-memory-allocation/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non <a href="http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)">garbage collected languages</a>, say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey&rsquo;s about memory won&rsquo;t necessarily make your game crash. Nonetheless, it can be silently devastating to the point of dragging your frame rate below ground absent previous notice.</p>
+<p>You don&rsquo;t want that now, do you?</p>
+<p>Please, let me take a step back and point out the irony of having to be extremely careful with memory usage in the presence of a garbage collector (GC) when dealing with real time problems. It&rsquo;s often said that it takes the responsibility off you. In a beautiful world where code tastes like lollipop it would, but this is really not the case. At least not entirely.</p>
+<p>This article is aimed at developers who code in GC environments to make real time applications. Concepts here also apply to broader fields in spite of the focus mainly being Java and games development using the libgdx framework. Actually, I decided to write this post after seeing the same performance related questions <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=3572">over</a> and <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=6785&amp;hilit=performance+garbage">over</a> again in the libgdx forums. Most of them are closely tied to memory allocation.</p>
+<p><img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg"></p>
+<h3 id="be-aware-of-the-gc-and-why-its-critical-in-mobileconsoles">Be aware of the GC and why it&rsquo;s critical in mobile/consoles</h3>
+<p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&quot;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
+<p>Note: I just told a white lie. JVM&rsquo;s GC actually follows several strategies to free up unused memory as pointed out in <a href="http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect">this Stack Overflow post</a>.</p>
+<p>A common mistake, which I&rsquo;ve made myself with <a href="../../freegemas/">Freegemas</a>, is to believe my game is well optimized because it runs flawlessly on an i7 machine. Don&rsquo;t fool yourself, go on and deploy your libgdx app on a mid tier Android phone and see what happens.</p>
+<blockquote>
+<p>Oh well… This is disappointing…</p>
+</blockquote>
+<p>Mobile devices and consoles typically fall short on memory. You miss those 16GB of RAM, don&rsquo;t you? Moreover, every time the GC decides to intervene, the stall becomes more noticeable due to the less powerful CPU.</p>
+<blockquote>
+<p>Oh noes!</p>
+</blockquote>
+<p>Long story short, we need to prevent this from happening as much as we possibly can.</p>
+<h3 id="cache-temporal-variables-as-data-members">Cache temporal variables as data members</h3>
+<p>It goes without saying that some memory allocation is needed. Don&rsquo;t worry about loading your assets at sensible times as well as creating game objects to get things ready. Nevertheless, avoid making use of the new operator inside your game loop at any cost.</p>
+<blockquote>
+<p>Sometimes I do need some auxiliary, yet costly, objects to perform calculations every frame.</p>
+</blockquote>
+<p>Worry no more as you can make them private data members. As cheeky as it may sound, this will spare you a fair amount of problems.</p>
+<p>I&quot;m currently working on a GLEED level system refactor and I think the renderer class could serve us as an perfect example. I use two Rectangle objects (Axis Aligned Bounding Boxes) to perform frustum culling: the first one represents the camera while the second one corresponds to the texture we might or might not render. Those two Rectangle objects don&rsquo;t naturally belong to the GLEEDMapRenderer themselves, but why would I allocate memory for new instances every single frame. That&quot;d make the GC sad. Instead, take a look at this simplified snippet.</p>
+<pre tabindex="0"><code>public class GleedMapRenderer implements MapRenderer, Disposable {
+
+	// Renderer data
+	private GleedMap m_map;
+	private SpriteBatch m_batch;
+	private boolean m_ownSpriteBatch;
+	private float m_mpp;
+
+	// Aux data for fustrum culling
+	private Rectangle m_box = new Rectangle();
+	private Rectangle m_camera = new Rectangle();
+
+	public void render(OrthographicCamera camera) {
+		m_camera.x = camera.position.x - camera.viewportWidth * 0.5f * camera.zoom;
+		m_camera.y = camera.position.y - camera.viewportHeight * 0.5f * camera.zoom;
+		m_camera.width = camera.viewportWidth *  camera.zoom;
+		m_camera.height = camera.viewportHeight *  camera.zoom;
+
+		setProjectionMatrix(camera.combined);
+
+		MapLayers layers = m_map.getLayers();
+
+		for (MapLayer layer : layers) {
+			renderLayer(layer);
+		}
+	}
+
+	private void renderLayer(MapLayer layer) {
+
+		if (!layer.getVisible()) {
+			return;
+		}
+
+		MapObjects objects = layer.getObjects();
+		int numObjects = objects.getNumObjects();
+
+		for (int j = 0; j &lt; numObjects; ++j) {
+			MapObject mapObject = objects.getObject(j);
+
+			if (mapObject == null || !mapObject.getVisible()) {
+				continue;
+			}
+
+			if (!(mapObject instanceof TextureMapObject)) {
+				continue;
+			}
+
+			TextureMapObject texture = (TextureMapObject)mapObject;
+
+			setBounds(texture);
+
+			// If the image is in the frustum, draw it (culling)
+			if (m_camera.overlaps(m_box) ||
+			    m_camera.contains(m_box) ||
+			    m_box.contains(m_camera)) {
+
+				...
+			}
+		}
+	}
+}
+</code></pre><p>As illustrated above, the Rectangle instances are created along the renderer and properly set every frame. Consequently, what initially would have involved memory allocations, assignments and GC activity is reduced to just a few unavoidable assignments. Let&rsquo;s mention it once again, in spite of rectangles being cheap, you don&rsquo;t want to mess with the GC on mobile devices!</p>
+<h3 id="consider-object-pooling">Consider object pooling</h3>
+<p>Unfortunately, at some point you will find yourself in the need of constantly creating dozens of big sized objects. It&rsquo;s a common problem when dealing with spawning game entities, particle effects and the like. Say you&quot;re making a space shooter, of course you want hundreds of flashy explosions and lasers! You&quot;ll face a problem, that can drive the GC crazy as particles pop up or disappear.</p>
+<p>Attention! The object pool game programming design pattern is on its way to rescue the programmer in distress!</p>
+<p>I&quot;d encourage you to read through <a href="http://gameprogrammingpatterns.com/object-pool.html">this wonderful article</a> to get to know this common pattern. In brief, we basically keep a collection of pre-created objects (pool) that will be retrieved as necessary. We could have a pool with 1000 particle effects, every time we need an explosion in our game we just ask the pool for one. Right after we&quot;re done with it, we put it back. As a consequence, we won&rsquo;t require to allocate memory every time we need a fancy explosion since the pool will be created during launch.</p>
+<p>Luckily enough, libgdx provides the Pool abstract class and the Poolable interface to achieve this behavior (had we seen ourselves in the need to come up with an implementation, it wouldn&rsquo;t have been the end of the world either).</p>
+<pre tabindex="0"><code>abstract public class Pool {
+	public Pool ();
+	public Pool (int initialCapacity);
+	public Pool (int initialCapacity, int max);
+
+	abstract protected T newObject ();
+
+	public T obtain ();
+	public void free (T object);
+	public void freeAll (Array objects);
+	public void clear ();
+
+	static public interface Poolable {
+		public void reset ();
+	}
+}
+</code></pre><p>As you can probably deduce after reading the previous snippet, in order to make a resource poolable it&rsquo;s required to implement the reset() method of such interface. Then you need to create a new <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html">Pool</a> class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this <a href="http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d">sample to have efficient bullets</a>.</p>
+<p><img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png"></p>
+<p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
+<pre tabindex="0"><code>// Create prototype effect
+ParticleEffect effect = new ParticleEffect();
+effect.load(Gdx.files.internal(&quot;data/particleStars&quot;), Gdx.files.internal(&quot;data&quot;));
+
+// Create effects pool using thay prototype
+ParticleEffectPool effectPool = new ParticleEffectPool(effect, 20, 100);
+// Add new effect and enable it
+ParticleEffect effect = effectPool.obtain();
+effect.start();
+
+// Put effect back in pool (first check if it has finished)
+if (effect.isComplete()) {
+	effectPool.free(effect);
+}
+</code></pre><p>Here we go, GC friendly particles. Neat, isn&rsquo;t it?</p>
+<h3 id="still-in-trouble-do-some-profiling">Still in trouble? Do some profiling</h3>
+<blockquote>
+<p>Alright, I&quot;m pretty sure your advice is utter bullshit, my app is still laggy! I want my money back.</p>
+</blockquote>
+<p><img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png"></p>
+<p>Before throwing that rotten tomato you&quot;re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it&rsquo;s running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you&rsquo;ve missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.</p>
+<p>Promise.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/2d-character-creation-and-animation-for-dummies/">2D Character creation and animation. For dummies</a>
       </h1>
       <span class="post-date">Jan 22, 2013 &middot; 8 minute read &middot; <a href="https://saltares.com/general/2d-character-creation-and-animation-for-dummies/#disqus_thread">Comments</a>
@@ -310,48 +456,6 @@ inkscape.saveDocument(&quot;character.svg&quot;)
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/new-to-games-just-make-games/">New to games? Just make games</a>
-      </h1>
-      <span class="post-date">Dec 30, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/new-to-games-just-make-games/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><span style="color: #ff0000;">Disclaimer</span>: this text is aimed at games programming beginners.</p>
-<p>Diving into games development for the first time is exciting but offtimes confusing, a great piece of advice would be: just make games. Get things done, period. I&rsquo;ve often found myself researching which available technology would suit my requirements best, as if I needed a sophisticated tailored tuxedo. The fear of finding a dead end was as powerful as counterproductive. Such a time wasting approach.</p>
-<blockquote>
-<p>What&rsquo;s the most powerful games framework out there? Should I learn a new language to start making games?</p>
-</blockquote>
-<p>Stop it.</p>
-<p>Needless to say, you&quot;ll make mistakes along the way and that is not a stigma we&quot;re going to get rid off anytime soon. When I was working on my <a href="../../games/sion-tower/">final degree project</a>, I happened to realize quite often I needed to rewrite a whole subsystem from scratch (sad face) but that&rsquo;s part of the learning process. Spending weeks going through feature lists of well advertised frameworks you most likely don&rsquo;t understand isn&rsquo;t. Take this as a piece of advice to help you stay focused on what really matters, creating games.</p>
-<p><img src="../../img/sion-tower/siontower-game11.png" alt="siontower-game11.png"></p>
-<p><a href="http://en.wikipedia.org/wiki/KISS_principle">KISS</a> (Keep It Simple, Stupid) is a principle to live by.</p>
-<p>This field&rsquo;s learning curve is steep enough for us to try complicate things any further. If you&quot;re already half decent in a certain language, don&rsquo;t try to learn a new one with the sole purpose of using a specific engine. Beware! It&rsquo;s dauntingly easy to fall for this.</p>
-<p>A couple Google or Stack Overflow queries will suffice to discover a suitable game engine that gets along with your language of choice. Be almost certain that it&quot;ll feature everything you need and more. If you think that being able to use the latest computer graphics algorithm is important, you&quot;re wrong. Tetris, R-Type, Snake and the like are encouraged as first projects and they don&rsquo;t need to be fancy at all. Once again, put everything else aside and push forward to complete it.</p>
-<p><img src="../../img/wp/pong.jpeg" alt="pong.jpeg"></p>
-<p>After finishing a couple of small projects you should ask yourself the following: are you in this for fun? In that case, you can stick with the environment you&quot;re most comfortable with. Keep producing awesome games, no pressure! However, you might be aiming at making a living out of it. When the latter applies, learn new languages to broaden your skill set bearing in mind that proficiency in C++ is paramount.</p>
-<p>Summarizing, unless you code in <a href="http://en.wikipedia.org/wiki/Brainfuck">Brainfuck</a>, there are plenty of valid tools that will provide you with more power than you could possibly use.</p>
-<ul>
-<li>C: <a href="http://www.libsdl.org/">SDL</a></li>
-<li>C++: <a href="http://www.sfml-dev.org/">SFML</a></li>
-<li>Python: <a href="http://www.pygame.org/news.html">PyGame</a></li>
-<li>Java: <a href="http://libgdx.badlogicgames.com/">libgdx</a></li>
-<li>Ruby: <a href="http://www.libgosu.org/">Gosu</a></li>
-<li>Flash: <a href="http://flashpunk.net/">Flashpunk</a></li>
-<li>Lua: <a href="https://love2d.org/">Love2D</a></li>
-<li>PHP: are you kidding me?</li>
-</ul>
-<p>Still skeptical? Examine the showcase forum of each one of them, you&quot;d be surprised.</p>
-<p><img src="../../img/wp/vampire-runner.jpg" alt="vampire-runner.jpg"></p>
-<p>Actually, the only thing to be concerned about is whether the candidate is well documented and counts with an active community or not. Watch out for niche and cryptic technology. Fortunately, those are easily to spot by paying their online platform a quick visit. Excellent, now you will enjoy the wonders of a helpful bunch of fellow coders when you get stuck.</p>
-<p>Wrapping things up, are you still desperately looking for the ultimate panacea? Don&rsquo;t worry too much and just make games.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -371,7 +475,7 @@ inkscape.saveDocument(&quot;character.svg&quot;)
             </li>
             
             <li>
-                <a href="../../page/62/">»»</a>
+                <a href="../../page/63/">»»</a>
             </li>
         </ul>
     </div>

@@ -6,7 +6,36 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 07 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 books you should read as a new Engineering Manager</title>
+      <link>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</link>
+      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</guid>
+      <description>Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.
+You will need plenty of support.
+Having a mentor was certainly invaluable, and you should aim to have one. A few selected books gave me tremendously helpful insights.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;./img/books/library.webp&#34; alt=&#34;modern library&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.&lt;/p&gt;
+&lt;p&gt;You will need plenty of support.&lt;/p&gt;
+&lt;p&gt;Having a mentor was certainly invaluable, and you should aim to have one. A few selected books gave me tremendously helpful insights. There is a lot of faff on the Internet out there about leadership. So, I thought writing a list may help you find the good ones!&lt;/p&gt;
+&lt;h2 id=&#34;-1-the-managers-handbookhttpsthemanagershandbookcom&#34;&gt;🙌 1. &lt;a href=&#34;https://themanagershandbook.com/&#34;&gt;The Manager&amp;rsquo;s Handbook&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Written by &lt;a href=&#34;https://alexmaccaw.com/&#34;&gt;Alex MacCaw&lt;/a&gt; as the actual handbook for managers at Clearbit. It covers a wide range of topics, such as self-awareness, hiring, coaching, expectation setting, and processes with down-to-earth, actionable advice.&lt;/p&gt;
+&lt;p&gt;The book is quite opinionated, which may not be an entirely bad thing if what you need right now is a bit of structure before you find your management principles and style.&lt;/p&gt;
+&lt;h2 id=&#34;-2-leading-snowflakeshttpsleadingsnowflakescom&#34;&gt;❄️ 2. &lt;a href=&#34;https://leadingsnowflakes.com/&#34;&gt;Leading Snowflakes&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://twitter.com/orenellenbogen&#34;&gt;Oren Ellenbogen&lt;/a&gt; takes you through the transition from Maker to Manager in this short and to the point guide. Each chapter comes with a bit of &amp;ldquo;homework&amp;rdquo; to put what you learned into practice.&lt;/p&gt;
+&lt;p&gt;As a bonus, you should subscribe to Oren&amp;rsquo;s newsletter &lt;a href=&#34;https://softwareleadweekly.com/&#34;&gt;Software Lead Weekly&lt;/a&gt;. It is &lt;strong&gt;the&lt;/strong&gt; engineering manager newsletter.&lt;/p&gt;
+&lt;h2 id=&#34;-3-radical-candorhttpswwwradicalcandorcomthe-book&#34;&gt;🌟 3. &lt;a href=&#34;https://www.radicalcandor.com/the-book/&#34;&gt;Radical Candor&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;As an Engineering Manager, you will need to have many challenging conversations. They can be a tremendous emotional drain. You need to let a team member know they are underperforming, but you don&amp;rsquo;t want to be an ass. I get it. Radical Candor by &lt;a href=&#34;https://twitter.com/kimballscott&#34;&gt;Kim Scott&lt;/a&gt; can give you some of the tools to deliver difficult feedback with care and make it easier on your mental health.&lt;/p&gt;
+&lt;h2 id=&#34;-4-the-five-dysfunctions-of-a-teamhttpsenwikipediaorgwikithe_five_dysfunctions_of_a_team&#34;&gt;✋ 4. &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Five_Dysfunctions_of_a_Team&#34;&gt;The Five Dysfunctions of a Team&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;A fable by &lt;a href=&#34;https://en.wikipedia.org/wiki/Patrick_Lencioni&#34;&gt;Patrick Lencioni&lt;/a&gt; that tells the story of a newly appointed CEO who finds all sorts of politics and issues within her executive team. This book helped me realise that I no longer had one team, my engineering team. My teammates were now the engineering leadership group.&lt;/p&gt;
+&lt;h2 id=&#34;-5-the-new-one-minute-managerhttpswwwkenblanchardcomstorethe-new-one-minute-manager&#34;&gt;🕑 5. &lt;a href=&#34;https://www.kenblanchard.com/Store/The-New-One-Minute-Manager&#34;&gt;The New One Minute Manager&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Another fable, this time by &lt;a href=&#34;https://en.wikipedia.org/wiki/Ken_Blanchard&#34;&gt;Ken Blanchard&lt;/a&gt;. Perhaps this one is a bit dated, but I remember it dearly as it is one of the first ones I read. It tells the story of a new manager who seeks the knowledge of the legendary One Minute Manager.&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading! Did you notice how only one of these is specific to engineering?&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The David Test - An updated Joel Test for 2022</title>
       <link>https://saltares.com/the-david-test-an-updated-joel-test-for-2022/</link>
@@ -632,148 +661,6 @@ I wrote this post for other engineering leaders who’ve just been given the opp
 &lt;li&gt;🚀 And more!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Good luck!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Chronolooper</title>
-      <link>https://saltares.com/game-jams/chronolooper/</link>
-      <pubDate>Tue, 06 Oct 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/game-jams/chronolooper/</guid>
-      <description>.Get &#34;linkText&#34;    They put you in a facility and ran all sorts of experiments because you can control time. Now you are stuck in a time loop!
-🎮 The game Plague is an infinite action platformer with procedurally generated levels. It&amp;rsquo;s got gamepad support and you can play it from your browser.
-💻 Ludum Dare 47 Chronolooper was developed using Godot Engine for Ludum Dare 47, a 72h jam.</description>
-      <content>&lt;div
-  style=&#34;position: relative; padding-bottom: 24%; height: 0; margin-bottom: 1em;&#34;&gt;
-  &lt;iframe
-     src=&#34;https://itch.io/embed/773332&#34; 
-    frameborder=&#34;0&#34;
-    webkitallowfullscreen
-    mozallowfullscreen
-    allowfullscreen
-    style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34;
-  &gt;&lt;/iframe&gt;
-    
-      &lt;a href=&#34;https://david-saltares.itch.io/chronolooper&#34;&gt;
-        .Get &#34;linkText&#34;
-      &lt;/a&gt;
-    
-  &lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;p&gt;They put you in a facility and ran all sorts of experiments because you can control time. Now you are stuck in a time loop!&lt;/p&gt;
-&lt;h3 id=&#34;-the-game&#34;&gt;🎮 The game&lt;/h3&gt;
-&lt;p&gt;Plague is an infinite action platformer with procedurally generated levels. It&amp;rsquo;s got gamepad support and you can play it from your browser.&lt;/p&gt;
-&lt;h3 id=&#34;-ludum-dare-47&#34;&gt;💻 Ludum Dare 47&lt;/h3&gt;
-&lt;p&gt;Chronolooper was developed using &lt;a href=&#34;https://godotengine.org/&#34;&gt;Godot Engine&lt;/a&gt; for &lt;a href=&#34;https://ldjam.com/events/ludum-dare/47&#34;&gt;Ludum Dare 47&lt;/a&gt;, a 72h jam. The theme was &lt;em&gt;Stuck in a loop&lt;/em&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;-more-info&#34;&gt;💡 More info&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Game Jam: &lt;a href=&#34;https://ldjam.com/events/ludum-dare/47&#34;&gt;Ludum Dare 47&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Development time: 72h&lt;/li&gt;
-&lt;li&gt;Technology: Godoot Engine&lt;/li&gt;
-&lt;li&gt;Team: &lt;a href=&#34;https://twitter.com/senthe&#34;&gt;@senthe&lt;/a&gt; and &lt;a href=&#34;https://twitter.com/d_saltares&#34;&gt;@d_saltares&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/dsaltares/ludumdare-47&#34;&gt;Source code&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-screenshots&#34;&gt;📷 Screenshots&lt;/h3&gt;
-&lt;p&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;./css/hugo-easy-gallery.css&#34; /&gt;
-
-&lt;div class=&#34;gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition&#34; itemscope itemtype=&#34;http://schema.org/ImageGallery&#34;&gt;
-				&lt;div class=&#34;box&#34;&gt;
-				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/chronolooper/gallery/chronolooper-1.png&#39;);&#34; &gt;
-				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-1.png&#34; alt=&#34;Chronolooper 1&#34; /&gt;
-				    &lt;/div&gt;
-			      &lt;figcaption&gt;
-		          &lt;p&gt;Chronolooper 1&lt;/p&gt;
-			      &lt;/figcaption&gt;
-				    &lt;a href=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-1.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-				  &lt;/figure&gt;
-				&lt;/div&gt;
-				&lt;div class=&#34;box&#34;&gt;
-				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/chronolooper/gallery/chronolooper-2.png&#39;);&#34; &gt;
-				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-2.png&#34; alt=&#34;Chronolooper 2&#34; /&gt;
-				    &lt;/div&gt;
-			      &lt;figcaption&gt;
-		          &lt;p&gt;Chronolooper 2&lt;/p&gt;
-			      &lt;/figcaption&gt;
-				    &lt;a href=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-2.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-				  &lt;/figure&gt;
-				&lt;/div&gt;
-				&lt;div class=&#34;box&#34;&gt;
-				  &lt;figure itemprop=&#34;associatedMedia&#34; itemscope itemtype=&#34;http://schema.org/ImageObject&#34;&gt;
-				    &lt;div class=&#34;img&#34; style=&#34;background-image: url(&#39;https://saltares.com/img/chronolooper/gallery/chronolooper-3.png&#39;);&#34; &gt;
-				      &lt;img itemprop=&#34;thumbnail&#34; src=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-3.png&#34; alt=&#34;Chronolooper 3&#34; /&gt;
-				    &lt;/div&gt;
-			      &lt;figcaption&gt;
-		          &lt;p&gt;Chronolooper 3&lt;/p&gt;
-			      &lt;/figcaption&gt;
-				    &lt;a href=&#34;https://saltares.com/img/chronolooper/gallery/chronolooper-3.png&#34; itemprop=&#34;contentUrl&#34;&gt;&lt;/a&gt;
-				  &lt;/figure&gt;
-				&lt;/div&gt;
-&lt;/div&gt;
-
-
-
-
-
-  
-
-
-
-
-
-&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css&#34; integrity=&#34;sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=&#34; crossorigin=&#34;anonymous&#34; /&gt;
-&lt;link rel=&#34;stylesheet&#34; href=&#34;https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css&#34; integrity=&#34;sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=&#34; crossorigin=&#34;anonymous&#34; /&gt;
-
-
-
-&lt;div class=&#34;pswp&#34; tabindex=&#34;-1&#34; role=&#34;dialog&#34; aria-hidden=&#34;true&#34;&gt;
-
-&lt;div class=&#34;pswp__bg&#34;&gt;&lt;/div&gt;
-
-&lt;div class=&#34;pswp__scroll-wrap&#34;&gt;
-    
-    &lt;div class=&#34;pswp__container&#34;&gt;
-      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
-      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
-      &lt;div class=&#34;pswp__item&#34;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    
-    &lt;div class=&#34;pswp__ui pswp__ui--hidden&#34;&gt;
-    &lt;div class=&#34;pswp__top-bar&#34;&gt;
-      
-      &lt;div class=&#34;pswp__counter&#34;&gt;&lt;/div&gt;
-      &lt;button class=&#34;pswp__button pswp__button--close&#34; title=&#34;Close (Esc)&#34;&gt;&lt;/button&gt;
-      &lt;button class=&#34;pswp__button pswp__button--share&#34; title=&#34;Share&#34;&gt;&lt;/button&gt;
-      &lt;button class=&#34;pswp__button pswp__button--fs&#34; title=&#34;Toggle fullscreen&#34;&gt;&lt;/button&gt;
-      &lt;button class=&#34;pswp__button pswp__button--zoom&#34; title=&#34;Zoom in/out&#34;&gt;&lt;/button&gt;
-      
-      
-      &lt;div class=&#34;pswp__preloader&#34;&gt;
-        &lt;div class=&#34;pswp__preloader__icn&#34;&gt;
-          &lt;div class=&#34;pswp__preloader__cut&#34;&gt;
-            &lt;div class=&#34;pswp__preloader__donut&#34;&gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&#34;pswp__share-modal pswp__share-modal--hidden pswp__single-tap&#34;&gt;
-      &lt;div class=&#34;pswp__share-tooltip&#34;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;button class=&#34;pswp__button pswp__button--arrow--left&#34; title=&#34;Previous (arrow left)&#34;&gt;
-    &lt;/button&gt;
-    &lt;button class=&#34;pswp__button pswp__button--arrow--right&#34; title=&#34;Next (arrow right)&#34;&gt;
-    &lt;/button&gt;
-    &lt;div class=&#34;pswp__caption&#34;&gt;
-      &lt;div class=&#34;pswp__caption__center&#34;&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-&lt;/p&gt;
 </content>
     </item>
     

@@ -104,6 +104,54 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/nuevos-articulos-escenas-nodos-y-exportacion/">Nuevos artículos: escenas, nodos y exportación</a>
+      </h1>
+      <span class="post-date">Dec 8, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/nuevos-articulos-escenas-nodos-y-exportacion/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/wp/escenas-nodos-exportacion.png" alt="escenas-nodos-exportacion.png"></p>
+<p>El puente se acaba y , entre otras cosas, me ha permitido darle un pequeño pero <strong>importante impulso a <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a></strong>. Ligeras correcciones o ampliaciones en varios artículos y un par completamente nuevos. <strong>La wiki va sobre ruedas</strong> y no hemos tenido problemas de disponibilidad desde el cambio de servidor, ¡gracias de nuevo a la OSLUCA! Lo que sigue es un pequeño resumen del trabajo de los últimos días.</p>
+<h3 id="creación-básica-de-escenashttposl2ucaesiberogreindexphpcreacic3b3n_bc3a1sica_de_escenas"><a href="http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas">Creación básica de escenas</a></h3>
+<p>Hasta el momento sólo conocíamos el proceso de inicialización de Ogre. Este artículo pretendía continuar desde dicho punto y <strong>llegar hasta la carga de un modelo 3D en pantalla</strong>. Debido a la multitud de pasos necesarios y las distintas vías que se nos abren, el texto resultante tiene una extensión considerable. Finalmente se tratan los siguientes puntos:</p>
+<ul>
+<li>Creación de una ventana.</li>
+<li>Elección y creación del gestor de escenas adecuado (SceneManager).</li>
+<li>La cámara y el frustrum.</li>
+<li>La utilidad de los viewports, juego a pantalla dividida.</li>
+<li>Creación de una escena, añadiendo nodos con entidades adjuntas.</li>
+<li>Dos aproximaciones al main loop en Ogre.</li>
+<li>Ejemplo comentado a modo de resumen.</li>
+</ul>
+<p>En mi opinión, se trata de un <strong>artículo de máxima importancia</strong> ya que es el primero en el que comenzamos a renderizar elementos. Llevaba cierto tiempo publicado y estos días me he dedicado a completarlo (prestando especial atención al ejemplo).</p>
+<h3 id="manipulación-de-nodoshttposl2ucaesiberogreindexphpmanipulacic3b3n_de_nodosejemplo"><a href="http://osl2.uca.es/iberogre/index.php/Manipulaci%C3%B3n_de_nodos#Ejemplo">Manipulación de nodos</a></h3>
+<p>¿Qué sería de nuestro videojuego si no pudiésemos darle movimiento a los elementos que lo componen? Este artículo se centra en la <strong>manipulación del scene graph</strong> tanto en cuanto a su jerarquía como a sus componentes individuales (SceneNodes). Básicamente se abarcan los siguientes aspectos:</p>
+<ul>
+<li>Sistema de coordenadas de Ogre.</li>
+<li>Información de un nodo, objetos adjuntos y descendientes.</li>
+<li>Espacios de transformación.</li>
+<li>Movimiento, rotación y escalado.</li>
+<li>Control de tiempo en el bucle de juego.</li>
+<li>Ejemplo. El artículo aún no está completo ya que <strong>le falta el ejemplo principal</strong> y un par de esquemas explicativos.</li>
+</ul>
+<p>He querido publicarlo para que los lectores puedan seguir aprendiendo y reportando los problemas encontrados (aunque creo que es correcto en su mayoría).</p>
+<h3 id="exportar-modelos-desde-blenderhttposl2ucaesiberogreindexphpexportar_modelos_desde_blender"><a href="http://osl2.uca.es/iberogre/index.php/Exportar_modelos_desde_Blender">Exportar modelos desde Blender</a></h3>
+<p>Ogre sólo acepta su propio formato binario <em>.mesh</em> a la hora de cargar modelos tridimensionales por razones de eficiencia y optimización. Esto significa que <strong>debemos exportar nuestras creaciones</strong> a dicho formato. En IberOgre daremos soporte a Blender y su <strong>magnífico script Blender Exporter</strong>. En este artículo encontraréis:</p>
+<ul>
+<li>Instalación de Blender Exporter (Windows y GNU/Linux).</li>
+<li>Proceso de exportación de un modelo con todas las opciones comentadas.</li>
+<li>Recomendaciones a la hora de realizar una exportación.</li>
+</ul>
+<h3 id="el-trabajo-duro-continua">El trabajo duro continua</h3>
+<p>Durante la última semana he estado trabajando fuerte y se ha notado en la forja de Red Iris. <strong>Un porcentaje de actividad que rozaba el 100% y me situaba entre los 5 proyectos más activos</strong>. ¡Creo que para contar con un único desarrollador es mucho decir! Espero continuar siendo productivo y generar más contenido pronto.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/">Sistema de gestión de tareas en Red Iris</a>
       </h1>
       <span class="post-date">Dec 5, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/#disqus_thread">Comments</a>
@@ -593,29 +641,6 @@ sudo update-burg
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/">¿Realmente existen los diseñadores estrella?</a>
-      </h1>
-      <span class="post-date">Nov 27, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/cliff.jpg" alt="cliff.jpg"></p>
-<p><strong>Dentro de cada equipo</strong> que desarrolla un título AAA siempre sobresale la cabeza del <em>&ldquo;diseñador estrella&rdquo;</em>. Suelen ser personajes carismáticos y polémicos cuyas declaraciones nos bombardean cerca de la fecha de lanzamiento. Señores como Kojima (Metal Gear Solid), Molyneux (Fable), Mikami (Resident Evil) o Yamauchi (Gran Turismo) entre otros muchos. Reyes del hype y de la venta del humo, de eso no cabe duda pero, <strong>¿imprescindibles genios dentro de los estudios de desarrollo?</strong></p>
-<h3 id="la-imagen-que-se-tiene-de-ellos">La imagen que se tiene de ellos</h3>
-<p>Cuando uno de estos diseñadores abandona un estudio por los motivos que sean parece que el mundo se viene abajo en la prensa especializada. He llegado a escuchar que el estudio jamás será el mismo, que el próximo título de la saga de turno será una patraña. Los pobres miembros del equipo no podrán continuar sin <strong>la ilustre figura</strong> que les ha llevado de la mano todo el tiempo. Vamos, que parecen unas <strong>estrellas del rock</strong>. Menos mal que navegando un poco se puede dar un algún medio más razonable aunque minoritario.</p>
-<p>También está la vertiente del <em>&ldquo;vendedor de humo&rdquo;</em> con la cual coincido. Aunque los medios idolatren a estas figuras, son conscientes de que <strong>tratan de colarte sus productos</strong> aunque sean morralla de la mala. Al final, acaban siendo meras <strong>herramientas de la maquinaria de marketing</strong> de la distribuidora. Por supuesto, todo esto es más que respetable, otra cosa distinta es que nos los tomemos enserio.</p>
-<h3 id="lo-que-yo-creo-que-ocurre-en-la-realidad">Lo que yo creo que ocurre en la realidad</h3>
-<p>En los juegos triple A <strong>trabajan equipos que en muchas ocasiones supera el centenar</strong> de personas. Entre ellas se encuentran programadores, ingenieros, artistas, traductores, diseñadores etc. El jefe de proyecto o de diseño puede conducir el desarrollo por una vía u otra pero, <strong>no trabaja solo</strong>. Estas <em>&ldquo;estrellas&rdquo;</em> seguramente sean buenos diseñadores y tengan muy ideas estupendas pero es el equipo el que las pule, complementa, desecha, recicla y, finalmente, implementa.</p>
-<p>Desgraciadamente no tengo una perspectiva interna de la industria pero creo que basta con hacer uso del sentido común para ver la realidad. En cualquier proyecto en el que trabaje un gran número de personas <strong>hay poco espacio para las individualidades</strong> aunque el jefe sea quien tenga la última palabra. De hecho, estoy convencido de que en más de una ocasión el <em>&ldquo;jefecillo&rdquo;</em> se llevará el crédito por la idea del <em>&ldquo;becario&rdquo;</em> de turno.</p>
-<p>En fin, estas son las palabras de alguien que está <strong>cansado de la idolatría</strong> de estas figuras en la prensa. No me hagáis demasiado caso.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -635,7 +660,7 @@ sudo update-burg
             </li>
             
             <li>
-                <a href="../../page/62/">»»</a>
+                <a href="../../page/63/">»»</a>
             </li>
         </ul>
     </div>

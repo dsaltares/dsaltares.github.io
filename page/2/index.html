@@ -104,6 +104,53 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/">How to test and debug your localhost web app on a real Android device</a>
+      </h1>
+      <span class="post-date">Dec 29, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/development">Development</a>
+      </span>
+      
+      <p>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.</p>
+<p>The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem. That would be a massive pain in the butt!</p>
+<p>Fortunately there is a simple trick you can use to be able to quickly iterate and test on a real mobile device while keeping an awesome developer experience.</p>
+<ul>
+<li>🏎️ Hot reload with instant feedback.</li>
+<li>🖥️ Access to the console.</li>
+<li>🐛 Full debugger with breakpoints, etc.</li>
+</ul>
+<h2 id="-enable-usb-debugging">📱 Enable USB debugging</h2>
+<p>First, make sure USB debugging is enabled on your device.</p>
+<ol>
+<li>Go to <code>Settings -&gt; About phone</code></li>
+<li>Tap the build number seven times.</li>
+<li>Enable USB debugging by going to <code>Settings -&gt; Developer options -&gt; USB Debugging</code>.</li>
+</ol>
+<p>Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.</p>
+<h2 id="-tunnel-localhost">🚇 Tunnel localhost</h2>
+<p>Run your local development server. I am working on a <a href="https://nextjs.org/">Next.js</a> app, so I can just run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn dev
+</code></pre></div><p>Your web app is probably now running on <code>localhost</code>, but your real device cannot connect directly. In order to access your local development server from a different device we can use <a href="https://localtunnel.me/">localtunnel</a>.</p>
+<p>No need to install, you can use <code>npx</code> to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is <code>3000</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npx localtunnel --port <span style="color:#ae81ff">3000</span>
+</code></pre></div><p><code>localtunnel</code> will give you a temporary URL that is accessible from anywhere in the world. In my case, I got <code>https://little-fox-32.loca.lt</code>. You can now open that URL in the device you want to test.</p>
+<p>Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, <a href="https://github.com/localtunnel/localtunnel">localtunnel</a> is an open source tool, you could get a private server going if privacy is a concern.</p>
+<h2 id="-remote-chrome-inspector">🛰️ Remote Chrome inspector</h2>
+<p>Open your Chromium based browser and enter:</p>
+<pre tabindex="0"><code>chrome://inspect/#devices
+</code></pre><p>You should see a list of remote targets and the pages that are open in each target.</p>
+<p><img src="../../img/remote-mobile-debugging/chrome-inspect.png" alt="chrome inspect"></p>
+<p>Clicking <code>inspect</code> on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.</p>
+<p><img src="../../img/remote-mobile-debugging/chrome-remote-debugging.png" alt="chrome remote debugging"></p>
+<p>You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.</p>
+<p>Hope this helps your workflow!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/">6 tips to make remote meetings more inclusive</a>
       </h1>
       <span class="post-date">May 4, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/#disqus_thread">Comments</a>
@@ -305,91 +352,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/">Plague: a Godot Wild Jam 18 game postmortem</a>
-      </h1>
-      <span class="post-date">Mar 13, 2020 &middot; 5 minute read &middot; <a href="https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games Development</a>
-      </span>
-      
-      <p><img src="../../img/plague/header.png" alt="plague-banner"></p>
-<p>A few weeks ago, <a href="https://twitter.com/senthe">Jay Cano</a> and I took part in the week-long <a href="https://itch.io/jam/godot-wild-jam-18">Godot Wild Jam 18</a> and submitted <a href="https://dsaltares.itch.io/plague">Plague</a>. Here are some of my personal thoughts on how we did and maybe some lessons for the future!</p>
-<h2 id="-results">📈 Results</h2>
-<p>Out of 43 submissions, we ranked 6th overall. That is the top 13th percentile. More importantly, we ranked 3th for fun or top 6th percentile. For the sake of comparison, <a href="game-jams/onederful-wizzard/">Onederful Wizard</a>, which we submitted to the <a href="https://itch.io/jam/gmtk-2019">GMTK 2019</a>, ranked 294 out of 2617 entries (top 11th percentile).</p>
-<p>Even though both games received positive feedback, Plague ranked high for fun. We&rsquo;re very happy about that!</p>
-<p><a href="../../img/plague/jam-results.png"><img src="../../img/plague/jam-results.png" alt="jam-results"></a></p>
-<h2 id="-what-went-well">👍 What went well</h2>
-<h3 id="-splitting-tasks">✅ Splitting tasks</h3>
-<p>During the previous jam, Jay and I rushed to implement features like crazy. Despite, Godot being very source control friendly, we ended up having to manually resolve too many merge conflicts.</p>
-<p>This time we were much better organised and split tasks in a more consistent way.</p>
-<ul>
-<li>👋 David: player movement, enemy behaviour, individual game systems, menus and effects.</li>
-<li>👋 Jay: procedural level generation, level section design, enemy/item spawning and putting it all together.</li>
-</ul>
-<p>Additionally, we both had separate <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/c2a13c5d40c06146a80b24380b4654cdcfcb5198/game/david/david_test.tscn">&ldquo;playground&rdquo; scenes</a> to test our work. We barely faced any merge conflicts!</p>
-<h3 id="-platforming">✅ Platforming</h3>
-<p>We got pretty good feedback for tight controls. Our <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/master/game/Player/Move.gd">player movement</a> is not too complex. For maximum control, we use a <code>KinematicBody</code> rather than a <code>RigidBody</code>. We did a direct implementation of the formulas explained in the <a href="https://www.youtube.com/watch?v=hG9SzQxaCm8">Building a Better Jump GDC talk</a>.</p>
-<div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/hG9SzQxaCm8"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>The proposal of the video is simple. The variables designers tweak to control character movement should not be <code>gravity</code>, <code>acceleration</code>, etc. They should be <code>jump_height</code>, <code>jump_distance</code>, <code>time_to_jump_peak</code>, <code>time_to_max_speed</code>, etc. It&rsquo;s much easier to reason about the distance a player can jump to build a level than the combination of gravity and other physics variables.</p>
-<p>Additionally, we implemented a very simple <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/5da19b57e42014a3a9f26b64c782a51b5925a39c/game/Player/Air.gd#L33">Coyote Time</a>. This gives players a grace period to jump even if the character has left a platform. Tiny thing, but it makes the experience a lot more responsive.</p>
-<h3 id="-procedural-level-generation">✅ Procedural level generation</h3>
-<p>The game is a procedurally-generated infinite side-scroller. However, we do not procedurally place tiles. We have 8 hand crafted chunks. Then, the <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/5da19b57e42014a3a9f26b64c782a51b5925a39c/game/Levels/InfiniteLevelManager.gd"><code>InfiniteLevelManager</code></a> script is responsible for randomly selecting the next chunk as the player approaches the end of the current chunk. Finally, it populates the chunk with enemies and ammo pickups.</p>
-<p><a href="../../img/plague/levelchunk.png"><img src="../../img/plague/levelchunk.png" alt="level chunk"></a></p>
-<p>This gave us an infinite scroller with a very simple procedural generation algorithm and super tight control over the end result. We even managed to progressively increase difficulty by spawning more and tougher enemies.</p>
-<p>With more time, we would have increased the variation and potentially procedurally place decoration on top of the blocks instead of having it built-in.</p>
-<h3 id="-re-using-assets">✅ Re-using assets</h3>
-<p>Jay and I are both engineers and not very good at art. It was a wise decision to leverage multiple asset packs. This led to good feedback on both audio and visuals.</p>
-<ul>
-<li>🔉 <a href="https://opengameart.org/content/512-sound-effects-8-bit-style">The Essential Retro Video Game Sound Effects Collection</a> by <a href="https://opengameart.org/users/subspaceaudio">SubSpaceAudio</a></li>
-<li>🌎 <a href="https://s4m-ur4i.itch.io/roguenoir-cyberpunk-assetpack-pixelart">Roguenoir Cyberpunk Assetpack</a> by <a href="https://s4m-ur4i.itch.io/">Sam</a></li>
-<li>🎵 <a href="https://www.jamendo.com/track/1655535/dark-retrowave-cyberpunk">Dark Retrowave Cyberpunk</a> by <a href="https://www.jamendo.com/artist/486413/alexzavesa">Alex Zavesas</a></li>
-<li>🌟 <a href="https://www.kenney.nl/assets/particle-pack">Particle pack</a> by <a href="https://www.kenney.nl/">Kenney</a></li>
-<li>🎮 <a href="https://opengameart.org/content/free-keyboard-and-controllers-prompts-pack">Keyboard and controller prompts</a> by <a href="https://opengameart.org/users/xelu">Xelu</a></li>
-</ul>
-<p>There are so many super high quality free assets, it&rsquo;s insane. If your jam allows it and you have a similar skillset to ours, go for it!</p>
-<h3 id="-time-for-polish">✅ Time for polish</h3>
-<p>We dedicated a big chunk of the last day for polish and juiciness, which massively increased the game&rsquo;s perceived quality.</p>
-<ul>
-<li>🎥 Camera shake for damage and bullet impacts.</li>
-<li>🦘 Coyote time for jumps.</li>
-<li>🎮 Gamepad controls. The game detects Xbox/PS4 controller or keyboard and shows different instructions in the main menu.</li>
-<li>⛈️ Weather effects. We added rain, lightning and thunder that start at random intervals.</li>
-<li>🌟 Particles and SFX for everything that happens in the game.</li>
-</ul>
-<h3 id="-automatic-deployment">✅ Automatic deployment</h3>
-<p>Right before the jam, I implemented a <a href="../../continuous-delivery-pipeline-for-godot-and-itch.io/">Continuous Delivery pipeline</a> that exports the game and publishes to itch.io on every push to <code>master</code>. This completely removed the panic that typically happens when something goes wrong with game export right before the deadline.</p>
-<p>You can also <a href="https://github.com/dsaltares/godot-wild-jam-18/releases">go back in time</a> and see how the game looked at any point in time during development.</p>
-<h2 id="-what-went-wrong">👎 What went wrong</h2>
-<h3 id="-poor-use-of-theme">❌ Poor use of theme</h3>
-<p>Due to some issues with the organisation, the theme announcement was delayed by half a day. Knowing that we weren&rsquo;t going to have much time to work on the game during the week, we started right away without a theme.</p>
-<p>Unfortunately, we failed to go back to the theme and really incorporate it into the game. In the end, you can interpret that the monsters are the &ldquo;plague&rdquo;. Other games like <a href="https://joel127.itch.io/harvestor-3000">Harvestor-3000</a> and <a href="https://heyyeh.itch.io/ceefax">Ceefax</a> made a much better use of the theme.</p>
-<p>By the way, this is not a complaint about the organisation at all. We really appreciate their efforts to keep the jam going!</p>
-<h3 id="-lack-of-end-goal">❌ Lack of end goal</h3>
-<p>The infinite platformer concept made people feel a lack of purpose. We didn&rsquo;t save top scores, so there was obvious sense of improvement nor progression.</p>
-<p>An alternative may have been to introduce a final boss and an end-game after a fixed number of chunks. Lack of time!</p>
-<h3 id="-yet-another-platformer">❌ Yet another platformer</h3>
-<p>The game is a simple platformer and the procedural generation was not enough to make it fresh. That is why we scored the lowest in originality, ranking 28th or 65th percentile.</p>
-<p>In future jams, we should prioritize a differentiating feature and really go with it. Hopefully, foundational things like getting movement right will take less time going forward.</p>
-<h2 id="-thanks">✌️ Thanks!</h2>
-<p>I had a blast participating in the jam. Thank you for reading this postmortem and thanks to everyone who played the game and gave us feedback.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -409,7 +371,7 @@
             </li>
             
             <li>
-                <a href="../../page/62/">»»</a>
+                <a href="../../page/63/">»»</a>
             </li>
         </ul>
     </div>
