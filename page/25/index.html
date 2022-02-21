@@ -104,6 +104,60 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/will-they-steal-my-code/">Will they steal my code?</a>
+      </h1>
+      <span class="post-date">Jan 6, 2013 &middot; 4 minute read &middot; <a href="https://saltares.com/games/will-they-steal-my-code/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>Creative people usually make a big deal out of authorship and honestly, who can blame us? We&quot;re passionate about our work! Producing something that doesn&rsquo;t entirely suck entails sweat, tears and numerous sleepless nights. The open source world is inherently tricky and raises many concerns regarding ownership.</p>
+<h3 id="open-source-is-a-tradeoff">Open source is a tradeoff</h3>
+<p>The story of our lives isn&rsquo;t it? Making your project open source is a tradeoff. On one hand you are more likely to achieve certain level of exposure. You&quot;ll ask questions on StackOverflow, publish your progress under the showcase category of the engine you&quot;re using and chat with other devs on an IRC channel. Being active in a community where people share their love in source code shape is wonderful and enriching. Who knows? Maybe a prospective employer thinks your coding style is &ldquo;elegant&rdquo; after browsing your online repository. True story.</p>
+<p>On the other hand, it&rsquo;s understandable to fear hosting your code where it can be checked out by anyone and be claimed as theirs. Especially knowing they could shamelessly use it for commercial purposes even though your license explicitly forbids it. Horror stories where interviewers found out their candidates were presenting someone else&rsquo;s code as theirs are widely known. Yes, shame on them!</p>
+<p><img src="../../img/wp/show-me-the-source-yoda.jpg" alt="show-me-the-source-yoda.jpg"></p>
+<p>Let&rsquo;s first assume your rent doesn&rsquo;t depend on people buying what you make. Unless you have an alternative business model such as providing an additional service, logic would slap you in the face. However, if this is something you&quot;re making to boost your portfolio or just for fun, read on and you&quot;ll find a few ways of making sure you keep the ownership of anything you publish, absent doubts.</p>
+<p>After taking some precautions, making open source software really pays off.</p>
+<h3 id="attach-the-license">Attach the license</h3>
+<p>First of all, you must make clear which license your code sweetness is published under. A good practice is to attach an <a href="http://www.gnu.org/prep/maintain/html_node/Recording-Contributors.html">AUTHORS</a> along a LICENSE file in the main folder of the repo. Even though many people overlook this, every single file of code should contain a header summarizing that license. Shall we look at Sion Tower as an example of project published under <a href="http://gplv3.fsf.org/">GPL 3</a>? Here&rsquo;s its <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/trunk/src/LICENSE?root=cusl5-iberogre&amp;view=markup">LICENSE</a> file and the beginning of the <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/trunk/src/include/collisionManager.h?root=cusl5-iberogre&amp;rev=238&amp;view=markup">CollisionManager.h</a> file.</p>
+<pre tabindex="0"><code>/*
+ * This file is part of SionTower.
+ *
+ * 
+ * David Saltares Marquez (C) 2011
+ * &lt;david.saltares@gmail.com&gt;
+ *
+ * 
+ * SionTower examples are free software: you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License ad
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) ant later version.
+ *
+ * SionTower examples are distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with SionTower examples.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+ */
+</code></pre><p>Obviously, you don&rsquo;t need to use GPL 3 necessarily, just make sure you attach the corresponding text of your license of choice.</p>
+<p>License? Check.</p>
+<p>Some people couldn&rsquo;t care less about software licenses, fair enough. So… Shall we move on to the next point?</p>
+<h3 id="run-away-from-dropbox-use-a-version-control-system">Run away from Dropbox! Use a version control system</h3>
+<p>Possibly, the most important golden rule of all is to keep track of your work&rsquo;s history. If you host your code in Dropbox and then share the link, you&quot;re doomed. The second someone asks for proof you&rsquo;ve written it, you&quot;ll have to go home and cry. The answer is simple, use version control. To be honest, why the hell wouldn&rsquo;t you be doing that anyway  Let&rsquo;s put flame wars aside, SVN, Git, Mercurial or any other would be perfectly valid. Backups are built in, you can revert changes and what matters to us now, you get a full history of everything that&rsquo;s happened.</p>
+<p>I know for a fact that employees check your projects&quot; history to prevent people stealing code from other sources without even knowing what they&quot;re doing. Being able to reuse and adapt code is excellent and it&rsquo;s highly appreciated, but you need to roughly understand what you&quot;re dealing with.</p>
+<p><img src="../../img/wp/i-have-no-idea-what-im-doing.jpg" alt="i-have-no-idea-what-im-doing.jpg"></p>
+<h3 id="write-a-dev-blog">Write a dev blog</h3>
+<p>Finally, it&quot;d be a brilliant idea to write a development blog where you explain your progress. Not only it serves as a backup log, it&rsquo;s the ultimate proof you fully understand the details of the problem being tackled. Actually, it&rsquo;s beneficial for so many other reasons as it also reinforces the impact your project has in the community and increases your online presence. Key facts.</p>
+<p>In my humble opinion, sharing your code can bring you happiness in form of acknowledgement, personal enrichment and, why not, professional success. You just need to be aware of the caveats and take reasonable precautions.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/new-to-games-just-make-games/">New to games? Just make games</a>
       </h1>
       <span class="post-date">Dec 30, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/new-to-games-just-make-games/#disqus_thread">Comments</a>
@@ -251,31 +305,6 @@ m_levelRenderer.render(m_camera);
 </code></pre><p>However, if you get lost, there are Javadoc comments <a href="https://github.com/dsaltares/sionengine/tree/master/sionengine/src/com/siondream/engine/gleed">everywhere in the code</a>.</p>
 <h3 id="where-do-i-get-it">Where do I get it?</h3>
 <p>It should be soon in the <a href="libgdx.badlogicgames.com/nightlies/">libgdx nightly builds</a> but if you&quot;re really eager to use it and can&rsquo;t wait any longer (seriously?) you can go to the libgdx repository and find it in the <a href="https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed">extensions section</a>. Remember to leave some feedback of any flavour: rotten tomatoes, rocks and so on and so forth.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/my-projects-migrated-to-github/">My projects migrated to GitHub</a>
-      </h1>
-      <span class="post-date">Nov 5, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/my-projects-migrated-to-github/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p><img src="../../img/wp/github_logo_social_coding_outlined.png" alt="github_logo_social_coding_outlined.png"></p>
-<p>I&rsquo;ve been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.</p>
-<p>Even though I&rsquo;ve always been kind of sceptical about GitHub, I&rsquo;ve finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I&rsquo;ve come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects). This way I&quot;ll also force myself to use Git, which is full of love and we&quot;re here to learn aren&rsquo;t we?</p>
-<p>I&rsquo;ve successfully exported the following projects, now available from my <a href="https://github.com/dsaltares">profile</a>:</p>
-<ul>
-<li><a href="https://github.com/dsaltares/glapse">gLapse</a></li>
-<li><a href="https://github.com/dsaltares/urbanrace">Urban Race</a></li>
-<li><a href="https://github.com/dsaltares/freegemas-gdx">Freegemas gdx</a></li>
-</ul>
-<p>In order to carry out the migration whilst keeping the full commit history I&rsquo;ve used <a href="https://github.com/nirvdrum/svn2git">svn2git</a>. It&rsquo;s just a ridiculously easy to use Ruby script built upon the git svn tool. I could write a post on how to do it, but it&quot;d be pointless since it&rsquo;s very well detailed in the project&rsquo;s readme.</p>
-<p>Expect updates soonish!</p>
 
       
     </div>

@@ -104,6 +104,27 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/getting-started-with-libgdx-freegemas/">Getting started with libgdx, Freegemas!</a>
+      </h1>
+      <span class="post-date">Apr 19, 2012 &middot; 2 minute read &middot; <a href="https://saltares.com/games/getting-started-with-libgdx-freegemas/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/freegemas/freegemas-banner.png" alt="freegemas"></p>
+<p>I can&rsquo;t believe it&rsquo;s been almost three months since I started at Crytek UK, time has passed amazingly fast! Nevertheless, I&rsquo;ve managed to get some stuff done game development wise. I&rsquo;ve always wanted to jump into mobile and that&rsquo;s what I&rsquo;ve been doing during the last couple of weeks. <strong>May I present you <a href="../../games/freegemas-for-android-and-html5/">Freegemas libgdx</a> edition!</strong></p>
+<p>It&rsquo;s basically a libgdx port of the original Freegemas, a simple Bejeweled like C++ Gosu puzzle game developed by <a href="http://josetomastocino.com/">José Tomás Tocino</a> who I have to thank for the neat original code and the excellent art. This means you can run it on your <a href="http://freegemas-libgdx.googlecode.com/files/freegemas-1.0.jar">desktop</a>, <a href="https://play.google.com/store/apps/details?id=com.siondream.freegemas">Android phone</a> and very soon on your browser through HTML5 sweetness.</p>
+<p><img src="../../img/freegemas/freegemas-02.png" alt="freegemas"></p>
+<p><strong><a href="http://code.google.com/p/libgdx/">Libgdx</a></strong> it&rsquo;s an open source Java library that allows you to create multiplatform games (desktop, Android, HTML5) sharing the <strong>same code base</strong>. That alone is amazing enough, so kudos to <a href="http://www.badlogicgames.com/wordpress">Mario</a> for the titanic work. The library uses OpenGL so the performance it&rsquo;s quite good even though we&quot;re talking about Java! It has so many features and associated tools that it&quot;d take me a few days to cover them all. Plus the community is always very helpful, besides the forums there&rsquo;s always someone on the IRC channel willing to save your ass. However, to be honest it&rsquo;s a bit of a downside to me it&rsquo;s lack of UFT-8 font rendering support. Maybe some other day I&quot;ll talk with some more insight about libgdx.</p>
+<p>This was a warm up project, bigger things are yet to come!</p>
+<p>PS: I must not forget about the HTML5 version of the game, it&quot;ll be available soon.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/i-just-got-hired-by-crytek-uk/">I just got hired by Crytek UK!</a>
       </h1>
       <span class="post-date">Feb 4, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/general/i-just-got-hired-by-crytek-uk/#disqus_thread">Comments</a>
@@ -207,42 +228,6 @@
 <p>They have published a <strong>C/C++</strong> version and a <strong>C#</strong> one. Within the Google Code repository you can find the sources for all the versions, some <strong>sample programs</strong> and a brief but <strong>accessible documentation</strong>. This small API provides functions to connect with several PlayStation Move controllers; to get the wand&rsquo;s info such as position, orientation or button presses and even to manage rumble effects. It looks like Sony has published the library the proper way.</p>
 <p>It&rsquo;s <strong>surprising</strong> that such a secretive company like Sony publishes a library to work with their proprietary controller. However, given the unofficial Kinect SDK situation, it&rsquo;s certainly more desirable providing your own version before the unofficial one comes around. Furthermore, no one can deny that Kinect SDK has given Microsoft&rsquo;s device more popularity across the Net.</p>
 <p>It&rsquo;s a pity that I don&rsquo;t own one of these controllers. Otherwise I could maybe create a Move compatible version of <a href="../../games/sion-tower/" title="Sion Tower">Sion Tower</a>. Who knows?</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/flocking-behavior-demo/">Flocking behavior demo</a>
-      </h1>
-      <span class="post-date">Nov 26, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/flocking-behavior-demo/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/og9qYMzx3V0"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>I&rsquo;ve just finished this simple <strong>flocking behavior demo</strong> based on the <a href="http://en.wikipedia.org/wiki/Flocking_(behavior)">3 Reynolds rules</a>: separation, cohesion and alignment. It was part of a coursework for the <em>Strategy &amp; Intelligent Games</em> module I&quot;m taking here in Kingston University. I know it&rsquo;s not precisely pretty but at least the boids are moving in a nice way. It&rsquo;s written in C++ using the despicable <a href="http://www.openscenegraph.org/">Open Scene Graph</a> library (such an uncomfortable API).</p>
-<p><strong>Features</strong>:</p>
-<ul>
-<li><span class="Apple-style-span" style="line-height: 18px;">3 Reynolds rules: separation, cohesion and alignment.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;">Collision avoidance.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;">User interaction: dynamic mouse seeking or avoidance.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;">Steering behaviors blending.</span></li>
-<li><span class="Apple-style-span" style="line-height: 18px;">Configurable parameters using an XML options file.</span></li>
-</ul>
-<p>Most of the algorithms have been extracted from the <em>Artificial Intelligence for Games</em> book written by Ian Millington and John Funge. If you&quot;re interested in the topic it&rsquo;s totally a must read, I strongly recommend it.</p>
 
       
     </div>

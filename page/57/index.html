@@ -104,6 +104,45 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/lanzado-tiny-backup-0-2/">Lanzado Tiny Backup 0.2</a>
+      </h1>
+      <span class="post-date">Sep 25, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/projects/lanzado-tiny-backup-0-2/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png"></p>
+<p>Tiny Backup es una pequeña interfaz para algunas de las funcionalidades del <strong>comando dpkg</strong> que permite a usuarios de GNU/Linux <strong>realizar y restaurar copias</strong> de la lista de paquetes instalados en el sistema. Está <strong>desarrollado en Python utilizando PyGTK y Glade</strong> para la GUI aunque de eso ya hablé suficiente en <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/">el artículo</a> que le dediqué hace algo más de un mes. En este pequeño escrito hablaré de la acogida de la primera versión y de los arreglos que incorpora la segunda.</p>
+<h3 id="la-recepción-de-tiny-backup-01">La recepción de Tiny Backup 0.1</h3>
+<p>Para mi sorpresa, <strong>Tiny Backup 0.1 tuvo una buena acogida</strong> teniendo en cuenta las pequeñas dimensiones del proyecto. No tanto por el número de descargas sino por el feedback de los usuarios. Incluso recibí una invitación para hablar sobre la aplicación <strong>en el blog <a href="http://www.muylinux.com/2010/09/02/tiny-backup-tu-tambien-puedes-hacerlo">Muy Linux</a></strong> (la cual acepté de buen gusto). Generalmente las impresiones fueron buenas aunque <strong>se reportó algún que otro problema</strong>. El más sangrante era que, al ejecutar Tiny Backup desde otro directorio que no fuese el del módulo principal (desde un acceso directo, por ejemplo) no se encontraban los ficheros referenciados por rutas relativas. Un fallo bastante grave del que debí haberme percatado en su momento.</p>
+<h3 id="bug-encontrado-y-solucionado-para-tiny-backup-02">Bug encontrado y solucionado para Tiny Backup 0.2</h3>
+<p><strong>La solución</strong> pasaba por obtener la ruta absoluta del módulo en ejecución y, a partir de la misma, construir el camino hasta el fichero deseado. El no ser muy ducho en Python y no haberle dedicado el suficiente tiempo a la aplicación ha hecho que la solución se retrase más de lo debido. <strong>Gracias al lector <a href="../../desarrollo-informatica/tiny-backup-pygtk-y-glade/#comment-227">Cristian Arbazua</a></strong> y su afán colaborativo el bug ha sido cerrado. Sin duda, un aporte que recuerda el valor del Software Libre y anima a continuar. A continuación <strong>un pequeño ejemplo</strong> de la medida tomada:</p>
+<pre tabindex="0"><code># Vamos a construir la interfaz del formulario principal
+builder = gtk.Builder()
+
+# ANTES: Tomamos la ruta relativa donde se encuentra el Glade
+path = 'glade/TinyBackup.glade'
+
+# AHORA: Tomamos la ruta absoluta  donde se encuentra el Glade
+path = os.path.dirname(__file__) + os.sep + 'glade/TinyBackup.glade'
+
+# Cargamos el fichero
+builder.add_from_file(path)
+</code></pre><p>Cuando vi su aporte acudí velozmente a modificar el código, probarlo y subir una nueva versión a la <a href="http://code.google.com/p/python-tiny-backup/">forja</a>. Desde estos momentos podéis <strong><a href="http://python-tiny-backup.googlecode.com/files/tinybackup-0.2.tar.gz">descargar Tiny Backup 0.2</a></strong>.</p>
+<h3 id="futuras-versiones">Futuras versiones</h3>
+<p>El tiempo es un bien del que ando bastante escaso últimamente y, en estos momentos, mi tiempo de desarrollo lo acapara IberOgre y Sion Tower. No obstante, se me ocurren <strong>un par de ideas para Tiny Backup 0.3</strong>:</p>
+<ul>
+<li><strong>Internacionalización</strong>: empecé a desarrollar Tiny Backup en inglés pero me gustaría que estuviese disponible en algunos idiomas más: español, francés, alemán, etc. Tengo entendido que con Glade es sencillo incorporar internacionalización y sería interesante aprender cómo.</li>
+<li><strong>Barra de progreso</strong>: los usuarios necesitan feedback constante por parte del software que utilizan. Si encargan una tarea pesada y no aparece una barra de progreso creerán que la aplicación se ha colgado. Si queremos restaurar una extensa lista de paquetes el proceso puede llevar bastante tiempo así que esta característica tiene bastante prioridad.</li>
+</ul>
+<p>Desconozco cuando podré dedicarle el tiempo suficiente para incorporar estas mejoras. En cualquier caso le vuelvo a agradecer a Cristian Arbazua su inestimable colaboración en este pequeño proyecto. <strong>¡El feedback siempre es bienvenido!</strong></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/iberogre-y-sion-tower-en-el-v-cusl/">IberOgre y Sion Tower en el V CUSL</a>
       </h1>
       <span class="post-date">Sep 20, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/iberogre-y-sion-tower-en-el-v-cusl/#disqus_thread">Comments</a>
@@ -185,27 +224,6 @@
 <p>Entre las características de OIS destaca la orientación a objetos (¡qué sorpresa!) y la <strong>inclusión de listeners</strong>. Utilizando el <a href="http://es.wikipedia.org/wiki/Observer_%28patr%C3%B3n_de_dise%C3%B1o%29">patrón de diseño <em>&ldquo;Observador&rdquo;</em></a> ya implementado podemos crear clases capaces de ser notificadas de cambios en el estado interno del ratón, teclado o cualquier joystick conectado al equipo. Da resultados bastante buenos pero <strong>la documentación oficial es prácticamente inexistente</strong>. No existe una documentación oficial, únicamente podemos acceder al html generado por Doxygen de las clases si lo generamos nosotros mismos a partir del código. Por si fuera poco, muchas de los métodos no están completamente explicados y muchas secciones son confusas. Afortunadamente, en la wiki oficial de Ogre3D encontramos un <a href="http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Using%20OIS">pequeño tutorial</a> (en inglés, obviamente).</p>
 <p><strong>En IberOgre se utilizará OIS</strong> como librería para capturar eventos del usuario por lo que era necesario incluir un tutorial al respecto. Creo que cubre un vacío hasta ahora complicado de salvar (aprender con escasa documentación nunca es agradable). El artículo está publicado aunque en proceso de corregir pequeños errores, si alguien detecta algún problema le agradecería que diera la voz de alarma.</p>
 <p><strong>Espero que os sea útil</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/centurion/">Centurión</a>
-      </h1>
-      <span class="post-date">Sep 4, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/centurion/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p><img src="../../img/wp/centurion-1.jpg" alt="centurion-1.jpg"></p>
-<p><strong>Las mejores películas</strong> son las que provocan que el espectador se implique, se interese y se identifique con los personajes. Es muy complicado, por no decir imposible, generar cierta tensión en una escena si te importa un bledo lo que le ocurra al protagonista. Una pena que hubieran retirado de cartelera <a href="http://www.imdb.com/title/tt1320253/">Los Mercenarios</a> ya que tuve que asistir a la proyección de <strong><a href="http://www.imdb.com/title/tt1020558/">Centurión</a></strong>, <strong>un perfecto ejemplo de fracaso</strong> en llegar al público. Sinceramente, no sé en qué estaba pensando <a href="http://www.imdb.com/name/nm0551076/">Neil Marshal</a>, director y guionista del largometraje, mientras trabajaba en ella. No se preocupen, no pienso despotricar en una enumeración sin sentido, sigan leyendo y expondré mis razones.</p>
-<p><strong>El Imperio Romano</strong> trata de <strong>conquistar Britania</strong> pero una tribu se les resiste, <strong>los Pictos</strong> (anda, esto parece la historia de Asterix y Obélix). Estos &ldquo;bárbaros&rdquo; arrastran a los romanos a una <strong>guerra de guerrillas</strong> en los que legiones completas caen en emboscadas y asaltos. La novena legión cae y con ella el general Titus Flavius Virilus (<a href="http://www.imdb.com/name/nm0922035/">Dominic West</a>). <strong>Los únicos supervivientes</strong> son un grupo reducido de soldados entre los que se encuentra el insulso centurión Quintus Dias (<a href="http://www.imdb.com/name/nm1055413/">Michael Fassbender</a>). En su <strong>viaje de vuelta a casa</strong> sufrirán el acoso de una partida de pictos que les dará caza.</p>
-<p><strong>La acción y el gore hipervitaminados</strong> están a la orden del día, no es raro ver trozos de cráneo saltar por los aires cuando un soldado estampa a un bárbaro contra un árbol. Los hachazos, las flechas y las espadas se clavan en la carne provocando que personajes principales o secundarios <strong>mueran sin que nos afecte</strong> lo más mínimo. Se los quita de escena antes de que podamos conocer su historia, su causa y que podamos sentir cierto apego por ellos. El ejemplo más evidente es su protagonista, un <strong>personaje extremadamente plano</strong> del que nada se sabe. Es un <strong>espectáculo sanguinario sin sentido</strong> en el que es complicado evitar la risa ante tal despropósito. He visto películas cutres de este estilo pero no tratan patéticamente de alcanzar un nivel de epicidad como el de <strong><a href="http://www.imdb.com/title/tt0172495/">Gladiator</a></strong>.</p>
-<p><img src="../../img/wp/centurion-2.jpg" alt="centurion-2.jpg"></p>
-<p>¿Qué más se puede añadir después del párrafo anterior? Cambiando de tema, me ha sorprendido negativamente que Dominic West (Jimmy McNulty en <a href="http://www.imdb.com/title/tt0306414/">The Wire</a>) se rebaje a una producción de este calibre. No obstante, <strong>West es el único que podría salvarse</strong> del resto de actores los cuales se han visto en la necesidad de soltar penosas perlas escritas por el guionista sin demasiado sentido.</p>
-<p>Por supuesto, me veo en la necesidad moral de <strong>desaconsejar su visionado</strong> a cualquiera que tenga en estima su integridad mental. Para cubrir ese lapso de tiempo les recomendaría darle <strong>una oportunidad a series como <a href="http://www.imdb.com/title/tt1442449/">Spartacus</a> o <a href="http://www.imdb.com/title/tt0384766/">Rome</a></strong>. Cualquier capítulo de ambas juega en otra división lo que hace más triste como producciones de calidad son canceladas mientras Centurión campa a sus anchas en salas de todo el mundo.</p>
 
       
     </div>

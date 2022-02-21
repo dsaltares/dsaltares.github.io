@@ -104,6 +104,47 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/ld24-evolution-postmortem/">LD#24: Evolution Postmortem</a>
+      </h1>
+      <span class="post-date">Aug 27, 2012 &middot; 3 minute read &middot; <a href="https://saltares.com/games/ld24-evolution-postmortem/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p><img src="../../img/ld24/evolution.png" alt="evolution.png"></p>
+<h3 id="play-the-gamehttpwwwludumdarecomcompoludum-dare-24actionpreviewuid3661"><a href="http://www.ludumdare.com/compo/ludum-dare-24/?action=preview&amp;uid=3661"><strong>Play the game!</strong></a></h3>
+<p>Ludum Dare #24 is over after an exhausting crazy weekend but, above all, it´s been a ton of fun. Joining the Dare has proven to be an excellent idea and I believe it&quot;d be right to say it&rsquo;s has not gone too bad after all, considering it was my first time. Here&rsquo;s a little postmortem on the experience.</p>
+<h3 id="evolution--the-survival-of-the-fittest"><strong>Evolution – The survival of the fittest</strong></h3>
+<p>The competition&rsquo;s theme was Evolution so I went for a classic 2D platformer starred by a funny caveman who has to get through the level while killing dinosaurs by jumping on them or throwing rocks which he collects himself. Yes, I&quot;m aware I&quot;m not going to get many points for sticking to the theme.</p>
+<p>Evolution is written in Java using the wonderful libgdx framework and my personal code base (which I made available prior to the Dare).</p>
+<p><img src="../../img/ld24/evolution-caveman-01.jpg" alt="evolution-caveman-01.jpg"></p>
+<h3 id="what-went-right"><strong>What went right</strong></h3>
+<ul>
+<li><strong>Completion</strong>: I guess having delivered something at my first attempt it&rsquo;s a win, even though the game lacks in many aspects. Time management was not completely disastrous.</li>
+<li><strong>Graphics</strong>: Evolution has received very positive feedback art wise and being a programmer it feels a bit bizarre. The process followed to create and animate character was: sketching on paper, vectorizing and colouring with Inkscape, animation with Flash and Texture Packer to produce spritesheets. I&quot;ll keep working on this line.</li>
+<li><strong>Multi platform</strong>: libgdx was a good decision, not only is a very nice and powerful framework but also allows to target several platforms with no to very little effort.</li>
+<li><strong>Box2D</strong>: using this popular physics engine empowered me to implement the basic movement through the level extremely quickly.</li>
+<li><strong>Code base</strong>: although I discovered a fair amount of bugs in my code base, it behaved quite nicely. I also got a ton of ideas to improve it.</li>
+</ul>
+<p><img src="../../img/ld24/evolution-caveman-02.jpg" alt="evolution-caveman-02.jpg"></p>
+<h3 id="what-went-wrong"><strong>What went wrong</strong></h3>
+<ul>
+<li><strong>Gameplay polish</strong>: I didn&rsquo;t invest enough time to polish the gameplay, tweak values and play test the game and that reflects on the final build. It&rsquo;s a noob mistake and that makes me sad.</li>
+<li><strong>Content</strong>: I decided to invest the last moments of the competition in the little polishing I did instead of content creation which resulted in having just one level. However, I think it was the right call, I simply didn&rsquo;t have time for everything.</li>
+<li><strong>Asset pipeline</strong>: too much time was wasted in getting the export process right for some of the assets. On the bright side, I&rsquo;ve learnt a lot and it won&rsquo;t happen next time.</li>
+<li><strong>HTML5 port</strong>: it would have been awesome to have a browser version of my game with no third party plugins requirements so people could just play. Too bad my HTML5 port had a bad crash.</li>
+</ul>
+<p><img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03.jpg"></p>
+<h3 id="conclusions"><strong>Conclusions</strong></h3>
+<p>I can&rsquo;t stress enough how awesome of an experience it was. So many emotions mixed in the pot: stress, joy, thrill, exhaustion and so many more. I learned so much and felt great for having been able to deliver something in such a short timespan. I will definitely try to be in next time.</p>
+<p>Looking forward to get more feedback during the voting phase, best of luck to all my fellow Ludum Darers!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/ludum-dare-24-im-in/">Ludum Dare #24: I&#39;m in!</a>
       </h1>
       <span class="post-date">Aug 23, 2012 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ludum-dare-24-im-in/#disqus_thread">Comments</a>
@@ -217,27 +258,6 @@ String option1 = lang.getString(&quot;Timetrial mode&quot;);
 String option2 = lang.getString(&quot;How to play&quot;);
 String option3 = lang.getString(&quot;Exit&quot;);
 </code></pre><p>Freegemas libgdx is open source (<a href="http://www.gnu.org/licenses/quick-guide-gplv3.html">GPL v3</a>) as is this internationalization module which means you&quot;re more than welcome to download it, use it and improve it. If you do the latest, make sure you distribute it the same way as me.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/getting-started-with-libgdx-freegemas/">Getting started with libgdx, Freegemas!</a>
-      </h1>
-      <span class="post-date">Apr 19, 2012 &middot; 2 minute read &middot; <a href="https://saltares.com/games/getting-started-with-libgdx-freegemas/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/freegemas/freegemas-banner.png" alt="freegemas"></p>
-<p>I can&rsquo;t believe it&rsquo;s been almost three months since I started at Crytek UK, time has passed amazingly fast! Nevertheless, I&rsquo;ve managed to get some stuff done game development wise. I&rsquo;ve always wanted to jump into mobile and that&rsquo;s what I&rsquo;ve been doing during the last couple of weeks. <strong>May I present you <a href="../../games/freegemas-for-android-and-html5/">Freegemas libgdx</a> edition!</strong></p>
-<p>It&rsquo;s basically a libgdx port of the original Freegemas, a simple Bejeweled like C++ Gosu puzzle game developed by <a href="http://josetomastocino.com/">José Tomás Tocino</a> who I have to thank for the neat original code and the excellent art. This means you can run it on your <a href="http://freegemas-libgdx.googlecode.com/files/freegemas-1.0.jar">desktop</a>, <a href="https://play.google.com/store/apps/details?id=com.siondream.freegemas">Android phone</a> and very soon on your browser through HTML5 sweetness.</p>
-<p><img src="../../img/freegemas/freegemas-02.png" alt="freegemas"></p>
-<p><strong><a href="http://code.google.com/p/libgdx/">Libgdx</a></strong> it&rsquo;s an open source Java library that allows you to create multiplatform games (desktop, Android, HTML5) sharing the <strong>same code base</strong>. That alone is amazing enough, so kudos to <a href="http://www.badlogicgames.com/wordpress">Mario</a> for the titanic work. The library uses OpenGL so the performance it&rsquo;s quite good even though we&quot;re talking about Java! It has so many features and associated tools that it&quot;d take me a few days to cover them all. Plus the community is always very helpful, besides the forums there&rsquo;s always someone on the IRC channel willing to save your ass. However, to be honest it&rsquo;s a bit of a downside to me it&rsquo;s lack of UFT-8 font rendering support. Maybe some other day I&quot;ll talk with some more insight about libgdx.</p>
-<p>This was a warm up project, bigger things are yet to come!</p>
-<p>PS: I must not forget about the HTML5 version of the game, it&quot;ll be available soon.</p>
 
       
     </div>

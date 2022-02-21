@@ -6,7 +6,55 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I got into Engineering management</title>
+      <link>https://saltares.com/how-i-got-into-engineering-management/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/how-i-got-into-engineering-management/</guid>
+      <description>Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.
+How did I get into it? How did I know it was what I wanted to do?
+The answer may be interesting to others, so I wrote it down.
+Let&amp;rsquo;s take a moment to note that becoming a manager is not a promotion. It&amp;rsquo;s a career change. There&amp;rsquo;s a myriad of reasons not to be a manager.</description>
+      <content>&lt;p&gt;&lt;img src=&#34;./img/management/crossroads.webp&#34; alt=&#34;A girl faces a fork in the road&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.&lt;/p&gt;
+&lt;p&gt;How did I get into it?
+How did I know it was what I wanted to do?&lt;/p&gt;
+&lt;p&gt;The answer may be interesting to others, so I wrote it down.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s take a moment to note that &lt;a href=&#34;https://themanagershandbook.com/introduction#it-and-x27-s-not-a-promotion-it-and-x27-s-a-career-change&#34;&gt;becoming a manager is not a promotion&lt;/a&gt;. It&amp;rsquo;s a career change. There&amp;rsquo;s a myriad of &lt;a href=&#34;https://charity.wtf/2019/09/08/reasons-not-to-be-a-manager/&#34;&gt;reasons not to be a manager&lt;/a&gt;. Being a great individual contributor (IC) does not mean you will be a great manager. And, leadership does not equal management.&lt;/p&gt;
+&lt;p&gt;Additionally, my personal experience may not be similar to that of others. As a white, young, straight man, I have enjoyed loads of privilege throughout my career. Even as an immigrant. People often paid attention to what I had to say and, until recently, I didn&amp;rsquo;t even notice. My career is the result of hard work, (earned) luck, and privilege.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s get into it.&lt;/p&gt;
+&lt;h3 id=&#34;what-i-did-before-becoming-a-manager&#34;&gt;What I did before becoming a manager&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./img/management/crytek.webp&#34; alt=&#34;crytek uk reception&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My full-time career started at &lt;strong&gt;Crytek UK&lt;/strong&gt;, a video games studio, where I spent a couple of years. In the beginning, I was a Junior Developer. Later I was a mid-level one. I spent most of that time at the intersection between character AI and animation. I made the baddies and civilians look natural. The job required me to collaborate with many disciplines. It was quite the list: designers, animators, producers, and gameplay/AI/animation programmers. Later, I took on the role of Scrum Master. That role helped me focus on outcomes over my contributions. This also gave me some stakeholder management skills!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/management/scee.webp&#34; alt=&#34;entrance to Sony Computer Entertainment Europe&amp;rsquo;s offices in London&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Right after, I spent six months at &lt;strong&gt;Sony&lt;/strong&gt; as an R&amp;amp;D Software Engineer. There, I had to manage up to improve our engineering practices and introduce CI. That is also when I started having some difficult conversations related to feedback. Those would prove invaluable later on.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/management/bloomberg.webp&#34; alt=&#34;Bloomberg London Office&amp;rsquo;s central staircase&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Then, I joined &lt;strong&gt;Bloomberg&lt;/strong&gt;, where things kicked off big time. During the first two years, my role was Senior Software Engineer. After that, I took on the Team Lead role, Bloomberg&amp;rsquo;s title for Engineering Manager in other places. In total, I was there for five years.&lt;/p&gt;
+&lt;p&gt;Here are some of the things I did before becoming a team lead.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🕸️ &lt;strong&gt;Owning projects with many dependencies&lt;/strong&gt;: ours was an applications team. That meant we depended on many infrastructure teams. Projects usually had a significant coordination overhead.&lt;/li&gt;
+&lt;li&gt;🏈 &lt;strong&gt;Being a Scrum master&lt;/strong&gt;: similarly to what I was doing at Crytek.&lt;/li&gt;
+&lt;li&gt;👩‍💻 &lt;strong&gt;Mentoring and coaching&lt;/strong&gt;: we regularly had interns or new hires joining the team. A few times, I would be their mentor/buddy. This involved running my first 1-1s, setting goals, and giving feedback.&lt;/li&gt;
+&lt;li&gt;🏫 &lt;strong&gt;Helping with the graduate training class&lt;/strong&gt;: Bloomberg ran several graduate cohorts a year. Each ran for 12 weeks. During the workshops, engineers helped the grads with their projects by talking through problems or doing code reviews.&lt;/li&gt;
+&lt;li&gt;✅ &lt;strong&gt;Being an interviewer&lt;/strong&gt;: during my time there, I did hundreds of interviews and hired many engineers. I became more comfortable building rapport with new people and handling difficult situations. It made me think hard about the interview process and its faults. I wanted to be responsible for the process and improve it.&lt;/li&gt;
+&lt;li&gt;📚 &lt;strong&gt;Taking leadership training&lt;/strong&gt;: everyone had to take this course before becoming a manager.&lt;/li&gt;
+&lt;li&gt;🦸‍♂️ &lt;strong&gt;Having a mentor&lt;/strong&gt;: right after I became a people manager, I started working with a mentor. It was invaluable to have someone I could talk to about specific situations and peer review decisions. It helped me to explore and establish my management style and principles.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Many of these opportunities would not have come my way without a supporting manager. At some point, my manager moved to another team. I was offered the role, and I took it.&lt;/p&gt;
+&lt;h3 id=&#34;was-i-sure-i-wanted-to-get-into-management&#34;&gt;Was I sure I wanted to get into management?&lt;/h3&gt;
+&lt;p&gt;Hell no!&lt;/p&gt;
+&lt;p&gt;I loved the individual contributor (IC) role. Solving technical problems and building a product people enjoyed. Losing that was scary! In the end, two factors made me give it a try:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The incredible reward of amplifying the powers of the team. Helping people develop and breaking down some organizational silos felt terrific.&lt;/li&gt;
+&lt;li&gt;I had seen people make the opposite transition, going from manager back to IC. It could be a &lt;a href=&#34;https://www.inc.com/jeff-haden/amazon-founder-jeff-bezos-this-is-how-successful-people-make-such-smart-decisions.html&#34;&gt;two-way door decision&lt;/a&gt; after all.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There&amp;rsquo;s no perfect answer, and you should come up with your own reasons for making the change. Arguably, one could go a long way being an amplifier of their team and helping people develop as an IC!&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading. I hope it was useful!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>5 books you should read as a new Engineering Manager</title>
       <link>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</link>
@@ -584,83 +632,6 @@ It&amp;rsquo;s actually trivial to set up!</description>
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;That could be a post for future generations 😅.&lt;/p&gt;
 &lt;p&gt;When &lt;code&gt;hugo&lt;/code&gt; runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.&lt;/p&gt;
 &lt;p&gt;📆 This post itself was scheduled!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>How to hire 8 engineers in 8 weeks</title>
-      <link>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</guid>
-      <description>Hiring engineers is top of mind for any engineering leader, this year at Aula it is the same for me. As VP Engineering I have the daunting task of tripling the size of our Engineering team. Happy to say we are well on track, in the last 8 weeks we have successfully hired 8 wonderful engineers and more than doubled our size!
-I wrote this post for other engineering leaders who’ve just been given the opportunity to rapidly grow their organisations.</description>
-      <content>&lt;p&gt;Hiring engineers is top of mind for any engineering leader, this year at Aula it is the same for me. As VP Engineering I have the daunting task of tripling the size of our Engineering team. Happy to say we are well on track, in the last 8 weeks we have successfully hired 8 wonderful engineers and more than doubled our size!&lt;/p&gt;
-&lt;p&gt;I wrote this post for other engineering leaders who’ve just been given the opportunity to rapidly grow their organisations.&lt;/p&gt;
-&lt;p&gt;Where does one even start?&lt;/p&gt;
-&lt;h2 id=&#34;-context&#34;&gt;💜 Context&lt;/h2&gt;
-&lt;p&gt;At &lt;a href=&#34;https://www.aula.education/&#34;&gt;Aula&lt;/a&gt;, we’re building the Learning Experience Platform for higher education.&lt;/p&gt;
-&lt;p&gt;Aula took the decision to grow its Engineering and Product organisation at the beginning of 2021. We’re building the features that will make educators fall in love with our platform and enable them to create engaging learning experiences for their students.&lt;/p&gt;
-&lt;p&gt;Check out our &lt;a href=&#34;https://portal.aula.education/tabs/9-vision&#34;&gt;platform vision&lt;/a&gt; to learn more about what we are building.&lt;/p&gt;
-&lt;p&gt;Not only do we want to grow fast but we want to ensure that we are focusing on building a high performing, diverse and inclusive team.&lt;/p&gt;
-&lt;p&gt;We thought as many engineering leaders are facing the same challenges we should share what we have learned along the way to help you do it too. And of course, if you want to come and join us in this adventure, &lt;a href=&#34;https://aulaeducation.recruitee.com/&#34;&gt;we are still hiring&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;-prioritise-hiring&#34;&gt;🔝 Prioritise hiring&lt;/h2&gt;
-&lt;p&gt;Giving my team the capacity to achieve our goals was the best way I could help, so I made hiring my number 1 priority.&lt;/p&gt;
-&lt;p&gt;Not having a huge Recruitment team meant I had to get stuck into the process of recruitment myself.&lt;/p&gt;
-&lt;p&gt;Look at your calendar, if at least 50% of your time is not spent on hiring related activities, hiring is not your top priority and you need to fix it. Prioritising hiring will mean saying no to other things.&lt;/p&gt;
-&lt;p&gt;My recommendation here is to roll up your sleeves and jump into your &lt;a href=&#34;https://en.wikipedia.org/wiki/Applicant_tracking_system&#34;&gt;ATS&lt;/a&gt;. Being hands on in recruitment will help you understand the candidates attracted to your organisation, refine the recruiting process and ensure that everything is kept moving forward. I spend 30 minutes every morning checking CV’s, looking at interview feedback and ensuring that I know exactly what is happening in my recruitment pipeline.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.notion.so/aulaeducation/Mission-and-Virtues-at-Aula-9f2c356b2d8e44f9bfdb772ec3ca396c&#34;&gt;Uncomfortably focused&lt;/a&gt; is one of our virtues here at Aula. I know that the team has suffered in the short term because I haven’t been able to spend as much time as I would have liked supporting them. However in the long run, bringing in new team members to support what we are building has led to everyone being happier.&lt;/p&gt;
-&lt;h2 id=&#34;-get-ready-to-talk-to-a-lot-of-people&#34;&gt;💬 Get ready to talk to a lot of people&lt;/h2&gt;
-&lt;p&gt;Recruiting is a people game, doing this successfully means you&amp;rsquo;re about to meet a lot of new people.&lt;/p&gt;
-&lt;p&gt;One of the most important things is to make the time to do that. If you want your business to start growing, then this is the first thing you should do is make sure you are ok with the idea that hiring starts with conversations.&lt;/p&gt;
-&lt;p&gt;In the first quarter of 2021, we had more than 1100 people enter the top of our recruiting funnel and spoke with more than 200 engineers who could potentially fit the job.&lt;/p&gt;
-&lt;p&gt;I send messages on LinkedIn, emails to potential candidates and ask friends in my network for help.&lt;/p&gt;
-&lt;p&gt;This can be tremendously draining for an introvert such as myself. Well, it may be draining for just about anyone! Make sure to take breaks and rest well.&lt;/p&gt;
-&lt;h2 id=&#34;-standardise-the-process&#34;&gt;♻️ Standardise the process&lt;/h2&gt;
-&lt;p&gt;Standardising your hiring process is one of the most high leverage things you can do.&lt;/p&gt;
-&lt;p&gt;Create wiki pages where you list the questions and problems for each stage of the process. Detail what the team wants to learn from the candidate with each question and what a poor/ok/great answer could look like. Create scorecards for each stage every interviewer will fill in.&lt;/p&gt;
-&lt;p&gt;Ask every candidate the exact same questions.&lt;/p&gt;
-&lt;p&gt;This will benefit you in at least three ways:&lt;/p&gt;
-&lt;p&gt;⚖️ Consistency allows you to get better insights, compare and evaluate candidates much more easily.
-📚 A documented process will help team members with little interviewer experience get trained.
-🤔 Standardised interviews will reduce the biases of the process. To minimise bias, you should also have two interviewers at each stage.&lt;/p&gt;
-&lt;h2 id=&#34;-build-great-relationships-with-your-recruiters&#34;&gt;🤝 Build great relationships with your recruiters&lt;/h2&gt;
-&lt;p&gt;There is no way you will double the size of your team alone. Having a top notch recruitment team is essential.&lt;/p&gt;
-&lt;p&gt;Make sure your whole team understands the profile you’re looking for and why they would join your company. The recruiters you are working with are an extension of your voice in the market and will be pitching candidates.&lt;/p&gt;
-&lt;p&gt;We do engineering hiring standups 3 times a week, run retrospectives every month, constantly give each other feedback and document everything.&lt;/p&gt;
-&lt;h2 id=&#34;-build-great-content&#34;&gt;✍️ Build great content&lt;/h2&gt;
-&lt;p&gt;In order for your jobs to stand out, you need to tell a story. From the job ad to all your interactions with candidates through the process. You will have to raise awareness about what you’re all about and tell this story a thousand times.&lt;/p&gt;
-&lt;p&gt;The best way is to write it or film it and put it out there!&lt;/p&gt;
-&lt;p&gt;At Aula, we have built great pieces of content that continue to help us through this journey:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🧠 &lt;a href=&#34;https://www.notion.so/aulaeducation/The-Aula-Brain-4da091a8797840108311d99815b3b36f&#34;&gt;The Aula Brain&lt;/a&gt; - our public handbook.&lt;/li&gt;
-&lt;li&gt;👩‍💻 &lt;a href=&#34;https://dev.to/aulaeducation/aula-behind-the-scenes-of-the-learning-experience-platform-our-stack-1gno&#34;&gt;A blog post about our tech stack&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;🛣️ &lt;a href=&#34;https://portal.aula.education/&#34;&gt;Our public roadmap&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;💼 &lt;a href=&#34;https://www.notion.so/aulaeducation/How-we-work-b1af4d53998949e5b05697158261c27a&#34;&gt;How our Product Development team works together&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;📽️ &lt;a href=&#34;https://www.youtube.com/watch?v=zIXtXYkqqJg&amp;amp;feature=emb_logo&#34;&gt;Camila’s story&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Language matters. Make sure you avoid gender bias from your content as much as possible. I recommend you run your content through an analyser such as &lt;a href=&#34;http://gender-decoder.katmatfield.com/&#34;&gt;Gender Decoder&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;-automate-as-much-as-possible&#34;&gt;⚙️ Automate as much as possible&lt;/h2&gt;
-&lt;p&gt;There will be an enormous amount of repetitive work. It’s best to automate as much of it up front.&lt;/p&gt;
-&lt;p&gt;A lot of our interview scheduling is done through &lt;a href=&#34;https://calendly.com/&#34;&gt;Calendly&lt;/a&gt;. So much email back and forth has been avoided by this!&lt;/p&gt;
-&lt;p&gt;Every time a candidate is moved through the pipeline, our ATS automatically sends emails and assigns tasks for the next steps. This saves time but also lifts a huge mental burden.&lt;/p&gt;
-&lt;p&gt;Don’t remove the human element from the process, especially when it comes to giving feedback. Candidates invest valuable time interviewing with you. Anyone who is rejected deserves a customised message with specific feedback.&lt;/p&gt;
-&lt;h2 id=&#34;-pre-book-interview-slots&#34;&gt;📆 Pre-book interview slots&lt;/h2&gt;
-&lt;p&gt;The engineers in your team will have to do a ton of interviews. This takes a lot of time and focus from sprint work. It’s not just the interview slot but the prior prep and evaluation that comes after as well.&lt;/p&gt;
-&lt;p&gt;Context switching can kill productivity and increase stress.&lt;/p&gt;
-&lt;p&gt;To help engineers focus, have pre-booked weekly interview slots. Predictability will facilitate better time management.&lt;/p&gt;
-&lt;h2 id=&#34;-track-everything--iterate&#34;&gt;🔍 Track everything &amp;amp; iterate&lt;/h2&gt;
-&lt;p&gt;Use the data to make better decisions and set targets.&lt;/p&gt;
-&lt;p&gt;Track everything. Measure your data and analyse it to make better decisions that can help you optimise to achieve your goals. Data can help you make changes to attract more applicants, avoid losing candidates or screen better and save engineering interviewer time.&lt;/p&gt;
-&lt;h2 id=&#34;-thats-it&#34;&gt;🙌 That’s it!&lt;/h2&gt;
-&lt;p&gt;Really keen to hear if you think I missed anything important and let me know if you found this useful.&lt;/p&gt;
-&lt;p&gt;There&amp;rsquo;s so much more that could be covered!&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🏫 Interviewer training&lt;/li&gt;
-&lt;li&gt;👩‍🎓 Onboarding&lt;/li&gt;
-&lt;li&gt;🚀 And more!&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Good luck!&lt;/p&gt;
 </content>
     </item>
     

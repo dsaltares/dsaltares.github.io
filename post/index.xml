@@ -6,7 +6,19 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 14 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I got into Engineering management</title>
+      <link>https://saltares.com/how-i-got-into-engineering-management/</link>
+      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/how-i-got-into-engineering-management/</guid>
+      <description>Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.
+How did I get into it? How did I know it was what I wanted to do?
+The answer may be interesting to others, so I wrote it down.
+Let&amp;rsquo;s take a moment to note that becoming a manager is not a promotion. It&amp;rsquo;s a career change. There&amp;rsquo;s a myriad of reasons not to be a manager.</description>
+    </item>
+    
     <item>
       <title>5 books you should read as a new Engineering Manager</title>
       <link>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</link>
@@ -106,17 +118,6 @@ It&amp;rsquo;s actually trivial to set up!</description>
       <guid>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</guid>
       <description>Hiring engineers is top of mind for any engineering leader, this year at Aula it is the same for me. As VP Engineering I have the daunting task of tripling the size of our Engineering team. Happy to say we are well on track, in the last 8 weeks we have successfully hired 8 wonderful engineers and more than doubled our size!
 I wrote this post for other engineering leaders who’ve just been given the opportunity to rapidly grow their organisations.</description>
-    </item>
-    
-    <item>
-      <title>Doodle: a crazy drawing &amp; guessing game</title>
-      <link>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</link>
-      <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</guid>
-      <description>✏️ Introducing Doodle, a crazy drawing &amp;amp; guessing chain game. Think Pictionary meets Telephone. Better played with your friends over a video call!
-
-🏠 Doodle is a little side project I made during covid-19 confinement to play with friends while we cannot meet face to face. Initially, I thought the crisis would end before I finished it, which would make me lose interest. Little did I know! Not only did I finish it, Doodle has already lightened up the mood in a few remote evenings.</description>
     </item>
     
   </channel>

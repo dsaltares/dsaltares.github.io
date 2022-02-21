@@ -104,6 +104,100 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/graficas-en-python-con-pycha/">Gráficas en Python con PyCha</a>
+      </h1>
+      <span class="post-date">Mar 27, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/graficas-en-python-con-pycha/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><img src="../../img/wp/titulo-pycha.png" alt="titulo-pycha.png"></p>
+<p>En una práctica de la Universidad pedían medir los tiempos de ejecución de un algoritmo paralelo empleando un número diferente de hilos en cada ocasión. En la correspondiente memoria debía aparecer una comparativa del rendimiento así que decidí adjuntar una gráfica para ilustrarlo mejor. Introducir los datos a manubrio iba a ser horriblemente tedioso. Me entró el gusanillo y me hice un sencillo <strong>script en Python que genera la gráfica utilizando <a href="https://bitbucket.org/lgs/pycha/">PyCha</a></strong>. A continuación más información sobre esta genial biblioteca.</p>
+<h3 id="pycha-eso-suena-muy-mal">¿PyCha? Eso suena muy mal</h3>
+<p><strong><a href="https://bitbucket.org/lgs/pycha/">PyCha</a> (Python Charts) es una biblioteca libre</strong> (LGPL) creada por Lorenzo Gil que nos ayuda a <strong>generar gráficas con <a href="http://en.wikipedia.org/wiki/Cairo_(graphics)">Cairo</a></strong>. A cambio de no incorporar un gran número de opciones resulta fácil de usar, lo cual es una gran ventaja. El único defecto que le veo es que no todas las opciones están documentadas. A pesar de ello, aprender a usar PyCha no me llevó más de diez minutos.</p>
+<h3 id="instalación-de-pycha-en-debian">Instalación de PyCha en Debian</h3>
+<p>Instalar PyCha en un sistema basado en Debian como Ubuntu es <strong>harto sencillo</strong>. Partamos de que no cuentas con el intérprete ni el gestor de paquetes de Python, <a href="http://es.wikipedia.org/wiki/EasyInstall">EasyInstall</a>. Sólo has de seguir los siguientes pasos:</p>
+<ol>
+<li>Instalar Python junto a EasyInstall:</li>
+</ol>
+<pre tabindex="0"><code>sudo apt-get install python-dev python-setuptools build-essential
+</code></pre><ol start="2">
+<li>Descargar e instalar PyCha:</li>
+</ol>
+<pre tabindex="0"><code>sudo eassy_install pycha
+</code></pre><h3 id="generando-una-gráfica-con-pycha">Generando una gráfica con PyCha</h3>
+<p>Construir una gráfica en PyCha no tiene complicación alguna. A continuación <strong>vamos a mostrar un ejemplo</strong> aunque puedes consultar la <a href="http://packages.python.org/pycha/">documentación oficial</a> para más detalles. En el siguiente script obtendremos un diagrama de barras con el número de videojuegos que poseo en función de su género (cifras inventadas).</p>
+<pre tabindex="0"><code>#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import cairo
+import pycha.bar
+
+def main():
+    # Ancho y alto de la gráfica
+    width, height = (550, 310)
+
+    # Superficie cairo
+    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
+
+    # Tomamos los datos
+    data = [('Simulación', 2),
+            ('Plataformas', 5),
+            ('Estrategia', 8),
+            ('Deporte', 3),
+            ('Acción', 10),
+            ('Puzzle', 1)]
+
+    # Los cargamos en el dataSet
+    dataSet = (
+        ('Puntos', [(i, l[1]) for i, l in enumerate(data)]),
+    )
+
+    # Opciones de la gráfica
+    ticks = [dict(v=i, label=l[0]) for i, l in enumerate(data)]
+    options = {
+        'legend': {'hide': True},
+        'axis': {
+            'x': {
+                'ticks': ticks,
+                'label': 'Género',
+            },
+            'y': {
+                'tickCount': 5,
+                'label': 'Número',
+            }
+        },
+        'background': {
+            'chartColor': '#f3f9fb',
+            'lineColor': '#d1e5ec'
+        },
+        'colorScheme': {
+            'name': 'gradient',
+            'args': {
+                'initialColor': 'blue',
+            },
+        },
+    }
+
+    # Creamos la gráfica 
+    chart = pycha.bar.VerticalBarChart(surface, options)
+    chart.addDataset(dataSet)
+    chart.render()
+
+    # La guardamos en un fichero .png
+    surface.write_to_png('chart.png')
+
+if __name__ == &quot;__main__&quot;:
+    main()
+</code></pre><p>El resultado es el siguiente:</p>
+<p><img src="../../img/wp/chart.png" alt="chart.png"></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/the-kings-speech/">The King&#39;s Speech</a>
       </h1>
       <span class="post-date">Mar 26, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/the-kings-speech/#disqus_thread">Comments</a>
@@ -222,28 +316,6 @@
 <p><img src="../../img/wp/siontower-bad.jpg" alt="siontower-bad.jpg"></p>
 <p>Sin duda, no hay que fiarse en absoluto de estos formatos.</p>
 <p><span style="text-decoration: underline; color: #ff0000;"><strong>Disclaimer</strong></span>: es posible que mi inexperiencia con el modelado 3D en general y con los formatos en particular me ha llevado a imprecisiones a lo largo de este artículo. Ruego no arrojen piedras.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/un-nuevo-enemigo-el-diablillo/">Un nuevo enemigo: el Diablillo</a>
-      </h1>
-      <span class="post-date">Mar 15, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/un-nuevo-enemigo-el-diablillo/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p><img src="../../img/sion-tower/collage-diablillo.jpg" alt="diablillo-collage.jpg"></p>
-<p>El colaborador <a href="http://ajr-portafolio.blogspot.com/">Antonio Jiménez Rodríguez</a> (AJR) continua trabajando con intensidad en el modelado, texturizado y animación de los personajes de Sion Tower. La prueba es este <strong>nuevo enemigo, el Diablillo</strong>.</p>
-<p>AJR partió de la descripción del enemigo en el <a href="../../proyectos/pfc/sion-tower/primera-version-del-gdd-de-sion-tower/" title="Primera versión del GDD de Sion Tower">documento de diseño (GDD)</a>:</p>
-<blockquote>
-<p>Criatura del averno de estatura ligeramente superior al Goblin. Cuenta con la cola y los cuernos clásicos de los demonios. No lleva ropa y su rojo oscuro de piel le confiere un aspecto más despiadado. Ataca con sus afiladas garras y no necesita ningún tipo de arma adicional.</p>
-</blockquote>
-<p><img src="../../img/sion-tower/diablillo.jpg" alt="diablillo-render-300x191.jpg"></p>
-<p>Los colaboradores están trabajando a un nivel impresionante, ¡hay que ponerse las pilas para estar a la altura! El siguiente paso es integrar el protagonista animado creado por AJR dentro de la demo técnica.</p>
 
       
     </div>
