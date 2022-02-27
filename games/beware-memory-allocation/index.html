@@ -109,7 +109,10 @@
 <p>You don&rsquo;t want that now, do you?</p>
 <p>Please, let me take a step back and point out the irony of having to be extremely careful with memory usage in the presence of a garbage collector (GC) when dealing with real time problems. It&rsquo;s often said that it takes the responsibility off you. In a beautiful world where code tastes like lollipop it would, but this is really not the case. At least not entirely.</p>
 <p>This article is aimed at developers who code in GC environments to make real time applications. Concepts here also apply to broader fields in spite of the focus mainly being Java and games development using the libgdx framework. Actually, I decided to write this post after seeing the same performance related questions <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=3572">over</a> and <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=6785&amp;hilit=performance+garbage">over</a> again in the libgdx forums. Most of them are closely tied to memory allocation.</p>
-<p><img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg"></p>
+<p>
+  <img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg">
+
+</p>
 <h3 id="be-aware-of-the-gc-and-why-its-critical-in-mobileconsoles">Be aware of the GC and why it&rsquo;s critical in mobile/consoles</h3>
 <p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&quot;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
 <p>Note: I just told a white lie. JVM&rsquo;s GC actually follows several strategies to free up unused memory as pointed out in <a href="http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect">this Stack Overflow post</a>.</p>
@@ -213,7 +216,10 @@
 	}
 }
 </code></pre><p>As you can probably deduce after reading the previous snippet, in order to make a resource poolable it&rsquo;s required to implement the reset() method of such interface. Then you need to create a new <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html">Pool</a> class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this <a href="http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d">sample to have efficient bullets</a>.</p>
-<p><img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png"></p>
+<p>
+  <img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png">
+
+</p>
 <p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
 <pre tabindex="0"><code>// Create prototype effect
 ParticleEffect effect = new ParticleEffect();
@@ -234,7 +240,10 @@ if (effect.isComplete()) {
 <blockquote>
 <p>Alright, I&quot;m pretty sure your advice is utter bullshit, my app is still laggy! I want my money back.</p>
 </blockquote>
-<p><img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png"></p>
+<p>
+  <img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png">
+
+</p>
 <p>Before throwing that rotten tomato you&quot;re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it&rsquo;s running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you&rsquo;ve missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.</p>
 <p>Promise.</p>
 

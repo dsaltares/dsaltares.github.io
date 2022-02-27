@@ -36,3 +36,18 @@ div.pagination {
   margin-right: auto;
 }
 
+img.figure-image {
+  margin-bottom: 2px;
+}
+
+figure {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 12px;
+}

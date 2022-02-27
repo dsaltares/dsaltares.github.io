@@ -105,12 +105,18 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png"></p>
+    <p>
+  <img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png">
+
+</p>
 <p>En la mayoría de videojuegos en tercera persona, <strong>la dirección hacia la que se mueve el personaje depende de la orientación de la cámara</strong>. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido. En este artículo <strong>explico un sencillo algoritmo para conseguirlo</strong>.</p>
 <h3 id="qué-queremos-conseguir">¿Qué queremos conseguir?</h3>
 <p>El siguiente diagrama muestra el <strong>sistema de coordenadas de Ogre</strong>. Imaginad que nuestro personaje se encuentra en el origen <em>p = (0, 0, 0)</em> y que la cámara está en el <em>c = (0, 0, 50)</em> mirando hacia el origen. Nuestras teclas de movimiento son las clásicas: WASD. Al pulsar W el personaje debe moverse en la dirección negativa del eje Z, en cambio, si pulsamos D deberá hacerlo en la dirección positiva del eje X.</p>
 <p>En cambio, si la cámara se situase en <em>c = (50, 0, 0)</em> mirando a <em>(0, 0, 0)</em> las teclas no tendrían el mismo efecto en términos absolutos, aunque se mantiene idéntico si tomamos como punto de referencia a la cámara. Si pulsamos W el personaje se desplazará en la dirección negativa del eje X. En el caso de que pulsemos D, el personaje se dirigirá en la dirección negativa del eje Z.</p>
-<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png"></p>
+<p>
+  <img src="../../img/wp/coordenadas.png" alt="coordenadas.png">
+
+</p>
 <p>Por supuesto, <strong>el personaje deberá girarse</strong> para mirar hacia la dirección del desplazamiento. A continuación, detallamos la manera de implementar este sistema de movimiento.</p>
 <h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
 <p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>

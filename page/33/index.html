@@ -168,7 +168,10 @@
       <a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/glapse/glapse-logo.png" alt="glapse-logo.redimensionado1.png"></p>
+      <p>
+  <img src="../../img/glapse/glapse-logo.png" alt="glapse-logo.redimensionado1.png">
+
+</p>
 <p>I&rsquo;ve been really busy with the development of <a href="../../en/proyectos/sion-tower/">Sion Tower</a> but it&rsquo;s also been possible to spend some time working in <a href="../../en/proyectos/glapse/">gLapse</a>. After introducing new stuff and fixing broken pieces, I&quot;m proud to announce <strong>the third release of the GNU/Linux time lapse tool: gLapse v0.3!</strong> Continue reading to find about its new features and to get download links.</p>
 <h3 id="changelog">Changelog</h3>
 <ul>
@@ -202,17 +205,26 @@
 <h3 id="creación-de-la-malla">Creación de la malla</h3>
 <p>Lo primero que debes hacer es abrir Blender y eliminar el cubo por defecto. Utilizaremos una rejilla o malla de vértices para modelar el terreno. El proceso es simple, habrá que modificar la posición <em>Z</em> (vertical) de varios vértices para crear elevaciones. Finalmente, utilizaremos suavizado para evitar los bordes abruptos.</p>
 <p>Para <strong>añadir la rejilla</strong> seleccionamos <em>Add → Mesh → Grid</em> e indicamos el número de vértices. A mayor resolución más calidad pero el coste computacional en Blender y en un videojuego crecerá de forma cuadrática. En Sion Tower me ha bastado con <em>50×50</em>, el suavizado final se encargará de mejorar el resultado. Después, en modo edición, debes escalar la rejilla hasta que se ajuste a la escala de tu juego o entorno.</p>
-<p><img src="../../img/wp/blender-grid.jpg" alt="blender-grid.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-grid.jpg" alt="blender-grid.jpg">
+
+</p>
 <h3 id="modelado-de-las-montañas">Modelado de las montañas</h3>
 <p>La clave está en utilizar el modo de <strong>edición proporcional</strong> que activamos pulsando la tecla <em>O</em>. Veremos que el modo también puede activarse en la barra de herramientas <em>Proportional – On</em>. Este modo hará que, al modificar un vértice, los vecinos dentro de un radio de acción también se vean ligeramente afectados. Justo al lado establecemos el <em>Falloff</em> a <em>Smooth Falloff</em>. Para activar el suavizado, seleccionamos todos los vértices con <em>A</em> y pulsamos en <em>Set Smooth</em>.</p>
-<p><img src="../../img/wp/blender-elevacion.jpg" alt="blender-elevacion.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-elevacion.jpg" alt="blender-elevacion.jpg">
+
+</p>
 <p>El proceso a seguir para <strong>crear o modificar elevaciones</strong> es:</p>
 <ol>
 <li>Seleccionar un vértice con el botón derecho y ajustar el radio de acción con la rueda del ratón a nuestro gusto.</li>
 <li>Desplazar el vértice pulsando la tecla <em>G</em>, es importante restringirlo al eje vertical con la tecla <em>Z</em>, de lo contrario se producen efectos extraños.</li>
 <li>Repetir el proceso con vértices y radios de acción diferentes hasta conseguir el resultado deseado.</li>
 </ol>
-<p><img src="../../img/wp/blender-terrain.jpg" alt="blender-terrain.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-terrain.jpg" alt="blender-terrain.jpg">
+
+</p>
 <p>Recuerda que <strong>las montañas son estructuras naturales</strong> y que, por tanto, muestran multitud de irregularidades. En la asimetría y lo brusco está el secreto.</p>
 <h3 id="texturizar-el-terreno">Texturizar el terreno</h3>
 <p>Continuamos la creación del terreno <strong>añadiendo una textura</strong>:</p>
@@ -222,13 +234,22 @@
 <li>Nos dirigimos al panel de texturas (<em>F6</em>) y añadimos una nueva textura de tipo imagen con césped.</li>
 <li>Cargamos la textura de fichero y establecemos las propiedades <em>XRepeat</em> e <em>YRepeat</em> que, como sus propios nombres indican, hacen repetir la textura.</li>
 </ol>
-<p><img src="../../img/wp/grass.jpg" alt="grass.jpg"></p>
+<p>
+  <img src="../../img/wp/grass.jpg" alt="grass.jpg">
+
+</p>
 <p>Si pulsas <em>F12</em> verás el renderizado de tus montañas y no tardarás de percatarte de dos problemas: la iluminación y… <strong>¡parecen las montañas de los hobbits estando verdes!</strong> En primer lugar, deberás jugar con las fuentes de luz. Ahora nos centraremos en mezclar varias texturas.</p>
-<p><img src="../../img/wp/terrain.jpg" alt="terrain.jpg"></p>
+<p>
+  <img src="../../img/wp/terrain.jpg" alt="terrain.jpg">
+
+</p>
 <h3 id="texturas-stencil">Texturas stencil</h3>
 <p>Un terreno de corte más realista tiene <strong>varias texturas</strong>: hierba, tierra, rocas o incluso nieve. Las transiciones entre las mismas deben ser suaves y su situación debe ser lógica: la hierba abunda en los valles mientras la roca en los picos montañosos. En esta sección aprenderemos a aplicar varias texturas a nuestro terreno mezclándolas entre sí de manera apropiada.</p>
 <p>Imaginad que tendremos una <strong>pila de capas con varias texturas</strong> ordenadas: hierba, roca y nieve. En medio colocaremos dos texturas en escala de grises llamadas stencil que indicarán al sistema de renderizado cómo han de mezclarse las capas entre sí. Un color negro indica que sólo ha de visualizarse la capa superior, blanco significa que sólo se vera la capa inferior. Lo interesante es que un valor intermedio o gris significará que las capas se mezclarán siguiendo la ponderación del color.</p>
-<p><img src="../../img/wp/blender-stencil-3d.jpg" alt="blender-stencil-3d.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-stencil-3d.jpg" alt="blender-stencil-3d.jpg">
+
+</p>
 <p>Seguimos el siguiente proceso:</p>
 <ul>
 <li>Cambiamos del modo edición al <em>Vertex Paint</em>.</li>
@@ -237,23 +258,44 @@
 <li>Comenzamos a pintar el terreno: los picos deberían ser completamente blancos (roca), las lomas de un tono intermedio y los valles prácticamente negros (hierba).</li>
 <li>Cuando estemos satisfechos seleccionaremos la vista <em>Top</em> y el modo de proyección ortográfico. Hemos de hacer una captura de pantalla y aislar la el resultado con cualquier software de edición de imágenes como Gimp.</li>
 </ul>
-<p><img src="../../img/wp/blender-stencil.jpg" alt="blender-stencil.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-stencil.jpg" alt="blender-stencil.jpg">
+
+</p>
 <ul>
 <li>Volvemos al modo edición y creamos una nueva textura debajo de la hierba de tipo imagen cargando la textura stencil hierba-roca. Esta textura no debe repetirse.</li>
 <li>En el panel <em>Map To</em> deseleccionamos <em>Col</em> y activamos <em>Stencil</em> y <em>No RGB</em>.</li>
 <li>Creamos una nueva textura para la roca, cargamos la imagen y aplicamos repetición.</li>
 </ul>
-<p><img src="../../img/wp/rock.jpg" alt="rock.jpg"></p>
-<p><img src="../../img/wp/blender-stencil-aplicando.jpg" alt="blender-stencil-aplicando.jpg"></p>
+<p>
+  <img src="../../img/wp/rock.jpg" alt="rock.jpg">
+
+</p>
+<p>
+  <img src="../../img/wp/blender-stencil-aplicando.jpg" alt="blender-stencil-aplicando.jpg">
+
+</p>
 <p>Si renderizas con <em>F12</em> verás un resultado mucho más satisfactorio.</p>
-<p><img src="../../img/wp/terrain-rock.jpg" alt="terrain-rock.jpg"></p>
+<p>
+  <img src="../../img/wp/terrain-rock.jpg" alt="terrain-rock.jpg">
+
+</p>
 <h3 id="resultado-final">Resultado final</h3>
 <p>Si repites el proceso stencil para añadir una <strong>nueva capa con nieve</strong> el resultado tendrá mucha más calidad:</p>
-<p><img src="../../img/wp/terrain-snow.jpg" alt="terrain-snow.jpg"></p>
+<p>
+  <img src="../../img/wp/terrain-snow.jpg" alt="terrain-snow.jpg">
+
+</p>
 <p>La escena final para el <strong>menú principal de Sion Tower</strong> ha quedado de la siguiente manera:</p>
-<p><img src="../../img/wp/siontower-menu.jpg" alt="siontower-menu.jpg"></p>
+<p>
+  <img src="../../img/wp/siontower-menu.jpg" alt="siontower-menu.jpg">
+
+</p>
 <p><span style="color: #ff0000;"><strong>Nota importante</strong></span>: A la hora de exportar a Ogre el modelo con las texturas stencil he tenido muchos problemas. Al final la solución ha pasado por mezclar yo mismo las capas stencil con las de texturas utilizando Gimp y aplicarlas a la maya utilizando mapeado UV.</p>
-<p><img src="../../img/wp/blender-stencil-precomputado.jpg" alt="blender-stencil-precomputado.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-stencil-precomputado.jpg" alt="blender-stencil-precomputado.jpg">
+
+</p>
 <h3 id="referencias">Referencias</h3>
 <p>Para realizar el proceso y redactar el artículo he seguido estos dos estupendos tutoriales con varios añadidos personales:</p>
 <ul>
@@ -274,7 +316,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/avsfloyd.png" alt="avsfloyd.png"></p>
+      <p>
+  <img src="../../img/wp/avsfloyd.png" alt="avsfloyd.png">
+
+</p>
 <p>Las últimas semanas he estado trabajando en la <strong>IA de Sion Tower</strong> y por el momento el resultado es satisfactorio. Antes utilizaba el algoritmo <strong>A</strong> para la búsqueda de caminos de los enemigos, pero me di cuenta de que el rendimiento podía ser mucho mejor si precomputaba las búsquedas con una alternativa como <strong>Floyd</strong>. En este artículo hablo de las dos aproximaciones y comparo los resultados obtenidos.</p>
 <p><span style="color: #ff0000;"><strong>Aclaración</strong></span>: en el texto no voy a entrar en detalles sobre los algoritmos <a href="http://en.wikipedia.org/wiki/A*_search_algorithm">A*</a> ni <a href="http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd</a>. Si no los conoces deberías consultar los sendos artículos de Wikipedia o tu libro de algoritmia preferido.</p>
 <h3 id="aproximación-1-algoritmo-a">Aproximación 1: algoritmo A*</h3>
@@ -321,23 +366,38 @@
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/podcasts2.png" alt="podcasts2.png"></p>
+      <p>
+  <img src="../../img/wp/podcasts2.png" alt="podcasts2.png">
+
+</p>
 <p>Hace tiempo publiqué un artículo en el que <strong><a href="../../ocio/internet/podcasts-que-merecen-la-pena/" title="Podcasts que merecen la pena">recomendaba cuatro podcasts de calidad</a></strong>: Game Over, Dame la voz, Wildgames y Pánico en el Núcleo. Los podcasts me ayudan a que el tiempo pase a mayor velocidad mientras hago deporte así que devoro capítulos que da gusto y tengo que seguir varios programas. En esta <strong>segunda entrega</strong> recomendaré otro buen pack.</p>
 <h3 id="el-octavo-pasajerohttpwwwoctavopasajerocom"><a href="http://www.octavopasajero.com/">El octavo pasajero</a></h3>
 <p>Un programa semanal de <strong>cine</strong> de hora y media de duración en el que hablan sobre noticias, comentan los estrenos y hacen monográficos especiales. En realidad es un programa de radio que se emite desde Barcelona, en la misma emisora que Game Over. De hecho, algunos colaboradores intervienen en ambos programas.</p>
 <p>Tienen un criterio razonable pero lo más importante es la <strong>genial mezcla de humor y casposidad</strong>. Se notan los casi 500 programas que llevan a sus espaldas, son muy buenos.</p>
-<p><img src="../../img/wp/el-octavo-pasajero.jpg" alt="el-octavo-pasajero.jpg"></p>
+<p>
+  <img src="../../img/wp/el-octavo-pasajero.jpg" alt="el-octavo-pasajero.jpg">
+
+</p>
 <h3 id="de-pelotas-como-puedashttpdepelotascomopuedascom"><a href="http://depelotascomopuedas.com/">De pelotas como puedas</a></h3>
 <p>Su subtítulo <strong>&ldquo;el primer micropodcast de cine de mierda&rdquo;</strong> lo dice todo. Cada capítulo dura menos de quince minutos y sus dos creadores se dedican a destripar una película lamentable. Serie Z, cine comercial pero absolutamente deleznable… Toda la basura tiene cabida en De pelotas como puedas. <strong>Ideal para cuando se tiene poco tiempo</strong> para escuchar algo, te pones y a los diez minutos ya ha acabado: rápido y directo.</p>
 <p>Algunas de las películas que han vapuleado son: Zombies strippers, Dragon Ball, Jesucristo cazavampiros, Britannic o Payasos asesinos del espacio exterior.</p>
-<p><img src="../../img/wp/de-pelotas-como-puedas.jpg" alt="de-pelotas-como-puedas.jpg"></p>
+<p>
+  <img src="../../img/wp/de-pelotas-como-puedas.jpg" alt="de-pelotas-como-puedas.jpg">
+
+</p>
 <h3 id="el-club-vintagehttpwwwivooxcompodcast-club-vintage-videojuegos-clasicos-80-s_sq_f18511_1html"><a href="http://www.ivoox.com/podcast-club-vintage-videojuegos-clasicos-80-s_sq_f18511_1.html">El club Vintage</a></h3>
 <p>Un programa de videojuegos bisemanal diferente porque sólo hablan de <strong>clásicos de los años 80 y 90</strong>. Muchos de ellos son títulos míticos con los que me inicié en el mundo del ocio electrónico y ese es su punto fuerte. Seguro que nombres como Super Mario Land, Street Fighter 2 o Sonic The Hedgehog os traen <strong>muchos recuerdos</strong>.</p>
 <p>No sólo hablan de los juegos en sí mismos sino de la época que los rodeaba. ¿Sabías qué películas o grupos musicales estaban de moda cuando se lanzó Doom? Además también puedes aprender muchas curiosidades sobre el desarrollo y la gente que había detrás de tamañas obras. Nostalgia en estado puro.</p>
-<p><img src="../../img/wp/el-club-vintage.jpg" alt="el-club-vintage.jpg"></p>
+<p>
+  <img src="../../img/wp/el-club-vintage.jpg" alt="el-club-vintage.jpg">
+
+</p>
 <h3 id="el-amuleto-de-yendorhttpyendores"><a href="http://yendor.es/">El Amuleto de Yendor</a></h3>
 <p>Carlos Fenollosa y Nacho Lasheras de Dame la Voz se reúnen cada mes (más o menos) para grabar El Amuleto de Yendor. Un programa de una hora sobre temas de <strong>frikerío fino</strong>: informática, ciencia ficción, videojuegos, etc. Su periodicidad es un poco irregular pero suelen tocar temas interesantes y polémicos sabiendo lo que dicen.</p>
-<p><img src="../../img/wp/el-amuleto-de-yendor.jpg" alt="el-amuleto-de-yendor.jpg"></p>
+<p>
+  <img src="../../img/wp/el-amuleto-de-yendor.jpg" alt="el-amuleto-de-yendor.jpg">
+
+</p>
 <h3 id="tercera-entrega">¿Tercera entrega?</h3>
 <p>Cada vez tengo menos programas en la manga para recomendar, así que no sé si habrá tercera entrega de esta ¿serie? de artículos. Últimamente estoy intentando escuchar alguno en inglés para mejorar mi comprensión oral sin la referencias de los gestos o subtítulos que hay en el cine o las series. Quizás la siguiente entrega vaya por ahí.</p>
 

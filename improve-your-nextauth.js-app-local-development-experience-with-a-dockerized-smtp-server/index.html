@@ -105,7 +105,10 @@
     <br/>
     <a class="label" href="../categories/development">Development</a>
     </span>
-    <p><img src="../img/nextjs/nextauth.png" alt="NextAuth.js logo"></p>
+    <p>
+  <img src="../img/nextjs/nextauth.png" alt="NextAuth.js logo">
+
+</p>
 <p><a href="https://next-auth.js.org/">NextAuth.js</a> makes it shockingly easy to add authentication to <a href="https://nextjs.org/">Next.js</a> apps. It&rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including <a href="https://en.wikipedia.org/wiki/One-time_password">one time passwords</a> or &ldquo;magic links&rdquo;.</p>
 <p>Working with NextAuth.js is trivial, it sounds too good to be true!</p>
 <p>Of course, there is a catch&hellip;</p>
@@ -164,9 +167,15 @@ EMAIL_SERVER_PASSWORD=email-pass
 <p>Bring up your containers and start the local development server.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
 </code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
-<p><img src="../img/nextjs/nextauth-login.png" alt="NextAuth.js login screen"></p>
+<p>
+  <img src="../img/nextjs/nextauth-login.png" alt="NextAuth.js login screen">
+
+</p>
 <p>Now you can open <code>http://localhost:8025/</code> and see the email with the magic link.</p>
-<p><img src="../img/nextjs/mailhog.png" alt="MailHog inbox"></p>
+<p>
+  <img src="../img/nextjs/mailhog.png" alt="MailHog inbox">
+
+</p>
 <p>🎉 That&rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.</p>
 
   </div>

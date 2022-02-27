@@ -115,7 +115,10 @@
 <li>Refactoring becomes a lot easier. We lose fear of cleaning up ugly parts of the codebase because we have unit tests to make sure the behaviour remains the same. This became evident with the recent <a href="https://github.com/libgdx/ashley/commit/261342f74dc7c1b955e7605aadeb9bfcbc112128">Engine internal refactor</a>.</li>
 </ul>
 <p>The morale is basically as follows.</p>
-<p><img src="../../img/wp/unit-test-all-the-things.png" alt="unit-test-all-the-things.png"></p>
+<p>
+  <img src="../../img/wp/unit-test-all-the-things.png" alt="unit-test-all-the-things.png">
+
+</p>
 <p>Our <a href="https://github.com/libgdx/ashley/issues?q=is%3Aissue+is%3Aclosed">issue tracker</a> proves that we&rsquo;re far from perfect, which makes me thing about where we&rsquo;d be if it weren&rsquo;t for unit tests. Ashley inherently has lots of tricky bits of logic and potential edge cases. Making sure we don&rsquo;t break anything without automated tests would almost impossible.</p>
 <p>That is why, every time we break something, we add a unit test with the fix and make sure it never ever happens again.</p>
 <h3 id="lack-of-unit-testing-in-the-games-industry">Lack of unit testing in the games industry</h3>
@@ -123,7 +126,10 @@
 <p>This is really, really bad.</p>
 <p>As you surely know, games are complex pieces of code. Many systems with non-trivial logic interact in a real-time simulation all at once. Games development is hard! Actually, it&rsquo;s more than that! It&rsquo;s brain melting!</p>
 <p>When a deadline approaches and the bug count shoots over the roof, we put in hacky fixes and hope for the best. Then our WTFs per line increase and no one ever dares to fix it because they&rsquo;re scared of breaking everything. So we keep pushing forward until the game&rsquo;s unavoidably collapses on us.</p>
-<p><img src="../../img/wp/wtf.png" alt="wtf.png"></p>
+<p>
+  <img src="../../img/wp/wtf.png" alt="wtf.png">
+
+</p>
 <p>Some people may say that decoupling and correctly abstracting code for it to be more easily testable may add an overhead games cannot afford. I would tell them that&rsquo;s a huge empty fallacy until proven otherwise and quite possibly fall within <a href="http://c2.com/cgi/wiki?PrematureOptimization">premature optimisation</a>. These claims need to be backed by profiling data and I seriously doubt these practices will become someone&rsquo;s main bottleneck.</p>
 <p>Clean and performant code is possible.</p>
 <h3 id="we-can-do-better-than-this">We can do better than this</h3>

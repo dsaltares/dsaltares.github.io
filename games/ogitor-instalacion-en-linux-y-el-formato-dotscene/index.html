@@ -105,12 +105,18 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/ogitor.png" alt="ogitor.png"></p>
+    <p>
+  <img src="../../img/wp/ogitor.png" alt="ogitor.png">
+
+</p>
 <p>Como es lógico, <strong>los niveles de Sion Tower se almacenarán en ficheros</strong> y deberán contener información para poder desplegar el escenario, oleadas de enemigos, música etc. Escribir a mano un un fichero tan complejo es peor que una tortura propia de mafiosos. Por tanto, lo ideal sería disponer de <strong>un editor libre y multiplataforma</strong> con el que crear los niveles. El sistema de Sion Tower tomará la responsabilidad parsear los ficheros del editor y cargar los niveles. Para un menor sufrimiento, es indispensable que el editor sea compatible con un formato abierto y conocido por la comunidad. Más detalles a continuación.</p>
 <h3 id="el-formato-dotscene">El formato DotScene</h3>
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml</strong> diseñado para la exportación e importación de <strong>escenas 3D</strong> en proyectos Ogre, podéis encontrar el correspondiente DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Es ampliamente utilizado por la comunidad de Ogre en ficheros con extensión <em>.scene</em> y contempla todo lo que una escena puede mostrar: mayas, luces, geometría básica y un larguísimo etcétera.</p>
 <p>El procesamiento de un fichero con tantos elementos podría ser complejo. No obstante, <strong>existen parsers</strong> ya desarrollados como <a href="http://www.ogre3d.org/tikiwiki/New+DotScene+Loader&amp;comzone=show"><strong>DotSceneLoader</strong></a>. En cualquier caso, creo que acabaré implementando uno propio que utilice internamente la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a>. Ofrezco dos razones principales: me gustaría personalizar mi parser y pugixml es tremendamente eficiente en tiempo/espacio (mirad este <a href="http://pugixml.org/benchmark/">impresionante benchmark</a>).</p>
-<p><img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg"></p>
+<p>
+  <img src="../../img/wp/ogitor-screen.jpg" alt="ogitor-screen-300x161.jpg">
+
+</p>
 <h3 id="ogitor-la-respuesta">Ogitor, la respuesta</h3>
 <p><strong><a href="http://www.ogitor.org/">Ogitor</a> es un editor de escenarios libre y multiplataforma</strong>. Está desarrollado con QT y, por supuesto, Ogre. Lo mejor de todo es que soporta el formato DotScene así que no tendré que preocuparme por toquetear inmensos ficheros XML. Es compatible tanto con Windows como con Linux aunque en éste último hay que compilar. Aún se encuentra en la versión 0.4 pero tiene un desarrollo activo y una <a href="http://forum.ogitor.org/">comunidad</a> dispuesta a ayudar.</p>
 <h3 id="instalación-de-ogitor-en-linux">Instalación de Ogitor en Linux</h3>
@@ -129,7 +135,10 @@
 <li><strong>Boost RegEx</strong>: Ogitor hace uso de la biblioteca de expresiones regulares de Boost así que toca instalarla:</li>
 </ul>
 <pre tabindex="0"><code>sudo apt-get install libboost-regex-dev
-</code></pre><p><img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png"></p>
+</code></pre><p>
+  <img src="../../img/wp/ogitor-cmake.png" alt="ogitor-cmake-300x149.png">
+
+</p>
 <h4 id="compilación-e-instalación">Compilación e Instalación</h4>
 <p>Le toca el turno al editor que llevamos queriendo instalar hace un buen rato:</p>
 <ul>

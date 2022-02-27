@@ -105,7 +105,10 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png"></p>
+    <p>
+  <img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png">
+
+</p>
 <p>Tras publicar varios artículos en <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a>, he decidido <strong>retomar el trabajo en Sion Tower</strong> con el objetivo de tener una versión inicial a finales de julio. La primera tarea que he llevado a cabo es una <strong>refactorización del sistema de actores</strong> con el objetivo de hacerlo más extensible y evitar la duplicación de código en la medida de lo posible aunque crezca la verticalidad en la jerarquía. Por el momento no todas las clases están implementadas pero sí diseñadas. A continuación, una pequeña explicación del sistema.</p>
 <p>El sistema de actores está compuesto por las siguientes clases:</p>
 <ul>
@@ -116,7 +119,10 @@
 <li><strong>Enemy</strong>: también hereda de <em>Actor</em> y modela de forma genérica el comportamiento de los enemigos.</li>
 <li><strong>Spell</strong>: hereda de <em>GameObject</em> y añade sistemas de partículas para modelar los hechizos del juego junto a sus explosiones.</li>
 </ul>
-<p><img src="../../img/wp/actors-clases.png" alt="actors-clases.png"></p>
+<p>
+  <img src="../../img/wp/actors-clases.png" alt="actors-clases.png">
+
+</p>
 <p>En <em>GameObject</em> contamos con el enumerado <em>Type</em> para distinguir entre tipos de objetos de juego. Se cuenta con un método <em>getType</em> virtual puro que cada clase deberá implementar devolviendo el valor del enumerado correspondiente. De esta forma podemos <strong>conocer el tipo de un objeto</strong> de juego a partir de un <em>GameObject</em>* y hacer casting sin peligro en caso de ser absolutamente necesario. También es posible utilizar el tipo de objeto para hacer un filtrado en la detección de colisiones.</p>
 <pre tabindex="0"><code>class GameObject {
     public:

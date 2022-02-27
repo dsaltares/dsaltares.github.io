@@ -15,7 +15,7 @@
       <guid>https://saltares.com/projects/conjugate/</guid>
       <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
-Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
+ Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
  I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
     </item>
     
@@ -60,7 +60,7 @@ The problem It is extremely common to have an event generating system other comp
       
       <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
       <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
-Have you thought about contributing back?
+ Have you thought about contributing back?
  Who, me?
  Yes and here&amp;rsquo;s why.
 So much win The beauty of a healthy community driven project such as Libgdx is that decisions are crowd-sourced and code is always peer reviewed.</description>

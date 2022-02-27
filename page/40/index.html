@@ -112,15 +112,24 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/titulo-navmesh.png" alt="titulo-navmesh.png"></p>
+      <p>
+  <img src="../../img/wp/titulo-navmesh.png" alt="titulo-navmesh.png">
+
+</p>
 <p>Hace unos días publicaba un <a href="../../proyectos/pfc/sion-tower/sion-tower-navigation-mesh-y-a/" title="Sion Tower, navigation mesh y A*">vídeo</a> mostrando el <strong>sistema de búsqueda de caminos empleando mallas de navegación</strong> y el algoritmo A estrella para Sion Tower. Pudisteis ver que el personaje recorría el camino de forma brusca, actualmente el problema se ha solucionado gracias a la <strong>inclusión de splines en una colaboración</strong> del compañero <a href="http://ragingbit.com/blog/">Javier Santacruz</a> (<a href="http://twitter.com/#!/arld101">@arld101</a>). ¡La primera colaboración en forma de código! En este artículo nos centraremos en ilustrar a grandes rasgos <strong>como funciona la búsqueda</strong> de caminos internamente.</p>
 <h3 id="conceptos-generales">Conceptos generales</h3>
 <p>El problema inicial era la <strong>necesidad de que los enemigos pudiesen moverse</strong> por el escenario hacia un objetivo evitando los obstáculos estáticos. El ejemplo más común sería el de perseguir al protagonista para atacarle. Para ello es necesario definir las zonas transitables de alguna manera y la respuesta es emplear una malla de navegación.</p>
 <p>En <a href="http://www.blender.org/">Blender</a> se crea una <strong>malla compuesta de triángulos interconectados</strong> tal y como se ilustra en la imagen que ya he mostrado en alguna ocasión. El sistema de carga de niveles procesa la malla y genera un grafo de forma interna. Realizar búsqueda de caminos dentro del grafo es un problema conocido y relativamente sencillo de resolver como veremos más adelante. Además el sistema soporta celdas con inclinación (como en las escaleras) aunque al algoritmo esto le es indiferente.</p>
-<p><img src="../../img/wp/blender-navmesh.jpg" alt="blender-navmesh.jpg"></p>
+<p>
+  <img src="../../img/wp/blender-navmesh.jpg" alt="blender-navmesh.jpg">
+
+</p>
 <h3 id="clases-implicadas">Clases implicadas</h3>
 <p>El sistema de búsqueda de caminos de Sion Tower está compuesto por las clases del siguiente diagrama:</p>
-<p><img src="../../img/wp/clases-navmesh.png" alt="clases-navmesh.png"></p>
+<p>
+  <img src="../../img/wp/clases-navmesh.png" alt="clases-navmesh.png">
+
+</p>
 <ul>
 <li><em>Cell</em>: representa una celda triangular de la malla.*   <em>NavigationMesh</em>: malla de navegación formada por un grafo de <em>Cells</em>. Permite localizar elementos en celdas de la malla, conocer la altura a la que debe colocarse un personaje para pegarlo al suelo, realizar consultas de línea de visión y búsqueda de caminos.*   <em>CellNode</em>: nodo de la búsqueda de caminos. Tiene asociado una <em>Cell</em>, y los costes de la heurística.*   <em>Level</em>: ya hablamos de ella en <a href="../../proyectos/pfc/sion-tower/creacion-de-escenarios-en-formato-dotscene-con-blender/" title="Creación de escenarios en formato DotScene con Blender">otra ocasión</a>. Se encarga de cargar y almacenar la información de los niveles desde ficheros en formato XML. Entre la información del nivel, carga un <em>NavigationMesh</em>.</li>
 </ul>
@@ -142,7 +151,10 @@
 <h3 id="colaboración-para-suavizar-el-camino">Colaboración para suavizar el camino</h3>
 <p>El compañero Francisco Javier Santacruz se interesó en suavizar la ruta resultante de la búsqueda y rápidamente se puso manos a la obra. Tras un par de días de trabajo me envió un parche que apliqué gustosamente por sus <strong>impresionantes resultados</strong>.</p>
 <p>La forma de suavizar la ruta consiste en generar muchos puntos intermedios <strong>siguiendo un <a href="http://es.wikipedia.org/wiki/Spline">spline</a></strong>. Los splines son curvas definidas mediante polinomios: ¡por fin las clases de Métodos Numéricos sirven para algo! En el caso que nos ocupa utilizó el <a href="http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline">spline de Catmull-Roll</a>, un tipo de interpolación cúbica. En la prueba que me mandó se visualizaba la ruta del personaje ya suavizada como una línea en el suelo dibujada con primitivas de Ogre. Simplemente restan por hacer unos pequeños ajustes, <strong>¡muchas gracias!</strong></p>
-<p><img src="../../img/wp/siontower-navmesh.jpg" alt="siontower-navmesh.jpg"></p>
+<p>
+  <img src="../../img/wp/siontower-navmesh.jpg" alt="siontower-navmesh.jpg">
+
+</p>
 <h3 id="conclusiones">Conclusiones</h3>
 <p>Implementar el sistema de búsqueda de caminos con una malla de navegación <strong>ha sido muy enriquecedor</strong> ya que era una materia completamente desconocida por mí hasta el momento. He aprendido mucho sobre las distintas aproximaciones existentes y la forma de aplicarla a un juego tridimensional. Además he obtenido la primera colaboración en términos de código a través de un parche. Los que estéis interesados en los detalles podéis acudir a <a href="https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/navmesh-javi/?root=cusl5-iberogre">la rama correspondiente de la forja</a>.</p>
 <p>¡Seguiré informando!</p>
@@ -160,9 +172,15 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/bullet_logo.png" alt="bullet_logo.png"></p>
+      <p>
+  <img src="../../img/wp/bullet_logo.png" alt="bullet_logo.png">
+
+</p>
 <p><strong>Vuelve la actividad a la wiki de Ogre en español</strong> gracias a Alberto Cejas Sánchez. El compañero responsable del proyecto <em><a href="http://futbolesasi.wordpress.com/">Fútbol es Así</a></em> estaba trabajando en la detección de colisiones para su videojuego y finalmente decidió utilizar el wrapper de <a href="http://bulletphysics.org/wordpress/">Bullet</a> para Ogre. Tras dar los primeros pasos ha publicado <strong><a href="http://osl2.uca.es/iberogre/index.php/Colisiones_y_F%C3%ADsicas_con_OgreBullet">&ldquo;Colisiones y físicas con OgreBullet&rdquo;</a></strong>. Por el momento ha publicado la instalación en GNU/Linux (de la que no existía apenas información) y Windows, más adelante irá completando el artículo. Muchísimas gracias a Alberto por su nueva colaboración.</p>
-<p><img src="../../img/wp/gtaiv.jpg" alt="gtaiv.jpg"></p>
+<p>
+  <img src="../../img/wp/gtaiv.jpg" alt="gtaiv.jpg">
+
+</p>
 <p>Bullet es una de las bibliotecas libres (licencia zlib) de <strong>detección de colisiones y simulaciones físicas</strong> más potentes que existe. Por su extrema capacidad me pareció excesivo utilizarlo en Sion Tower ya que no requería interacciones físicas. No obstante, cualquier interesado en incorporar este elemento en su videojuego debería considerar utilizar Bullet. Entre sus <strong>características</strong> se encuentran:</p>
 <ul>
 <li>Colisiones entre cuerpos rígidos y blandos de forma discreta o continua.*   Varias formas básicas: esferas, cajas, cilindros, conos, poliedro convexos, etc.*   Simulación de ropa, cuerdas y objetos deformables.*   Restricciones para cuerpos más realistas.</li>
@@ -187,7 +205,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/cusl.png" alt="cusl.png"></p>
+      <p>
+  <img src="../../img/wp/cusl.png" alt="cusl.png">
+
+</p>
 <p>Este año la normativa del Concurso Universitario de Software Libre exige que se presente una memoria por proyecto para facilitar la evaluación de los mismos a los miembros del jurado. Este fin de semana no he podido desarrollar demasiado ya que he estado recopilando información para redactar dicha memoria. Aún así tengo novedades muy interesantes que iré publicando estos días.</p>
 <ul>
 <li><a href="../../docs/memoria-cusl.pdf">Descargar memoria de IberOgre y Sion Tower para el V CUSL</a></li>
@@ -226,7 +247,10 @@
 <li>Exportación del nivel completo en <em>DotScene</em> (incluyendo la malla)</li>
 <li>Carga del escenario en el motor del juego</li>
 </ol>
-<p><img src="../../img/wp/navigationMesh2.png" alt="navigationMesh2.png"></p>
+<p>
+  <img src="../../img/wp/navigationMesh2.png" alt="navigationMesh2.png">
+
+</p>
 <p>Sobra decir que aún <strong>queda un gran espacio para la mejora</strong>. Actualmente el sistema nos devuelve la lista de celdas que componen el camino hacia el destino indicado. Posteriormente, el personaje recorre los puntos centrales de las celdas cambiando su orientación de forma brusca. La única optimización implementada consiste en tratar de saltar todas las celdas intermedias posibles siempre que haya una línea recta transitable entre el origen y el destino.</p>
 <p>En posteriores artículos ofreceré documentación adicional sobre el diseño y el funcionamiento interno del sistema. ¡Hay tanto trabajo por hacer!</p>
 
@@ -243,7 +267,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/estudio-evergreen.jpg" alt="estudio-evergreen.jpg"></p>
+      <p>
+  <img src="../../img/wp/estudio-evergreen.jpg" alt="estudio-evergreen.jpg">
+
+</p>
 <p>Los chicos del <strong><a href="http://estudioevergreen.wordpress.com/">Estudio Evergreen</a></strong> (<a href="http://twitter.com/#!/Hempfreud">Antonio Caro</a> y <a href="http://twitter.com/#!/Danpelgar">Daniel Pellicer</a>) <strong>siguen componiendo piezas para la banda sonora</strong> del juego a un ritmo envidiable. Recientemente colgaron en su blog dos nuevas melodías, las que sonarían durante al finalizar con éxito un nivel o al morir en el intento. A continuación podréis escucharlas.</p>
 <ul>
 <li><strong>Victoria</strong>: una canción alegre que se reproducirá en conjunción con la animación de celebración del protagonista. Se compone de dos partes: la primera es más intensa mientras que la segunda es más relajada y se reproduce en un bucle. Está pensado para que el jugador pueda pasar el tiempo que desee en la pantalla que muestra las habilidades adquiridas y los puntos conseguidos en cada nivel.</li>

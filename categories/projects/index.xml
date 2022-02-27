@@ -46,8 +46,8 @@ We&amp;quot;d love you to have a go, and leave some feedback.
       <guid>https://saltares.com/projects/libgdxjam-update-3/</guid>
       <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&amp;rsquo;ve been hard at work, especially @DrillerDev who&amp;rsquo;s pushed the character design and animation.
 Look at this bad boy for instance, better not to mess with his alien gun.
-Or the beholder powered alien surveillance.
-Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
+ Or the beholder powered alien surveillance.
+ Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@ The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJ
       
       <guid>https://saltares.com/projects/ashley-1-7-0-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.0 below:
- API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership(). Update: uses Libgdx 1.</description>
+ API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership().</description>
     </item>
     
     <item>

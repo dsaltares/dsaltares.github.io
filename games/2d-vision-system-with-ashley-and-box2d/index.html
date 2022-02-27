@@ -105,12 +105,18 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png"></p>
+    <p>
+  <img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png">
+
+</p>
 <p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&quot;d be a shame if it went to waste. So here it is in case you&quot;d like to use it.</p>
 <p>This 2D vision system is generic enough to work with both side-scrolling and top-down games. Surely it can be further optimised and tailored to your needs… Hey, it was done for a game jam! Nevertheless, it could be a decent starting point!</p>
 <p>Before we get down to business, make sure you understand what Ashley is and what <a href="http://www.gamedev.net/page/resources/_/technical/game-programming/understanding-component-entity-systems-r3013">component based entity systems</a> are all about.</p>
 <h3 id="vision-system-concepts">Vision System concepts</h3>
-<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png"> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
+<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. 
+  <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png">
+
+ We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
 <pre tabindex="0"><code>public class ObservableComponent implements Component {
@@ -256,7 +262,10 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
+</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. 
+  <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png">
+
+ The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
 <pre tabindex="0"><code>private VisionCallback callback = new VisionCallback();
 </code></pre><p>Its outline is pretty simple.</p>
 <pre tabindex="0"><code>private class VisionCallback implements RayCastCallback {
@@ -329,7 +338,10 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
-<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png"></p>
+<p>
+  <img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png">
+
+</p>
 <h3 id="use-it-improve-it-give-feedback">Use it, improve it, give feedback</h3>
 <p>Find the full source for the vision system here:</p>
 <ul>

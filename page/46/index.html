@@ -112,7 +112,10 @@
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/hereafter.jpg" alt="hereafter.jpg"></p>
+      <p>
+  <img src="../../img/wp/hereafter.jpg" alt="hereafter.jpg">
+
+</p>
 <p>Como queda poco para los Oscar <strong>era buen momento para ir a ver las películas nominada</strong>s. No obstante, en mi cine habitual suelen retirar de cartelera el buen material con sorprendente rapidez dejando la carroña típica. Eso y el hecho de tener que elegir la intersección de los gustos entre los miembros del grupo hizo que acabásemos yendo a <a href="http://www.imdb.es/title/tt1212419/"><strong>Más allá de la vida</strong></a>, dirigida por el veterano <a href="http://www.imdb.es/name/nm0000142/">Clint Eastwood</a> y nominada por los mejores efectos visuales. Craso error.</p>
 <p><em>Más allá de la vida</em> cuenta las historias de <strong>tres protagonistas que acaban encontrándose a través de la famosa técnica del calzador</strong> en el último momento. George Logan (<a href="http://www.imdb.es/name/nm0000354/">Matt Damon</a>) es un parapsicólogo de San Francisco que contacta con los familiares difuntos de aquellos que toca. Considera que su habilidad es una maldición y le impide llevar una vida normal por lo que lo deja definitivamente. Marie (<a href="http://www.imdb.es/name/nm0208426/">Cécile de France</a>) es una periodista parisina que pasó varios minutos técnicamente muerta tras un tsunami y el contacto con el más allá le cambia para siempre. Marcos (<a href="http://www.imdb.es/name/nm3727999/">Frankie McLaren</a>) es un niño londinense cuya madre es drogadicta y pierde a su hermano gemelo en un accidente de tráfico.</p>
 <p>Estaremos de acuerdo en que hay diversos tipos de cine, por ejemplo, algunas películas buscan entretener a través el humor o la acción sin que nos hagan pensar demasiado. En cambio, otras pretenden evocar sentimientos o inducirnos a la meditación. Comprendo perfectamente que las últimas sean más duras de seguir y requieran esfuerzo extra por parte del espectador. <em>Más allá de la vida</em> busca que reflexionemos sobre la vida y la muerte aunque <strong>se muestra terriblemente torpe</strong> es ese aspecto. Es lenta, <strong>dolorosamente lenta</strong> y para colmo sales de la sala con la sensación de que no te han contado nada.</p>
@@ -159,7 +162,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png"></p>
+      <p>
+  <img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png">
+
+</p>
 <p>Entregas</p>
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
@@ -169,7 +175,10 @@
 <p>Comenzamos la tercera entrega de la serie de artículos sobre **STC, el sistema de detección de colisiones de Sion Tower. En esta ocasión vamos a entrar en detalle en **la clase <em>Shape</em>, la encargada de modelar los volúmenes colisionables básicos entre otras tareas. Los tests de colisión entre formas concretas también pertenecen a esta clase pero por su complejidad los dejaremos para el siguiente artículo.</p>
 <h3 id="la-clase-shape">La clase Shape</h3>
 <p><em>Shape</em> es una clase abstracta y como tal no puede instanciarse directamente por lo que otros objetos han de heredar de ella e implementar los métodos convenientes. <em>Shape</em> modela un volumen geométrico genérico colisionable y está pensada para que todas sus implementaciones sean tratadas de manera uniforme.</p>
-<p><img src="../../img/wp/shapes.png" alt="shapes.png"></p>
+<p>
+  <img src="../../img/wp/shapes.png" alt="shapes.png">
+
+</p>
 <h3 id="collision-dispatching">Collision Dispatching</h3>
 <p>La clase <em>Shape</em> dispone de un método estático <em>getCollision</em> que recibe dos punteros a <em>Shape</em> y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.</p>
 <pre tabindex="0"><code>class Shape {
@@ -252,13 +261,25 @@ private:
 <h3 id="formas-disponibles">Formas disponibles</h3>
 <p>Como habréis deducido por los diagramas de clases, la versión 0.1 de STC incorpora <strong>tres tipos de formas diferentes</strong>: <em>Sphere</em>, <em>Plane</em> y <em>AxisAlignedBox</em>. A continuación vemos las distintas formas junto a su representación interna y un pequeño diagrama.</p>
 <p>La <strong>esfera</strong> se representa por un punto (centro) y un real (radio) tal y como se muestra en el siguiente esquema. Es una forma sencilla que permite tests de colisión muy rápidos. Es muy común representar formas utilizando cuatro números reales ya que los chips gráficos están optimizados para hacer operaciones en paralelo con cuatro datos.</p>
-<p><img src="../../img/wp/sphere.png" alt="sphere.png"></p>
+<p>
+  <img src="../../img/wp/sphere.png" alt="sphere.png">
+
+</p>
 <p>El <strong>plano</strong> está formado por un punto (distancia con respecto al origen) y un vector (normal o perpendicular a sí mismo). Podéis visualizarlo en el siguiente esquema.</p>
-<p><img src="../../img/wp/plane.png" alt="plane.png"></p>
+<p>
+  <img src="../../img/wp/plane.png" alt="plane.png">
+
+</p>
 <p>Existen dos tipos de cajas: las <em>AxisAlignedBox</em> y las <em>OrientedBox</em>. Las primeras, como indica su nombre, siempre están alineadas con los ejes y no presentan rotación. En cambio, las segundas son volúmenes rotados. Las cajas alineadas con los ejes las representamos a través de dos puntos (mínimo y máximo) como podéis ver en el siguiente diagrama.</p>
-<p><img src="../../img/wp/aabb.png" alt="aabb.png"></p>
+<p>
+  <img src="../../img/wp/aabb.png" alt="aabb.png">
+
+</p>
 <p>Las <em>AABB</em> ofrecen tests de colisión sencillos pero <strong>no funcionan bien con objetos que rotan</strong>. Al no poder rotar la caja debemos reajustarla con la consecuente pérdida de precisión, en algunos casos inaceptable. El siguiente esquema muestra a un coche y su <em>AABB</em> de colisión en ambos estados: sin rotar y tras ser rotado.</p>
-<p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png"></p>
+<p>
+  <img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png">
+
+</p>
 <h3 id="extendiendo-la-clase-shape">Extendiendo la clase Shape</h3>
 <p>Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase <em>Shape</em>:</p>
 <pre tabindex="0"><code>class Shape {
@@ -290,7 +311,10 @@ public:
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/lotr-vandal.jpg" alt="lotr-vandal.jpg"></p>
+      <p>
+  <img src="../../img/wp/lotr-vandal.jpg" alt="lotr-vandal.jpg">
+
+</p>
 <p>Si seguís mi blog desde hace cierto tiempo sabréis que me encanta desarrollar videojuegos tanto como jugarlos y luego escribir sobre ellos. Hace pocos días se me brindó la oportunidad de trabajar para una de las webs del sector más importantes en España, <a href="http://www.vandal.net/">Vandal Online</a>. ¿Cómo iba a rechazar tamaña oferta? He empezado con un <a href="http://www.vandal.net/avances/ps3/el-senor-de-los-anillos-la-guerra-del-norte/12250/1">avance sobre El Señor de los Anillos la Guerra del Norte</a> y algunas noticias. Además, está en camino un especial bastante interesante.</p>
 <p>He aprendido muchas cosas mientras recopilaba información para redactar el artículo y creo que continuar en Vandal puede ser una experiencia enriquecedora. Trabajaré de forma regular cubriendo noticias aunque también redactaré análisis y especiales más elaborados. Eso no significa el final de los textos sobre videojuegos en Sion Dream. El blog es mi espacio personal, donde tienen cabida contenidos que en Vandal carecerían de sentido o interés.</p>
 <p>Deseadme suerte.</p>
@@ -308,7 +332,10 @@ public:
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/sion-tower-3d-sound.jpg" alt="sion-tower-3d-sound.jpg"></p>
+      <p>
+  <img src="../../img/wp/sion-tower-3d-sound.jpg" alt="sion-tower-3d-sound.jpg">
+
+</p>
 <p>Hace algo más de un mes escribí un <a href="../../proyectos/pfc/sion-tower/sistema-de-audio-pseudo-3d-integrado-con-ogre/">artículo sobre el <strong>sistema de audio 3D</strong></a> <strong>de Sion Tower</strong>. Al igual que la pequeña biblioteca de colisiones que he implementado, es muy reutilizable y sería una pena que el código no le sirva a nadie más. Por ello, <strong>he decidido liberar la versión 0.1</strong> como paquete descargable desde la forja de Red Iris.</p>
 <h3 id="características">Características</h3>
 <ul>

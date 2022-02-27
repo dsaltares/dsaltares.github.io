@@ -99,7 +99,7 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
       
       <guid>https://saltares.com/games/built-in-console-for-libgdx-games/</guid>
       <description>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.
-When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
+ When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
     </item>
     
     <item>

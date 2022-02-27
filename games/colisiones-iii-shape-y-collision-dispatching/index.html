@@ -105,7 +105,10 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png"></p>
+    <p>
+  <img src="../../img/wp/colisiones-3.png" alt="colisiones-3.png">
+
+</p>
 <p>Entregas</p>
 <ul>
 <li><a href="../../proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a></li>
@@ -115,7 +118,10 @@
 <p>Comenzamos la tercera entrega de la serie de artículos sobre **STC, el sistema de detección de colisiones de Sion Tower. En esta ocasión vamos a entrar en detalle en **la clase <em>Shape</em>, la encargada de modelar los volúmenes colisionables básicos entre otras tareas. Los tests de colisión entre formas concretas también pertenecen a esta clase pero por su complejidad los dejaremos para el siguiente artículo.</p>
 <h3 id="la-clase-shape">La clase Shape</h3>
 <p><em>Shape</em> es una clase abstracta y como tal no puede instanciarse directamente por lo que otros objetos han de heredar de ella e implementar los métodos convenientes. <em>Shape</em> modela un volumen geométrico genérico colisionable y está pensada para que todas sus implementaciones sean tratadas de manera uniforme.</p>
-<p><img src="../../img/wp/shapes.png" alt="shapes.png"></p>
+<p>
+  <img src="../../img/wp/shapes.png" alt="shapes.png">
+
+</p>
 <h3 id="collision-dispatching">Collision Dispatching</h3>
 <p>La clase <em>Shape</em> dispone de un método estático <em>getCollision</em> que recibe dos punteros a <em>Shape</em> y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.</p>
 <pre tabindex="0"><code>class Shape {
@@ -198,13 +204,25 @@ private:
 <h3 id="formas-disponibles">Formas disponibles</h3>
 <p>Como habréis deducido por los diagramas de clases, la versión 0.1 de STC incorpora <strong>tres tipos de formas diferentes</strong>: <em>Sphere</em>, <em>Plane</em> y <em>AxisAlignedBox</em>. A continuación vemos las distintas formas junto a su representación interna y un pequeño diagrama.</p>
 <p>La <strong>esfera</strong> se representa por un punto (centro) y un real (radio) tal y como se muestra en el siguiente esquema. Es una forma sencilla que permite tests de colisión muy rápidos. Es muy común representar formas utilizando cuatro números reales ya que los chips gráficos están optimizados para hacer operaciones en paralelo con cuatro datos.</p>
-<p><img src="../../img/wp/sphere.png" alt="sphere.png"></p>
+<p>
+  <img src="../../img/wp/sphere.png" alt="sphere.png">
+
+</p>
 <p>El <strong>plano</strong> está formado por un punto (distancia con respecto al origen) y un vector (normal o perpendicular a sí mismo). Podéis visualizarlo en el siguiente esquema.</p>
-<p><img src="../../img/wp/plane.png" alt="plane.png"></p>
+<p>
+  <img src="../../img/wp/plane.png" alt="plane.png">
+
+</p>
 <p>Existen dos tipos de cajas: las <em>AxisAlignedBox</em> y las <em>OrientedBox</em>. Las primeras, como indica su nombre, siempre están alineadas con los ejes y no presentan rotación. En cambio, las segundas son volúmenes rotados. Las cajas alineadas con los ejes las representamos a través de dos puntos (mínimo y máximo) como podéis ver en el siguiente diagrama.</p>
-<p><img src="../../img/wp/aabb.png" alt="aabb.png"></p>
+<p>
+  <img src="../../img/wp/aabb.png" alt="aabb.png">
+
+</p>
 <p>Las <em>AABB</em> ofrecen tests de colisión sencillos pero <strong>no funcionan bien con objetos que rotan</strong>. Al no poder rotar la caja debemos reajustarla con la consecuente pérdida de precisión, en algunos casos inaceptable. El siguiente esquema muestra a un coche y su <em>AABB</em> de colisión en ambos estados: sin rotar y tras ser rotado.</p>
-<p><img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png"></p>
+<p>
+  <img src="../../img/wp/aabb-precission-loss.png" alt="aabb-precission-loss.png">
+
+</p>
 <h3 id="extendiendo-la-clase-shape">Extendiendo la clase Shape</h3>
 <p>Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase <em>Shape</em>:</p>
 <pre tabindex="0"><code>class Shape {

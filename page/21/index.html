@@ -112,7 +112,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/6686_Tim-Sweeney-engine.jpg" alt="6686_Tim-Sweeney-engine.jpg"></p>
+      <p>
+  <img src="../../img/wp/6686_Tim-Sweeney-engine.jpg" alt="6686_Tim-Sweeney-engine.jpg">
+
+</p>
 <p>Last week I went to <a href="https://www.google.co.uk/search?safe=off&amp;output=search&amp;sclient=psy-ab&amp;q=develop%20brighton&amp;oq=&amp;gs_l=&amp;pbx=1&amp;bav=on.2,or.r_cp.r_qf.&amp;bvm=bv.48705608,d.d2k&amp;biw=1097&amp;bih=541&amp;ion=1&amp;pf=p&amp;pdl=300&amp;emsg=NCSR&amp;noj=1&amp;ei=HXnkUbHZBqe_0QXKroHYAw">Develop in Brighton</a> with work, had a great time and attended talks full of insight, so lucky me! While that might very well be a whole post on its own, I want to focus on <a href="http://en.wikipedia.org/wiki/Tim_Sweeney_(game_developer)">Tim Sweeney</a>&ldquo;s interview on the past and future of Unreal Engine and Epic Games. More specifically, on the fact that they&quot;ll be dropping their widely used <a href="http://en.wikipedia.org/wiki/UnrealScript">scripting language</a> entirely towards Unreal 4. Programmers will work exclusively with C++.</p>
 <blockquote>
 <p>Hang on, what?! I&rsquo;ve been trying so hard to master it cause I heard it&quot;d get me a job in the industry… Now what?</p>
@@ -141,12 +144,18 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/tiled.png" alt="tiled.png"></p>
+      <p>
+  <img src="../../img/wp/tiled.png" alt="tiled.png">
+
+</p>
 <p>Most of my spare time for the last month or so has gone to an Android pet project, which partially explains the lack of activity around here. However, such project gave me a little idea for a short tutorial flavoured article.</p>
 <h3 id="level-design-practically-a-synonym-of-iteration">Level design, practically a synonym of iteration</h3>
 <p>Everybody knows how essential iteration is for games development. Ideas tend to look awesome on paper, yet most of them perform poorly when implemented. Throwing away whole features and reworking others surely isn&rsquo;t new territory for you. Level designers probably know this better than anyone. Creating a <a href="http://www.youtube.com/watch?v=HNctAEfR97A">greybox level</a> and making hundreds of changes until it flows nicely and artist can know for sure where everything is going to be.</p>
 <p>Tools like <a href="http://www.crydev.net/index.php">CryEngine SandBox</a> allow lightning fast iteration by letting the creator jump into game straight from the editor to test setups. The change something and test it cycle flows incredibly nicely and no time is wasted with annoying loading screens.</p>
-<p><img src="../../img/wp/CryENGINE-inital-scene.jpg" alt="CryENGINE-inital-scene.jpg"></p>
+<p>
+  <img src="../../img/wp/CryENGINE-inital-scene.jpg" alt="CryENGINE-inital-scene.jpg">
+
+</p>
 <h3 id="iteration-can-be-cumbersome">Iteration can be cumbersome</h3>
 <p>Nevertheless, I&quot;m using <a href="http://libgdx.badlogicgames.com/">libgdx</a> (check out the new website) along <a href="http://www.mapeditor.org/">Tiled</a> to make this pet project and things are different under this environment. Normally, one would go through the following process:</p>
 <ul>
@@ -164,7 +173,10 @@
 <p>Luckily enough, we can use Tiled to execute any command passing the map file we&quot;re currently editing as a parameter from its main UI panel, it&rsquo;s almost as good as what CryEngine does. It only requires a little effort on our side, as the game needs to accept command line parameters and interpret them, we&quot;ll get to that later.</p>
 <p>First, click on the gears icon in Tiled and then select <em>Edit Commands</em>. Create a new one and name it <em>Run level</em> for instance. The command will be executed from the Tiled folder, Program Files in my case. That&rsquo;s why I&quot;m using absolute paths to reach my game&rsquo;s executable.</p>
 <pre tabindex="0"><code>java -jar E:projectsmathmazemath.jar %mapfile
-</code></pre><p><img src="../../img/wp/tiled-command.png" alt="tiled-command.png"></p>
+</code></pre><p>
+  <img src="../../img/wp/tiled-command.png" alt="tiled-command.png">
+
+</p>
 <p>The <em>%mapfile</em> string is replaced by the absolute path to our level when the command is executed.</p>
 <p>Now it&rsquo;s time to make the game accept an absolute path as a parameter and load a specific level when that happens, without going through all the menus. In my case I did something similar to this.</p>
 <pre tabindex="0"><code>public class Main {
@@ -215,15 +227,24 @@ TiledMap map = mapLoader.load(getLevel());
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/freegemas/freegemas-banner.png" alt="banner-blog.png"></p>
+      <p>
+  <img src="../../img/freegemas/freegemas-banner.png" alt="banner-blog.png">
+
+</p>
 <p>That I know of…</p>
 <p>For those who don&rsquo;t know, <a href="../../games/freegemas-for-android-and-html5/" title="Freegemas libgdx">Freegemas</a> was my first <a href="http://libgdx.badlogicgames.com/">libgdx</a> project, which I made in a couple of weeks to learn how to use the framework. Actually, I&quot;m not to take the credit as it&rsquo;s a silly Java/libgdx port of a game made by an university mate, <a href="http://josetomastocino.com/">José Tomás Tocino</a>. Freegemas was originally <a href="https://code.google.com/p/freegemas/">written in C++ using Gosu</a> and both versions were <a href="https://code.google.com/p/freegemas-libgdx/">open sourced under the GPL license</a>.</p>
 <p>Both are non profit games and are clearly inspired in the successful Bejeweled.</p>
 <p>Freegemas added Android and <a href="freegemas">HTML5</a> to the list of supported platforms and was published on <a href="https://play.google.com/store/apps/details?id=com.siondream.freegemas">Google Play</a> as a free app over a year ago.</p>
-<p><img src="../../img/freegemas/freegemas-02.png" alt="javaw-2012-04-18-08-45-49-21-1024x576.png"></p>
+<p>
+  <img src="../../img/freegemas/freegemas-02.png" alt="javaw-2012-04-18-08-45-49-21-1024x576.png">
+
+</p>
 <h3 id="freegemas-clone-wars">Freegemas Clone wars</h3>
 <p>Last week I got an email from an Android developer reporting that Freegemas libgdx had been ripped by a different developer called <a href="https://plus.google.com/100071464175146489197">Barrilete Cósmico</a>. The allegedly offending app was Candy Time Crush, whose name, absent doubt, comes after the popular Facebook game.</p>
-<p><img src="../../img/wp/candy-time-crush.png" alt="candy-time-crush.png"></p>
+<p>
+  <img src="../../img/wp/candy-time-crush.png" alt="candy-time-crush.png">
+
+</p>
 <p>Indeed, this Candy thing was a 1:1 Freegemas clone only changing two elements, he changed the textures and added a shitload of aggressive adverts. Just look at the required permissions to get the extent of it.</p>
 <ul>
 <li>Full network access – Fair enough for basic ads.</li>
@@ -247,7 +268,10 @@ TiledMap map = mapLoader.load(getLevel());
 <p>Ironically, the joke&rsquo;s on my because Candy Time Crush is a clone of my our own game. I&quot;m perfectly aware of the limitations and scope of Freegemas. It was made in under 2 weeks after work for $deity&rsquo;s sake! However, our pet project is free, has no ads and its code has helped other people learn about libgdx since it was featured in the framework&rsquo;s documentation.</p>
 <p>Oh, and it doesn&rsquo;t make your phone crash.</p>
 <p>When I checked Barrilete Cósmico&rsquo;s (license offender) Google Play panel I was completely astonished. Candy Time Crush was not the only Freegemas clone, there were a total of four of them. It&rsquo;s ridiculous! My surprise spiked even more when I realised the download count was over 500K in aggregate, and all those apps featured the same kind of ads. What the hell?</p>
-<p><img src="../../img/wp/farm-time-hero.png" alt="farm-time-hero-300x145.png"></p>
+<p>
+  <img src="../../img/wp/farm-time-hero.png" alt="farm-time-hero-300x145.png">
+
+</p>
 <h3 id="of-the-gpl-license">Of the GPL license</h3>
 <p>I wanted to clarify some of the <a href="http://www.gnu.org/licenses/gpl-3.0.html">details of GPL</a> to illustrate why this is a shameless trespass of the license. The relevant portion is that you can copy, modify and redistribute the software as long as you make the new version available under a compatible license. And that&rsquo;s the essence of it.</p>
 <p>Taking someone else&rsquo;s GPL code and redistributing it with minor changes for profit without crediting the original authors could easily be flagged as unethical. Nevertheless, that&rsquo;s legally irrelevant. What matters is that it&rsquo;s perfectly legal when the developer makes the code open source the code as well.</p>
@@ -290,7 +314,10 @@ TiledMap map = mapLoader.load(getLevel());
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/Ludum-Dare.jpg" alt="Ludum-Dare-featured-image-thumb-478x222-3939-300x139.jpg"></p>
+      <p>
+  <img src="../../img/wp/Ludum-Dare.jpg" alt="Ludum-Dare-featured-image-thumb-478x222-3939-300x139.jpg">
+
+</p>
 <p>Very early this morning, and after 20 days of voting, <a href="http://www.ludumdare.com/compo/2013/05/20/ludum-dare-26-results/">Ludum Dare #26 came to an end</a>, giving way to the much anticipated final results.</p>
 <h3 id="how-did-i-do">How did I do?</h3>
 <p>Without further ado, these are the scores for <a href="../../game-jams/lightbyrinth/">Lightbyrinth</a> compared to those of my previous entry.</p>
@@ -375,7 +402,10 @@ TiledMap map = mapLoader.load(getLevel());
 <li><a href="http://www.ludumdare.com/compo/ludum-dare-26/?more=1">Top 25 per category</a></li>
 </ul>
 <p>I was also very pleased to learn that <a href="http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&amp;uid=15341">MONO by TimTipGames</a> won in the Overall category. Not only I loved his game but also he used libgdx to make it. <a href="http://www.youtube.com/watch?v=">Bi-winning!</a></p>
-<p><img src="../../img/wp/mono.png" alt="mono-300x300.png"></p>
+<p>
+  <img src="../../img/wp/mono.png" alt="mono-300x300.png">
+
+</p>
 <p>Seriously, go check it out.</p>
 <h3 id="the-community-delivers-once-again">The community delivers once again</h3>
 <p>Among the things that make Ludum Dare incredibly awesome, the community stands out. There&rsquo;s people out there that took the time to gather most of the games to make a gigantic trailer. Hats off.</p>
@@ -398,7 +428,10 @@ TiledMap map = mapLoader.load(getLevel());
       <p>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&rsquo;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&rsquo;t come for free.</p>
 <p>Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite. Not only phones and tablets have limited memory sizes, but theirs is also shared by many hungry apps and fancy background processes. If your app&rsquo;s demands causes everything else to shut down, you&quot;re going to make your users sad.</p>
 <p>The sooner you face this, the better. Asset management can be a pain in the arse.</p>
-<p><img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg"></p>
+<p>
+  <img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg">
+
+</p>
 <p>Throughout this article, I&quot;d like to illustrate some of the challenges one has to face when dealing with many assets within a medium sized project. Later on, I&quot;ll be presenting some classic approaches to finish with one that seems to be working for me quite well. The examples are focused on the <a href="libgdx.badlogicgames.com/">libgdx framework</a>, although the concepts are widely applicable.</p>
 <h3 id="the-very-basics">The very basics</h3>
 <p>Just to make sure we&quot;re on the same page, these two are the very fundamental items to take into account when managing resources in a game.</p>
@@ -418,7 +451,10 @@ TiledMap map = mapLoader.load(getLevel());
 <li>Easily extensible, implement your custom loaders for arbitrary types of assets.### The naive approach</li>
 </ul>
 <p>The most straightforward approach is to use AssetManager to load all your assets upfront and make the manager globally available. That way you&quot;d be able to easily retrieve resources.</p>
-<p><img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg"></p>
+<p>
+  <img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg">
+
+</p>
 <pre tabindex="0"><code>public class MyGame extends Game {
 
 	private AssetManager manager;
@@ -466,12 +502,18 @@ TiledMap map = mapLoader.load(getLevel());
 <li>Individual menu screen, streaming level chunks, needed characters</li>
 <li>…</li>
 </ul>
-<p><img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg"></p>
+<p>
+  <img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg">
+
+</p>
 <p>Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there&rsquo;s a load screen masked behind a briefing before each level.</p>
 <h3 id="im-a-lazy-bastard-and-that-sounds-like-a-lot-of-work">I&quot;m a lazy bastard and that sounds like a lot of work</h3>
 <p>As you can see, it can get mental institution level of crazy in terms of deciding who loads what and when. Retrieving an asset you erroneously thought to be in memory could become an everyday issue. You want to simplify it.</p>
 <p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it&rsquo;s going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
-<p><img src="../../img/wp/load-sequence.png" alt="load-sequence.png"></p>
+<p>
+  <img src="../../img/wp/load-sequence.png" alt="load-sequence.png">
+
+</p>
 <p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
 <pre tabindex="0"><code>&lt;assets &gt;
 	&lt;group name=&quot;base&quot;&gt;

@@ -15,7 +15,10 @@
       <guid>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
       <description>We&amp;rsquo;re in the middle of a heated tech job market. The most heated tech job market in history!
 I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great time to be an engineer right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/interview-laptop.png&#34; alt=&#34;laptop with code on screen&#34;&gt;&lt;/p&gt;
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/interview-laptop.png&#34; alt=&#34;laptop with code on screen&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;We&amp;rsquo;re in the middle of a heated tech job market. &lt;a href=&#34;https://blog.pragmaticengineer.com/advice-for-tech-workers-to-navigate-a-heated-job-market/&#34;&gt;The most heated tech job market in history&lt;/a&gt;!&lt;/p&gt;
 &lt;p&gt;I don&amp;rsquo;t know how long it will last. I know that &lt;a href=&#34;https://www.forbes.com/sites/forbestechcouncil/2021/04/13/analyzing-the-software-engineer-shortage/?sh=8c36ed0321c6&#34;&gt;it&amp;rsquo;s a great time to be an engineer&lt;/a&gt; right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.&lt;/p&gt;
 &lt;p&gt;Awful team dynamics, managers excluding valuable team members, ego contests, lack of feedback, no proper coaching, etc. The list goes on.&lt;/p&gt;
@@ -62,7 +65,10 @@ I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great
 How did I get into it? How did I know it was what I wanted to do?
 The answer may be interesting to others, so I wrote it down.
 Let&amp;rsquo;s take a moment to note that becoming a manager is not a promotion. It&amp;rsquo;s a career change. There&amp;rsquo;s a myriad of reasons not to be a manager.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/management/girl-fork-road.png&#34; alt=&#34;A girl faces a fork in the road&#34;&gt;&lt;/p&gt;
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/management/girl-fork-road.png&#34; alt=&#34;A girl faces a fork in the road&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.&lt;/p&gt;
 &lt;p&gt;How did I get into it?
 How did I know it was what I wanted to do?&lt;/p&gt;
@@ -71,11 +77,20 @@ How did I know it was what I wanted to do?&lt;/p&gt;
 &lt;p&gt;Additionally, my personal experience may not be similar to that of others. As a white, young, straight man, I have enjoyed loads of privilege throughout my career. Even as an immigrant. People often paid attention to what I had to say and, until recently, I didn&amp;rsquo;t even notice. My career is the result of hard work, (earned) luck, and privilege.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s get into it.&lt;/p&gt;
 &lt;h3 id=&#34;what-i-did-before-becoming-a-manager&#34;&gt;What I did before becoming a manager&lt;/h3&gt;
-&lt;p&gt;&lt;img src=&#34;./img/management/crytek.png&#34; alt=&#34;crytek uk reception&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/management/crytek.png&#34; alt=&#34;crytek uk reception&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;My full-time career started at &lt;strong&gt;Crytek UK&lt;/strong&gt;, a video games studio, where I spent a couple of years. In the beginning, I was a Junior Developer. Later I was a mid-level one. I spent most of that time at the intersection between character AI and animation. I made the baddies and civilians look natural. The job required me to collaborate with many disciplines. It was quite the list: designers, animators, producers, and gameplay/AI/animation programmers. Later, I took on the role of Scrum Master. That role helped me focus on outcomes over my contributions. This also gave me some stakeholder management skills!&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/management/sony.png&#34; alt=&#34;entrance to Sony Computer Entertainment Europe&amp;rsquo;s offices in London&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/management/sony.png&#34; alt=&#34;entrance to Sony Computer Entertainment Europe&amp;amp;rsquo;s offices in London&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Right after, I spent six months at &lt;strong&gt;Sony&lt;/strong&gt; as an R&amp;amp;D Software Engineer. There, I had to manage up to improve our engineering practices and introduce CI. That is also when I started having some difficult conversations related to feedback. Those would prove invaluable later on.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/management/bloomberg.png&#34; alt=&#34;Bloomberg London Office&amp;rsquo;s central staircase&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/management/bloomberg.png&#34; alt=&#34;Bloomberg London Office&amp;amp;rsquo;s central staircase&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Then, I joined &lt;strong&gt;Bloomberg&lt;/strong&gt;, where things kicked off big time. During the first two years, my role was Senior Software Engineer. After that, I took on the Team Lead role, Bloomberg&amp;rsquo;s title for Engineering Manager in other places. In total, I was there for five years.&lt;/p&gt;
 &lt;p&gt;Here are some of the things I did before becoming a team lead.&lt;/p&gt;
 &lt;ul&gt;
@@ -108,8 +123,11 @@ How did I know it was what I wanted to do?&lt;/p&gt;
       <guid>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</guid>
       <description>Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.
 You will need plenty of support.
-Having a mentor was certainly invaluable, and you should aim to have one. A few selected books gave me tremendously helpful insights.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/books/library.webp&#34; alt=&#34;modern library&#34;&gt;&lt;/p&gt;
+Having a mentor was certainly invaluable, and you should aim to have one.</description>
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/books/library.webp&#34; alt=&#34;modern library&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.&lt;/p&gt;
 &lt;p&gt;You will need plenty of support.&lt;/p&gt;
 &lt;p&gt;Having a mentor was certainly invaluable, and you should aim to have one. A few selected books gave me tremendously helpful insights. There is a lot of faff on the Internet out there about leadership. So, I thought writing a list may help you find the good ones!&lt;/p&gt;
@@ -350,7 +368,10 @@ I wanted to keep the component that controls the layout as simple as possible, s
 Working with NextAuth.js is trivial, it sounds too good to be true!
 Of course, there is a catch&amp;hellip;
 The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/nextjs/nextauth.png&#34; alt=&#34;NextAuth.js logo&#34;&gt;&lt;/p&gt;
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/nextjs/nextauth.png&#34; alt=&#34;NextAuth.js logo&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://next-auth.js.org/&#34;&gt;NextAuth.js&lt;/a&gt; makes it shockingly easy to add authentication to &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including &lt;a href=&#34;https://en.wikipedia.org/wiki/One-time_password&#34;&gt;one time passwords&lt;/a&gt; or &amp;ldquo;magic links&amp;rdquo;.&lt;/p&gt;
 &lt;p&gt;Working with NextAuth.js is trivial, it sounds too good to be true!&lt;/p&gt;
 &lt;p&gt;Of course, there is a catch&amp;hellip;&lt;/p&gt;
@@ -409,9 +430,15 @@ EMAIL_SERVER_PASSWORD=email-pass
 &lt;p&gt;Bring up your containers and start the local development server.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/nextjs/nextauth-login.png&#34; alt=&#34;NextAuth.js login screen&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/nextjs/nextauth-login.png&#34; alt=&#34;NextAuth.js login screen&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Now you can open &lt;code&gt;http://localhost:8025/&lt;/code&gt; and see the email with the magic link.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/nextjs/mailhog.png&#34; alt=&#34;MailHog inbox&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/nextjs/mailhog.png&#34; alt=&#34;MailHog inbox&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;🎉 That&amp;rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.&lt;/p&gt;
 </content>
     </item>
@@ -423,9 +450,12 @@ EMAIL_SERVER_PASSWORD=email-pass
       
       <guid>https://saltares.com/apps-tools/teamfindr/</guid>
       <description>⚽ Team Findr is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.
-🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend Cristi, did an entire UX pass and UI redesign.</description>
+ 🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend Cristi, did an entire UX pass and UI redesign.</description>
       <content>&lt;p&gt;⚽ &lt;a href=&#34;https://teamfindr.saltares.com&#34;&gt;Team Findr&lt;/a&gt; is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/teamfindr/teamfindr_00001.png&#34; alt=&#34;team findr screenshot&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/teamfindr/teamfindr_00001.png&#34; alt=&#34;team findr screenshot&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend &lt;a href=&#34;https://www.linkedin.com/in/cristian-iordan-26b1abb7/&#34;&gt;Cristi&lt;/a&gt;, did an entire UX pass and UI redesign.&lt;/p&gt;
 &lt;h3 id=&#34;-screenshots&#34;&gt;📸 Screenshots&lt;/h3&gt;
 &lt;p&gt;
@@ -571,9 +601,15 @@ The desktop browser device toolbar may not be enough to reproduce it. You may ac
 &lt;p&gt;Open your Chromium based browser and enter:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chrome://inspect/#devices
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should see a list of remote targets and the pages that are open in each target.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/remote-mobile-debugging/chrome-inspect.png&#34; alt=&#34;chrome inspect&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/remote-mobile-debugging/chrome-inspect.png&#34; alt=&#34;chrome inspect&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;Clicking &lt;code&gt;inspect&lt;/code&gt; on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./img/remote-mobile-debugging/chrome-remote-debugging.png&#34; alt=&#34;chrome remote debugging&#34;&gt;&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/remote-mobile-debugging/chrome-remote-debugging.png&#34; alt=&#34;chrome remote debugging&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.&lt;/p&gt;
 &lt;p&gt;Hope this helps your workflow!&lt;/p&gt;
 </content>
@@ -589,7 +625,10 @@ The desktop browser device toolbar may not be enough to reproduce it. You may ac
 As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.
 One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.
 1. ✍️ Default to async Async communication acts as a leveller.</description>
-      <content>&lt;p&gt;&lt;img src=&#34;./img/remote-work.webp&#34; alt=&#34;remote work&#34;&gt;&lt;/p&gt;
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/remote-work.webp&#34; alt=&#34;remote work&#34;&gt;
+
+&lt;/p&gt;
 &lt;p&gt;So much goes into fostering an inclusive remote culture. It must be done deliberately, like &lt;a href=&#34;https://www.runekvist.com/remote-first&#34;&gt;tending to a greenhouse&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.&lt;/p&gt;
 &lt;p&gt;One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.&lt;/p&gt;

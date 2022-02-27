@@ -108,7 +108,10 @@
     <p>Games are resource intensive applications in terms of both memory and CPU time. Offtimes it&rsquo;s necessary to render hundreds of different sprites on screen whilst playing and manipulating dozens of sound effects samples. Logically, those assets need to be stored in memory and such precious elixir doesn&rsquo;t come for free.</p>
 <p>Fair enough, you can probably afford to brainlessly waste some memory on PC when working on small projects but in the world of mobile devices is just the complete opposite. Not only phones and tablets have limited memory sizes, but theirs is also shared by many hungry apps and fancy background processes. If your app&rsquo;s demands causes everything else to shut down, you&quot;re going to make your users sad.</p>
 <p>The sooner you face this, the better. Asset management can be a pain in the arse.</p>
-<p><img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg"></p>
+<p>
+  <img src="../../img/wp/fuck-this-shit-table-flip.jpg" alt="fuck-this-shit-table-flip-300x271.jpg">
+
+</p>
 <p>Throughout this article, I&quot;d like to illustrate some of the challenges one has to face when dealing with many assets within a medium sized project. Later on, I&quot;ll be presenting some classic approaches to finish with one that seems to be working for me quite well. The examples are focused on the <a href="libgdx.badlogicgames.com/">libgdx framework</a>, although the concepts are widely applicable.</p>
 <h3 id="the-very-basics">The very basics</h3>
 <p>Just to make sure we&quot;re on the same page, these two are the very fundamental items to take into account when managing resources in a game.</p>
@@ -128,7 +131,10 @@
 <li>Easily extensible, implement your custom loaders for arbitrary types of assets.### The naive approach</li>
 </ul>
 <p>The most straightforward approach is to use AssetManager to load all your assets upfront and make the manager globally available. That way you&quot;d be able to easily retrieve resources.</p>
-<p><img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg"></p>
+<p>
+  <img src="../../img/wp/loadalltheassets.jpg" alt="sharememe1348806647-300x225.jpg">
+
+</p>
 <pre tabindex="0"><code>public class MyGame extends Game {
 
 	private AssetManager manager;
@@ -176,12 +182,18 @@
 <li>Individual menu screen, streaming level chunks, needed characters</li>
 <li>…</li>
 </ul>
-<p><img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg"></p>
+<p>
+  <img src="../../img/wp/max-payne-cod.jpg" alt="max-payne-cod.jpg">
+
+</p>
 <p>Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there&rsquo;s a load screen masked behind a briefing before each level.</p>
 <h3 id="im-a-lazy-bastard-and-that-sounds-like-a-lot-of-work">I&quot;m a lazy bastard and that sounds like a lot of work</h3>
 <p>As you can see, it can get mental institution level of crazy in terms of deciding who loads what and when. Retrieving an asset you erroneously thought to be in memory could become an everyday issue. You want to simplify it.</p>
 <p>The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I&quot;ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game <em>Screen</em> is responsible for loading and unloading its own resource group. If you think it&rsquo;s going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.</p>
-<p><img src="../../img/wp/load-sequence.png" alt="load-sequence.png"></p>
+<p>
+  <img src="../../img/wp/load-sequence.png" alt="load-sequence.png">
+
+</p>
 <p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
 <pre tabindex="0"><code>&lt;assets &gt;
 	&lt;group name=&quot;base&quot;&gt;

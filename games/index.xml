@@ -14,10 +14,9 @@
       
       <guid>https://saltares.com/games/doodle/</guid>
       <description>✏️ Doodle is a crazy drawing &amp;amp; guessing chain game. Think Pictionary meets Telephone. Get on a video call with friends and give it a try. It&amp;rsquo;s completely free and has no ads.
-🦠 I made it a side project during covid-19 confinement to be played during covid-19 confinement.
+ 🦠 I made it a side project during covid-19 confinement to be played during covid-19 confinement.
 📸 Screenshots    Ewnn nsr u0 aax0 ve
-      Ewnn t4k u8 aets86
-      Brainstorming</description>
+      Ewnn t4k u8 aets86</description>
     </item>
     
     <item>
@@ -46,7 +45,7 @@
       <pubDate>Wed, 28 Dec 2011 19:38:45 +0000</pubDate>
       
       <guid>https://saltares.com/games/urban-race/</guid>
-      <description>Urban Race is an open source 3D time attack racing game for Windows. It was a university project for which I had to learn both C# and XNA.
+      <description>urbanrace  Urban Race is an open source 3D time attack racing game for Windows. It was a university project for which I had to learn both C# and XNA.
  Role: game designer, artist and sole programmer. Year: 2011 Development time: 1 month Technology: C# language using XNA Game Studio 4.0 Download: Urban Race 1.0, source code  Screenshots    Urbanrace 1
       Urbanrace 2</description>
     </item>
@@ -69,7 +68,7 @@ It was my final degree project and it won the V Open Source University Contest, 
       
       <guid>https://saltares.com/games/iberogre/</guid>
       <description>Ogre 3D games programming wiki in Spanish language. It was part of my final degree project with Sion Tower.
- Role: designer, writer and samples programmer Year: 2011 Development time: 6 months Technology: C++ language using Ogre3D and Mediawiki engine Sample Code: GitHub  Features  Geometry and math articles. Ogre articles. Complementary technology articles: OIS, Blender, Bullet. Samples of increasing complexity discussed in detail. Use of open source tools. Good practices to develop cross platform software.</description>
+ Role: designer, writer and samples programmer Year: 2011 Development time: 6 months Technology: C++ language using Ogre3D and Mediawiki engine Sample Code: GitHub  Features  Geometry and math articles. Ogre articles. Complementary technology articles: OIS, Blender, Bullet. Samples of increasing complexity discussed in detail. Use of open source tools.</description>
     </item>
     
     <item>
@@ -78,7 +77,8 @@ It was my final degree project and it won the V Open Source University Contest, 
       <pubDate>Wed, 07 Jul 2010 19:31:12 +0000</pubDate>
       
       <guid>https://saltares.com/games/grannys-bloodbath/</guid>
-      <description>Open source side scrolling platform action game in which the player controls a peaceful grandma who gets really angry when a horde of zombies disturbs her. It’s a university project developed in a team of three.
+      <description>grannysbloodbath  
+Open source side scrolling platform action game in which the player controls a peaceful grandma who gets really angry when a horde of zombies disturbs her. It’s a university project developed in a team of three.
  Role: game designer, lead programmer, 2D artist and level designer Year: 2010 Development time: 3 months Team: 2 additional programmers Technology: C++ language using SDL Download: Granny’s Bloodbath 0.5 (Windows), Granny’s Bloodbath 0.</description>
     </item>
     
@@ -88,9 +88,8 @@ It was my final degree project and it won the V Open Source University Contest, 
       <pubDate>Wed, 07 Jul 2010 19:25:36 +0000</pubDate>
       
       <guid>https://saltares.com/games/air-force-pilot/</guid>
-      <description>Top view 2D plane shooter in which the player controls a fighter who has to knock down enemy planes in the level. It was my first game and it was finalist in an open source contest in Cádiz University (Spain).
- Role: game designer, sole programmer and artist Year: 2009 Development time: 2 months Technology: C++ language using SDL Download: source code  Screenshots    Airforcepilot 1
-      Airforcepilot 2</description>
+      <description>airforcepilot-banner  Top view 2D plane shooter in which the player controls a fighter who has to knock down enemy planes in the level. It was my first game and it was finalist in an open source contest in Cádiz University (Spain).
+ Role: game designer, sole programmer and artist Year: 2009 Development time: 2 months Technology: C++ language using SDL Download: source code  Screenshots    Airforcepilot 1</description>
     </item>
     
   </channel>

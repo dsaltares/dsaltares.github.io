@@ -112,7 +112,10 @@
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/sherlock.jpg" alt="sherlock.jpg"></p>
+      <p>
+  <img src="../../img/wp/sherlock.jpg" alt="sherlock.jpg">
+
+</p>
 <p><span style="color: #888888;"><strong>Siempre me han gustado las historias de investigación y acción</strong> en las que lo importante no es si el personaje descubre el misterio, sino cómo lo consigue. Creo que la nueva serie británica <strong><a href="http://www.imdb.com/title/tt1475582/">Sherlock</a> entra dentro de la categoría</strong>. Se estrenó en UK el pasado verano con una crítica excelente. Aunque sus episodios constasen de 90 minutos de metraje, esta primera temporada sólo cuenta con 3 de ellos por lo que en unos días ya la había finiquitado.</span></p>
 <p><span style="color: #888888;"></span><span style="color: #888888;"><strong>Lo más reseñable</strong> es que las aventuras de Sherlock Holmes creadas por <a href="http://en.wikipedia.org/wiki/Arthur_Conan_Doyle">Arthun Conan Doyle</a> ambientadas en el S. XIX. <strong>se trasladan a la actualidad</strong>. El prodigioso pero socialmente inadaptado detective utiliza Internet o el teléfono móvil entre otras tecnologías modernas. Los personajes se mantienen con licencias más o menos abusivas aunque en un contexto completamente distinto. ¿Le sienta bien el cambio? Diría que sí, al menos es algo distinto a lo habitual.</span></p>
 <p><span style="color: #888888;"><strong>En absoluto es una serie profunda</strong> que induzca a una reflexión posterior. A cambio, nos ofrece diversión y obliga a prestar un alto grado de atención para seguir las <strong>vertiginosas deducciones de Holmes</strong>. <em>&ldquo;A Study in Pink&rdquo;</em>, el primer episodio roza un nivel estupendo. ¿Quiere decir eso que los demás pierden? El par de capítulos restantes no me han agradado como el primero, quizás por la temática y pequeñas bajadas de ritmo. Se nota que <strong>mantener una dinámica acelerada en episodios de hora y media</strong> es una tarea titánica.</span></p>
@@ -132,7 +135,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/audio3d-ogre1.png" alt="audio3d-ogre1.png"></p>
+      <p>
+  <img src="../../img/wp/audio3d-ogre1.png" alt="audio3d-ogre1.png">
+
+</p>
 <p>Como todo buen hijo de vecino, <strong><a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> necesitará reproducir efectos de sonido y música</strong> de fondo, de otro modo al jugador se le caerían dos lagrimones y lo cerraría para siempre. Ogre es un motor de renderizado y no incorpora elementos como un subsistema de audio, por tanto, debía buscarlo en otro lugar. Como he comentado anteriormente, Ogre cuenta con un sistema de gestión de recursos muy potente y ampliable. Sobra decir que mi audio debería <strong>integrarse completamente</strong> con dicho sistema. A continuación, relato mi pequeña odisea para conseguir lo deseado.</p>
 <h3 id="elegir-una-biblioteca-de-audio">Elegir una biblioteca de audio</h3>
 <p>Debía elegir una biblioteca para gestionar el audio, al menos a bajo nivel. <strong>Las opciones más evidentes eran <a href="http://es.wikipedia.org/wiki/Simple_DirectMedia_Layer#Componentes_adicionales">SDL Mixer</a> y <a href="http://es.wikipedia.org/wiki/OpenAL">OpenAL</a></strong>. Indagando un poco, encontré una biblioteca auxiliar llamada <strong><a href="http://www.ogre3d.org/tikiwiki/OgreOggSound&amp;structure=Libraries">OgreOggSound</a></strong> que integraba OpenAL con Ogre incorporando audio 3D. Los ojos se me abrieron como platos pero me llevé una decepción cuando vi que la documentación brillaba por su ausencia. Además, <strong>prefería aprender</strong> la forma de extender la gestión de recursos de Ogre y cacharrear un poco con el audio.</p>
@@ -163,13 +169,19 @@ sound-&gt;play();
 delete soundFXManager;
 </code></pre><h3 id="sencillo-pero-resultón-sonido-3d">Sencillo pero resultón sonido 3D</h3>
 <p>No todos los sonidos tienen porqué reproducirse con efecto 3D por lo que he modelado este pequeño sistema de forma independiente. <strong>La clase Sound3D</strong> tiene un SoundFXPtr y dos punteros a SceneNode. Uno de los nodos es el emisor y el otro el que escucha. El volumen varía en función de la distancia entre ambos nodos mientras que el ángulo entre ambos elementos produce un efecto estéreo. El siguiente diagrama lo ilustra:</p>
-<p><img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png"></p>
+<p>
+  <img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png">
+
+</p>
 <p>SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado a tal efecto. Un mismo Sound3D puede estar reproduciéndose en canales distintos al mismo tiempo. La clase Sound3D controla internamente qué sonido tiene asociado cada canal. Se pone a disposición del desarrollador un <strong>método estático para actualizar todos los sonidos 3D</strong> en reproducción. Preferiblemente una vez por cada iteración del game loop deberíamos hacer:</p>
 <pre tabindex="0"><code>// Actualizar todos los sonidos 3D en reproducción
 Sound3D::update3DSound();
 </code></pre><h3 id="a-vista-de-pájaro">A vista de pájaro</h3>
 <p>El siguiente <strong>diagrama de clases</strong> simplificado ilustra a grandes rasgos los elementos de este sistema de audio y sus relaciones.</p>
-<p><img src="../../img/wp/audio3d-clases1.png" alt="audio3d-clases1.png"></p>
+<p>
+  <img src="../../img/wp/audio3d-clases1.png" alt="audio3d-clases1.png">
+
+</p>
 <h3 id="para-terminar">Para terminar</h3>
 <p>¡Vaya, me he extendido más de la cuenta! Han sido dos días intensos de trabajo entre aprender a extender la gestión de recursos de Ogre e implementación. En principio he desarrollado este sistema de sonido para Sion Tower pero en realidad <strong>es completamente independiente</strong>. Si estás desarrollando un juego y te interesa, acude a la <a href="https://forja.rediris.es/projects/cusl5-iberogre/">forja</a> y utiliza lo que desees (es GPL).</p>
 <p>Seguiré informando de mis avances, muchas gracias por leer.</p>
@@ -187,17 +199,29 @@ Sound3D::update3DSound();
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/Boardwalk-Empire.jpg" alt="Boardwalk-Empire.jpg"></p>
+      <p>
+  <img src="../../img/wp/Boardwalk-Empire.jpg" alt="Boardwalk-Empire.jpg">
+
+</p>
 <p>Últimamente me he aventurado a comenzar series como <a href="../../ocio/series/the-walking-dead/">The Walking Dead</a>, <a href="../../ocio/series/community-1%C2%AA-temporada/">Community</a> o la que nos ocupa en estos momentos, <strong><a href="http://www.imdb.com/title/tt0979432/">Boardwalk Empire</a></strong>. He de reconocer que la apertura de miras ha venido bien pues no me he sentido demasiado decepcionado en ningún caso. ¿Quién sabe? Puede que sea un conformista. Como varias de las series de la HBO, <strong>estamos ante una obra de monóculo</strong>. La mano de <a href="http://www.imdb.com/name/nm0000217/">Martin Scorsese</a> se nota aunque sólo se haya visto involucrado de pleno en el episodio piloto. En cualquier caso, <a href="http://www.imdb.com/name/nm1010540/">Terrence Winter</a> ha hecho un estupendo trabajo. En las siguientes líneas <strong>ofrezco mi opinión, libre de criterio o sentido alguno</strong>.</p>
-<p><img src="../../img/wp/Boardwalk-Empire-03.jpg" alt="Boardwalk-Empire-03.jpg"></p>
+<p>
+  <img src="../../img/wp/Boardwalk-Empire-03.jpg" alt="Boardwalk-Empire-03.jpg">
+
+</p>
 <h3 id="crimen-durante-la-ley-seca">Crimen durante la Ley Seca</h3>
 <p><strong>Boardwalk Empire está ambientada en la Atlantic City de los años 20</strong>, época de la <em><a href="http://es.wikipedia.org/wiki/Ley_seca">&ldquo;Ley Seca&rdquo;</a></em>. Se nos presenta un mundo de antiguas costumbres <strong>corrupto hasta la médula</strong>. Un favor por aquí, un fajo de billetes por allá, ahora un ajustes de cuentas y luego unas partidas en el casino. Ya saben, las cosas que hacen los mafiosos para poner un plato sobre la mesa. Por encima <strong>destaca el político Enoch Thompson,</strong> alias Nucky encarnado por un espectacular <a href="http://www.imdb.com/name/nm0000114/">Steve Buscemi</a>. Básicamente nos cuenta la historia de los trapicheos y los conflictos de poder entre gremios del crimen organizado. Por supuesto, aderezado con una buena ración de burdeles a cascoporro.</p>
-<p><img src="../../img/wp/Boardwalk-Empire-02.jpg" alt="Boardwalk-Empire-02.jpg"></p>
+<p>
+  <img src="../../img/wp/Boardwalk-Empire-02.jpg" alt="Boardwalk-Empire-02.jpg">
+
+</p>
 <h3 id="cabarets-fiestas-y-políticos">Cabarets, fiestas y políticos</h3>
 <p>No se puede decir que sea una serie de acción en la que la tensión se mantenga en lo más alto durante cada minuto. <strong>Muchos le achacan que es demasiado lenta</strong> y podrían tener razón. No obstante, la ambientación y las interpretaciones absorben casi toda la responsabilidad. ¡Ojo! Sin que se les arrugue la camisa para la fiesta en el cabaret, oiga.</p>
 <p><strong>El mundo del alcohol, el politiqueo, la dialéctica y las apariencias</strong> aparece reflejado constantemente. Decir <em>&ldquo;lo siento cariño, esta noche llegaré tarde porque tengo asuntos de negocios&rdquo;</em> para acabar en un burdel mientras se cierra el acuerdo es el procedimiento habitual. Boardwalk Empire <strong>hace caso omiso de los tabús</strong> sin llegar a blandir lo explícito como arma. Se abre ante el espectador un mundo de matices que cobra vida y se llena de luces de neón durante la noche. Queda patente que nadie tiene una integridad inquebrantable.</p>
 <p>De la mano de Steve Buscemi y la mayoría del reparto presenciaremos un <strong>magnífico despliegue de interpretaciones</strong>. Actuaciones creíbles que crean una atmósfera densa, de una tensión palpable. Sin duda, merece la pena.</p>
-<p><img src="../../img/wp/Boardwalk-Empire-01.jpg" alt="Boardwalk-Empire-01.jpg"></p>
+<p>
+  <img src="../../img/wp/Boardwalk-Empire-01.jpg" alt="Boardwalk-Empire-01.jpg">
+
+</p>
 <h3 id="damas-y-caballeros-aún-hay-más">Damas y caballeros, aún hay más</h3>
 <p>Como muchos sabréis, HBO ha confirmado una <strong>segunda temporada</strong> de Boardwalk Empire ante su buena acogida. La serie fue nominada a un Globo de Oro por mejor serie dramática entre otros galardones. ¿Me he quedado con ganas de más? Sin duda, aunque necesito digerirla un poco antes de una nueva temporada, me vendrá bien el descanso. Si estáis dispuestos a sentaros pacientemente y disfrutar de un buen guión, adelante, es una producción con <em>&ldquo;qualité&rdquo;</em>.</p>
 
@@ -214,12 +238,18 @@ Sound3D::update3DSound();
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png"></p>
+      <p>
+  <img src="../../img/wp/movimiento-camara.png" alt="movimiento-camara.png">
+
+</p>
 <p>En la mayoría de videojuegos en tercera persona, <strong>la dirección hacia la que se mueve el personaje depende de la orientación de la cámara</strong>. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido. En este artículo <strong>explico un sencillo algoritmo para conseguirlo</strong>.</p>
 <h3 id="qué-queremos-conseguir">¿Qué queremos conseguir?</h3>
 <p>El siguiente diagrama muestra el <strong>sistema de coordenadas de Ogre</strong>. Imaginad que nuestro personaje se encuentra en el origen <em>p = (0, 0, 0)</em> y que la cámara está en el <em>c = (0, 0, 50)</em> mirando hacia el origen. Nuestras teclas de movimiento son las clásicas: WASD. Al pulsar W el personaje debe moverse en la dirección negativa del eje Z, en cambio, si pulsamos D deberá hacerlo en la dirección positiva del eje X.</p>
 <p>En cambio, si la cámara se situase en <em>c = (50, 0, 0)</em> mirando a <em>(0, 0, 0)</em> las teclas no tendrían el mismo efecto en términos absolutos, aunque se mantiene idéntico si tomamos como punto de referencia a la cámara. Si pulsamos W el personaje se desplazará en la dirección negativa del eje X. En el caso de que pulsemos D, el personaje se dirigirá en la dirección negativa del eje Z.</p>
-<p><img src="../../img/wp/coordenadas.png" alt="coordenadas.png"></p>
+<p>
+  <img src="../../img/wp/coordenadas.png" alt="coordenadas.png">
+
+</p>
 <p>Por supuesto, <strong>el personaje deberá girarse</strong> para mirar hacia la dirección del desplazamiento. A continuación, detallamos la manera de implementar este sistema de movimiento.</p>
 <h3 id="algoritmo-objetos-implicados">Algoritmo: objetos implicados</h3>
 <p>Este pequeño algoritmo está orientado al motor de renderizado Ogre3D y la biblioteca de dispositivos de entrada OIS aunque su filosofía es válida para otras herramientas. Lo ideal sería utilizar clases para el personaje y otros elementos aunque, en esta ocasión, he preferido no hacerlo en favor de la simplicidad del ejemplo.</p>
@@ -326,7 +356,10 @@ void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
       <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><img src="../../img/wp/humble-bundle-2-juegos.jpg" alt="humble-bundle-2-juegos.jpg"></p>
+      <p>
+  <img src="../../img/wp/humble-bundle-2-juegos.jpg" alt="humble-bundle-2-juegos.jpg">
+
+</p>
 <p><strong><a href="http://www.humblebundle.com/">The Humble Indie Bundle</a> regresó</strong> hace unos días con su segunda entrega. Un pack de 5 juegos independientes que podemos adquirir al precio que fijemos. Vienen libre de protección DRM, compatibles con Windows/Linux/Mac. Es una <strong>iniciativa solidaria</strong>, pues podremos elegir la distribución de nuestro pago entre desarrolladores y ONGs. ¿No lo tienes aún? <strong>¡Ve a comprarlo pedazo de insensato!</strong></p>
 <p>Pasemos pues, a comentar los ilustres participantes:</p>
 <ul>

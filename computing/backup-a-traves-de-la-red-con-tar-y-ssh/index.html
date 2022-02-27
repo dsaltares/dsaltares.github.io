@@ -105,7 +105,10 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
     </span>
-    <p><img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png"></p>
+    <p>
+  <img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png">
+
+</p>
 <p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
 <h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
 <p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>

@@ -122,7 +122,10 @@
 <li>Component based entity system with an <a href="https://code.google.com/p/artemis-framework/">Artemis</a> like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I&quot;ll talk more about it on a different post.</li>
 <li>Static bodies creation from map&rsquo;s shape data and material system. This might as well deserve another post, why the hell not!</li>
 </ul>
-<p><img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg"></p>
+<p>
+  <img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg">
+
+</p>
 <h3 id="coming-this-week">Coming this week</h3>
 <p>I hereby make the compromise of delivering the following within a week.</p>
 <ul>
@@ -155,12 +158,18 @@
 <blockquote>
 <p>The humans have invaded the planet you call home! All of a sudden there are all these conquest hungry astronauts wandering around. You must take your recon spaceship and abduct them all before it&rsquo;s too late!</p>
 </blockquote>
-<p><img src="../../img/wp/design-anotated.png" alt="design-anotated.png"></p>
+<p>
+  <img src="../../img/wp/design-anotated.png" alt="design-anotated.png">
+
+</p>
 <p>That&rsquo;s right, you control an alien in a small spaceship who must abduct every astronaut in each level in the minimum amount of time possible. In order to do so, you must position the ship over them for a certain amount of time, while the alien halo drags them up. Beware the rocky environment, you don&rsquo;t want to crash in the middle of the mission!</p>
 <p>Level design would start quite simple with linear levels that test the player&rsquo;s skill controlling the spaceship. However, as the game progresses, things might get complicated. What seems to be a linear level could actually be some sort of maze with hidden astronauts requiring exploration.</p>
 <h3 id="controls">Controls</h3>
 <p>The player uses touch controls to pilot the spaceship across the level. Rather than using an unpopular virtual joystick, he&rsquo;s presented area controls. The steering force applied to the spaceship will be different depending on the touch position: up, left or right. It&rsquo;s worth mentioning that by touching the intersections, the player can make the ship ascend whilst moving towards a side.</p>
-<p><img src="../../img/wp/design-controls.png" alt="design-controls.png"></p>
+<p>
+  <img src="../../img/wp/design-controls.png" alt="design-controls.png">
+
+</p>
 <p>Piloting the spaceship has the additional difficulty of having to take into account inertia. If we let it descend for a while, it&quot;ll be quite hard to regain height. On the contrary, if we ascend too much, we&quot;ll inevitably crash as well.</p>
 <h3 id="visuals">Visuals</h3>
 <p>As explained in <a href="../../general/2d-character-creation-and-animation-for-dummies/"><em>&ldquo;2D character creation and animation… For dummies&rdquo;</em></a>, my lack of skill kind of forces me to go for a friendly cartoon style. No worries, that&rsquo;s fine because it matches the gameplay. It&rsquo;s clearly a casual arcade game with funny characters, so some colorful vector art will come very in handy.</p>
@@ -184,7 +193,10 @@
 <p>You don&rsquo;t want that now, do you?</p>
 <p>Please, let me take a step back and point out the irony of having to be extremely careful with memory usage in the presence of a garbage collector (GC) when dealing with real time problems. It&rsquo;s often said that it takes the responsibility off you. In a beautiful world where code tastes like lollipop it would, but this is really not the case. At least not entirely.</p>
 <p>This article is aimed at developers who code in GC environments to make real time applications. Concepts here also apply to broader fields in spite of the focus mainly being Java and games development using the libgdx framework. Actually, I decided to write this post after seeing the same performance related questions <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=3572">over</a> and <a href="http://www.badlogicgames.com/forum/viewtopic.php?f=11&amp;t=6785&amp;hilit=performance+garbage">over</a> again in the libgdx forums. Most of them are closely tied to memory allocation.</p>
-<p><img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg"></p>
+<p>
+  <img src="../../img/wp/garbage-collector-strikes-back.jpg" alt="garbage-collector-strikes-back.jpg">
+
+</p>
 <h3 id="be-aware-of-the-gc-and-why-its-critical-in-mobileconsoles">Be aware of the GC and why it&rsquo;s critical in mobile/consoles</h3>
 <p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&quot;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
 <p>Note: I just told a white lie. JVM&rsquo;s GC actually follows several strategies to free up unused memory as pointed out in <a href="http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect">this Stack Overflow post</a>.</p>
@@ -288,7 +300,10 @@
 	}
 }
 </code></pre><p>As you can probably deduce after reading the previous snippet, in order to make a resource poolable it&rsquo;s required to implement the reset() method of such interface. Then you need to create a new <a href="http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html">Pool</a> class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this <a href="http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d">sample to have efficient bullets</a>.</p>
-<p><img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png"></p>
+<p>
+  <img src="../../img/freegemas/freegemas-03.png" alt="/img/freegemas/freegemas-03.png">
+
+</p>
 <p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
 <pre tabindex="0"><code>// Create prototype effect
 ParticleEffect effect = new ParticleEffect();
@@ -309,7 +324,10 @@ if (effect.isComplete()) {
 <blockquote>
 <p>Alright, I&quot;m pretty sure your advice is utter bullshit, my app is still laggy! I want my money back.</p>
 </blockquote>
-<p><img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png"></p>
+<p>
+  <img src="../../img/wp/visualvm.png" alt="visualvm-300x187.png">
+
+</p>
 <p>Before throwing that rotten tomato you&quot;re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it&rsquo;s running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you&rsquo;ve missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.</p>
 <p>Promise.</p>
 
@@ -331,24 +349,42 @@ if (effect.isComplete()) {
 </blockquote>
 <p>Well yes, so deal with it.</p>
 <p>Life is hard for us programmers, who can&rsquo;t always find a committed artist (rare species) to work with in our projects. Yet we stand as heroes, eager to create games. It saddens me how often we see ourselves forced to produce low quality assets, I&quot;d never call that art. Actually, it&rsquo;s more appropriate to address them as utter crap. Cry no more, fellow coder, because it&rsquo;s all about workflow.</p>
-<p><img src="../../img/wp/happy-coder.png" alt="happy-coder.png"></p>
+<p>
+  <img src="../../img/wp/happy-coder.png" alt="happy-coder.png">
+
+</p>
 <blockquote>
 <p>Are you telling me I can create decent looking characters and environments? But I suck at drawing!</p>
 </blockquote>
 <p>Indeed, you probably do suck at drawing, just as much as I do. However, you&quot;d be surprised about how much can be achieved with a few tricks, the right tools and an a sensible scope. Please, do yourself a favour and abandon the idea of creating cutting edge 3D, hyper realistic characters and stick with more simple, colourful and cartoon 2D elements. With a considerably small time investment, you&quot;ll be able to make games that don&rsquo;t look as if they were created with Ye Olde Microsoft Paint. No eyes have to bleed anymore! Yay!</p>
-<p><img src="../../img/wp/sad-mr-ms-paint.png" alt="sad-mr-ms-paint.png"></p>
+<p>
+  <img src="../../img/wp/sad-mr-ms-paint.png" alt="sad-mr-ms-paint.png">
+
+</p>
 <p>In order to get to where I now stand, I&rsquo;ve had to go through a lengthy and painful try/error process. Maybe I can spare you some, that&quot;d be nice, wouldn&rsquo;t it? Here&rsquo;s a disclaimer though, this is one of the many ways of doing things. I&quot;m sure a real artist would kick me in the balls upon such an insult to his profession, but hey, it has worked for me so far. Just check <a href="../../games/ld24-evolution-postmortem/">Evolution, my Ludum Dare #24 entry</a>. Hideous playability but decent looking for a 48h jam. I&quot;m going to use it as an example throughout the article, feel free to grab any ideas you fancy, add your own and ditch the rest.</p>
-<p><img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03-300x168.jpg"></p>
+<p>
+  <img src="../../img/ld24/evolution-caveman-03.jpg" alt="evolution-caveman-03-300x168.jpg">
+
+</p>
 <h3 id="the-initial-sketch">The initial sketch</h3>
 <p>Firstly, let&rsquo;s make the assumption we&quot;re working on a character for our game, although this could perfectly apply to environments as well. The very first step is to draw a basic sketch on paper. I&quot;m fully aware that drawing on paper in a world of graphic tablets might strike some people as old school. Nevertheless, paper is just simpler and cheaper, a good fit for our purposes.</p>
 <p>A rule of thumb would be to stick to basic shapes, keeping in mind at all times a lovely cartoon style. Trying to emulate reality will surely result in disaster, in turn, shamelessly making things look funny could easily save the day. Don&rsquo;t worry if you can&rsquo;t go any further than poor stick men, you stand a good chance by choosing minimalistic designs. Look at De Blob&rsquo;s main character! It&rsquo;s basically made out of stylized circles and rectangles. Yet all the critics said it&rsquo;s a visually interesting game. Simplicity is your friend, embrace it and it&quot;ll hide your lack of talent.</p>
-<p><img src="../../img/wp/deblob.png" alt="deblob.png"></p>
+<p>
+  <img src="../../img/wp/deblob.png" alt="deblob.png">
+
+</p>
 <p>Once you&rsquo;ve finished your sketch, it&rsquo;s time for you to scan it. In the absence of a proper scanner, you can always take a picture. Don&rsquo;t worry if it&rsquo;s your phone&rsquo;s camera, we&quot;ll only use it as a reference so that&quot;ll suffice.</p>
-<p><img src="../../img/wp/caveman-sketch.jpg" alt="caveman-sketch.jpg"></p>
+<p>
+  <img src="../../img/wp/caveman-sketch.jpg" alt="caveman-sketch.jpg">
+
+</p>
 <h3 id="lets-talk-vectors">Let&rsquo;s talk vectors</h3>
 <p>Hold on, don&rsquo;t go fire up Photoshop CS [insert version number here] just yet! That won&rsquo;t be necessary. We&quot;re going to adopt a vector based approach using the open source solution <a href="http://inkscape.org/">Inkscape</a>. Beware! For the beautiful math behind <a href="http://en.wikipedia.org/wiki/B%C3%A9zier_curve">Bezier curves</a> shall serve us as disguise for our lame sketch. Elegant and stylized lines, simple shapes and the colourful palette. I love it.</p>
 <p>Now it&rsquo;s a good time to mention that my workflow has been highly influenced by the <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a> blog, which provides numerous techniques to easily create assets using this sweet piece of software. Seriously, if you want to get started with this tool, check it out now. When I went through his very first tutorial, which only consists of making a funny looking alien face, I couldn&rsquo;t but be amazed at the ridiculous effort/outcome ratio.</p>
-<p><img src="../../img/wp/2d-game-art-for-programmers.png" alt="2d-game-art-for-programmers.png"></p>
+<p>
+  <img src="../../img/wp/2d-game-art-for-programmers.png" alt="2d-game-art-for-programmers.png">
+
+</p>
 <p>The principle behind this process only requires a little bit of practice. We programmers, love algorithms, so I&quot;ll explain all you need to know using a Python like pseudo code snippet.</p>
 <pre tabindex="0"><code>import Inkscape
 import Awesomeness
@@ -373,14 +409,23 @@ for part in character.parts():
 # You should really save in between too, just in case 🙂
 inkscape.saveDocument(&quot;character.svg&quot;)
 </code></pre><p>Now we&quot;re talking, aren&rsquo;t we? That&rsquo;s right, create a layer for every animated body part in your character, say head, torso, legs, feet, arms… The granularity depends on the desired level of movement detail. However I&quot;d advise you to keep it simple at first. Set the layer alpha transparency to something less than 1.0 so you can see your reference underneath it. Now listen, this might sound trickier than it really is, you just need to practice. Use circle or rectangle elements to model your character&rsquo;s body parts, convert them to paths and work with the Bezier nodes to adjust the shapes to the correspondent outline. If you&quot;re just staring at the screen with no idea of what I&quot;m talking about, please go to <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a>, follow the first articles and you&quot;ll see the light.</p>
-<p><img src="../../img/wp/caveman-outline.jpg" alt="caveman-outline.jpg"></p>
+<p>
+  <img src="../../img/wp/caveman-outline.jpg" alt="caveman-outline.jpg">
+
+</p>
 <p>Having finished the basic outline, you can start worrying about colour. Use bright but not too intense tones and the result will be noticeably better. Things like (0, 0, 255) for blue are strictly forbidden. A good idea is to grab some image as a reference and copy the colours, or use some of the multiple web design oriented palette creators out there.</p>
 <p>Moving onto shading. You&quot;ll excuse me for redirecting you once more to <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a>. There you can get ahold of some basic shading techniques, believe me, some shine here and a shadow there, will completely transform your creation. As far as I&quot;m aware, the principle is straightforward. Position an imaginary light source in your scene and try to figure out, with a minimalistic approach in mind, how would it affect your newly born creation. Add more bezier magic and paint it slightly brighter or darker than the base. Iterate, play with it until you&quot;re satisfied.</p>
-<p><img src="../../img/wp/caveman-inkscape.jpg" alt="caveman-inkscape.jpg"></p>
+<p>
+  <img src="../../img/wp/caveman-inkscape.jpg" alt="caveman-inkscape.jpg">
+
+</p>
 <h3 id="3-2-1-action">3, 2, 1… Action!</h3>
 <p>Depending on the game you have in mind, you might not need animations at all! In that case your character would be perfectly ready for production use (happy face). Otherwise, you&quot;ll need to export every body part as a separate PNG file. The size doesn&rsquo;t really matter but it&rsquo;s preferable to overshoot the resolution rather than falling short, downscaling algorithms are decent nowadays. Rest assured, once you export the first part, Inkscape will keep the aspect ratio and proportions of all the others.</p>
 <p>We could animate our character by moving all its parts little by little and exporting every frame by hand from Inkscape itself, although it pains me just to think about it. So tedious! Instead, we&quot;ll use some 2D animation software to set keyframes with different poses so its tweening engine can work out the rest. Adobe Flash CS can easily do the job but if you&quot;re looking for an inexpensive solution, <a href="http://www.synfig.org/cms/">Synfig studio</a> is worth checking out. Last time I took a look, it lacked features but our requirements are more than covered with either.</p>
-<p><img src="../../img/wp/caveman-flash.jpg" alt="caveman-flash.jpg"></p>
+<p>
+  <img src="../../img/wp/caveman-flash.jpg" alt="caveman-flash.jpg">
+
+</p>
 <p>Regardless of your choice, the algorithm here is simple too! We&quot;ll explain a walking cycle as an example. Proceed as follows:</p>
 <ul>
 <li>Import each body part in a different layer.</li>
@@ -391,9 +436,15 @@ inkscape.saveDocument(&quot;character.svg&quot;)
 <li>5th keyframe: back to idle.</li>
 <li>Create motion tweens between keyframes, the software will fill in the gaps.</li>
 </ul>
-<p><img src="../../img/wp/caveman-walking-cycle.gif" alt="caveman-walking-cycle.gif"></p>
+<p>
+  <img src="../../img/wp/caveman-walking-cycle.gif" alt="caveman-walking-cycle.gif">
+
+</p>
 <p>You&quot;d be surprised at the amount of existing literature on walking cycles and I know I&quot;m not being accurate, but this could get you started. Decomposing movement in keyframes is not easy peasy. Nevertheless, you should always try to avoid visual fidelity. Look at games like Super Mario, they&quot;re extremely simplistic and full of metaphors. Mario&rsquo;s jumping animation could have three frames and still looks good! They don&rsquo;t try to model reality, they don&rsquo;t need to and neither do you.</p>
-<p><img src="../../img/wp/mario-jump.png" alt="mario-jump.png"></p>
+<p>
+  <img src="../../img/wp/mario-jump.png" alt="mario-jump.png">
+
+</p>
 <p>When you export the resulting animations you&quot;ll probably get a ton of individual PNG images which will make your engine very sad.</p>
 <h3 id="create-your-sprite-sheet">Create your sprite sheet</h3>
 <p>Animated characters are usually stored as sprite sheets containing all frames of every animation. Offtimes, you&quot;ll come across with several characters gathered in a big sprite sheet. This reduces file access times and makes rendering a lot faster because you don&rsquo;t need to be switching between textures all the time. The renderer will draw different portions of the same texture lighting fast and everybody happy.</p>
@@ -401,7 +452,10 @@ inkscape.saveDocument(&quot;character.svg&quot;)
 <p>Does that mean I need to merge the countless PNGs by hand?</p>
 </blockquote>
 <p>Luckily, we can count on the wonderful <a href="http://code.google.com/p/libgdx-texturepacker-gui/">Libgdx TexturePacker GUI</a> to do the job. It&rsquo;s free, open source and dead easy to use it. It has a few parameters you can play with, but nothing complex. Grab it and create your awesome sprite sheet.</p>
-<p><img src="../../img/wp/texturepacker-gui-3.1.jpg" alt="texturepacker-gui-3.1.jpg"></p>
+<p>
+  <img src="../../img/wp/texturepacker-gui-3.1.jpg" alt="texturepacker-gui-3.1.jpg">
+
+</p>
 <h3 id="this-is-it">This is it!</h3>
 <p>Oh boy that was a long article! Since it took me a long time to figure this out, I thought it was worth sharing some of that experience with my fellow coders. It&quot;d be truly awesome if someone left a comment saying how wrong I am along a suggestion on how to improve my art &ldquo;algorithm&rdquo;.</p>
 <p>Until next time fellas!</p>

@@ -112,7 +112,10 @@
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+      <p>
+  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
+
+</p>
 <p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.3">1.7.3</a> below:</p>
 <ul>
 <li><strong>API addition</strong>: Adds ‘createComponent()&quot; method to <code>Engine</code> class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7.</li>
@@ -138,7 +141,10 @@
       <a class="label" href="../../categories/general">General</a>
       </span>
       
-      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+      <p>
+  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
+
+</p>
 <p>Small <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.2">1.7.2</a> below:</p>
 <ul>
 <li><a href="https://github.com/libgdx/ashley/issues/209"><strong>Bug fix</strong></a>: <code>Engine</code> doesn&rsquo;t use <code>EntitySystem</code> <code>iterator()</code>.</li>
@@ -161,7 +167,10 @@
       </span>
       
       <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
-<p><img src="../../img/others/console1.jpg" alt="console1.jpg"></p>
+<p>
+  <img src="../../img/others/console1.jpg" alt="console1.jpg">
+
+</p>
 <p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
 <pre tabindex="0"><code>private Console console;
 
@@ -199,7 +208,10 @@ public void create() {
 </code></pre><p>At some point, we need to register the executor with the console.</p>
 <pre tabindex="0"><code>console.setCommandExecutor(new GameCommandExecutor(console));
 </code></pre><p>Done, that&rsquo;s it!</p>
-<p><img src="../../img/others/libgdx-console.png" alt="libgdx-console.png"></p>
+<p>
+  <img src="../../img/others/libgdx-console.png" alt="libgdx-console.png">
+
+</p>
 <p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
 
       
@@ -215,12 +227,18 @@ public void create() {
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png"></p>
+      <p>
+  <img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png">
+
+</p>
 <p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&quot;d be a shame if it went to waste. So here it is in case you&quot;d like to use it.</p>
 <p>This 2D vision system is generic enough to work with both side-scrolling and top-down games. Surely it can be further optimised and tailored to your needs… Hey, it was done for a game jam! Nevertheless, it could be a decent starting point!</p>
 <p>Before we get down to business, make sure you understand what Ashley is and what <a href="http://www.gamedev.net/page/resources/_/technical/game-programming/understanding-component-entity-systems-r3013">component based entity systems</a> are all about.</p>
 <h3 id="vision-system-concepts">Vision System concepts</h3>
-<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png"> We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
+<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. 
+  <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png">
+
+ We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
 <pre tabindex="0"><code>public class ObservableComponent implements Component {
@@ -366,7 +384,10 @@ private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMappe
 
     return true;
 }
-</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png"> The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
+</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. 
+  <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png">
+
+ The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
 <pre tabindex="0"><code>private VisionCallback callback = new VisionCallback();
 </code></pre><p>Its outline is pretty simple.</p>
 <pre tabindex="0"><code>private class VisionCallback implements RayCastCallback {
@@ -439,7 +460,10 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
 </ul>
 <p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
-<p><img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png"></p>
+<p>
+  <img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png">
+
+</p>
 <h3 id="use-it-improve-it-give-feedback">Use it, improve it, give feedback</h3>
 <p>Find the full source for the vision system here:</p>
 <ul>
@@ -462,7 +486,10 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
       <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
       </span>
       
-      <p><img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png"></p>
+      <p>
+  <img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png">
+
+</p>
 <p>After a <a href="https://github.com/dsaltares/libgdxjam/commits/master">crazy weekend before the deadline</a>, we finally managed to put something playable together for <a href="http://itch.io/jam/libgdxjam">LibGDXJAM</a>.</p>
 <p>We&quot;d love you to have a go, and leave some <a href="http://itch.io/jam/libgdxjam/rate/51210">feedback</a>.</p>
 <iframe src="https://itch.io/embed/51210" width="100%" frameborder="0"></iframe>

@@ -105,12 +105,18 @@
     <br/>
     <a class="label" href="../categories/games-development">Games Development</a>
     </span>
-    <p><img src="../img/plague/header.png" alt="plague-banner"></p>
+    <p>
+  <img src="../img/plague/header.png" alt="plague-banner">
+
+</p>
 <p>A few weeks ago, <a href="https://twitter.com/senthe">Jay Cano</a> and I took part in the week-long <a href="https://itch.io/jam/godot-wild-jam-18">Godot Wild Jam 18</a> and submitted <a href="https://dsaltares.itch.io/plague">Plague</a>. Here are some of my personal thoughts on how we did and maybe some lessons for the future!</p>
 <h2 id="-results">📈 Results</h2>
 <p>Out of 43 submissions, we ranked 6th overall. That is the top 13th percentile. More importantly, we ranked 3th for fun or top 6th percentile. For the sake of comparison, <a href="game-jams/onederful-wizzard/">Onederful Wizard</a>, which we submitted to the <a href="https://itch.io/jam/gmtk-2019">GMTK 2019</a>, ranked 294 out of 2617 entries (top 11th percentile).</p>
 <p>Even though both games received positive feedback, Plague ranked high for fun. We&rsquo;re very happy about that!</p>
-<p><a href="../img/plague/jam-results.png"><img src="../img/plague/jam-results.png" alt="jam-results"></a></p>
+<p><a href="../img/plague/jam-results.png">
+  <img src="../img/plague/jam-results.png" alt="jam-results">
+
+</a></p>
 <h2 id="-what-went-well">👍 What went well</h2>
 <h3 id="-splitting-tasks">✅ Splitting tasks</h3>
 <p>During the previous jam, Jay and I rushed to implement features like crazy. Despite, Godot being very source control friendly, we ended up having to manually resolve too many merge conflicts.</p>
@@ -138,7 +144,10 @@
 <p>Additionally, we implemented a very simple <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/5da19b57e42014a3a9f26b64c782a51b5925a39c/game/Player/Air.gd#L33">Coyote Time</a>. This gives players a grace period to jump even if the character has left a platform. Tiny thing, but it makes the experience a lot more responsive.</p>
 <h3 id="-procedural-level-generation">✅ Procedural level generation</h3>
 <p>The game is a procedurally-generated infinite side-scroller. However, we do not procedurally place tiles. We have 8 hand crafted chunks. Then, the <a href="https://github.com/dsaltares/godot-wild-jam-18/blob/5da19b57e42014a3a9f26b64c782a51b5925a39c/game/Levels/InfiniteLevelManager.gd"><code>InfiniteLevelManager</code></a> script is responsible for randomly selecting the next chunk as the player approaches the end of the current chunk. Finally, it populates the chunk with enemies and ammo pickups.</p>
-<p><a href="../img/plague/levelchunk.png"><img src="../img/plague/levelchunk.png" alt="level chunk"></a></p>
+<p><a href="../img/plague/levelchunk.png">
+  <img src="../img/plague/levelchunk.png" alt="level chunk">
+
+</a></p>
 <p>This gave us an infinite scroller with a very simple procedural generation algorithm and super tight control over the end result. We even managed to progressively increase difficulty by spawning more and tougher enemies.</p>
 <p>With more time, we would have increased the variation and potentially procedurally place decoration on top of the blocks instead of having it built-in.</p>
 <h3 id="-re-using-assets">✅ Re-using assets</h3>

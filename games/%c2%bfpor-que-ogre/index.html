@@ -105,9 +105,15 @@
     <br/>
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
-    <p><img src="../../img/wp/porque.jpg" alt="porque.jpg"></p>
+    <p>
+  <img src="../../img/wp/porque.jpg" alt="porque.jpg">
+
+</p>
 <p><strong>Antes de decidirme a utilizar Ogre</strong> frente a otros motores de renderizado (<a href="http://irrlicht.sourceforge.net/">Irrlicht</a>) o incluso motores de juego completos (<a href="http://www.panda3d.org/">Panda 3D</a>) estuve mirando lo que ofrecía cada uno. Es complicado guiarse por foros y comunidades ya que <strong>cada uno barre para casa</strong>, a veces con un ferviente fanatismo, ya os podéis imaginar. Ni de lejos soy un experto en desarrollo de videojuegos 3D y puede que haya pasado detalles por alto pero lo que más me llamó la atención de Ogre fue su <strong>capacidad de adaptación</strong> a todo tipo de situaciones. Tas el salto, mis razones.</p>
-<p><img src="../../img/wp/pacific-storm.jpg" alt="pacific-storm.jpg"></p>
+<p>
+  <img src="../../img/wp/pacific-storm.jpg" alt="pacific-storm.jpg">
+
+</p>
 <h3 id="pon-el-piloto-automático-o-toma-el-control">Pon el piloto automático o toma el control</h3>
 <p>En Ogre hay <strong>decenas de formas de hacer las cosas</strong> dependiendo del grado de control que quieras tomar sobre el proceso. Podemos indicarle el motor que lleve a cabo determinada tarea y que lo haga con el <strong>comportamiento por defecto</strong> o, aunque también es posible <strong>indicar de forma explícita decenas de parámetros</strong> para que se comporte exactamente como deseamos. Es cierto que características como está hacen que la curva de aprendizaje tenga una pendiente abrumadora en los primeros compases. No obstante, no he visto ningún engine con <strong>la flexibilidad de Ogre</strong>.</p>
 <p>Podría citar muchos ejemplos en los que reluce esta filosofía como, por ejemplo, <strong>la secuencia de inicialización de Ogre</strong> en la que se nos presentan dos vías principales. Lo que sigue es un pequeño ejemplo pasando por alto ciertas reglas de estilo con el objetivo de no extenderme demasiado.</p>
@@ -161,16 +167,25 @@ ventana = raiz-&gt;createRenderWindow(
   0
 );
 </code></pre><p>Podríamos haber ido más allá hasta lograr <strong>embeber una ventana de Ogre en una de QT</strong> para conseguir un render dentro de una aplicación de diseño de interiores, por ejemplo. Parámetros como la sincronización vertical y decenas de pijadas más, pueden ser personalizados.</p>
-<p><img src="../../img/wp/venetica.jpg" alt="venetica.jpg"></p>
+<p>
+  <img src="../../img/wp/venetica.jpg" alt="venetica.jpg">
+
+</p>
 <h3 id="extensibilidad-a-través-de-plugins">Extensibilidad a través de plugins</h3>
 <p>La arquitectura de Ogre ofrece un <strong>sistema de plugins</strong> de forma que podemos sobreescribir la gestión por defecto de un subsistema por el que necesitemos. Como se ha visto en el ejemplo anterior, el propio sistema de renderizado viene en forma de plugin (Open GL o Direct3D). Ogre provee una interfaz para llevar a cabo una determinada tarea por lo que es posible proporcionar <strong>distintas implementaciones</strong> para dicha interfaz.</p>
 <p>Que Ogre se base en gran parte en plugins no quiere decir que nos toque desarrollar los nuestros. <strong>La comunidad se ha encargado de desarrollar multitud</strong> de extensiones para efectos de partículas, colisiones, gestión del scene graph etc. Simplemente debemos escoger el que se ajuste a nuestras necesidades.</p>
-<p><img src="../../img/wp/victory.jpg" alt="victory.jpg"></p>
+<p>
+  <img src="../../img/wp/victory.jpg" alt="victory.jpg">
+
+</p>
 <h3 id="construye-escenas-de-todo-tipo">Construye escenas de todo tipo</h3>
 <p><strong>El SceneManager</strong> es la interfaz que se encarga de ordenar y <strong>gestionar el scene graph</strong> para su renderizado entre otros. Una de las características que más me llamó la atención de Ogre fue la existencia de una gran variedad de SceneManager especializados en situaciones diferentes.</p>
 <p>Imagina que estamos desarrollando <strong>un título de acción</strong> en el que nuestro protagonista debe recorrer los pasillos de una instalación acabando con monstruos procedentes de un experimento fallido, ¿alguien dijo Half-Life?. Necesitaremos representar <strong>escenarios cerrados con una gran densidad de elementos</strong>. ¡Bien! Existe un SceneManager específico para este caso de manera que obtendremos un rendimiento mucho mayor utilizándolo.</p>
 <p>Puede que nuestro proyecto consista en <strong>un juego de rol</strong> en el que nuestro héroe debe recorrer grandes extensiones de terreno acabando con criaturas mitológicas. Un mundo abierto difiere muchísimo de la instalación pasillera del caso anterior. <strong>El escenario es cientos de veces mayor</strong> pero precisa de menos detalle. Estamos de suerte porque en Ogre existe un plugin para gestionar entornos abiertos virtualmente infinitos.</p>
-<p><img src="../../img/wp/haunted.jpg" alt="haunted.jpg"></p>
+<p>
+  <img src="../../img/wp/haunted.jpg" alt="haunted.jpg">
+
+</p>
 <h3 id="multitud-de-features-adicionales">Multitud de features adicionales</h3>
 <p>Ogre cuenta con muchas características adicionales listadas <a href="http://osl.uca.es/iberogre/index.php/Conociendo_Ogre3D#Caracter.C3.ADsticas">aquí</a> aunque en este artículo he expuesto lo que más útil y sorprendente me ha parecido. Supongo que cada uno tendrá sus features preferidas. En cualquier caso, consideraba interesante exponer en el blog las razones de mi elección las cuales c<strong>ompensan ampliamente la empinada curva de dificultad</strong>.</p>
 <p>Próximamente más novedades sobre IberOgre.</p>

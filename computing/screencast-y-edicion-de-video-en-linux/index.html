@@ -105,29 +105,50 @@
     <br/>
     <a class="label" href="../../categories/computing">Computing</a>
     </span>
-    <p><img src="../../img/wp/sreencast.png" alt="sreencast.png"></p>
+    <p>
+  <img src="../../img/wp/sreencast.png" alt="sreencast.png">
+
+</p>
 <p>Muchas veces he querido <strong>grabar un vídeo de cualquier proyecto personal</strong> (como los que he publicado de Sion Tower) pero siempre he tenido muchos problemas a la hora de hacerlo con Software Libre en mi preciada Ubuntu. Hasta ahora me había visto obligado a recurrir a productos privativos pero por fin he encontrado herramientas libres con la suficiente madurez para conseguir exactamente lo que quiero. En este artículo voy a comentar <strong>mi receta de la salvación para hacer un buen screencast</strong>.</p>
-<p><img src="../../img/wp/xvidcap-logo.png" alt="xvidcap-logo.png"></p>
+<p>
+  <img src="../../img/wp/xvidcap-logo.png" alt="xvidcap-logo.png">
+
+</p>
 <h3 id="screencast-con-xvidcap">Screencast con XVidCap</h3>
 <p><strong><a href="http://xvidcap.sourceforge.net/">XvidCap</a></strong> es una sencilla aplicación para entornos X Window consistente en una barra con controles de grabación básicos. Podemos grabar el escritorio completo, una porción rectangular o lo que ocurre en una ventana concreta utilizando el selector que incorpora. Dentro de su panel de opciones es posible elegir los cuadros por segundo de grabación así como los codecs de audio y vídeo a emplear.</p>
 <p><strong>Su rendimiento es excelente</strong>, grabando la demo técnica de Sion Tower a 1280×720 alcanzaba los 15 fps lo cual es suficiente para que se vea fluido. Estuve probando varias configuraciones y lo mejor era seleccionar el formato MPEG y unos fps reducidos de forma que la tasa de aciertos en la captura fuese mayor. La única pega que le encuentro es que <strong>no captura el sonido de forma correcta</strong>. O bien lo desactivaba o lo único que escuchaba era un ruido insoportable, esto lo solucioné con la siguiente herramienta.</p>
-<p><img src="../../img/wp/xvidcap.png" alt="xvidcap.png"></p>
+<p>
+  <img src="../../img/wp/xvidcap.png" alt="xvidcap.png">
+
+</p>
 <p>Está en los repositorios de Ubuntu, para instalarlo basta:</p>
 <pre tabindex="0"><code>sudo apt-get install xvidcap
-</code></pre><p><img src="../../img/wp/audacity-logo.png" alt="audacity-logo.png"></p>
+</code></pre><p>
+  <img src="../../img/wp/audacity-logo.png" alt="audacity-logo.png">
+
+</p>
 <h3 id="grabación-de-audio-con-audacity">Grabación de audio con Audacity</h3>
 <p><strong><a href="http://audacity.sourceforge.net/">Audacity</a> es el software de edición de sonido libre por excelencia</strong>, es compatible con infinidad de formatos y permite las operaciones básicas además de otras más avanzadas como la aplicación de efectos.</p>
 <p>Antes de comenzar la captura con XVidCap activo la grabación de audio en Audacity de manera que una aplicación se encarga del vídeo y la otra del sonido. Una vez he terminado el vídeo, exporto la grabación a OGG. En post-producción me limito a cortar y sincronizar ambas pistas.</p>
-<p><img src="../../img/wp/audacity.png" alt="audacity.png"></p>
+<p>
+  <img src="../../img/wp/audacity.png" alt="audacity.png">
+
+</p>
 <p>También está en los repos, así que:</p>
 <pre tabindex="0"><code>sudo apt-get install audacity
-</code></pre><p><img src="../../img/wp/openshot-logo.png" alt="openshot-logo.png"></p>
+</code></pre><p>
+  <img src="../../img/wp/openshot-logo.png" alt="openshot-logo.png">
+
+</p>
 <h3 id="edición-de-vídeo-con-openshot-13">Edición de vídeo con OpenShot 1.3</h3>
 <p>He probado muchísimos editores de vídeo en Linux con resultados cuanto menos decepcionantes: Pitivi, Cinelerra, Kino, Avidemux… Todos ellos han fracasado a la hora de ajustarse a mis necesidades que tampoco son nada del otro mundo. Cuando probé por primera vez la última versión de <strong><a href="http://www.openshotvideo.com/">OpenShot Video Editor</a></strong> mis ojos se abrieron como platos, pues era l<strong>a respuesta a todas mis plegarias</strong>.</p>
 <p>OpenShot Video Editor tiene una <strong>interfaz extremadamente intuitiva</strong>, de hecho, tardé menos de 15 minutos en editar la demo técnica de Sion Tower y dejarla exactamente como yo quería. Sólo tuve dudas al aplicar transiciones y su <a href="http://www.openshotusers.com/help/1.3/es/"><strong>fantástico manual</strong></a> me lo solucionó al instante. Cuenta con la clásica línea de tiempo sobre la que colocamos a nuestro antojo cualquier combinación de vídeo, audio o imágenes. Permite <strong>añadir transiciones, aplicar efectos</strong> y configurar multitud de parámetros. A pesar de las posibilidades que ofrece, lo básico queda a la vista y no es necesario bucear por oscuros menús.</p>
 <p>Es <strong>compatible con Inkscape y Blender</strong> (2.5 en adelante) lo que nos permite introducir contenido adicional como carteles y gráficos vectoriales en 2D o 3D. A medida que trabajamos podremos observar el resultado a través de su vista previa. Una vez estemos satisfechos exportaremos el proyecto utilizando cualquiera de la infinidad de perfiles disponibles. Cabe destacar que ofrece la posibilidad de <strong>subir el vídeo directamente a YouTube o Vimeo</strong> introduciendo nuestras credenciales.</p>
 <p><strong>Una maravilla oiga</strong>.</p>
-<p><img src="../../img/wp/openshot.png" alt="openshot.png"></p>
+<p>
+  <img src="../../img/wp/openshot.png" alt="openshot.png">
+
+</p>
 <p>La última versión no está en los repositorios y debe ser instalada añadiendo el PPA correspondiente:</p>
 <pre tabindex="0"><code>sudo add-apt-repository ppa:jonoomph/openshot-edge
 sudo apt-get update

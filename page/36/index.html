@@ -140,7 +140,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png"></p>
+      <p>
+  <img src="../../img/wp/siontower-actores.png" alt="siontower-actores.png">
+
+</p>
 <p>Tras publicar varios artículos en <a href="http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal">IberOgre</a>, he decidido <strong>retomar el trabajo en Sion Tower</strong> con el objetivo de tener una versión inicial a finales de julio. La primera tarea que he llevado a cabo es una <strong>refactorización del sistema de actores</strong> con el objetivo de hacerlo más extensible y evitar la duplicación de código en la medida de lo posible aunque crezca la verticalidad en la jerarquía. Por el momento no todas las clases están implementadas pero sí diseñadas. A continuación, una pequeña explicación del sistema.</p>
 <p>El sistema de actores está compuesto por las siguientes clases:</p>
 <ul>
@@ -151,7 +154,10 @@
 <li><strong>Enemy</strong>: también hereda de <em>Actor</em> y modela de forma genérica el comportamiento de los enemigos.</li>
 <li><strong>Spell</strong>: hereda de <em>GameObject</em> y añade sistemas de partículas para modelar los hechizos del juego junto a sus explosiones.</li>
 </ul>
-<p><img src="../../img/wp/actors-clases.png" alt="actors-clases.png"></p>
+<p>
+  <img src="../../img/wp/actors-clases.png" alt="actors-clases.png">
+
+</p>
 <p>En <em>GameObject</em> contamos con el enumerado <em>Type</em> para distinguir entre tipos de objetos de juego. Se cuenta con un método <em>getType</em> virtual puro que cada clase deberá implementar devolviendo el valor del enumerado correspondiente. De esta forma podemos <strong>conocer el tipo de un objeto</strong> de juego a partir de un <em>GameObject</em>* y hacer casting sin peligro en caso de ser absolutamente necesario. También es posible utilizar el tipo de objeto para hacer un filtrado en la detección de colisiones.</p>
 <pre tabindex="0"><code>class GameObject {
     public:
@@ -184,7 +190,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/iberogre-overlays.png" alt="iberogre-overlays.png"></p>
+      <p>
+  <img src="../../img/wp/iberogre-overlays.png" alt="iberogre-overlays.png">
+
+</p>
 <p>¡Se nota la actividad en IberOgre! He estado trabajando bastante duro estos días para sacar adelante un nuevo artículo: <em><a href="http://osl2.uca.es/iberogre/index.php/Sistema_de_Overlays">&ldquo;Sistema de overlays&rdquo;</a></em>. En el texto se tratan en bastante profundidad los mecanismos que ofrece Ogre para desplegar paneles e indicadores 2D a modo de <a href="http://es.wikipedia.org/wiki/Interfaz_gr%C3%A1fica_de_usuario">GUI</a> o <a href="http://es.wikipedia.org/wiki/HUD_(inform%C3%A1tica)">HUD</a>.</p>
 <p>Los <strong>contenidos</strong> que abarca se resumen en:</p>
 <ul>
@@ -208,7 +217,10 @@
       <a class="label" href="../../categories/computing">Computing</a>
       </span>
       
-      <p><img src="../../img/wp/yakito.png" alt="yakito.png"></p>
+      <p>
+  <img src="../../img/wp/yakito.png" alt="yakito.png">
+
+</p>
 <p><strong>¿Cuántas veces te has peleado con conversores de vídeo horribles?</strong> Acudes a Softonic, tecleas <em>&ldquo;de .avi a iPod&rdquo;</em>, descargas el que más estrellas tiene, se instala sin preguntar la enésima barra del navegador, resulta que no funciona y además su interfaz es ultra compleja. Es más que probable que lo que busques sea <strong><a href="http://yakito.yakiboo.net/">YakiTo</a>, uno de los mejores conversores</strong> que he probado. No, no lo digo porque su creador, <a href="http://www.yakiboo.net/">Sergio García Mondaray</a>, sea un compañero del V CUSL.</p>
 <h3 id="características">Características</h3>
 <ul>
@@ -221,14 +233,20 @@
 <li><strong>Configuración avanzada</strong>: si dominas la conversión de vídeo puedes personalizar el proceso al completo.</li>
 <li><strong>Conversión paralela</strong>: para aprovechar los procesadores multinúcleo, podemos convertir varios vídeos a la vez.</li>
 </ul>
-<p><img src="../../img/wp/yakito01.jpg" alt="yakito01.jpg"></p>
+<p>
+  <img src="../../img/wp/yakito01.jpg" alt="yakito01.jpg">
+
+</p>
 <h3 id="instalación">Instalación</h3>
 <p>La instalación de YakiTo es prácticamente trivial, podemos <a href="http://www.yakiboo.net/yakito/?page_id=20">descargarlo</a> desde la sección correspondiente de su web. En el remoto caso de que no sepamos cómo instalarlo podemos seguir los magníficos tutoriales existentes:</p>
 <ul>
 <li><a href="http://www.yakiboo.net/yakito/?p=220">Instalación de YakiTo en GNU/Linux.</a></li>
 <li><a href="http://www.yakiboo.net/yakito/?p=227">Instalación de YakiTo en Windows.</a></li>
 </ul>
-<p><img src="../../img/wp/yakito02.jpg" alt="yakito02.jpg"></p>
+<p>
+  <img src="../../img/wp/yakito02.jpg" alt="yakito02.jpg">
+
+</p>
 <h3 id="merecido-ganador">Merecido ganador</h3>
 <p>YakiTo ha sido galardonado con el <strong><a href="../../proyectos/pfc/mejor-proyecto-de-comunidad-en-el-v-cusl/" title="Mejor proyecto de comunidad en el V CUSL">premio especial al mejor proyecto en el V Concurso Universitario de Software Libre</a></strong> así que os podéis hacer una idea de su calidad. Desde aquí mi más sincera enhorabuena, es un premio merecidísimo que será útil a muchos usuarios.</p>
 <p>A mí ya me ha sacado de un apuro.</p>
@@ -246,7 +264,10 @@
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p><img src="../../img/wp/particulas-iberogre.png" alt="particulas-iberogre.png"></p>
+      <p>
+  <img src="../../img/wp/particulas-iberogre.png" alt="particulas-iberogre.png">
+
+</p>
 <p>No estamos adormilados tras la final del V CUSL porque ya se ha publicado un <strong>nuevo artículo en IberOgre</strong>. En esta ocasión en <strong><a href="http://osl2.uca.es/iberogre/index.php/Sistemas_de_part%C3%ADculas">&ldquo;Sistemas de partículas&rdquo;</a></strong> ofrecemos todos los conceptos necesarios para desplegar <strong>efectos especiales</strong> en nuestros videojuegos desarrollados con Ogre como destellos, humo, fuego y un largo etcétera.</p>
 <p>A vista de pájaro, tratamos los siguientes puntos:</p>
 <ul>
