@@ -6,7 +6,17 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 21 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>8 Questions to ask your potential future Engineering Manager during an interview</title>
+      <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
+      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
+      <description>We&amp;rsquo;re in the middle of a heated tech job market. The most heated tech job market in history!
+I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great time to be an engineer right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.</description>
+    </item>
+    
     <item>
       <title>How I got into Engineering management</title>
       <link>https://saltares.com/how-i-got-into-engineering-management/</link>
@@ -108,16 +118,6 @@ One aspect of remote work, where lack of inclusion can really alienate your team
 Happy days.
 🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.
 It&amp;rsquo;s actually trivial to set up!</description>
-    </item>
-    
-    <item>
-      <title>How to hire 8 engineers in 8 weeks</title>
-      <link>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/how-to-hire-8-engineers-in-8-weeks/</guid>
-      <description>Hiring engineers is top of mind for any engineering leader, this year at Aula it is the same for me. As VP Engineering I have the daunting task of tripling the size of our Engineering team. Happy to say we are well on track, in the last 8 weeks we have successfully hired 8 wonderful engineers and more than doubled our size!
-I wrote this post for other engineering leaders who’ve just been given the opportunity to rapidly grow their organisations.</description>
     </item>
     
   </channel>

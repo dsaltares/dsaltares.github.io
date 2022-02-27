@@ -104,6 +104,87 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/general/from-google-reader-to-tiny-tiny-rss/">From Google Reader to Tiny Tiny RSS</a>
+      </h1>
+      <span class="post-date">Mar 24, 2013 &middot; 4 minute read &middot; <a href="https://saltares.com/general/from-google-reader-to-tiny-tiny-rss/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      <p>As all of you surely know, <a href="http://googleblog.blogspot.co.uk/2013/03/a-second-spring-of-cleaning.html">Google Reader is in death row</a> and will be part of history as of June the 1st.</p>
+<blockquote>
+<p>Booh!</p>
+</blockquote>
+<h3 id="google-readers-demise">Google Reader&rsquo;s demise</h3>
+<p>As usual, the people from the Internet went bananas, so I took the time to film one of them.</p>
+<p>Google is evil, they&quot;re fucking us over and so on and so forth. However, the sad truth is, they just wanted to know what you&quot;re interested in so they could provide you with more meaningful advertisement. That&rsquo;s their business after all. You could argue that Reader didn&rsquo;t have any of that, but Google is a massive collection of services that share a common knowledge base. Presumably, RSS had stopped being such a good way of getting to know what someone likes, social media does that now.</p>
+<p>Besides, let&rsquo;s face it, people who access the news the way we do are a tiny minority.</p>
+<h3 id="looking-for-alternatives-netvibes-and-feedly">Looking for alternatives: Netvibes and Feedly</h3>
+<p>So it was time to look for alternatives, I wasn&rsquo;t asking for much.</p>
+<ul>
+<li><strong>Control of what I read</strong>: none of that, hey we&quot;ll figure out what you like bullshit.</li>
+<li><strong>Simple but usable UI</strong>: show me my categories and a way of quickly going through the items in a given category, marking them as read as we go along.</li>
+<li><strong>Cross platform</strong>: good syncing back and forth between mobile and desktop.</li>
+<li><strong>Offline reading:</strong> call me old school, but I&quot;d like to access my stuff in the most remote of places.</li>
+<li><strong>Kind with my data</strong>: after spending some time setting everything up and tidying my feeds, I&quot;d like to be able to pack and take my stuff somewhere else. <a href="http://en.wikipedia.org/wiki/OPML">OPML</a> does it well.</li>
+<li><strong>Light weight</strong>: having a super fancy UI is pointless if the application makes your device crawl and cry for help.</li>
+</ul>
+<p>Okay, maybe I was asking for too much, kill me.</p>
+<p>During the past week there&rsquo;s been an avalanche of <em>&ldquo;Alternatives to Google Reader&rdquo;</em> posts.</p>
+<blockquote>
+<p>What the hell dude? This is one of them!</p>
+</blockquote>
+<p>Fair enough, but the truth is, I&rsquo;ve been following them and they tend to derive people to services like <a href="http://www.netvibes.com/privatepage/1">Netvibes</a> or <a href="http://www.feedly.com/home">Feedly</a>. Both have seen their user base increase dramatically, to the point of having availability problems. To be completely fair, there&rsquo;s nothing deeply wrong with neither of them. Actually, I&rsquo;ve used Feedly for a few days and it&rsquo;s quite nice, I was even going to stick with it. However, all these were too heavy on the browser. I took a look at <a href="http://theoldreader.com/">The Old Reader</a> whose browser version is very nice but it lacks a phone one.</p>
+<p><img src="../../img/wp/feedly.png" alt="feedly.png"></p>
+<p>At the end of the day, all of them could shut the whole thing down any time putting me in the same uncomfortable position. First world problems.</p>
+<p>I needed to take control.</p>
+<h3 id="take-control-with-tiny-tiny-rss">Take control with Tiny Tiny RSS</h3>
+<p>Then I discovered <a href="http://tt-rss.org/redmine/projects/tt-rss/wiki">Tiny Tiny RSS</a>, a full blown free and <a href="https://github.com/gothfox/Tiny-Tiny-RSS">open source</a> RSS reader application that you can install in your own hosting. Check its website, you&quot;ll see it pretty much has <a href="http://tt-rss.org/redmine/projects/tt-rss/wiki#Features">every feature you could ask for</a>. It&rsquo;s simple, multi language, multi user and comes with an open source (paid but inexpensive) Android app. It even has plugin and theme support.</p>
+<blockquote>
+<p>Sweet!</p>
+</blockquote>
+<p><img src="../../img/wp/tiny-tiny-rss.png" alt="tiny-tiny-rss.png"></p>
+<p>Alright, I know not everyone has a hosting of his/her own, although, like I said earlier, people who still go for RSS feeds are a minority anyway, and they tend to be in the blogging world. I don&rsquo;t believe the two sets to be mutually exclusive.</p>
+<h3 id="install--config-guide">Install &amp; config guide</h3>
+<p>The <a href="http://tt-rss.org/redmine/projects/tt-rss/wiki/InstallationNotes">documentation</a> is good enough but to make things even simpler, I&rsquo;ve written these few simple steps down.</p>
+<ul>
+<li>Download <a href="https://github.com/gothfox/Tiny-Tiny-RSS/archive/1.7.5.tar.gz">the latest version</a></li>
+<li>Upload it to your server, use FTP, SCP or whatever you prefer.</li>
+<li>Create a database for tt-rss. It can be either MySQL or PostgreSQL.</li>
+<li>Install the SQL schema into your newly created database.</li>
+</ul>
+<pre tabindex="0"><code>[tt-rss]/schema/ttrss_schema_mysql.sql
+[tt-rss]/schema/trss_schema_pgsql.sql
+</code></pre><ul>
+<li>Copy <code>[tt-rss]/config.php-dist</code> to <code>[tt-rss]/config.php</code>.</li>
+<li>Go through the file and set the options to match your server. These are the most common ones.</li>
+</ul>
+<pre tabindex="0"><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
+    define('DB_HOST', &quot;localhost&quot;);
+    define('DB_USER', &quot;******&quot;);
+    define('DB_NAME', &quot;******&quot;);
+    define('DB_PASS', &quot;******&quot;);
+    define('SELF_URL_PATH', 'http://[yoursite]/tt-rss/');
+    define('SINGLE_USER_MODE', false);
+</code></pre><ul>
+<li>Add this to your server cron to schedule feeds updates with the frequency you prefer.</li>
+</ul>
+<pre tabindex="0"><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
+</code></pre><ul>
+<li>Login with <code>&lt;admin&gt;</code>/`<password> and immediately change your password you fool!</li>
+</ul>
+<p>Enjoy!</p>
+<p><a href="https://play.google.com/store/apps/details?id=org.fox.ttrss&amp;hl=en">The Android version has a trial build</a> and connecting it with your Tiny Tiny RSS instance is dead easy. Type in your URL, username and password. Just make sure you have the external clients option enabled in your settings panel within the webapp.</p>
+<p><img src="../../img/wp/tiny-tiny-rss-android.png" alt="tiny-tiny-rss-android"></p>
+<p>It&rsquo;s been a week since I set everything up and I couldn&rsquo;t be happier. You can even enable plugins to share articles on various media, use your old Reader keyboard shortcuts or even add <a href="http://tt-rss.org/forum/viewtopic.php?f=22&amp;t=1344">custom CSS to make it look a lot more like your sentenced RSS app</a>.</p>
+<p>Given the fact that I already had a hosting, switching to Tiny Tiny RSS was a no brainer and I love it.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/lincoln-university-canjam13/">Lincoln University #CanJam13</a>
       </h1>
       <span class="post-date">Mar 16, 2013 &middot; 3 minute read &middot; <a href="https://saltares.com/general/lincoln-university-canjam13/#disqus_thread">Comments</a>
@@ -270,43 +351,6 @@ mapBodyManager.createPhysics(map, &quot;physics&quot;);
 <li>Improved control and abduction system</li>
 </ul>
 <p>I&quot;m out!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/1gam-february-weekly-progress/">#1GAM February: weekly progress</a>
-      </h1>
-      <span class="post-date">Feb 10, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>One week ago I posted about the <a href="../../games/1gam-february-game-design/">initial game design for my February One Game A Month entry</a>. I believe, it&rsquo;s time to report back with the work I&rsquo;ve done during the past seven days. Actually, I&rsquo;ve realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.</p>
-<h3 id="what-i-have-so-far">What I have so far</h3>
-<p>Without further ado, here&rsquo;s the update.</p>
-<ul>
-<li>Started a <a href="https://github.com/dsaltares/rescuecopter">GitHub repo</a>.</li>
-<li>Integrated my codebase with some improvements across the board: engine facade, ID generator, i18n support, animated sprites, physics objects.</li>
-<li>Integrated the <a href="https://github.com/libgdx/libgdx/tree/mapsapi/gdx/src/com/badlogic/gdx/maps">mapsapi libgdx branch</a> to do some further testing on my Gleed system. Found a bug and already <a href="https://github.com/libgdx/libgdx/pull/237">pull requested the fix</a>.</li>
-<li>Component based entity system with an <a href="https://code.google.com/p/artemis-framework/">Artemis</a> like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I&quot;ll talk more about it on a different post.</li>
-<li>Static bodies creation from map&rsquo;s shape data and material system. This might as well deserve another post, why the hell not!</li>
-</ul>
-<p><img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg"></p>
-<h3 id="coming-this-week">Coming this week</h3>
-<p>I hereby make the compromise of delivering the following within a week.</p>
-<ul>
-<li>Spaceship entity with controls.</li>
-<li>Camera movement behavior.</li>
-<li>Collision handlers for the spaceship.</li>
-<li>Foreground shapes set.</li>
-</ul>
-<p>Let&rsquo;s leave it at that and stay realistic.</p>
-<h3 id="and-now-for-something-completely-different">And now for something completely different</h3>
-<p>I&rsquo;ve deleted my SionEngine repository from GitHub as I don&rsquo;t feel it meets the appropriate quality standards just yet. I will surely continue developing its components along every One Game a Month project, which, as you can see, will be open source too. I never pretended it to be a killer engine of any sort, this is just my codebase and a way of developing my software design skills.</p>
-<p>See you guys next week.</p>
 
       
     </div>

@@ -104,6 +104,43 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/1gam-february-weekly-progress/">#1GAM February: weekly progress</a>
+      </h1>
+      <span class="post-date">Feb 10, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/1gam-february-weekly-progress/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>One week ago I posted about the <a href="../../games/1gam-february-game-design/">initial game design for my February One Game A Month entry</a>. I believe, it&rsquo;s time to report back with the work I&rsquo;ve done during the past seven days. Actually, I&rsquo;ve realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.</p>
+<h3 id="what-i-have-so-far">What I have so far</h3>
+<p>Without further ado, here&rsquo;s the update.</p>
+<ul>
+<li>Started a <a href="https://github.com/dsaltares/rescuecopter">GitHub repo</a>.</li>
+<li>Integrated my codebase with some improvements across the board: engine facade, ID generator, i18n support, animated sprites, physics objects.</li>
+<li>Integrated the <a href="https://github.com/libgdx/libgdx/tree/mapsapi/gdx/src/com/badlogic/gdx/maps">mapsapi libgdx branch</a> to do some further testing on my Gleed system. Found a bug and already <a href="https://github.com/libgdx/libgdx/pull/237">pull requested the fix</a>.</li>
+<li>Component based entity system with an <a href="https://code.google.com/p/artemis-framework/">Artemis</a> like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I&quot;ll talk more about it on a different post.</li>
+<li>Static bodies creation from map&rsquo;s shape data and material system. This might as well deserve another post, why the hell not!</li>
+</ul>
+<p><img src="../../img/wp/abduction-progress.jpg" alt="abduction-progress.jpg"></p>
+<h3 id="coming-this-week">Coming this week</h3>
+<p>I hereby make the compromise of delivering the following within a week.</p>
+<ul>
+<li>Spaceship entity with controls.</li>
+<li>Camera movement behavior.</li>
+<li>Collision handlers for the spaceship.</li>
+<li>Foreground shapes set.</li>
+</ul>
+<p>Let&rsquo;s leave it at that and stay realistic.</p>
+<h3 id="and-now-for-something-completely-different">And now for something completely different</h3>
+<p>I&rsquo;ve deleted my SionEngine repository from GitHub as I don&rsquo;t feel it meets the appropriate quality standards just yet. I will surely continue developing its components along every One Game a Month project, which, as you can see, will be open source too. I never pretended it to be a killer engine of any sort, this is just my codebase and a way of developing my software design skills.</p>
+<p>See you guys next week.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/1gam-february-game-design/">#1GAM February: game design</a>
       </h1>
       <span class="post-date">Feb 3, 2013 &middot; 3 minute read &middot; <a href="https://saltares.com/games/1gam-february-game-design/#disqus_thread">Comments</a>
@@ -393,42 +430,6 @@ inkscape.saveDocument(&quot;character.svg&quot;)
 <li>Added German language (thanks to <a href="http://www.badlogicgames.com/forum/memberlist.php?mode=viewprofile&amp;u=1697">just4phil</a> for that <a href="https://github.com/dsaltares/freegemas-gdx/pull/1">pull request</a>)</li>
 </ul>
 <p>Enjoy.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/one-game-a-month/">One Game A Month</a>
-      </h1>
-      <span class="post-date">Jan 11, 2013 &middot; 2 minute read &middot; <a href="https://saltares.com/games/one-game-a-month/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <blockquote>
-<p>Your quest is to try to create one new game each month. This challenge is meant to help you on a personal level. There are no prizes, signup fees or rules. It might sound crazy optimistic, but you CAN do it.</p>
-</blockquote>
-<p><img src="../../img/wp/onegameamonth.jpg" alt="onegameamonth.jpg"></p>
-<p>These are the opening lines on the <a href="http://www.onegameamonth.com/">One Game A Month</a> website, an initiative by Christer Kaitila aka <a href="https://twitter.com/McFunkypants">@McFunckypants</a> (author of <a href="http://www.packtpub.com/game-jam-survival-guide/book">The Game Jam Survival Guide</a>). I came across this insane quest just over a week ago and I&rsquo;ve given it a lot of thought before accepting it. No doubt, it&rsquo;s a ton of work but it could have an immensely big educational power if used right. By definition, it gives you 12 attempts to try completely new things!</p>
-<p>I sincerely believe it to be an accomplishable task, providing that each game is not over scoped. Taking into account weekends away, important events and workload at the office won&rsquo;t be easy, but that doesn&rsquo;t mean I shouldn&rsquo;t try! Hell, may this post serve as a shameful proof of my failure shall that come to happen. The fact that game jams, ports and prototypes count, will certainly make the process less painful.</p>
-<p>Conveniently, this comes at a time when I wanted to try learn new things such as AI techniques or some graphics programming (which I, shamefully, know nothing about). One Game A Month could be seen as the perfect way of keeping myself engaged and highly motivated.</p>
-<p>Motivation! This ties with the super awesome online platform on which One Game A Month is built. <a href="https://twitter.com/McFunkypants">@McFunckyPants</a> has shipped some sort of gamification system where the user creates a profile an earns experience points by submitting games and helping other people out. Furthermore, there&rsquo;s a gamedev partner search system where participants can look for registered coders/artists to team up with. I was amazed at the massive amount of work put into this for pure gamedev love. Thanks a lot for that! The Twitter community is also strong and the retweet bot makes it easy to meet new people and their projects.</p>
-<p>Like I said, I love it! It&rsquo;s pure community spirit.</p>
-<p>There will be news on the January project soonish. In the meantime, I&quot;ll just leave you with the keynote video.</p>
-<div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/1mjkNtfRbV8"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
 
       
     </div>

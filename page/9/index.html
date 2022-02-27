@@ -104,6 +104,37 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-6-0-released/">Ashley 1.6.0 released</a>
+      </h1>
+      <span class="post-date">Jul 29, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-6-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p><img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png"></p>
+<p>A new <a href="https://github.com/libgdx/ashley">Ashley</a> package has shipped, making
+<a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.6.0">1.6.0</a> the latest
+stable version. Here&rsquo;s the summary of the changes:</p>
+<ul>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/170">API change</a></strong>: <code>Component</code> is now an interface.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/167">API addition</a></strong>: adds <code>getEngine()</code> to <code>EntitySystem</code>.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/f9152e61d30907000bbc483de6fa0afb61c16c31">API addition</a></strong>: <code>EntityListeners</code> now are notified by priority order.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/issues/173">API consistency</a></strong>: defines what happens when an <code>Entity</code> is added twice to an <code>Engine</code> and when we try do nested updates. We throw an exception in both cases.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/1dbfcb4dc1ea0ea0a0fdb0d481c00b7dd9b8dd8f">API consistency</a></strong>: adding an <code>EntitySystem</code> of the same class twice replaces the previous one, just like it has always happened when adding <code>Components</code> to an <code>Entity</code>.</li>
+<li><strong><a href="https://github.com/libgdx/ashley/commit/0284510e759c7d97c7d1e7acaf7d29d6071434cc">Update</a></strong>: uses Libgdx 1.6.4.</li>
+</ul>
+<p>Note that this version introduces API breaking changes. However, fixing your
+code will be trivial. To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.6.0</code>.
+The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.6.1-SNAPSHOT</code>. As usual,
+<a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a> and
+the wiki is up to date. Please keep up the good work sending more pull requests and reporting bugs.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/libgdx-at-intel-buzz-workshop-stockholm-2015-pictures-and-video/">Libgdx at Intel Buzz Workshop Stockholm 2015: pictures and video</a>
       </h1>
       <span class="post-date">Jul 28, 2015 &middot; 2 minute read &middot; <a href="https://saltares.com/games/libgdx-at-intel-buzz-workshop-stockholm-2015-pictures-and-video/#disqus_thread">Comments</a>
@@ -219,56 +250,6 @@ A new version of your favorite component based entity framework is out.</p>
 </ul>
 <p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.5.0</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.5.1-SNAPSHOT</code>. As usual, <a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a> and the wiki is up to date.</p>
 <p>Please keep up the good work sending more pull requests and reporting bugs.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/conjugate/">Conjugate</a>
-      </h1>
-      <span class="post-date">May 4, 2015 &middot; 2 minute read &middot; <a href="https://saltares.com/projects/conjugate/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>For the past few weeks working on a new toy: <a href="https://github.com/dsaltares/conjugate">Conjugate</a>. It&rsquo;s probably easier if I just stick a summary of the GitHub readme here.</p>
-<p>Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.</p>
-<p><img src="../../img/conjugate/languages.jpg" alt="languages.jpg"></p>
-<h3 id="reason-to-be">Reason to be</h3>
-<p>When learning a new language, it is very common to struggle with verb conjugations. For example:</p>
-<blockquote>
-<p>I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</p>
-</blockquote>
-<p>Unfortunately, the available resources are somehow limited:</p>
-<ul>
-<li>Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.</li>
-<li>Apps: seriously? I don&rsquo;t want to install yet another app!</li>
-<li>Websites: lists are limited, the sites are old, full of ads and/or don&rsquo;t play well with mobile devices.</li>
-</ul>
-<p>Conjugate tries to solve that use case.</p>
-<h3 id="project-structure">Project structure</h3>
-<p>The project is divided in two parts:</p>
-<ul>
-<li>Scraper</li>
-<li>Mobile friendly website</li>
-</ul>
-<h4 id="scraper">Scraper</h4>
-<p>I wrote a <a href="https://github.com/dsaltares/conjugate/tree/master/scraping">web scraper</a> in Python using <a href="https://pypi.python.org/pypi/beautifulsoup4">BeautifulSoup4</a> that grabs translation and conjugation data from <a href="http://www.verbix.com/">Verbix</a>. This site doesn&rsquo;t work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.</p>
-<p>The script currently supports Romanian (which I&rsquo;m trying to learn) and Spanish. Luckily, it&rsquo;s pretty easy to add support for new languages, although no thanks to Verbix&rsquo;s poor use of web standards.</p>
-<h4 id="website">Website</h4>
-<p>Currently, I&rsquo;m in the process of writing the mobile friendly application. It&rsquo;ll be extremely simple:</p>
-<ol>
-<li>Enter a verb in English (infinitive).</li>
-<li>Select a language from a dropdown.</li>
-<li>Hit &ldquo;Go&rdquo;.</li>
-</ol>
-<p><img src="../../img/conjugate/flask.png" alt="flask.png"></p>
-<p>For the backend I&rsquo;m using <a href="http://flask.pocoo.org/docs/0.10/">Flask</a> and <a href="http://www.sqlalchemy.org/">sqlalchemy</a> to keep things in the Python world, not to mention that they&rsquo;re really easy to get started with. Not too sure about the frontend, but I&rsquo;ll probably go for a framework that makes responsive design simple enough.</p>
-<p>Any suggestions?</p>
-<h3 id="progress">Progress</h3>
-<p>I&rsquo;ve been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I&rsquo;d be more than happy to accept PR&rsquo;s if you&rsquo;re interested to help!</p>
 
       
     </div>
