@@ -110,34 +110,33 @@
 <p>🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.</p>
 <p>It&rsquo;s actually trivial to set up!</p>
 <p>Simply add a <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events">schedule trigger</a> to your Github Action like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
-
-<span style="color:#f92672">on</span>:
-  <span style="color:#f92672">push</span>:
-    <span style="color:#f92672">branches</span>:
-    - <span style="color:#ae81ff">master</span>
-  <span style="color:#f92672">schedule</span>:
-    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 0 * * *&#39;</span> <span style="color:#75715e"># Once per day at midnight</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">build</span>:
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">steps</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
-      <span style="color:#f92672">env</span>:
-        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">dsaltares/dsaltares.github.io</span>
-        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
-        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
-        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
-
-</code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schedule</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 0 * * *&#39;</span> <span style="color:#75715e"># Once per day at midnight</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">dsaltares/dsaltares.github.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
+</span></span></code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
 <pre tabindex="0"><code>date: 3059-05-01T00:00:00+00:00
 </code></pre><p>That could be a post for future generations 😅.</p>
 <p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>

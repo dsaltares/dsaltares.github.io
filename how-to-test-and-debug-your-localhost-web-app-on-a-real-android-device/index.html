@@ -123,11 +123,11 @@
 <p>Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.</p>
 <h2 id="-tunnel-localhost">🚇 Tunnel localhost</h2>
 <p>Run your local development server. I am working on a <a href="https://nextjs.org/">Next.js</a> app, so I can just run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ yarn dev
-</code></pre></div><p>Your web app is probably now running on <code>localhost</code>, but your real device cannot connect directly. In order to access your local development server from a different device we can use <a href="https://localtunnel.me/">localtunnel</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ yarn dev
+</span></span></code></pre></div><p>Your web app is probably now running on <code>localhost</code>, but your real device cannot connect directly. In order to access your local development server from a different device we can use <a href="https://localtunnel.me/">localtunnel</a>.</p>
 <p>No need to install, you can use <code>npx</code> to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is <code>3000</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">$ npx localtunnel --port <span style="color:#ae81ff">3000</span>
-</code></pre></div><p><code>localtunnel</code> will give you a temporary URL that is accessible from anywhere in the world. In my case, I got <code>https://little-fox-32.loca.lt</code>. You can now open that URL in the device you want to test.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npx localtunnel --port <span style="color:#ae81ff">3000</span>
+</span></span></code></pre></div><p><code>localtunnel</code> will give you a temporary URL that is accessible from anywhere in the world. In my case, I got <code>https://little-fox-32.loca.lt</code>. You can now open that URL in the device you want to test.</p>
 <p>Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, <a href="https://github.com/localtunnel/localtunnel">localtunnel</a> is an open source tool, you could get a private server going if privacy is a concern.</p>
 <h2 id="-remote-chrome-inspector">🛰️ Remote Chrome inspector</h2>
 <p>Open your Chromium based browser and enter:</p>

@@ -119,7 +119,7 @@
 <p>Podría citar muchos ejemplos en los que reluce esta filosofía como, por ejemplo, <strong>la secuencia de inicialización de Ogre</strong> en la que se nos presentan dos vías principales. Lo que sigue es un pequeño ejemplo pasando por alto ciertas reglas de estilo con el objetivo de no extenderme demasiado.</p>
 <p><em>Método automático:</em></p>
 <pre tabindex="0"><code>// Creamos la raíz con ficheros de plugin y configuración válidos
-Root* raiz = new Root(&quot;plugins.cfg&quot;, &quot;ogre.cfg&quot;, &quot;ogre.log&quot;);
+Root* raiz = new Root(&#34;plugins.cfg&#34;, &#34;ogre.cfg&#34;, &#34;ogre.log&#34;);
 
 // Ventana de Ogre
 RenderWindow* ventana;
@@ -128,7 +128,7 @@ RenderWindow* ventana;
 raiz-&gt;restoreConfig();
 
 // Inicializamos la librería
-ventana = Ogre-&gt;initialize(true,&quot;SionDream - Ogre automático&quot;);
+ventana = Ogre-&gt;initialize(true,&#34;SionDream - Ogre automático&#34;);
 </code></pre><p><em>Método manual:</em></p>
 <pre tabindex="0"><code>// Creamos la raíz
 Root* raiz = new Root();
@@ -137,8 +137,8 @@ Root* raiz = new Root();
 RenderWindow* ventana;
 
 // Seleccionamos el plugin de renderizado de Open GL
-raiz-&gt;loadPlugin(&quot;RenderSystem_GL&quot;);
-String nombreGL(&quot;OpenGL Rendering Subsystem&quot;);
+raiz-&gt;loadPlugin(&#34;RenderSystem_GL&#34;);
+String nombreGL(&#34;OpenGL Rendering Subsystem&#34;);
 RenderSystemList *listaRender = raiz-&gt;getAvaiableRenderers();
 RenderSystemList::iterator i;
 bool stop = false;
@@ -161,7 +161,7 @@ raiz-&gt;initialise(false);
 
 // Creamos la ventana
 ventana = raiz-&gt;createRenderWindow(
-  &quot;SionDream - Ogre inicialización manual&quot;,
+  &#34;SionDream - Ogre inicialización manual&#34;,
   1280, 720,
   true,
   0

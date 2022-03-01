@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -126,41 +126,41 @@
 <p>En cambio, <strong><a href="http://www.blender.org/">Blender</a> es un editor 3D consagrado</strong>, flexible, estable y con una comunidad mucho mayor. Busqué más alternativas y pregunté en Twitter por un buen editor de niveles <strong>compatible con el formato DotScene</strong>. El usuario <a href="http://twitter.com/#!/makiolo">@makiolo</a> también sugirió amablemente Blender. Tras varias pruebas pude obtener el vídeo del anterior artículo. Si todo va bien y no me encuentro con ningún obstáculo insalvable utilizaré Blender.</p>
 <h3 id="el-formato-dotscene-y-los-escenarios-de-sion-tower">El formato DotScene y los escenarios de Sion Tower</h3>
 <p><strong><a href="http://www.ogre3d.org/tikiwiki/DotScene">DotScene</a> es un formato xml para definir escenas 3D</strong> en Ogre, podéis acceder a su DTD <a href="http://www.ogre3d.org/tikiwiki/DotSceneFormat">aquí</a>. Contiene información sobre los nodos que componen la escena: cámaras, luces y entidades. Así mismo también ofrece datos sobre la luz ambiente y el color de fondo. A continuación tenéis el fichero xml correspondiente a la escena por defecto de Blender (un cubo, una cámara y un punto de luz):</p>
-<pre tabindex="0"><code>&lt;scene formatVersion=&quot;1.0.0&quot;&gt;
+<pre tabindex="0"><code>&lt;scene formatVersion=&#34;1.0.0&#34;&gt;
   &lt;nodes&gt;
-    &lt;node name=&quot;Lamp&quot;&gt;
-      &lt;position x=&quot;4.076245&quot; y=&quot;5.903862&quot; z=&quot;-1.005454&quot;/&gt;
-      &lt;quaternion x=&quot;-0.284166&quot; y=&quot;0.726942&quot; z=&quot;0.342034&quot; w=&quot;0.523275&quot;/&gt;
-      &lt;scale x=&quot;1.000000&quot; y=&quot;1.000000&quot; z=&quot;1.000000&quot;/&gt;
-      &lt;light name=&quot;Spot&quot; type=&quot;point&quot;&gt;
-        &lt;colourdiffuse r=&quot;1.000000&quot; g=&quot;1.000000&quot; b=&quot;1.000000&quot;/&gt;
-        &lt;colourspecular r=&quot;1.000000&quot; g=&quot;1.000000&quot; b=&quot;1.000000&quot;/&gt;
-        &lt;lightattenuation range=&quot;5000.0&quot; constant=&quot;1.000000&quot; linear=&quot;0.033333&quot; quadratic=&quot;0.000000&quot;/&gt;
+    &lt;node name=&#34;Lamp&#34;&gt;
+      &lt;position x=&#34;4.076245&#34; y=&#34;5.903862&#34; z=&#34;-1.005454&#34;/&gt;
+      &lt;quaternion x=&#34;-0.284166&#34; y=&#34;0.726942&#34; z=&#34;0.342034&#34; w=&#34;0.523275&#34;/&gt;
+      &lt;scale x=&#34;1.000000&#34; y=&#34;1.000000&#34; z=&#34;1.000000&#34;/&gt;
+      &lt;light name=&#34;Spot&#34; type=&#34;point&#34;&gt;
+        &lt;colourdiffuse r=&#34;1.000000&#34; g=&#34;1.000000&#34; b=&#34;1.000000&#34;/&gt;
+        &lt;colourspecular r=&#34;1.000000&#34; g=&#34;1.000000&#34; b=&#34;1.000000&#34;/&gt;
+        &lt;lightattenuation range=&#34;5000.0&#34; constant=&#34;1.000000&#34; linear=&#34;0.033333&#34; quadratic=&#34;0.000000&#34;/&gt;
       &lt;/light&gt;
     &lt;/node&gt;
-    &lt;node name=&quot;Cube&quot;&gt;
-      &lt;position x=&quot;0.000000&quot; y=&quot;0.000000&quot; z=&quot;-0.000000&quot;/&gt;
-      &lt;quaternion x=&quot;0.000000&quot; y=&quot;0.000000&quot; z=&quot;-0.000000&quot; w=&quot;1.000000&quot;/&gt;
-      &lt;scale x=&quot;1.000000&quot; y=&quot;1.000000&quot; z=&quot;1.000000&quot;/&gt;
-      &lt;entity name=&quot;Cube&quot; meshFile=&quot;Cube.mesh&quot;/&gt;
+    &lt;node name=&#34;Cube&#34;&gt;
+      &lt;position x=&#34;0.000000&#34; y=&#34;0.000000&#34; z=&#34;-0.000000&#34;/&gt;
+      &lt;quaternion x=&#34;0.000000&#34; y=&#34;0.000000&#34; z=&#34;-0.000000&#34; w=&#34;1.000000&#34;/&gt;
+      &lt;scale x=&#34;1.000000&#34; y=&#34;1.000000&#34; z=&#34;1.000000&#34;/&gt;
+      &lt;entity name=&#34;Cube&#34; meshFile=&#34;Cube.mesh&#34;/&gt;
     &lt;/node&gt;
-    &lt;node name=&quot;Camera&quot;&gt;
-      &lt;position x=&quot;7.481132&quot; y=&quot;5.343665&quot; z=&quot;6.507640&quot;/&gt;
-      &lt;quaternion x=&quot;-0.212056&quot; y=&quot;0.386910&quot; z=&quot;0.085793&quot; w=&quot;0.893293&quot;/&gt;
-      &lt;scale x=&quot;1.000000&quot; y=&quot;1.000000&quot; z=&quot;1.000000&quot;/&gt;
-      &lt;camera name=&quot;Camera&quot; fov=&quot;37.849289&quot; projectionType=&quot;perspective&quot;&gt;
-        &lt;clipping nearPlaneDist=&quot;0.100000&quot; farPlaneDist=&quot;100.000000&quot;/&gt;
+    &lt;node name=&#34;Camera&#34;&gt;
+      &lt;position x=&#34;7.481132&#34; y=&#34;5.343665&#34; z=&#34;6.507640&#34;/&gt;
+      &lt;quaternion x=&#34;-0.212056&#34; y=&#34;0.386910&#34; z=&#34;0.085793&#34; w=&#34;0.893293&#34;/&gt;
+      &lt;scale x=&#34;1.000000&#34; y=&#34;1.000000&#34; z=&#34;1.000000&#34;/&gt;
+      &lt;camera name=&#34;Camera&#34; fov=&#34;37.849289&#34; projectionType=&#34;perspective&#34;&gt;
+        &lt;clipping nearPlaneDist=&#34;0.100000&#34; farPlaneDist=&#34;100.000000&#34;/&gt;
       &lt;/camera&gt;
     &lt;/node&gt;
   &lt;/nodes&gt;
   &lt;externals&gt;
-    &lt;item type=&quot;material&quot;&gt;
-      &lt;file name=&quot;Scene.material&quot;/&gt;
+    &lt;item type=&#34;material&#34;&gt;
+      &lt;file name=&#34;Scene.material&#34;/&gt;
     &lt;/item&gt;
   &lt;/externals&gt;
   &lt;environment&gt;
-    &lt;colourambient r=&quot;0.000000&quot; g=&quot;0.000000&quot; b=&quot;0.000000&quot;/&gt;
-    &lt;colourbackground r=&quot;0.056563&quot; g=&quot;0.220815&quot; b=&quot;0.400000&quot;/&gt;
+    &lt;colourambient r=&#34;0.000000&#34; g=&#34;0.000000&#34; b=&#34;0.000000&#34;/&gt;
+    &lt;colourbackground r=&#34;0.056563&#34; g=&#34;0.220815&#34; b=&#34;0.400000&#34;/&gt;
   &lt;/environment&gt;
 &lt;/scene&gt;
 </code></pre><p>Ya comenté que <strong>utilizaría la biblioteca <a href="http://code.google.com/p/pugixml/">pugixml</a></strong> para procesar los ficheros xml de cada nivel. Tiene un rendimiento excelente, cuenta con una documentación clara y es muy sencilla de utilizar. No requiere instalaciones ya que simplemente hay que añadir tres ficheros al proyecto. Lo que sigue es un pequeño ejemplo para leer la información del entorno de la escena:</p>
@@ -168,16 +168,16 @@
     // Cargamos el documento
     pugi::xml_node rootNode;
 
-    if (!(rootNode = doc.child(&quot;scene&quot;))) {
-        cerr &lt; &lt; &quot;Level::loadNodesInfo(): error al leer el fichero xml en elemento scene&quot; &lt;&lt; endl;
+    if (!(rootNode = doc.child(&#34;scene&#34;))) {
+        cerr &lt; &lt; &#34;Level::loadNodesInfo(): error al leer el fichero xml en elemento scene&#34; &lt;&lt; endl;
         exit(1);
     }
 
     // Buscamos el nodo ambient
     pugi::xml_node enviromentNode;
 
-    if (!(enviromentNode = rootNode.child(&quot;environment&quot;))) {
-        cerr &lt;&lt; &quot;Level::loadNodesInfo(): error al leer el fichero xml en elemento enviroment&quot; &lt;&lt; endl;
+    if (!(enviromentNode = rootNode.child(&#34;environment&#34;))) {
+        cerr &lt;&lt; &#34;Level::loadNodesInfo(): error al leer el fichero xml en elemento enviroment&#34; &lt;&lt; endl;
         exit(1);
     }
 
@@ -186,10 +186,10 @@
 
     // Leemos ambientColour
     Ogre::ColourValue ambientColour;
-    pugi::xml_node colourNode = enviromentNode.child(&quot;colourAmbient&quot;);
-    ambientColour.r = colourNode.attribute(&quot;r&quot;).as_float();
-    ambientColour.g = colourNode.attribute(&quot;g&quot;).as_float();
-    ambientColour.b = colourNode.attribute(&quot;b&quot;).as_float();
+    pugi::xml_node colourNode = enviromentNode.child(&#34;colourAmbient&#34;);
+    ambientColour.r = colourNode.attribute(&#34;r&#34;).as_float();
+    ambientColour.g = colourNode.attribute(&#34;g&#34;).as_float();
+    ambientColour.b = colourNode.attribute(&#34;b&#34;).as_float();
 
     // Establecemos el ambient colour
     sceneManager-&gt;setAmbientLight(ambientColour);
@@ -214,11 +214,11 @@
 
 </p>
 <p>Cuando se crea un nivel, se lee la i<strong>nformación básica</strong> de un sencillo fichero xml independiente del DotScene. Los niveles tienen un identificador de forma que el fichero DotScene debe ser i<em>d_scene.xml</em> y el que contiene información básica debe ser <em>id_info.xml</em>. Lo siguiente es un ejemplo de fichero de información básica:</p>
-<pre tabindex="0"><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre tabindex="0"><code>&lt; ?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;
 &lt;basicinfo&gt;
     &lt;name&gt;The Hall&lt;/name&gt;
     &lt;description&gt;Some Goblins assault the main Hall of the Tower&lt;/description&gt;
-    &lt;song name=&quot;music.ogg&quot; group=&quot;&quot; /&gt;
+    &lt;song name=&#34;music.ogg&#34; group=&#34;&#34; /&gt;
 &lt;/basicinfo&gt;
 </code></pre><p>La clase <em>LevelManager</em> es la encargada de detectar los niveles disponibles, inicializarlos, controlar su ciclo de vida y permitir al usuario el acceso a los mismos. Sigue el patrón <a href="http://es.wikipedia.org/wiki/Singleton">Singleton</a> y en el momento de su creación toma todos los ficheros <em>_info.xml</em> del directorio <em>media/levels</em> para construir los niveles.</p>
 <p>
@@ -244,39 +244,39 @@
 <p>El navigation mesh puede representarse mediante pequeñas esferas, así como la posición inicial de la reliquia o el personaje, a gusto del diseñador de niveles. Lo importante es que se cumplan las reglas de nombrado.</p>
 <h3 id="catálogo-de-objetos-colisionables">Catálogo de objetos colisionables</h3>
 <p>La clase <em>LevelManager</em> lleva internamente un catálogo de objetos Body que definen los tipos de elementos colisionables que podemos encontrar en la escena. Al cagar un nivel y toparnos con una entidad del tipo <em>&ldquo;scene – objectType – objectNumber&rdquo;</em> le pedimos a <em>LevelManager</em> que nos devuelva el Body correspondiente con el identificador indicado mediante el método <em>createBodyFromCatalog()</em>. El catálogo se pruebla al crear la única instancia de <em>LevelManager</em> desde un fichero como el siguiente:</p>
-<pre tabindex="0"><code>&lt; ?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+<pre tabindex="0"><code>&lt; ?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;
 &lt;bodies&gt;
-    &lt;body name=&quot;floor&quot; type=&quot;1&quot;&gt;
-        &lt;shape type=&quot;plane&quot;&gt;
-            &lt;position x=&quot;0&quot; y=&quot;0&quot; z=&quot;0&quot;/&gt;
-            &lt;normal x=&quot;0&quot; y=&quot;1&quot; z=&quot;0&quot;/&gt;
+    &lt;body name=&#34;floor&#34; type=&#34;1&#34;&gt;
+        &lt;shape type=&#34;plane&#34;&gt;
+            &lt;position x=&#34;0&#34; y=&#34;0&#34; z=&#34;0&#34;/&gt;
+            &lt;normal x=&#34;0&#34; y=&#34;1&#34; z=&#34;0&#34;/&gt;
         &lt;/shape&gt;
     &lt;/body&gt;
-    &lt;body name=&quot;wallcentered&quot; type=&quot;2&quot;&gt;
-        &lt;shape type=&quot;obb&quot;&gt;
-            &lt;center x=&quot;0&quot; y=&quot;0&quot; z=&quot;0&quot;/&gt;
-            &lt;extent x=&quot;0.5&quot; y=&quot;1&quot; z=&quot;0.04&quot;/&gt;
-            &lt;axes a00=&quot;1&quot; a01=&quot;0&quot; a02=&quot;0&quot; a10=&quot;0&quot; a11=&quot;1&quot; a12=&quot;0&quot; a20=&quot;0&quot; a21=&quot;0&quot; a22=&quot;1&quot; /&gt;
+    &lt;body name=&#34;wallcentered&#34; type=&#34;2&#34;&gt;
+        &lt;shape type=&#34;obb&#34;&gt;
+            &lt;center x=&#34;0&#34; y=&#34;0&#34; z=&#34;0&#34;/&gt;
+            &lt;extent x=&#34;0.5&#34; y=&#34;1&#34; z=&#34;0.04&#34;/&gt;
+            &lt;axes a00=&#34;1&#34; a01=&#34;0&#34; a02=&#34;0&#34; a10=&#34;0&#34; a11=&#34;1&#34; a12=&#34;0&#34; a20=&#34;0&#34; a21=&#34;0&#34; a22=&#34;1&#34; /&gt;
         &lt;/shape&gt;
     &lt;/body&gt;
-    &lt;body name=&quot;wall&quot; type=&quot;2&quot;&gt;
-        &lt;shape type=&quot;obb&quot;&gt;
-            &lt;center x=&quot;0&quot; y=&quot;1&quot; z=&quot;0&quot;/&gt;
-            &lt;extent x=&quot;0.5&quot; y=&quot;1&quot; z=&quot;0.04&quot;/&gt;
-            &lt;axes a00=&quot;1&quot; a01=&quot;0&quot; a02=&quot;0&quot; a10=&quot;0&quot; a11=&quot;1&quot; a12=&quot;0&quot; a20=&quot;0&quot; a21=&quot;0&quot; a22=&quot;1&quot; /&gt;
+    &lt;body name=&#34;wall&#34; type=&#34;2&#34;&gt;
+        &lt;shape type=&#34;obb&#34;&gt;
+            &lt;center x=&#34;0&#34; y=&#34;1&#34; z=&#34;0&#34;/&gt;
+            &lt;extent x=&#34;0.5&#34; y=&#34;1&#34; z=&#34;0.04&#34;/&gt;
+            &lt;axes a00=&#34;1&#34; a01=&#34;0&#34; a02=&#34;0&#34; a10=&#34;0&#34; a11=&#34;1&#34; a12=&#34;0&#34; a20=&#34;0&#34; a21=&#34;0&#34; a22=&#34;1&#34; /&gt;
         &lt;/shape&gt;
     &lt;/body&gt;
-    &lt;body name=&quot;cube&quot; type=&quot;2&quot;&gt;
-        &lt;shape type=&quot;obb&quot;&gt;
-            &lt;center x=&quot;0&quot; y=&quot;0&quot; z=&quot;0&quot;/&gt;
-            &lt;extent x=&quot;1&quot; y=&quot;1&quot; z=&quot;1&quot;/&gt;
-            &lt;axes a00=&quot;1&quot; a01=&quot;0&quot; a02=&quot;0&quot; a10=&quot;0&quot; a11=&quot;1&quot; a12=&quot;0&quot; a20=&quot;0&quot; a21=&quot;0&quot; a22=&quot;1&quot; /&gt;
+    &lt;body name=&#34;cube&#34; type=&#34;2&#34;&gt;
+        &lt;shape type=&#34;obb&#34;&gt;
+            &lt;center x=&#34;0&#34; y=&#34;0&#34; z=&#34;0&#34;/&gt;
+            &lt;extent x=&#34;1&#34; y=&#34;1&#34; z=&#34;1&#34;/&gt;
+            &lt;axes a00=&#34;1&#34; a01=&#34;0&#34; a02=&#34;0&#34; a10=&#34;0&#34; a11=&#34;1&#34; a12=&#34;0&#34; a20=&#34;0&#34; a21=&#34;0&#34; a22=&#34;1&#34; /&gt;
         &lt;/shape&gt;
     &lt;/body&gt;
-    &lt;body name=&quot;sphere&quot; type=&quot;2&quot;&gt;
-        &lt;shape type=&quot;sphere&quot;&gt;
-            &lt;center x=&quot;0&quot; y=&quot;0&quot; z=&quot;0&quot;/&gt;
-            &lt;radius value=&quot;1&quot;/&gt;
+    &lt;body name=&#34;sphere&#34; type=&#34;2&#34;&gt;
+        &lt;shape type=&#34;sphere&#34;&gt;
+            &lt;center x=&#34;0&#34; y=&#34;0&#34; z=&#34;0&#34;/&gt;
+            &lt;radius value=&#34;1&#34;/&gt;
         &lt;/shape&gt;
     &lt;/body&gt;
 &lt;/bodies&gt;

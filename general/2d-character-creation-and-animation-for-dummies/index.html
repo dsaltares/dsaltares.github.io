@@ -157,8 +157,8 @@ inkscape = Inkscape.newDocument()
 awesomeness = Awesomeness.bringItOn()
 
 # Create a layer and import our sketch, use it as a guide
-sketchLayer = inkscape.createLayer(&quot;sketch&quot;)
-sketchLayer.loadBitmap(&quot;sketch.png&quot;)
+sketchLayer = inkscape.createLayer(&#34;sketch&#34;)
+sketchLayer.loadBitmap(&#34;sketch.png&#34;)
 
 # For every movable part in our character (further animation)
 # Create a layer and draw it using vectors following the guide
@@ -168,7 +168,7 @@ for part in character.parts():
     awesomeness.drawBodyPartUsingGuide(sketchLayer, partLayer)
 
 # You should really save in between too, just in case 🙂
-inkscape.saveDocument(&quot;character.svg&quot;)
+inkscape.saveDocument(&#34;character.svg&#34;)
 </code></pre><p>Now we&quot;re talking, aren&rsquo;t we? That&rsquo;s right, create a layer for every animated body part in your character, say head, torso, legs, feet, arms… The granularity depends on the desired level of movement detail. However I&quot;d advise you to keep it simple at first. Set the layer alpha transparency to something less than 1.0 so you can see your reference underneath it. Now listen, this might sound trickier than it really is, you just need to practice. Use circle or rectangle elements to model your character&rsquo;s body parts, convert them to paths and work with the Bezier nodes to adjust the shapes to the correspondent outline. If you&quot;re just staring at the screen with no idea of what I&quot;m talking about, please go to <a href="http://2dgameartforprogrammers.blogspot.co.uk/">2D game art for programmers</a>, follow the first articles and you&quot;ll see the light.</p>
 <p>
   <img src="../../img/wp/caveman-outline.jpg" alt="caveman-outline.jpg">

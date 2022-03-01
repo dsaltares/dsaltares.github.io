@@ -114,7 +114,7 @@
 
 </p>
 <h3 id="be-aware-of-the-gc-and-why-its-critical-in-mobileconsoles">Be aware of the GC and why it&rsquo;s critical in mobile/consoles</h3>
-<p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&quot;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
+<p>The GC is fired up every now and then and asks: <em>&ldquo;what objects are currently not being referenced by any variable?&rdquo;</em>. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that&rsquo;s awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.</p>
 <p>Note: I just told a white lie. JVM&rsquo;s GC actually follows several strategies to free up unused memory as pointed out in <a href="http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect">this Stack Overflow post</a>.</p>
 <p>A common mistake, which I&rsquo;ve made myself with <a href="../../freegemas/">Freegemas</a>, is to believe my game is well optimized because it runs flawlessly on an i7 machine. Don&rsquo;t fool yourself, go on and deploy your libgdx app on a mid tier Android phone and see what happens.</p>
 <blockquote>
@@ -223,7 +223,7 @@
 <p>For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I&quot;ll attach the interesting bits below.</p>
 <pre tabindex="0"><code>// Create prototype effect
 ParticleEffect effect = new ParticleEffect();
-effect.load(Gdx.files.internal(&quot;data/particleStars&quot;), Gdx.files.internal(&quot;data&quot;));
+effect.load(Gdx.files.internal(&#34;data/particleStars&#34;), Gdx.files.internal(&#34;data&#34;));
 
 // Create effects pool using thay prototype
 ParticleEffectPool effectPool = new ParticleEffectPool(effect, 20, 100);

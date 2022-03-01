@@ -74,7 +74,7 @@ So much win The beauty of a healthy community driven project such as Libgdx is t
       <guid>https://saltares.com/computing/using-ant-behind-a-proxy/</guid>
       <description>Many Java projects use Ant to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.
 Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.
-&amp;lt;setproxy proxyhost=&amp;quot;host&amp;quot; proxyport=&amp;quot;port&amp;quot; proxypassword=&amp;quot;password&amp;quot;/&amp;gt; Users behind a proxy would now be able to download dependencies with Ant.</description>
+&amp;lt;setproxy proxyhost=&amp;#34;host&amp;#34; proxyport=&amp;#34;port&amp;#34; proxypassword=&amp;#34;password&amp;#34;/&amp;gt; Users behind a proxy would now be able to download dependencies with Ant.</description>
     </item>
     
     <item>

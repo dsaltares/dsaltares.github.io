@@ -145,12 +145,12 @@ m_assetManager.setLoader(Level.class, new LevelLoader(new InternalFileHandleReso
 ...
 
 // Tell the manager to load the level
-m_assetManager.load(&quot;data/braidtest.xml&quot;, Level.class);
+m_assetManager.load(&#34;data/braidtest.xml&#34;, Level.class);
 
 ...
 
-// When it's ready, fetch the level and create renderer
-m_level = m_assetManager.get(&quot;data/braidtest.xml&quot;, Level.class);
+// When it&#39;s ready, fetch the level and create renderer
+m_level = m_assetManager.get(&#34;data/braidtest.xml&#34;, Level.class);
 m_levelRenderer = new LevelRenderer(m_level, null, Game.mpp);
 
 ...

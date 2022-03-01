@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -181,7 +181,7 @@
 <p>Now it&rsquo;s time to make the game accept an absolute path as a parameter and load a specific level when that happens, without going through all the menus. In my case I did something similar to this.</p>
 <pre tabindex="0"><code>public class Main {
 	public static void main(String[] args) {
-		String level =  args.length &gt; 0 ? args[0] : &quot;&quot;;
+		String level =  args.length &gt; 0 ? args[0] : &#34;&#34;;
 		new LwjglApplication(new MyGame(level), new LwjglApplicationConfiguration());
 	}
 }
@@ -477,10 +477,10 @@ TiledMap map = mapLoader.load(getLevel());
 	}
 
 	private void loadAssets() {
-		manager.load(&quot;data/player.png&quot;, Texture.class);
-		manager.load(&quot;data/enemy.png&quot;, Texture.class);
-		manager.load(&quot;data/bullet.png&quot;, Texture.class);
-		manager.load(&quot;data/ui/uiskin.json&quot;, Skin.class);
+		manager.load(&#34;data/player.png&#34;, Texture.class);
+		manager.load(&#34;data/enemy.png&#34;, Texture.class);
+		manager.load(&#34;data/bullet.png&#34;, Texture.class);
+		manager.load(&#34;data/ui/uiskin.json&#34;, Skin.class);
 
 		// ...
 
@@ -516,10 +516,10 @@ TiledMap map = mapLoader.load(getLevel());
 </p>
 <p>Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here&rsquo;s an example.</p>
 <pre tabindex="0"><code>&lt;assets &gt;
-	&lt;group name=&quot;base&quot;&gt;
-		&lt;asset type=&quot;com.siondream.core.animation.AnimationData&quot; path=&quot;data/caveman.xml&quot; /&gt;
-		&lt;asset type=&quot;com.siondream.core.physics.PhysicsData&quot; path=&quot;data/caveman_physics.xml&quot; /&gt;
-		&lt;asset type=&quot;com.badlogic.gdx.scenes.scene2d.ui.Skin&quot; path=&quot;data/ui/uiskin.json&quot; /&gt;
+	&lt;group name=&#34;base&#34;&gt;
+		&lt;asset type=&#34;com.siondream.core.animation.AnimationData&#34; path=&#34;data/caveman.xml&#34; /&gt;
+		&lt;asset type=&#34;com.siondream.core.physics.PhysicsData&#34; path=&#34;data/caveman_physics.xml&#34; /&gt;
+		&lt;asset type=&#34;com.badlogic.gdx.scenes.scene2d.ui.Skin&#34; path=&#34;data/ui/uiskin.json&#34; /&gt;
 	&lt;/group&gt;
 &lt;/assets&gt;
 </code></pre><p>Qualified types and reflection are used to make the <em>AssetManager#load</em> calls.</p>
@@ -527,7 +527,7 @@ TiledMap map = mapLoader.load(getLevel());
 <p>Here&rsquo;s the full implementation for my Asset class. It&rsquo;s kind of a small layer on top of the libgdx AssetManager. Feel free to use it, bin it or change it. However, be advised that I don&rsquo;t plan to offer further continued for it, this is simply to illustrate my approach.</p>
 <pre tabindex="0"><code>public class Assets implements Disposable, AssetErrorListener {
 
-	private static final String TAG = &quot;Assets&quot;;
+	private static final String TAG = &#34;Assets&#34;;
 	private Logger logger;
 	private AssetManager manager;
 	private ObjectMap&lt;String, Array&lt;Asset&gt;&gt; groups;
@@ -544,7 +544,7 @@ TiledMap map = mapLoader.load(getLevel());
 	}
 
 	public void loadGroup(String groupName) {
-		logger.info(&quot;loading group &quot; + groupName);
+		logger.info(&#34;loading group &#34; + groupName);
 
 		Array&lt;Asset&gt; assets = groups.get(groupName, null);
 
@@ -554,12 +554,12 @@ TiledMap map = mapLoader.load(getLevel());
 			}
 		}
 		else {
-			logger.error(&quot;error loading group &quot; + groupName + &quot;, not found&quot;);
+			logger.error(&#34;error loading group &#34; + groupName + &#34;, not found&#34;);
 		}
 	}
 
 	public void unloadGroup(String groupName) {
-		logger.info(&quot;unloading group &quot; + groupName);
+		logger.info(&#34;unloading group &#34; + groupName);
 
 		Array&lt;Asset&gt; assets = groups.get(groupName, null);
 
@@ -571,7 +571,7 @@ TiledMap map = mapLoader.load(getLevel());
 			}
 		}
 		else {
-			logger.error(&quot;error unloading group &quot; + groupName + &quot;, not found&quot;);
+			logger.error(&#34;error unloading group &#34; + groupName + &#34;, not found&#34;);
 		}
 	}
 
@@ -597,46 +597,46 @@ TiledMap map = mapLoader.load(getLevel());
 
 	@Override
 	public void dispose() {
-		logger.info(&quot;shutting down&quot;);
+		logger.info(&#34;shutting down&#34;);
 		manager.dispose();
 	}
 
 	@Override
 	public void error(String fileName, Class type, Throwable throwable) {
-		logger.error(&quot;error loading &quot; + fileName);
+		logger.error(&#34;error loading &#34; + fileName);
 	}
 
 	private void loadGroups(String assetFile) {
 		groups = new ObjectMap&lt;String, Array&lt;Asset&gt;&gt;();
 
-		logger.info(&quot;loading file &quot; + assetFile);
+		logger.info(&#34;loading file &#34; + assetFile);
 
 		try {
 			XmlReader reader = new XmlReader();
 			Element root = reader.parse(Gdx.files.internal(assetFile));
 
-			for (Element groupElement : root.getChildrenByName(&quot;group&quot;)) {
-				String groupName = groupElement.getAttribute(&quot;name&quot;, &quot;base&quot;);
+			for (Element groupElement : root.getChildrenByName(&#34;group&#34;)) {
+				String groupName = groupElement.getAttribute(&#34;name&#34;, &#34;base&#34;);
 
 				if (groups.containsKey(groupName)) {
-					logger.error(&quot;group &quot; + groupName + &quot; already exists, skipping&quot;);
+					logger.error(&#34;group &#34; + groupName + &#34; already exists, skipping&#34;);
 					continue;
 				}
 
-				logger.info(&quot;registering group &quot; + groupName);
+				logger.info(&#34;registering group &#34; + groupName);
 
 				Array&lt;Asset&gt; assets = new Array&lt;Asset&gt;();
 
-				for (Element assetElement : groupElement.getChildrenByName(&quot;asset&quot;)) {
-					assets.add(new Asset(assetElement.getAttribute(&quot;type&quot;, &quot;&quot;),
-										 assetElement.getAttribute(&quot;path&quot;, &quot;&quot;)));
+				for (Element assetElement : groupElement.getChildrenByName(&#34;asset&#34;)) {
+					assets.add(new Asset(assetElement.getAttribute(&#34;type&#34;, &#34;&#34;),
+										 assetElement.getAttribute(&#34;path&#34;, &#34;&#34;)));
 				}
 
 				groups.put(groupName, assets);
 			}
 		}
 		catch (Exception e) {
-			logger.error(&quot;error loading file &quot; + assetFile + &quot; &quot; + e.getMessage());
+			logger.error(&#34;error loading file &#34; + assetFile + &#34; &#34; + e.getMessage());
 		}
 	}
 
@@ -649,7 +649,7 @@ TiledMap map = mapLoader.load(getLevel());
 				this.type = Class.forName(type);
 				this.path = path;
 			} catch (ClassNotFoundException e) {
-				logger.error(&quot;asset type &quot; + type + &quot; not found&quot;);
+				logger.error(&#34;asset type &#34; + type + &#34; not found&#34;);
 			}
 		}
 	}

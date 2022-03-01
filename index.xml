@@ -290,70 +290,70 @@ I wanted to keep the component that controls the layout as simple as possible, s
 &lt;/iframe&gt;
 &lt;p&gt;Making the navigation bar &lt;code&gt;position: fixed; top 0;&lt;/code&gt; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.&lt;/p&gt;
 &lt;p&gt;I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a &lt;code&gt;useSticky&lt;/code&gt; &lt;a href=&#34;https://reactjs.org/docs/hooks-intro.html&#34;&gt;hook&lt;/a&gt;. Here&amp;rsquo;s how you&amp;rsquo;d use it.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classnames&amp;#34;&lt;/span&gt;;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./useSticky&amp;#34;&lt;/span&gt;;
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;();
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
-    &amp;lt;&amp;gt;
-      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt;&amp;gt;
-        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Header&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;
-      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt;&amp;gt;
-      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;ref&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;}
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; })}
-      &amp;gt;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;Sticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nav&lt;/span&gt;
-      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;&amp;gt;
-      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{{
-          &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;
-            &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;clientHeight&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;px`&lt;/span&gt;
-            &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0px&amp;#39;&lt;/span&gt;
-        }}
-      /&amp;gt;
-      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt; /&amp;gt;
-    &amp;lt;/&amp;gt;
-  );
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You stick (no pun intended) the &lt;code&gt;stickyRef&lt;/code&gt; into the thing that you want to fix to the top after you scroll past it. Then, &lt;code&gt;sticky&lt;/code&gt; will indicate whether it should be fixed at the top or not. I then use that to apply a &lt;code&gt;sticky&lt;/code&gt; class.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;fixed&lt;/span&gt;;
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;top&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The extra &lt;code&gt;div&lt;/code&gt; below the &lt;code&gt;nav&lt;/code&gt; adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classnames&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./useSticky&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Header&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;ref&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; })}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;Sticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nav&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;clientHeight&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;px`&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0px&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt; /&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You stick (no pun intended) the &lt;code&gt;stickyRef&lt;/code&gt; into the thing that you want to fix to the top after you scroll past it. Then, &lt;code&gt;sticky&lt;/code&gt; will indicate whether it should be fixed at the top or not. I then use that to apply a &lt;code&gt;sticky&lt;/code&gt; class.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;fixed&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;top&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The extra &lt;code&gt;div&lt;/code&gt; below the &lt;code&gt;nav&lt;/code&gt; adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.&lt;/p&gt;
 &lt;p&gt;🌟 The magic happens in the &lt;code&gt;useSticky&lt;/code&gt; hook itself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;);
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
-
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
-    }
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;offsetTop&lt;/span&gt;);
-  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;]);
-
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
-        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
-      }
-
-      &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;(window.&lt;span style=&#34;color:#a6e22e&#34;&gt;scrollY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;);
-    };
-    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;addEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
-    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; () =&amp;gt; window.&lt;span style=&#34;color:#a6e22e&#34;&gt;removeEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
-  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;]);
-  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; };
-};
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first effect measures the vertical offset of the element we want to fix at the top after it&amp;rsquo;s scrolled past. The second one listens to the &lt;code&gt;scroll&lt;/code&gt; event and determines whether we have scrolled past the element&amp;rsquo;s top edge and it needs to become sticky.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;offsetTop&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;(window.&lt;span style=&#34;color:#a6e22e&#34;&gt;scrollY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;addEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; () =&amp;gt; window.&lt;span style=&#34;color:#a6e22e&#34;&gt;removeEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first effect measures the vertical offset of the element we want to fix at the top after it&amp;rsquo;s scrolled past. The second one listens to the &lt;code&gt;scroll&lt;/code&gt; event and determines whether we have scrolled past the element&amp;rsquo;s top edge and it needs to become sticky.&lt;/p&gt;
 &lt;p&gt;🙌 Hope this is useful!&lt;/p&gt;
 </content>
     </item>
@@ -379,57 +379,57 @@ The developer experience worsens because you now need a network connection to lo
 &lt;p&gt;You can fix that with a local SMTP server! Let&amp;rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;-set-up-nextauthjs-with-the-emailprovider&#34;&gt;🔐 Set up NextAuth.js with the &lt;code&gt;EmailProvider&lt;/code&gt;&lt;/h3&gt;
 &lt;p&gt;Let&amp;rsquo;s assume you already have a Next.js application. If you don&amp;rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the &lt;code&gt;EmailProvider&lt;/code&gt; in &lt;code&gt;/pages/api/auth/[...nextauth].js&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth&amp;#39;&lt;/span&gt;;
-&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth/providers/email&amp;#39;&lt;/span&gt;;
-
-&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt;({
-  &lt;span style=&#34;color:#a6e22e&#34;&gt;providers&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
-    &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt;({
-      &lt;span style=&#34;color:#a6e22e&#34;&gt;server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_HOST&lt;/span&gt;,
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PORT&lt;/span&gt;,
-        &lt;span style=&#34;color:#a6e22e&#34;&gt;auth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-          &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_USER&lt;/span&gt;,
-          &lt;span style=&#34;color:#a6e22e&#34;&gt;pass&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PASSWORD&lt;/span&gt;,
-        },
-      },
-      &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NextAuth &amp;lt;noreply@example.com&amp;gt;&amp;#39;&lt;/span&gt;,
-    }),
-  ]
-});
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the &lt;code&gt;EmailProvider&lt;/code&gt; to work, you also need to install the &lt;code&gt;nodemailer&lt;/code&gt; package.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn add nodemailer
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember that you also need to provide an &lt;a href=&#34;https://next-auth.js.org/adapters/overview&#34;&gt;Adapter&lt;/a&gt; to NextAuth.js so that it can persist data. In &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9&#34;&gt;my example&lt;/a&gt;, I use the &lt;a href=&#34;https://next-auth.js.org/adapters/prisma&#34;&gt;&lt;code&gt;PrismaAdapter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth/providers/email&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;providers&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_HOST&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PORT&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;auth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_USER&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;pass&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PASSWORD&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NextAuth &amp;lt;noreply@example.com&amp;gt;&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the &lt;code&gt;EmailProvider&lt;/code&gt; to work, you also need to install the &lt;code&gt;nodemailer&lt;/code&gt; package.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn add nodemailer
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember that you also need to provide an &lt;a href=&#34;https://next-auth.js.org/adapters/overview&#34;&gt;Adapter&lt;/a&gt; to NextAuth.js so that it can persist data. In &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9&#34;&gt;my example&lt;/a&gt;, I use the &lt;a href=&#34;https://next-auth.js.org/adapters/prisma&#34;&gt;&lt;code&gt;PrismaAdapter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;-set-up-your-local-smtp-server&#34;&gt;📬 Set up your local SMTP server&lt;/h3&gt;
 &lt;p&gt;We&amp;rsquo;re going to use &lt;a href=&#34;https://github.com/mailhog/MailHog&#34;&gt;MailHog&lt;/a&gt;, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!&lt;/p&gt;
 &lt;p&gt;Create a &lt;code&gt;docker-compose.yaml&lt;/code&gt; file or update your existing one and define the MailHog service.&lt;/p&gt;
 &lt;p&gt;Using Docker Compose to run your database locally is a pretty good idea! In my &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;example repo&lt;/a&gt; I went for a containerised PostgreSQL database.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;3.9&amp;#39;&lt;/span&gt;
-
-&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
-  &lt;span style=&#34;color:#f92672&#34;&gt;mailhog&lt;/span&gt;:
-    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mailhog/mailhog&lt;/span&gt;
-    &lt;span style=&#34;color:#f92672&#34;&gt;logging&lt;/span&gt;:
-      &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# disable saving logs&lt;/span&gt;
-    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
-      - &lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# smtp server&lt;/span&gt;
-      - &lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# web ui&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add a couple of convenience scripts to your &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;{
-  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;: {
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:up&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose up -d&amp;#34;&lt;/span&gt;,
-    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:down&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose down&amp;#34;&lt;/span&gt;
-  }
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit your local &lt;code&gt;.env&lt;/code&gt; file to configure the NextAuth.js &lt;code&gt;EmailProvider&lt;/code&gt;. Leave everything as below.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;3.9&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;mailhog&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mailhog/mailhog&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;logging&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# disable saving logs&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# smtp server&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# web ui&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add a couple of convenience scripts to your &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;: {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:up&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose up -d&amp;#34;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:down&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose down&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit your local &lt;code&gt;.env&lt;/code&gt; file to configure the NextAuth.js &lt;code&gt;EmailProvider&lt;/code&gt;. Leave everything as below.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;EMAIL_SERVER_HOST=localhost
 EMAIL_SERVER_PORT=1025
 EMAIL_SERVER_USER=email-user
 EMAIL_SERVER_PASSWORD=email-pass
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;-local-workflow&#34;&gt;💻 Local workflow&lt;/h3&gt;
 &lt;p&gt;Bring up your containers and start the local development server.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;
 &lt;p&gt;
   &lt;img src=&#34;./img/nextjs/nextauth-login.png&#34; alt=&#34;NextAuth.js login screen&#34;&gt;
 
@@ -591,11 +591,11 @@ The desktop browser device toolbar may not be enough to reproduce it. You may ac
 &lt;p&gt;Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.&lt;/p&gt;
 &lt;h2 id=&#34;-tunnel-localhost&#34;&gt;🚇 Tunnel localhost&lt;/h2&gt;
 &lt;p&gt;Run your local development server. I am working on a &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; app, so I can just run:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ yarn dev
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your web app is probably now running on &lt;code&gt;localhost&lt;/code&gt;, but your real device cannot connect directly. In order to access your local development server from a different device we can use &lt;a href=&#34;https://localtunnel.me/&#34;&gt;localtunnel&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn dev
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your web app is probably now running on &lt;code&gt;localhost&lt;/code&gt;, but your real device cannot connect directly. In order to access your local development server from a different device we can use &lt;a href=&#34;https://localtunnel.me/&#34;&gt;localtunnel&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;No need to install, you can use &lt;code&gt;npx&lt;/code&gt; to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is &lt;code&gt;3000&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;$ npx localtunnel --port &lt;span style=&#34;color:#ae81ff&#34;&gt;3000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;localtunnel&lt;/code&gt; will give you a temporary URL that is accessible from anywhere in the world. In my case, I got &lt;code&gt;https://little-fox-32.loca.lt&lt;/code&gt;. You can now open that URL in the device you want to test.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npx localtunnel --port &lt;span style=&#34;color:#ae81ff&#34;&gt;3000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;localtunnel&lt;/code&gt; will give you a temporary URL that is accessible from anywhere in the world. In my case, I got &lt;code&gt;https://little-fox-32.loca.lt&lt;/code&gt;. You can now open that URL in the device you want to test.&lt;/p&gt;
 &lt;p&gt;Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, &lt;a href=&#34;https://github.com/localtunnel/localtunnel&#34;&gt;localtunnel&lt;/a&gt; is an open source tool, you could get a private server going if privacy is a concern.&lt;/p&gt;
 &lt;h2 id=&#34;-remote-chrome-inspector&#34;&gt;🛰️ Remote Chrome inspector&lt;/h2&gt;
 &lt;p&gt;Open your Chromium based browser and enter:&lt;/p&gt;
@@ -637,7 +637,7 @@ One aspect of remote work, where lack of inclusion can really alienate your team
 &lt;p&gt;Do you really need a meeting? Consider an async discussion on a Google doc, Notion page or Github RFC issue.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.notion.so/aulaeducation/How-we-work-together-2501716c17a64fae849b74e800b3f83d#1afa3cd0dafc4f3e986350c3e1e5837a&#34;&gt;Aula&lt;/a&gt;, &lt;a href=&#34;https://about.gitlab.com/company/culture/all-remote/asynchronous/#remind-people-that-async-is-more-inclusive&#34;&gt;Gitlab&lt;/a&gt; and many other remote-first companies already encourage this.&lt;/p&gt;
 &lt;h3 id=&#34;2--respect-peoples-calendars&#34;&gt;2. 📆 Respect people&amp;rsquo;s calendars&lt;/h3&gt;
-&lt;p&gt;When setting up a meeting, check the attendees&#39; calendar first and do not create the event if there is a clash, at least without asking first.&lt;/p&gt;
+&lt;p&gt;When setting up a meeting, check the attendees&amp;rsquo; calendar first and do not create the event if there is a clash, at least without asking first.&lt;/p&gt;
 &lt;p&gt;At Aula, we encourage everyone to be explicit and use Google Calendar as a communication tool by explicitly setting time for things like:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;🕰️ Working hours&lt;/li&gt;

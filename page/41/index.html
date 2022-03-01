@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -174,40 +174,40 @@ def main():
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
 
     # Tomamos los datos
-    data = [('Simulación', 2),
-            ('Plataformas', 5),
-            ('Estrategia', 8),
-            ('Deporte', 3),
-            ('Acción', 10),
-            ('Puzzle', 1)]
+    data = [(&#39;Simulación&#39;, 2),
+            (&#39;Plataformas&#39;, 5),
+            (&#39;Estrategia&#39;, 8),
+            (&#39;Deporte&#39;, 3),
+            (&#39;Acción&#39;, 10),
+            (&#39;Puzzle&#39;, 1)]
 
     # Los cargamos en el dataSet
     dataSet = (
-        ('Puntos', [(i, l[1]) for i, l in enumerate(data)]),
+        (&#39;Puntos&#39;, [(i, l[1]) for i, l in enumerate(data)]),
     )
 
     # Opciones de la gráfica
     ticks = [dict(v=i, label=l[0]) for i, l in enumerate(data)]
     options = {
-        'legend': {'hide': True},
-        'axis': {
-            'x': {
-                'ticks': ticks,
-                'label': 'Género',
+        &#39;legend&#39;: {&#39;hide&#39;: True},
+        &#39;axis&#39;: {
+            &#39;x&#39;: {
+                &#39;ticks&#39;: ticks,
+                &#39;label&#39;: &#39;Género&#39;,
             },
-            'y': {
-                'tickCount': 5,
-                'label': 'Número',
+            &#39;y&#39;: {
+                &#39;tickCount&#39;: 5,
+                &#39;label&#39;: &#39;Número&#39;,
             }
         },
-        'background': {
-            'chartColor': '#f3f9fb',
-            'lineColor': '#d1e5ec'
+        &#39;background&#39;: {
+            &#39;chartColor&#39;: &#39;#f3f9fb&#39;,
+            &#39;lineColor&#39;: &#39;#d1e5ec&#39;
         },
-        'colorScheme': {
-            'name': 'gradient',
-            'args': {
-                'initialColor': 'blue',
+        &#39;colorScheme&#39;: {
+            &#39;name&#39;: &#39;gradient&#39;,
+            &#39;args&#39;: {
+                &#39;initialColor&#39;: &#39;blue&#39;,
             },
         },
     }
@@ -218,9 +218,9 @@ def main():
     chart.render()
 
     # La guardamos en un fichero .png
-    surface.write_to_png('chart.png')
+    surface.write_to_png(&#39;chart.png&#39;)
 
-if __name__ == &quot;__main__&quot;:
+if __name__ == &#34;__main__&#34;:
     main()
 </code></pre><p>El resultado es el siguiente:</p>
 <p>

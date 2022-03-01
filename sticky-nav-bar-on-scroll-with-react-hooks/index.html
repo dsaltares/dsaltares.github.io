@@ -117,70 +117,70 @@
 </iframe>
 <p>Making the navigation bar <code>position: fixed; top 0;</code> was not going to cut it because the header had to come first unless we scrolled past the navigation bar.</p>
 <p>I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a <code>useSticky</code> <a href="https://reactjs.org/docs/hooks-intro.html">hook</a>. Here&rsquo;s how you&rsquo;d use it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">classNames</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;classnames&#34;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./useSticky&#34;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
-  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">stickyRef</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useSticky</span>();
-  <span style="color:#66d9ef">return</span> (
-    &lt;&gt;
-      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
-        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Header</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-      &lt;/<span style="color:#f92672">header</span>&gt;
-      &lt;<span style="color:#f92672">nav</span>
-        <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stickyRef</span>}
-        <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classNames</span>(<span style="color:#e6db74">&#34;nav&#34;</span>, { <span style="color:#a6e22e">sticky</span> })}
-      &gt;
-        <span style="color:#a6e22e">Sticky</span> <span style="color:#a6e22e">nav</span>
-      &lt;/<span style="color:#f92672">nav</span>&gt;
-      &lt;<span style="color:#f92672">div</span>
-        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
-          <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sticky</span>
-            <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">clientHeight</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>
-            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0px&#39;</span>
-        }}
-      /&gt;
-      &lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span> /&gt;
-    &lt;/&gt;
-  );
-}
-</code></pre></div><p>You stick (no pun intended) the <code>stickyRef</code> into the thing that you want to fix to the top after you scroll past it. Then, <code>sticky</code> will indicate whether it should be fixed at the top or not. I then use that to apply a <code>sticky</code> class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">sticky</span> {
-  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
-  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
-}
-</code></pre></div><p>The extra <code>div</code> below the <code>nav</code> adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">classNames</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;classnames&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./useSticky&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">stickyRef</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useSticky</span>();
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
+</span></span><span style="display:flex;"><span>    &lt;&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Header</span>&lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">header</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">nav</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stickyRef</span>}
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classNames</span>(<span style="color:#e6db74">&#34;nav&#34;</span>, { <span style="color:#a6e22e">sticky</span> })}
+</span></span><span style="display:flex;"><span>      &gt;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Sticky</span> <span style="color:#a6e22e">nav</span>
+</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">nav</span>&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sticky</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">clientHeight</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0px&#39;</span>
+</span></span><span style="display:flex;"><span>        }}
+</span></span><span style="display:flex;"><span>      /&gt;
+</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span> /&gt;
+</span></span><span style="display:flex;"><span>    &lt;/&gt;
+</span></span><span style="display:flex;"><span>  );
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You stick (no pun intended) the <code>stickyRef</code> into the thing that you want to fix to the top after you scroll past it. Then, <code>sticky</code> will indicate whether it should be fixed at the top or not. I then use that to apply a <code>sticky</code> class.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">sticky</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The extra <code>div</code> below the <code>nav</code> adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.</p>
 <p>🌟 The magic happens in the <code>useSticky</code> hook itself.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
-
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#f92672">=</span> () =&gt; {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stickyRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
-  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">setSticky</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
-  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">setOffset</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
-
-  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
-    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
-      <span style="color:#66d9ef">return</span>;
-    }
-    <span style="color:#a6e22e">setOffset</span>(<span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">offsetTop</span>);
-  }, [<span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">setOffset</span>]);
-
-  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleScroll</span> <span style="color:#f92672">=</span> () =&gt; {
-      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
-        <span style="color:#66d9ef">return</span>;
-      }
-
-      <span style="color:#a6e22e">setSticky</span>(window.<span style="color:#a6e22e">scrollY</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">offset</span>);
-    };
-    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
-    <span style="color:#66d9ef">return</span> () =&gt; window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
-  }, [<span style="color:#a6e22e">setSticky</span>, <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">offset</span>]);
-  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">sticky</span> };
-};
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">useSticky</span>;
-</code></pre></div><p>The first effect measures the vertical offset of the element we want to fix at the top after it&rsquo;s scrolled past. The second one listens to the <code>scroll</code> event and determines whether we have scrolled past the element&rsquo;s top edge and it needs to become sticky.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stickyRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">setSticky</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">setOffset</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setOffset</span>(<span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">offsetTop</span>);
+</span></span><span style="display:flex;"><span>  }, [<span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">setOffset</span>]);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleScroll</span> <span style="color:#f92672">=</span> () =&gt; {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setSticky</span>(window.<span style="color:#a6e22e">scrollY</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">offset</span>);
+</span></span><span style="display:flex;"><span>    };
+</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> () =&gt; window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
+</span></span><span style="display:flex;"><span>  }, [<span style="color:#a6e22e">setSticky</span>, <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">offset</span>]);
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">sticky</span> };
+</span></span><span style="display:flex;"><span>};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">useSticky</span>;
+</span></span></code></pre></div><p>The first effect measures the vertical offset of the element we want to fix at the top after it&rsquo;s scrolled past. The second one listens to the <code>scroll</code> event and determines whether we have scrolled past the element&rsquo;s top edge and it needs to become sticky.</p>
 <p>🙌 Hope this is useful!</p>
 
   </div>

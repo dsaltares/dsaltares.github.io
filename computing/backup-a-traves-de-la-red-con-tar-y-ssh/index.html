@@ -122,7 +122,7 @@ scp directorio.tar.gz usuario@host:directorio_destino
 <pre tabindex="0"><code>#!/bin/sh
 
 # Fecha de la copia
-FECHA=$(date +&quot;%F-%H-%M-%S&quot;)
+FECHA=$(date +&#34;%F-%H-%M-%S&#34;)
 
 # Directorio a copiar
 DIR_BACKUP=/home/david
@@ -137,7 +137,7 @@ USER=siondream
 HOST_DIR=/home/siondream/backups
 
 # Hacemos el backup
-tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &quot;cat &gt; ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz&quot;
+tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &#34;cat &gt; ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz&#34;
 </code></pre><p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
 <h3 id="lo-mismo-casi-en-la-mitad-de-tiempo">Lo mismo casi en la mitad de tiempo</h3>
 <p>Si tienes que hacer grandes copias y enviarlas por la red, <strong>este pequeño truco es tu amigo</strong>. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve <strong>resultados impresionantes</strong>: enviar los datos mientras éstos se comprimen lleva <strong>casi la mitad de tiempo</strong> que hacerlo en etapas separadas.</p>

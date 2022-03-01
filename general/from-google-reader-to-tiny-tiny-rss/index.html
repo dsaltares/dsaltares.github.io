@@ -159,17 +159,17 @@
 <li>Copy <code>[tt-rss]/config.php-dist</code> to <code>[tt-rss]/config.php</code>.</li>
 <li>Go through the file and set the options to match your server. These are the most common ones.</li>
 </ul>
-<pre tabindex="0"><code>define('DB_TYPE', &quot;mysql&quot;); // or mysql
-    define('DB_HOST', &quot;localhost&quot;);
-    define('DB_USER', &quot;******&quot;);
-    define('DB_NAME', &quot;******&quot;);
-    define('DB_PASS', &quot;******&quot;);
-    define('SELF_URL_PATH', 'http://[yoursite]/tt-rss/');
-    define('SINGLE_USER_MODE', false);
+<pre tabindex="0"><code>define(&#39;DB_TYPE&#39;, &#34;mysql&#34;); // or mysql
+    define(&#39;DB_HOST&#39;, &#34;localhost&#34;);
+    define(&#39;DB_USER&#39;, &#34;******&#34;);
+    define(&#39;DB_NAME&#39;, &#34;******&#34;);
+    define(&#39;DB_PASS&#39;, &#34;******&#34;);
+    define(&#39;SELF_URL_PATH&#39;, &#39;http://[yoursite]/tt-rss/&#39;);
+    define(&#39;SINGLE_USER_MODE&#39;, false);
 </code></pre><ul>
 <li>Add this to your server cron to schedule feeds updates with the frequency you prefer.</li>
 </ul>
-<pre tabindex="0"><code>/usr/bin/wget --quiet --output-document=/dev/null &quot;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&quot;
+<pre tabindex="0"><code>/usr/bin/wget --quiet --output-document=/dev/null &#34;http://[your-tt-rss-url]/backend.php?op=globalUpdateFeeds&amp;daemon=1&#34;
 </code></pre><ul>
 <li>Login with <code>&lt;admin&gt;</code>/`<password> and immediately change your password you fool!</li>
 </ul>

@@ -148,7 +148,7 @@
 </code></pre><p>Para crear la barra de vida simplemente tenemos el método <em>createLifeBar</em>.</p>
 <pre tabindex="0"><code>void Enemy::createLifeBar() {
     _bbSetLife = _sceneManager-&gt;createBillboardSet();
-    _bbSetLife-&gt;setMaterialName(&quot;lifeBar&quot;);
+    _bbSetLife-&gt;setMaterialName(&#34;lifeBar&#34;);
     _lifeBar = _bbSetLife-&gt;createBillboard(Ogre::Vector3(0, 1.6, 0));
     _lifeBar-&gt;setDimensions(1, 0.1);
     _lifeBar-&gt;setTexcoordRect(0.0f, 0.0f, 0.5f, 1.0f);

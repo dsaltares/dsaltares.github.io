@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -113,7 +113,7 @@
       </span>
       
       <p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
-<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games' behaviour.</p>
+<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&rsquo; behaviour.</p>
 <p>I thought it would be a good idea to show how it translates to a <a href="https://github.com/libgdx/libgdx">Libgdx</a> application using the <a href="http://box2d.org/">Box2D</a> physics engine. Note that it also applies to <a href="http://bulletphysics.org/wordpress/">Bullet</a>, changes would be minimal.</p>
 <h3 id="simple-but-wrong-approaches">Simple but wrong approaches</h3>
 <p>It starts with a fix time step of 1/60th of a second, which makes for a stable simulation but fails terribly when the game runs at less than 60fps, a very common situation in mobile devices.</p>
@@ -146,7 +146,7 @@
         }
 }
 </code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
-<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities' transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
+<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
 <pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;
@@ -252,7 +252,7 @@
       
       <p>Many Java projects use <a href="http://en.wikipedia.org/wiki/Apache_Ant">Ant</a> to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.</p>
 <p>Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.</p>
-<pre tabindex="0"><code>&lt;setproxy proxyhost=&quot;host&quot; proxyport=&quot;port&quot; proxypassword=&quot;password&quot;/&gt;
+<pre tabindex="0"><code>&lt;setproxy proxyhost=&#34;host&#34; proxyport=&#34;port&#34; proxypassword=&#34;password&#34;/&gt;
 </code></pre><p>Users behind a proxy would now be able to download dependencies with Ant. More documentation about the <code>setproxy</code> task is available inside the <a href="https://ant.apache.org/manual/Tasks/setproxy.html">official user manual</a>.</p>
 <p>This comes from me trying to get the Libgdx development environment in my office&rsquo;s desktop. We obviously have a proxy, which put this little bump on the road.</p>
 

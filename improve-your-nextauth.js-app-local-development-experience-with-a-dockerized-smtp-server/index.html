@@ -116,57 +116,57 @@
 <p>You can fix that with a local SMTP server! Let&rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">here</a>.</p>
 <h3 id="-set-up-nextauthjs-with-the-emailprovider">🔐 Set up NextAuth.js with the <code>EmailProvider</code></h3>
 <p>Let&rsquo;s assume you already have a Next.js application. If you don&rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the <code>EmailProvider</code> in <code>/pages/api/auth/[...nextauth].js</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
-<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
-
-<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">NextAuth</span>({
-  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
-    <span style="color:#a6e22e">EmailProvider</span>({
-      <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
-        <span style="color:#a6e22e">host</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_HOST</span>,
-        <span style="color:#a6e22e">port</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PORT</span>,
-        <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> {
-          <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_USER</span>,
-          <span style="color:#a6e22e">pass</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PASSWORD</span>,
-        },
-      },
-      <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NextAuth &lt;noreply@example.com&gt;&#39;</span>,
-    }),
-  ]
-});
-</code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn add nodemailer
-</code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">NextAuth</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">EmailProvider</span>({
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">host</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_HOST</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">port</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PORT</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_USER</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">pass</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PASSWORD</span>,
+</span></span><span style="display:flex;"><span>        },
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NextAuth &lt;noreply@example.com&gt;&#39;</span>,
+</span></span><span style="display:flex;"><span>    }),
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ yarn add nodemailer
+</span></span></code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
 <h3 id="-set-up-your-local-smtp-server">📬 Set up your local SMTP server</h3>
 <p>We&rsquo;re going to use <a href="https://github.com/mailhog/MailHog">MailHog</a>, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!</p>
 <p>Create a <code>docker-compose.yaml</code> file or update your existing one and define the MailHog service.</p>
 <p>Using Docker Compose to run your database locally is a pretty good idea! In my <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">example repo</a> I went for a containerised PostgreSQL database.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
-
-<span style="color:#f92672">services</span>:
-  <span style="color:#f92672">mailhog</span>:
-    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mailhog/mailhog</span>
-    <span style="color:#f92672">logging</span>:
-      <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#39;none&#39;</span> <span style="color:#75715e"># disable saving logs</span>
-    <span style="color:#f92672">ports</span>:
-      - <span style="color:#ae81ff">1025</span>:<span style="color:#ae81ff">1025</span> <span style="color:#75715e"># smtp server</span>
-      - <span style="color:#ae81ff">8025</span>:<span style="color:#ae81ff">8025</span> <span style="color:#75715e"># web ui</span>
-</code></pre></div><p>Add a couple of convenience scripts to your <code>package.json</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-    <span style="color:#f92672">&#34;docker:up&#34;</span>: <span style="color:#e6db74">&#34;docker compose up -d&#34;</span>,
-    <span style="color:#f92672">&#34;docker:down&#34;</span>: <span style="color:#e6db74">&#34;docker compose down&#34;</span>
-  }
-}
-</code></pre></div><p>Edit your local <code>.env</code> file to configure the NextAuth.js <code>EmailProvider</code>. Leave everything as below.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mailhog</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mailhog/mailhog</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">logging</span>:
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#39;none&#39;</span> <span style="color:#75715e"># disable saving logs</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">1025</span>:<span style="color:#ae81ff">1025</span> <span style="color:#75715e"># smtp server</span>
+</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8025</span>:<span style="color:#ae81ff">8025</span> <span style="color:#75715e"># web ui</span>
+</span></span></code></pre></div><p>Add a couple of convenience scripts to your <code>package.json</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;scripts&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;docker:up&#34;</span>: <span style="color:#e6db74">&#34;docker compose up -d&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;docker:down&#34;</span>: <span style="color:#e6db74">&#34;docker compose down&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Edit your local <code>.env</code> file to configure the NextAuth.js <code>EmailProvider</code>. Leave everything as below.</p>
 <pre tabindex="0"><code>EMAIL_SERVER_HOST=localhost
 EMAIL_SERVER_PORT=1025
 EMAIL_SERVER_USER=email-user
 EMAIL_SERVER_PASSWORD=email-pass
 </code></pre><h3 id="-local-workflow">💻 Local workflow</h3>
 <p>Bring up your containers and start the local development server.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
-</code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
+</span></span></code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
 <p>
   <img src="../img/nextjs/nextauth-login.png" alt="NextAuth.js login screen">
 

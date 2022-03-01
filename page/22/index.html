@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -308,19 +308,19 @@
 <h3 id="gwt-build-process-101">GWT build process 101</h3>
 <p>Bare in mind this is a guide so you can fix your library problem and move on, those who seek a proper explanation, I&quot;d recommend <a href="https://developers.google.com/web-toolkit/doc/latest/DevGuideOrganizingProjects">the official documentation</a>.</p>
 <p>Let&rsquo;s get going! You will find a very special file named <em>GwtDefinition.gwt.xml</em> under the main package folder in the HTML5 project. It&quot;ll look something like this.</p>
-<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;
 &lt;module&gt;
-    &lt;entry-point class=&quot;com.siondream.mygame.client.GwtLauncher&quot;/&gt;
-    &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
-    &lt;inherits name=&quot;MyGame&quot;/&gt;
-    &lt;inherits name=&quot;aurelienribon.tweenengine&quot;/&gt;
-    &lt;inherits name=&quot;com.badlogic.gdx.backends.gdx_backends_gwt&quot;/&gt;
+    &lt;entry-point class=&#34;com.siondream.mygame.client.GwtLauncher&#34;/&gt;
+    &lt;set-configuration-property name=&#34;gdx.assetpath&#34; value=&#34;../tranches-android/assets&#34;/&gt;
+    &lt;inherits name=&#34;MyGame&#34;/&gt;
+    &lt;inherits name=&#34;aurelienribon.tweenengine&#34;/&gt;
+    &lt;inherits name=&#34;com.badlogic.gdx.backends.gdx_backends_gwt&#34;/&gt;
 &lt;/module&gt;
 </code></pre><p>Its main purpose is to tell the GTW compiler what modules the application depends on, and therefore, inherits from. As you can see, it&rsquo;s also used to specify the entry point class and add configuration params such as the assets folder location. I&rsquo;ve obviously made <em>MyGame</em> module up, this would correspond to your core project. Look under the src folder of your core project and you should find a <em>MyGame.gwt.xml</em> file.</p>
-<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE module PUBLIC &#34;-//Google Inc.//DTD Google Web Toolkit trunk//EN&#34; &#34;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&#34;&gt;
 &lt;module&gt;
-	&lt;source path=&quot;com/siondream/mygame&quot; /&gt;
+	&lt;source path=&#34;com/siondream/mygame&#34; /&gt;
 &lt;/module&gt;
 </code></pre><p>As you can see, the <em>MyGame</em> module contains a single source path which is located under the <em>com.siondream.mygame</em> package. If you wanted, you could add more source path entries in this file as long as they point to packages under the same project.</p>
 <p>Now you&quot;re a GWT expert, right?</p>
@@ -334,20 +334,20 @@
 <p>Crap!</p>
 </blockquote>
 <p>Well, it&rsquo;s actually not too bad. In my particular case, I went to the treelayout Google Code repository, checked out the source using Tortoise SVN and imported the project, easy peasy. The next step would be to add a module definition file under the src folder in the treelayout project, let&rsquo;s name it <em>TreeLayout.gwt.xml</em>.</p>
-<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE module PUBLIC &quot;-//Google Inc.//DTD Google Web Toolkit trunk//EN&quot; &quot;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&quot;&gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;!DOCTYPE module PUBLIC &#34;-//Google Inc.//DTD Google Web Toolkit trunk//EN&#34; &#34;http://google-web-toolkit.googlecode.com/svn/trunk/distro-source/core/src/gwt-module.dtd&#34;&gt;
 &lt;module&gt;
-	&lt;source path=&quot;org/abego/treelayout&quot; /&gt;
+	&lt;source path=&#34;org/abego/treelayout&#34; /&gt;
 &lt;/module&gt;
 </code></pre><p>Hang on, we&quot;re almost there! Finally, add the inheritance entry to the <em>GwtDefinitions.xml</em> file.</p>
-<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; standalone=&#34;no&#34;?&gt;
 &lt;module&gt;
-    &lt;entry-point class=&quot;com.siondream.tranches.client.GwtLauncher&quot;/&gt;
-    &lt;set-configuration-property name=&quot;gdx.assetpath&quot; value=&quot;../tranches-android/assets&quot;/&gt;
-    &lt;inherits name=&quot;MyGame&quot;/&gt;
-    &lt;inherits name=&quot;TreeLayout&quot;/&gt;
-    &lt;inherits name=&quot;aurelienribon.tweenengine&quot;/&gt;
-    &lt;inherits name=&quot;com.badlogic.gdx.backends.gdx_backends_gwt&quot;/&gt;
+    &lt;entry-point class=&#34;com.siondream.tranches.client.GwtLauncher&#34;/&gt;
+    &lt;set-configuration-property name=&#34;gdx.assetpath&#34; value=&#34;../tranches-android/assets&#34;/&gt;
+    &lt;inherits name=&#34;MyGame&#34;/&gt;
+    &lt;inherits name=&#34;TreeLayout&#34;/&gt;
+    &lt;inherits name=&#34;aurelienribon.tweenengine&#34;/&gt;
+    &lt;inherits name=&#34;com.badlogic.gdx.backends.gdx_backends_gwt&#34;/&gt;
 &lt;/module&gt;
 </code></pre><p>Done! If you take 10 minutes to offer some prayers to <em>$deity</em> and press GWT everything should just work.</p>
 <p><strong>Note</strong>: after someone saying, <em>&ldquo;it just should just work&rdquo;</em>, I&rsquo;ve come to realise that such situation is hardly ever the case.</p>

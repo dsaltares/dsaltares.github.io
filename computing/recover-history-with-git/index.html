@@ -112,7 +112,7 @@
 </blockquote>
 <p>Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using <code>git reflog</code> you can list the tip of branches, including the deleted ones. Once you find the commit you were looking for, you can just use <code>git checkout</code> to get it back. This will detach you from <code>HEAD</code>, so you will probably want to create the old branch again with <code>git checkout -b name</code>.</p>
 <p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let&rsquo;s say you know the commit message had <code>feature x</code> in it.</p>
-<pre tabindex="0"><code>git reflog --grep='feature x'
+<pre tabindex="0"><code>git reflog --grep=&#39;feature x&#39;
 git checkout 123456
 git checkout -b feature-x
 </code></pre><p>I really love Git.</p>

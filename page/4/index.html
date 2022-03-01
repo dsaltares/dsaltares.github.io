@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -289,7 +289,7 @@
 <h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
 <p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
 <p>Generate a public/private key pair.</p>
-<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &#34;&lt;email&gt;&#34; -f publish_key -P &#34;&#34;
 </code></pre><p>Now, go to the production repo Settings, Deploy keys and paste the contents of <code>publish_key.pub</code> here.</p>
 <p>
   <img src="../../img/gh-pages-workflow/deploy-keys.png" alt="deploy_keys">
@@ -301,31 +301,31 @@
 
 </p>
 <p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
-
-<span style="color:#f92672">on</span>:
-  <span style="color:#f92672">push</span>:
-    <span style="color:#f92672">branches</span>:
-    - <span style="color:#ae81ff">master</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">build</span>:
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">steps</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
-      <span style="color:#f92672">env</span>:
-        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;repository&gt;.github.io</span>
-        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
-        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
-        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
-</code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;repository&gt;.github.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
+</span></span></code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
 <p>
   <img src="../../img/gh-pages-workflow/actions.png" alt="actions">
 
@@ -397,12 +397,11 @@ This is the same as what is explained in Gut&rsquo;s <a href="https://github.com
 
 </p>
 <p>Create a trivial test in <code>res://test/unit/test_example.gd</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-gdscript" data-lang="gdscript"><span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#34;res://addons/gut/test.gd&#34;</span>
-
-<span style="color:#66d9ef">func</span> test_assert_true_with_true():
-	assert_true(true, <span style="color:#e6db74">&#34;Should pass, true is true&#34;</span>)
-
-</code></pre></div><p>You can now run these tests from the command line.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-gdscript" data-lang="gdscript"><span style="display:flex;"><span><span style="color:#66d9ef">extends</span> <span style="color:#e6db74">&#34;res://addons/gut/test.gd&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> test_assert_true_with_true():
+</span></span><span style="display:flex;"><span>	assert_true(true, <span style="color:#e6db74">&#34;Should pass, true is true&#34;</span>)
+</span></span></code></pre></div><p>You can now run these tests from the command line.</p>
 <pre tabindex="0"><code>godot -d -s --path ./project addons/gut/gut_cmdln.gd -gdir=res://test -ginclude_subdirs -gexit
 </code></pre><p>Where <code>godot</code> is your Godot binary and <code>project</code> is the folder where your game lives.</p>
 <p>Alright, we now have a basic test setup we can run locally. Let&rsquo;s move onto the meaty
@@ -410,19 +409,19 @@ part of the article, continuous integration. I&rsquo;ll be using
 <a href="https://travis-ci.org/">Travis CI</a> because it&rsquo;s easy and free for open source projects hosted on Github, but knock yourself out with your CI system of choice.</p>
 <p>Travis looks for a <code>.travis.yml</code> file in the root of your repo. This file tells Travis how to build the project and run tests. I recommend you take a quick look at the <a href="https://docs.travis-ci.com/user/tutorial/">docs</a>.</p>
 <p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/.travis.yml"><code>.travis.yml</code></a> file is trivial.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">language</span>: <span style="color:#ae81ff">minimal</span>
-<span style="color:#f92672">script</span>: <span style="color:#ae81ff">./run_tests.sh</span>
-</code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
-GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64
-GODOT_ZIP<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>.zip
-GODOT_URL<span style="color:#f92672">=</span>https://downloads.tuxfamily.org/godotengine/<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
-
-curl <span style="color:#e6db74">${</span>GODOT_URL<span style="color:#e6db74">}</span> --output <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
-unzip <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
-chmod +x <span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>
-./<span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span> -d -s --path ./project addons/gut/gut_cmdln.gd -gdir<span style="color:#f92672">=</span>res://test -ginclude_subdirs -gexit
-</code></pre></div><p>As you can see, it&rsquo;s also pretty easy to parameterize which Godot version you want
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">language</span>: <span style="color:#ae81ff">minimal</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">script</span>: <span style="color:#ae81ff">./run_tests.sh</span>
+</span></span></code></pre></div><p>The <a href="https://github.com/dsaltares/godot-ci-example/blob/master/run_tests.sh"><code>run_tests.sh</code></a> script will download the headless Godot runtime and run the command we showed above. Make sure <code>run_tests.sh</code> has executable permissions.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GODOT_VERSION<span style="color:#f92672">=</span>3.0.6
+</span></span><span style="display:flex;"><span>GODOT_BIN<span style="color:#f92672">=</span>Godot_v<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>-stable_linux_headless.64
+</span></span><span style="display:flex;"><span>GODOT_ZIP<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>.zip
+</span></span><span style="display:flex;"><span>GODOT_URL<span style="color:#f92672">=</span>https://downloads.tuxfamily.org/godotengine/<span style="color:#e6db74">${</span>GODOT_VERSION<span style="color:#e6db74">}</span>/<span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#e6db74">${</span>GODOT_URL<span style="color:#e6db74">}</span> --output <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>unzip <span style="color:#e6db74">${</span>GODOT_ZIP<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>chmod +x <span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>./<span style="color:#e6db74">${</span>GODOT_BIN<span style="color:#e6db74">}</span> -d -s --path ./project addons/gut/gut_cmdln.gd -gdir<span style="color:#f92672">=</span>res://test -ginclude_subdirs -gexit
+</span></span></code></pre></div><p>As you can see, it&rsquo;s also pretty easy to parameterize which Godot version you want
 to use.</p>
 <p>And that&rsquo;s it! You can get a cool &ldquo;Build passing&rdquo; badge for your repo. <a href="https://travis-ci.org/dsaltares/godot-ci-example">Here&rsquo;s what a typical build would look like</a>.</p>
 <pre tabindex="0"><code>/-----------------------------------------

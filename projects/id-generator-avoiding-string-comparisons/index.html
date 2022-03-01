@@ -113,18 +113,18 @@
 <p>Needless to say that <strong>in games development we care very much about performance</strong>. It becomes an even more critical issue when we&quot;re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons. They are bad, slow, nasty pieces of code, specially when placed inside the main loop.</p>
 <h3 id="sometimes-theyre-needed">Sometimes they&quot;re needed!</h3>
 <p>But sometimes they&quot;re needed! A little person shouts in the crowd. Let&rsquo;s say we define our character&rsquo;s animations in an XML file the following way.</p>
-<pre tabindex="0"><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;sprite name=&quot;data/character.png&quot;
-	      frameDuration=&quot;0.03333&quot;
-	      rows=&quot;7&quot;
-	      columns=&quot;8&quot; &gt;
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;
+&lt;sprite name=&#34;data/character.png&#34;
+	      frameDuration=&#34;0.03333&#34;
+	      rows=&#34;7&#34;
+	      columns=&#34;8&#34; &gt;
 
-	&lt;animation name=&quot;idle&quot; mode=&quot;loop&quot; frames=&quot;0-13&quot; /&gt;
-	&lt;animation name=&quot;walk&quot; mode=&quot;loop&quot; frames=&quot;14-39&quot; /&gt;
-	&lt;animation name=&quot;jump&quot; mode=&quot;normal&quot; frames=&quot;40-55&quot; /&gt;
+	&lt;animation name=&#34;idle&#34; mode=&#34;loop&#34; frames=&#34;0-13&#34; /&gt;
+	&lt;animation name=&#34;walk&#34; mode=&#34;loop&#34; frames=&#34;14-39&#34; /&gt;
+	&lt;animation name=&#34;jump&#34; mode=&#34;normal&#34; frames=&#34;40-55&#34; /&gt;
 &lt;/sprite&gt;
 </code></pre><p>It&rsquo;s natural to use strings to name our animations, they&quot;re human readable and comfy but again, expensive to work with. Our character will want to change animation from time to time and the code for that could be something like:</p>
-<pre tabindex="0"><code>caveman.setAnimation(&quot;walk&quot;);
+<pre tabindex="0"><code>caveman.setAnimation(&#34;walk&#34;);
 </code></pre><p>The <em>setAnimation()</em> method has to look into its map, performing <em>log(n)</em> ugly string comparisons to find the right animation. We&quot;re righteous game programmers and that makes us sad.</p>
 <h3 id="working-our-way-around-string-comparisons">Working our way around string comparisons</h3>
 <p>Well, in that case we&quot;d want to use an alternative method. It&quot;d be nice to be able to numerically identify a string in the global scope of our game, so when we have two generated IDs we could just compare them. That&rsquo;s very cheap, yay! ID generation and retrieval might not be lightning fast but that would only be performed during start up or once in a while, definitely not in the very middle of our game loop.</p>
@@ -168,9 +168,9 @@
 }
 </code></pre><h3 id="example-of-use">Example of use</h3>
 <p>Sticking to our previous animation example, our character could cache its animations right in its constructor this way. <strong>Once!</strong></p>
-<pre tabindex="0"><code>private static final int m_idle = IDGenerator.getID(&quot;idle&quot;);
-private static final int m_walk = IDGenerator.getID(&quot;walk&quot;);
-private static final int m_jump = IDGenerator.getID(&quot;jump&quot;);
+<pre tabindex="0"><code>private static final int m_idle = IDGenerator.getID(&#34;idle&#34;);
+private static final int m_walk = IDGenerator.getID(&#34;walk&#34;);
+private static final int m_jump = IDGenerator.getID(&#34;jump&#34;);
 </code></pre><p>Now, at the time of picking an animation we use an int instead of a string and therefore, a beautiful smile is drawn on our faces.</p>
 <pre tabindex="0"><code>caveman.setAnimation(m_walk);
 </code></pre><p>Of course, this can be extensively use in your project, hope it helps. By the way, know than more and hopefully better is yet to come.</p>

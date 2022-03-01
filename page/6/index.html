@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.92.2" />
+	<meta name="generator" content="Hugo 0.93.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -194,11 +194,11 @@ public void create() {
     }
 
     public void loadLevel(String levelName) {
-        console.log(&quot;loading level &quot; + levelName, Console.LogLevel.SUCCESS);
+        console.log(&#34;loading level &#34; + levelName, Console.LogLevel.SUCCESS);
     }
 
     public void spawnEnemy(String type, float x, float y, float z) {
-        console.log(&quot;spawning enemy &quot; + type, Console.LogLevel.SUCCESS);
+        console.log(&#34;spawning enemy &#34; + type, Console.LogLevel.SUCCESS);
     }
 
     public void clear() {
@@ -238,7 +238,7 @@ public void create() {
 <p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. 
   <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png">
 
- We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&quot;</em></p>
+ We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&rdquo;</em></p>
 <h3 id="observable-and-observer-components">Observable and Observer components</h3>
 <p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
 <pre tabindex="0"><code>public class ObservableComponent implements Component {

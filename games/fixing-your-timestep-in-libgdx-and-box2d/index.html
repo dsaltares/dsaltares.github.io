@@ -106,7 +106,7 @@
     <a class="label" href="../../categories/games-development">Games development</a>
     </span>
     <p><em><a href="http://gafferongames.com/game-physics/fix-your-timestep/">Fix your Timestep</a></em> is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.</p>
-<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games' behaviour.</p>
+<p>Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games&rsquo; behaviour.</p>
 <p>I thought it would be a good idea to show how it translates to a <a href="https://github.com/libgdx/libgdx">Libgdx</a> application using the <a href="http://box2d.org/">Box2D</a> physics engine. Note that it also applies to <a href="http://bulletphysics.org/wordpress/">Bullet</a>, changes would be minimal.</p>
 <h3 id="simple-but-wrong-approaches">Simple but wrong approaches</h3>
 <p>It starts with a fix time step of 1/60th of a second, which makes for a stable simulation but fails terribly when the game runs at less than 60fps, a very common situation in mobile devices.</p>
@@ -139,7 +139,7 @@
         }
 }
 </code></pre><h3 id="fixed-timestep-with-interpolation">Fixed timestep with interpolation</h3>
-<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities' transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
+<p>The <code>accumulator &lt;= step</code> condition in the <code>while</code> loop means we can still have some time left in the accumulator but not enough to step the physics at 1/60s. This results in some visual stuttering, as the physics can get slightly out of sync for a while. Glenn Fiedler&rsquo;s suggests we interpolate our entities&rsquo; transforms between the previous and current physics state based on how much time left is in the accumulator.</p>
 <pre tabindex="0"><code>public class SionGame extends ApplicationListener {
     private World world;
     private double accumulator;

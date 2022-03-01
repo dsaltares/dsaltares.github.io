@@ -122,7 +122,7 @@
 <h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
 <p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
 <p>Generate a public/private key pair.</p>
-<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &quot;&lt;email&gt;&quot; -f publish_key -P &quot;&quot;
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &#34;&lt;email&gt;&#34; -f publish_key -P &#34;&#34;
 </code></pre><p>Now, go to the production repo Settings, Deploy keys and paste the contents of <code>publish_key.pub</code> here.</p>
 <p>
   <img src="../img/gh-pages-workflow/deploy-keys.png" alt="deploy_keys">
@@ -134,31 +134,31 @@
 
 </p>
 <p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
-
-<span style="color:#f92672">on</span>:
-  <span style="color:#f92672">push</span>:
-    <span style="color:#f92672">branches</span>:
-    - <span style="color:#ae81ff">master</span>
-
-<span style="color:#f92672">jobs</span>:
-  <span style="color:#f92672">build</span>:
-    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-    <span style="color:#f92672">steps</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
-      <span style="color:#f92672">env</span>:
-        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;repository&gt;.github.io</span>
-        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
-        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
-        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
-</code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;repository&gt;.github.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
+</span></span></code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
 <p>
   <img src="../img/gh-pages-workflow/actions.png" alt="actions">
 

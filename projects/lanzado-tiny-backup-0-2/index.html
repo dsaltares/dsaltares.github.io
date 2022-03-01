@@ -118,10 +118,10 @@
 builder = gtk.Builder()
 
 # ANTES: Tomamos la ruta relativa donde se encuentra el Glade
-path = 'glade/TinyBackup.glade'
+path = &#39;glade/TinyBackup.glade&#39;
 
 # AHORA: Tomamos la ruta absoluta  donde se encuentra el Glade
-path = os.path.dirname(__file__) + os.sep + 'glade/TinyBackup.glade'
+path = os.path.dirname(__file__) + os.sep + &#39;glade/TinyBackup.glade&#39;
 
 # Cargamos el fichero
 builder.add_from_file(path)
