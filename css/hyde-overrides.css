@@ -51,3 +51,8 @@ figcaption {
   text-align: center;
   font-size: 12px;
 }
+
+.begin-task-list + ul {
+  list-style: none;
+  padding-inline-start: 18px;
+}
