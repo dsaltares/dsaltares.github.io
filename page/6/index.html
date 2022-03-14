@@ -104,6 +104,82 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/general/migration-from-wordpress-to-hugo/">Migration from Wordpress to Hugo</a>
+      </h1>
+      <span class="post-date">Dec 4, 2016 &middot; 3 minute read &middot; <a href="https://saltares.com/general/migration-from-wordpress-to-hugo/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      <p>
+  <img src="../../img/others/hugo-logo.png" alt="hugo-logo">
+
+</p>
+<p>At long last, I got around to do something I had been meaning to do for a very
+long time. I migrated this Wordpress blog over to a statically generated site
+powered by <a href="http://gohugo.io/">Hugo</a>.</p>
+<p>That&rsquo;s 6 years or over 300 posts worth of content.</p>
+<h3 id="why-not-stay-with-wordpress">Why not stay with Wordpress?</h3>
+<p>First of all, I wanted to move away from Wordpress because it&rsquo;s heavy and requires
+quite a bit of setup: PHP, database, plugins and so on. Markdown based static site
+generators have been around for a while and being able to keep everything in plain
+text and under a familiar source control system such as Git is awesome.</p>
+<p>I use git and Markdown all the time both at home and at work.</p>
+<h3 id="why-hugo">Why Hugo?</h3>
+<p>Hugo is an <a href="https://github.com/spf13/hugo">open source</a> static site generator
+written in Go. It&rsquo;s cross-platform and ships as a dependency free binary. Comprehensive
+<a href="http://gohugo.io/overview/introduction/">documentation</a>, wide range of
+<a href="themes.gohugo.io">themes</a> as well as active and helpful <a href="https://discuss.gohugo.io/">community</a>
+are great additions.</p>
+<p>Whilst <a href="https://jekyllrb.com/">Jekyll</a> was the more established solution, it
+required Ruby and I really wanted to keep my environment as simple as possible.</p>
+<p>Other alternatives lacked features, support, had a more complex setup or a combination
+of the former.</p>
+<p>We&rsquo;ve got a winner!</p>
+<h3 id="exporting-wordpress-content">Exporting Wordpress content</h3>
+<p>The process went on like this.</p>
+<ol>
+<li>Exported all posts and pages to XML with the standard Wordpress Export tool.</li>
+<li>Used <a href="https://github.com/thomasf/exitwp">Exitwp</a> to convert content to Markdown.</li>
+<li>Lots of regex search and replace in Sublime.</li>
+</ol>
+<p>Back in 2010 I used the WYSIWYG editor in Wordpress and later on I moved to use
+the <a href="https://jetpack.com/support/markdown/">Markdown module in Jetpack</a>. The mix
+really confused Exitwp and required me to do a lot of manual editing and that took
+quite a while.</p>
+<h3 id="pushing-to-production">Pushing to production</h3>
+<p>This <a href="https://www.digitalocean.com/community/tutorials/how-to-deploy-a-hugo-site-to-production-with-git-hooks-on-ubuntu-14-04">excellent tutorial</a>
+proved most useful to get a streamlined publishing pipeline.</p>
+<p>Essentially, this involved the following:</p>
+<ol>
+<li>Install Hugo on my production server</li>
+<li>Put the site sources in a local git repository</li>
+<li>Create a git bare repository in the production server</li>
+<li>Add a <code>post-receive</code> hook on the production repository that runs <code>hugo</code> and builds the site.</li>
+</ol>
+<p>Give the article a proper read if you want to know more. The publish hook also
+uses <code>rsync</code> to back everything up in case something goes amiss.</p>
+<p>To create a new post, test it locally and publish it, I simply do:</p>
+<pre tabindex="0"><code>hugo new post/category/name.md
+hugo serve --buildDrafts
+git add content
+git push prod
+</code></pre><h3 id="results">Results</h3>
+<p>So far I love it!</p>
+<p>Here are some poor man&rsquo;s stats on loading times for <a href="../../">the homepage</a>, mind
+that I haven&rsquo;t tried to optimized neither of the two.</p>
+<ul>
+<li>Wordpress: ~3.7s</li>
+<li>Hugo: ~2.1s</li>
+</ul>
+<p>Please, let me know if you find anything broken, I would really appreciate it!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/projects/ashley-1-7-3-released/">Ashley 1.7.3 released!</a>
       </h1>
       <span class="post-date">Sep 10, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-7-3-released/#disqus_thread">Comments</a>
@@ -472,140 +548,6 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 <li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObservableComponent.java"><code>ObservableComponent</code></a></li>
 </ul>
 <p>Let me know what you think, especially if you use it. Would love some feedback on it!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/">Sloppynauts, our LibGDXJAM entry</a>
-      </h1>
-      <span class="post-date">Jan 22, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png">
-
-</p>
-<p>After a <a href="https://github.com/dsaltares/libgdxjam/commits/master">crazy weekend before the deadline</a>, we finally managed to put something playable together for <a href="http://itch.io/jam/libgdxjam">LibGDXJAM</a>.</p>
-<p>We&quot;d love you to have a go, and leave some <a href="http://itch.io/jam/libgdxjam/rate/51210">feedback</a>.</p>
-<iframe src="https://itch.io/embed/51210" width="100%" frameborder="0"></iframe>
-<p>We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom <a href="http://overlap2d.com/">Overlap2D</a> level loader and not so much on actual content, so you can actually finish the game in under a minute. I guess the difficulty (or lack of readability) may make it slightly longer, which is also a bit bad. The movement system could have done with a bit more fine tuning as well.</p>
-<p>However, we do believe the game has potential! Thanks to <a href="https://twitter.com/DrillerDev">@DrillerDev</a>, we had great character art an animations. The mechanics offer nice possibilities, which currently remain hidden due to lack of content. Not to mention the humour opportunities and the characters&quot; comicality.</p>
-<p>I will try post some technical articles on the project. We used <a href="https://github.com/libgdx/ashley">Ashley</a> and some folks may find interesting how we tackled certain details such as the scene hierarchy or the animation selection system.</p>
-<p>
-<link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png" alt="Sloppynauts 1" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 1</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png" alt="Sloppynauts 2" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 2</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png" alt="Sloppynauts 3" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 3</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png" alt="Sloppynauts 4" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 4</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-</p>
-<p>Next time we should follow the advice <a href="https://twitter.com/McFunkypants">@McFunkypants</a> gives in <a href="https://www.packtpub.com/game-development/game-jam-survival-guide">The Game Jam Survival Guide</a>!</p>
 
       
     </div>

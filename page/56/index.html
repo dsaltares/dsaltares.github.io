@@ -104,6 +104,32 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/balloon-breakers-mas-ogre-en-el-v-cusl/">Balloon Breakers, más Ogre en el V CUSL</a>
+      </h1>
+      <span class="post-date">Oct 12, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/balloon-breakers-mas-ogre-en-el-v-cusl/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/balloon-breakers-logo.png" alt="balloon-breakers-logo.png">
+
+</p>
+<p>No hay más que mirar la <a href="http://www.concursosoftwarelibre.org/1011/proyectos">lista de proyectos inscritos</a> en el CUSL V para percatarse que l<strong>os participantes de Cádiz tenemos especial predilección por los videojuegos</strong>. <a href="http://josetomastocino.com/xland/">XLand</a>, <a href="http://balloonbreakers.blogspot.com/">Balloon Breakers</a> y, por supuesto, <a href="http://osl2.uca.es/iberogre">IberOgre</a>. Incluso espero que aún se presenten algunos más. En esta ocasión voy a hablar de Balloon Breakers, del compañero Jesús González Rodríguez, por utilizar Ogre3D como motor de renderizado y porque el autobombo local nunca está de más.</p>
+<p><strong>Balloon Breakers es una reinvención del clásico Pang</strong> llevándolo al mundo de las 3D de la mano de Ogre. Aún lejos de estar terminado ya podemos ver en el blog oficial al protagonista campando por el escenario a sus anchas (que no es poco) y a algunos secundarios como un tucán o un ermitaño. S<strong>u estilo cartoon es de lo más acertado</strong> y encaja a la perfección con el espíritu arcade del Pang de toda la vida.</p>
+<p>
+  <img src="../../img/wp/balloon-breakers-preview.jpg" alt="balloon-breakers-preview.jpg">
+
+</p>
+<p>Un proyecto de lo más <strong>interesante para estudiar gestión de escenas y detección de colisiones</strong> sencillas entre otros aspectos. Sin duda promete mucho y estoy seguro de que será uno de los competidores de cara a la fase local y nacional.</p>
+<p>He aprovechado para colocar una <strong>sección de enlaces a blogs de participantes del V CUSL</strong> en la barra lateral. Espero que se presenten algunos proyectos más antes de que acabe el plazo pero por lo que he visto no faltan ideas realmente curiosas.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/primeras-colaboraciones-en-iberogre/">Primeras colaboraciones en IberOgre</a>
       </h1>
       <span class="post-date">Oct 11, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/primeras-colaboraciones-en-iberogre/#disqus_thread">Comments</a>
@@ -286,56 +312,6 @@ ventana = raiz-&gt;createRenderWindow(
 
 </p>
 <p><strong>Es posible que le cueste arrancar</strong>, es algo que he leído y escuchado de otros compañeros pero el que tenga paciencia durante los tres primeros episodios no se arrepentirá. Vienen en dosis de 20 minutos y eso se agradece, tanto que ya voy a catar la segunda temporada que acaba de comenzar. Si crees que series como la excepcional <a href="http://www.imdb.com/title/tt0460649/"><em>&ldquo;How I met your mother&rdquo;</em></a> están algo quemadas puede que necesites algo nuevo, Community es <strong>de tus mejores opciones</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/">Backup a través de la red con tar y ssh</a>
-      </h1>
-      <span class="post-date">Oct 1, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/backup-a-traves-de-la-red-con-tar-y-ssh/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/tar-ssh.png" alt="tar-ssh.png">
-
-</p>
-<p>La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas <strong>tuvimos que actualizar una aplicación web</strong> que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync <strong>estimamos oportuno hacer una copia completa</strong> y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer <strong>una copia gigantesca y mandarla mediante ssh</strong> a otra máquina <strong>sin perder demasiado el tiempo</strong>.</p>
-<h3 id="la-respuesta-rápida-y-cutre">La respuesta rápida (y cutre)</h3>
-<p>Comprimir <strong>200GB</strong> con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería <strong>el enfoque inicial</strong>:</p>
-<pre tabindex="0"><code># Comprimimos
-tar cvzf directorio directorio.tar.gz
-
-# Enviamos
-scp directorio.tar.gz usuario@host:directorio_destino
-</code></pre><h3 id="la-solución">La solución</h3>
-<p>Decidimos que <strong>el tiempo era oro</strong>, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación <strong>el script que encierra la magia</strong> (obviando datos concretos):</p>
-<pre tabindex="0"><code>#!/bin/sh
-
-# Fecha de la copia
-FECHA=$(date +&#34;%F-%H-%M-%S&#34;)
-
-# Directorio a copiar
-DIR_BACKUP=/home/david
-
-# Máquina remota
-HOST=backups.saltares.com
-
-# Usuario de la máquina remota
-USER=siondream
-
-# Directorio destino
-HOST_DIR=/home/siondream/backups
-
-# Hacemos el backup
-tar cvzf - $DIR_BACKUP | ssh $USER@$HOST &#34;cat &gt; ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz&#34;
-</code></pre><p>Con el clásico <em>tar cvzf</em> tenemos una compresión común de <em>$DIR_BACKUP</em>. No obstante, el guión <em>–</em> sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería <em>|</em>. El chorro de bytes se envía mediante <em>ssh</em> (al equipo <em>$HOST</em> con nuestro usuario <em>$USER</em>) y se vuelca en el fichero <em>$DIR_BACKUP-$FECHA.tar.gz</em> utilizando <em>cat</em>. Puede parecer algo confuso pero <strong>si lo piensas es maravilloso</strong> y tiene todo el sentido del mundo.</p>
-<h3 id="lo-mismo-casi-en-la-mitad-de-tiempo">Lo mismo casi en la mitad de tiempo</h3>
-<p>Si tienes que hacer grandes copias y enviarlas por la red, <strong>este pequeño truco es tu amigo</strong>. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve <strong>resultados impresionantes</strong>: enviar los datos mientras éstos se comprimen lleva <strong>casi la mitad de tiempo</strong> que hacerlo en etapas separadas.</p>
 
       
     </div>

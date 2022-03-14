@@ -6,7 +6,60 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help Engineers understand the Why</title>
+      <link>https://saltares.com/help-engineers-understand-the-why/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
+      <description>Every engineer in the team must understand the why.
+Can everyone confidently answer the question:
+ What problem are we trying to solve with this user story?
+ Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
+Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket.</description>
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/understand-the-why.webp&#34; alt=&#34;team building a wooden house&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Every engineer in the team must understand the &lt;em&gt;why&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Can everyone confidently answer the question:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;What problem are we trying to solve with this user story?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Understanding the &lt;em&gt;why&lt;/em&gt; is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.&lt;/p&gt;
+&lt;p&gt;Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket. There are two options. Either delivery grinds to a halt, with engineers constantly asking the Designer/PM. Or they make the decisions themselves. To make the right decisions, everyone needs to understand users, the problem, and the solution.&lt;/p&gt;
+&lt;p&gt;Everyone needs to understand the &lt;em&gt;why&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Many organizations struggle with this. Engineers focus on closing the next ticket in time for sprint review, and PMs are frustrated when features suffer delays because they were subpar.&lt;/p&gt;
+&lt;p&gt;As an engineering leader, the bad news is that you are responsible for the situation. The good news is that you can turn the ship around.&lt;/p&gt;
+&lt;h3 id=&#34;-dog-food-the-product&#34;&gt;🐶 Dog-food the product&lt;/h3&gt;
+&lt;p&gt;What easier way to understand the product better than to use it every day?&lt;/p&gt;
+&lt;p&gt;Well&amp;hellip; None.&lt;/p&gt;
+&lt;p&gt;Admittedly, some organizations have it easier than others. Engineers at &lt;a href=&#34;https://honeycomb.io/&#34;&gt;Honeycomb&lt;/a&gt; use their own product to observe Honeycomb. If your product doesn&amp;rsquo;t lend itself naturally to be used by engineers, there are still things you can do.&lt;/p&gt;
+&lt;p&gt;At &lt;a href=&#34;https://www.plot.co/&#34;&gt;Plot&lt;/a&gt;, we build a tool to help you create learning experiences like the world&amp;rsquo;s best learning designer. We&amp;rsquo;re running a challenge where we will all design a course using our tool. Not only will everyone familiarize themselves with the experience of using the product, but we will also collect loads of valuable feedback.&lt;/p&gt;
+&lt;h3 id=&#34;-engineers-join-ux-interviews&#34;&gt;🧪 Engineers join UX interviews&lt;/h3&gt;
+&lt;p&gt;Engineers who talk to users are bound to get to know them better. They can read written feedback, but there&amp;rsquo;s nothing like talking to them face to face.&lt;/p&gt;
+&lt;p&gt;You can suggest they join your team&amp;rsquo;s Designer on the next series of user interviews that validate the solution they will work on next. Start with Engineers shadowing, so they become comfortable. Perhaps you&amp;rsquo;ll get a few individuals interested in conducting interviews themselves!&lt;/p&gt;
+&lt;h3 id=&#34;-the-team-refines-together&#34;&gt;👌 The team refines together&lt;/h3&gt;
+&lt;p&gt;Many teams do not refine user stories together. I am shocked at the number of instances when just the Engineering Manager, Product Manager, and Designer discuss the backlog. The Engineering Manager breaks down stories into tasks and assigns them to individuals in the team.&lt;/p&gt;
+&lt;p&gt;I cannot state how extremely damaging that is.&lt;/p&gt;
+&lt;p&gt;Firstly, Engineers only receive a piece of the puzzle, making it impossible to see the bigger picture. Secondly, they never get the chance to break stories into smaller chunks, missing out on developing a crucial skill.&lt;/p&gt;
+&lt;p&gt;Refining together is a great way to share knowledge about the system, where the pitfalls and the opportunities are.&lt;/p&gt;
+&lt;h3 id=&#34;-design-sprints--ideation-sessions&#34;&gt;👨‍🎨 Design sprints &amp;amp; ideation sessions&lt;/h3&gt;
+&lt;p&gt;Having Engineers and other roles participate in design sprints or ideation sessions before a solution is presented to them is fantastic. Instead of thinking about the solution at hand, everyone is now thinking about the actual problem or frictions users face.&lt;/p&gt;
+&lt;p&gt;There are a couple of bonuses. One is that Engineers feel more ownership over what they build. The other one is that Engineers might identify great solutions a Designer or PM thought to be technically infeasible. Yet another classic example of why diverse teams build better products.&lt;/p&gt;
+&lt;h3 id=&#34;-everyone-does-support&#34;&gt;💬 Everyone does support!&lt;/h3&gt;
+&lt;p&gt;It&amp;rsquo;s typical of early-stage startups for everyone to help out with the help desk rotation. The Product Support team may not even exist yet! However, this normally stops the second the Support team assembles.&lt;/p&gt;
+&lt;p&gt;A day where the Product Development team helps with Product Support will be a true eye-opener. There is nothing like seeing raw user frustration first-hand. It puts the roadmap into perspective.&lt;/p&gt;
+&lt;h3 id=&#34;-make-product-part-of-the-jd-and-interview-process&#34;&gt;👩‍💻 Make Product part of the JD and interview process&lt;/h3&gt;
+&lt;p&gt;If your interview process focuses exclusively on technical knowledge, you may attract Engineers who are not interested in understanding users.&lt;/p&gt;
+&lt;p&gt;Think about the questions and conversations you may have to understand better how candidates think about user problems and solutions.&lt;/p&gt;
+&lt;h3 id=&#34;-make-time-for-it&#34;&gt;⏳ Make time for it&lt;/h3&gt;
+&lt;p&gt;Of course, you cannot just add new responsibilities to your team and expect nothing else to change. It&amp;rsquo;s an investment. The team may move slightly more slowly initially to increase quality and velocity later.&lt;/p&gt;
+&lt;p&gt;🙌 Do you have other practices or techniques? Please do let me know!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>8 Questions to ask your potential future Engineering Manager during an interview</title>
       <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
@@ -612,60 +665,6 @@ The desktop browser device toolbar may not be enough to reproduce it. You may ac
 &lt;/p&gt;
 &lt;p&gt;You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.&lt;/p&gt;
 &lt;p&gt;Hope this helps your workflow!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>6 tips to make remote meetings more inclusive</title>
-      <link>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/</link>
-      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/</guid>
-      <description>So much goes into fostering an inclusive remote culture. It must be done deliberately, like tending to a greenhouse.
-As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.
-One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.
-1. ✍️ Default to async Async communication acts as a leveller.</description>
-      <content>&lt;p&gt;
-  &lt;img src=&#34;./img/remote-work.webp&#34; alt=&#34;remote work&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;So much goes into fostering an inclusive remote culture. It must be done deliberately, like &lt;a href=&#34;https://www.runekvist.com/remote-first&#34;&gt;tending to a greenhouse&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.&lt;/p&gt;
-&lt;p&gt;One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.&lt;/p&gt;
-&lt;h3 id=&#34;1--default-to-async&#34;&gt;1. ✍️ Default to async&lt;/h3&gt;
-&lt;p&gt;Async communication acts as a leveller. It&amp;rsquo;s no longer about who talks first or loudest. When someone lays out a great proposal in writing, seniority starts to matter less.&lt;/p&gt;
-&lt;p&gt;Do you really need a meeting? Consider an async discussion on a Google doc, Notion page or Github RFC issue.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.notion.so/aulaeducation/How-we-work-together-2501716c17a64fae849b74e800b3f83d#1afa3cd0dafc4f3e986350c3e1e5837a&#34;&gt;Aula&lt;/a&gt;, &lt;a href=&#34;https://about.gitlab.com/company/culture/all-remote/asynchronous/#remind-people-that-async-is-more-inclusive&#34;&gt;Gitlab&lt;/a&gt; and many other remote-first companies already encourage this.&lt;/p&gt;
-&lt;h3 id=&#34;2--respect-peoples-calendars&#34;&gt;2. 📆 Respect people&amp;rsquo;s calendars&lt;/h3&gt;
-&lt;p&gt;When setting up a meeting, check the attendees&amp;rsquo; calendar first and do not create the event if there is a clash, at least without asking first.&lt;/p&gt;
-&lt;p&gt;At Aula, we encourage everyone to be explicit and use Google Calendar as a communication tool by explicitly setting time for things like:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🕰️ Working hours&lt;/li&gt;
-&lt;li&gt;🥘 Lunch time&lt;/li&gt;
-&lt;li&gt;🏫 School run&lt;/li&gt;
-&lt;li&gt;🤸‍♂️ Workout&lt;/li&gt;
-&lt;li&gt;❌ &amp;hellip; Any unavailable time.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Respecting people&amp;rsquo;s calendars is respecting their time and making them feel included. You&amp;rsquo;re basically saying that it doesn&amp;rsquo;t matter that they care for a dependent relative or live in a different timezone. They are an important part of the session.&lt;/p&gt;
-&lt;p&gt;If making calendars work is hell 🔥, default to async!&lt;/p&gt;
-&lt;h3 id=&#34;3--send-agenda-well-in-advance&#34;&gt;3. 📝 Send agenda well in advance&lt;/h3&gt;
-&lt;p&gt;Not only &lt;a href=&#34;https://themanagershandbook.com/working-as-a-team/running-meetings&#34;&gt;will your meetings be much more productive&lt;/a&gt;, they will also allow more introverted folks, like myself, to prepare and participate more. We will thank you!&lt;/p&gt;
-&lt;p&gt;A meeting invite without an agenda can be extremely anxiety inducing. During those meetings, it&amp;rsquo;s usually the &lt;a href=&#34;https://en.wikipedia.org/wiki/Hartman_Personality_Profile#Reds_core_motive&#34;&gt;red&lt;/a&gt; people who dominate the conversation. When that happens, you may be missing out on extremely valuable points of view.&lt;/p&gt;
-&lt;h3 id=&#34;4--observe-and-pick-up-on-cues&#34;&gt;4. 👀 Observe and pick up on cues&lt;/h3&gt;
-&lt;p&gt;Picking up on certain dynamics during a remote video call can be more challenging than in person although it is just as important.&lt;/p&gt;
-&lt;p&gt;💬 Is someone dominating the conversation? Interject and give space for other voices. If it keeps happening, give them candid feedback 1-1.&lt;/p&gt;
-&lt;p&gt;🙋‍♀️ Did someone unmute and then muted on the video call? Maybe they wanted to participate but did not get the chance. Politely ask if they wanted to say something. Lots of video tools have a &amp;ldquo;raise hand&amp;rdquo; feature these days. Pay attention to raised hands.&lt;/p&gt;
-&lt;p&gt;🤐 Did someone not participate at all? You could ask if they want to add something. However, be mindful as not everyone may want to be put on the spot. The best is to check with them 1-1 whether that&amp;rsquo;s something they would appreciate.&lt;/p&gt;
-&lt;h3 id=&#34;5--rotate-moderators&#34;&gt;5. 👑 Rotate moderators&lt;/h3&gt;
-&lt;p&gt;Depending on the scope of the meeting, it may be beneficial to rotate the moderator and let members of your team own the session.&lt;/p&gt;
-&lt;p&gt;Decisions made during these meetings will automatically get more &lt;a href=&#34;https://themanagershandbook.com/working-as-a-team/decision-making#getting-buy-in&#34;&gt;buy-in&lt;/a&gt; and your team will develop.&lt;/p&gt;
-&lt;h3 id=&#34;6--lead-by-asking-the-silly-questions&#34;&gt;6. ✋ Lead by asking the &lt;em&gt;&amp;ldquo;silly questions&amp;rdquo;&lt;/em&gt;&lt;/h3&gt;
-&lt;p&gt;It&amp;rsquo;s easy to try encourage your team by saying &amp;ldquo;there are no silly questions&amp;rdquo;. Sure, this is nice but folks can still be intimidated and may dread judgement from their peers.&lt;/p&gt;
-&lt;p&gt;We can do better.&lt;/p&gt;
-&lt;p&gt;Lead by example and &lt;a href=&#34;https://www.goodreads.com/book/show/23500254-the-power-of-vulnerability&#34;&gt;be vulnerable&lt;/a&gt; by sharing what you don&amp;rsquo;t know or are unsure about. &lt;a href=&#34;https://ideas.ted.com/how-showing-vulnerability-helps-build-a-stronger-team/&#34;&gt;Vulnerability builds trust&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;-thanks&#34;&gt;🙌 Thanks&lt;/h3&gt;
-&lt;p&gt;You made it!&lt;/p&gt;
-&lt;p&gt;Any good tips to make your remote meetings more inclusive?&lt;/p&gt;
 </content>
     </item>
     

@@ -104,6 +104,75 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/google-music-en-linux-y-android-desde-espana/">Google Music en Linux y Android desde España</a>
+      </h1>
+      <span class="post-date">Jun 8, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/computing/google-music-en-linux-y-android-desde-espana/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p><strong>Google anunció <a href="http://music.google.com/">Music</a></strong>, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que <strong>sólo usuarios de Estados Unidos</strong> pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo <strong>procedimiento para poder saltarse esta barrera</strong>, sigue leyendo para saber cuál es. Gracias a mi buen amigo <a href="http://ragingbit.com/blog/">Javier</a> por los enlaces y las pistas.</p>
+<h3 id="características">Características</h3>
+<p>Google Music nos permite subir <strong>hasta 20.000 canciones</strong> de nuestra biblioteca de música local a través de una sencilla aplicación de escritorio que sincroniza directorios de forma automática. Es una lástima que el cliente solo esté para Windows y Mac aunque de forma extra-oficial se puede utilizar en Linux bajo Wine (hablaremos de ello más adelante). El servicio toma los <strong>metadatos de las canciones</strong> para clasificarlas, por lo que es recomendable tener una biblioteca ordenada aunque podamos editarlas más tarde desde la aplicación web.</p>
+<p>Una vez tengamos nuestra biblioteca de música en la nube, podremos <strong>escucharla desde cualquier PC</strong> con navegador y Flash instalados. La aplicación web no tiene muchas opciones por el momento pero es ligera y funciona mejor de lo esperado. Por su parte, también tenemos la <strong>aplicación para Android</strong> que nos permite reproducir por streamming y guardar las canciones en local.</p>
+<h3 id="registrarse-en-la-beta-desde-españa">Registrarse en la Beta desde España</h3>
+<p>
+  <img src="../../img/wp/solo-eeuu.png" alt="solo-eeuu.png">
+
+</p>
+<p>Si acudimos a la web de <a href="http://music.google.com/">Google Music</a> desde España nos aparecerá un descorazonador mensaje que nos impide solicitar la invitación. Simplemente utilizaremos un proxy para engañar al servicio, siguiendo los pasos que nos indican en <a href="http://www.elandroidelibre.com/2011/05/tutorial-apuntate-a-la-beta-de-google-music-desde-cualquier-pais-y-con-cualquier-cuenta-google.html">El Androide Libre</a> no tendrás problemas:</p>
+<ul>
+<li>Entra en <a href="http://proxy.org">proxy.org</a>.</li>
+<li>Elije un proxy americano, los que aparecen en verde.</li>
+<li>En la web del proxy introduce la URL: &lt;http: music.google.com=&quot;&quot; music=&quot;&quot; usernotinvited=&quot;&quot;&gt;.</li>
+<li>Inicia sesión con tu cuenta de Google, no importa que sea española.</li>
+<li>Elije la opción de participar en la beta.</li>
+</ul>
+<p><strong>Recibirás un e-mail confirmándote el acceso</strong> a Google Music, no sé cuanto tiempo puede tardar.</p>
+<h3 id="google-music-manager-en-ubuntu-bajo-wine">Google Music Manager en Ubuntu bajo Wine</h3>
+<p>Google no nos deja descargar el manager si estamos en Linux así que tenemos que obtener el programa por otros medios como bien apuntan en <a href="http://www.androidcentral.com/using-google-music-manager-ubuntu-made-easy">Android Central</a>. Los siguientes pasos son válidos para distribuciones basadas en Debian:</p>
+<ul>
+<li>Si tenías la versión de Wine de los repositorios oficiales debes desinstalarla:</li>
+</ul>
+<pre tabindex="0"><code>sudo apt-get remove wine --purge
+</code></pre><ul>
+<li>Añade el PPA con la última versión de Wine, actualiza e instálalo de nuevo:</li>
+</ul>
+<pre tabindex="0"><code>sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine
+</code></pre><ul>
+<li><a href="http://dl.dropbox.com/u/1439807/gmm.zip">Descarga el paquete con Google Music Manager</a>.</li>
+<li>Descomprime el fichero.</li>
+<li>Accede desde una terminal, dale permisos de ejecución e instala:</li>
+</ul>
+<pre tabindex="0"><code>chmod +x install.sh
+./install.sh
+</code></pre><p>
+  <img src="../../img/wp/musicmanager.png" alt="musicmanager.png">
+
+</p>
+<p>¡Listo! <strong>Ya puedes utilizar Google Music Manager en Linux</strong> desde <em>Aplicaciones -&gt; Internet -&gt; Google Music Manager</em>.</p>
+<h3 id="aplicación-para-android">Aplicación para Android</h3>
+<p>La aplicación de Google Music para Android sólo se puede descargar desde la web del market y detecta si nuestro dispositivo no es estadounidense. Para saltarnos este impedimento simplemente <strong>nos descargamos el APK</strong> con la última versión en la fecha de redacción de este artículo, la 3.1. Para instalarla debes tener <strong>Android 2.2 o superior</strong> ya que requiere OpenGL ES 2.0.</p>
+<ul>
+<li><a href="http://dl.dropbox.com/u/1439807/com.google.android.music-2.apk">Descargar APK Google Music 3.1 para Android</a></li>
+</ul>
+<p>
+  <img src="../../img/wp/google-music-android.jpg" alt="google-music-android.jpg">
+
+</p>
+<p>Lo cierto es que me da mucho miedo instalar un APK que no sea del Market pero los permisos que pide no son extraños. Nada de mandar SMS, por ejemplo. Así que con esto ya podréis disfrutar de Google Music allá donde estéis mientras el 3G no os traicione.</p>
+<h3 id="primeras-impresiones">Primeras impresiones</h3>
+<p>Por el momento <strong>estoy muy contento con el servicio</strong>: la aplicación de Android reproduce por streamming sin problemas, la música se sube a buena velocidad y todo es bastante limpio.</p>
+<p><strong>¡A disfrutar de Google Music!</strong></p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/aparicion-de-enemigos-y-barras-de-vida/">Aparición de enemigos y barras de vida</a>
       </h1>
       <span class="post-date">Jun 4, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/aparicion-de-enemigos-y-barras-de-vida/#disqus_thread">Comments</a>
@@ -372,62 +441,6 @@
 <li>Additional languages: French, Portuguese or Italian.</li>
 <li>&hellip;</li>
 </ul>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/box2d-en-la-barralibrecamp/">Box2D en la !BarraLibreCamp</a>
-      </h1>
-      <span class="post-date">May 28, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/box2d-en-la-barralibrecamp/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/barcamp2011.jpg" alt="barcamp2011.jpg">
-
-</p>
-<p>Ayer se celebró la <strong><a href="../../proyectos/pfc/barralibrecamp-2011-en-cadiz/" title="!BarraLibreCamp 2011 en Cádiz">!BarraLibreCamp</a> en la UCA</strong>, una jornada de <strong>ponencias y talleres informales</strong> en la que todos los participantes deben aportar algo. Al final es un día lleno de actividades heterogéneas para <strong>pasarlo bien con amigos</strong> de todas partes y hablar (o flamear) sobre intereses comunes. A continuación, un pequeño resumen del evento y mi aportación.</p>
-<h3 id="actividades">Actividades</h3>
-<p>Estas son todas las <strong>actividades que os perdisteis</strong>. Podéis encontrar muchos de los materiales utilizados en la <a href="http://osl.uca.es/wikiosluca/doku.php?id=notbarralibrecamp">wiki</a>.</p>
-<ul>
-<li>Videojuegos 2D con <a href="http://www.libgosu.org/">Gosu</a>.</li>
-<li>Emacs + <a href="http://orgmode.org/">org-mode</a> para crear presentaciones con Beamer.</li>
-<li>Introducción a <a href="http://www.blender.org/">Blender</a>.</li>
-<li>Problemas de seguridad en Android.</li>
-<li>Flamewar: SVN vs Git vs Mercurial y proyectos libres exitosos.</li>
-<li>Sensores y robótica con Arduino con <a href="https://forja.rediris.es/projects/ardulander/">Ardulander</a>.</li>
-<li>Redes inalámbricas libres <a href="http://guifi.net/">Guifi.net</a>.</li>
-<li><a href="http://www.merengueproject.org/">Merengue</a>, un CMS sobre Django.</li>
-<li>Personalización de distribuciones con <a href="http://uck.sourceforge.net/">UCK</a> y Preseed.</li>
-</ul>
-<p>
-  <img src="../../img/wp/ardulander.jpg" alt="ardulander.jpg">
-
-</p>
-<h3 id="mi-taller-box2d">Mi taller: Box2D</h3>
-<p>Hace poco más de un mes estuve trasteando con la popular <strong>biblioteca de colisiones y simulaciones físicas <a href="http://www.box2d.org/">Box2D</a></strong> (utilizada por Angry Birds) y vi que era extremadamente <strong>sencilla de utilizar</strong>. Sin saber nada de ella conseguí una demo con Gosu para la parte gráfica en poco más de una hora. Rápidamente se me iluminó la bombilla, ¡era el tema perfecto para la !BarraLibreCamp! Creo y espero que a la gente le pareció interesante así que os dejo todo el material (código GPL v3 + transparencias) para que podáis aprender por vuestra cuenta.</p>
-<ul>
-<li><strong><a href="http://dl.dropbox.com/u/1439807/boxes.tar.gz">Descargar materiales del taller Box2D</a>.</strong></li>
-</ul>
-<div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/xFSgnO6n2GY"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<h3 id="a-la-próxima-me-apunto">¡A la próxima me apunto!</h3>
-<p>Obviando la cantidad de cosas nuevas que se aprenden, <strong>lo mejor de estos eventos es la convivencia</strong> y el buen ambiente que se respira. Nada como discutir sobre temas variados, últimas noticias y abrir un poco las miras. ¡Además vino mucha gente de Granada, Sevilla y Málaga!</p>
-<p>Lo tengo clarísimo, para la próxima que haya por aquí cerca, me apunto sin dudarlo. Gracias a <a href="http://www.flickr.com/photos/anarey/sets/72157626820864868/with/5766457066/">Ana Rey</a> por sus fotografías (CC by-sa).</p>
 
       
     </div>

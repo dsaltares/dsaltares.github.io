@@ -6,7 +6,20 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 27 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Help Engineers understand the Why</title>
+      <link>https://saltares.com/help-engineers-understand-the-why/</link>
+      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
+      <description>Every engineer in the team must understand the why.
+Can everyone confidently answer the question:
+ What problem are we trying to solve with this user story?
+ Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
+Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket.</description>
+    </item>
+    
     <item>
       <title>8 Questions to ask your potential future Engineering Manager during an interview</title>
       <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
@@ -106,18 +119,6 @@ The desktop browser device toolbar may not be enough to reproduce it. You may ac
 As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.
 One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.
 1. ✍️ Default to async Async communication acts as a leveller.</description>
-    </item>
-    
-    <item>
-      <title>Schedule posts with Hugo</title>
-      <link>https://saltares.com/schedule-posts-with-hugo/</link>
-      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/schedule-posts-with-hugo/</guid>
-      <description>Back in 2020, I migrated this blog to Hugo and Github pages. I also set up a &amp;ldquo;push to publish&amp;rdquo; CD pipeline with Github pages.
-Happy days.
-🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.
-It&amp;rsquo;s actually trivial to set up!</description>
     </item>
     
   </channel>

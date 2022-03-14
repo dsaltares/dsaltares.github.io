@@ -104,6 +104,56 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/schedule-posts-with-hugo/">Schedule posts with Hugo</a>
+      </h1>
+      <span class="post-date">May 2, 2021 &middot; 2 minute read &middot; <a href="https://saltares.com/schedule-posts-with-hugo/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      <p>Back in 2020, I migrated this blog to <a href="../../easily-deploy-your-hugo-site-to-github-pages/">Hugo and Github pages</a>. I also set up a <em>&ldquo;push to publish&rdquo;</em> CD pipeline with Github pages.</p>
+<p>Happy days.</p>
+<p>🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.</p>
+<p>It&rsquo;s actually trivial to set up!</p>
+<p>Simply add a <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events">schedule trigger</a> to your Github Action like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schedule</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 0 * * *&#39;</span> <span style="color:#75715e"># Once per day at midnight</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">dsaltares/dsaltares.github.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
+</span></span></code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
+<pre tabindex="0"><code>date: 3059-05-01T00:00:00+00:00
+</code></pre><p>That could be a post for future generations 😅.</p>
+<p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>
+<p>📆 This post itself was scheduled!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/how-to-hire-8-engineers-in-8-weeks/">How to hire 8 engineers in 8 weeks</a>
       </h1>
       <span class="post-date">Apr 26, 2021 &middot; 6 minute read &middot; <a href="https://saltares.com/how-to-hire-8-engineers-in-8-weeks/#disqus_thread">Comments</a>
@@ -410,53 +460,6 @@
 <li>🔭 Extensible. Add jobs to publish to other stores or platforms.</li>
 </ul>
 <p>It would be amazing if you let me know your thoughts on this solution. Maybe you have a much better automated process or ideas on how to improve this one!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/plague-godot-wild-jam-18/">Plague - Godot Wild Jam 18</a>
-      </h1>
-      <span class="post-date">Feb 27, 2020 &middot; 1 minute read &middot; <a href="https://saltares.com/plague-godot-wild-jam-18/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games Development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/plague/header.png" alt="plague-banner">
-
-</p>
-<p>My friend <a href="https://twitter.com/senthe">Jay</a> and I recently took part in <a href="https://itch.io/jam/godot-wild-jam-18">Godot Wild Jam</a>, a week long game jam where entries must be made using <a href="https://godotengine.org/">Godot Engine</a>.</p>
-<p>We had an absolute blast! The result is <a href="https://dsaltares.itch.io/plague">Plague</a>, a procedurally generated action platformer. You can play it in the browser and use either a gamepad or keyboard!</p>
-<div
-  style="position: relative; padding-bottom: 24%; height: 0; margin-bottom: 1em;">
-  <iframe
-     src="https://itch.io/embed/574758" 
-    frameborder="0"
-    webkitallowfullscreen
-    mozallowfullscreen
-    allowfullscreen
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-  ></iframe>
-    
-      <a href="https://david-saltares.itch.io/plague">
-        .Get "linkText"
-      </a>
-    
-  </iframe>
-</div>
-
-<p>Don&rsquo;t congratulate us on the visuals just yet, we used the <a href="https://s4m-ur4i.itch.io/roguenoir-cyberpunk-assetpack-pixelart">Rogue Noir</a> asset pack. However, you can check out our messy code on <a href="https://github.com/dsaltares/godot-wild-jam-18">Github</a>.</p>
-<p>The main theme of the Jam was &ldquo;Plague&rdquo; although there were three aditional optional wildcards:</p>
-<ul>
-<li>🕺 80s Baby! - Recreate the visual style of 1980s media.</li>
-<li>🎲 Take a chance on me - Create a system of chance in your game.</li>
-<li>☔ I wish it would rain - Implement weather effects.</li>
-</ul>
-<p>Even though many aspects of the game could be improved, we&rsquo;re quite satisfied with the outcome. Especially because we had to manage day jobs and other compromises alongside the jam. Hopefully, I will get around to write a full post-mortem after the voting period ends and the final results come out.</p>
-<p>In the meantime, give it a go and let us know what you think!</p>
 
       
     </div>

@@ -104,6 +104,44 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/">BURG, un GRUB más bonito: instalación en Ubuntu</a>
+      </h1>
+      <span class="post-date">Dec 4, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/burg.png" alt="burg.png">
+
+</p>
+<p>Como sabéis, <strong><a href="http://es.wikipedia.org/wiki/GNU_GRUB">GRUB</a></strong> (GRand Unified Bootloader) es un fantástico software que nos permite elegir entre los sistemas operativos que tengamos instalados en el momento del arranque. Para muchos es la salvación en una transición de Windows a GNU/Linux mientras que para otros es la forma de acudir suplicando a otro Kernel cuando el principal da problemas. El único problema que puede tener es que es un bastante feo. <strong>Al rescate de los vanidosos y acude <a href="http://code.google.com/p/burg/">BURG</a></strong> (Brand-new Universal loadeR from GRUB), nótese la ironía infinita al darle la vuelta a <em>&ldquo;GRUB&rdquo;</em>.</p>
+<p><strong>BURG sustituye al clásico sistema de arranque</strong> ofreciéndonos diversos estilos muy atractivos para personalizarlo. <strong>Instalarlo</strong> en Ubuntu es muy sencillo, simplemente sigue estos pasos:</p>
+<p>Añade estas líneas al fichero /etc/apt/sources.list:</p>
+<pre tabindex="0"><code>deb http://ppa.launchpad.net/bean123ch/burg/ubuntu maverick main
+deb-src http://ppa.launchpad.net/bean123ch/burg/ubuntu maverick main
+</code></pre><p>Sustituye maverick por el nombre de tu distribución. Tras esto, actualiza tus paquetes con:</p>
+<pre tabindex="0"><code>sudo apt-get update
+sudo apt-get install burg
+</code></pre><p>Debes aceptar cuando te avisen sobre la firma desconocida puesto que confiamos en la fuente. Para <strong>configurar BURG</strong> y hacer que sustituya al clásico GRUB debemos hacer:</p>
+<pre tabindex="0"><code>sudo burg-install /dev/sda
+sudo update-burg
+</code></pre><p>Cambia /dev/sda por el nombre del disco duro donde tengas instalado el gestor de arranque. Para <strong>elegir el tema</strong> de BURG puedes utilizar el emulador con el que se distribuye:</p>
+<pre tabindex="0"><code>sudo burg-emu
+</code></pre><p>Existen ciertos <strong>atajos de teclado</strong> que te vendría bien conocer para configurar BURG a tu gusto:</p>
+<ul>
+<li><em>t</em>: abre la lista de temas disponibles</li>
+<li><em>f</em>: cambia entre modo reducido y completo. En el modo reducido no aparecen todos los kernels antiguos.</li>
+<li><em>c</em>: abre una terminal.</li>
+</ul>
+<p>Muchos atajos más que puedes encontrar en la <a href="http://code.google.com/p/burg/wiki/InstallUbuntu">documentación oficial</a>. Bien, llegados a este punto <strong>serás mucho más molón</strong> y podrás enseñárselo a tus coleguillas. BURG proporciona un sistema para <a href="http://code.google.com/p/burg/wiki/ThemeCustomization"><strong>personalizar los temas</strong></a>, puedes encontrar más información al respecto aquí. Disfrútalo.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/experiencia-con-el-primer-taller-de-la-advuca/">Experiencia con el primer taller de la ADVUCA</a>
       </h1>
       <span class="post-date">Dec 1, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/experiencia-con-el-primer-taller-de-la-advuca/#disqus_thread">Comments</a>
@@ -573,37 +611,6 @@
 <p>Exacto, <strong>IberOgre se ha mudado</strong> y ahora está alojado en una flamante máquina a buen recaudo. Como consecuencia, la URL ha cambiado pero ya la he actualizado a lo largo de todo el blog.</p>
 <p><a href="http://osl2.uca.es/iberogre">http://osl2.uca.es/iberogre</a></p>
 <p><strong>Os agradezco infinitamente vuestra comprensión</strong> ante los problemas recientes y os aseguro que, de aquí en adelante, el servicio tendrá una mayor calidad.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/steve-streeting-recomienda-iberogre-por-twitter/">Steve Streeting recomienda IberOgre por Twitter</a>
-      </h1>
-      <span class="post-date">Nov 21, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/steve-streeting-recomienda-iberogre-por-twitter/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/sinbad-twitter.png" alt="sinbad-twitter.png">
-
-</p>
-<p>Así es, <strong>yo tampoco me lo creía cuando lo vi</strong> pero el hecho es que <strong>el creador de Ogre</strong>, nuestro amado motor de renderizado, <strong>recomendaba <a href="http://osl2.uca.es/iberogre">IberOgre</a></strong> a través de la red de microblogging. Por supuesto, agradecerle infinitamente su interés con este pequeño pero importantísimo gesto que proporciona al proyecto más difusión. Sigan leyendo y les contaré los detalles.</p>
-<h3 id="steve-streeting-y-ogre">Steve Streeting y Ogre</h3>
-<p><strong><a href="http://www.stevestreeting.com/">Steve Streeting</a> estuvo en el proyecto Ogre durante años</strong> y ahora está embarcado en el desarrollo de una GUI para Git y Mercurial en Mac llamada <a href="http://www.stevestreeting.com/2010/10/26/introducing-sourcetree/">SourceTree</a>. Sin duda es una persona que <strong>ha contribuido mucho al mundo del Software Libre</strong> en general y a la democratización del desarrollo de videojuegos en particular. El hecho de tener una licencia muy permisiva ha posibilitado que pequeñas compañías puedan lanzar juegos de tremenda calidad sin tener que invertir en una millonada en el engine comercial de turno. Por supuesto también contribuye a que gente como un servidor, aprenda a desarrollar juegos en 3D.</p>
-<p>Sus logros no son pocos y es que, <strong>Ogre fue nombrado durante 2005 <a href="http://en.wikipedia.org/wiki/OGRE#History"><em>&ldquo;Proyecto del mes&rdquo;</em> en SourceForge</a></strong> (ahí es nada). Recientemente aparece en <em><a href="http://www.stevestreeting.com/2010/11/06/im-in-the-game-developer-50/">&ldquo;The Game Developer 50&rdquo;</a></em> dentro de la <a href="http://www.gdmag.com/">Game Developer Magazine</a>, galardones que otorgan a los miembros más destacado del mundo del desarrollo de videojuegos.</p>
-<h3 id="un-ciber-encuentro-casual">Un ciber-encuentro ¿casual?</h3>
-<p><strong>Steve Streeting dio con IberOgre</strong> en una de sus, al parecer, asiduas <a href="http://twitter.com/#!/sinbad_ogre/status/5966571453288448">búsquedas del hashtag #Ogre3D</a> en Twitter. Debido a la barrera del idioma, sólo pudo saber que era una cuenta de Twitter bastante activa que hablaba sobre Ogre en castellano. Y lo comentó en <a href="http://twitter.com/#!/sinbad_ogre/status/5966016421036033">este mensaje</a>. Más tarde le respondí en inglés comentándole que, además, era una wiki con documentación sobre el engine. Al poco tiempo ya había <strong><a href="http://twitter.com/#!/IberOgre/status/5977828923277312">retwitteado mi respuesta</a></strong> e IberOgre contaba con unos cuantos seguidores adicionales.</p>
-<h3 id="twitter-como-herramienta-de-difusión">Twitter como herramienta de difusión</h3>
-<blockquote>
-<p><em>¿Todo este revuelo por un simple retweet? ¡Menuda porquería! ¡Fuera!</em></p>
-</blockquote>
-<p>Es muy probable que pienses así pero yo creo que es mucho más que eso. Estamos ante <strong>una muestra más del potencial que tienen las redes sociales</strong>, en especial Twitter, para que un proyecto gane en visibilidad.</p>
-<p>Hablar mucho sobre un tema, ser activos y hacer un buen uso de las etiquetas (hashtags) puede marcar la diferencia. El motor de <strong>Twitter rápidamente indexará y catalogará</strong> nuestros mensajes de forma que seamos muy accesibles a usuarios potenciales. Esto vendrá en forma de búsquedas o recomendaciones directas a muchos usuarios.</p>
-<p><strong>Gracias al pequeño grano de arena del señor Streeting</strong> y a toda la gente que sigue sus mensajes, IberOgre ha ganado usuarios. De hecho, podría decirse que IberOgre ha conseguido casi la totalidad de su comunidad a través de Twitter.</p>
 
       
     </div>
