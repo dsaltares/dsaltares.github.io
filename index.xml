@@ -6,7 +6,82 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A template for great incident reviews</title>
+      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
+      <description>By Sieuwert Otterloo on Unsplash  Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
+An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/mission-control.jpeg&#34; alt=&#34;NASA mision control room&#34;&gt;
+    &lt;figcaption&gt;By Sieuwert Otterloo on &lt;a href=&#34;https://unsplash.com/photos/6SyrBaRjLJ4&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.&lt;/p&gt;
+&lt;p&gt;An incident can also be an opportunity. Your job is to make sure to seize it. &lt;strong&gt;Incident review docs&lt;/strong&gt; followed by a discussion help a lot. Above all else, the main goal of incident reviews is to &lt;strong&gt;learn&lt;/strong&gt;, although great incident reviews can achieve much more.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Identify ways to make the system more robust.&lt;/li&gt;
+&lt;li&gt;Identify and close process gaps.&lt;/li&gt;
+&lt;li&gt;Learn about the system they maintain and develop.&lt;/li&gt;
+&lt;li&gt;Protect the trust with the rest of the company and customers by being transparent.&lt;/li&gt;
+&lt;li&gt;Understand user impact better and develop user empathy.&lt;/li&gt;
+&lt;li&gt;Help future team members understand the systems&amp;rsquo; weak points and how incidents are handled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I recommend the following approach, which &lt;a href=&#34;./6-tips-to-make-remote-meetings-more-inclusive/&#34;&gt;makes the process more inclusive&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The incident leader/responder writes the review doc.&lt;/li&gt;
+&lt;li&gt;The team reads and comments async.&lt;/li&gt;
+&lt;li&gt;Everyone gets together to reflect and align on actions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Here&amp;rsquo;s an incident review doc template that has worked well in my teams.&lt;/p&gt;
+&lt;h3 id=&#34;-authors&#34;&gt;✍️ Authors&lt;/h3&gt;
+&lt;p&gt;List the people who put the incident review document together. It will help future readers know who to ask for more information.&lt;/p&gt;
+&lt;h3 id=&#34;-summary&#34;&gt;🗞️ Summary&lt;/h3&gt;
+&lt;p&gt;Write out the TLDR version of what happened.&lt;/p&gt;
+&lt;h3 id=&#34;-impact&#34;&gt;🔥 Impact&lt;/h3&gt;
+&lt;p&gt;When talking about impact, you should consider several dimensions.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🚶‍♂️ &lt;strong&gt;User&lt;/strong&gt;: were users unable to carry out a particular action? Was their data lost? Was their data compromised? How did that affect their lives or jobs?&lt;/li&gt;
+&lt;li&gt;👩‍💼 &lt;strong&gt;Business&lt;/strong&gt;: a helpful way to think about this one is to try to answer the question, how much money did the company lose with this incident?&lt;/li&gt;
+&lt;li&gt;⚽ &lt;strong&gt;Team&lt;/strong&gt;: did someone wake up in the middle of the night to respond? Did people work late? Was the sprint interrupted because many team members had to work on remediation?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-detection&#34;&gt;🚨 Detection&lt;/h3&gt;
+&lt;p&gt;How did the team become aware of the issue? At best, an alert told you something was wrong even before users became aware. At worst, a user had to submit a ticket to Product Support.&lt;/p&gt;
+&lt;h3 id=&#34;-triage&#34;&gt;🔍 Triage&lt;/h3&gt;
+&lt;p&gt;What were the actions taken by the responder to assess the severity of the issue and escalate?&lt;/p&gt;
+&lt;h3 id=&#34;-root-causes&#34;&gt;🐛 Root causes&lt;/h3&gt;
+&lt;p&gt;Share the team&amp;rsquo;s steps to investigate the issue and identify the root cause. Include information gathered from observability tools like screenshots or links to dashboards. Do not spare details here. Everyone can learn a lot about how the system works from this section.&lt;/p&gt;
+&lt;p&gt;I am a firm believer in &lt;a href=&#34;https://sre.google/sre-book/postmortem-culture/&#34;&gt;blameless postmortems&lt;/a&gt;, although I am conscious of how easy it is to avoid attribution. Focus on the circumstances that triggered the incident instead of the individuals. But be careful not to skip the root cause entirely.&lt;/p&gt;
+&lt;h3 id=&#34;-resolution&#34;&gt;🧯 Resolution&lt;/h3&gt;
+&lt;p&gt;What actions did the team take to bring the system back to normal? How did you make sure everything was, indeed, okay?&lt;/p&gt;
+&lt;p&gt;Again, don&amp;rsquo;t forget the charts!&lt;/p&gt;
+&lt;h3 id=&#34;-timeline&#34;&gt;⏱️ Timeline&lt;/h3&gt;
+&lt;p&gt;Share the complete list of events. Compiling the actual timeline is much easier when the incident leader takes notes during the incident.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Timestamp.&lt;/li&gt;
+&lt;li&gt;Action or discovery.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-lessons-learned&#34;&gt;👩‍🎓 Lessons learned&lt;/h3&gt;
+&lt;p&gt;Knowing what happened, it&amp;rsquo;s time to reflect. I like to focus on three categories.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;👍 What went well&lt;/li&gt;
+&lt;li&gt;👎 What went wrong&lt;/li&gt;
+&lt;li&gt;🤞 Where we got lucky&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Think about it in terms of software and processes and avoid attributing individual blame.&lt;/p&gt;
+&lt;h3 id=&#34;-actions-and-issues&#34;&gt;⏭️ Actions and issues&lt;/h3&gt;
+&lt;p&gt;List of remediation and preemptive actions. Ideally, all of them have a corresponding ticket. Focus on process improvements and technical work to address what went wrong and avoid depending on luck. As an engineering leader, it&amp;rsquo;s your job to work with Product Management and prioritize those tickets.&lt;/p&gt;
+&lt;h3 id=&#34;-share-it&#34;&gt;👐 Share it&lt;/h3&gt;
+&lt;p&gt;Always share the document with the entire organization. In some cases, consider sharing an adapted version with customers. It may feel scary and shameful. However, being open about mistakes and your actions to improve is a great way to protect the trust you worked so hard to build.&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading. Hopefully, this template can help you make the most of the situation when your system blows up. I would love to hear from you if you&amp;rsquo;re approaching things differently.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Help Engineers understand the Why</title>
       <link>https://saltares.com/help-engineers-understand-the-why/</link>
@@ -615,56 +690,6 @@ EMAIL_SERVER_PASSWORD=email-pass
 &lt;li&gt;&lt;code&gt;web-app&lt;/code&gt;: client side React application. It uses &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API&#34;&gt;Service Workers&lt;/a&gt;, &lt;a href=&#34;https://react-query.tanstack.com/&#34;&gt;React Query&lt;/a&gt;, &lt;a href=&#34;https://mui.com/getting-started/usage/&#34;&gt;MaterialUI&lt;/a&gt;, &lt;a href=&#34;https://leafletjs.com/&#34;&gt;Leaflet&lt;/a&gt; and &lt;a href=&#34;https://formik.org/&#34;&gt;Formik&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;api&lt;/code&gt;: REST API, deployed to an EC2 machine. It uses &lt;a href=&#34;https://expressjs.com/&#34;&gt;express&lt;/a&gt;, &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;mongodb&lt;/a&gt; and &lt;a href=&#34;https://www.passportjs.org/&#34;&gt;Passport&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>How to test and debug your localhost web app on a real Android device</title>
-      <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
-      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</guid>
-      <description>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
-The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&amp;rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem.</description>
-      <content>&lt;p&gt;When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.&lt;/p&gt;
-&lt;p&gt;The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&amp;rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem. That would be a massive pain in the butt!&lt;/p&gt;
-&lt;p&gt;Fortunately there is a simple trick you can use to be able to quickly iterate and test on a real mobile device while keeping an awesome developer experience.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🏎️ Hot reload with instant feedback.&lt;/li&gt;
-&lt;li&gt;🖥️ Access to the console.&lt;/li&gt;
-&lt;li&gt;🐛 Full debugger with breakpoints, etc.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;-enable-usb-debugging&#34;&gt;📱 Enable USB debugging&lt;/h2&gt;
-&lt;p&gt;First, make sure USB debugging is enabled on your device.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Go to &lt;code&gt;Settings -&amp;gt; About phone&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;Tap the build number seven times.&lt;/li&gt;
-&lt;li&gt;Enable USB debugging by going to &lt;code&gt;Settings -&amp;gt; Developer options -&amp;gt; USB Debugging&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.&lt;/p&gt;
-&lt;h2 id=&#34;-tunnel-localhost&#34;&gt;🚇 Tunnel localhost&lt;/h2&gt;
-&lt;p&gt;Run your local development server. I am working on a &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; app, so I can just run:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn dev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Your web app is probably now running on &lt;code&gt;localhost&lt;/code&gt;, but your real device cannot connect directly. In order to access your local development server from a different device we can use &lt;a href=&#34;https://localtunnel.me/&#34;&gt;localtunnel&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;No need to install, you can use &lt;code&gt;npx&lt;/code&gt; to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is &lt;code&gt;3000&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ npx localtunnel --port &lt;span style=&#34;color:#ae81ff&#34;&gt;3000&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;localtunnel&lt;/code&gt; will give you a temporary URL that is accessible from anywhere in the world. In my case, I got &lt;code&gt;https://little-fox-32.loca.lt&lt;/code&gt;. You can now open that URL in the device you want to test.&lt;/p&gt;
-&lt;p&gt;Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, &lt;a href=&#34;https://github.com/localtunnel/localtunnel&#34;&gt;localtunnel&lt;/a&gt; is an open source tool, you could get a private server going if privacy is a concern.&lt;/p&gt;
-&lt;h2 id=&#34;-remote-chrome-inspector&#34;&gt;🛰️ Remote Chrome inspector&lt;/h2&gt;
-&lt;p&gt;Open your Chromium based browser and enter:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;chrome://inspect/#devices
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;You should see a list of remote targets and the pages that are open in each target.&lt;/p&gt;
-&lt;p&gt;
-  &lt;img src=&#34;./img/remote-mobile-debugging/chrome-inspect.png&#34; alt=&#34;chrome inspect&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;Clicking &lt;code&gt;inspect&lt;/code&gt; on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.&lt;/p&gt;
-&lt;p&gt;
-  &lt;img src=&#34;./img/remote-mobile-debugging/chrome-remote-debugging.png&#34; alt=&#34;chrome remote debugging&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.&lt;/p&gt;
-&lt;p&gt;Hope this helps your workflow!&lt;/p&gt;
 </content>
     </item>
     

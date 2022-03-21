@@ -104,6 +104,33 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-gui-y-sistema-de-apuntado/">Sion Tower: GUI y sistema de apuntado</a>
+      </h1>
+      <span class="post-date">Jul 10, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-gui-y-sistema-de-apuntado/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <div
+  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/RMEgwNDu3Ag"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+<p>En este nuevo vídeo podéis ver la discreta pero funcional <strong>interfaz de Sion Tower</strong>. Está completamente creada utilizando <a href="http://mygui.info/">MyGUI</a>, una biblioteca muy sencilla pero no exenta de problemas de los que hablaré en el futuro. También podéis observar el nuevo <strong>sistema de apuntado</strong>. Mientras que antes el personaje lanzaba un hechizo hacia donde estuviese mirando, ahora podemos apuntar con el ratón. Al contar únicamente con ocho direcciones, era muy complicado acertar. Espero que os guste y, como siempre, se aceptan sugerencias.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/sion-tower-sera-multi-idioma/">Sion Tower será multi-idioma</a>
       </h1>
       <span class="post-date">Jul 6, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-sera-multi-idioma/#disqus_thread">Comments</a>
@@ -324,56 +351,6 @@
 <li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_I:_Basic_Terrain">Blender 3D: Noob to Pro – Landscape Modeling I: Basic Terrain</a></li>
 <li><a href="http://en.wikibooks.org/wiki/Blender_3D:_Noob_to_Pro/Landscape_Modeling_II:_Texture_Stenciling">Blender 3D: Noob to Pro – Landscape Modeling II: Texture Stenciling</a></li>
 </ul>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/">Búsqueda de caminos: Floyd vs A*</a>
-      </h1>
-      <span class="post-date">Jun 22, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/busqueda-de-caminos-floyd-vs-a/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/avsfloyd.png" alt="avsfloyd.png">
-
-</p>
-<p>Las últimas semanas he estado trabajando en la <strong>IA de Sion Tower</strong> y por el momento el resultado es satisfactorio. Antes utilizaba el algoritmo <strong>A</strong> para la búsqueda de caminos de los enemigos, pero me di cuenta de que el rendimiento podía ser mucho mejor si precomputaba las búsquedas con una alternativa como <strong>Floyd</strong>. En este artículo hablo de las dos aproximaciones y comparo los resultados obtenidos.</p>
-<p><span style="color: #ff0000;"><strong>Aclaración</strong></span>: en el texto no voy a entrar en detalles sobre los algoritmos <a href="http://en.wikipedia.org/wiki/A*_search_algorithm">A*</a> ni <a href="http://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm">Floyd</a>. Si no los conoces deberías consultar los sendos artículos de Wikipedia o tu libro de algoritmia preferido.</p>
-<h3 id="aproximación-1-algoritmo-a">Aproximación 1: algoritmo A*</h3>
-<p>Como ya he dicho alguna vez, utilizo una malla de navegación diseñada con Blender para definir el área transitable por los enemigos. <strong>Cada vez que algún monstruo desea saber el camino</strong> hacia el personaje se realizaban los siguientes pasos:</p>
-<ol>
-<li>Ejecutar A* desde la celda del enemigo hasta la del personaje.</li>
-<li>Recuperar camino devuelto por A*.</li>
-<li>Simplificar el camino eliminando celdas intermedias para evitar zig-zag.</li>
-<li>Suavizado del camino mediante spline cúbico.</li>
-</ol>
-<p>Los pasos 1 y 3 resultaban especialmente costosos en términos de tiempo mientras que los pasos 2 y 4 eran muy rápidos. Traté de minimizar la necesidad de recalcular rutas hacia el protagonista pero cuando el jugador se desplaza demasiado, resulta inevitable.</p>
-<h3 id="aproximación-2-algoritmo-de-floyd">Aproximación 2: algoritmo de Floyd</h3>
-<p>Al ejecutar A* cada vez que un enemigo deseaba rehacer su ruta estábamos incurriendo en muchos cálculos redundantes. <strong>¿Por qué no precomputar los caminos mínimos?</strong> Eso es precisamente lo que hace el algoritmo de Floyd, calcula los costes y el camino para viajar entre todos los pares de nodos x e y de un grafo. El resultado lo almacena en una matriz de costes mínimos (que no nos interesa) y otra de caminos (con la que nos quedaremos).</p>
-<p>Al tener una matriz con los caminos ya calculados, <strong>recuperar una ruta es mucho más eficiente</strong> en tiempo. Incluso podemos eliminar la simplificación de caminos en cada consulta si también precalculamos todas las simplificaciones posibles. No obstante, se requieren una serie de <strong>pasos iniciales</strong>:</p>
-<ol>
-<li>Construcción de la matriz de costes iniciales a partir de la malla.</li>
-<li>Ejecución del algoritmo de Floyd.</li>
-<li>Simplificar todos los caminos actualizando la matriz de caminos mínimos.</li>
-</ol>
-<p>Cuando un enemigo quiera conocer una ruta, simplemente realizamos los siguientes pasos cuyo tiempo es mínimo:</p>
-<ol>
-<li>Recuperar el camino.</li>
-<li>Suavizar el camino mediante un spline cúbico.</li>
-</ol>
-<h3 id="comparativa-a-vs-floyd">Comparativa: A* vs Floyd</h3>
-<p>Todas las mediciones de tiempo que se muestran a continuación se han realizado sobre el mismo equipo, bajo la misma carga de trabajo y con la misma malla de navegación de 113 celdas.</p>
-<p><strong>Coste inicial</strong>: Utilizar Floyd conlleva una serie de cálculos iniciales que A* no son necesarios. No obstante, podemos ver que son bastante reducidos ya que suponen 2.18ms una sola vez al cargar cada nivel.</p>
-<p><strong>Consumo de memoria</strong>: podría preocuparnos el coste de almacenar la matriz de caminos mínimos. Para 113 celdas tenemos una matriz de 113 * 113 = 12769 enteros para indexar las celdas que componen los caminos. Esto equivale a 50KB, una cantidad reducida comparada con el tamaño de un modelo 3D animado. Es cierto que la aproximación de Floyd no es tan escalable como A* por el coste en memoria. Mi escenario de 113 celdas es pequeño, si aumentamos a 1000 celdas, la matriz ocuparía 4MB. Es O(n2) con respecto al número de celdas.</p>
-<p><strong>Tiempo para construir un camino</strong>: aquí es donde Floyd le saca una gran ventaja a A*. Recuperar un camino utilizando A* requiere en término medio 0.5ms mientras que utilizando Floyd necesitamos 0.02ms. La diferencia es muy significativa. Imaginad que tenemos 5 enemigos en pantalla que piden un camino en el mismo frame. Con A* el coste ascendería a 5 * 0.5ms = 2.5ms mientras que con Floyd invertimos 5 * 0.02ms = 0.1ms. En un juego mono-hilo que va a 60 FPS sólo disponemos de 16.6ms para realizar todos los cálculos (IA, colisiones, renderizado).</p>
-<p>¡2.4 ms de diferencia por frame es una excelente optimización!</p>
-<h3 id="conclusión-express">Conclusión express</h3>
-<p>Precomputar caminos es mucho menos escalable que hacer los cálculos de forma dinámica pero la mejora de rendimiento es enorme. A pesar de ello, para escenarios grandes puede hacerse una búsqueda de caminos jerárquica (un tema un poco más complejo). Hay que tener cuidado ya que al utilizar Floyd, un cambio en el escenario implicaría una nueva precomputación completa.</p>
 
       
     </div>

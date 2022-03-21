@@ -104,6 +104,27 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/el-senor-de-los-anillo-en-vandal/">El Señor de los Anillos en Vandal</a>
+      </h1>
+      <span class="post-date">Feb 9, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/hobbies/el-senor-de-los-anillo-en-vandal/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/lotr-vandal.jpg" alt="lotr-vandal.jpg">
+
+</p>
+<p>Si seguís mi blog desde hace cierto tiempo sabréis que me encanta desarrollar videojuegos tanto como jugarlos y luego escribir sobre ellos. Hace pocos días se me brindó la oportunidad de trabajar para una de las webs del sector más importantes en España, <a href="http://www.vandal.net/">Vandal Online</a>. ¿Cómo iba a rechazar tamaña oferta? He empezado con un <a href="http://www.vandal.net/avances/ps3/el-senor-de-los-anillos-la-guerra-del-norte/12250/1">avance sobre El Señor de los Anillos la Guerra del Norte</a> y algunas noticias. Además, está en camino un especial bastante interesante.</p>
+<p>He aprendido muchas cosas mientras recopilaba información para redactar el artículo y creo que continuar en Vandal puede ser una experiencia enriquecedora. Trabajaré de forma regular cubriendo noticias aunque también redactaré análisis y especiales más elaborados. Eso no significa el final de los textos sobre videojuegos en Sion Dream. El blog es mi espacio personal, donde tienen cabida contenidos que en Vandal carecerían de sentido o interés.</p>
+<p>Deseadme suerte.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/sion-tower-3d-sound-v0-1/">Sion Tower 3D Sound v0.1</a>
       </h1>
       <span class="post-date">Feb 9, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-3d-sound-v0-1/#disqus_thread">Comments</a>
@@ -257,44 +278,6 @@
 </ul>
 <p>Es cierto que podría haber hecho el esfuerzo y adaptarme a cualquiera de las cuatro bibliotecas anteriores (sobre todo a Beastie) pero como Sion Tower forma parte de mi Proyecto Fin de Carrera <strong>decidí que era mejor aprender los fundamentos</strong> de la detección de colisiones. Por supuesto era imprescindible mantener al mínimo la complejidad con el objetivo de no hacerme viejo antes de terminarla.</p>
 <p>Por el momento no ofrezco más que este pequeño aperitivo introductorio. En el próximo artículo de la serie veremos el diseño general de <strong>Sion Tower Collisions (STC)</strong>. Más adelante nos centraremos en cada uno de los componentes de dicho sistema.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/">STC: Sion Tower Collisions v0.1</a>
-      </h1>
-      <span class="post-date">Feb 6, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png">
-
-</p>
-<p>El siguiente objetivo en el desarrollo de Sion Tower era la implementación de un <strong>sistema de detección de colisiones</strong>. Hablamos de un apartado crítico en el desarrollo de un videojuego por la cantidad de cálculos que implica, hay que tener especial cuidado en ese sentido. Llevo un par de semanas trabajando en él de forma intensiva y al menos puedo decir que he conseguido algo que funciona. Les presento la versión 0.1 de STC: <em>Sion Tower Collisions</em>.</p>
-<h3 id="modular-y-reutilizable">Modular y reutilizable</h3>
-<p>Al ser modular y completamente independiente del resto del juego <strong>he decidido liberarlo también por separado</strong>. Se puede utilizar sin ningún tipo de problemas en cualquier proyecto. Las únicas dependencias son Ogre y Boost. El código es C++ estándar así que es compatible con cualquier plataforma que soporte las dos bibliotecas anteriormente mencionadas.</p>
-<h3 id="características">Características</h3>
-<ul>
-<li><strong>Shape</strong>: formas de colisión básicas: esfera, plano y AABB.</li>
-<li><strong>Collision Dispatching</strong>: elección del test de colisión de forma adecuado de forma transparente a partir de dos figuras génericas.</li>
-<li><strong>Body</strong>: cuerpo colisionable compuesto de varias formas básicas.</li>
-<li><strong>CollisionManager</strong>: gestor de colisiones que lleva el registro de de los cuerpos colisionables.</li>
-<li><strong>Filtrado de colisiones</strong>: el usuario define explícitamente qué tipos de cuerpos pueden colisionar.</li>
-<li><strong>Particionado del espacio</strong>: para aumentar el rendimiento se incorpora un filtrado inicial para evitar tests exhaustivos. Muy básico por el momento.</li>
-<li><strong>Callbacks</strong>: es posible indicarle al gestor de colisiones que llame a una función miembro con una signatura determinada ante una colisión entre dos cuerpos de un tipo predefinido.</li>
-</ul>
-<h3 id="descarga">Descarga</h3>
-<p>He habilitado una <strong>descarga en la forja de Red Iris</strong> para que podáis acceder sin problemas. Incluye el código fuente, licencia (GPL 3) y documentación generada con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. Ruego que me enviéis algún mensaje en caso de encontrar cualquier tipo de problemas: bugs, uso, posibles mejoras, etc.</p>
-<ul>
-<li><a href="http://forja.rediris.es/frs/download.php/2072/siontower-collisions-v0.1.zip">Descargar STC v0.1</a></li>
-</ul>
-<h3 id="documentación-adicional">Documentación adicional</h3>
-<p>Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.</p>
 
       
     </div>

@@ -104,6 +104,51 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/tiny-backup-pygtk-y-glade/">Tiny Backup, PyGTK y Glade</a>
+      </h1>
+      <span class="post-date">Aug 10, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/projects/tiny-backup-pygtk-y-glade/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/tiny-backup1.png" alt="tiny-backup1.png">
+
+</p>
+<p>Si quieres conocer una biblioteca o un lenguaje nuevos lo mejor es, sin lugar a dudas, utilizarlos. Había mirado ya algunas cosas sobre Python pero hace algunos meses sentí la necesidad de programar algo pequeño para adquirir un mínimo de destreza. Había oído maravillas de lo sencillo y elegante que era diseñar la interfaz de una aplicación de escritorio con <strong><a href="http://glade.gnome.org/">Glade</a></strong> y manejarla con <strong><a href="http://www.pygtk.org/">PyGTK</a></strong> desde Python. Por tanto me puse manos a la obra y <strong>desarrollé Tiny Backup</strong> en un par de días.</p>
+<p>
+  <img src="../../img/wp/tiny-backup.png" alt="tiny-backup.png">
+
+</p>
+<h3 id="tiny-backup-y-su-funcionamiento">Tiny Backup y su funcionamiento</h3>
+<p>Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un <strong>listado de todos los paquetes</strong> que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por <strong>correo electrónico</strong> (por el momento es compatible con Gmail, Hotmail y Yahoo).</p>
+<p>Está diseñado siguiendo las directrices del patrón <strong><a href="http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas"><em>&ldquo;Arquitectura en tres capas&rdquo;</em></a></strong> aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios <strong>comandos básicos</strong> de GNU/Linux:</p>
+<pre tabindex="0"><code># Guardar listado de paquetes
+dpkg --get-selections | grep -v deinstall &gt; paquetes_backup
+#Guardar listado de repositorios
+cp /etc/apt/sources.list repositorios_backup
+
+# Restaurar listado de repositorios
+mv repositorios_backup /etc/apt/sources.list
+gksudo apt-get update
+# Restaurar paquetes
+dpkg --set-selections &lt; paquetes_backup
+</code></pre><p>Por supuesto, es posible configurar los ficheros destino mediante el asistente de backup y restauración. Tiny Backup es libre bajo <strong>licencia <a href="http://gplv3.fsf.org/">GPL v3</a></strong> y podéis obtenerlo a través de la <a href="http://code.google.com/p/python-tiny-backup/">forja en Google Code</a>.</p>
+<p>
+  <img src="../../img/wp/glade.png" alt="glade.png">
+
+</p>
+<h3 id="glade-un-gran-editor-de-interfaces">Glade, un gran editor de interfaces</h3>
+<p>Glade es una herramienta con licencia GPL que nos permite diseñar interfaces para aplicaciones de escritorio y guardarlas en formato XML. Posteriormente, esos ficheros pueden ser cargados mediante la clase <a href="http://library.gnome.org/devel/gtk/stable/GtkBuilder.html">GtkBuilder</a> perteneciente a la API de <a href="http://www.gtk.org/">GTK</a>. Lo que significa que es compatible con <a href="http://www.gtk.org/language-bindings.html">cualquier lenguaje que posea un port</a> de GTK entre los que, por supuesto, se encuentra Python (con PyGTK).</p>
+<p>La filosofía de Glade consiste en <strong>separar por completo la interfaz del código</strong> de manera que podemos editarla sin necesidad de recompilaciones. Esto difiere bastante de los clásicos IDE que generan código automáticamente (muchas veces sucio y poco elegante) para manejar la vista. Como inconveniente tenemos un aumento de tiempo en el inicio de la aplicación, no obstante, es leve y no se aprecia en exceso. Existen muchas aplicaciones open source que han hecho uso de Glade, sin ir más lejos, el reproductor de música <a href="http://www.exaile.org/screens">Exaile</a> es una de ellas.</p>
+<p>Entre las bondades de Glade también se encuentra la capacidad para decidir la <strong>redistribución de los componentes</strong> al redimensionar los formularios, algo muy de agradecer. Es posible que tratar de abarcar el software de buenas a primeras puede ser duro pero siguiendo un <a href="http://live.gnome.org/Glade/Tutorials">buen tutorial</a> en un par de días de puede estar utilizando sin problemas.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/hobbies/play-english-como-hacer-un-juego-educativo/">Play English, cómo hacer un juego educativo</a>
       </h1>
       <span class="post-date">Aug 8, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/play-english-como-hacer-un-juego-educativo/#disqus_thread">Comments</a>
@@ -281,27 +326,6 @@ mingw32-make -f makefile-windows
 <p>Acompañando a la guía se ofrece <a href="http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py">cpplint.py</a>, un script en Python para <strong>validar nuestro código</strong> siguiendo el estilo de Google. Utilizarlo puede ser una buena manera de tratar ser disciplinado con nuestro propio trabajo. Funciona con ficheros .h y .cpp, para ejecutarlo nos situamos en el directorio donde se aloje el script y tecleamos la siguiente orden:</p>
 <pre tabindex="0"><code>python cpplint.py fichero.cpp
 </code></pre><p>He comprobado que ofrece resultados completos y claros por lo que voy a utilizarlo en mis proyectos actuales: <em>IberOgre</em> y <em>Sion Tower</em>. Sion Tower es un videojuego en el que trabajaré en solitario pero IberOgre, al ser una wiki colaborativa, cobra importancia mantener un estilo limpio y consistente.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/desarrollo-de-videojuegos-en-c-con-sdl-para-psp-en-wikilibros/">Desarrollo de videojuegos en C&#43;&#43; con SDL para PSP en Wikilibros</a>
-      </h1>
-      <span class="post-date">Aug 2, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/games/desarrollo-de-videojuegos-en-c-con-sdl-para-psp-en-wikilibros/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/portpsp.png" alt="portpsp.png">
-
-</p>
-<p>Mientras trabajamos en <strong><a href="https://grannysbloodbath.wordpress.com/">Granny&rsquo;s Bloodbath</a></strong> se nos ocurrió la idea de hacer un <strong>port a PSP</strong> del juego. Fui el encargado de la tarea y, cuando me puse manos la obra, descubrí que la documentación era pobre y en la mayoría de casos errónea. Lo cierto es que fue toda una aventura descubrir cómo crear un juego para PSP en C++ usando SDL y otras librerías sin cambiar el código original.</p>
-<p>Debido a la dificultad que me supuso, redacté una guía en PDF bajo Creative Commons y la publiqué en el repositorio del proyecto. Recibí consejos por parte de mis compañeros para publicarla en algún lugar donde pudiera tener más difusión, por ejemplo <strong><a href="http://es.wikibooks.org/wiki/Portada">Wikilibros</a></strong>. Después de bastante tiempo les he hecho caso y, tras superar los entresijos de las reglas de nombrado de páginas, la guía ya está alojada allí. Podéis acceder a ella desde <a href="http://es.wikibooks.org/wiki/Desarrollo_de_videojuegos_para_PSP_con_C%2B%2B_y_SDL">aquí</a>.</p>
-<p>Sería estupendo si le sirviera a alguien para crear algún proyecto en PSP.</p>
 
       
     </div>

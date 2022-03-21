@@ -104,6 +104,46 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-navigation-mesh-y-a/">Sion Tower, navigation mesh y A*</a>
+      </h1>
+      <span class="post-date">Apr 1, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sion-tower-navigation-mesh-y-a/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <div
+  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/2Q2tJxcTqoE"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+<p>En este nuevo vídeo podemos ver el <strong>sistema de búsqueda de caminos</strong> empleando el conocido <strong><a href="http://en.wikipedia.org/wiki/A*_search_algorithm">algoritmo A*</a></strong> junto a una malla de triángulos diseñada con <a href="http://www.blender.org/">Blender</a>. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del <strong>comportamiento de los enemigos</strong> de Sion Tower.</p>
+<p>El sistema está <strong>orientado a la optimización del flujo de trabajo</strong> y permite que los diseñadores puedan definir desde Blender las zonas del mapa que serán transitables por los enemigos:</p>
+<ol>
+<li>Creación de una malla de triángulos</li>
+<li>Exportación de la malla a formato <em>.mesh</em> (Ogre)</li>
+<li>Exportación del nivel completo en <em>DotScene</em> (incluyendo la malla)</li>
+<li>Carga del escenario en el motor del juego</li>
+</ol>
+<p>
+  <img src="../../img/wp/navigationMesh2.png" alt="navigationMesh2.png">
+
+</p>
+<p>Sobra decir que aún <strong>queda un gran espacio para la mejora</strong>. Actualmente el sistema nos devuelve la lista de celdas que componen el camino hacia el destino indicado. Posteriormente, el personaje recorre los puntos centrales de las celdas cambiando su orientación de forma brusca. La única optimización implementada consiste en tratar de saltar todas las celdas intermedias posibles siempre que haya una línea recta transitable entre el origen y el destino.</p>
+<p>En posteriores artículos ofreceré documentación adicional sobre el diseño y el funcionamiento interno del sistema. ¡Hay tanto trabajo por hacer!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/musica-de-victoria-y-derrota-en-sion-tower/">Música de victoria y derrota en Sion Tower</a>
       </h1>
       <span class="post-date">Mar 30, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/musica-de-victoria-y-derrota-en-sion-tower/#disqus_thread">Comments</a>
@@ -282,37 +322,6 @@ if __name__ == &#34;__main__&#34;:
 <p><strong>Colin Firth se ha ganado el Oscar a pulso</strong> con su emotiva interpretación de George VI llena de matices y contrastes. Consigue imprimir el temperamento, frustración y fuerza necesarios a su personaje de forma que alcanza de lleno al espectador. No sé si esto le ha ocurrido a más gente pero desde el primer minuto <strong>consiguió conectar conmigo</strong>. El resto de actores hacen papeles muy buenos pero es Firth quien sobresale por encima del resto con diferencia.</p>
 <p>Sin ser un gurú gafa-pasta pienso que <strong>el guión es magnífico</strong>. Conseguir que una película de dos horas sin acción alguna fluya como un riachuelo sin ningún altibajo es terriblemente complicado. El discurso del rey intercambia las escenas de máxima importancia con el resto de forma muy equilibrada. Así consigue mantener el interés durante todo el metraje.</p>
 <p>Poco puedo criticar de la que en mi opinión es una de las mejores películas del año pasado. No tengo constancia de la calidad del doblaje ni si las interpretaciones pierden fuerza por el mismo ya que la he visto en <strong>versión original</strong> (inglés británico). No me queda otra que <strong>recomendarla al 100%</strong>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/%c2%a1mejor-proyecto-de-ocio-en-el-v-cusl-local/">¡Mejor proyecto de ocio en el V CUSL local!</a>
-      </h1>
-      <span class="post-date">Mar 23, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/%c2%a1mejor-proyecto-de-ocio-en-el-v-cusl-local/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/local-cusl.jpg" alt="local-cusl.jpg">
-
-</p>
-<p>Hoy se ha celebrado <a href="http://osl.uca.es/node/1169">la final de la <strong>fase local del V Concurso de Software Libre</strong> en Cádiz</a> y hemos sido galardonados con el <strong>premio al mejor proyecto de ocio</strong> (quedando segundos en la clasificación general). Creo que hablo en nombre de todos los que hemos trabajado en IberOgre y Sion Tower cuando afirmo que estamos muy contentos de que se haya reconocido nuestro esfuerzo. De todo esto me llevo la comunidad que poco a poco vamos reuniendo.</p>
-<p>De forma previa a la entrega de premios, los finalistas <strong>hicimos una presentación</strong> hablando sobre nuestros proyectos. No vi demasiadas caras de aburrimiento por lo que deduzco que IberOgre y Sion Tower gustaron bastante. Eso sí, el hecho de que los alumnos de Diseño de Videojuegos estuvieran presentes debió ayudar. Los interesados pueden [descargar la presentación en formato PDF.</p>
-<p>El premio absoluto al mejor proyecto ha sido para Aarón Bueno Villares por <a href="http://freephylotree.blogspot.com/">FreePhyloTree</a>. Se trata de un visor de árboles filogenéticos desarrollado en C++ utilizando OpenGL. En su interesante presentación pudimos ver la navegación por la jerarquía de los seres vivos cuya información obtiene de <a href="http://species.wikimedia.org/wiki/Portada">Wikispecies</a>. Mi más sincera enhorabuena.</p>
-<p>A continuación dejo la lista completa de los ganadores extraída de la web de la OSLUCA:</p>
-<ul>
-<li>Aarón Bueno Villares con <a href="http://freephylotree.blogspot.com/">FreePhyloTree</a>: premio local UCA de la 5ª edición del CUSL.</li>
-<li>David Saltares Márquez con <a href="../../category/proyectos/pfc/">IberOgre y Sion Tower</a>: accésit al mejor proyecto de Ocio.</li>
-<li>Ignacio Palomo Duarte con <a href="http://www.3oheme.com/dominous">Dominous</a>: accésit al mejor proyecto de Innovación.</li>
-<li>Ezequiel Vázquez de la Calle con <a href="http://wiipang.wordpress.com/">WiiPang</a>: accésit al mejor proyecto de Comunidad.</li>
-<li>Sebastián Guerrero Selma con <a href="http://seguesec.blogspot.com/search/label/PFC">Security Leaks</a>: accésit al mejor proyecto de Seguridad</li>
-<li>Jesús González Rodríguez con <a href="http://balloonbreakers.blogspot.com/">Balloon Breakers</a>: finalista mejor proyecto de Ocio.</li>
-</ul>
-<p>Felicidades a todos, <strong>¡ahora hay que demostrar en la fase nacional del CUSL el gran nivel que tenemos en Cádiz!</strong></p>
 
       
     </div>

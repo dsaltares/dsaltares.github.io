@@ -104,6 +104,103 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/the-david-test-an-updated-joel-test-for-2022/">The David Test - An updated Joel Test for 2022</a>
+      </h1>
+      <span class="post-date">Feb 7, 2022 &middot; 7 minute read &middot; <a href="https://saltares.com/the-david-test-an-updated-joel-test-for-2022/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/leadership">Leadership</a>
+      </span>
+      
+      <p>The famous <a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">Joel Test</a> is a super quick and fun way to evaluate an engineering organisation by answering 12 simple <em>&ldquo;yes or no&rdquo;</em> questions. At the end, you get a score over 12. There is a problem however.</p>
+<p>The test is now 22 years old 😱.</p>
+<p>Tools and processes to build software have changed a fair bit over the last two decades. What was considered a potential nice to have, may have become an absolute basic. So, I decided to come up with my own, updated test. Make sure to read <a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/">the original one</a> first.</p>
+<p>Behold the <strong>David Test</strong>.</p>
+<ol>
+<li>Can new joiners set up and run the system locally in less than one day by just reading the docs?</li>
+<li>Are your builds made without any human intervention?</li>
+<li>Do you automatically deploy to production?</li>
+<li>Is the system, to some degree, observable?</li>
+<li>Do you have a technical debt strategy you actually follow?</li>
+<li>Is your team predictable?</li>
+<li>Does the squad (Engineering + PM + Design) refine the backlog together?</li>
+<li>Do engineers have sizeable chunks of time free of meetings?</li>
+<li>Can engineers choose the best tools for the job?</li>
+<li>Does the team collectively own quality and have a testing strategy?</li>
+<li>Do you have a standardized interview process?</li>
+<li>Do you have a continuous discovery culture?</li>
+</ol>
+<p>Let&rsquo;s dive a bit deeper.</p>
+<h3 id="1--can-new-joiners-set-up-and-run-the-system-locally-in-less-than-one-day-by-just-reading-the-docs">1. 👩‍💻 Can new joiners set up and run the system locally in less than one day by just reading the docs?</h3>
+<p>Companies that do not have a simple and well documented environment setup process suffer all sorts of issues.</p>
+<p>When a new engineer joins, they spend forever before they can even think of contributing with a code change. As the process is not documented, they get blocked constantly. Multiple people need to help, as knowledge is spread across. As a result, the new joiner is frustrated from day 1!</p>
+<p>A more insidious consequence is the myriad of subtle issues different members of the team experience over time as everyone has environments configured in significantly different ways.</p>
+<p>Ideally, a new engineer should follow the documentation and bring up the application locally within 30 minutes max.</p>
+<h3 id="2--are-your-production-builds-made-without-any-human-intervention">2. 🚚 Are your production builds made without any human intervention?</h3>
+<p>Many companies still rely on developers making production builds on their local machines to ship changes. Not only does this take time, it also introduces a silly amount of risk.</p>
+<p>I once caused a major outage after some local changes made it into a build that got deployed 🙈. I am deeply embarrassed but it&rsquo;s very much a real story and the best example I can give to illustrate this point.</p>
+<p>Let machines make the builds in reproducible environments with no human intervention at all.</p>
+<h3 id="3--do-you-automatically-deploy-to-production">3. 🚢 Do you automatically deploy to production?</h3>
+<p>When teams deploy to production after every merge to the <code>main</code> branch something magical happens. The size of every deployment becomes smaller and the feedback loop tightens. The consequences are fantastic:</p>
+<ul>
+<li>Changes are smaller, the risk of a change breaking the system is reduced.</li>
+<li>When a breaking change is introduced, it&rsquo;s easier to identify it and fix it.</li>
+<li>The cost of integrating code becomes tiny.</li>
+</ul>
+<p>At the very least, teams should routinely deploy to production multiple times a week. Ideally, there should be multiple deployments to production a day, one for every merge to <code>main</code>.</p>
+<p>The rule is <a href="https://charity.wtf/2021/02/19/how-much-is-your-fear-costing-you/">15 minutes or bust</a>.</p>
+<h3 id="4--is-the-system-to-some-degree-observable">4. 🌡️ Is the system, to some degree, observable?</h3>
+<p>Observability has many facets and folks often misunderstand what it means. Essentially, can you answer questions about the state of our system and what real users are experiencing just by looking at its outputs?</p>
+<p>At the very least, some of the following need to be present.</p>
+<ul>
+<li>Logging</li>
+<li>Monitoring</li>
+<li>Alerting</li>
+<li>Tracing</li>
+</ul>
+<p>Tracing is, perhaps, the most advanced, so you get a pass if you don&rsquo;t have it!</p>
+<h3 id="5--do-you-have-a-technical-debt-strategy-you-actually-follow">5. 🏦 Do you have a technical debt strategy you actually follow?</h3>
+<p>Too much technical debt can slow you down to a crawl. At the same time, <a href="https://martinfowler.com/bliki/TechnicalDebtQuadrant.html">no technical debt at all is also bad</a>! Engineering orgs should have a strategy outlining their approach to technical debt and actually follow it. This often requires strong relationships of trust and alignment with other roles within Product such as Product Managers.</p>
+<p>Not having a strategy means that tech debt is tackled in a chaotic, unstructured way, thus limiting the impact. Perhaps, tech debt is not even tackled at all!</p>
+<h3 id="6--is-your-team-predictable">6. 📊 Is your team predictable?</h3>
+<p><a href="https://hackernoon.com/why-estimating-is-so-damn-hard-d0f945f30185">Estimates are damn hard</a> but the reality is that businesses need to know approximately when projects will be done, contracts may depend on them! A team that seldom misses deadlines in a sustainable way is one that builds a tremendous amount of trust. It&rsquo;s one of the key indicators of high performing teams.</p>
+<p>You don&rsquo;t need to be able to predict everything with high precision. In order to be predictable, you must break down projects into tiny increments. These tiny increments are a lot easier to predict. If you continuously deploy your incomplete increments behind feature flags, the chances of having something releasable when time runs out are much higher.</p>
+<h3 id="7--does-the-squad-engineering--pm--design-refine-the-backlog-together">7. 👌 Does the squad (Engineering + PM + Design) refine the backlog together?</h3>
+<p>Too often does one see teams where it&rsquo;s just the lead and the PM who refine the backlog. Then, the lead breaks stories into tasks and assigns them to the team. That is a horrendous practice.</p>
+<ul>
+<li>Not everyone will be aligned on what the team is making and why. People will make worse decisions during implementation, resulting in more back and forth or the wrong thing gets built.</li>
+<li>When a diverse set of people who feel safe to contribute refine together, you will inevitably <a href="https://hbr.org/2016/11/why-diverse-teams-are-smarter">build a better product</a>.</li>
+<li>Individuals will never learn how to break down a larger story into smaller chunks.</li>
+<li>People lose agency over the work they do and become disengaged.</li>
+</ul>
+<h3 id="8--do-engineers-have-sizeable-chunks-of-time-free-of-meetings">8. 🤔 Do engineers have sizeable chunks of time free of meetings?</h3>
+<p>Remote work has become more mainstream and many folks no longer need to deal with noisy open plan offices. However, that does not mean they are free to do deep work for large chunks of time because their calendars may be full with a collection of Zoom calls spread across the day.</p>
+<p>Everybody is different, but most people are more productive when they can block out time for deep, uninterrupted work.</p>
+<h3 id="9--can-engineers-choose-the-best-tools-for-the-job">9. 🛠️ Can engineers choose the best tools for the job?</h3>
+<p>Being able to get the best tools money can buy is crucial. Engineers are expensive and you don&rsquo;t want to pay them so that they can spend endless hours fighting their tools or doing work that could easily be automated by an off the shelf product.</p>
+<p>We can take this forward and say that there isn&rsquo;t a single toolbox to fit them all. People may feel more comfortable with a particular IDE and they should have the freedom to not have to rewire their brain in order to become proficient with another one.</p>
+<h3 id="10--does-the-team-collectively-own-quality-and-have-a-testing-strategy">10. 🐛 Does the team collectively own quality and have a testing strategy?</h3>
+<p>Traditionally, teams that cared about quality simply had a separate QA department. I think that dilutes the ownership of quality in product delivery teams. In my experience, quality is higher when the whole cross-functional squad cares about it and owns it. You may still have a QA role, but they should be embedded within the team.</p>
+<p>It certainly helps when a testing strategy exists, it&rsquo;s documented and actually applied. This document should outline the principles for automated and manual testing ans well as figuring out what to test.</p>
+<h3 id="11--do-you-have-a-standardized-interview-process">11. 💬 Do you have a standardized interview process?</h3>
+<p>The first step an organisation can take to avoid having a completely <a href="https://betterprogramming.pub/the-software-engineering-hiring-process-is-broken-and-exclusionary-1632cc5a030c">broken interview process</a> is to <a href="https://themanagershandbook.com/hiring-and-onboarding/hiring-101">standardize it</a>. An established process everyone goes through allows you to compare candidates more effectively while minimizing bias. It will become slightly easier to increase the diversity of the team, although it <a href="https://lauratacho.medium.com/recruiting-more-underrepresented-candidates-wont-magically-make-your-organisation-inclusive-96651c6fb4b8">won&rsquo;t magically make your team more inclusive</a>.</p>
+<p>A standard process is the absolute bare minimum. Do you want to work at a place where only buddies are hired, everyone thinks the same and it&rsquo;s basically a group of techbros?</p>
+<h3 id="12--do-you-have-a-continuous-discovery-culture">12. 🔍 Do you have a continuous discovery culture?</h3>
+<p>The iterative process does not only apply to actually delivering the software, it&rsquo;s extremely relevant within discovery as well. Organisations that continuously learn about users, test for product market fit and analyse the usage of the most recently released feature will always have the upper hand. When folks other than the PM and designer are involved, the team is set up for success. Look at whether, as an engineer, you can actively participate in the following.</p>
+<ul>
+<li>User interviews.</li>
+<li>Design sprints.</li>
+<li>A/B testing.</li>
+</ul>
+<h3 id="-what-is-your-organisations-score">✅ What is your organisation&rsquo;s score?</h3>
+<p>12/12 is ideal. 10/12 is ok, it&rsquo;s always good to aspire to do better! Anything below it and you should start making some changes, NOW.</p>
+<p>🙌 Thanks for reading!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/remote-work-panel-at-uoc-spanish/">Remote work panel at UOC (Spanish)</a>
       </h1>
       <span class="post-date">Jan 27, 2022 &middot; 1 minute read &middot; <a href="https://saltares.com/remote-work-panel-at-uoc-spanish/#disqus_thread">Comments</a>
@@ -356,61 +453,6 @@ EMAIL_SERVER_PASSWORD=email-pass
 </p>
 <p>You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.</p>
 <p>Hope this helps your workflow!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/">6 tips to make remote meetings more inclusive</a>
-      </h1>
-      <span class="post-date">May 4, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/leadership">Leadership</a>
-      </span>
-      
-      <p>
-  <img src="../../img/remote-work.webp" alt="remote work">
-
-</p>
-<p>So much goes into fostering an inclusive remote culture. It must be done deliberately, like <a href="https://www.runekvist.com/remote-first">tending to a greenhouse</a>.</p>
-<p>As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.</p>
-<p>One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.</p>
-<h3 id="1--default-to-async">1. ✍️ Default to async</h3>
-<p>Async communication acts as a leveller. It&rsquo;s no longer about who talks first or loudest. When someone lays out a great proposal in writing, seniority starts to matter less.</p>
-<p>Do you really need a meeting? Consider an async discussion on a Google doc, Notion page or Github RFC issue.</p>
-<p><a href="https://www.notion.so/aulaeducation/How-we-work-together-2501716c17a64fae849b74e800b3f83d#1afa3cd0dafc4f3e986350c3e1e5837a">Aula</a>, <a href="https://about.gitlab.com/company/culture/all-remote/asynchronous/#remind-people-that-async-is-more-inclusive">Gitlab</a> and many other remote-first companies already encourage this.</p>
-<h3 id="2--respect-peoples-calendars">2. 📆 Respect people&rsquo;s calendars</h3>
-<p>When setting up a meeting, check the attendees&rsquo; calendar first and do not create the event if there is a clash, at least without asking first.</p>
-<p>At Aula, we encourage everyone to be explicit and use Google Calendar as a communication tool by explicitly setting time for things like:</p>
-<ul>
-<li>🕰️ Working hours</li>
-<li>🥘 Lunch time</li>
-<li>🏫 School run</li>
-<li>🤸‍♂️ Workout</li>
-<li>❌ &hellip; Any unavailable time.</li>
-</ul>
-<p>Respecting people&rsquo;s calendars is respecting their time and making them feel included. You&rsquo;re basically saying that it doesn&rsquo;t matter that they care for a dependent relative or live in a different timezone. They are an important part of the session.</p>
-<p>If making calendars work is hell 🔥, default to async!</p>
-<h3 id="3--send-agenda-well-in-advance">3. 📝 Send agenda well in advance</h3>
-<p>Not only <a href="https://themanagershandbook.com/working-as-a-team/running-meetings">will your meetings be much more productive</a>, they will also allow more introverted folks, like myself, to prepare and participate more. We will thank you!</p>
-<p>A meeting invite without an agenda can be extremely anxiety inducing. During those meetings, it&rsquo;s usually the <a href="https://en.wikipedia.org/wiki/Hartman_Personality_Profile#Reds_core_motive">red</a> people who dominate the conversation. When that happens, you may be missing out on extremely valuable points of view.</p>
-<h3 id="4--observe-and-pick-up-on-cues">4. 👀 Observe and pick up on cues</h3>
-<p>Picking up on certain dynamics during a remote video call can be more challenging than in person although it is just as important.</p>
-<p>💬 Is someone dominating the conversation? Interject and give space for other voices. If it keeps happening, give them candid feedback 1-1.</p>
-<p>🙋‍♀️ Did someone unmute and then muted on the video call? Maybe they wanted to participate but did not get the chance. Politely ask if they wanted to say something. Lots of video tools have a &ldquo;raise hand&rdquo; feature these days. Pay attention to raised hands.</p>
-<p>🤐 Did someone not participate at all? You could ask if they want to add something. However, be mindful as not everyone may want to be put on the spot. The best is to check with them 1-1 whether that&rsquo;s something they would appreciate.</p>
-<h3 id="5--rotate-moderators">5. 👑 Rotate moderators</h3>
-<p>Depending on the scope of the meeting, it may be beneficial to rotate the moderator and let members of your team own the session.</p>
-<p>Decisions made during these meetings will automatically get more <a href="https://themanagershandbook.com/working-as-a-team/decision-making#getting-buy-in">buy-in</a> and your team will develop.</p>
-<h3 id="6--lead-by-asking-the-silly-questions">6. ✋ Lead by asking the <em>&ldquo;silly questions&rdquo;</em></h3>
-<p>It&rsquo;s easy to try encourage your team by saying &ldquo;there are no silly questions&rdquo;. Sure, this is nice but folks can still be intimidated and may dread judgement from their peers.</p>
-<p>We can do better.</p>
-<p>Lead by example and <a href="https://www.goodreads.com/book/show/23500254-the-power-of-vulnerability">be vulnerable</a> by sharing what you don&rsquo;t know or are unsure about. <a href="https://ideas.ted.com/how-showing-vulnerability-helps-build-a-stronger-team/">Vulnerability builds trust</a>.</p>
-<h3 id="-thanks">🙌 Thanks</h3>
-<p>You made it!</p>
-<p>Any good tips to make your remote meetings more inclusive?</p>
 
       
     </div>

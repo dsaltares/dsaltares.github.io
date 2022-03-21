@@ -6,7 +6,17 @@
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A template for great incident reviews</title>
+      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
+      <description>By Sieuwert Otterloo on Unsplash  Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
+An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
+    </item>
+    
     <item>
       <title>Help Engineers understand the Why</title>
       <link>https://saltares.com/help-engineers-understand-the-why/</link>

@@ -104,6 +104,44 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/">STC: Sion Tower Collisions v0.1</a>
+      </h1>
+      <span class="post-date">Feb 6, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/colisiones-0-1.png" alt="colisiones-0-1.png">
+
+</p>
+<p>El siguiente objetivo en el desarrollo de Sion Tower era la implementación de un <strong>sistema de detección de colisiones</strong>. Hablamos de un apartado crítico en el desarrollo de un videojuego por la cantidad de cálculos que implica, hay que tener especial cuidado en ese sentido. Llevo un par de semanas trabajando en él de forma intensiva y al menos puedo decir que he conseguido algo que funciona. Les presento la versión 0.1 de STC: <em>Sion Tower Collisions</em>.</p>
+<h3 id="modular-y-reutilizable">Modular y reutilizable</h3>
+<p>Al ser modular y completamente independiente del resto del juego <strong>he decidido liberarlo también por separado</strong>. Se puede utilizar sin ningún tipo de problemas en cualquier proyecto. Las únicas dependencias son Ogre y Boost. El código es C++ estándar así que es compatible con cualquier plataforma que soporte las dos bibliotecas anteriormente mencionadas.</p>
+<h3 id="características">Características</h3>
+<ul>
+<li><strong>Shape</strong>: formas de colisión básicas: esfera, plano y AABB.</li>
+<li><strong>Collision Dispatching</strong>: elección del test de colisión de forma adecuado de forma transparente a partir de dos figuras génericas.</li>
+<li><strong>Body</strong>: cuerpo colisionable compuesto de varias formas básicas.</li>
+<li><strong>CollisionManager</strong>: gestor de colisiones que lleva el registro de de los cuerpos colisionables.</li>
+<li><strong>Filtrado de colisiones</strong>: el usuario define explícitamente qué tipos de cuerpos pueden colisionar.</li>
+<li><strong>Particionado del espacio</strong>: para aumentar el rendimiento se incorpora un filtrado inicial para evitar tests exhaustivos. Muy básico por el momento.</li>
+<li><strong>Callbacks</strong>: es posible indicarle al gestor de colisiones que llame a una función miembro con una signatura determinada ante una colisión entre dos cuerpos de un tipo predefinido.</li>
+</ul>
+<h3 id="descarga">Descarga</h3>
+<p>He habilitado una <strong>descarga en la forja de Red Iris</strong> para que podáis acceder sin problemas. Incluye el código fuente, licencia (GPL 3) y documentación generada con <a href="http://www.stack.nl/~dimitri/doxygen/">Doxygen</a>. Ruego que me enviéis algún mensaje en caso de encontrar cualquier tipo de problemas: bugs, uso, posibles mejoras, etc.</p>
+<ul>
+<li><a href="http://forja.rediris.es/frs/download.php/2072/siontower-collisions-v0.1.zip">Descargar STC v0.1</a></li>
+</ul>
+<h3 id="documentación-adicional">Documentación adicional</h3>
+<p>Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/">HTC Desire HD, eliminar aplicaciones de Vodafone</a>
       </h1>
       <span class="post-date">Feb 3, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/computing/htc-desire-hd-eliminar-aplicaciones-de-vodafone/#disqus_thread">Comments</a>
@@ -224,43 +262,6 @@
 <p>Desde las montañas heladas hasta el desierto abrasador se interponen entre los sufridos viajeros y la libertad. Como hemos visto en otras muchas películas, en los momentos verdaderamente difíciles <strong>salen a reducir los instintos animales</strong> necesarios para sobrevivir. Cualquier hombre en esas circunstancias puede ser tan peligroso como un lobo acorralado. Es cierto que es un tema ya visto gana en interés por el <strong>excelente trabajo de fotografía</strong>. Tanto la belleza como la dureza de los variados entornos quedan perfectamente plasmadas en la cinta.</p>
 <p><strong>Considerable duración</strong> (133 minutos) teniendo en cuenta que sólo muestra una buena caminata, todo un atrevimiento. Para mi sorpresa no se hizo aburrida y, aunque tiene ciertos altibajos, la tensión no para de crecer. Olvidaos de acción a raudales o cualquier tipo de excesos, es una película sobria que cumple su cometido. Quizás podría achacarle la sensación de que <strong>algunas escenas no están bien enlazadas</strong> pareciendo un collage un poco caótico. El reparto no es muy conocido exceptuando a Collin Farrel y a Ed Harris, no me ha llamado la atención el trabajo de ninguno ni en el buen ni en el mal sentido.</p>
 <p>En definitiva, una buena película con un planteamiento distinto a lo que estamos acostumbrados a ver en cartelera. Manda narices pagar por ir a ver verdaderos truñacos y una vez que me sale el cine gratis merecía la pena.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/proximos-objetivos-en-iberogre-y-sion-tower/">Próximos objetivos en IberOgre y Sion Tower</a>
-      </h1>
-      <span class="post-date">Jan 23, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/proximos-objetivos-en-iberogre-y-sion-tower/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/objetivos-pfc.png" alt="objetivos-pfc.png">
-
-</p>
-<p>Hace mes y medio comencé a utilizar el <a href="../../proyectos/pfc/sistema-de-gestion-de-tareas-en-red-iris/">sistema de gestión de tareas de Red Iris</a> para organizarme. Es mucho mejor <strong>marcarse tareas realizables en poco tiempo</strong> que trabajar con un plan a largo plazo. Por supuesto, estos objetivos deben estar encaminados hacia el plan global pero he comprobado que en proyectos pequeños se es más productivo con tareas concretas. Recientemente he ido cubriendo los objetivos cumplidos en forma de artículos publicados o sistemas desarrollados. A continuación, <strong>comento el camino a seguir en ambas ramas de mi proyecto</strong>.</p>
-<h3 id="iberogre">IberOgre</h3>
-<ul>
-<li><strong>Difusión</strong>: IberOgre ha conseguido lectores principalmente desde Twitter pero va siendo hora de ampliar miras. Debo emprender una pequeña campaña de difusión por foros de desarrolladores. Los objetivos principales serían comunidades de hispanohablantes y sitios directamente relacionados con Ogre en busca de los usuarios que hablen español.</li>
-<li><strong>Contacto con la comunidad</strong>: creo que la comunicación con la comunidad es buena ya que he recibido sugerencias, consejos y reportes de errores. No obstante, estoy decidido a mejorarla. Para ello le daré más actividad a la cuenta de Twitter y haré más visibles todos los medios de comunicación con el proyecto (correo, blog, etc).</li>
-<li><strong>&ldquo;Inicialización del motor&rdquo;</strong>: desde el comienzo está pendiente un artículo sobre la inicialización de Ogre, imprescindible para los principiantes. Este pequeño objetivo tiene la máxima prioridad.</li>
-<li><strong>&ldquo;Animación&rdquo;</strong>: artículo que repase el subsistema de animación de Ogre. Nos centraremos principalmente en Skeletal Animation pero mencionaremos el resto de técnicas disponibles.</li>
-<li><strong>&ldquo;Materiales&rdquo;</strong>: artículo que desgrane el sistema de materiales de Ogre. Aprenderemos a aplicar texturas y efectos sencillos a los objetos de nuestra escena.</li>
-</ul>
-<p>Tengo más objetivos en mente pero primero nos centraremos en un subconjunto de ellos. Si algo estoy aprendiendo es que no se puede abarcar demasiado de buenas a primeras.</p>
-<h3 id="sion-tower">Sion Tower</h3>
-<ul>
-<li><strong>Sistema de colisiones</strong>: he estudiado bibliotecas como <a href="http://www.ogre3d.org/tikiwiki/OgreBullet&amp;structure=Libraries">Bullet</a> y <a href="http://www.ogre3d.org/tikiwiki/OgreODE">ODE</a> pero son proyectos demasiado grandes (matar moscas a cañonazos). Prefiero desarrollar mi pequeño subsistema de detección y respuesta de colisiones. De esta forma aprenderé las bases de las técnicas disponibles. Es posible que decida publicar el sistema de forma independiente ya que es un elemento muy solicitado en el foro de Ogre.</li>
-<li><strong>Sistema de niveles</strong>: sigo estudiando la forma de cargar los niveles a partir de ficheros. Es probable que acabe utilizando el <a href="../../proyectos/pfc/sion-tower/ogitor-instalacion-en-linux-y-el-formato-dotscene">formato DotScene</a> como ya mencioné pero tengo que manejar información que no contempla dicho formato. Nombre y descripción del nivel, icono, música que sonará, formas que componen el modelo de colisiones de los objetos… Sin duda, un tema peliagudo.</li>
-<li><strong>Demo técnica</strong>: es imprescindible llegar a la fase local del concurso con una demo del juego. No importa que no tenga los menús, efectos bonitos y demás accesorios prescindibles. Para esa fecha deben poder cargarse los niveles por los que controlemos al personaje principal. Lo ideal sería tener una Inteligencia Artificial básica implementada para los enemigos.</li>
-</ul>
-<h3 id="periodo-de-exámenes">Periodo de exámenes</h3>
-<p>Por último, me gustaría comentar que en época de exámenes es complicado encontrar tiempo para trabajar en el proyecto y llevar una vida social al mismo tiempo. Desde hace una semana IberOgre y Sion Tower están parados aunque calculo que en muy pocos días retomaré el trabajo con intensidad e ilusión.</p>
-<p>Infinitas gracias a todos los que me muestran su apoyo con el proyecto.</p>
 
       
     </div>

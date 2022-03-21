@@ -104,6 +104,57 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/">StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)</a>
+      </h1>
+      <span class="post-date">Mar 14, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/statsvn-iberogre-siontower.png" alt="statsvn-iberogre-siontower.png">
+
+</p>
+<p><strong><a href="http://www.statsvn.org/">StatSVN</a></strong> es una herramienta que <strong>recopila información de un repositorio Subversion y genera un informe</strong> en HTML describiendo su desarrollo. Como veremos, es posible obtener una gran cantidad de datos relevantes que desvelan los hábitos de los miembros de un equipo y en qué medida ha contribuido cada uno. ¿Quieres conocer cómo se ha trabajado en el proyecto estos meses?</p>
+<p>En el informe sólo se refleja mi actividad ya que los artistas que están colaborando con el proyecto no están dados de alta en la forja. Nota para mí mismo: <em>&ldquo;añadir los colaboradores a la forja&rdquo;</em>.</p>
+<h3 id="utilizando-statsvn">Utilizando StatSVN</h3>
+<p><strong>StatSVN es muy sencillo de utilizar</strong>, nos basta con tener la máquina virtual de Java instalada y seguir estos pasos:</p>
+<ul>
+<li>Descargar la última versión del software <a href="http://www.statsvn.org/downloads.html">aquí</a>. * Obtener la última revisión del proyecto que queramos con <em>svn checkout</em>. * Desde el directorio raíz del repositorio obtenemos el log completo:</li>
+</ul>
+<pre tabindex="0"><code>svn log -v –xml &gt; logfile.log
+</code></pre><ul>
+<li>Desde el directorio en el que queramos guardar el informe:</li>
+</ul>
+<pre tabindex="0"><code>java -jar ruta-a-statsvn.jar ruta-a-logfile.log ruta-a-raiz-repo
+</code></pre><h3 id="evolución-de-las-líneas-de-código">Evolución de las líneas de código</h3>
+<p>
+  <img src="../../img/wp/loc.png" alt="loc.png">
+
+](<a href="https://saltares.com/docs/iberogre-siontower-statsvn/loc.png">https://saltares.com/docs/iberogre-siontower-statsvn/loc.png</a>)</p>
+<p>La gráfica anterior muestra el <strong>número de líneas de código</strong> correspondientes a los ejemplos de IberOgre y al juego Sion Tower en el eje <em>y</em> mientras que en el <em>x</em> aparece el tiempo. Puede observarse un crecimiento bastante lento hasta el 2 de noviembre ya que este periodo lo dediqué sobre todo a planificación y aprendizaje. También trabajé en los primeros artículos de la wiki, que no aparecen reflejados en el repositorio.</p>
+<p>A medida que comenzaba el desarrollo de Sion Tower el número de líneas <strong>ha crecido considerablemente</strong>. Los saltos corresponden a pequeñas iteraciones: análisis y diseño de un sistema, implementación, pruebas e integración.</p>
+<p>Los resultados parecen bastante positivos, espero seguir manteniendo el ritmo durante los próximos meses.</p>
+<h3 id="horas-del-día-y-días-de-la-semana">Horas del día y días de la semana</h3>
+<p>
+  <img src="../../img/wp/activity_time.png" alt="activity_time.png">
+
+</p>
+<p>Esta gráfica muestra las <strong>horas del día</strong> en el eje <em>x</em> mientras que en el <em>y</em> aparece el número de commits. He procurado adquirir el hábito de trabajar en el proyecto por las mañanas, lo que ha provocado un aumento de actividad entorno a las 10:00. No es raro que trabaje por la tarde y puedo decir que el proyecto aún no me ha quitado el sueño.</p>
+<p>
+  <img src="../../img/wp/activity_day.png" alt="activity_day.png">
+
+</p>
+<p>Por su parte, esta gráfica muestra la actividad medida en número de commits (eje <em>y</em>) con respecto a los <strong>días de la semana</strong> (eje <em>x</em>). Entre semana el nivel de actividad es uniforme, aunque parece ser que llego al viernes bastante cansado. Me ha sorprendido el <strong>tremendo pico</strong> de actividad situado en los sábados. Seguramente se deba a que he pasado varios meses del desarrollo trabajando como becario en la Universidad y no tenía demasiado tiempo.</p>
+<h3 id="informe-completo">Informe completo</h3>
+<p>Eso es todo amigos (por el momento). Los interesados pueden husmear el <a href="https://saltares.com/docs/iberogre-siontower-statsvn">informe completo</a> generado por StatSVN para IberOgre y Sion Tower en el mencionado periodo de tiempo. Dentro de unos meses volveré a generarlo para seguir viendo la evolución del proyecto.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/talleres-de-blender-y-gosu-en-la-advuca/">Talleres de Blender y Gosu en la ADVUCA</a>
       </h1>
       <span class="post-date">Mar 13, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/talleres-de-blender-y-gosu-en-la-advuca/#disqus_thread">Comments</a>
@@ -233,35 +284,6 @@
 
 <p>En esta ocasión muestro una prueba de lo que será el <strong>primer nivel de Sion Tower</strong> así como una implementación del <strong>control de la cámara</strong>. Los objetos que componen la escena los he modelado y texturizado con Blender. Posteriormente, compongo el nivel también con Blender, lo exporto a formato DotScene de forma que el sistema de niveles se encarga de procesarlo y construir la escena.</p>
 <p>La demo técnica que publicaré en unos días ofrecerá este escenario con un control de cámara más pulido y al protagonista definitivo creado por AJR (animaciones internas incluidas).</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/primer-enemigo-de-sion-tower-el-goblin/">Primer enemigo de Sion Tower: el Goblin</a>
-      </h1>
-      <span class="post-date">Mar 5, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/primer-enemigo-de-sion-tower-el-goblin/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/sion-tower/collage-goblin.jpg" alt="goblin-collage.jpg">
-
-</p>
-<p><a href="http://ajr-portafolio.blogspot.com/">Antonio Jiménez Rodríguez (AJR)</a>, nuestro artista 3D nos ofrece el <strong>primer enemigo del juego: el Goblin</strong>. Una vez más, demuestra su profesionalidad a través de este genial trabajo. ¡Con colaboradores así, da gusto trabajar!</p>
-<p>La descripción del enemigo en el <a href="../../proyectos/pfc/sion-tower/primera-version-del-gdd-de-sion-tower/" title="Primera versión del GDD de Sion Tower">documento de diseño de Sion Tower</a> es lo que ha tomado AJR para el bocetado y posterior modelado. Esto demuestra la <strong>importancia del GDD</strong> para transmitir los conceptos del juego a todos los miembros del equipo.</p>
-<blockquote>
-<p>Enemigo básico sin ninguna afinidad elemental. Clásica criatura verde, desagradable y de baja estatura. Va armado con una tosca espada corta y un burdo taparrabos. Acuden en gran número (su gran ventaja), son ágiles pero no tienen grandes habilidades en combate.</p>
-</blockquote>
-<p>
-  <img src="../../img/sion-tower/boceto-goblin.jpg" alt="goblin-boceto.jpg">
-
-</p>
-<p><strong>Es improbable que me sea posible incluir enemigos en la demo técnica</strong> que quiero lanzar de cara a la fase local del CUSL. Aún necesito trabajar mucho la búsqueda de caminos y la inteligencia artificial. No obstante, el protagonista que ya he mostrado en otra ocasión sí hará acto de presencia.</p>
-<p>Estad atentos porque <strong>en los próximos días hablaré de más colaboraciones</strong>. Ni yo mismo me lo creo y es que IberOgre y Sion Tower ya no son sólo cosa mía, lo que me enorgullece muchísimo. La cooperación y el trabajo en comunidad <strong>es exactamente lo que se pretende con el CUSL</strong>.</p>
 
       
     </div>

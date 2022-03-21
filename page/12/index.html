@@ -104,6 +104,31 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/computing/recover-history-with-git/">Recover history with Git</a>
+      </h1>
+      <span class="post-date">Dec 31, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/recover-history-with-git/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      <p>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&rsquo;t been pushed to <code>origin</code> yet. However, I didn&rsquo;t realise at the time.</p>
+<p>After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.</p>
+<blockquote>
+<p>Oh noes!</p>
+</blockquote>
+<p>Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using <code>git reflog</code> you can list the tip of branches, including the deleted ones. Once you find the commit you were looking for, you can just use <code>git checkout</code> to get it back. This will detach you from <code>HEAD</code>, so you will probably want to create the old branch again with <code>git checkout -b name</code>.</p>
+<p>Most of the time, there will be too many commits and the search might be painful. In that case you can grep the results. Let&rsquo;s say you know the commit message had <code>feature x</code> in it.</p>
+<pre tabindex="0"><code>git reflog --grep=&#39;feature x&#39;
+git checkout 123456
+git checkout -b feature-x
+</code></pre><p>I really love Git.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/computing/book-review-clean-code/">Book review: Clean Code</a>
       </h1>
       <span class="post-date">Dec 14, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/book-review-clean-code/#disqus_thread">Comments</a>
@@ -396,26 +421,6 @@
 </ul>
 <p>The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.3.3-SNAPSHOT</code>.</p>
 <p>Big thanks to our awesome community!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/upcoming-talk-at-kingston-university/">Upcoming talk at Kingston University</a>
-      </h1>
-      <span class="post-date">Nov 13, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/upcoming-talk-at-kingston-university/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/kingstonuniversity.jpg" alt="kingstonuniversity">
-
-</p>
-<p>I&rsquo;ll be delivering a small presentation to the games development students at <a href="http://www.kingston.ac.uk/">Kingston University of London</a> on Monday November 24th. The reason behind the talk is the recent publication of our <a href="https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook">Libgdx Cookbook</a>, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.</p>
-<p>Naturally, I&rsquo;ll post the slides here for whoever&rsquo;s interested.</p>
 
       
     </div>

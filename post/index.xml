@@ -6,7 +6,17 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 14 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A template for great incident reviews</title>
+      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
+      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
+      <description>By Sieuwert Otterloo on Unsplash  Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
+An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
+    </item>
+    
     <item>
       <title>Help Engineers understand the Why</title>
       <link>https://saltares.com/help-engineers-understand-the-why/</link>
@@ -107,18 +117,6 @@ The developer experience worsens because you now need a network connection to lo
       <guid>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</guid>
       <description>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
 The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&amp;rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem.</description>
-    </item>
-    
-    <item>
-      <title>6 tips to make remote meetings more inclusive</title>
-      <link>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/</link>
-      <pubDate>Tue, 04 May 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/</guid>
-      <description>So much goes into fostering an inclusive remote culture. It must be done deliberately, like tending to a greenhouse.
-As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.
-One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.
-1. ✍️ Default to async Async communication acts as a leveller.</description>
     </item>
     
   </channel>
