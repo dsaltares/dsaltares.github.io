@@ -6,7 +6,17 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 21 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A playbook for calm incident response</title>
+      <link>https://saltares.com/a-playbook-for-calm-incident-response/</link>
+      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/a-playbook-for-calm-incident-response/</guid>
+      <description>By Camilo Jimenez on Unsplash  Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
+The tension is so high that the incident responder forgets to communicate effectively or is so worried about keeping folks up to date that they take the wrong action, further compromising the system.</description>
+    </item>
+    
     <item>
       <title>A template for great incident reviews</title>
       <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
@@ -107,16 +117,6 @@ I wanted to keep the component that controls the layout as simple as possible, s
 Working with NextAuth.js is trivial, it sounds too good to be true!
 Of course, there is a catch&amp;hellip;
 The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
-    </item>
-    
-    <item>
-      <title>How to test and debug your localhost web app on a real Android device</title>
-      <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
-      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</guid>
-      <description>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
-The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&amp;rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem.</description>
     </item>
     
   </channel>

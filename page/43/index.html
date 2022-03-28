@@ -104,6 +104,68 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/gource-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/">Gource de IberOgre y Sion Tower (18/09/2010 – 13/03/2011)</a>
+      </h1>
+      <span class="post-date">Mar 15, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gource-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <div
+  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
+  <iframe
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+    src="https://www.youtube.com/embed/6hoiOkAX8V8"
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
+</div>
+
+<p><strong><a href="http://code.google.com/p/gource/">Gource</a> es una herramienta para la visualización de la evolución de un proyecto</strong> a partir del log de su sistema de control de versiones. Gource es mucho más visual que <a href="../../proyectos/pfc/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/" title="StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)">StatSVN</a> ya que <strong>utiliza <a href="http://es.wikipedia.org/wiki/OpenGL">OpenGL</a> para renderizar de forma atractiva</strong> el árbol de ficheros del proyecto junto a sus atareados desarrolladores (como abejas en un panal). Es compatible con Git, Mercurial y SVN. Si quieren ver el nivel de actividad del proyecto y dejarme en ridículo, presionen al botón de reproducción.</p>
+<h3 id="un-poco-de-reflexión">Un poco de reflexión</h3>
+<p>En el vídeo <strong>se aprecia perfectamente las dos partes diferenciadas del proyecto</strong>: <a href="../../category/proyectos/pfc/iberogre-wiki/">IberOgre</a> (derecha) y <a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> (izquierda). Como mencioné en el informe de StatSVN, vemos que al comienzo el ritmo de trabajo era muy bajo. Comencé por el documento de diseño del juego y algunos artículos de la wiki (no reflejados por Gource). Más adelante <strong>la situación mejoró</strong> con los ejemplos para IberOgre y la explosión de trabajo en Sion Tower a partir de enero.</p>
+<p>Me atrevo a decir que <strong>la evolución es favorable</strong> y trataré de que permanezca así durante los próximos meses.</p>
+<h3 id="compilando-e-instalando-gource-en-linux">Compilando e instalando Gource en Linux</h3>
+<p>La versión de Gource que se encuentra en los repositorios de Ubuntu es bastante arcaica por lo que la mejor opción es descargarlo, compilarlo e instalarlo.</p>
+<ul>
+<li>Descargamos <a href="http://code.google.com/p/gource/downloads/list">la última versión de Google Code</a>.</li>
+<li>Descomprimimos el paquete y accedemos al directorio desde la terminal.</li>
+<li>Instalamos las dependencias:</li>
+</ul>
+<pre tabindex="0"><code>sudo apt-get install build-essential make autoconf automake libsdl1.2-dev libsdl-image1.2-dev libpcre3-dev libftgl-dev libpng12-dev libjpeg62-dev libglew1.5-dev
+</code></pre><ul>
+<li>Configuramos y comprobamos que todo esta correcto:</li>
+</ul>
+<pre tabindex="0"><code>./configure
+</code></pre><ul>
+<li>Compilamos:</li>
+</ul>
+<pre tabindex="0"><code>make
+</code></pre><ul>
+<li>Instalamos:</li>
+</ul>
+<pre tabindex="0"><code>sudo make install
+</code></pre><h3 id="creando-un-vídeo-de-gource-con-ffmpeg">Creando un vídeo de Gource con ffmpeg</h3>
+<p>Gource se dedica a mostrar en una ventana la evolución del proyecto pero <strong>no guarda un vídeo</strong> del resultado. Para conseguirlo <strong>podemos hacer uso de <a href="http://es.wikipedia.org/wiki/FFmpeg">ffmpeg</a></strong>, la solución libre para trabajar con audio y/o vídeo. Instalamos ffmpeg en sistemas basados en Debian con el clásico comando:</p>
+<pre tabindex="0"><code>sudo apt-get install ffmpeg
+</code></pre><p>En versiones anteriores a la 0.7, Gource estaba enfocado especialmente a Git y era necesario transformar los logs de SVN con un script para que el software lo aceptase. Actualmente ya no es necesario a menos que tengas la versión de los repositorios. Para <strong>iniciar la grabación</strong> nos situamos en el directorio raíz del proyecto y ejecutamos lo siguiente:</p>
+<pre tabindex="0"><code>gource --seconds-per-day 1 --stop-at-end -1280x720 -o - | ffmpeg -y -f image2pipe -vcodec ppm -i - -vcodec libx264 -vpre slow -threads 4 gource.mp4
+</code></pre><p>Merece la pena mencionar las siguientes <strong>opciones</strong>:</p>
+<ul>
+<li>–seconds-per-day: número de segundos de vídeo por cada día en la evolución del proyecto.</li>
+<li>–stop-at-end: cierra Gource cuando hayamos llegado al punto actual del proyecto.</li>
+<li>-ANCHOxALTO: resolución del vídeo de salida.</li>
+<li>-threads: número de hilos que utilizará ffmpeg para codificar el vídeo, deberás modificarlo según la arquitectura de tu equipo.</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/">StatSVN en IberOgre y Sion Tower (18/09/2010 – 13/03/2011)</a>
       </h1>
       <span class="post-date">Mar 14, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/statsvn-en-iberogre-y-sion-tower-18092010-%e2%80%93-13032011/#disqus_thread">Comments</a>
@@ -260,34 +322,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/sion-tower-primer-nivel-y-prototipo-de-camara/">Sion Tower, primer nivel y prototipo de cámara</a>
-      </h1>
-      <span class="post-date">Mar 7, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-primer-nivel-y-prototipo-de-camara/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <div
-  style="position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;">
-  <iframe
-    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-    src="https://www.youtube.com/embed/vFuTTWCEU8Y"
-    frameborder="0"
-    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-  >
-  </iframe>
-</div>
-
-<p>En esta ocasión muestro una prueba de lo que será el <strong>primer nivel de Sion Tower</strong> así como una implementación del <strong>control de la cámara</strong>. Los objetos que componen la escena los he modelado y texturizado con Blender. Posteriormente, compongo el nivel también con Blender, lo exporto a formato DotScene de forma que el sistema de niveles se encarga de procesarlo y construir la escena.</p>
-<p>La demo técnica que publicaré en unos días ofrecerá este escenario con un control de cámara más pulido y al protagonista definitivo creado por AJR (animaciones internas incluidas).</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -307,7 +341,7 @@
             </li>
             
             <li>
-                <a href="../../page/63/">»»</a>
+                <a href="../../page/64/">»»</a>
             </li>
         </ul>
     </div>

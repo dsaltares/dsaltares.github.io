@@ -104,6 +104,67 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/built-in-console-for-libgdx-games/">Built-in console for Libgdx games</a>
+      </h1>
+      <span class="post-date">Feb 20, 2016 &middot; 2 minute read &middot; <a href="https://saltares.com/games/built-in-console-for-libgdx-games/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
+<p>
+  <img src="../../img/others/console1.jpg" alt="console1.jpg">
+
+</p>
+<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
+<pre tabindex="0"><code>private Console console;
+
+@Override
+public void create() {
+    ...
+
+    console = new Console();
+    console.setSizePercent(100, 33);
+    console.setPositionPercent(0, 67);
+    console.setKeyID(Keys.Z);
+}
+</code></pre><p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
+<pre tabindex="0"><code>console.draw();
+</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let&rsquo;s specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
+<pre tabindex="0"><code>public class GameCommandExecutor extends Command {
+    private Console console;
+
+    public GameCommandExecutor(Console console) {
+        this.console = console;
+    }
+
+    public void loadLevel(String levelName) {
+        console.log(&#34;loading level &#34; + levelName, Console.LogLevel.SUCCESS);
+    }
+
+    public void spawnEnemy(String type, float x, float y, float z) {
+        console.log(&#34;spawning enemy &#34; + type, Console.LogLevel.SUCCESS);
+    }
+
+    public void clear() {
+        console.clear();
+    }
+}
+</code></pre><p>At some point, we need to register the executor with the console.</p>
+<pre tabindex="0"><code>console.setCommandExecutor(new GameCommandExecutor(console));
+</code></pre><p>Done, that&rsquo;s it!</p>
+<p>
+  <img src="../../img/others/libgdx-console.png" alt="libgdx-console.png">
+
+</p>
+<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/">2D vision system with Ashley and Box2D</a>
       </h1>
       <span class="post-date">Jan 30, 2016 &middot; 8 minute read &middot; <a href="https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/#disqus_thread">Comments</a>
@@ -561,127 +622,6 @@ including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=defa
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/libgdxjam-new-years-update/">LibGDXJAM New Year&#39;s update</a>
-      </h1>
-      <span class="post-date">Jan 1, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/libgdxjam-new-years-update/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>We&quot;re halfway through the <a href="https://twitter.com/search?src=typd&amp;q=libgdxjam">#libGDXJAM</a> and some work has been done between Christmas and New Year&rsquo;s eve.</p>
-<p>Here&rsquo;s a few updates.</p>
-<ul>
-<li><a href="https://twitter.com/DrillerDev">@DrillerDev</a> as joined us as an artist and has already produced some awesome concepts.</li>
-<li>Alberto and I have been working on an Overlap2D scene loader and it&rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles.</li>
-<li>We have a somewhat buggy physics based platformer movement system.</li>
-<li>There are cameras you have to stay away from!</li>
-</ul>
-<p>
-<link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept-2.jpg');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept-2.jpg" alt="Libgdxjam concept 2" />
-				    </div>
-			      <figcaption>
-		          <p>Libgdxjam concept 2</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept-2.jpg" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept.png" alt="Libgdxjam concept" />
-				    </div>
-			      <figcaption>
-		          <p>Libgdxjam concept</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery_progress_1/libgdxjam-concept.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery_progress_1/sloppynauts-progress.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery_progress_1/sloppynauts-progress.png" alt="Sloppynauts progress" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts progress</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery_progress_1/sloppynauts-progress.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-</p>
-<p>We really need to focus on gameplay now, hopefully we&quot;ll have something playable by the deadline. Make sure to follow the <a href="https://twitter.com/search?src=typd&amp;q=libgdxjam">Twitter feed</a> for the jam. Gotta say that I&quot;m shocked to see how much coolness people have managed to put together in such a short amount of time.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -701,7 +641,7 @@ including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=defa
             </li>
             
             <li>
-                <a href="../../page/63/">»»</a>
+                <a href="../../page/64/">»»</a>
             </li>
         </ul>
     </div>

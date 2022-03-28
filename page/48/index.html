@@ -104,6 +104,63 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/games/colisiones-i-introduccion-requisitos-y-alternativas/">Colisiones I: Introducción, requisitos y alternativas</a>
+      </h1>
+      <span class="post-date">Feb 8, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/colisiones-i-introduccion-requisitos-y-alternativas/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/colisiones-1.png" alt="colisiones-1.png">
+
+</p>
+<p>Entregas:</p>
+<ul>
+<li><em>Colisiones I: Introducción, requisitos y alternativas</em></li>
+<li><a href="../../proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/">Colisiones II: Diseño general de STC</a></li>
+<li><a href="../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/">Colisiones III: La clase Shape y Collision Dispatching</a></li>
+<li><a href="../../proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/">ColisionesIV: Tests de colisión</a></li>
+</ul>
+<p>Mientras diseñaba e implementaba el <a href="../../proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-1/"><strong>sistema de detección de colisiones de Sion Tower (STC)</strong></a> he leído bastante y aprendido mucho al respecto. Es un tema muy complejo, crítico y delicado estudiado con detalle en varias ocasiones. Me queda muchísimo por aprender al respecto pero por razones de calendario no puedo permitirme abarcarlo todo antes de ponerme a trabajar. Este es el primero de <strong>una serie de artículos en los que documento el sistema de colisiones que he desarrollado</strong>. Comenzamos con los requisitos del sistema y las alternativas disponibles.</p>
+<h3 id="requisitos-del-sistema">Requisitos del sistema</h3>
+<p>En el <a href="http://forja.rediris.es/frs/download.php/2019/gdd.pdf">documento de diseño de Sion Tower</a> se especifican los <strong>posibles tipos de colisiones</strong> que pueden darse en el transcurso de una partida típica (sección 3.4.1):</p>
+<ul>
+<li>Personaje-Personaje</li>
+<li>Personaje-Escenario</li>
+<li>Hechizo-Personaje</li>
+<li>Hechizo-Escenario</li>
+<li>Trampa-Personaje</li>
+<li>Trampa-Escenario</li>
+</ul>
+<p>El área de colisión del protagonista y los enemigos podrían modelarse utilizando una o varias cajas. El escenario estará compuesto por el suelo y diversas piezas de mobiliario, es decir, un plano y otro puñado de cajas. Las trampas también pueden modelarse como cajas mientras que el área de efecto de un proyectil mágico podría ser representado mediante una sencilla esfera. Parte de la mecánica de juego consiste en seleccionar un hechizo o trampa utilizando los botones de la interfaz y colocarlo en el escenario con el ratón. Para ello hay que transformar coordenadas de pantalla (donde se desplaza el ratón) a un rayo que atraviesa el escenario y detectar las intersecciones con elementos del juego (técnica conocida como mouse raycasting).</p>
+<p>Antes de lanzarme a la piscina redacté una pequeña <strong>lista de las funcionalidades</strong> que debía ofrecer el sistema de colisiones que utilizase Sion Tower. Básicamente se reducían a las siguientes:</p>
+<ul>
+<li>Soporte para varias <strong>formas</strong>: esferas, planos, AABB y OBB</li>
+<li><strong>Tests de colisión</strong> para las combinaciones de dichas formas. El usuario de la API le pasa varias formas de un tipo genérico al sistema y éste selecciona el test adecuado (collision dispatching).</li>
+<li><strong>Elementos de juego</strong> compuestos de una o varias formas básicas.</li>
+<li><strong>Gestor de colisiones</strong> que controle los elementos del juego y pueda detectar solapamientos entre ellos.</li>
+<li>Rendimiento, debe incorporar técnicas de <strong>particionado del espacio</strong> para ahorrar recursos.</li>
+<li><strong>Filtrado de colisiones</strong>, el usuario debe poder definir clases de elementos de juego que pueden colisionar.</li>
+<li>Registro de <strong>callbacks</strong> para tipos de colisiones concretas. Por ejemplo, debe ser posible definir una función que será llamada automáticamente por el gestor de colisiones cuando un enemigo reciba el impacto de un hechizo.</li>
+</ul>
+<h3 id="alternativas-disponibles">Alternativas disponibles</h3>
+<p>Reinventar la rueda siempre es una mala idea así que lo primero que hice fue salir en busca de un sistema que se ajustase a mis necesidades. A continuación listo las alternativas disponibles junto con el motivo que me llevó a desecharlas.</p>
+<ul>
+<li><a href="http://www.ogre3d.org/tikiwiki/OgreBullet"><strong>Ogre Bullet</strong></a>: wrapper de la mastodóntica biblioteca de físicas <em>Bullet</em> para Ogre3D. Es multiplataforma (disponible en decenas de sistemas) y ofrece todas las funcionalidades que uno podría desear con una eficiencia envidiable. No obstante, era como matar moscas a cañonazos. Para empezar sólo me interesaba el subsistema de detección de colisiones, no el de físicas. Además, añadía nuevas dependencias al proyecto y aprender a utilizarla no iba a ser trivial.</li>
+<li><a href="http://www.ogre3d.org/tikiwiki/OgreODE"><strong>Ogre ODE</strong></a>: el correspondiente wrapper de <em>Open Dynamics Engine</em> para Ogre3D. Básicamente presenta las mismas ventajas e inconvenientes que la anterior. El problema es que el proyecto no está muy activo hablando suavemente.</li>
+<li><a href="http://www.ogre3d.org/forums/viewtopic.php?t=45267"><strong>MOC</strong></a>: <em>Minimal Ogre Collision</em> es una biblioteca tremendamente sencilla que proporciona al usuario lo mínimo para detectar colisiones. Se compone únicamente de dos ficheros sólo hay que añadir al proyecto. El problema es que obliga al uso del gestor de terrero ETM y no incluye callbacks.</li>
+<li><a href="http://www.ogre3d.org/forums/viewtopic.php?f=11&amp;t=59063&amp;sid=cc6db1211f8a5d839f73e2039a40711b"><strong>Beastie</strong></a>: sencilla biblioteca compuesta únicamente por un fichero de cabecera enfocada a la detección de colisiones entre formas básicas y raycasting (emisión de rayos sobre la escena). Su interfaz no me acababa de convencer y tampoco ofrece callbacks ni cuerpos compuestos de varias formas.</li>
+</ul>
+<p>Es cierto que podría haber hecho el esfuerzo y adaptarme a cualquiera de las cuatro bibliotecas anteriores (sobre todo a Beastie) pero como Sion Tower forma parte de mi Proyecto Fin de Carrera <strong>decidí que era mejor aprender los fundamentos</strong> de la detección de colisiones. Por supuesto era imprescindible mantener al mínimo la complejidad con el objetivo de no hacerme viejo antes de terminarla.</p>
+<p>Por el momento no ofrezco más que este pequeño aperitivo introductorio. En el próximo artículo de la serie veremos el diseño general de <strong>Sion Tower Collisions (STC)</strong>. Más adelante nos centraremos en cada uno de los componentes de dicho sistema.</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/">STC: Sion Tower Collisions v0.1</a>
       </h1>
       <span class="post-date">Feb 6, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/stc-sion-tower-collisions-v0-1/#disqus_thread">Comments</a>
@@ -243,29 +300,6 @@
       
     </div>
     
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/camino-a-la-libertad/">Camino a la libertad</a>
-      </h1>
-      <span class="post-date">Jan 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/camino-a-la-libertad/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/camino-a-la-libertad.jpg" alt="camino-a-la-libertad.jpg">
-
-</p>
-<p>Había algunas películas decentes en la cartelera y gracias a unos cartuchos vacíos de impresora las entradas nos iban a salir gratis por lo que la situación no pintaba nada mal. <a href="http://www.imdb.es/title/tt1023114/"><strong>Camino a la libertad</strong></a> <strong>de <a href="http://www.imdb.es/name/nm0001837/">Peter Wier</a></strong> fue la opción escogida y es que el director de <a href="http://www.imdb.es/title/tt0097165/">El club de los poetas muertos</a> y de <a href="http://www.imdb.es/title/tt0120382/">El show de Truman</a> daba bastante confianza. A continuación leerán (o cerrarán la pestaña del navegador) una pequeña reseña firmada por un pésimo crítico de cine.</p>
-<p>Camino a la libertad es un drama basado en la novela de Slavomir Rawicz <em>&ldquo;The long walk&rdquo;</em> que a su vez toma como fuente de inspiración hechos reales, igualito que las películas de Antena 3 un domingo por la tarde. Está ambientada en la Segunda Guerra Mundial y narra la historia de un grupo de presos fugados de un campo de trabajo soviético en plena Siberia. Mientras <strong>el frío cala en los huesos</strong> del espectador, los prófugos deben atravesar miles de kilómetros a pie hasta la frontera soportando mil penurias.</p>
-<p>Desde las montañas heladas hasta el desierto abrasador se interponen entre los sufridos viajeros y la libertad. Como hemos visto en otras muchas películas, en los momentos verdaderamente difíciles <strong>salen a reducir los instintos animales</strong> necesarios para sobrevivir. Cualquier hombre en esas circunstancias puede ser tan peligroso como un lobo acorralado. Es cierto que es un tema ya visto gana en interés por el <strong>excelente trabajo de fotografía</strong>. Tanto la belleza como la dureza de los variados entornos quedan perfectamente plasmadas en la cinta.</p>
-<p><strong>Considerable duración</strong> (133 minutos) teniendo en cuenta que sólo muestra una buena caminata, todo un atrevimiento. Para mi sorpresa no se hizo aburrida y, aunque tiene ciertos altibajos, la tensión no para de crecer. Olvidaos de acción a raudales o cualquier tipo de excesos, es una película sobria que cumple su cometido. Quizás podría achacarle la sensación de que <strong>algunas escenas no están bien enlazadas</strong> pareciendo un collage un poco caótico. El reparto no es muy conocido exceptuando a Collin Farrel y a Ed Harris, no me ha llamado la atención el trabajo de ninguno ni en el buen ni en el mal sentido.</p>
-<p>En definitiva, una buena película con un planteamiento distinto a lo que estamos acostumbrados a ver en cartelera. Manda narices pagar por ir a ver verdaderos truñacos y una vez que me sale el cine gratis merecía la pena.</p>
-
-      
-    </div>
-    
         <div class=pagination>
         <ul class="pagination">
             <li>
@@ -285,7 +319,7 @@
             </li>
             
             <li>
-                <a href="../../page/63/">»»</a>
+                <a href="../../page/64/">»»</a>
             </li>
         </ul>
     </div>
