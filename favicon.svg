@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   sodipodi:docname="favicon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.84961969"
+     inkscape:cx="124.17321"
+     inkscape:cy="297.78029"
+     inkscape:window-width="1536"
+     inkscape:window-height="960"
+     inkscape:window-x="0"
+     inkscape:window-y="148"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <g
+       id="g5031"
+       inkscape:export-filename="/Users/david/repos/dsaltares.github.io-dev/static/img/favicon.png"
+       inkscape:export-xdpi="155.24352"
+       inkscape:export-ydpi="155.24352">
+      <rect
+         style="fill:#20202f;fill-rule:evenodd;stroke-width:0.264583;fill-opacity:1"
+         id="rect31"
+         width="83.770325"
+         height="83.770325"
+         x="36.435421"
+         y="32.075626"
+         rx="7.9999948"
+         ry="7.9999948" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:61.7361px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+         x="41.109631"
+         y="95.56842"
+         id="text1898"><tspan
+           sodipodi:role="line"
+           id="tspan1896"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:61.7361px;font-family:'PT Sans';-inkscape-font-specification:'PT Sans Bold';fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+           x="41.109631"
+           y="95.56842">DS</tspan></text>
+    </g>
+  </g>
+</svg>
