@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.97.0" />
+	<meta name="generator" content="Hugo 0.97.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -101,6 +101,89 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/exploit-tileds-command-tool/">Exploit Tiled&#39;s command tool</a>
+      </h1>
+      <span class="post-date">Jun 30, 2013 &middot; 4 minute read &middot; <a href="https://saltares.com/games/exploit-tileds-command-tool/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/tiled.png" alt="tiled.png">
+
+</p>
+<p>Most of my spare time for the last month or so has gone to an Android pet project, which partially explains the lack of activity around here. However, such project gave me a little idea for a short tutorial flavoured article.</p>
+<h3 id="level-design-practically-a-synonym-of-iteration">Level design, practically a synonym of iteration</h3>
+<p>Everybody knows how essential iteration is for games development. Ideas tend to look awesome on paper, yet most of them perform poorly when implemented. Throwing away whole features and reworking others surely isn&rsquo;t new territory for you. Level designers probably know this better than anyone. Creating a <a href="http://www.youtube.com/watch?v=HNctAEfR97A">greybox level</a> and making hundreds of changes until it flows nicely and artist can know for sure where everything is going to be.</p>
+<p>Tools like <a href="http://www.crydev.net/index.php">CryEngine SandBox</a> allow lightning fast iteration by letting the creator jump into game straight from the editor to test setups. The change something and test it cycle flows incredibly nicely and no time is wasted with annoying loading screens.</p>
+<p>
+  <img src="../../img/wp/CryENGINE-inital-scene.jpg" alt="CryENGINE-inital-scene.jpg">
+
+</p>
+<h3 id="iteration-can-be-cumbersome">Iteration can be cumbersome</h3>
+<p>Nevertheless, I&quot;m using <a href="http://libgdx.badlogicgames.com/">libgdx</a> (check out the new website) along <a href="http://www.mapeditor.org/">Tiled</a> to make this pet project and things are different under this environment. Normally, one would go through the following process:</p>
+<ul>
+<li>Create a level with Tiled.</li>
+<li>Add it to the list of levels in the game. This could involve changed in an XML file or, much worse, fiddling with the source code.</li>
+<li>Launch the game and navigate the menus until you find the newly created level.</li>
+<li>Finally test it.</li>
+<li><em>&ldquo;Oh, I need to move this obstacle a bit to the left&rdquo;</em>.</li>
+<li>Back to 1, not before wishing to be stabbed in the face.</li>
+</ul>
+<p>You might think this is acceptable if a single iteration takes less than half a minute.</p>
+<p>Wrong!</p>
+<p>You&quot;ll be doing this a ridiculous number of times, so you better do yourself a favor and try shorten the process.</p>
+<h3 id="tiled-command-tool-at-your-service">Tiled command tool at your service</h3>
+<p>Luckily enough, we can use Tiled to execute any command passing the map file we&quot;re currently editing as a parameter from its main UI panel, it&rsquo;s almost as good as what CryEngine does. It only requires a little effort on our side, as the game needs to accept command line parameters and interpret them, we&quot;ll get to that later.</p>
+<p>First, click on the gears icon in Tiled and then select <em>Edit Commands</em>. Create a new one and name it <em>Run level</em> for instance. The command will be executed from the Tiled folder, Program Files in my case. That&rsquo;s why I&quot;m using absolute paths to reach my game&rsquo;s executable.</p>
+<pre tabindex="0"><code>java -jar E:projectsmathmazemath.jar %mapfile
+</code></pre><p>
+  <img src="../../img/wp/tiled-command.png" alt="tiled-command.png">
+
+</p>
+<p>The <em>%mapfile</em> string is replaced by the absolute path to our level when the command is executed.</p>
+<p>Now it&rsquo;s time to make the game accept an absolute path as a parameter and load a specific level when that happens, without going through all the menus. In my case I did something similar to this.</p>
+<pre tabindex="0"><code>public class Main {
+	public static void main(String[] args) {
+		String level =  args.length &gt; 0 ? args[0] : &#34;&#34;;
+		new LwjglApplication(new MyGame(level), new LwjglApplicationConfiguration());
+	}
+}
+</code></pre><p>Then, in <em>MyGame</em> create method.</p>
+<pre tabindex="0"><code>if (!mapFile.empty() {
+	Level level = new Level(mapFile);
+	gameScreen.setLevel(level);
+	gameScreen.setDebug(true);
+	setScreen(gameScreen);
+}
+else {
+	setScreen(splashScreen);	
+}
+</code></pre><p>Within <em>GameScreen</em> I had to detect whether we were in debug mode and, if so, think of the level as an absolute path.</p>
+<pre tabindex="0"><code>if (isDebug()) {
+	mapLoader = new TmxMapLoader(new AbsoluteFileHandleResolver());
+}
+else {
+	mapLoader = new TmxMapLoader();
+}
+
+TiledMap map = mapLoader.load(getLevel());
+</code></pre><p>I noticed that libgdx doesn&rsquo;t include an absolute path file handle resolver, so I created it. Otherwise, it&quot;d think the file path is of the relative kind.</p>
+<pre tabindex="0"><code>public class AbsoluteFileHandleResolver implements FileHandleResolver {
+	@Override
+	public FileHandle resolve(String fileName) {
+		return Gdx.files.absolute(fileName);
+	}
+}
+</code></pre><p>The last step was to export the game as a runnable jar to make it accessible from Tiled. After this, we can now finally run our level directly just by clicking on the gears icon. It requires some initial investment but I can assure you it pays off.</p>
+<p>Easy as pie and fast!</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -644,34 +727,6 @@
 <p>On a side note, Mario from libgdx, put together a simple <a href="https://github.com/badlogic/ldstats">tool</a> to search Ludum Dare games as an experiment to see how many people used the library. It&rsquo;s ridiculously popular, shocker!</p>
 <p>That&rsquo;s brilliant. Now onto some games rating.</p>
 <p>This time I&quot;m going to try vote as many games as possible (30 entries so far). Towards that end, I think this <a href="http://www.ludumdare.com/compo/2013/04/30/the-ludum-dare-drinking-game/comment-page-1/">Ludum Dare based drinking game</a> could help a lot!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/ludum-dare-26-im-in/">Ludum Dare #26: I&#34;m in!</a>
-      </h1>
-      <span class="post-date">Apr 22, 2013 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ludum-dare-26-im-in/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/Ludum-Dare.jpg" alt="Ludum-Dare-featured-image-thumb-478x222-3939.jpg">
-
-</p>
-<p><a href="../../games/ld24-evolution-postmortem/" title="LD#24 – Evolution Postmortem">Ludum Dare #24</a> was my first game jam, an experience I found most enjoyable. Sadly, I couldn&rsquo;t make it to its 25th edition. However, unless something major happens, I&quot;m totally in for <a href="http://www.ludumdare.com/compo/category/ld-26/">Ludum Dare #26</a> which will take place next weekend. Aiming at respecting tradition I shall post my arsenal of choice, unsurprisingly, they are as follow.</p>
-<ul>
-<li><strong>Environment</strong>: Java + Eclipse.</li>
-<li><strong>Libraries</strong>: libgdx &amp; friends, maybe something from my <a href="https://github.com/dsaltares">codebase</a>.</li>
-<li><strong>Graphics</strong>: Inkscape, TexturePacker and Flash if I require animations.</li>
-<li><strong>Audio</strong>: Audacity and the dodgy effects produced by sfxr.</li>
-<li><strong>Others</strong>: depending on game details I could use Tiled for level design, Photoshop.</li>
-</ul>
-<p>The goal is to finish a game that sucks as less as possible while retaining my mental sanity and some physical health. That means going for a jog each day and keeping the caffeine intake under control.</p>
-<p>Keeping things short, I&quot;ll be posting progress updates on <a href="https://twitter.com/siondream">Twitter</a> all weekend and a proper postmortem article will follow on this very blog.</p>
 
       
     </div>

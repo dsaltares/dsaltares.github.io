@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.97.0" />
+	<meta name="generator" content="Hugo 0.97.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -101,6 +101,108 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/">Easily deploy your Hugo site to Github Pages</a>
+      </h1>
+      <span class="post-date">Jan 17, 2020 &middot; 3 minute read &middot; <a href="https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      <p>I had been using a <a href="https://www.digitalocean.com/products/droplets/">DigitalOcean</a> droplet to host this blog and personal projects for years. But&hellip; Do I really need to spend the $6/month? It&rsquo;s just a static <a href="https://gohugo.io/">Hugo</a> site, which <a href="https://pages.github.com/">Github pages</a> can do for free. Game hosting on <a href="https://david-saltares.itch.io/">itch.io</a> is also free, it even gives you a mechanism to embed your web games. Looks like I&rsquo;d be sorted!</p>
+<p>Here&rsquo;s a simple CD workflow for deploying a Huge site to Github pages.</p>
+<h3 id="setup-your-production-github-pages-repo">Setup your production Github pages repo</h3>
+<p>Create a Github repo with the name <code>&lt;username&gt;.github.io</code>. Make sure it has a <code>README.md</code> so that you can start pushing to it. Anything pushed to this repo will be accessible from <code>http://&lt;username&gt;.github.io</code>. This will be your production repository. If you have a PRO Github account, you can make the repo private. This means users will be able to access the <code>github.io</code> site but not the repo sources.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/production-repo.png" alt="dsaltares.github.io">
+
+</p>
+<h3 id="create-your-dev-repository">Create your dev repository</h3>
+<p>Create a new repo to host your dev Hugo site from which we will deploy to the production repo. Name it something like <code>&lt;username&gt;.github.io-dev</code>. That&rsquo;s where you will write your Hugo pages in Markdown.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/dev-repo.png" alt="dsaltares.github.io-dev">
+
+</p>
+<h3 id="configure-the-cd-pipeline">Configure the CD pipeline</h3>
+<p>Whenever we push to our dev repo, we will build the site and deploy it to the production repo. For that, we will leverage <a href="https://github.com/features/actions">Github Actions</a>. For the dev repo to publish to the production repo, we need them to exchange keys.</p>
+<p>Generate a public/private key pair.</p>
+<pre tabindex="0"><code>ssh-keygen -t rsa -b 4096 -C &#34;&lt;email&gt;&#34; -f publish_key -P &#34;&#34;
+</code></pre><p>Now, go to the production repo Settings, Deploy keys and paste the contents of <code>publish_key.pub</code> here.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/deploy-keys.png" alt="deploy_keys">
+
+</p>
+<p>Go to the dev repo Settings, Secrets and add a new secret called <code>ACTIONS_DEPLOY_KEY</code> with the contents of the <code>publish_key</code> file.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/secrets.png" alt="secrets">
+
+</p>
+<p>Create a <code>.github/workflows/deploy.yml</code> file in your dev repo with the following contents:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">&lt;username&gt;/&lt;repository&gt;.github.io</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
+</span></span></code></pre></div><p>After you push this file and every time you push to dev, the <code>Build and Deploy</code> action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it&rsquo;s done, the latest version of your site will be available on <code>https://&lt;username&gt;.github.io</code>.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/actions.png" alt="actions">
+
+</p>
+<p>Even though my blog contains hundreds of posts, images and files, <code>Build and Deploy</code> takes less than 1 minute!</p>
+<h3 id="make-your-domain-point-to-your-github-pages">Make your domain point to your Github Pages</h3>
+<p>Obviously, this step only applies if you have your own domain. Go to your provider&rsquo;s admin panel and change your domain&rsquo;s DNS records.</p>
+<ul>
+<li>Enter 4 <code>A</code> records with <code>@</code> hosts and the Github Pages IPs:
+<ul>
+<li><code>185.199.108.153</code></li>
+<li><code>185.199.109.153</code></li>
+<li><code>185.199.110.153</code></li>
+<li><code>185.199.111.153</code></li>
+</ul>
+</li>
+<li>Enter a <code>CNAME</code> record with <code>www</code> and value <code>&lt;username&gt;.github.io</code>.</li>
+</ul>
+<p>The screenshot below shows the Namecheap DNS config panel for my account.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/dns-config.png" alt="dsaltares.github.io">
+
+</p>
+<p>Finally, go to your dev repo and create a <code>static/CNAME</code> file with your domain name. For example, mine contains:</p>
+<pre tabindex="0"><code>saltares.com
+</code></pre><p>Once that is done and deployed to production, you should see the following in your production repository Settings, inside the Github Pages section. Tick the &ldquo;Enforce HTTPS&rdquo; to redirect all traffic from <code>http://&lt;domain&gt;</code> to <code>https://&lt;domain&gt;</code>.</p>
+<p>
+  <img src="../../img/gh-pages-workflow/gh-pages-section.png" alt="gh-pages-section">
+
+</p>
+<p>Note that this may take up to 24h to work as your new DNS settings propagate, so be patient!</p>
+<h3 id="done">Done!</h3>
+<p>It takes some setup but the result is a pretty convenient workflow, definitely an improvement over the <a href="../../general/migration-from-wordpress-to-hugo/">git hook based setup</a> I had before.</p>
+<p>Let me know if you have any issues with this!</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -475,64 +577,6 @@ the food and free beer!</p>
 </ul>
 <p>Some of the others are still yet to be made available on the
 <a href="https://www.youtube.com/channel/UCzoVCacndDCfGDf41P-z0iA">JSConf Youtube channel</a>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/ludum-dare-38-theme-ideas/">Ludum Dare 38 - Theme ideas</a>
-      </h1>
-      <span class="post-date">Apr 20, 2017 &middot; 2 minute read &middot; <a href="https://saltares.com/games/ludum-dare-38-theme-ideas/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a>
-      </span>
-      
-      <p>
-  <img src="../../img/ld38/ludumdare.png" alt="ludum-dare-logo">
-
-</p>
-<p><a href="https://ldjam.com/events/ludum-dare/38">Ludum Dare 38</a> starts in a couple of hours.
-This one is special as it marks the 15th anniversary of the biggest weekend
-game development friendly competition in the world!</p>
-<p>If you don&rsquo;t know about Ludum Dare and are interested, check the
-<a href="https://www.youtube.com/watch?v=Hrkv31Lep9s">documentary</a> they just released.</p>
-<p>I was thinking of participating using <a href="https://godotengine.org/">Godot Engine</a>.
-I have a couple of social compromises this weekend and, honestly, I am a bit
-scared of failing miserably, so I&rsquo;m not too sure how far I&rsquo;ll take this one.</p>
-<h3 id="theme">Theme</h3>
-<p>The initial <a href="https://ldjam.com/events/ludum-dare/38/theme">theme voting</a> stages
-have taken place throughout the week and now it&rsquo;s down to the final round. The
-final theme will be announced right when the competition starts.</p>
-<p>16 themes made it into the final round, I picked my top 5 and came up with
-quick pitches for each one of them. I know, some call this cheating but
-chances of success and for any of these themes to win are rather slim anyway!</p>
-<h4 id="parallel-dimensions">Parallel Dimensions</h4>
-<p>Split-screen platformer where you control the same character in two
-parallel universes. Simple but slightly different levels. The goal is to
-reach the end, however hazards may be placed in different locations and both
-characters need to make it alive.</p>
-<p>Inspiration: <a href="https://play.google.com/store/apps/details?id=com.kronbits.ninjatwins&amp;hl=en">Ninja Twins</a></p>
-<h4 id="pausing-has-consequences">Pausing has Consequences</h4>
-<p>Rogue-like that becomes increasingly harder the longer you take to
-find the exit to each level. Enemies keep respawning.</p>
-<p>Inspiration: <a href="https://play.google.com/store/apps/details?id=com.orangepixel.dungeon&amp;hl=en_GB">Heroes of Loot</a>
-and <a href="http://www.l4d.com/blog/">Left 4 Dead</a>.</p>
-<h4 id="two-colors">Two Colors</h4>
-<p>Visceral top-down action game where everything is grayscale except for blood.</p>
-<p>Inspiration: <a href="http://store.steampowered.com/agecheck/app/219150/">Hotline Miami</a>
-meets <a href="http://www.imdb.com/title/tt0401792/">Sin City</a>.</p>
-<h4 id="island">Island</h4>
-<p>You&rsquo;re a castaway who must survive in a procedurally generated island. Find food,
-shelter, craft tools and keep threats off.</p>
-<p>Inspiration: <a href="http://store.steampowered.com/app/313120/">Stranded Deep</a> and
-<a href="http://www.imdb.com/title/tt0162222/">Castaway</a></p>
-<h4 id="everything-has-a-cost">Everything has a Cost</h4>
-<p>Strategy card game where you&rsquo;re a stock broker. Climb up the ladder,
-make money or get fired. Stay honest or rot in jail!</p>
-<p>Inspiration: <a href="https://play.google.com/store/apps/details?id=com.devolver.reigns&amp;hl=en_GB">Reigns</a></p>
-<p>Good luck everybody!</p>
 
       
     </div>

@@ -6,7 +6,73 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Mistakes I have made as an engineering leader</title>
+      <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
+      <description>By Sarah Kilian on Unsplash  To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
+Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/ruined_ice_cream.jpg&#34; alt=&#34;Dropped ice cream cone&#34;&gt;
+    &lt;figcaption&gt;By Sarah Kilian on &lt;a href=&#34;https://unsplash.com/photos/52jRtc2S_VE&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to &lt;a href=&#34;./a-template-for-great-incident-reviews&#34;&gt;reflect and learn from mistakes&lt;/a&gt;, so that our system becomes more robust and we grow as professionals.&lt;/p&gt;
+&lt;p&gt;Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.&lt;/p&gt;
+&lt;h3 id=&#34;1-skipping-1-1s&#34;&gt;1. Skipping 1-1s&lt;/h3&gt;
+&lt;p&gt;Skipping 1-1s was never really a habit for me. I’ve always made it a priority to be available for my team. However, I’ve had reports who didn’t take enough ownership over their 1-1s. When that time of the week came, I would sometimes get a chat message:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hey, I don’t have anything for 1-1 today. Shall we skip it?&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;We were super busy, so agreeing was highly tempting. In doing so, I was missing out on the opportunity to:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Share my expectations and feedback around 1-1 ownership.&lt;/li&gt;
+&lt;li&gt;Empower and motivate the individual.&lt;/li&gt;
+&lt;li&gt;Set goals and maintain accountability.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Later, I learned to ask &lt;a href=&#34;https://lauratacho.com/blog/how-can-i-make-my-1-1s-less-boring&#34;&gt;better questions&lt;/a&gt;, put the individuals in the driver&amp;rsquo;s seat, and make the most of 1-1s.&lt;/p&gt;
+&lt;h3 id=&#34;2-underestimating-having-a-clear-technology-strategy&#34;&gt;2. Underestimating having a clear technology strategy&lt;/h3&gt;
+&lt;p&gt;Many managers dictate and involve themselves in every technical decision their teams make. I want to empower my teams to make their own decisions and genuinely have agency over the software they build, ship and maintain. However, for multiple squads to do that consistently, you need a couple of things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Excellent communication across teams/squads.&lt;/li&gt;
+&lt;li&gt;A clear technology vision and strategy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It took me too long to support my teams by sharing a clear technology vision and strategy that would become the principles on which they could base technical decisions. Once I did that, it felt like magic. We were all rowing our technology in the same direction.&lt;/p&gt;
+&lt;p&gt;It doesn’t need to be too comprehensive. Just be clear about the kinds of tradeoffs you want the team to make. I will dive deeper into this one at some point with a separate article.&lt;/p&gt;
+&lt;h3 id=&#34;3-not-setting-clear-expectations&#34;&gt;3. Not setting clear expectations&lt;/h3&gt;
+&lt;p&gt;There have been instances where an individual was surprised when receiving feedback from me. That is usually a robust signal that expectations were not clear enough. As long as expectations are clear, folks have enough self-awareness to reflect and identify a problem after receiving feedback about something not working out great.&lt;/p&gt;
+&lt;p&gt;Making the expectations of each role in your organization public is a fantastic tool.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Help everyone understand what is expected of them.&lt;/li&gt;
+&lt;li&gt;Increase equity, people in the same role are not evaluated against different standards.&lt;/li&gt;
+&lt;li&gt;Greater understading of what it takes to progress.&lt;/li&gt;
+&lt;li&gt;When shared externally, it can be a great recruiting tool.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, you should complement this with &lt;a href=&#34;https://themanagershandbook.com/coaching-and-feedback/running-one-on-ones&#34;&gt;great 1-1 sessions&lt;/a&gt;, good cross-team understanding of roles and responsibilities, etc.&lt;/p&gt;
+&lt;h3 id=&#34;4-not-hiring-engineering-managers-first&#34;&gt;4. Not hiring Engineering Managers first&lt;/h3&gt;
+&lt;p&gt;Back in January 2021, I found myself in the position to increase capacity fast. To do that, I had to &lt;a href=&#34;./how-to-hire-8-engineers-in-8-weeks&#34;&gt;grow the Aula engineering team from 7 to 25 in record time&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Yikes!&lt;/p&gt;
+&lt;p&gt;I knew hiring Engineers was hard, but finding fantastic Engineering Managers (EMs) is much worse. In Europe, managers also tend to have longer notice periods, up to 3 months!. The pressure to increase capacity was so high that I mistakenly prioritized individual contributor (IC) roles over the manager ones.&lt;/p&gt;
+&lt;p&gt;As a consequence, my team grew well beyond my management capacity. If I remember correctly, I had 15 reports at one point. I still had to do all these Engineering Manager interviews, so the quality of my feedback went down, and it became increasingly hard to help the team push in the same direction.&lt;/p&gt;
+&lt;p&gt;What would have happened if I had focused on increasing managerial capacity first? Maybe short-term velocity would not have gone up, but I would have achieved a few things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Much higher hiring capacity with lower pressure on ICs.&lt;/li&gt;
+&lt;li&gt;Significant improvements to feedback.&lt;/li&gt;
+&lt;li&gt;Greater alignment across product squads.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-not-investing-enough-in-team-building&#34;&gt;5. Not investing enough in team building&lt;/h3&gt;
+&lt;p&gt;In a rapidly growing organization, folks start working closely with other people they do not know at all. Even though everyone works hard, software delivery does not progress as expected.&lt;/p&gt;
+&lt;p&gt;There is no trust.&lt;/p&gt;
+&lt;p&gt;Not because you hired the wrong people, but simply because you have made no room for individuals to build trust with each other. Thanks to the feedback I received, we invested much more in getting to know each other and building that trust. The team gelled and worked much more effectively together after that.&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading. Hopefully, some of these have provided you with some insight.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>A playbook for calm incident response</title>
       <link>https://saltares.com/a-playbook-for-calm-incident-response/</link>
@@ -565,91 +631,6 @@ I wanted to keep the component that controls the layout as simple as possible, s
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first effect measures the vertical offset of the element we want to fix at the top after it&amp;rsquo;s scrolled past. The second one listens to the &lt;code&gt;scroll&lt;/code&gt; event and determines whether we have scrolled past the element&amp;rsquo;s top edge and it needs to become sticky.&lt;/p&gt;
 &lt;p&gt;🙌 Hope this is useful!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
-      <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
-      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
-      <description>NextAuth.js makes it shockingly easy to add authentication to Next.js apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including one time passwords or &amp;ldquo;magic links&amp;rdquo;.
-Working with NextAuth.js is trivial, it sounds too good to be true!
-Of course, there is a catch&amp;hellip;
-The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
-      <content>&lt;p&gt;
-  &lt;img src=&#34;./img/nextjs/nextauth.png&#34; alt=&#34;NextAuth.js logo&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://next-auth.js.org/&#34;&gt;NextAuth.js&lt;/a&gt; makes it shockingly easy to add authentication to &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including &lt;a href=&#34;https://en.wikipedia.org/wiki/One-time_password&#34;&gt;one time passwords&lt;/a&gt; or &amp;ldquo;magic links&amp;rdquo;.&lt;/p&gt;
-&lt;p&gt;Working with NextAuth.js is trivial, it sounds too good to be true!&lt;/p&gt;
-&lt;p&gt;Of course, there is a catch&amp;hellip;&lt;/p&gt;
-&lt;p&gt;The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.&lt;/p&gt;
-&lt;p&gt;You can fix that with a local SMTP server! Let&amp;rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;-set-up-nextauthjs-with-the-emailprovider&#34;&gt;🔐 Set up NextAuth.js with the &lt;code&gt;EmailProvider&lt;/code&gt;&lt;/h3&gt;
-&lt;p&gt;Let&amp;rsquo;s assume you already have a Next.js application. If you don&amp;rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the &lt;code&gt;EmailProvider&lt;/code&gt; in &lt;code&gt;/pages/api/auth/[...nextauth].js&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-ts&#34; data-lang=&#34;ts&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;next-auth/providers/email&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;NextAuth&lt;/span&gt;({
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;providers&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;EmailProvider&lt;/span&gt;({
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;server&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;host&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_HOST&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;port&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PORT&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;auth&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_USER&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;pass&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;process.env.EMAIL_SERVER_PASSWORD&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      },
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;from&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;NextAuth &amp;lt;noreply@example.com&amp;gt;&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }),
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For the &lt;code&gt;EmailProvider&lt;/code&gt; to work, you also need to install the &lt;code&gt;nodemailer&lt;/code&gt; package.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn add nodemailer
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Remember that you also need to provide an &lt;a href=&#34;https://next-auth.js.org/adapters/overview&#34;&gt;Adapter&lt;/a&gt; to NextAuth.js so that it can persist data. In &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9&#34;&gt;my example&lt;/a&gt;, I use the &lt;a href=&#34;https://next-auth.js.org/adapters/prisma&#34;&gt;&lt;code&gt;PrismaAdapter&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;-set-up-your-local-smtp-server&#34;&gt;📬 Set up your local SMTP server&lt;/h3&gt;
-&lt;p&gt;We&amp;rsquo;re going to use &lt;a href=&#34;https://github.com/mailhog/MailHog&#34;&gt;MailHog&lt;/a&gt;, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!&lt;/p&gt;
-&lt;p&gt;Create a &lt;code&gt;docker-compose.yaml&lt;/code&gt; file or update your existing one and define the MailHog service.&lt;/p&gt;
-&lt;p&gt;Using Docker Compose to run your database locally is a pretty good idea! In my &lt;a href=&#34;https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog&#34;&gt;example repo&lt;/a&gt; I went for a containerised PostgreSQL database.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;version&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;3.9&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;services&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;mailhog&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;image&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;mailhog/mailhog&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;logging&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#f92672&#34;&gt;driver&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;none&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# disable saving logs&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;ports&lt;/span&gt;:
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;1025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# smtp server&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      - &lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt;:&lt;span style=&#34;color:#ae81ff&#34;&gt;8025&lt;/span&gt; &lt;span style=&#34;color:#75715e&#34;&gt;# web ui&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Add a couple of convenience scripts to your &lt;code&gt;package.json&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-json&#34; data-lang=&#34;json&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;scripts&amp;#34;&lt;/span&gt;: {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:up&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose up -d&amp;#34;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;&amp;#34;docker:down&amp;#34;&lt;/span&gt;: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;docker compose down&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Edit your local &lt;code&gt;.env&lt;/code&gt; file to configure the NextAuth.js &lt;code&gt;EmailProvider&lt;/code&gt;. Leave everything as below.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;EMAIL_SERVER_HOST=localhost
-EMAIL_SERVER_PORT=1025
-EMAIL_SERVER_USER=email-user
-EMAIL_SERVER_PASSWORD=email-pass
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;-local-workflow&#34;&gt;💻 Local workflow&lt;/h3&gt;
-&lt;p&gt;Bring up your containers and start the local development server.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ yarn docker:up &lt;span style=&#34;color:#f92672&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; yarn dev
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Go to &lt;code&gt;https://localhost:3000&lt;/code&gt;, click Sign in and enter your email.&lt;/p&gt;
-&lt;p&gt;
-  &lt;img src=&#34;./img/nextjs/nextauth-login.png&#34; alt=&#34;NextAuth.js login screen&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;Now you can open &lt;code&gt;http://localhost:8025/&lt;/code&gt; and see the email with the magic link.&lt;/p&gt;
-&lt;p&gt;
-  &lt;img src=&#34;./img/nextjs/mailhog.png&#34; alt=&#34;MailHog inbox&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;🎉 That&amp;rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.&lt;/p&gt;
 </content>
     </item>
     

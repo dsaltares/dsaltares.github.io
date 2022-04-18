@@ -6,7 +6,17 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 28 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5 Mistakes I have made as an engineering leader</title>
+      <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</link>
+      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
+      <description>By Sarah Kilian on Unsplash  To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
+Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
+    </item>
+    
     <item>
       <title>A playbook for calm incident response</title>
       <link>https://saltares.com/a-playbook-for-calm-incident-response/</link>
@@ -105,18 +115,6 @@ Tools and processes to build software have changed a fair bit over the last two 
 Like so.
  Making the navigation bar position: fixed; top 0; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.
 I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a useSticky hook.</description>
-    </item>
-    
-    <item>
-      <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
-      <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
-      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
-      <description>NextAuth.js makes it shockingly easy to add authentication to Next.js apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including one time passwords or &amp;ldquo;magic links&amp;rdquo;.
-Working with NextAuth.js is trivial, it sounds too good to be true!
-Of course, there is a catch&amp;hellip;
-The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local.</description>
     </item>
     
   </channel>

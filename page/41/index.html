@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.97.0" />
+	<meta name="generator" content="Hugo 0.97.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -101,6 +101,39 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/">Colisiones y física con OgreBullet en IberOgre</a>
+      </h1>
+      <span class="post-date">Apr 4, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/bullet_logo.png" alt="bullet_logo.png">
+
+</p>
+<p><strong>Vuelve la actividad a la wiki de Ogre en español</strong> gracias a Alberto Cejas Sánchez. El compañero responsable del proyecto <em><a href="http://futbolesasi.wordpress.com/">Fútbol es Así</a></em> estaba trabajando en la detección de colisiones para su videojuego y finalmente decidió utilizar el wrapper de <a href="http://bulletphysics.org/wordpress/">Bullet</a> para Ogre. Tras dar los primeros pasos ha publicado <strong><a href="http://osl2.uca.es/iberogre/index.php/Colisiones_y_F%C3%ADsicas_con_OgreBullet">&ldquo;Colisiones y físicas con OgreBullet&rdquo;</a></strong>. Por el momento ha publicado la instalación en GNU/Linux (de la que no existía apenas información) y Windows, más adelante irá completando el artículo. Muchísimas gracias a Alberto por su nueva colaboración.</p>
+<p>
+  <img src="../../img/wp/gtaiv.jpg" alt="gtaiv.jpg">
+
+</p>
+<p>Bullet es una de las bibliotecas libres (licencia zlib) de <strong>detección de colisiones y simulaciones físicas</strong> más potentes que existe. Por su extrema capacidad me pareció excesivo utilizarlo en Sion Tower ya que no requería interacciones físicas. No obstante, cualquier interesado en incorporar este elemento en su videojuego debería considerar utilizar Bullet. Entre sus <strong>características</strong> se encuentran:</p>
+<ul>
+<li>Colisiones entre cuerpos rígidos y blandos de forma discreta o continua.*   Varias formas básicas: esferas, cajas, cilindros, conos, poliedro convexos, etc.*   Simulación de ropa, cuerdas y objetos deformables.*   Restricciones para cuerpos más realistas.</li>
+</ul>
+<p>Bullet se ha <strong>utilizado en decenas de proyectos</strong> de renombre como Blender, Cinema 4D, Grand Theft Auto IV o Trials HD. En el siguiente vídeo podéis ver un pequeño ejemplo del potencial de la biblioteca.</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://player.vimeo.com/video/14626222" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="vimeo video" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -221,106 +254,6 @@
 <p>En este vídeo queda patente de nuevo el gran trabajo que está llevando a cabo <a href="http://ajr-portafolio.blogspot.com/">AJR</a> en Sion Tower. Se muestran <strong>las animaciones del protagonista y el Goblin</strong> del juego en una sencilla secuencia para que podáis verlas con claridad.</p>
 <p>Esto nos lleva a pensar en el proceso de exportación de los modelos <strong>desde Cinema 4D a Ogre</strong> y Blender para su liberación. Tras intercambiar decenas de correos con el desarrollador del plugin que realiza la tarea <strong>he obtenido texturas y animaciones correctas</strong>. Cuando solucione un par de detalles os mostraré un nuevo vídeo con el personaje dentro del propio juego.</p>
 <p>En temas de código estoy <strong>trabajando en la búsqueda de caminos</strong> para los enemigos mediante una malla de navegación. Será posible diseñar una maya de triángulos en Blender para indicarle al motor las zonas accesibles del escenario. Una vez cargado en el sistema, será posible trazar rutas óptimas para el movimiento de los personajes.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/computing/graficas-en-python-con-pycha/">Gráficas en Python con PyCha</a>
-      </h1>
-      <span class="post-date">Mar 27, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/graficas-en-python-con-pycha/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/computing">Computing</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/titulo-pycha.png" alt="titulo-pycha.png">
-
-</p>
-<p>En una práctica de la Universidad pedían medir los tiempos de ejecución de un algoritmo paralelo empleando un número diferente de hilos en cada ocasión. En la correspondiente memoria debía aparecer una comparativa del rendimiento así que decidí adjuntar una gráfica para ilustrarlo mejor. Introducir los datos a manubrio iba a ser horriblemente tedioso. Me entró el gusanillo y me hice un sencillo <strong>script en Python que genera la gráfica utilizando <a href="https://bitbucket.org/lgs/pycha/">PyCha</a></strong>. A continuación más información sobre esta genial biblioteca.</p>
-<h3 id="pycha-eso-suena-muy-mal">¿PyCha? Eso suena muy mal</h3>
-<p><strong><a href="https://bitbucket.org/lgs/pycha/">PyCha</a> (Python Charts) es una biblioteca libre</strong> (LGPL) creada por Lorenzo Gil que nos ayuda a <strong>generar gráficas con <a href="http://en.wikipedia.org/wiki/Cairo_(graphics)">Cairo</a></strong>. A cambio de no incorporar un gran número de opciones resulta fácil de usar, lo cual es una gran ventaja. El único defecto que le veo es que no todas las opciones están documentadas. A pesar de ello, aprender a usar PyCha no me llevó más de diez minutos.</p>
-<h3 id="instalación-de-pycha-en-debian">Instalación de PyCha en Debian</h3>
-<p>Instalar PyCha en un sistema basado en Debian como Ubuntu es <strong>harto sencillo</strong>. Partamos de que no cuentas con el intérprete ni el gestor de paquetes de Python, <a href="http://es.wikipedia.org/wiki/EasyInstall">EasyInstall</a>. Sólo has de seguir los siguientes pasos:</p>
-<ol>
-<li>Instalar Python junto a EasyInstall:</li>
-</ol>
-<pre tabindex="0"><code>sudo apt-get install python-dev python-setuptools build-essential
-</code></pre><ol start="2">
-<li>Descargar e instalar PyCha:</li>
-</ol>
-<pre tabindex="0"><code>sudo eassy_install pycha
-</code></pre><h3 id="generando-una-gráfica-con-pycha">Generando una gráfica con PyCha</h3>
-<p>Construir una gráfica en PyCha no tiene complicación alguna. A continuación <strong>vamos a mostrar un ejemplo</strong> aunque puedes consultar la <a href="http://packages.python.org/pycha/">documentación oficial</a> para más detalles. En el siguiente script obtendremos un diagrama de barras con el número de videojuegos que poseo en función de su género (cifras inventadas).</p>
-<pre tabindex="0"><code>#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import cairo
-import pycha.bar
-
-def main():
-    # Ancho y alto de la gráfica
-    width, height = (550, 310)
-
-    # Superficie cairo
-    surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, width, height)
-
-    # Tomamos los datos
-    data = [(&#39;Simulación&#39;, 2),
-            (&#39;Plataformas&#39;, 5),
-            (&#39;Estrategia&#39;, 8),
-            (&#39;Deporte&#39;, 3),
-            (&#39;Acción&#39;, 10),
-            (&#39;Puzzle&#39;, 1)]
-
-    # Los cargamos en el dataSet
-    dataSet = (
-        (&#39;Puntos&#39;, [(i, l[1]) for i, l in enumerate(data)]),
-    )
-
-    # Opciones de la gráfica
-    ticks = [dict(v=i, label=l[0]) for i, l in enumerate(data)]
-    options = {
-        &#39;legend&#39;: {&#39;hide&#39;: True},
-        &#39;axis&#39;: {
-            &#39;x&#39;: {
-                &#39;ticks&#39;: ticks,
-                &#39;label&#39;: &#39;Género&#39;,
-            },
-            &#39;y&#39;: {
-                &#39;tickCount&#39;: 5,
-                &#39;label&#39;: &#39;Número&#39;,
-            }
-        },
-        &#39;background&#39;: {
-            &#39;chartColor&#39;: &#39;#f3f9fb&#39;,
-            &#39;lineColor&#39;: &#39;#d1e5ec&#39;
-        },
-        &#39;colorScheme&#39;: {
-            &#39;name&#39;: &#39;gradient&#39;,
-            &#39;args&#39;: {
-                &#39;initialColor&#39;: &#39;blue&#39;,
-            },
-        },
-    }
-
-    # Creamos la gráfica 
-    chart = pycha.bar.VerticalBarChart(surface, options)
-    chart.addDataset(dataSet)
-    chart.render()
-
-    # La guardamos en un fichero .png
-    surface.write_to_png(&#39;chart.png&#39;)
-
-if __name__ == &#34;__main__&#34;:
-    main()
-</code></pre><p>El resultado es el siguiente:</p>
-<p>
-  <img src="../../img/wp/chart.png" alt="chart.png">
-
-</p>
 
       
     </div>

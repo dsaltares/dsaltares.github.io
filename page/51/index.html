@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.97.0" />
+	<meta name="generator" content="Hugo 0.97.2" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -101,6 +101,70 @@
 <div class="content container">
   <div class="posts">
     
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/">Sistema de audio pseudo-3D integrado con Ogre</a>
+      </h1>
+      <span class="post-date">Dec 30, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      <p>
+  <img src="../../img/wp/audio3d-ogre1.png" alt="audio3d-ogre1.png">
+
+</p>
+<p>Como todo buen hijo de vecino, <strong><a href="../../category/proyectos/pfc/sion-tower/">Sion Tower</a> necesitará reproducir efectos de sonido y música</strong> de fondo, de otro modo al jugador se le caerían dos lagrimones y lo cerraría para siempre. Ogre es un motor de renderizado y no incorpora elementos como un subsistema de audio, por tanto, debía buscarlo en otro lugar. Como he comentado anteriormente, Ogre cuenta con un sistema de gestión de recursos muy potente y ampliable. Sobra decir que mi audio debería <strong>integrarse completamente</strong> con dicho sistema. A continuación, relato mi pequeña odisea para conseguir lo deseado.</p>
+<h3 id="elegir-una-biblioteca-de-audio">Elegir una biblioteca de audio</h3>
+<p>Debía elegir una biblioteca para gestionar el audio, al menos a bajo nivel. <strong>Las opciones más evidentes eran <a href="http://es.wikipedia.org/wiki/Simple_DirectMedia_Layer#Componentes_adicionales">SDL Mixer</a> y <a href="http://es.wikipedia.org/wiki/OpenAL">OpenAL</a></strong>. Indagando un poco, encontré una biblioteca auxiliar llamada <strong><a href="http://www.ogre3d.org/tikiwiki/OgreOggSound&amp;structure=Libraries">OgreOggSound</a></strong> que integraba OpenAL con Ogre incorporando audio 3D. Los ojos se me abrieron como platos pero me llevé una decepción cuando vi que la documentación brillaba por su ausencia. Además, <strong>prefería aprender</strong> la forma de extender la gestión de recursos de Ogre y cacharrear un poco con el audio.</p>
+<p><strong>OpenAL</strong> es al sonido lo que OpenGL al 3D en el ámbito open source. Es compatible con decenas de plataformas y está enfocada al desarrollo de videojuegos en 3D. Títulos triple A como Doom 3, Battlefield 2 o Jedi Knight lo han utilizado. Como era de esperar, es un <strong>sistema muy grande y complejo</strong>.</p>
+<p><strong>SDL Mixer</strong> es una biblioteca <strong>pequeña y sencilla</strong> que me permite regular aspectos como volumen y ángulo para provocar un efecto pseudo 3D. Ya había trabajado con ella en <a href="../../proyectos/air-force-pilot/">Air Force Pilot</a> y en <a href="../../proyectos/grannys-bloodbath/">Granny&rsquo;s Bloodbath</a> de forma satisfactoria. Además, es compatible con las plataformas que necesito. En fin, es más limitada pero me basta para mis necesidades.</p>
+<h3 id="integración-con-la-gestión-de-recursos-de-ogre">Integración con la gestión de recursos de Ogre</h3>
+<p>Los recursos que queramos <strong>integrar con Ogre</strong> deben implementar la interfaz <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1Resource.html">Resource</a>. Ogre utiliza el <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html">ResourceGroupManager</a> para gestionar los recursos a nivel global pero tiene un <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceManager.html">ResourceManager</a> para cada tipo de recurso. Esto quiere decir que tenemos que implementar clases que hereden de ResourceManager. Los gestores de recursos no manejan objetos Resource directamente, sino que utilizan punteros inteligentes, <a href="http://www.ogre3d.org/docs/api/html/classOgre_1_1SharedPtr.html">SharedPtr</a> muy similares a los <a href="http://www.boost.org/doc/libs/1_45_0/libs/smart_ptr/shared_ptr.htm">shared_ptr</a> de Boost. Esto les permite mantener una sola instancia de cada recurso compartida por varias entidades.</p>
+<p>SDL Mixer trata de forma distinta la música y los efectos de sonido por lo que planteé <strong>dos nuevos recursos: Musica y Sonido</strong>. A continuación tenéis la lista de clases resultante aunque al final de este artículo se expone un diagrama UML completo.</p>
+<ul>
+<li>SoundFX y SoundFXPtr</li>
+<li>Song y SongPtr</li>
+<li>SoundFXManager</li>
+<li>SongManager</li>
+</ul>
+<p>La forma de trabajar con los nuevos recursos es semejante al estilo de Ogre. Queda completamente integrado:</p>
+<pre tabindex="0"><code>// Al arrancar la aplicación
+SoundFXManager* soundFXManager = new SoundFXManager();
+
+// Durante la carga de algún estado
+// Se le indica el nombre del recurso, ResourceGroupManager
+// te proporciona la ruta completa.
+SoundFXPtr sound = SoundFXManager::getSingleton().load(&#34;disparo.wav&#34;);
+
+// Durante el game loop
+sound-&gt;play();
+
+// Al cerrar la aplicación
+delete soundFXManager;
+</code></pre><h3 id="sencillo-pero-resultón-sonido-3d">Sencillo pero resultón sonido 3D</h3>
+<p>No todos los sonidos tienen porqué reproducirse con efecto 3D por lo que he modelado este pequeño sistema de forma independiente. <strong>La clase Sound3D</strong> tiene un SoundFXPtr y dos punteros a SceneNode. Uno de los nodos es el emisor y el otro el que escucha. El volumen varía en función de la distancia entre ambos nodos mientras que el ángulo entre ambos elementos produce un efecto estéreo. El siguiente diagrama lo ilustra:</p>
+<p>
+  <img src="../../img/wp/audio3d-esquema.png" alt="audio3d-esquema.png">
+
+</p>
+<p>SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado a tal efecto. Un mismo Sound3D puede estar reproduciéndose en canales distintos al mismo tiempo. La clase Sound3D controla internamente qué sonido tiene asociado cada canal. Se pone a disposición del desarrollador un <strong>método estático para actualizar todos los sonidos 3D</strong> en reproducción. Preferiblemente una vez por cada iteración del game loop deberíamos hacer:</p>
+<pre tabindex="0"><code>// Actualizar todos los sonidos 3D en reproducción
+Sound3D::update3DSound();
+</code></pre><h3 id="a-vista-de-pájaro">A vista de pájaro</h3>
+<p>El siguiente <strong>diagrama de clases</strong> simplificado ilustra a grandes rasgos los elementos de este sistema de audio y sus relaciones.</p>
+<p>
+  <img src="../../img/wp/audio3d-clases1.png" alt="audio3d-clases1.png">
+
+</p>
+<h3 id="para-terminar">Para terminar</h3>
+<p>¡Vaya, me he extendido más de la cuenta! Han sido dos días intensos de trabajo entre aprender a extender la gestión de recursos de Ogre e implementación. En principio he desarrollado este sistema de sonido para Sion Tower pero en realidad <strong>es completamente independiente</strong>. Si estás desarrollando un juego y te interesa, acude a la <a href="https://forja.rediris.es/projects/cusl5-iberogre/">forja</a> y utiliza lo que desees (es GPL).</p>
+<p>Seguiré informando de mis avances, muchas gracias por leer.</p>
+
+      
+    </div>
     
     <div class="post">
       <h1 class="post-title">
@@ -309,48 +373,6 @@ void EstadoJuego::actualizarPersonaje(Ogre::Real deltaT) {
   <img src="../../img/wp/hackathon-cartel.png" alt="hackathon-cartel-211x300.png">
 
 </p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/hobbies/the-walking-dead/">The Walking Dead</a>
-      </h1>
-      <span class="post-date">Dec 9, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/the-walking-dead/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/hobbies">Hobbies</a>
-      </span>
-      
-      <p>
-  <img src="../../img/wp/the-walking-dead-01.jpg" alt="the-walking-dead-01.jpg">
-
-</p>
-<p><strong>Los zombies están de moda</strong>, recibimos constantemente películas como <em><a href="http://www.imdb.com/title/tt1156398/">Zombieland</a></em>, <em><a href="http://www.imdb.com/title/tt0363547/">El amanecer de los muertos</a></em> o <em><a href="http://www.imdb.com/title/tt0289043/">28 días después</a></em>. La fiebre de infectados ha invadido los videojuegos con <em><a href="http://en.wikipedia.org/wiki/Left_4_Dead">Left 4 Dead</a></em>, <em><a href="http://es.wikipedia.org/wiki/Plants_vs._Zombies">Plants versus Zombies</a></em> o <em><a href="http://es.wikipedia.org/wiki/Dead_Rising">Dead Rising</a></em> entre muchos otros. Las <strong>producciones impactantes, gores y casposas</strong> están a la orden del día y el mundo de las series no podía ser menos. La primera temporada de la <strong>adaptación del</strong> <a href="http://en.wikipedia.org/wiki/The_Walking_Dead"><strong>cómic</strong> con el mismo nombre</a> ha llegado a su fin y aquí les ofrezco mis humildes impresiones.</p>
-<p><strong>Disclaimer</strong>: no he leído el cómic, por tanto, no dispongo de una opinión de la serie como adaptación sino como producto individual e independiente. Según tengo entendido son muy similares pero divergen en muchos aspectos.</p>
-<h3 id="heading"></h3>
-<p>
-  <img src="../../img/wp/the-walking-dead-04.png" alt="the-walking-dead-04.png">
-
-</p>
-<h3 id="planteamiento-libre-de-spoilers">Planteamiento libre de spoilers</h3>
-<p>El policía <strong>Rick Grimes se despierta muy aturdido</strong> en el hospital tras haber sido herido de bala en una persecución. Es demasiado tarde y <strong>todo lo que quedan son hambrientos muertos vivientes</strong> medio devorados. Su impulso inmediato es encontrar a su familia y aquí es donde comienza la búsqueda de un grupo de supervivientes de un nuevo comienzo. Hasta aquí puedo contar pues dada su corta duración (6 episodios de 1 hora) sería soltar un spoiler del copón.</p>
-<h3 id="heading-1"></h3>
-<p>
-  <img src="../../img/wp/the-walking-dead-02.jpg" alt="the-walking-dead-02.jpg">
-
-</p>
-<h3 id="zombies-the-hardcore-way">Zombies <em>&ldquo;the hardcore way&rdquo;</em></h3>
-<p>Queda patente que The Walking Dead aborda el tema de los muertos vivientes desde el prisma de la acción, el drama, la tensión y la seriedad. <strong>No es una de esas parodias</strong> que han surgido últimamente aunque, en absoluto, pretendo desmerecer a estas últimas. La serie cuenta la historia de un grupo de supervivientes que se ve obligado a <strong>vivir al límite de sus posibilidades</strong> físicas y psicológicas. Seres queridos con las entrañas desparramadas por el suelo que se levantan tras unas horas de su muerte. Acudir a la boca del lobo para abastecer al grupo en tiempos de necesidad y otras penurias demenciales.</p>
-<p>En fin, ¿qué les voy a contar? A estas alturas estarán habituados a las producciones de zombies. Efectivamente, The Walking Dead apuesta por el <strong>camino duro y explícito hasta decir basta</strong>. Por supuesto, hará las delicias de los más aficionados al género, sin tapujos ni pudor. Será un género manido pero es innegable que ofrecen situaciones que no hemos visto en ningún sitio. Digamos que <strong>mantiene el sabor clásico pero con elementos innovadores</strong>.</p>
-<p>
-  <img src="../../img/wp/the-walking-dead-03.png" alt="the-walking-dead-03.png">
-
-</p>
-<h3 id="grandes-altibajos-pero-i-need-braaaains">Grandes altibajos pero… &ldquo;I need &ldquo;braaaains!&rdquo;</h3>
-<p><strong>El comienzo de The Walking Dead es simplemente épico</strong>, me dejó completamente boquiabierto y con ganas de más. Ningún capítulo ha sido malo pero sí es cierto que la calidad y las situaciones impactantes varían demasiado, creo que <strong>no han sabido mantener un ritmo</strong> constante. En algunos episodios me gustaría haber visto más acción, que ocurriesen más cosas. En cualquier caso, el conjunto sigue siendo <strong>más que notable</strong> y pide a gritos una segunda temporada (ya confirmada).</p>
-<p>Lo dicho, quiero más The Walking Dead y estoy <strong>pensando seriamente en comprarme los cómics</strong>, los cuales cuentan con una crítica varios puntos más positiva. A pesar de las impresiones encontradas que me ha producido la serie creo que globalmente las virtudes vencen con amplitud. Si sois de estómago débil no os la recomendaría pero si os atrae el género y/o estáis dudando si darle una oportunidad, ya tardáis en lanzaros de cabeza.</p>
 
       
     </div>
