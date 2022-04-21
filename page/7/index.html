@@ -104,6 +104,35 @@
     
     <div class="post">
       <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-7-3-released/">Ashley 1.7.3 released!</a>
+      </h1>
+      <span class="post-date">Sep 10, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-7-3-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      <p>
+  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
+
+</p>
+<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.3">1.7.3</a> below:</p>
+<ul>
+<li><strong>API addition</strong>: Adds ‘createComponent()&quot; method to <code>Engine</code> class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7.</li>
+<li><strong>API addition</strong>: Adds ‘createEntity()&quot; method to <code>Engine</code> class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b.</li>
+<li><strong>API addition</strong>: Adds ‘addAndReturn()&quot; method to <code>Entity</code> class. Commit 423148a2719873efb50d4f2b3982c247df4fceca.</li>
+<li><strong>Bug fix</strong>: Fixes systems going out of priority order after removal. Issue #237.</li>
+<li><strong>Bug fix</strong>: Fixes returning pooled entity to the entity pool twice. Issue #221.</li>
+<li><strong>Update</strong>: uses Travis for CI. Commit c4265eff694cfb34eaef1bdd929ee398c1ccfa64.</li>
+<li><strong>Update</strong>: uses Libgdx 1.9.4.</li>
+</ul>
+<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.3</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.4-SNAPSHOT</code>. Thanks for your continued support!</p>
+
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
         <a href="https://saltares.com/general/ashley-1-7-2-released/">Ashley 1.7.2 released</a>
       </h1>
       <span class="post-date">Feb 29, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/general/ashley-1-7-2-released/#disqus_thread">Comments</a>
@@ -577,36 +606,6 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
 </div>
 </p>
 <p>Next time we should follow the advice <a href="https://twitter.com/McFunkypants">@McFunkypants</a> gives in <a href="https://www.packtpub.com/game-development/game-jam-survival-guide">The Game Jam Survival Guide</a>!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/projects/ashley-1-7-1-released/">Ashley 1.7.1 released</a>
-      </h1>
-      <span class="post-date">Jan 10, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-7-1-released/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>
-  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
-
-</p>
-<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.1">1.7.1</a> below:</p>
-<ul>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/5277cbe83264d0ddc851a823232f51c350e9c387">API addition</a></strong>: expose <code>IntervalSystem</code> interval value (read-only).</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/197">Bug fix</a></strong>: fixed pending entity operations not being processed in the right order.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/203">Bug fix</a></strong>: fixed adding component in empty family <code>EntityListener</code> causing wrong <code>EntityListener</code> calls.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/c45ba3b34860121571eb9a660a76bc82ac0a1a96">Bug fix</a></strong>: fixed some entity operations not being performed under special circumstances.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/178">Internals</a></strong>: split Engine internals into loosely coupled, single responsibility smaller classes.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/92fa5c7179bf77a39a81cf20a5328a2fc4ca8c5f">Update</a></strong>: uses Libgdx 1.8.0.</li>
-</ul>
-<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.1</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.2-SNAPSHOT</code>.</p>
-<p>It&rsquo;s really motivating to see how many people are using Ashley in their projects,
-including for the <a href="https://twitter.com/search?f=tweets&amp;vertical=default&amp;q=libgdxjam%20ashley&amp;src=typd">#LibGDXJAM</a>!</p>
 
       
     </div>

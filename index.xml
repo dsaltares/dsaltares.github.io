@@ -6,7 +6,108 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 18 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Behind the scenes of Plot’s Learning Design Platform</title>
+      <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</guid>
+      <description>At Plot, we’re building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.
+It took our small team about three months to create a prototype of the platform. As with all early-stage startups, we did this in an environment of high uncertainty, making some technology choices a bit tricky. That’s where our guiding principles come in - our principles are what enable us to make the best decisions for our customers and our business even when faced with great uncertainty.</description>
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/plot/plot-logo.png&#34; alt=&#34;Plot logo&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;At &lt;a href=&#34;https://www.plot.co/&#34;&gt;Plot&lt;/a&gt;, we’re building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.&lt;/p&gt;
+&lt;p&gt;It took our small team about three months to create a prototype of the platform. As with all early-stage startups, we did this in an environment of high uncertainty, making some technology choices a bit tricky. That’s where our guiding principles come in - our principles are what enable us to make the best decisions for our customers and our business even when faced with great uncertainty.&lt;/p&gt;
+&lt;h3 id=&#34;-our-principles&#34;&gt;🙌 Our Principles&lt;/h3&gt;
+&lt;p&gt;Right at the beginning, we set the following principles to help everyone on the team make technology decisions that supported our goals and ensured we were progressing in the same direction.
+We agreed that we would:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Spend close to 100% of our time building the actual product&lt;/li&gt;
+&lt;li&gt;Create short feedback loops  to ensure quality and velocity&lt;/li&gt;
+&lt;li&gt;Push complexity as much into the future as possible&lt;/li&gt;
+&lt;li&gt;Fall into the &lt;a href=&#34;https://blog.codinghorror.com/falling-into-the-pit-of-success/&#34;&gt;Pit of Success&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Prioritize User Experience (UX) and Developer Experience (DX)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-the-stack&#34;&gt;⚙️ The Stack&lt;/h2&gt;
+&lt;p&gt;Let’s dive into the stack that laid the foundations of our technology platform.&lt;/p&gt;
+&lt;h3 id=&#34;-typescript&#34;&gt;⌨️ Typescript&lt;/h3&gt;
+&lt;p&gt;We write all our code in &lt;a href=&#34;https://www.typescriptlang.org/&#34;&gt;Typescript&lt;/a&gt;, with no Javascript allowed. We made this choice for a few reasons. They were:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The team was already familiar with both languages, so there was no steep learning curve.&lt;/li&gt;
+&lt;li&gt;The DX the tooling gave us was world-class.&lt;/li&gt;
+&lt;li&gt;We caught a lot of silly type-related bugs early which saved time.&lt;/li&gt;
+&lt;li&gt;Using the same language across the stack simplified the toolchain.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Additionally, the Javascript/Node.js/Typescript ecosystem is &lt;a href=&#34;https://insights.stackoverflow.com/survey/2021#technology-most-popular-technologies&#34;&gt;incredibly popular&lt;/a&gt; and Typescript is one of the &lt;a href=&#34;https://insights.stackoverflow.com/survey/2021#technology-most-loved-dreaded-and-wanted&#34;&gt;most loved technologies&lt;/a&gt;, according to the Stack Overflow Developer survey 2021. So, finding answers to problems was a breeze!&lt;/p&gt;
+&lt;h3 id=&#34;-infrastructure-as-code&#34;&gt;🏗️ Infrastructure as Code&lt;/h3&gt;
+&lt;p&gt;We use &lt;a href=&#34;https://www.terraform.io/&#34;&gt;Terraform&lt;/a&gt; to declare our infrastructure components. That way, our environments are easily reproducible; we can spin them up in a matter of minutes. Additionally, all infrastructure changes go through the same peer-review and CI/CD pipeline as the rest of the system.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/terraform-plan.png&#34; alt=&#34;Terraform plan&#34;&gt;
+
+&lt;/p&gt;
+&lt;h3 id=&#34;-nextjs---the-full-stack-framework&#34;&gt;🚀 Next.js - The Full-stack Framework&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; is &lt;em&gt;the&lt;/em&gt; full-stack framework for React applications. Having an opinionated framework that takes care of routing and API endpoints, which fits very well with Typescript and does server-side rendering, and has great DX allows us to focus on actually building the application. Not having to worry about configuring Webpack is liberating.&lt;/p&gt;
+&lt;p&gt;The entire team had plenty of experience with React, so adopting Next.js was a straightforward step.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://remix.run/&#34;&gt;Remix&lt;/a&gt; became generally available shortly after we started and it seems spectacular. However, we’re pretty happy with Next.js still. Next.js is battle-tested, mature, and has a very active community.&lt;/p&gt;
+&lt;h3 id=&#34;-storage&#34;&gt;🚛 Storage&lt;/h3&gt;
+&lt;p&gt;For our persistent data layer, we chose &lt;a href=&#34;https://www.prisma.io/&#34;&gt;Prisma&lt;/a&gt; with &lt;a href=&#34;https://www.postgresql.org/&#34;&gt;PostgreSQL&lt;/a&gt;. Prisma is an outstanding tool that helped us move much faster. We enjoyed the hassle-free migrations, but we were blown away by the type safety and the autocomplete for writing queries.&lt;/p&gt;
+&lt;p&gt;We knew our data was going to be mostly relational. That is why we chose PostgreSQL over &lt;a href=&#34;https://www.mongodb.com/&#34;&gt;MongoDb&lt;/a&gt;. Thanks to its JSON support, PostgreSQL is versatile and it would adapt well to document-like records if ever needed. PostgreSQL is 99.9% likely to meet our needs!&lt;/p&gt;
+&lt;p&gt;Using &lt;a href=&#34;https://docs.docker.com/compose/&#34;&gt;Docker Compose&lt;/a&gt;, we ran a persistent database for local development and a non-persistent one for integration tests using Docker Compose.&lt;/p&gt;
+&lt;h3 id=&#34;-other-app-side-technologies&#34;&gt;🌍 Other App-side Technologies&lt;/h3&gt;
+&lt;p&gt;We implemented our own design system using &lt;a href=&#34;https://tailwindcss.com/&#34;&gt;TailwindCSS&lt;/a&gt; and &lt;a href=&#34;https://headlessui.dev/&#34;&gt;HeadlessUI&lt;/a&gt;. TailwindCSS gave us best-in-class DX with complete freedom to make our application look neat and consistent without being too similar to &lt;a href=&#34;https://v4.mui.com/&#34;&gt;Material-UI&lt;/a&gt;. Once we became proficient with it, translating wireframes to components and screens came naturally. HeadlessUI was a “Pit of Success” for our app to be accessible.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/plot-stories.png&#34; alt=&#34;Plot storybook&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://react-query.tanstack.com/&#34;&gt;React Query&lt;/a&gt; helps us manage our server-side state on the client. We get cache invalidation, retries, online/offline management, request cancellation, pagination, and more with no effort at all.&lt;/p&gt;
+&lt;p&gt;Plot users need to be able to collect documentation in a rich and structured way. So, we needed to provide a rich text editor, but creating a great text editing experience on the web that works well across devices is a brutal challenge. I speak &lt;a href=&#34;https://portal.aula.education/c/59-better-faster-more-accessible-aula-editor&#34;&gt;from experience&lt;/a&gt;! That is precisely why we chose &lt;a href=&#34;https://remirror.io/&#34;&gt;remirror&lt;/a&gt;, an open-source, off-the-shelf editor for React based on &lt;a href=&#34;https://prosemirror.net/&#34;&gt;Prosemirror&lt;/a&gt;. With remirror, the team had the whole, bug-free, rich text editing experience working in our app in under a week.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/remirror-editor.png&#34; alt=&#34;Plot editor&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Authentication is probably one of the most critical parts of any application. It is one of the first flows users experience and a typical attack vector. We could have chosen an authentication-as-a-service provider, like &lt;a href=&#34;https://auth0.com/&#34;&gt;Auth0&lt;/a&gt;, but we decided to go with &lt;a href=&#34;https://next-auth.js.org/&#34;&gt;NextAuth.js&lt;/a&gt;. It was tremendously simple to set up and lets us heavily customize the experience. Plus, we’re able to keep all of the data.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/plot-auth.png&#34; alt=&#34;Plot login screen&#34;&gt;
+
+&lt;/p&gt;
+&lt;h3 id=&#34;-cloud-hosting&#34;&gt;☁️ Cloud Hosting&lt;/h3&gt;
+&lt;p&gt;The core of the Plot LXD platform lives inside the Next.js application, which we deploy to &lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel&lt;/a&gt;. The automated preview and production deployments with zero configuration have been an incredible productivity boost; much better than setting up the infrastructure ourselves.&lt;/p&gt;
+&lt;p&gt;We use AWS (managed by Terraform) for the infrastructure pieces we need and which are not provided by Vercel: VPCs, RDS, SES, S3, etc.&lt;/p&gt;
+&lt;h3 id=&#34;-user-analytics&#34;&gt;📈 User Analytics&lt;/h3&gt;
+&lt;p&gt;We knew we did not have the capacity to build and maintain a proprietary data pipeline. So, we chose &lt;a href=&#34;https://amplitude.com/&#34;&gt;Amplitude&lt;/a&gt; as our data analytics platform for a few reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Generous “free” tier&lt;/li&gt;
+&lt;li&gt;Easy to integrate with a Next.js app&lt;/li&gt;
+&lt;li&gt;Ease of use (it allows anyone in the company to obtain insights from available data)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;-cicd&#34;&gt;🚢 CI/CD&lt;/h3&gt;
+&lt;p&gt;All our code lives in a monorepo (via &lt;a href=&#34;https://classic.yarnpkg.com/lang/en/docs/workspaces/&#34;&gt;yarn workspaces&lt;/a&gt;) hosted in Github. We also leverage Github issues and actions CI/CD for a more straightforward setup.&lt;/p&gt;
+&lt;p&gt;A workflow kicks off when a PR is open that runs linting, unit/integration tests, and a preview deployment. Everything happens in parallel and takes less than 3 minutes.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/app-preview.png&#34; alt=&#34;Plot deploy workflow&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Another workflow starts when a PR is merged to main. It deploys the application to production after all other checks have passed. Every change goes &lt;a href=&#34;https://charity.wtf/2021/02/19/how-much-is-your-fear-costing-you/&#34;&gt;from main to production in under 5 minutes&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Our continuous delivery culture of fast &amp;amp; frequent deployments coupled with feature flags via &lt;a href=&#34;https://launchdarkly.com/&#34;&gt;LaunchDarkly&lt;/a&gt; has enabled us to excel at software delivery. We have been releasing over 6 times/day with a failure rate of &amp;lt;1%.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/plot/delivery-metrics.png&#34; alt=&#34;Plot delivery metrics&#34;&gt;
+
+&lt;/p&gt;
+&lt;h3 id=&#34;-observability&#34;&gt;🚨 Observability&lt;/h3&gt;
+&lt;p&gt;Software systems are bound to fail. We use the following tools to observe our application in production so we can understand how it behaves and where the problems are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://logflare.app/&#34;&gt;Logflare&lt;/a&gt; for log aggregation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://sentry.io/&#34;&gt;Sentry&lt;/a&gt; for error tracking and performance monitoring&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://honeycomb.io/&#34;&gt;Honeycomb&lt;/a&gt; for application tracing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-thanks-for-reading&#34;&gt;🙌 Thanks for reading&lt;/h2&gt;
+&lt;p&gt;I hope our stack inspires you to build great things in 2022 and that this post has provided some helpful guidance for developing a high-quality web application from the ground up!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>5 Mistakes I have made as an engineering leader</title>
       <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</link>
@@ -541,96 +642,6 @@ Tools and processes to build software have changed a fair bit over the last two 
   &lt;/iframe&gt;
 &lt;/div&gt;
 
-</content>
-    </item>
-    
-    <item>
-      <title>Sticky nav bar on scroll with React hooks</title>
-      <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>
-      <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</guid>
-      <description>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.
-Like so.
- Making the navigation bar position: fixed; top 0; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.
-I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a useSticky hook.</description>
-      <content>&lt;p&gt;Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.&lt;/p&gt;
-&lt;p&gt;Like so.&lt;/p&gt;
-&lt;iframe
-  src=&#34;https://codesandbox.io/embed/sticky-scrolling-header-vwsso?fontsize=14&amp;hidenavigation=1&amp;theme=dark&amp;view=preview&#34;
-  style=&#34;width:100%; height:500px; border:1px solid #000; border-radius: 4px; overflow:hidden;&#34;
-  title=&#34;sticky-scrolling-header&#34;
-  allow=&#34;accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking&#34;
-  sandbox=&#34;allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts&#34;
-  &gt;
-&lt;/iframe&gt;
-&lt;p&gt;Making the navigation bar &lt;code&gt;position: fixed; top 0;&lt;/code&gt; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.&lt;/p&gt;
-&lt;p&gt;I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a &lt;code&gt;useSticky&lt;/code&gt; &lt;a href=&#34;https://reactjs.org/docs/hooks-intro.html&#34;&gt;hook&lt;/a&gt;. Here&amp;rsquo;s how you&amp;rsquo;d use it.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;classnames&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;./useSticky&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; } &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;header&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Header&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;h1&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;header&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;ref&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;classNames&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;nav&amp;#34;&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; })}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;Sticky&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;nav&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;nav&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{{
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;height&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;${&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;?&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;clientHeight&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;}&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;px`&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;0px&amp;#39;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        }}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;main&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;className&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt; /&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  );
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You stick (no pun intended) the &lt;code&gt;stickyRef&lt;/code&gt; into the thing that you want to fix to the top after you scroll past it. Then, &lt;code&gt;sticky&lt;/code&gt; will indicate whether it should be fixed at the top or not. I then use that to apply a &lt;code&gt;sticky&lt;/code&gt; class.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-css&#34; data-lang=&#34;css&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;position&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;fixed&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;top&lt;/span&gt;: &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The extra &lt;code&gt;div&lt;/code&gt; below the &lt;code&gt;nav&lt;/code&gt; adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.&lt;/p&gt;
-&lt;p&gt;🌟 The magic happens in the &lt;code&gt;useSticky&lt;/code&gt; hook itself.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;react&amp;#34;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useRef&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;offsetTop&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setOffset&lt;/span&gt;]);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;useEffect&lt;/span&gt;(() =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#f92672&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;current&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;(window.&lt;span style=&#34;color:#a6e22e&#34;&gt;scrollY&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    };
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    window.&lt;span style=&#34;color:#a6e22e&#34;&gt;addEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; () =&amp;gt; window.&lt;span style=&#34;color:#a6e22e&#34;&gt;removeEventListener&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;scroll&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;handleScroll&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }, [&lt;span style=&#34;color:#a6e22e&#34;&gt;setSticky&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;offset&lt;/span&gt;]);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;stickyRef&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;sticky&lt;/span&gt; };
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useSticky&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The first effect measures the vertical offset of the element we want to fix at the top after it&amp;rsquo;s scrolled past. The second one listens to the &lt;code&gt;scroll&lt;/code&gt; event and determines whether we have scrolled past the element&amp;rsquo;s top edge and it needs to become sticky.&lt;/p&gt;
-&lt;p&gt;🙌 Hope this is useful!&lt;/p&gt;
 </content>
     </item>
     

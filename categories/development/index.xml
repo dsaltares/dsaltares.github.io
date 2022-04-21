@@ -6,7 +6,17 @@
     <description>Recent content in Development on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 23 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Behind the scenes of Plot’s Learning Design Platform</title>
+      <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</guid>
+      <description>At Plot, we’re building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.
+It took our small team about three months to create a prototype of the platform. As with all early-stage startups, we did this in an environment of high uncertainty, making some technology choices a bit tricky. That’s where our guiding principles come in - our principles are what enable us to make the best decisions for our customers and our business even when faced with great uncertainty.</description>
+    </item>
+    
     <item>
       <title>Sticky nav bar on scroll with React hooks</title>
       <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>
