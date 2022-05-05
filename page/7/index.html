@@ -104,509 +104,469 @@
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/ashley-1-7-3-released/">Ashley 1.7.3 released!</a>
+        <a href="https://saltares.com/games/sion-tower-prueba-de-hechizos/">Sion Tower, prueba de hechizos</a>
       </h1>
-      <span class="post-date">Sep 10, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-7-3-released/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
-      </span>
-      
-      <p>
-  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
-
-</p>
-<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.3">1.7.3</a> below:</p>
-<ul>
-<li><strong>API addition</strong>: Adds ‘createComponent()&quot; method to <code>Engine</code> class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7.</li>
-<li><strong>API addition</strong>: Adds ‘createEntity()&quot; method to <code>Engine</code> class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b.</li>
-<li><strong>API addition</strong>: Adds ‘addAndReturn()&quot; method to <code>Entity</code> class. Commit 423148a2719873efb50d4f2b3982c247df4fceca.</li>
-<li><strong>Bug fix</strong>: Fixes systems going out of priority order after removal. Issue #237.</li>
-<li><strong>Bug fix</strong>: Fixes returning pooled entity to the entity pool twice. Issue #221.</li>
-<li><strong>Update</strong>: uses Travis for CI. Commit c4265eff694cfb34eaef1bdd929ee398c1ccfa64.</li>
-<li><strong>Update</strong>: uses Libgdx 1.9.4.</li>
-</ul>
-<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.3</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.4-SNAPSHOT</code>. Thanks for your continued support!</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/general/ashley-1-7-2-released/">Ashley 1.7.2 released</a>
-      </h1>
-      <span class="post-date">Feb 29, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/general/ashley-1-7-2-released/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/general">General</a>
-      </span>
-      
-      <p>
-  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
-
-</p>
-<p>Small <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for <a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.2">1.7.2</a> below:</p>
-<ul>
-<li><a href="https://github.com/libgdx/ashley/issues/209"><strong>Bug fix</strong></a>: <code>Engine</code> doesn&rsquo;t use <code>EntitySystem</code> <code>iterator()</code>.</li>
-<li><a href="https://github.com/libgdx/ashley/issues/210"><strong>Bug fix</strong></a>: Fixes <code>Engine</code> left unusable, in the updating state, after an uncaught exception in a subsystem.</li>
-<li><a href="https://github.com/libgdx/ashley/issues/210"><strong>Bug fix</strong></a>: Fixes <code>FamilyManager</code> not cleaning up properly when a triggering a listener that throws.</li>
-</ul>
-<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.2</code>. The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT</code>.</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/games/built-in-console-for-libgdx-games/">Built-in console for Libgdx games</a>
-      </h1>
-      <span class="post-date">Feb 20, 2016 &middot; 2 minute read &middot; <a href="https://saltares.com/games/built-in-console-for-libgdx-games/#disqus_thread">Comments</a>
+      <span class="post-date">May 24, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-prueba-de-hechizos/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.</p>
-<p>
-  <img src="../../img/others/console1.jpg" alt="console1.jpg">
-
-</p>
-<p>When you&quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have <a href="https://github.com/StrongJoshua/libgdx-inGameConsole"><code>libgdx-inGameConsole</code></a>? No reason at all! It&rsquo;s incredibly simple to set it up. First, add the following dependency to your <code>build.gradle</code> file and refresh your project&rsquo;s dependencies. compile &ldquo;com.strongjoshua:libgdx-inGameConsole:0.3.2&rdquo; You can instantiate the <code>Console</code> inside your <code>create()</code> method. Use the <code>setSizePercent()</code> and <code>setPositionPercent()</code> methods to configure where your console will show up and how much of the screen it&quot;ll take. Finally, you can also override the key to toggle the console.</p>
-<pre tabindex="0"><code>private Console console;
-
-@Override
-public void create() {
-    ...
-
-    console = new Console();
-    console.setSizePercent(100, 33);
-    console.setPositionPercent(0, 67);
-    console.setKeyID(Keys.Z);
-}
-</code></pre><p>Remember to call <code>draw()</code> inside your <code>render()</code> method.</p>
-<pre tabindex="0"><code>console.draw();
-</code></pre><p>Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let&rsquo;s specialize the <code>CommandExecutor</code> class and add some methods to load a level and spawn baddies.</p>
-<pre tabindex="0"><code>public class GameCommandExecutor extends Command {
-    private Console console;
-
-    public GameCommandExecutor(Console console) {
-        this.console = console;
-    }
-
-    public void loadLevel(String levelName) {
-        console.log(&#34;loading level &#34; + levelName, Console.LogLevel.SUCCESS);
-    }
-
-    public void spawnEnemy(String type, float x, float y, float z) {
-        console.log(&#34;spawning enemy &#34; + type, Console.LogLevel.SUCCESS);
-    }
-
-    public void clear() {
-        console.clear();
-    }
-}
-</code></pre><p>At some point, we need to register the executor with the console.</p>
-<pre tabindex="0"><code>console.setCommandExecutor(new GameCommandExecutor(console));
-</code></pre><p>Done, that&rsquo;s it!</p>
-<p>
-  <img src="../../img/others/libgdx-console.png" alt="libgdx-console.png">
-
-</p>
-<p>The console uses the Libgdx reflection module to figure out which commands your <code>CommandExecutor</code> supports, which means it&rsquo;s fully compatible with the WebGL backend. It&rsquo;s also possible to configure the look and feel of the console if you provide a <code>Skin</code> to its constructor. To know more, check its comprehensive <a href="http://strongjoshua.com/javadocs/in-game_console/">documentation</a>.</p>
-
+      Este nuevo vídeo nos muestra una prueba del sistema de lanzamiento de proyectiles mágicos en Sion Tower. El protagonista puede lanzar hechizos de varios tipos que impactan con los elementos sólidos del escenario produciendo una pequeña explosión. Para los efectos visuales se utiliza el sistema de partículas de Ogre y, aunque aún queda margen para la mejora, el resultado es aceptable. Sion Tower cuenta con un sistema de audio 3D pero no se han incluido efectos ya que estoy a la espera del colaborador encargado de dicho apartado.
+      <a href="https://saltares.com/games/sion-tower-prueba-de-hechizos/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/">2D vision system with Ashley and Box2D</a>
+        <a href="https://saltares.com/games/sistema-de-actores/">Sistema de actores</a>
       </h1>
-      <span class="post-date">Jan 30, 2016 &middot; 8 minute read &middot; <a href="https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/#disqus_thread">Comments</a>
+      <span class="post-date">May 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-actores/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>
-  <img src="../../img/wp/javaw-2016-01-22-22-59-09-54-1-e1454169566721.png" alt="javaw-2016-01-22-22-59-09-54-1-e1454169566721.png">
-
-</p>
-<p>In <a href="../../game-jams/sloppynauts/">Sloppynauts</a> the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using <a href="https://github.com/libgdx/ashley">Ashley</a> and <a href="http://box2d.org/">Box2D</a> and I think it&quot;d be a shame if it went to waste. So here it is in case you&quot;d like to use it.</p>
-<p>This 2D vision system is generic enough to work with both side-scrolling and top-down games. Surely it can be further optimised and tailored to your needs… Hey, it was done for a game jam! Nevertheless, it could be a decent starting point!</p>
-<p>Before we get down to business, make sure you understand what Ashley is and what <a href="http://www.gamedev.net/page/resources/_/technical/game-programming/understanding-component-entity-systems-r3013">component based entity systems</a> are all about.</p>
-<h3 id="vision-system-concepts">Vision System concepts</h3>
-<p>We want to give some of the entities in our game world the ability to see other entities. Both observers and observables will necessarily have a location in our game world. However, we need some extra information about our observers, specifically the area they can cover at any given point in time, ie. their field of view. In the diagram below you can see a couple of observers and three observables. One of the observables can be seen, the second one is complete outside of both FOVs whilst the third one is hidden behind a box. 
-  <img src="../../img/wp/vision-system-diagram-1.png" alt="vision-system-diagram-1.png">
-
- We simply want to ask our system: <em>&ldquo;can this entity see this other entity?&rdquo;</em></p>
-<h3 id="observable-and-observer-components">Observable and Observer components</h3>
-<p>Our <code>Observable</code> component is pretty trivial, it simply has a position.</p>
-<pre tabindex="0"><code>public class ObservableComponent implements Component {
-    public Vector2 position = new Vector2();
-}
-</code></pre><p>The <code>Observer</code> component has a little more information.</p>
-<pre tabindex="0"><code>public class ObserverComponent implements Component {
-    public Vector2 position = new Vector2();
-    public float angle = 0.0f;
-    public float distance = 5.0f;
-    public float fovAngle = 45.0f;
-}
-</code></pre><ul>
-<li><code>angle</code>: where the entity is looking at.</li>
-<li><code>distance</code>: how far it can see.</li>
-<li><code>fovAngle</code>: the angle it can cover. Members are initialised with default values, you can obviously change these.</li>
-</ul>
-<p>###The Vision Entity System</p>
-<p>The <code>VisionSystem</code> is where the magic happens, you can see the full outline below.</p>
-<pre tabindex="0"><code>public class VisionSystem extends IteratingSystem implements EntityListener {
-    public VisionSystem(World world) {}
-
-    public boolean canSee(Entity observer, Entity observable) {}
-
-    // EntitySystem
-    public void addedToEngine(Engine engine) {}
-    public void removedFromEngine(Engine engine) {}
-
-    // EntityListener
-    public void entityAdded(Entity entity) {}
-    public void entityRemoved(Entity entity) {}
-
-    // IteratingSystem
-    protected void processEntity(Entity observer, float deltaTime) {}
-
-    // Utility
-    private void updateVision(Entity observer) {}
-    private void updateVision(Entity observer, Entity observable) {}
-    private boolean inFov(Entity entity, Entity target) {}
-    private void raycast(Entity entity, Entity target) {}
-    private void addToVision(Entity observer, Entity observable) {}
-    private void removeFromVision(Entity observer, Entity observable) {}
-}
-</code></pre><p>The constructor will take a Box2D <code>World</code> as we need it to make line of sight (LoS) queries. We will also tell Ashley that we want the system to process entities with <code>ObserverComponent</code>.</p>
-<pre tabindex="0"><code>public VisionSystem(World world) {
-    super(Family.all(ObserverComponent.class).get());
-
-    this.world = world;
-}
-</code></pre><p>In order to be able to answer the <code>canSee()</code> question, we will keep a map of observer entities to the collection of observables that it can see at any given time. The map will be updated every frame.</p>
-<pre tabindex="0"><code>private ObjectMap&lt;Entity, ObjectSet&lt;Entity&gt;&gt; vision = new ObjectMap();
-</code></pre><p>We will also need the collection of entities with an <code>ObservableComponent</code>, they are the candidates to make into the vision map as targets.</p>
-<pre tabindex="0"><code>private ImmutableArray&lt;Entity&gt; observables;
-</code></pre><p>The <code>addedToEngine()</code> and <code>removedFromEngine()</code> methods are invoked whenever we register the system with the engine. We can hook into them to grab the immutable list of observables as well as to register our vision system as a listener for observers. That way, we can pre-populate and clear up our vision map as observers come and go.</p>
-<pre tabindex="0"><code>@Override
-public void addedToEngine(Engine engine) {
-    super.addedToEngine(engine);
-    observables = engine.getEntitiesFor(
-        Family.all(ObservableComponent.class).get()
-    );
-    engine.addEntityListener(getFamily(), this);
-}
-
-@Override
-public void removedFromEngine(Engine engine) {
-    super.removedFromEngine(engine);
-    engine.removeEntityListener(this);
-}
-
-@Override
-public void entityAdded(Entity entity) {
-    vision.put(entity, new ObjectSet&lt;Entity&gt;());
-}
-
-@Override
-public void entityRemoved(Entity entity) {
-    vision.remove(entity);
-}
-</code></pre><p>The <code>canSee()</code> method is quite trivial, we simply check if the observable is in the set of visible entities for the given observer.</p>
-<pre tabindex="0"><code>public boolean canSee(Entity observer, Entity observable) {
-    ObjectSet&lt;Entity&gt; observables = vision.get(observer);
-
-    if (observables == null) {
-        return false;
-    }
-
-    return observables.contains(observable);
-}
-</code></pre><p><code>VisionSystem</code> is an <code>IteratingSystem</code>, so we need to implement the <code>processEntity()</code> method, which will be invoked once a frame for every observer registered with the engine. Here is where the vision map entry for the observer gets updated.</p>
-<pre tabindex="0"><code>@Override
-protected void processEntity(Entity observer, float deltaTime) {
-    updateVision(observer);
-}
-</code></pre><p>In order to do that, we go through the collection of observables and check whether they should be added or removed from the observer&rsquo;s visible entities.</p>
-<pre tabindex="0"><code>private void updateVision(Entity observer) {
-    for (Entity observable : observables) {
-        updateVision(observer, observable);
-    }
-}
-</code></pre><p>The <code>addToVision()</code> and <code>removeFromVision()</code> utility methods will simply help us update the vision map. We make the assumption that there will always be an entry for every observer in the engine.</p>
-<pre tabindex="0"><code>private void addToVision(Entity observer, Entity observable) {
-    vision.get(observer).add(observable)
-}
-
-private void removeFromVision(Entity observer, Entity observable) {
-    vision.get(observer).remove(observable)
-}
-</code></pre><p>To know whether an observer can see an observable two conditions need to be met: the observable has to be within the observer&rsquo;s FoV and there must be an unobstructed LoS between the two. Querying the Box2D world can be costly, that is why we short-circuit the FoV check with the raycast.</p>
-<pre tabindex="0"><code>private void updateVision(Entity observer, Entity observable) {
-    if (!inFov(observer, observable)) {
-        removeFromVision(observer, observable);
-        return;
-    }
-
-    raycast(observer, observable);
-}
-</code></pre><p>To achieve <a href="https://github.com/libgdx/ashley/wiki/How-to-use-Ashley#retrieving-components-with-componentmapper">super-fast component retrieval</a>, we use <code>ComponentMapper</code>.</p>
-<pre tabindex="0"><code>private ComponentMapper&lt;ObservableComponent&gt; observableMapper = ComponentMapper.getFor(ObservableComponent.class);
-private ComponentMapper&lt;ObserverComponent&gt; observerMapper = ComponentMapper.getFor(ObserverComponent.class);
-</code></pre><p>First, check whether the observable is within the vision distance of the observer and if it is, we check whether or not the angle between the two falls within the observer&rsquo;s vision angle. The math is be pretty simple here.</p>
-<pre tabindex="0"><code>private boolean inFov(Entity entity, Entity target) {
-    ObserverComponent observer = observerMapper.get(entity);
-    ObservableComponent observable = observableMapper.get(target);
-
-    if (observer.position.isZero() ||
-        observable.position.isZero() ||
-        observer.position.dst2(observable.position) &gt;
-        observer.distance * observer.distance) {
-        return false;
-    }
-
-    toObservable.set(observable.position);
-    toObservable.sub(observer.position);
-
-    float toObservableAngle = toObservable.angle();
-    float angleDifference = Math.abs(toObservableAngle - observer.angle);
-
-    angleDifference = Math.min(angleDifference, 360.0f - angleDifference);
-
-    if (angleDifference &gt; observer.fovAngle) {
-        return false;
-    }
-
-    return true;
-}
-</code></pre><p>It&rsquo;s time to perform our raycast, which will go from the observer to the observable. Box2D raycasts take a reference to the <code>Callback</code> interface to handle geometry hits. The handler is notified on every fixture hit. Box2D will pass the fixture it encountered as well as the fraction along the segment at which the hit happened. 
-  <img src="../../img/wp/vision-system-raycast.png" alt="vision-system-raycast.png">
-
- The <code>VisionSystem</code> has an inner <code>VisionCallback</code> implementation, which gets reused for every raycast, that way we don&rsquo;t need to constantly allocate memory.</p>
-<pre tabindex="0"><code>private VisionCallback callback = new VisionCallback();
-</code></pre><p>Its outline is pretty simple.</p>
-<pre tabindex="0"><code>private class VisionCallback implements RayCastCallback {
-    private Entity observer;
-    private Entity observable;
-    private float minFraction;
-    private float observableFraction;
-
-    public void prepare(Entity observer, Entity observable) {}
-    public boolean canSee() {}
-
-    @Override
-    public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {}
-}
-</code></pre><p>Before the raycast, we need to prepare the callback.</p>
-<pre tabindex="0"><code>public void prepare(Entity observer, Entity observable) {
-    this.observer = observer;
-    this.observable = observable;
-    this.minFraction = Float.MAX_VALUE;
-    this.observableFraction = Float.MAX_VALUE;
-}
-</code></pre><p>Whenever the ray hits a fixture, the <code>reportRayFixture()</code> method gets called. Box2D bodies can hold arbitrary data, i.e. a reference to any <code>Object</code>. We conveniently set this to be a referene to the <code>Entity</code> the body belongs to. That way we can check if the fixture we hit is part of the observer itself. Whenever we encounter the observable we record how far along the ray segment it is.</p>
-<pre tabindex="0"><code>@Override
-public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, float fraction) {
-    Object data = fixture.getBody().getUserData();
-
-    if (data == observer) {
-        return -1;
-    }
-
-    minFraction = fraction;
-
-    if (data == observable) {
-        observableFraction = fraction;
-        return fraction;
-    }
-    return 0;
-}
-</code></pre><p>Thanks to the information recorded during the raycast, we can then ask <code>VisionCallback</code> whether the object is visible. This question is easy to answer, it will be visible if and only if the observable was the closest object the ray bumped into.</p>
-<pre tabindex="0"><code>public boolean canSee() {
-    return observableFraction &lt; 1.0f &amp;&amp; observableFraction &lt;= minFraction;
-}
-</code></pre><p>The system <code>raycast()</code> method becomes very simple and can easily update the vision map.</p>
-<pre tabindex="0"><code>private void raycast(Entity entity, Entity target) {
-    ObserverComponent observer = observerMapper.get(entity);
-    ObservableComponent observable = observableMapper.get(target);
-
-    callback.prepare(entity, target);
-
-    world.rayCast(
-        callback,
-        observer.position,
-        observable.position
-    );
-
-    if (callback.canSee()) {
-        addToVision(entity, target);
-    }
-    else {
-        removeFromVision(entity, target);
-    }
-}
-</code></pre><p>That&rsquo;s it, we have a nice, reusable vision system for any 2D game!</p>
-<h3 id="room-for-improvement">Room for improvement</h3>
-<p>Like I said, this is game jam code, you have been warned! Here&rsquo;s a few things I could think of to make the system more efficient and nicer in general.</p>
-<ul>
-<li>Collision filtering: Box2D allows us to set bit masks to bodies to filter collisions. We can leverage that to select behind which bodies observables can hide.</li>
-<li>Space partitioning: we can use a <a href="https://en.wikipedia.org/wiki/Quadtree">quadtree</a> to avoid processing every observable for each observer.</li>
-<li>Deferred raycasting: we probably don&rsquo;t need one frame accuracy, so we can update the vision maps for a subset of observers each frame. The player won&rsquo;t ever notice if that guard spotted him a couple of frames later.</li>
-<li>Prioritisation: if you ever find yourself in a situation where there are just too many observables and observers you can add some sort of prioritisation to your deferred raycast queue, so the important ones get processed first. You may also have to keep track of the time spent in the queue to avoid starvation.</li>
-</ul>
-<p>Some games may need slightly more complex vision models. For instance, you may add a small detection circle around observers to represent some kind of sixth sense. A guard would notice a presence right behind him after a short while. That would be quite easy to add to our <code>VisionSystem</code>.</p>
-<p>
-  <img src="../../img/wp/vision-system-alternate-model.png" alt="vision-system-alternate-model.png">
-
-</p>
-<h3 id="use-it-improve-it-give-feedback">Use it, improve it, give feedback</h3>
-<p>Find the full source for the vision system here:</p>
-<ul>
-<li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/systems/VisionSystem.java"><code>VisionSystem</code></a></li>
-<li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObserverComponent.java"><code>ObserverComponent</code></a></li>
-<li><a href="https://github.com/dsaltares/libgdxjam/blob/master/core/src/com/siondream/libgdxjam/ecs/components/ObservableComponent.java"><code>ObservableComponent</code></a></li>
-</ul>
-<p>Let me know what you think, especially if you use it. Would love some feedback on it!</p>
-
+      Tras publicar varios artículos en IberOgre, he decidido retomar el trabajo en Sion Tower con el objetivo de tener una versión inicial a finales de julio. La primera tarea que he llevado a cabo es una refactorización del sistema de actores con el objetivo de hacerlo más extensible y evitar la duplicación de código en la medida de lo posible aunque crezca la verticalidad en la jerarquía. Por el momento no todas las clases están implementadas pero sí diseñadas.
+      <a href="https://saltares.com/games/sistema-de-actores/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/">Sloppynauts, our LibGDXJAM entry</a>
+        <a href="https://saltares.com/games/sistema-de-overlays-en-iberogre/">Sistema de overlays en IberOgre</a>
       </h1>
-      <span class="post-date">Jan 22, 2016 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/#disqus_thread">Comments</a>
+      <span class="post-date">May 20, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sistema-de-overlays-en-iberogre/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>
-  <img src="../../img/wp/sloppynauts-e1453503126584.png" alt="sloppynauts-e1453503126584.png">
-
-</p>
-<p>After a <a href="https://github.com/dsaltares/libgdxjam/commits/master">crazy weekend before the deadline</a>, we finally managed to put something playable together for <a href="http://itch.io/jam/libgdxjam">LibGDXJAM</a>.</p>
-<p>We&quot;d love you to have a go, and leave some <a href="http://itch.io/jam/libgdxjam/rate/51210">feedback</a>.</p>
-<iframe src="https://itch.io/embed/51210" width="100%" frameborder="0"></iframe>
-<p>We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom <a href="http://overlap2d.com/">Overlap2D</a> level loader and not so much on actual content, so you can actually finish the game in under a minute. I guess the difficulty (or lack of readability) may make it slightly longer, which is also a bit bad. The movement system could have done with a bit more fine tuning as well.</p>
-<p>However, we do believe the game has potential! Thanks to <a href="https://twitter.com/DrillerDev">@DrillerDev</a>, we had great character art an animations. The mechanics offer nice possibilities, which currently remain hidden due to lack of content. Not to mention the humour opportunities and the characters&quot; comicality.</p>
-<p>I will try post some technical articles on the project. We used <a href="https://github.com/libgdx/ashley">Ashley</a> and some folks may find interesting how we tackled certain details such as the scene hierarchy or the animation selection system.</p>
-<p>
-<link rel="stylesheet" href="../../css/hugo-easy-gallery.css" />
-
-<div class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png" alt="Sloppynauts 1" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 1</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-1.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png" alt="Sloppynauts 2" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 2</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-2.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png" alt="Sloppynauts 3" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 3</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-3.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-				<div class="box">
-				  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-				    <div class="img" style="background-image: url('https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png');" >
-				      <img itemprop="thumbnail" src="https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png" alt="Sloppynauts 4" />
-				    </div>
-			      <figcaption>
-		          <p>Sloppynauts 4</p>
-			      </figcaption>
-				    <a href="https://saltares.com/img/sloppynauts/gallery/sloppynauts-4.png" itemprop="contentUrl"></a>
-				  </figure>
-				</div>
-</div>
-
-
-
-
-
-  
-
-
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
-
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
+      ¡Se nota la actividad en IberOgre! He estado trabajando bastante duro estos días para sacar adelante un nuevo artículo: &ldquo;Sistema de overlays&rdquo;. En el texto se tratan en bastante profundidad los mecanismos que ofrece Ogre para desplegar paneles e indicadores 2D a modo de GUI o HUD.
+Los contenidos que abarca se resumen en:
+ Conceptos básicos: qué es un overlay y qué tipos existen. Estructura: clases que intervienen, sintaxis de los scripts, paneles, elementos y fuentes.
+      <a href="https://saltares.com/games/sistema-de-overlays-en-iberogre/">Read On &rarr;</a>
+      
     </div>
     
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/el-conversor-de-video-yakito/">El conversor de vídeo YakiTo</a>
+      </h1>
+      <span class="post-date">May 18, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/el-conversor-de-video-yakito/#disqus_thread">Comments</a>
       
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      ¿Cuántas veces te has peleado con conversores de vídeo horribles? Acudes a Softonic, tecleas &ldquo;de .avi a iPod&rdquo;, descargas el que más estrellas tiene, se instala sin preguntar la enésima barra del navegador, resulta que no funciona y además su interfaz es ultra compleja. Es más que probable que lo que busques sea YakiTo, uno de los mejores conversores que he probado. No, no lo digo porque su creador, Sergio García Mondaray, sea un compañero del V CUSL.
+      <a href="https://saltares.com/computing/el-conversor-de-video-yakito/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sistemas-de-particulas-en-iberogre/">Sistemas de partículas en IberOgre</a>
+      </h1>
+      <span class="post-date">May 17, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sistemas-de-particulas-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      No estamos adormilados tras la final del V CUSL porque ya se ha publicado un nuevo artículo en IberOgre. En esta ocasión en &ldquo;Sistemas de partículas&rdquo; ofrecemos todos los conceptos necesarios para desplegar efectos especiales en nuestros videojuegos desarrollados con Ogre como destellos, humo, fuego y un largo etcétera.
+A vista de pájaro, tratamos los siguientes puntos:
+ Conceptos básicos sobre los sistemas de partículas. Estructura de un sistema de partículas: propiedades, Emitters y Afectors.
+      <a href="https://saltares.com/games/sistemas-de-particulas-en-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/mejor-proyecto-de-comunidad-en-el-v-cusl/">Mejor proyecto de comunidad en el V CUSL</a>
+      </h1>
+      <span class="post-date">May 14, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/mejor-proyecto-de-comunidad-en-el-v-cusl/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      El comité de evaluación y la organización del V Concurso Universitario de Software Libre han emitido su veredicto decidiendo que el proyecto IberOgre y Sion Tower sea galardonado con el premio al mejor proyecto de comunidad. No os podéis imaginar lo contento que estoy por el premio, jamás esperaba llegar tan lejos. Por supuesto, os lo tengo que agradecer a todos los que habéis colaborado de una forma u otra, ¡vosotros sois la comunidad!
+      <a href="https://saltares.com/games/mejor-proyecto-de-comunidad-en-el-v-cusl/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/extender-el-sistema-de-gestion-de-recursos-de-ogre/">Extender el sistema de gestión de recursos de Ogre</a>
+      </h1>
+      <span class="post-date">May 10, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/extender-el-sistema-de-gestion-de-recursos-de-ogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Acabo de publicar un nuevo artículo en IberOgre titulado &ldquo;Extender la gestión de recursos, audio&rdquo;. Es un completo texto en el que se exponen todos los conocimientos necesarios para integrar los recursos de tu propio juego (niveles, audio, scripts de IA, etc) dentro del sistema de gestión de recursos de Ogre. La teoría se lleva a la práctica creando un sistema de audio sobre SDL, característica inexistente en Ogre de forma inicial.
+      <a href="https://saltares.com/games/extender-el-sistema-de-gestion-de-recursos-de-ogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/entrevista-en-desarrolladores-de-videojuegos/">Entrevista en Desarrolladores de videojuegos</a>
+      </h1>
+      <span class="post-date">May 9, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/entrevista-en-desarrolladores-de-videojuegos/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Un pequeño apunte, se acaba de publicar una entrevista que me hicieron en el blog Desarrolladores de videojuegos sobre IberOgre y Sion Tower. Se trata de una comunidad hispanohablante que publica artículos, tutoriales y mucho material relacionado con el desarrollo de videojuegos. Hablamos principalmente sobre la concepción y el desarrollo de mi proyecto actual aunque también tocamos temas como los juegos independientes o la formación. Quiero agradecerle a Epifanio Suárez su tiempo y el espacio que me ha concedido en su página, esto contribuirá a la difusión de IberOgre y Sion Tower.
+      <a href="https://saltares.com/games/entrevista-en-desarrolladores-de-videojuegos/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/iberogre-y-sion-tower-en-los-medios/">IberOgre y Sion Tower en los medios</a>
+      </h1>
+      <span class="post-date">May 4, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/iberogre-y-sion-tower-en-los-medios/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      La Universidad de Cádiz ha publicado la noticia de que IberOgre y Sion Tower es proyecto finalista en el V CUSL que se celebrará en Granada. Desde entonces, muchos otros medios se han hecho eco dándole una mayor difusión al proyecto. No podemos estar más contentos por el apoyo recibido.
+El periódico gratuito Viva Cádiz nos dedica la mayor parte de su contraportada (podéis ver la noticia completa más abajo) y aparecemos en la versión digital de Diario Bahía de Cádiz.
+      <a href="https://saltares.com/projects/iberogre-y-sion-tower-en-los-medios/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/materiales-en-iberogre/">Materiales en IberOgre</a>
+      </h1>
+      <span class="post-date">Apr 30, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/materiales-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Como ya he comentado, mi equipo de trabajo está en el servicio técnico y con la escasa potencia de mi netbook se me hace prácticamente imposible desarrollar Sion Tower. Por tanto, he redirigido mis esfuerzos a IberOgre. Recientemente he publicado un artículo tratando de forma general el subsistema de materiales de Ogre. Espero que os sea útil, a continuación adjunto un pequeño sumario.
+ Conceptos básicos: iluminación, color difuso, especular, texturas, shading… Materiales: scripts .
+      <a href="https://saltares.com/games/materiales-en-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/%c2%a1finalista-en-el-v-cusl/">¡Finalista en el V CUSL!</a>
+      </h1>
+      <span class="post-date">Apr 27, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/%c2%a1finalista-en-el-v-cusl/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Se acaban de publicar los finalistas de la fase nacional del V Concurso Universitario de Software Libre y mi sorpresa no ha podido ser mayor cuando he visto a &ldquo;IberOgre y Sion Tower&rdquo; en la lista. Todavía estoy un poco en shock pero lo primero que quiero hacer es darle las gracias a todos los que han colaborado con el proyecto, en especial a AJR (arte 3D) y al Estudio Evergreen (BSO).
+      <a href="https://saltares.com/games/%c2%a1finalista-en-el-v-cusl/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/blender-2-5-estable-en-ubuntu/">Blender 2.5 estable en Ubuntu</a>
+      </h1>
+      <span class="post-date">Apr 26, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/blender-2-5-estable-en-ubuntu/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      El pasado día 13 de abril se lanzó la primera versión estable de la línea 2.5 de Blender (2.57), la herramienta de modelado y animación 3D libre por excelencia. Entre sus múltiples mejoras se encuentra el rediseño completo de la interfaz y la nueva API para Python. Es posible descargarlo para Linux desde la web pero lo más cómodo es instalarlo en Ubuntu es a través de un PPA y a continuación explico cómo hacerlo.
+      <a href="https://saltares.com/computing/blender-2-5-estable-en-ubuntu/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/animaciones-en-iberogre/">Animaciones en IberOgre</a>
+      </h1>
+      <span class="post-date">Apr 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/animaciones-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      IberOgre, la wiki de Ogre3D en español, recibe nuevo contenido gracias al artículo &ldquo;Animación&rdquo;. Como su propio nombre indica, se hace un repaso sencillo pero completo por el subsistema de animación del famoso motor de renderizado 3D libre. Como siempre, se aceptan críticas constructivas y todo tipo de sugerencias que nos ayuden a mejorar.
+ ]
+Entre los temas tratados destacan los siguientes:
+ Conceptos básicos de animación: la animación en el mundo de los videojuegos se sigue basando en parte en la animación tradicional.
+      <a href="https://saltares.com/games/animaciones-en-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/musica-para-el-segundo-nivel-de-sion-tower/">Música para el segundo nivel de Sion Tower</a>
+      </h1>
+      <span class="post-date">Apr 24, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/musica-para-el-segundo-nivel-de-sion-tower/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      En el Estudio Evergreen siguen componiendo música para el videojuego Sion Tower. En esta ocasión nos traen la pieza que sonará durante el segundo nivel. No podría estar más contento con su trabajo, es una melodía pegadiza que se ajusta perfectamente al espíritu de Sion Tower. Podéis escuchadla después del salto.
+Daniel Pellicer y Antonio Caro ya estaban consiguiendo buenos resultados para la banda sonora pero no se han conformado y siguen queriendo aprender nuevas técnicas.
+      <a href="https://saltares.com/games/musica-para-el-segundo-nivel-de-sion-tower/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/barralibrecamp-2011-en-cadiz/">!BarraLibreCamp 2011 en Cádiz</a>
+      </h1>
+      <span class="post-date">Apr 21, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/computing/barralibrecamp-2011-en-cadiz/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      El próximo día 27 de mayo se celebra la !BarraLibreCamp 2011 en la Escuela Superior de Ingeniería en Cádiz. La !BarraLibreCamp es la BarCamp de Software Libre andaluza. Básicamente es una jornada llena de seminarios y talleres informales en el que todos los participantes deberían intervenir. Escribo este comentario por aquí para difundir un poco el evento y animar al personal a que se de una vuelta.
+Una BarCamp tiene como principal punto fuerte que todo participante debería aportar algo en forma de actividad, comida o ayuda a la organización.
+      <a href="https://saltares.com/computing/barralibrecamp-2011-en-cadiz/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/game-dev-story-para-android/">Game Dev Story para Android</a>
+      </h1>
+      <span class="post-date">Apr 14, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/game-dev-story-para-android/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      En el programa de los juegos del año independientes de Game Over hablaron de Game Dev Story, lo conocía desde hacía cierto tiempo pero fue entonces cuando el gusanillo me atacó con más fuerza así que acabé haciéndome con él para mi flamante HTC Desire HD. No puedo estar más satisfecho, pues me ha amenizado decenas de visitas al WC, viajes de autobús y esperas varias. En este artículo expondré mis impresiones sobre el simulador de empresa de videojuegos.
+      <a href="https://saltares.com/hobbies/game-dev-story-para-android/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/speedx-3d-velocidad-extrema-en-android/">Speedx 3D, velocidad extrema en Android</a>
+      </h1>
+      <span class="post-date">Apr 12, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/speedx-3d-velocidad-extrema-en-android/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Durante las últimas semanas he estado probando varios juegos en Android y es sorprendente la cantidad que no sabe adaptarse a las características de un dispositivo móvil en términos de control. Speedx 3D es de los que más gratas sensaciones me ha producido por su sencillez y adictiva mecánica. A continuación sigue un breve comentario sobre el juego.
+ En Speedx 3D avanzamos por una especie de túnel de colores planos y vivos de corte futurista a gran velocidad.
+      <a href="https://saltares.com/hobbies/speedx-3d-velocidad-extrema-en-android/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/golem-de-hielo/">Gólem de hielo</a>
+      </h1>
+      <span class="post-date">Apr 8, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/golem-de-hielo/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Como podéis ver, AJR nuestro artista 3D, sigue trabajando muy duro en los modelos de Sion Tower. En esta ocasión nos enseña el Gólem de hielo, uno de los enemigos más poderosos del videojuego. Para el diseño se ha basado en la correspondiente descripción que aparece en el documento de diseño:
+ Una criatura de gran tamaño formada por bloques de hielo. Su avance es lento y pesado pero sus golpes son temibles.
+      <a href="https://saltares.com/games/golem-de-hielo/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/%c2%a1proyecto-mas-descargado-del-v-cusl/">¡Proyecto más descargado del V CUSL!</a>
+      </h1>
+      <span class="post-date">Apr 7, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/%c2%a1proyecto-mas-descargado-del-v-cusl/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Menuda noticia, acabo de enterarme de que IberOgre y Sion Tower es el proyecto más descargado de todo el V Concurso Universitario de Software Libre. En el momento de la redacción de este artículo cuenta con 562 descargas. Estaba leyendo la memoria de JavaDikt (Luis Alfonso Arce González) en la que comenta que ha conseguido colocarse como segundo proyecto más descargado (218) justo detrás del mío. Quiero darle las gracias por mencionar a IberOgre y la enhorabuena por el estupendo trabajo que está realizando, creo que tiene un pie en la final.
+      <a href="https://saltares.com/games/%c2%a1proyecto-mas-descargado-del-v-cusl/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/gestion-de-estados-de-juego/">Gestión de estados de juego</a>
+      </h1>
+      <span class="post-date">Apr 6, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/gestion-de-estados-de-juego/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Sion Tower cuenta con varios estados y transiciones los cuales están especificados en el Documento de Diseño (GDD) que publiqué hace tiempo. Por supuesto, me refiero a estados como &ldquo;Juego&rdquo;, &ldquo;Menú&rdquo;, &ldquo;Selección de nivel&rdquo;. Me parece interesante comentar a vista de pájaro estos estados así como el sistema subyacente que los gestiona. Puede ser una buena manera para saber hasta dónde pretende llegar el juego. En este artículo hablaremos de las clases State y StateManager entre otras.
+      <a href="https://saltares.com/games/gestion-de-estados-de-juego/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-busqueda-de-caminos/">Sistema de búsqueda de caminos</a>
+      </h1>
+      <span class="post-date">Apr 5, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/sistema-de-busqueda-de-caminos/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Hace unos días publicaba un vídeo mostrando el sistema de búsqueda de caminos empleando mallas de navegación y el algoritmo A estrella para Sion Tower. Pudisteis ver que el personaje recorría el camino de forma brusca, actualmente el problema se ha solucionado gracias a la inclusión de splines en una colaboración del compañero Javier Santacruz (@arld101). ¡La primera colaboración en forma de código! En este artículo nos centraremos en ilustrar a grandes rasgos como funciona la búsqueda de caminos internamente.
+      <a href="https://saltares.com/games/sistema-de-busqueda-de-caminos/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/">Colisiones y física con OgreBullet en IberOgre</a>
+      </h1>
+      <span class="post-date">Apr 4, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Vuelve la actividad a la wiki de Ogre en español gracias a Alberto Cejas Sánchez. El compañero responsable del proyecto Fútbol es Así estaba trabajando en la detección de colisiones para su videojuego y finalmente decidió utilizar el wrapper de Bullet para Ogre. Tras dar los primeros pasos ha publicado &ldquo;Colisiones y físicas con OgreBullet&rdquo;. Por el momento ha publicado la instalación en GNU/Linux (de la que no existía apenas información) y Windows, más adelante irá completando el artículo.
+      <a href="https://saltares.com/games/colisiones-y-fisica-con-ogrebullet-en-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/memoria-para-el-v-cusl/">Memoria para el V CUSL</a>
+      </h1>
+      <span class="post-date">Apr 3, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/memoria-para-el-v-cusl/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+       Este año la normativa del Concurso Universitario de Software Libre exige que se presente una memoria por proyecto para facilitar la evaluación de los mismos a los miembros del jurado. Este fin de semana no he podido desarrollar demasiado ya que he estado recopilando información para redactar dicha memoria. Aún así tengo novedades muy interesantes que iré publicando estos días.
+ Descargar memoria de IberOgre y Sion Tower para el V CUSL  
       
       
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
     </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-navigation-mesh-y-a/">Sion Tower, navigation mesh y A*</a>
+      </h1>
+      <span class="post-date">Apr 1, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sion-tower-navigation-mesh-y-a/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      En este nuevo vídeo podemos ver el sistema de búsqueda de caminos empleando el conocido algoritmo A* junto a una malla de triángulos diseñada con Blender. Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del comportamiento de los enemigos de Sion Tower.
+      <a href="https://saltares.com/games/sion-tower-navigation-mesh-y-a/">Read On &rarr;</a>
+      
     </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/musica-de-victoria-y-derrota-en-sion-tower/">Música de victoria y derrota en Sion Tower</a>
+      </h1>
+      <span class="post-date">Mar 30, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/musica-de-victoria-y-derrota-en-sion-tower/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Los chicos del Estudio Evergreen (Antonio Caro y Daniel Pellicer) siguen componiendo piezas para la banda sonora del juego a un ritmo envidiable. Recientemente colgaron en su blog dos nuevas melodías, las que sonarían durante al finalizar con éxito un nivel o al morir en el intento. A continuación podréis escucharlas.
+ Victoria: una canción alegre que se reproducirá en conjunción con la animación de celebración del protagonista. Se compone de dos partes: la primera es más intensa mientras que la segunda es más relajada y se reproduce en un bucle.
+      <a href="https://saltares.com/games/musica-de-victoria-y-derrota-en-sion-tower/">Read On &rarr;</a>
+      
     </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/">Sion Tower, animaciones del protagonista y el Goblin</a>
+      </h1>
+      <span class="post-date">Mar 28, 2011 &middot; 1 minute read &middot; <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      En este vídeo queda patente de nuevo el gran trabajo que está llevando a cabo AJR en Sion Tower. Se muestran las animaciones del protagonista y el Goblin del juego en una sencilla secuencia para que podáis verlas con claridad.
+Esto nos lleva a pensar en el proceso de exportación de los modelos desde Cinema 4D a Ogre y Blender para su liberación. Tras intercambiar decenas de correos con el desarrollador del plugin que realiza la tarea he obtenido texturas y animaciones correctas.
+      <a href="https://saltares.com/games/sion-tower-animaciones-del-protagonista-y-el-goblin/">Read On &rarr;</a>
+      
     </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/graficas-en-python-con-pycha/">Gráficas en Python con PyCha</a>
+      </h1>
+      <span class="post-date">Mar 27, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/graficas-en-python-con-pycha/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      En una práctica de la Universidad pedían medir los tiempos de ejecución de un algoritmo paralelo empleando un número diferente de hilos en cada ocasión. En la correspondiente memoria debía aparecer una comparativa del rendimiento así que decidí adjuntar una gráfica para ilustrarlo mejor. Introducir los datos a manubrio iba a ser horriblemente tedioso. Me entró el gusanillo y me hice un sencillo script en Python que genera la gráfica utilizando PyCha.
+      <a href="https://saltares.com/computing/graficas-en-python-con-pycha/">Read On &rarr;</a>
+      
     </div>
-</div>
-</p>
-<p>Next time we should follow the advice <a href="https://twitter.com/McFunkypants">@McFunkypants</a> gives in <a href="https://www.packtpub.com/game-development/game-jam-survival-guide">The Game Jam Survival Guide</a>!</p>
-
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/the-kings-speech/">The King&#39;s Speech</a>
+      </h1>
+      <span class="post-date">Mar 26, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/the-kings-speech/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Lamentablemente siempre me las arreglo para ver en la gran pantalla películas mediocres y acabo dejando lo mejor para después. Ayer pude sentarme con tranquilidad a ver la cuatro veces galardonada en los Oscar (dirección, guión, protagonista y fotografía): El discurso del rey.
+Bertie es como llama cariñosamente su familia al Duque de York (Colin Firth), segundo hijo del rey George V de Inglaterra. Su grave tartamudez le persigue constantemente y lo atormenta cada vez que debe hablar en público.
+      <a href="https://saltares.com/hobbies/the-kings-speech/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/%c2%a1mejor-proyecto-de-ocio-en-el-v-cusl-local/">¡Mejor proyecto de ocio en el V CUSL local!</a>
+      </h1>
+      <span class="post-date">Mar 23, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/%c2%a1mejor-proyecto-de-ocio-en-el-v-cusl-local/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Hoy se ha celebrado la final de la fase local del V Concurso de Software Libre en Cádiz y hemos sido galardonados con el premio al mejor proyecto de ocio (quedando segundos en la clasificación general). Creo que hablo en nombre de todos los que hemos trabajado en IberOgre y Sion Tower cuando afirmo que estamos muy contentos de que se haya reconocido nuestro esfuerzo. De todo esto me llevo la comunidad que poco a poco vamos reuniendo.
+      <a href="https://saltares.com/games/%c2%a1mejor-proyecto-de-ocio-en-el-v-cusl-local/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sion-tower-0-1-demo-tecnica/">Sion Tower 0.1 demo técnica</a>
+      </h1>
+      <span class="post-date">Mar 18, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sion-tower-0-1-demo-tecnica/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      ¡Estamos muy contentos de presentar la demo técnica de Sion Tower!
+Esta versión se ha liberado bajo la GPL 3 (código) y Creative Commons 3.0 (multimedia). Hablo en plural porque ya no trabajo en solitario en este proyecto, como ya sabéis Antonio Jiménez Rodríguez (arte 3D), Antonio Caro Oca (BSO) y Daniel Pellicer García (BSO) están colaborando activamente. Más que una primera versión, es una demo técnica a modo de escaparate de los avances hasta el momento, es decir, lo que se mostró en el último vídeo.
+      <a href="https://saltares.com/games/sion-tower-0-1-demo-tecnica/">Read On &rarr;</a>
       
     </div>
     
@@ -629,7 +589,7 @@ public float reportRayFixture(Fixture fixture, Vector2 point, Vector2 normal, fl
             </li>
             
             <li>
-                <a href="../../page/64/">»»</a>
+                <a href="../../page/11/">»»</a>
             </li>
         </ul>
     </div>

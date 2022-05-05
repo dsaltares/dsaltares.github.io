@@ -104,166 +104,458 @@
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/games/thoughts-on-unit-testing-for-ashley-and-games-in-general/">Thoughts on unit testing for Ashley and games in general</a>
+        <a href="https://saltares.com/games/inicializacion-y-cierre-de-ogre/">Inicialización y cierre de Ogre</a>
       </h1>
-      <span class="post-date">Dec 13, 2015 &middot; 4 minute read &middot; <a href="https://saltares.com/games/thoughts-on-unit-testing-for-ashley-and-games-in-general/#disqus_thread">Comments</a>
+      <span class="post-date">Feb 1, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/games/inicializacion-y-cierre-de-ogre/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>Shortly after we moved <a href="https://github.com/libgdx/ashley">Ashley</a> into the <a href="https://github.com/libgdx">Libgdx</a> family, we started writing <a href="https://github.com/libgdx/ashley/tree/master/ashley/tests/com/badlogic/ashley">unit tests</a> for every single component in the framework using <a href="http://junit.org/">jUnit</a>.</p>
-<h3 id="unit-testing-goodness">Unit testing goodness</h3>
-<p>That was over a year and a half ago and it has proven to be a huge win for many reasons.</p>
-<ul>
-<li>Issue reporters can (and should) include a <a href="https://github.com/libgdx/ashley/issues/173">test that breaks</a> as a way of explaining the problem. We can then easily include it into the suite, fix it and prevent future regressions.</li>
-<li>Pull requests <a href="https://github.com/libgdx/ashley/pull/187">trigger a build</a> in Jenkins that compiles the code and runs all the unit tests. Code reviews should check for design, good practices as well as correctness. However, as long as the tests have good coverage, we can be pretty sure the change won&rsquo;t break existing code.</li>
-<li>Since, it is mandatory to include extensive unit tests with each new feature, we can increase quality from the get go.</li>
-<li>Refactoring becomes a lot easier. We lose fear of cleaning up ugly parts of the codebase because we have unit tests to make sure the behaviour remains the same. This became evident with the recent <a href="https://github.com/libgdx/ashley/commit/261342f74dc7c1b955e7605aadeb9bfcbc112128">Engine internal refactor</a>.</li>
-</ul>
-<p>The morale is basically as follows.</p>
-<p>
-  <img src="../../img/wp/unit-test-all-the-things.png" alt="unit-test-all-the-things.png">
-
-</p>
-<p>Our <a href="https://github.com/libgdx/ashley/issues?q=is%3Aissue+is%3Aclosed">issue tracker</a> proves that we&rsquo;re far from perfect, which makes me thing about where we&rsquo;d be if it weren&rsquo;t for unit tests. Ashley inherently has lots of tricky bits of logic and potential edge cases. Making sure we don&rsquo;t break anything without automated tests would almost impossible.</p>
-<p>That is why, every time we break something, we add a unit test with the fix and make sure it never ever happens again.</p>
-<h3 id="lack-of-unit-testing-in-the-games-industry">Lack of unit testing in the games industry</h3>
-<p>When I left the games industry as a full time occupation something struck me. There&rsquo;s an incredibly poor unit testing culture in games compared to other industries. Sure, other industries are also affected by this disease but I&rsquo;ve felt a lack of attitude in the games world to change the situation.</p>
-<p>This is really, really bad.</p>
-<p>As you surely know, games are complex pieces of code. Many systems with non-trivial logic interact in a real-time simulation all at once. Games development is hard! Actually, it&rsquo;s more than that! It&rsquo;s brain melting!</p>
-<p>When a deadline approaches and the bug count shoots over the roof, we put in hacky fixes and hope for the best. Then our WTFs per line increase and no one ever dares to fix it because they&rsquo;re scared of breaking everything. So we keep pushing forward until the game&rsquo;s unavoidably collapses on us.</p>
-<p>
-  <img src="../../img/wp/wtf.png" alt="wtf.png">
-
-</p>
-<p>Some people may say that decoupling and correctly abstracting code for it to be more easily testable may add an overhead games cannot afford. I would tell them that&rsquo;s a huge empty fallacy until proven otherwise and quite possibly fall within <a href="http://c2.com/cgi/wiki?PrematureOptimization">premature optimisation</a>. These claims need to be backed by profiling data and I seriously doubt these practices will become someone&rsquo;s main bottleneck.</p>
-<p>Clean and performant code is possible.</p>
-<h3 id="we-can-do-better-than-this">We can do better than this</h3>
-<p>Admittedly, games are very hard to test. How can you unit test a shader or a behaviour script? Many things depend on graphics or user input and we cannot automate them!</p>
-<p>Here is a few things you can do.</p>
-<ul>
-<li>Unit test foundational classes like <a href="https://github.com/libgdx/libgdx/blob/master/gdx/test/com/badlogic/gdx/math/IntersectorTest.java">geometry intersectors</a> or <a href="https://github.com/libgdx/libgdx/blob/master/gdx/test/com/badlogic/gdx/utils/PooledLinkedListTest.java">containers</a>.</li>
-<li>Write tests for game specific logic that does not depend on graphics nor user input.</li>
-<li>Make sure you have a <a href="https://github.com/libgdx/libgdx/tree/master/backends/gdx-backend-headless">headless backend</a> for your engine, that way you can run it without requiring a graphic environment.</li>
-<li>Use <a href="https://en.wikipedia.org/wiki/Dependency_injection">dependency injection</a>, so you can mock those dependencies in a unit test. Don&rsquo;t have your <code>Player</code> internally use a <code>PlayerController</code>, give it a reference to <code>ControllerInterface</code> in the constructor. This way you can test Player behaves well without relying on an actual keyboard.</li>
-</ul>
-<p>Higher level systems can be really tricky to test, especially if they&rsquo;re strongly tied to user input. In those situations, you can write an <a href="https://en.wikipedia.org/wiki/Integration_testing">integration test</a> that fakes user input and validate the output.</p>
-<p>Designing your game to be unit testable is hard and may take longer but think about it as an investment. In the long run, you will face less roadblocks and will be able to iterate faster. No need to do this for a game jam prototype although I would certainly recommend it for a more serious project.</p>
-<p>It&rsquo;s undeniable that writing unit tests is time consuming but I strongly believe the games industry completely underestimate their usefulness.</p>
-<p>Finally, let me recommend <a href="../../computing/book-review-clean-code/">Clean Code</a> again.</p>
-
+      Muchos seguidores de IberOgre estabais esperando un artículo a modo de introducción para aprender a inicializar el motor. Un artículo de lo más básico era imprescindible y estaba planificado desde el principio. No obstante, debido a diversos motivos no me ha sido posible publicarlo hasta ahora. El retraso ha sido imperdonable pero al menos me queda la satisfacción de haber cumplido el objetivo más prioritario de la lista de objetivos que publiqué hace unos días.
+      <a href="https://saltares.com/games/inicializacion-y-cierre-de-ogre/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/ashley-1-7-0-released/">Ashley 1.7.0 released</a>
+        <a href="https://saltares.com/hobbies/revenge-of-the-titans/">Revenge of the Titans</a>
       </h1>
-      <span class="post-date">Nov 10, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-7-0-released/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 27, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/hobbies/revenge-of-the-titans/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p>
-  <img src="../../img/ashley/ashley-logo.png" alt="ashley-logo.png">
-
-</p>
-<p>There&rsquo;s a new <a href="https://github.com/libgdx/ashley">Ashley</a> release, check the changes for
-<a href="https://github.com/libgdx/ashley/releases/tag/ashley-1.7.0">1.7.0</a> below:</p>
-<ul>
-<li><strong><a href="https://github.com/libgdx/ashley/issues/182">API change</a></strong>: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games.</li>
-<li><strong><a href="84de67991b343828c668985bd1cd5a4a1309cafa">Update</a></strong>: components are added/removed immediately, listeners are notified after the current system finishes updating.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/b611dd98e28f4dc15d64b7340c8d507ba29153d5">Bug fix</a></strong>: fixed entity listeners not being called if a component is added inside another listener.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/9ae5e459b437d7a51bfc48283cf5cd20e82989f9">Bug fix</a></strong>: does not allocate memory inside <code>updateFamilyMembership()</code>.</li>
-<li><strong><a href="https://github.com/libgdx/ashley/commit/4799007c457f714ad9fe0ad606a4a0f25b825ab7">Update</a></strong>: uses Libgdx 1.7.1.</li>
-</ul>
-<p>To use it, change your dependency to <code>com.badlogicgames.gdx:ashley:1.7.0</code>.
-The new nightly dependency is <code>com.badlogicgames.gdx:ashley:1.7.1-SNAPSHOT</code>.</p>
-<p>Next, I am going to be focusing on code quality and maintainability. Particularly, try
-and <a href="https://github.com/libgdx/ashley/issues/178">split <code>Engine</code></a> internally into smaller
-logical components whilst keeping the API intact.</p>
-<p>As usual, <a href="http://libgdx.badlogicgames.com:8080/job/ashley/">all unit tests are passing</a>
-and the wiki is up to date. Please keep up the good work sending more pull
-requests and reporting bugs!</p>
-
+      Revenge of the Titans es un tower defense desarrollado por la compañía independiente Puppy Games. Me hice con él gracias al Humble Indie Bundle, ese magnífico pack de cinco pequeñas grandes obras al precio que el comprador estimase oportuno. No todos los días lanzan juegos multiplataforma sin DRM y durante las últimas semanas lo he estado disfrutando en mi querida Ubuntu. Sigan leyendo porque el &ldquo;jueguecito&rdquo; tiene una propuesta de lo más interesante.
+      <a href="https://saltares.com/hobbies/revenge-of-the-titans/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/">Win a free digital copy of Libgdx Cookbook</a>
+        <a href="https://saltares.com/hobbies/camino-a-la-libertad/">Camino a la libertad</a>
       </h1>
-      <span class="post-date">Sep 21, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/win-a-free-digital-copy-of-libgdx-cookbook/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 24, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/camino-a-la-libertad/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><strong>Update</strong>: the list of winners is <a href="http://echaloasuerte.com/draw/56116030741c1f1a7290c5b3/">available as a public draw</a>.
-Congratulations and thanks for the support! The Libgdx Cookbook discount will
-continue until September the 30th. If you help us spread the word by retweeting
-the following message, you&quot;ll have a chance of getting one of the three free
-digital copies of the book we&quot;ll be giving away.</p>
-<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Libgdx Cookbook is 50% off, use the code: &quot;LCPGDC50&quot; and RT to enter a raffle for 3 digital copies of the book. Level up your Libgdx skills!</p>&mdash; David Saltares (@d_saltares) <a href="https://twitter.com/d_saltares/status/645885222828015616?ref_src=twsrc%5Etfw">September 21, 2015</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+      Había algunas películas decentes en la cartelera y gracias a unos cartuchos vacíos de impresora las entradas nos iban a salir gratis por lo que la situación no pintaba nada mal. Camino a la libertad de Peter Wier fue la opción escogida y es que el director de El club de los poetas muertos y de El show de Truman daba bastante confianza. A continuación leerán (o cerrarán la pestaña del navegador) una pequeña reseña firmada por un pésimo crítico de cine.
+      <a href="https://saltares.com/hobbies/camino-a-la-libertad/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/libgdx-cookbook-50-off/">Libgdx Cookbook 50 off!</a>
+        <a href="https://saltares.com/games/proximos-objetivos-en-iberogre-y-sion-tower/">Próximos objetivos en IberOgre y Sion Tower</a>
       </h1>
-      <span class="post-date">Sep 12, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/libgdx-cookbook-50-off/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 23, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/proximos-objetivos-en-iberogre-y-sion-tower/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th
-if you get it from Packt&rsquo;s website using the code <code>LCPGDC50</code>. You have to admit
-it&rsquo;s a total steal, considering it&rsquo;s the most complete and up to date Libgdx
-book out there.</p>
-<ul>
-<li>Over 75 to-the-point articles that will show you how to leverage a particular
-aspect of Libgdx for your game.</li>
-<li>Every article is accompanied by a runnable sample available on
-<a href="https://github.com/dsaltares/libgdx-cookbook">GitHub</a>.</li>
-<li>We constantly <a href="https://github.com/dsaltares/libgdx-cookbook/commits/master">update the samples on GitHub</a>
-to stay compatible with the latest Libgdx version.</li>
-</ul>
-<p>Don&rsquo;t have it yet? Go get it!</p>
-<p>
-  <img src="../../img/cookbook/libgdx-cookboom-raffle.png" alt="libgdx-cookboom-raffle.png">
-
-](<a href="http://www.packtpub.com/libgdx-cross-platform-development-cookbook/book">http://www.packtpub.com/libgdx-cross-platform-development-cookbook/book</a>)</p>
-
+      Hace mes y medio comencé a utilizar el sistema de gestión de tareas de Red Iris para organizarme. Es mucho mejor marcarse tareas realizables en poco tiempo que trabajar con un plan a largo plazo. Por supuesto, estos objetivos deben estar encaminados hacia el plan global pero he comprobado que en proyectos pequeños se es más productivo con tareas concretas. Recientemente he ido cubriendo los objetivos cumplidos en forma de artículos publicados o sistemas desarrollados.
+      <a href="https://saltares.com/games/proximos-objetivos-en-iberogre-y-sion-tower/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/projects/conjugate-is-now-available/">My new side project: Conjugate is now online</a>
+        <a href="https://saltares.com/hobbies/scott-pilgrim-vs-the-world/">Scott Pilgrim vs The world</a>
       </h1>
-      <span class="post-date">Aug 8, 2015 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/conjugate-is-now-available/#disqus_thread">Comments</a>
+      <span class="post-date">Jan 19, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/scott-pilgrim-vs-the-world/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/projects">Projects</a>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
       </span>
       
-      <p><a href="https://github.com/dsaltares/conjugate">Conjugate</a> is a free, multi-language verb conjugator service and it is now available at <a href="https://saltares.com/conjugate">saltares.com/conjugate</a>.</p>
-<p>It&quot;dead easy: select the target language, enter the infinitive form, either in English or the target language, and press the <em>Conjugate</em> button to get a nice list with all its conjugated forms. You don&rsquo;t know how to conjugate a verb whilst on the go? No worries, Conjugate&rsquo;s design is responsive, which means it looks neat on any device. Mobile devices were actually my primary target when coming up with the layout.</p>
-<p>For now it only supports Spanish, Romanian and German although I will be adding more languages in the upcoming days.</p>
-<p>Check out the quick GIF demo below, give the real thing a go and
-<a href="https://github.com/dsaltares/conjugate/issues">let me know what you think</a>, feedback is really appreciated.</p>
-<p>
-  <img src="../../img/conjugate/conjugate.gif" alt="conjugate.gif">
-
-</p>
-
+      Estos días he estado viendo varias películas que tenía pendientes, quizás por la falta de series durante las vacaciones. Es curioso como uno se acostumbra a visionados de episodios cortos, luego es más complicado sentarse a ver algo durante más de dos horas. Scott Pilgrim contra el mundo ha sido uno de los largometrajes que más repercusión han tenido en la red el pasado año junto a Inception o The social network y no me extraña teniendo en cuenta su temática.
+      <a href="https://saltares.com/hobbies/scott-pilgrim-vs-the-world/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/luces-sombras-y-entorno-en-iberogre/">Luces, sombras y entorno en IberOgre</a>
+      </h1>
+      <span class="post-date">Jan 17, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/luces-sombras-y-entorno-en-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Alguna ventaja tenía que tener desarrollar un proyecto de cierto tamaño compuesto de dos partes (IberOgre y Sion Tower). Cuando estoy atascado en uno le doy un impulso al otro y eso es precisamente lo que me ha pasado los últimos días con el sistema de colisiones de Sion Tower. Tras horas de lectura, aprendizaje y frustración decidí aparcar el asunto y dedicarme a la wiki, la cual estaba algo solitaria.
+      <a href="https://saltares.com/games/luces-sombras-y-entorno-en-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/the-social-network/">The social network</a>
+      </h1>
+      <span class="post-date">Jan 14, 2011 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/the-social-network/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Una de las películas que más revuelo ha generado tanto en la red como en el Mundo Real™ ha sido, sin lugar dudas The social network. Como siempre, llego un poco tarde a la fiesta pero al menos he conseguido publicar la reseña antes de los Oscar. Pocas veces una película produce opiniones tan extremas. He oído de todo, desde que era completamente soporífera hasta que se trata del largometraje de la década, menuda barbaridad.
+      <a href="https://saltares.com/hobbies/the-social-network/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/mis-fuentes-de-informacion-para-iberogre/">Mis fuentes de información para IberOgre</a>
+      </h1>
+      <span class="post-date">Jan 10, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/games/mis-fuentes-de-informacion-para-iberogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Para poder trabajar en una wiki sobre el engine de renderizado Ogre3D he tenido que aprender a utilizar la biblioteca en algún sitio. Estos conocimientos también son indispensables para el desarrollo de Sion Tower. Lo cierto es que debería poner un disclaimer como una casa advirtiendo mi escasa experiencia porque aún estoy aprendiendo. En cualquier caso, en este artículo enumero las fuentes que he utilizado acompañadas de las razones por las que me han sido útiles.
+      <a href="https://saltares.com/games/mis-fuentes-de-informacion-para-iberogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/ogitor-instalacion-en-linux-y-el-formato-dotscene/">Ogitor: instalación en Linux y el formato DotScene</a>
+      </h1>
+      <span class="post-date">Jan 5, 2011 &middot; 3 minute read &middot; <a href="https://saltares.com/games/ogitor-instalacion-en-linux-y-el-formato-dotscene/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Como es lógico, los niveles de Sion Tower se almacenarán en ficheros y deberán contener información para poder desplegar el escenario, oleadas de enemigos, música etc. Escribir a mano un un fichero tan complejo es peor que una tortura propia de mafiosos. Por tanto, lo ideal sería disponer de un editor libre y multiplataforma con el que crear los niveles. El sistema de Sion Tower tomará la responsabilidad parsear los ficheros del editor y cargar los niveles.
+      <a href="https://saltares.com/games/ogitor-instalacion-en-linux-y-el-formato-dotscene/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/batman-arkham-asylum/">Batman Arkham Asylum</a>
+      </h1>
+      <span class="post-date">Jan 3, 2011 &middot; 4 minute read &middot; <a href="https://saltares.com/hobbies/batman-arkham-asylum/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      ¿Otro comentario de un juego de hace año y medio? Caballeros, qué quieren que les diga, me tomo las cosas con calma. Mientras la masa se deja los cuartos en el Call of Duty de turno yo estaba a dos bandas entre Fifa 11 con su delicioso vestíbulo online 2vs2 y Batman Arkham Asylum. Rocksteady le ha dado una patada en la boca a todos aquellos que decían que los juegos de superhéroes no podían ser buenos.
+      <a href="https://saltares.com/hobbies/batman-arkham-asylum/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/">Sherlock Holmes en la actualidad</a>
+      </h1>
+      <span class="post-date">Dec 31, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Siempre me han gustado las historias de investigación y acción en las que lo importante no es si el personaje descubre el misterio, sino cómo lo consigue. Creo que la nueva serie británica Sherlock entra dentro de la categoría. Se estrenó en UK el pasado verano con una crítica excelente. Aunque sus episodios constasen de 90 minutos de metraje, esta primera temporada sólo cuenta con 3 de ellos por lo que en unos días ya la había finiquitado.
+      <a href="https://saltares.com/hobbies/sherlock-holmes-en-la-actualidad/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/">Sistema de audio pseudo-3D integrado con Ogre</a>
+      </h1>
+      <span class="post-date">Dec 30, 2010 &middot; 4 minute read &middot; <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Como todo buen hijo de vecino, Sion Tower necesitará reproducir efectos de sonido y música de fondo, de otro modo al jugador se le caerían dos lagrimones y lo cerraría para siempre. Ogre es un motor de renderizado y no incorpora elementos como un subsistema de audio, por tanto, debía buscarlo en otro lugar. Como he comentado anteriormente, Ogre cuenta con un sistema de gestión de recursos muy potente y ampliable.
+      <a href="https://saltares.com/games/sistema-de-audio-pseudo-3d-integrado-con-ogre/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/boardwalk-empire/">Boardwalk Empire</a>
+      </h1>
+      <span class="post-date">Dec 29, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/boardwalk-empire/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Últimamente me he aventurado a comenzar series como The Walking Dead, Community o la que nos ocupa en estos momentos, Boardwalk Empire. He de reconocer que la apertura de miras ha venido bien pues no me he sentido demasiado decepcionado en ningún caso. ¿Quién sabe? Puede que sea un conformista. Como varias de las series de la HBO, estamos ante una obra de monóculo. La mano de Martin Scorsese se nota aunque sólo se haya visto involucrado de pleno en el episodio piloto.
+      <a href="https://saltares.com/hobbies/boardwalk-empire/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/">Movimiento relativo a la cámara</a>
+      </h1>
+      <span class="post-date">Dec 26, 2010 &middot; 5 minute read &middot; <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      En la mayoría de videojuegos en tercera persona, la dirección hacia la que se mueve el personaje depende de la orientación de la cámara. A pesar de que Sion Tower es un tower defense, controlamos a un personaje en tercera persona y, por tanto, debía incorporar este sistema. Estos días he estado exprimiendo los sesos para implementar dicho movimiento. ¡Por fin! Tras decenas de diagramas con vectores, ángulos y sistemas de coordenadas, lo he conseguido.
+      <a href="https://saltares.com/games/movimiento-relativo-a-la-camara/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/the-humble-indie-bundle-2/">The Humble Indie Bundle 2</a>
+      </h1>
+      <span class="post-date">Dec 18, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/the-humble-indie-bundle-2/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      The Humble Indie Bundle regresó hace unos días con su segunda entrega. Un pack de 5 juegos independientes que podemos adquirir al precio que fijemos. Vienen libre de protección DRM, compatibles con Windows/Linux/Mac. Es una iniciativa solidaria, pues podremos elegir la distribución de nuestro pago entre desarrolladores y ONGs. ¿No lo tienes aún? ¡Ve a comprarlo pedazo de insensato!
+Pasemos pues, a comentar los ilustres participantes:
+ Braid: el más conocido de los presentes que cosechó un tremendo éxito tanto en X-Box 360 Live Arcade como en PC.
+      <a href="https://saltares.com/hobbies/the-humble-indie-bundle-2/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/iberogre-en-el-i-hackathon-osluca/">IberOgre en el I Hackathon OSLUCA</a>
+      </h1>
+      <span class="post-date">Dec 17, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/games/iberogre-en-el-i-hackathon-osluca/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Durante todo el día de mañana viernes 17 y el próximo lunes 20 de diciembre se celebrará el I Hackathon en la Universidad de Cádiz de la mano de la Oficina de Software Libre. Como no podía ser de otra forma, el proyecto IberOgre y Sion Tower estará presente tanto como para buscar colaboradores como para ofrecer mano de obra barata (básicamente gratis).
+Pero… ¿qué narices es un hackathon? Pues es una especie de maratón de desarrollo en el que los participantes presentan sus proyectos junto con una lista de pequeñas tareas pendientes.
+      <a href="https://saltares.com/games/iberogre-en-el-i-hackathon-osluca/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/the-walking-dead/">The Walking Dead</a>
+      </h1>
+      <span class="post-date">Dec 9, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/hobbies/the-walking-dead/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Los zombies están de moda, recibimos constantemente películas como Zombieland, El amanecer de los muertos o 28 días después. La fiebre de infectados ha invadido los videojuegos con Left 4 Dead, Plants versus Zombies o Dead Rising entre muchos otros. Las producciones impactantes, gores y casposas están a la orden del día y el mundo de las series no podía ser menos. La primera temporada de la adaptación del cómic con el mismo nombre ha llegado a su fin y aquí les ofrezco mis humildes impresiones.
+      <a href="https://saltares.com/hobbies/the-walking-dead/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/nuevos-articulos-escenas-nodos-y-exportacion/">Nuevos artículos: escenas, nodos y exportación</a>
+      </h1>
+      <span class="post-date">Dec 8, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/nuevos-articulos-escenas-nodos-y-exportacion/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      El puente se acaba y , entre otras cosas, me ha permitido darle un pequeño pero importante impulso a IberOgre. Ligeras correcciones o ampliaciones en varios artículos y un par completamente nuevos. La wiki va sobre ruedas y no hemos tenido problemas de disponibilidad desde el cambio de servidor, ¡gracias de nuevo a la OSLUCA! Lo que sigue es un pequeño resumen del trabajo de los últimos días.
+Creación básica de escenas Hasta el momento sólo conocíamos el proceso de inicialización de Ogre.
+      <a href="https://saltares.com/games/nuevos-articulos-escenas-nodos-y-exportacion/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/">Sistema de gestión de tareas en Red Iris</a>
+      </h1>
+      <span class="post-date">Dec 5, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Gestionar de forma eficiente el tiempo que le dedico al proyecto es complicado. Tras una dura mañana de trabajo, redactar un artículo para IberOgre o programar un módulo de Sion Tower se vuelve una carrera cuesta arriba. Aún así no me ha ido del todo mal hasta el momento, pues la wiki tiene varios artículos publicados y el GDD del videojuego está avanzado. En cualquier caso, espero no ser el único que tenga estos problemas.
+      <a href="https://saltares.com/games/sistema-de-gestion-de-tareas-en-red-iris/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/">BURG, un GRUB más bonito: instalación en Ubuntu</a>
+      </h1>
+      <span class="post-date">Dec 4, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      Como sabéis, GRUB (GRand Unified Bootloader) es un fantástico software que nos permite elegir entre los sistemas operativos que tengamos instalados en el momento del arranque. Para muchos es la salvación en una transición de Windows a GNU/Linux mientras que para otros es la forma de acudir suplicando a otro Kernel cuando el principal da problemas. El único problema que puede tener es que es un bastante feo. Al rescate de los vanidosos y acude BURG (Brand-new Universal loadeR from GRUB), nótese la ironía infinita al darle la vuelta a &ldquo;GRUB&rdquo;.
+      <a href="https://saltares.com/computing/burg-un-grub-mas-bonito-en-ubuntu/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/experiencia-con-el-primer-taller-de-la-advuca/">Experiencia con el primer taller de la ADVUCA</a>
+      </h1>
+      <span class="post-date">Dec 1, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/experiencia-con-el-primer-taller-de-la-advuca/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      La semana pasada se celebraron las dos sesiones del primer taller de la ADVUCA titulado &ldquo;Introducción al Desarrollo de Videojuegos con un Pong&rdquo;. Podéis obtener más información así como los materiales empleados en el blog de la asociación. En este artículo me gustaría comentar mi experiencia personal organizando la actividad junto con Alberto Cejas y otros compañeros. Por supuesto, al final, tenéis la galería de fotos cortesía de José Tomás Tocino.
+      <a href="https://saltares.com/games/experiencia-con-el-primer-taller-de-la-advuca/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/primera-version-del-gdd-de-sion-tower/">Primera versión del GDD de Sion Tower</a>
+      </h1>
+      <span class="post-date">Nov 28, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/primera-version-del-gdd-de-sion-tower/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      He sudado un poco de tinta para conseguirlo pero ya he publicado la primera versión del documento de diseño de Sion Tower, el videojuego que acompañará a IberOgre. Hace algunas semanas os hablaba del Game Design Document (GDD) en general y desde entonces he estado redactando el mío. Ha sido un paso duro (no disfruto con el papeleo) pero necesario para aclararme las ideas.
+El documento se divide en varias secciones diferenciadas:
+      <a href="https://saltares.com/games/primera-version-del-gdd-de-sion-tower/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/">¿Realmente existen los diseñadores estrella?</a>
+      </h1>
+      <span class="post-date">Nov 27, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      Dentro de cada equipo que desarrolla un título AAA siempre sobresale la cabeza del &ldquo;diseñador estrella&rdquo;. Suelen ser personajes carismáticos y polémicos cuyas declaraciones nos bombardean cerca de la fecha de lanzamiento. Señores como Kojima (Metal Gear Solid), Molyneux (Fable), Mikami (Resident Evil) o Yamauchi (Gran Turismo) entre otros muchos. Reyes del hype y de la venta del humo, de eso no cabe duda pero, ¿imprescindibles genios dentro de los estudios de desarrollo?
+      <a href="https://saltares.com/hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/iberogre-se-muda-a-otro-servidor/">IberOgre se muda a otro servidor</a>
+      </h1>
+      <span class="post-date">Nov 24, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/games/iberogre-se-muda-a-otro-servidor/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Es probable que hayáis notado caídas intermitentes del servidor durante las últimas semanas. IberOgre se aloja en el servidor de la Oficina de Software Libre de la Universidad de Cádiz (OSLUCA) que, amablemente, nos cedió un hueco. Fijaos si su bondad no conoce límites que concedieron espacio a muchas otras wikis para distintos proyectos. La cantidad de peticiones ha hecho que el sistema se sobrecargue y recientemente han comenzado las migraciones.
+      <a href="https://saltares.com/games/iberogre-se-muda-a-otro-servidor/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/steve-streeting-recomienda-iberogre-por-twitter/">Steve Streeting recomienda IberOgre por Twitter</a>
+      </h1>
+      <span class="post-date">Nov 21, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/steve-streeting-recomienda-iberogre-por-twitter/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Así es, yo tampoco me lo creía cuando lo vi pero el hecho es que el creador de Ogre, nuestro amado motor de renderizado, recomendaba IberOgre a través de la red de microblogging. Por supuesto, agradecerle infinitamente su interés con este pequeño pero importantísimo gesto que proporciona al proyecto más difusión. Sigan leyendo y les contaré los detalles.
+Steve Streeting y Ogre Steve Streeting estuvo en el proyecto Ogre durante años y ahora está embarcado en el desarrollo de una GUI para Git y Mercurial en Mac llamada SourceTree.
+      <a href="https://saltares.com/games/steve-streeting-recomienda-iberogre-por-twitter/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/instalar-ogre-en-ubuntu-de-forma-sencilla/">Instalar Ogre en Ubuntu de forma sencilla</a>
+      </h1>
+      <span class="post-date">Nov 18, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/instalar-ogre-en-ubuntu-de-forma-sencilla/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Si sigues el proyecto IberOgre desde sus comienzos es probable que recuerdes este artículo en el que contaba como las pasé canutas para instalar Ogre 1.7 en mi entorno de producción (siempre quise decir esto, ¡suena tan rimbombante!). Mi objetivo era utilizar herramientas libres y no depender de ningún IDE en concreto a la hora de compilar proyectos. El caso es que ya no hay que compilar Ogre sino que tenemos unos flamantes paquetes .
+      <a href="https://saltares.com/games/instalar-ogre-en-ubuntu-de-forma-sencilla/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/">Gestión de recursos en Ogre3D</a>
+      </h1>
+      <span class="post-date">Nov 14, 2010 &middot; 3 minute read &middot; <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Estos últimos días he estado trabajando en la redacción del Game Design Document (GDD) de Sion Tower y en la preparación del taller &ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo; que organizamos en la ADVUCA. Ya era hora de retomar IberOgre. Para poder continuar con el artículo &ldquo;Creación básica de escenas&rdquo; tenía que cubrir primero la gestión de recursos en Ogre y eso es exactamente lo que he hecho. Ya está publicado un nuevo artículo: &ldquo;Gestión de recursos&rdquo;.
+      <a href="https://saltares.com/games/gestion-de-recursos-en-ogre3d/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/hobbies/tricicle-garrick/">Tricicle: Garrick</a>
+      </h1>
+      <span class="post-date">Nov 13, 2010 &middot; 1 minute read &middot; <a href="https://saltares.com/hobbies/tricicle-garrick/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/hobbies">Hobbies</a>
+      </span>
+      
+      David Garrick fue un reconocido actor inglés del siglo XVIII. Estaba tan extraordinariamente dotado para la comedia, que los médicos recomendaban sus actuaciones como una especie de remedio mágico, capaz de sanar cualquier pena del alma. Podríamos decir que Garrick, sin saberlo, fue el primer risoterapeuta de la historia.
+ Anoche acudí al espectáculo Garrick de Tricicle que tuvo lugar en el Gran Teatro Falla de Cádiz. Lo que para el mundo exterior supuso hora y media, a mí me parecieron solamente 30 breves minutos.
+      <a href="https://saltares.com/hobbies/tricicle-garrick/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/postmortem-grannys-bloodbath/">Postmortem: Granny&#39;s Bloodbath</a>
+      </h1>
+      <span class="post-date">Nov 11, 2010 &middot; 7 minute read &middot; <a href="https://saltares.com/games/postmortem-grannys-bloodbath/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Granny&rsquo;s Bloodbath fue el proyecto que desarrollamos tres compañeros para la asignatura Diseño de Videojuegos en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de plataformas y acción de scroll horizontal en el que manejamos a una abuelita que trata de sobrevivir a una invasión zombie. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss.
+      <a href="https://saltares.com/games/postmortem-grannys-bloodbath/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/desarrollo-de-videojuegos-con-un-pong/">Desarrollo de videojuegos con un Pong</a>
+      </h1>
+      <span class="post-date">Nov 10, 2010 &middot; 2 minute read &middot; <a href="https://saltares.com/games/desarrollo-de-videojuegos-con-un-pong/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Cuando hace unos días escribía un artículo presentando a la Asociación de Desarrollo de Videojuegos de la Universidad de Cádiz (ADVUCA) comentaba que estábamos preparando nuestra primera actividad. El taller: &ldquo;Introducción al desarrollo de videojuegos con un Pong&rdquo; va viento en popa y se celebrará los días 22 y 25 de noviembre de 17:00 a 20:00 en la Escuela Superior de Ingeniería de Cádiz. Lo impartimos principalmente Alberto Cejas y yo aunque contaremos con el apoyo de varios compañeros más.
+      <a href="https://saltares.com/games/desarrollo-de-videojuegos-con-un-pong/">Read On &rarr;</a>
       
     </div>
     
@@ -286,7 +578,7 @@ to stay compatible with the latest Libgdx version.</li>
             </li>
             
             <li>
-                <a href="../../page/64/">»»</a>
+                <a href="../../page/11/">»»</a>
             </li>
         </ul>
     </div>

@@ -104,336 +104,504 @@
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/">Sticky nav bar on scroll with React hooks</a>
+        <a href="https://saltares.com/games/libgdx-at-kingston-university/">Libgdx at Kingston University</a>
       </h1>
-      <span class="post-date">Jan 23, 2022 &middot; 2 minute read &middot; <a href="https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/#disqus_thread">Comments</a>
+      <span class="post-date">Nov 26, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/libgdx-at-kingston-university/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/development">Development</a>
+      <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.</p>
-<p>Like so.</p>
-<iframe
-  src="https://codesandbox.io/embed/sticky-scrolling-header-vwsso?fontsize=14&hidenavigation=1&theme=dark&view=preview"
-  style="width:100%; height:500px; border:1px solid #000; border-radius: 4px; overflow:hidden;"
-  title="sticky-scrolling-header"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-  >
-</iframe>
-<p>Making the navigation bar <code>position: fixed; top 0;</code> was not going to cut it because the header had to come first unless we scrolled past the navigation bar.</p>
-<p>I wanted to keep the component that controls the layout as simple as possible, so I abstracted the stickiness logic into a <code>useSticky</code> <a href="https://reactjs.org/docs/hooks-intro.html">hook</a>. Here&rsquo;s how you&rsquo;d use it.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-jsx" data-lang="jsx"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">classNames</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;classnames&#34;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./useSticky&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">App</span>() {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">stickyRef</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">useSticky</span>();
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> (
-</span></span><span style="display:flex;"><span>    &lt;&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">header</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;header&#34;</span>&gt;
-</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span>&gt;<span style="color:#a6e22e">Header</span>&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">header</span>&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">nav</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">ref</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">stickyRef</span>}
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span>{<span style="color:#a6e22e">classNames</span>(<span style="color:#e6db74">&#34;nav&#34;</span>, { <span style="color:#a6e22e">sticky</span> })}
-</span></span><span style="display:flex;"><span>      &gt;
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">Sticky</span> <span style="color:#a6e22e">nav</span>
-</span></span><span style="display:flex;"><span>      &lt;/<span style="color:#f92672">nav</span>&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">div</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span>{{
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">height</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sticky</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">?</span> <span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span><span style="color:#f92672">?</span>.<span style="color:#a6e22e">clientHeight</span><span style="color:#e6db74">}</span><span style="color:#e6db74">px`</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;0px&#39;</span>
-</span></span><span style="display:flex;"><span>        }}
-</span></span><span style="display:flex;"><span>      /&gt;
-</span></span><span style="display:flex;"><span>      &lt;<span style="color:#f92672">main</span> <span style="color:#a6e22e">className</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;content&#34;</span> /&gt;
-</span></span><span style="display:flex;"><span>    &lt;/&gt;
-</span></span><span style="display:flex;"><span>  );
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>You stick (no pun intended) the <code>stickyRef</code> into the thing that you want to fix to the top after you scroll past it. Then, <code>sticky</code> will indicate whether it should be fixed at the top or not. I then use that to apply a <code>sticky</code> class.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span>.<span style="color:#a6e22e">sticky</span> {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>The extra <code>div</code> below the <code>nav</code> adds some extra padding so that the content does not immediately jump below the navigation bar when this becomes fixed at the top.</p>
-<p>🌟 The magic happens in the <code>useSticky</code> hook itself.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">useEffect</span>, <span style="color:#a6e22e">useRef</span>, <span style="color:#a6e22e">useState</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;react&#34;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">useSticky</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">stickyRef</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">useRef</span>(<span style="color:#66d9ef">null</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">sticky</span>, <span style="color:#a6e22e">setSticky</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#66d9ef">false</span>);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">const</span> [<span style="color:#a6e22e">offset</span>, <span style="color:#a6e22e">setOffset</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">useState</span>(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setOffset</span>(<span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">offsetTop</span>);
-</span></span><span style="display:flex;"><span>  }, [<span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">setOffset</span>]);
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">useEffect</span>(() =&gt; {
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">handleScroll</span> <span style="color:#f92672">=</span> () =&gt; {
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">stickyRef</span>.<span style="color:#a6e22e">current</span>) {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">setSticky</span>(window.<span style="color:#a6e22e">scrollY</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">offset</span>);
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>    window.<span style="color:#a6e22e">addEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> () =&gt; window.<span style="color:#a6e22e">removeEventListener</span>(<span style="color:#e6db74">&#34;scroll&#34;</span>, <span style="color:#a6e22e">handleScroll</span>);
-</span></span><span style="display:flex;"><span>  }, [<span style="color:#a6e22e">setSticky</span>, <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">offset</span>]);
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">stickyRef</span>, <span style="color:#a6e22e">sticky</span> };
-</span></span><span style="display:flex;"><span>};
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">useSticky</span>;
-</span></span></code></pre></div><p>The first effect measures the vertical offset of the element we want to fix at the top after it&rsquo;s scrolled past. The second one listens to the <code>scroll</code> event and determines whether we have scrolled past the element&rsquo;s top edge and it needs to become sticky.</p>
-<p>🙌 Hope this is useful!</p>
-
+      Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements Alberto&rsquo;s Libgdx workshop at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released book.
+I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students.
+      <a href="https://saltares.com/games/libgdx-at-kingston-university/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/">Improve your NextAuth.js app local development experience with a dockerized SMTP server</a>
+        <a href="https://saltares.com/games/libgdx-workshop-at-cadiz-university/">Libgdx workshop at Cadiz University</a>
       </h1>
-      <span class="post-date">Jan 16, 2022 &middot; 3 minute read &middot; <a href="https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/#disqus_thread">Comments</a>
+      <span class="post-date">Nov 25, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/libgdx-workshop-at-cadiz-university/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/development">Development</a>
+      <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>
-  <img src="../../img/nextjs/nextauth.png" alt="NextAuth.js logo">
-
-</p>
-<p><a href="https://next-auth.js.org/">NextAuth.js</a> makes it shockingly easy to add authentication to <a href="https://nextjs.org/">Next.js</a> apps. It&rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including <a href="https://en.wikipedia.org/wiki/One-time_password">one time passwords</a> or &ldquo;magic links&rdquo;.</p>
-<p>Working with NextAuth.js is trivial, it sounds too good to be true!</p>
-<p>Of course, there is a catch&hellip;</p>
-<p>The developer experience worsens because you now need a network connection to log into your locally running app, even if your database is also local. Bye bye to chill sessions of working on the train.</p>
-<p>You can fix that with a local SMTP server! Let&rsquo;s see how we can set it up. I will be showing code samples, but you can find a full working example of this post <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">here</a>.</p>
-<h3 id="-set-up-nextauthjs-with-the-emailprovider">🔐 Set up NextAuth.js with the <code>EmailProvider</code></h3>
-<p>Let&rsquo;s assume you already have a Next.js application. If you don&rsquo;t have NextAuth.js configured, the first thing is to follow the tutorial on their landing page. Then, set the <code>EmailProvider</code> in <code>/pages/api/auth/[...nextauth].js</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">NextAuth</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth&#39;</span>;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">EmailProvider</span> <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;next-auth/providers/email&#39;</span>;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#a6e22e">NextAuth</span>({
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">providers</span><span style="color:#f92672">:</span> [
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">EmailProvider</span>({
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">server</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">host</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_HOST</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">port</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PORT</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">auth</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">user</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_USER</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#a6e22e">pass</span>: <span style="color:#66d9ef">process.env.EMAIL_SERVER_PASSWORD</span>,
-</span></span><span style="display:flex;"><span>        },
-</span></span><span style="display:flex;"><span>      },
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">from</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;NextAuth &lt;noreply@example.com&gt;&#39;</span>,
-</span></span><span style="display:flex;"><span>    }),
-</span></span><span style="display:flex;"><span>  ]
-</span></span><span style="display:flex;"><span>});
-</span></span></code></pre></div><p>For the <code>EmailProvider</code> to work, you also need to install the <code>nodemailer</code> package.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ yarn add nodemailer
-</span></span></code></pre></div><p>Remember that you also need to provide an <a href="https://next-auth.js.org/adapters/overview">Adapter</a> to NextAuth.js so that it can persist data. In <a href="https://github.com/dsaltares/saltares-blog-examples/blob/main/nextauth-mailhog/pages/api/auth/%5B...nextauth%5D.js#L9">my example</a>, I use the <a href="https://next-auth.js.org/adapters/prisma"><code>PrismaAdapter</code></a>.</p>
-<h3 id="-set-up-your-local-smtp-server">📬 Set up your local SMTP server</h3>
-<p>We&rsquo;re going to use <a href="https://github.com/mailhog/MailHog">MailHog</a>, an open source email testing tool that comes with an SMTP server you can run locally. Conveniently, they have a zero config Docker image!</p>
-<p>Create a <code>docker-compose.yaml</code> file or update your existing one and define the MailHog service.</p>
-<p>Using Docker Compose to run your database locally is a pretty good idea! In my <a href="https://github.com/dsaltares/saltares-blog-examples/tree/main/nextauth-mailhog">example repo</a> I went for a containerised PostgreSQL database.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#39;3.9&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">services</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mailhog</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">mailhog/mailhog</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">logging</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">driver</span>: <span style="color:#e6db74">&#39;none&#39;</span> <span style="color:#75715e"># disable saving logs</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">1025</span>:<span style="color:#ae81ff">1025</span> <span style="color:#75715e"># smtp server</span>
-</span></span><span style="display:flex;"><span>      - <span style="color:#ae81ff">8025</span>:<span style="color:#ae81ff">8025</span> <span style="color:#75715e"># web ui</span>
-</span></span></code></pre></div><p>Add a couple of convenience scripts to your <code>package.json</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;scripts&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;docker:up&#34;</span>: <span style="color:#e6db74">&#34;docker compose up -d&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;docker:down&#34;</span>: <span style="color:#e6db74">&#34;docker compose down&#34;</span>
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>Edit your local <code>.env</code> file to configure the NextAuth.js <code>EmailProvider</code>. Leave everything as below.</p>
-<pre tabindex="0"><code>EMAIL_SERVER_HOST=localhost
-EMAIL_SERVER_PORT=1025
-EMAIL_SERVER_USER=email-user
-EMAIL_SERVER_PASSWORD=email-pass
-</code></pre><h3 id="-local-workflow">💻 Local workflow</h3>
-<p>Bring up your containers and start the local development server.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ yarn docker:up <span style="color:#f92672">&amp;&amp;</span> yarn dev
-</span></span></code></pre></div><p>Go to <code>https://localhost:3000</code>, click Sign in and enter your email.</p>
-<p>
-  <img src="../../img/nextjs/nextauth-login.png" alt="NextAuth.js login screen">
-
-</p>
-<p>Now you can open <code>http://localhost:8025/</code> and see the email with the magic link.</p>
-<p>
-  <img src="../../img/nextjs/mailhog.png" alt="MailHog inbox">
-
-</p>
-<p>🎉 That&rsquo;s it, you can now manage authentication in your app and work locally without an internet connection.</p>
-
+      Alberto Cejas, colleague and co-author of Libgdx Cross-platform Game Development Cookbook delivered a Libgdx workshop at Cadiz University (Spain) last Friday 21st of November.
+During a 2 hour session, the students put together a bunch of pieces to build Flappy Plane, a Flappy Bird clone originally developed by Mario Zechner. Moreover, there was free stuff! Alberto did a small raffle and gave two copies of our book away.
+ We&rsquo;re really happy with the turnout, just take a look at the gallery below!
+      <a href="https://saltares.com/games/libgdx-workshop-at-cadiz-university/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/">How to test and debug your localhost web app on a real Android device</a>
+        <a href="https://saltares.com/games/ashley-1-3-2-released/">Ashley 1.3.2 released</a>
       </h1>
-      <span class="post-date">Dec 29, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/#disqus_thread">Comments</a>
+      <span class="post-date">Nov 20, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ashley-1-3-2-released/#disqus_thread">Comments</a>
       
       <br/>
-      <a class="label" href="../../categories/development">Development</a>
+      <a class="label" href="../../categories/games-development">Games development</a>
       </span>
       
-      <p>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.</p>
-<p>The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem. That would be a massive pain in the butt!</p>
-<p>Fortunately there is a simple trick you can use to be able to quickly iterate and test on a real mobile device while keeping an awesome developer experience.</p>
-<ul>
-<li>🏎️ Hot reload with instant feedback.</li>
-<li>🖥️ Access to the console.</li>
-<li>🐛 Full debugger with breakpoints, etc.</li>
-</ul>
-<h2 id="-enable-usb-debugging">📱 Enable USB debugging</h2>
-<p>First, make sure USB debugging is enabled on your device.</p>
-<ol>
-<li>Go to <code>Settings -&gt; About phone</code></li>
-<li>Tap the build number seven times.</li>
-<li>Enable USB debugging by going to <code>Settings -&gt; Developer options -&gt; USB Debugging</code>.</li>
-</ol>
-<p>Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.</p>
-<h2 id="-tunnel-localhost">🚇 Tunnel localhost</h2>
-<p>Run your local development server. I am working on a <a href="https://nextjs.org/">Next.js</a> app, so I can just run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ yarn dev
-</span></span></code></pre></div><p>Your web app is probably now running on <code>localhost</code>, but your real device cannot connect directly. In order to access your local development server from a different device we can use <a href="https://localtunnel.me/">localtunnel</a>.</p>
-<p>No need to install, you can use <code>npx</code> to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is <code>3000</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>$ npx localtunnel --port <span style="color:#ae81ff">3000</span>
-</span></span></code></pre></div><p><code>localtunnel</code> will give you a temporary URL that is accessible from anywhere in the world. In my case, I got <code>https://little-fox-32.loca.lt</code>. You can now open that URL in the device you want to test.</p>
-<p>Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, <a href="https://github.com/localtunnel/localtunnel">localtunnel</a> is an open source tool, you could get a private server going if privacy is a concern.</p>
-<h2 id="-remote-chrome-inspector">🛰️ Remote Chrome inspector</h2>
-<p>Open your Chromium based browser and enter:</p>
-<pre tabindex="0"><code>chrome://inspect/#devices
-</code></pre><p>You should see a list of remote targets and the pages that are open in each target.</p>
-<p>
-  <img src="../../img/remote-mobile-debugging/chrome-inspect.png" alt="chrome inspect">
-
-</p>
-<p>Clicking <code>inspect</code> on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.</p>
-<p>
-  <img src="../../img/remote-mobile-debugging/chrome-remote-debugging.png" alt="chrome remote debugging">
-
-</p>
-<p>You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.</p>
-<p>Hope this helps your workflow!</p>
-
+      More features, bug fixes and improvements for Ashley entity framework on this new release.
+ API addition: we now use a builder pattern to create Family objects. More about it on the wiki. API addition: new SortedIteratingSystem by Lusito. API addition: now ImmutableArray implements the Iterable interface, which makes it a lot easier to iterate over entity collections. Bug fix: avoid double entity removal by accident. Bug fix: fixes StackOverflowError when processing entity operations.
+      <a href="https://saltares.com/games/ashley-1-3-2-released/">Read On &rarr;</a>
       
     </div>
     
     <div class="post">
       <h1 class="post-title">
-        <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/">6 tips to make remote meetings more inclusive</a>
+        <a href="https://saltares.com/general/upcoming-talk-at-kingston-university/">Upcoming talk at Kingston University</a>
       </h1>
-      <span class="post-date">May 4, 2021 &middot; 3 minute read &middot; <a href="https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive/#disqus_thread">Comments</a>
-      
-      <br/>
-      <a class="label" href="../../categories/leadership">Leadership</a>
-      </span>
-      
-      <p>
-  <img src="../../img/remote-work.webp" alt="remote work">
-
-</p>
-<p>So much goes into fostering an inclusive remote culture. It must be done deliberately, like <a href="https://www.runekvist.com/remote-first">tending to a greenhouse</a>.</p>
-<p>As an Engineering leader, I am committed to creating a safe environment in my team where everyone feels included.</p>
-<p>One aspect of remote work, where lack of inclusion can really alienate your team, is meetings. So here are 6 tips on how to make them a bit more inclusive.</p>
-<h3 id="1--default-to-async">1. ✍️ Default to async</h3>
-<p>Async communication acts as a leveller. It&rsquo;s no longer about who talks first or loudest. When someone lays out a great proposal in writing, seniority starts to matter less.</p>
-<p>Do you really need a meeting? Consider an async discussion on a Google doc, Notion page or Github RFC issue.</p>
-<p><a href="https://www.notion.so/aulaeducation/How-we-work-together-2501716c17a64fae849b74e800b3f83d#1afa3cd0dafc4f3e986350c3e1e5837a">Aula</a>, <a href="https://about.gitlab.com/company/culture/all-remote/asynchronous/#remind-people-that-async-is-more-inclusive">Gitlab</a> and many other remote-first companies already encourage this.</p>
-<h3 id="2--respect-peoples-calendars">2. 📆 Respect people&rsquo;s calendars</h3>
-<p>When setting up a meeting, check the attendees&rsquo; calendar first and do not create the event if there is a clash, at least without asking first.</p>
-<p>At Aula, we encourage everyone to be explicit and use Google Calendar as a communication tool by explicitly setting time for things like:</p>
-<ul>
-<li>🕰️ Working hours</li>
-<li>🥘 Lunch time</li>
-<li>🏫 School run</li>
-<li>🤸‍♂️ Workout</li>
-<li>❌ &hellip; Any unavailable time.</li>
-</ul>
-<p>Respecting people&rsquo;s calendars is respecting their time and making them feel included. You&rsquo;re basically saying that it doesn&rsquo;t matter that they care for a dependent relative or live in a different timezone. They are an important part of the session.</p>
-<p>If making calendars work is hell 🔥, default to async!</p>
-<h3 id="3--send-agenda-well-in-advance">3. 📝 Send agenda well in advance</h3>
-<p>Not only <a href="https://themanagershandbook.com/working-as-a-team/running-meetings">will your meetings be much more productive</a>, they will also allow more introverted folks, like myself, to prepare and participate more. We will thank you!</p>
-<p>A meeting invite without an agenda can be extremely anxiety inducing. During those meetings, it&rsquo;s usually the <a href="https://en.wikipedia.org/wiki/Hartman_Personality_Profile#Reds_core_motive">red</a> people who dominate the conversation. When that happens, you may be missing out on extremely valuable points of view.</p>
-<h3 id="4--observe-and-pick-up-on-cues">4. 👀 Observe and pick up on cues</h3>
-<p>Picking up on certain dynamics during a remote video call can be more challenging than in person although it is just as important.</p>
-<p>💬 Is someone dominating the conversation? Interject and give space for other voices. If it keeps happening, give them candid feedback 1-1.</p>
-<p>🙋‍♀️ Did someone unmute and then muted on the video call? Maybe they wanted to participate but did not get the chance. Politely ask if they wanted to say something. Lots of video tools have a &ldquo;raise hand&rdquo; feature these days. Pay attention to raised hands.</p>
-<p>🤐 Did someone not participate at all? You could ask if they want to add something. However, be mindful as not everyone may want to be put on the spot. The best is to check with them 1-1 whether that&rsquo;s something they would appreciate.</p>
-<h3 id="5--rotate-moderators">5. 👑 Rotate moderators</h3>
-<p>Depending on the scope of the meeting, it may be beneficial to rotate the moderator and let members of your team own the session.</p>
-<p>Decisions made during these meetings will automatically get more <a href="https://themanagershandbook.com/working-as-a-team/decision-making#getting-buy-in">buy-in</a> and your team will develop.</p>
-<h3 id="6--lead-by-asking-the-silly-questions">6. ✋ Lead by asking the <em>&ldquo;silly questions&rdquo;</em></h3>
-<p>It&rsquo;s easy to try encourage your team by saying &ldquo;there are no silly questions&rdquo;. Sure, this is nice but folks can still be intimidated and may dread judgement from their peers.</p>
-<p>We can do better.</p>
-<p>Lead by example and <a href="https://www.goodreads.com/book/show/23500254-the-power-of-vulnerability">be vulnerable</a> by sharing what you don&rsquo;t know or are unsure about. <a href="https://ideas.ted.com/how-showing-vulnerability-helps-build-a-stronger-team/">Vulnerability builds trust</a>.</p>
-<h3 id="-thanks">🙌 Thanks</h3>
-<p>You made it!</p>
-<p>Any good tips to make your remote meetings more inclusive?</p>
-
-      
-    </div>
-    
-    <div class="post">
-      <h1 class="post-title">
-        <a href="https://saltares.com/schedule-posts-with-hugo/">Schedule posts with Hugo</a>
-      </h1>
-      <span class="post-date">May 2, 2021 &middot; 2 minute read &middot; <a href="https://saltares.com/schedule-posts-with-hugo/#disqus_thread">Comments</a>
+      <span class="post-date">Nov 13, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/upcoming-talk-at-kingston-university/#disqus_thread">Comments</a>
       
       <br/>
       <a class="label" href="../../categories/general">General</a>
       </span>
       
-      <p>Back in 2020, I migrated this blog to <a href="../../easily-deploy-your-hugo-site-to-github-pages/">Hugo and Github pages</a>. I also set up a <em>&ldquo;push to publish&rdquo;</em> CD pipeline with Github pages.</p>
-<p>Happy days.</p>
-<p>🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.</p>
-<p>It&rsquo;s actually trivial to set up!</p>
-<p>Simply add a <a href="https://docs.github.com/en/actions/reference/events-that-trigger-workflows#scheduled-events">schedule trigger</a> to your Github Action like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build and deploy</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">master</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">schedule</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 0 * * *&#39;</span> <span style="color:#75715e"># Once per day at midnight</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v1</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span>
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-gh-pages@v2</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">EXTERNAL_REPOSITORY</span>: <span style="color:#ae81ff">dsaltares/dsaltares.github.io</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ACTIONS_DEPLOY_KEY</span>: <span style="color:#ae81ff">${{ secrets.ACTIONS_DEPLOY_KEY }}</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_BRANCH</span>: <span style="color:#ae81ff">master</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">PUBLISH_DIR</span>: <span style="color:#ae81ff">./public</span>
-</span></span></code></pre></div><p>Now you can push posts that will be published into the future by setting the <a href="https://gohugo.io/content-management/front-matter/">front matter</a> <code>date</code>.</p>
-<pre tabindex="0"><code>date: 3059-05-01T00:00:00+00:00
-</code></pre><p>That could be a post for future generations 😅.</p>
-<p>When <code>hugo</code> runs, it does not generate HTML for posts with dates in the future. However, our Github Action runs every day at midnight. This means that the run for May 1st 3059 will actually generate the HTML for our scheduled post and publish it 🙌.</p>
-<p>📆 This post itself was scheduled!</p>
-
+      I&rsquo;ll be delivering a small presentation to the games development students at Kingston University of London on Monday November 24th. The reason behind the talk is the recent publication of our Libgdx Cookbook, which is why I will be giving away two hard copies! Come along to hear me preach about all Libgdx things.
+Naturally, I&rsquo;ll post the slides here for whoever&rsquo;s interested.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/we-have-a-libgdx-cookbook-winner/">We have a Libgdx Cookbook winner!</a>
+      </h1>
+      <span class="post-date">Nov 7, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/we-have-a-libgdx-cookbook-winner/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+       To celebrate the release of our Libgdx Cross-platform Game Development Cookbook we announced a raffle on Twitter earlier this week. A few RTs later and a random number generation, the winner is.
+Rafael Giordanno
+Congratulations, we&rsquo;ll get in touch with the winner to send him his paperback copy.
+Here&rsquo;s proof that everything was legit:
+ Participants list Random draw  
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/get-a-free-libgdx-cookbook/">Get a free Libgdx Cookbook!</a>
+      </h1>
+      <span class="post-date">Nov 3, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/get-a-free-libgdx-cookbook/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      In order to spread the good word of Libgdx Cross-platform Game Development Cookbook, Alberto and I suggested Packt Publishing the idea of a raffle.
+Simply give us a retweet to enter the giveaway. We&rsquo;ll announce the winners on Friday 7th November.
+Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to enter the raffle! http://t.co/TVx4Zptc5y
+&mdash; David Saltares (@d_saltares) November 3, 2014  Good luck!
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/">Libgdx for Cross-platform Game Development Cookbook is out!</a>
+      </h1>
+      <span class="post-date">Oct 30, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/general">General</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      After over a year of long hours after my day job, sweat, blood and tears, my colleague Alberto Cejas and I are extremely proud to announce that our Libgdx for Cross-platform Game Development Cookbook has finally been published.
+The cookbook has over 75 practical recipes on how to get stuff done with Libgdx. It covers pretty much everything: graphics, input, audio, physics, maps, deployment and third-party extensions among many, many more.
+      <a href="https://saltares.com/general/libgdx-for-cross-platform-game-development-cookbook-is-out/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/">The future of affordable high end Android phones</a>
+      </h1>
+      <span class="post-date">Oct 19, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/technology">Technology</a>
+      </span>
+      
+      The Google Nexus product line has always been the reference when it came to affordable high end smartphones. However, that seems to have changed a couple of days ago, the second the Nexus 6 was announced with a starting price tag of $649. Let us not forget that one could get a Nexus 5 for only $349.
+ As many have pointed out, this is most likely Google&rsquo;s response to the pressure other vendors have put on the former.
+      <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-3-1-released/">Ashley 1.3.1 released</a>
+      </h1>
+      <span class="post-date">Oct 13, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-3-1-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Small stability release for Ashley entity framework this time.
+Bug fix: fixed IllegalArgumentException thrown when trying to remove components from an already reset entity. The call has no effect now. Thanks for that SgtCoDFish.
+Bug fix: fixed family match failure due to silly silly hashing.
+Bug fix: fixed entity.getId() always returning `` for recycled pooled entities.
+Bug fix: fixed nested iteration problem caused by adding/removing entities from an entity added/removed listener handler.
+      <a href="https://saltares.com/projects/ashley-1-3-1-released/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-3-0-released/">Ashley 1.3.0 released</a>
+      </h1>
+      <span class="post-date">Oct 5, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-3-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Time for another Ashley entity framework release! This time, the focus has been on stability by getting rid of as many bugs as we could find. Check all the new goodies below.
+ API addition: adds IntervalSystem and IntervalIteratingSystem, which are updated at a fixed interval. API addition: adds getEntities() to IteratingSystem and IntervalIteratingSystem. API change: entities use long as ID. Changes entity.getIndex() for entity.getId(). Ids are reset to 0 after the entity is removed from the engine.
+      <a href="https://saltares.com/projects/ashley-1-3-0-released/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/">Libgdx Cookbook Git repository evolution</a>
+      </h1>
+      <span class="post-date">Sep 30, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      As I have mentioned before, I have been working on a book titled Libgdx Cross-platform Game Development Cookbook, which is set to be released next month.
+Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&rsquo;s evolution. Neat, isn&rsquo;t it?
+  For those interested, here are the options I used.
+gource -1280x720 --seconds-per-day 0.
+      <a href="https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-2-0-released/">Ashley 1.2.0 released</a>
+      </h1>
+      <span class="post-date">Sep 14, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/projects/ashley-1-2-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&rsquo;ll find new.
+ API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.
+      <a href="https://saltares.com/projects/ashley-1-2-0-released/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-1-1-0-released/">Ashley 1.1.0 released</a>
+      </h1>
+      <span class="post-date">Aug 10, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-1-1-0-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Just under a month of the first official release we are ready to release a new stable version: Ashley 1.1.0. Here is the list of changes.
+ Performance improvements: massive performance gains with O(1) component retrieval through ComponentMapper and the use of Array&lt;Entity&gt; rather than IntMap&lt;Entity&gt;. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits. Complete Ashley manual: now the wiki has a lot more content, it fully covers Ashley.
+      <a href="https://saltares.com/projects/ashley-1-1-0-released/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/finally-ashley-has-a-logo/">Finally, Ashley has a logo</a>
+      </h1>
+      <span class="post-date">Aug 9, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/finally-ashley-has-a-logo/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Ashley now has a logo and it&rsquo;s awesome! What an amazing contribution.
+This is really good news because Ashley lacked an image to make it a bit more memorable. Now back to work, there will soon be a new release. Despite it involving some API changes, it will make for a much faster framework.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/ashley-javadocs-and-wiki/">Ashley javadocs and wiki</a>
+      </h1>
+      <span class="post-date">Jul 29, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/ashley-javadocs-and-wiki/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a><a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Ashley, your favourite entity framework now has online javadocs and a wiki.
+ Wooohooo!
+ The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
+I just started putting stuff into the wiki yesterday so it&rsquo;s pretty empty as of now. Expect more content soon!
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/super-jumper-ashley-remake/">Super Jumper Ashley remake</a>
+      </h1>
+      <span class="post-date">Jul 27, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/super-jumper-ashley-remake/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      Ashley Super Jumper has been my weekend project. It is nothing more than a clone of the Libgdx demo game. The catch is that it goes for an entity system approach rather than the classic inheritance model. Naturally, it uses Ashley.
+The point was to have a reference project folks could check out in order to understand how entity systems in general and Ashley in particular work.
+Maybe one day, I&rsquo;ll post a proper article explaining the design behind the entity systems at play in Super Jumper.
+      <a href="https://saltares.com/general/super-jumper-ashley-remake/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/">Libgdx setup tool now supports Ashley</a>
+      </h1>
+      <span class="post-date">Jul 22, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Last night I added Ashley support to the official Libgdx setup tool. Creating Libgdx projects that use Ashley entity framework is now even easier. Simply make sure you tick the Ashley checkbox before generating your project.
+By the way, if you already have a a project, adding the extra dependency is also trivial.
+ Core project: com.badlogicgames.ashley:ashley:1.0.1 Android project: com.badlogicgames.ashley:ashley:1.0.1 GWT project: com.badlogicgames.ashley:ashley:1.0.1:sources  Remember that using Ashley in non Libgdx projects is also perfectly fine.
+      <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/5-years-old/">5 years old</a>
+      </h1>
+      <span class="post-date">Jul 21, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/general/5-years-old/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      This blog is now a lustrum old. A few days ago I received the yearly invoice from the hosting company, curiosity kicked in and made me check the date for the first one. I was surprised to see it&rsquo;s from July 2009 and thought a recap was in order.
+It might have been possible to say that 5 years can make a blog be referred to as veteran. If we were in 2010.
+      <a href="https://saltares.com/general/5-years-old/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/ashley-1-0-1-released/">Ashley 1.0.1 released</a>
+      </h1>
+      <span class="post-date">Jul 20, 2014 &middot; 2 minute read &middot; <a href="https://saltares.com/games/ashley-1-0-1-released/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Finally! During the past couple of months me and a bunch of awesome collaborators have been working on a proper Ashley release and now it&rsquo;s done. Here is the list of the new shiny features.
+Mind that some of them break the previous API. However, this is our first official release, we&rsquo;ll push hard to keep the API backwards compatible from now on.
+ Gradle: we got rid of the Eclipse projects and now use Gradle to manage our dependencies and build process.
+      <a href="https://saltares.com/games/ashley-1-0-1-released/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/ashley-entity-framework/">Ashley entity framework</a>
+      </h1>
+      <span class="post-date">Jul 20, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ashley-entity-framework/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Loads of stuff in the pipeline lately: new job, finishing my book and some Ashley development. What? You don&rsquo;t know what Ashley is? Here is a brief, straight from GitHub.
+ A tiny entity framework written in Java. It&rsquo;s inspired by frameworks like Ash (hence the name) and Artemis. Ashley tries to be a high-performance entity framework without the use of black-magic and thus making the API easy and transparent to use.
+      <a href="https://saltares.com/games/ashley-entity-framework/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/">Libgdx Cross-platform Development Cookbook announced</a>
+      </h1>
+      <span class="post-date">Jun 30, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/projects">Projects</a>
+      </span>
+      
+      Almost a year ago, I started working on a Libgdx recipe book with Alberto Cejas, an old University mate. Now, Packt Publishing, have announced the project on their website, Libgdx Cross-platform Development Cookbook.
+You can even pre-order a printed copy or the e-book version (DRM free).
+Exciting times!
+The book offers step-by-step guides on how to master Libgdx subsystems to build 2D games that run almost everywhere: Windows, GNU/Linux, Mac, Android, iOS and browsers.
+      <a href="https://saltares.com/projects/libgdx-cross-platform-development-cookbook-announced/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/homefront-the-revolution-e3-stage-demo/">Homefront: The Revolution E3 stage demo</a>
+      </h1>
+      <span class="post-date">Jun 11, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/homefront-the-revolution-e3-stage-demo/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      You&rsquo;ll have to excuse some Homefront: The Revolution spam in the blog these days. E3 2014 is on and, for the very first time, they&rsquo;re showing gameplay of the game I worked on at Crytek UK for two years. Exciting!
+Without further ado, I&rsquo;ll let you see how awesome it looks.
+      
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/homefront-the-revolution-announced/">Homefront: The Revolution announced!</a>
+      </h1>
+      <span class="post-date">Jun 2, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/homefront-the-revolution-announced/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      At last! The game I worked on during my 2 years at Crytek UK has been announced with an amazing trailer. Big congratulations at the Nottingham team for the huge effort put into this project. What a bunch of incredibly talented people, I&rsquo;m really honoured to have been part of the project.
+I mainly worked on emergent AI systems for NPCs and animation. Unfortunately, you cannot see much of that on this trailer.
+      <a href="https://saltares.com/general/homefront-the-revolution-announced/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/ludum-dare-29-beneath-the-surface/">Ludum Dare #29: Beneath the surface</a>
+      </h1>
+      <span class="post-date">Apr 29, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ludum-dare-29-beneath-the-surface/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      As I mentioned here a few days ago, last weekend I entered the 29th edition of the Ludum Dare game jam, which had Beneath the surface as a theme. To be completely honest, I was only bothered to work on the project for about 4 hours each day. That probably explains why is my worst game jam entry so far.
+Beneath the surface is a very simple, classic text adventure where the player needs to escape an underground cave by using commands in the form of verb object like:
+      <a href="https://saltares.com/games/ludum-dare-29-beneath-the-surface/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/ludum-dare-29-im-in/">Ludum Dare #29: I&#39;m in!</a>
+      </h1>
+      <span class="post-date">Apr 25, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/ludum-dare-29-im-in/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      I&rsquo;m up for Ludum Dare despite not being too sure about whether or not I&rsquo;ll be able to invest enough time on it. The last couple of editions eluded me, so I didn&rsquo;t want to miss yet another one.
+Given the time constraints, I might even go for just a text adventure. Or maybe not, who knows. I&rsquo;ll decide in the morning, once the theme is announced!
+Tools of the trade.
+      <a href="https://saltares.com/games/ludum-dare-29-im-in/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/listenerset-using-variadic-templates/">ListenerSet using variadic templates</a>
+      </h1>
+      <span class="post-date">Apr 24, 2014 &middot; 5 minute read &middot; <a href="https://saltares.com/computing/listenerset-using-variadic-templates/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a>
+      </span>
+      
+      Important: variadic templates are only available from C++11, make sure your compiler supports it.
+Who has never used the Observer pattern? As long as you have been involved in any medium sized project, chances are you have come across it at some point.
+The problem It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis.
+      <a href="https://saltares.com/computing/listenerset-using-variadic-templates/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/castilla-la-mancha-university-talk/">Castilla: La Mancha University talk</a>
+      </h1>
+      <span class="post-date">Apr 23, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/castilla-la-mancha-university-talk/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Oh $deity, it is hard to be back after a 5 day break! Following a healing long weekend in Madrid, yesterday I went over to Ciudad Real to deliver my presentation titled &ldquo;How to break into the Games Industry with Open Source Software&rdquo; at the engineering university school.
+I would dare to say it was well received. A zero total count of rotten tomatoes thrown at me shall be good enough of an indicator to back up my previous statement.
+      <a href="https://saltares.com/games/castilla-la-mancha-university-talk/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/general/talk-at-uclm/">Talk at UCLM</a>
+      </h1>
+      <span class="post-date">Mar 29, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/general/talk-at-uclm/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/general">General</a>
+      </span>
+      
+      Next April 22nd I&rsquo;ll be giving a talk at Castilla: La Mancha University (Spain). I&rsquo;ll be addressing the students enrolled in their games development course who bother attending to listen to whatever I&rsquo;m going to say.
+The talk will focus on how open source projects help you get into the industry, which is something I&rsquo;ve been writing about lately. But I guess I&rsquo;ll end up talking about tangential matters such as student life as well as my experience at Crytek and Sony.
+      <a href="https://saltares.com/general/talk-at-uclm/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/games/libgdx-is-a-1m-loc-project/">Libgdx has &gt;1M LoC project</a>
+      </h1>
+      <span class="post-date">Mar 22, 2014 &middot; 1 minute read &middot; <a href="https://saltares.com/games/libgdx-is-a-1m-loc-project/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Don&rsquo;t exactly remember how, but last night I came across Code Analyzer, an open source Java desktop utility that counts lines of code. Out of curiosity, I downloaded the runnable jar file and tried it with Libgdx.
+ I was very much aware that Libgdx was a pretty big project but certainly didn&rsquo;t expect it to be that large. At the time of writing the HEAD of the repository contains 1.
+      <a href="https://saltares.com/games/libgdx-is-a-1m-loc-project/">Read On &rarr;</a>
+      
+    </div>
+    
+    <div class="post">
+      <h1 class="post-title">
+        <a href="https://saltares.com/computing/contribute-back-to-open-source-projects/">Contribute back to open source projects</a>
+      </h1>
+      <span class="post-date">Mar 14, 2014 &middot; 4 minute read &middot; <a href="https://saltares.com/computing/contribute-back-to-open-source-projects/#disqus_thread">Comments</a>
+      
+      <br/>
+      <a class="label" href="../../categories/computing">Computing</a><a class="label" href="../../categories/games-development">Games development</a>
+      </span>
+      
+      Developers love Libgdx, it&rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
+ Have you thought about contributing back?
+ Who, me?
+ Yes and here&rsquo;s why.
+So much win The beauty of a healthy community driven project such as Libgdx is that decisions are crowd-sourced and code is always peer reviewed.
+      <a href="https://saltares.com/computing/contribute-back-to-open-source-projects/">Read On &rarr;</a>
       
     </div>
     
@@ -456,7 +624,7 @@ EMAIL_SERVER_PASSWORD=email-pass
             </li>
             
             <li>
-                <a href="../../page/64/">»»</a>
+                <a href="../../page/11/">»»</a>
             </li>
         </ul>
     </div>
