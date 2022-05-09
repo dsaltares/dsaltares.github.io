@@ -6,7 +6,19 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10x developers really exist</title>
+      <link>https://saltares.com/10x-developers-really-exist/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/10x-developers-really-exist/</guid>
+      <description>Since the original 1968 article, &amp;ldquo;*Exploratory experimental studies comparing online and offline programming performance&amp;rdquo;*, there has been a lot of debate around the figure of the 10x developer. We’re talking about engineers who are an order of magnitude &amp;ldquo;better&amp;rdquo; than their peers by whatever measure.
+These engineers exist, but not in the way most people describe them.
+Typically, the stories describe them as those who:
+ Can close 10 times more Jira issues.</description>
+    </item>
+    
     <item>
       <title>Behind the scenes of Plot’s Learning Design Platform</title>
       <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
@@ -102,17 +114,6 @@ Having a mentor was certainly invaluable, and you should aim to have one.</descr
       <description>The famous Joel Test is a super quick and fun way to evaluate an engineering organisation by answering 12 simple &amp;ldquo;yes or no&amp;rdquo; questions. At the end, you get a score over 12. There is a problem however.
 The test is now 22 years old 😱.
 Tools and processes to build software have changed a fair bit over the last two decades. What was considered a potential nice to have, may have become an absolute basic.</description>
-    </item>
-    
-    <item>
-      <title>Remote work panel at UOC (Spanish)</title>
-      <link>https://saltares.com/remote-work-panel-at-uoc-spanish/</link>
-      <pubDate>Thu, 27 Jan 2022 13:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/remote-work-panel-at-uoc-spanish/</guid>
-      <description>It&amp;rsquo;s already been a while but, back in November last year, I participated in a panel about remote work organised by the Universitat Oberta de Catalunya (UOC). It was fantastic to share thoughts and opinions with other folks that had different backgrounds and experiences.
-📽️ You can watch the entire session here although it is in Spanish.
-  </description>
     </item>
     
   </channel>

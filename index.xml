@@ -6,7 +6,62 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>10x developers really exist</title>
+      <link>https://saltares.com/10x-developers-really-exist/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/10x-developers-really-exist/</guid>
+      <description>Since the original 1968 article, &amp;ldquo;*Exploratory experimental studies comparing online and offline programming performance&amp;rdquo;*, there has been a lot of debate around the figure of the 10x developer. We’re talking about engineers who are an order of magnitude &amp;ldquo;better&amp;rdquo; than their peers by whatever measure.
+These engineers exist, but not in the way most people describe them.
+Typically, the stories describe them as those who:
+ Can close 10 times more Jira issues.</description>
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/hacker-typer.gif&#34; alt=&#34;Screencast of hacker typer&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Since the original 1968 article, &amp;ldquo;&lt;a href=&#34;https://dl.acm.org/doi/10.1145/362851.362858&#34;&gt;*Exploratory experimental studies comparing online and offline programming performance&lt;/a&gt;&amp;rdquo;*, there has been a lot of debate around the figure of the 10x developer. We’re talking about engineers who are an order of magnitude &lt;em&gt;&amp;ldquo;better&amp;rdquo;&lt;/em&gt; than their peers by whatever measure.&lt;/p&gt;
+&lt;p&gt;These engineers exist, but not in the way most people describe them.&lt;/p&gt;
+&lt;p&gt;Typically, the stories describe them as those who:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Can close 10 times more Jira issues.&lt;/li&gt;
+&lt;li&gt;Complete 10 times more story points.&lt;/li&gt;
+&lt;li&gt;Write 10 times more lines of code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Unfortunately, there are a few shortcomings. These two posts describe them eloquently, give them a read.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;&lt;a href=&#34;https://www.simplethread.com/the-10x-programmer-myth/&#34;&gt;*The 10x programmer myth&lt;/a&gt;&amp;rdquo;* by Justin Etheredge**.**&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;&lt;em&gt;&lt;a href=&#34;https://www.freecodecamp.org/news/we-fired-our-top-talent-best-decision-we-ever-made-4c0a99728fde/&#34;&gt;We fired our top talent. Best decision we ever made&lt;/a&gt;&amp;rdquo;&lt;/em&gt; by Jonathan Solórzano-Hamilton.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can summarise these damaging traits as follows:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;They work in isolation and lack self-awareness. They are never wrong.&lt;/li&gt;
+&lt;li&gt;They become the only person who knows about an increasingly large number of systems. That decreases the &lt;a href=&#34;https://en.wikipedia.org/wiki/Bus_factor&#34;&gt;bus factor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;All of a sudden, every technical decision and question goes through them and they become a dangerous bottleneck.&lt;/li&gt;
+&lt;li&gt;They are good technically, but they don’t coach nor mentor and so the team misses on great growth opportunities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.youtube.com/watch?v=JZ017D_JOPY&#34;&gt;Linus Torvalds’ &amp;ldquo;abrasive&amp;rdquo; behavior&lt;/a&gt; comes to mind. Cassidy also characterises the 10x developer quite effectively.&lt;/p&gt;
+&lt;blockquote class=&#34;twitter-tweet&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;Life as a 10x engineer &lt;a href=&#34;https://t.co/bdsHTw0QEv&#34;&gt;pic.twitter.com/bdsHTw0QEv&lt;/a&gt;&lt;/p&gt;&amp;mdash; Cassidy (@cassidoo) &lt;a href=&#34;https://twitter.com/cassidoo/status/1150170262228201472?ref_src=twsrc%5Etfw&#34;&gt;July 13, 2019&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async src=&#34;https://platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
+
+&lt;p&gt;It doesn’t sound like a massive win for a development team to have such an individual in their ranks. So&amp;hellip; how come I think the 10x developer actually exists?&lt;/p&gt;
+&lt;p&gt;Developers who scale themselves by making everyone in the team better often become 10x developers. Their traits and behaviors are quite different from those traditionally attributed to the classical 10x developer.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Excellent communication skills, both written and verbal.&lt;/li&gt;
+&lt;li&gt;They build trust through transparency and vulnerability.&lt;/li&gt;
+&lt;li&gt;A regular part of their job is to coach other team members through coffee chats, workshops, or 1-1s.&lt;/li&gt;
+&lt;li&gt;They facilitate participation from everyone and truly listen to their ideas, making them feel safe and valued.&lt;/li&gt;
+&lt;li&gt;They have strong opinions, loosely held.&lt;/li&gt;
+&lt;li&gt;They constantly look for new things to learn.&lt;/li&gt;
+&lt;li&gt;They regularly sponsor initiatives to iteratively improve the team and encourage others to do the same.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Building software products is a deeply collaborative activity. Team performance grows exponentially when your developers have a strong technical foundation, are excellent collaborators, and trust each other. No lone wolf wonder-genius can scale themselves to that level by hacking away in a cave. It’s just impossible.&lt;/p&gt;
+&lt;p&gt;Engineering leaders play a key role in fostering a culture where these traits are celebrated and become part of the core expectations of all developers in the team. It is essential the incentive system is aligned with the kind of team you want to build. When lone wolves who routinely work evenings and weekends are the ones getting pay raises and promotions, you will get a burnt-out team who don’t trust each other. When you make a habit of giving shout-outs and promotions to folks who helped the collective improve, you will reap the benefits tenfold.&lt;/p&gt;
+&lt;p&gt;10x developers really exist, they make everyone else in the team better.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>Behind the scenes of Plot’s Learning Design Platform</title>
       <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
@@ -616,32 +671,6 @@ Tools and processes to build software have changed a fair bit over the last two 
 &lt;h3 id=&#34;-what-is-your-organisations-score&#34;&gt;✅ What is your organisation&amp;rsquo;s score?&lt;/h3&gt;
 &lt;p&gt;12/12 is ideal. 10/12 is ok, it&amp;rsquo;s always good to aspire to do better! Anything below it and you should start making some changes, NOW.&lt;/p&gt;
 &lt;p&gt;🙌 Thanks for reading!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Remote work panel at UOC (Spanish)</title>
-      <link>https://saltares.com/remote-work-panel-at-uoc-spanish/</link>
-      <pubDate>Thu, 27 Jan 2022 13:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/remote-work-panel-at-uoc-spanish/</guid>
-      <description>It&amp;rsquo;s already been a while but, back in November last year, I participated in a panel about remote work organised by the Universitat Oberta de Catalunya (UOC). It was fantastic to share thoughts and opinions with other folks that had different backgrounds and experiences.
-📽️ You can watch the entire session here although it is in Spanish.
-  </description>
-      <content>&lt;p&gt;It&amp;rsquo;s already been a while but, back in November last year, I participated in a panel about remote work organised by the &lt;a href=&#34;https://www.uoc.edu/portal/en/index.html&#34;&gt;Universitat Oberta de Catalunya (UOC)&lt;/a&gt;. It was fantastic to share thoughts and opinions with other folks that had different backgrounds and experiences.&lt;/p&gt;
-&lt;p&gt;📽️ You can watch the entire session here although it is in Spanish.&lt;/p&gt;
-&lt;div
-  style=&#34;position: relative; padding-bottom: 62.5%; height: 0; margin-bottom: 1em;&#34;&gt;
-  &lt;iframe
-    style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%;&#34;
-    src=&#34;https://www.youtube.com/embed/tEUE3VjcDN0&#34;
-    frameborder=&#34;0&#34;
-    allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34;
-    allowfullscreen
-  &gt;
-  &lt;/iframe&gt;
-&lt;/div&gt;
-
 </content>
     </item>
     

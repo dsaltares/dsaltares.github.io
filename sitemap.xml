@@ -2,22 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://saltares.com/10x-developers-really-exist/</loc>
+    <lastmod>2022-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/categories/</loc>
+    <lastmod>2022-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/</loc>
+    <lastmod>2022-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/categories/leadership/</loc>
+    <lastmod>2022-05-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://saltares.com/post/</loc>
+    <lastmod>2022-05-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</loc>
     <lastmod>2022-04-21T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://saltares.com/categories/</loc>
-    <lastmod>2022-04-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/</loc>
-    <lastmod>2022-04-21T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://saltares.com/categories/development/</loc>
-    <lastmod>2022-04-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/categories/leadership/</loc>
-    <lastmod>2022-04-21T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://saltares.com/post/</loc>
     <lastmod>2022-04-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</loc>
