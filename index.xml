@@ -6,7 +6,53 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The importance of solid technology strategy and principles</title>
+      <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</guid>
+      <description>By Nick on Unsplash  A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
+It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.
+ Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/woman-looking-at-map.jpg&#34; alt=&#34;Woman looking at map&#34;&gt;
+    &lt;figcaption&gt;By Nick on &lt;a href=&#34;https://unsplash.com/photos/1tpLdmxki-c&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.&lt;/p&gt;
+&lt;p&gt;It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.&lt;/li&gt;
+&lt;li&gt;Because there is no single source of truth for the strategy, it is harder to hold the leader accountable.&lt;/li&gt;
+&lt;li&gt;The leader needs to join every single conversation. The lack of clarity becomes a massive blocker. Two things can happen: either the leader burns out or the team grinds to a halt. In any case, the leader will not be able to focus on the things only they can do.&lt;/li&gt;
+&lt;li&gt;Decisions based on an unclear or inexistent strategy will be inconsistent and push teams in different directions.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I have been &lt;a href=&#34;https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/&#34;&gt;guilty&lt;/a&gt; of this in the past. Unfortunately, it seems to be more common than you’d think for companies not to have clear and easily reference-able technology strategies.&lt;/p&gt;
+&lt;p&gt;Imagine a team that needs to add rich text editing to their web application. An engineer goes ahead and researches what the potential alternatives are. Their work output should be a walkthrough of their findings plus a recommendation. The team will review async and then get together to reach a final decision. The research becomes significantly more chaotic and stressful without a solid technology strategy.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What should the criteria even be?&lt;/li&gt;
+&lt;li&gt;Are we okay with paying for a solution? Where do we stand on build vs buy?&lt;/li&gt;
+&lt;li&gt;Do we care more about customisation or speed of integration?&lt;/li&gt;
+&lt;li&gt;Do we prioritise stability over feature-set?&lt;/li&gt;
+&lt;li&gt;How do we feel about depending on new open-source software? Will we become maintainers?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;How can they possibly make a sane recommendation that is consistent with the direction the team is moving in?&lt;/p&gt;
+&lt;p&gt;In contrast, what does it feel like when you set a clear and public technology strategy?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All of a sudden, you have more time on your calendar. No need to be pulled into every technical conversation. You are scaling yourself as a leader!&lt;/li&gt;
+&lt;li&gt;Individuals in your team are empowered to make decisions. As a result, &lt;a href=&#34;https://themanagershandbook.com/working-as-a-team/decision-making#getting-buy-in&#34;&gt;the level of buy-in increases dramatically&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Engagement goes up because individuals encounter many more growth opportunities. Bad attrition goes down!&lt;/li&gt;
+&lt;li&gt;In organisations with multiple teams, everyone starts rowing in the same direction. Impact of initiatives compounds.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A team that feels like the above sounds like a pretty good place to be in, doesn’t it? Of course, a solid technology strategy is not a sufficient condition to create such an environment. You need a culture of inclusion, trust and a few other ingredients. The plan is not enough, but it certainly is necessary.&lt;/p&gt;
+&lt;p&gt;Perhaps in the future, I may write about how to construct a solid technology strategy and communicate it with the rest of the organisation.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>10x developers really exist</title>
       <link>https://saltares.com/10x-developers-really-exist/</link>
@@ -576,101 +622,6 @@ Having a mentor was certainly invaluable, and you should aim to have one.</descr
 &lt;h2 id=&#34;-5-the-new-one-minute-managerhttpswwwkenblanchardcomstorethe-new-one-minute-manager&#34;&gt;🕑 5. &lt;a href=&#34;https://www.kenblanchard.com/Store/The-New-One-Minute-Manager&#34;&gt;The New One Minute Manager&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;Another fable, this time by &lt;a href=&#34;https://en.wikipedia.org/wiki/Ken_Blanchard&#34;&gt;Ken Blanchard&lt;/a&gt;. Perhaps this one is a bit dated, but I remember it dearly as it is one of the first ones I read. It tells the story of a new manager who seeks the knowledge of the legendary One Minute Manager.&lt;/p&gt;
 &lt;p&gt;🙌 Thanks for reading! Did you notice how only one of these is specific to engineering?&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>The David Test - An updated Joel Test for 2022</title>
-      <link>https://saltares.com/the-david-test-an-updated-joel-test-for-2022/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/the-david-test-an-updated-joel-test-for-2022/</guid>
-      <description>The famous Joel Test is a super quick and fun way to evaluate an engineering organisation by answering 12 simple &amp;ldquo;yes or no&amp;rdquo; questions. At the end, you get a score over 12. There is a problem however.
-The test is now 22 years old 😱.
-Tools and processes to build software have changed a fair bit over the last two decades. What was considered a potential nice to have, may have become an absolute basic.</description>
-      <content>&lt;p&gt;The famous &lt;a href=&#34;https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/&#34;&gt;Joel Test&lt;/a&gt; is a super quick and fun way to evaluate an engineering organisation by answering 12 simple &lt;em&gt;&amp;ldquo;yes or no&amp;rdquo;&lt;/em&gt; questions. At the end, you get a score over 12. There is a problem however.&lt;/p&gt;
-&lt;p&gt;The test is now 22 years old 😱.&lt;/p&gt;
-&lt;p&gt;Tools and processes to build software have changed a fair bit over the last two decades. What was considered a potential nice to have, may have become an absolute basic. So, I decided to come up with my own, updated test. Make sure to read &lt;a href=&#34;https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/&#34;&gt;the original one&lt;/a&gt; first.&lt;/p&gt;
-&lt;p&gt;Behold the &lt;strong&gt;David Test&lt;/strong&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Can new joiners set up and run the system locally in less than one day by just reading the docs?&lt;/li&gt;
-&lt;li&gt;Are your builds made without any human intervention?&lt;/li&gt;
-&lt;li&gt;Do you automatically deploy to production?&lt;/li&gt;
-&lt;li&gt;Is the system, to some degree, observable?&lt;/li&gt;
-&lt;li&gt;Do you have a technical debt strategy you actually follow?&lt;/li&gt;
-&lt;li&gt;Is your team predictable?&lt;/li&gt;
-&lt;li&gt;Does the squad (Engineering + PM + Design) refine the backlog together?&lt;/li&gt;
-&lt;li&gt;Do engineers have sizeable chunks of time free of meetings?&lt;/li&gt;
-&lt;li&gt;Can engineers choose the best tools for the job?&lt;/li&gt;
-&lt;li&gt;Does the team collectively own quality and have a testing strategy?&lt;/li&gt;
-&lt;li&gt;Do you have a standardized interview process?&lt;/li&gt;
-&lt;li&gt;Do you have a continuous discovery culture?&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Let&amp;rsquo;s dive a bit deeper.&lt;/p&gt;
-&lt;h3 id=&#34;1--can-new-joiners-set-up-and-run-the-system-locally-in-less-than-one-day-by-just-reading-the-docs&#34;&gt;1. 👩‍💻 Can new joiners set up and run the system locally in less than one day by just reading the docs?&lt;/h3&gt;
-&lt;p&gt;Companies that do not have a simple and well documented environment setup process suffer all sorts of issues.&lt;/p&gt;
-&lt;p&gt;When a new engineer joins, they spend forever before they can even think of contributing with a code change. As the process is not documented, they get blocked constantly. Multiple people need to help, as knowledge is spread across. As a result, the new joiner is frustrated from day 1!&lt;/p&gt;
-&lt;p&gt;A more insidious consequence is the myriad of subtle issues different members of the team experience over time as everyone has environments configured in significantly different ways.&lt;/p&gt;
-&lt;p&gt;Ideally, a new engineer should follow the documentation and bring up the application locally within 30 minutes max.&lt;/p&gt;
-&lt;h3 id=&#34;2--are-your-production-builds-made-without-any-human-intervention&#34;&gt;2. 🚚 Are your production builds made without any human intervention?&lt;/h3&gt;
-&lt;p&gt;Many companies still rely on developers making production builds on their local machines to ship changes. Not only does this take time, it also introduces a silly amount of risk.&lt;/p&gt;
-&lt;p&gt;I once caused a major outage after some local changes made it into a build that got deployed 🙈. I am deeply embarrassed but it&amp;rsquo;s very much a real story and the best example I can give to illustrate this point.&lt;/p&gt;
-&lt;p&gt;Let machines make the builds in reproducible environments with no human intervention at all.&lt;/p&gt;
-&lt;h3 id=&#34;3--do-you-automatically-deploy-to-production&#34;&gt;3. 🚢 Do you automatically deploy to production?&lt;/h3&gt;
-&lt;p&gt;When teams deploy to production after every merge to the &lt;code&gt;main&lt;/code&gt; branch something magical happens. The size of every deployment becomes smaller and the feedback loop tightens. The consequences are fantastic:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Changes are smaller, the risk of a change breaking the system is reduced.&lt;/li&gt;
-&lt;li&gt;When a breaking change is introduced, it&amp;rsquo;s easier to identify it and fix it.&lt;/li&gt;
-&lt;li&gt;The cost of integrating code becomes tiny.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;At the very least, teams should routinely deploy to production multiple times a week. Ideally, there should be multiple deployments to production a day, one for every merge to &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;The rule is &lt;a href=&#34;https://charity.wtf/2021/02/19/how-much-is-your-fear-costing-you/&#34;&gt;15 minutes or bust&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;4--is-the-system-to-some-degree-observable&#34;&gt;4. 🌡️ Is the system, to some degree, observable?&lt;/h3&gt;
-&lt;p&gt;Observability has many facets and folks often misunderstand what it means. Essentially, can you answer questions about the state of our system and what real users are experiencing just by looking at its outputs?&lt;/p&gt;
-&lt;p&gt;At the very least, some of the following need to be present.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Logging&lt;/li&gt;
-&lt;li&gt;Monitoring&lt;/li&gt;
-&lt;li&gt;Alerting&lt;/li&gt;
-&lt;li&gt;Tracing&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Tracing is, perhaps, the most advanced, so you get a pass if you don&amp;rsquo;t have it!&lt;/p&gt;
-&lt;h3 id=&#34;5--do-you-have-a-technical-debt-strategy-you-actually-follow&#34;&gt;5. 🏦 Do you have a technical debt strategy you actually follow?&lt;/h3&gt;
-&lt;p&gt;Too much technical debt can slow you down to a crawl. At the same time, &lt;a href=&#34;https://martinfowler.com/bliki/TechnicalDebtQuadrant.html&#34;&gt;no technical debt at all is also bad&lt;/a&gt;! Engineering orgs should have a strategy outlining their approach to technical debt and actually follow it. This often requires strong relationships of trust and alignment with other roles within Product such as Product Managers.&lt;/p&gt;
-&lt;p&gt;Not having a strategy means that tech debt is tackled in a chaotic, unstructured way, thus limiting the impact. Perhaps, tech debt is not even tackled at all!&lt;/p&gt;
-&lt;h3 id=&#34;6--is-your-team-predictable&#34;&gt;6. 📊 Is your team predictable?&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://hackernoon.com/why-estimating-is-so-damn-hard-d0f945f30185&#34;&gt;Estimates are damn hard&lt;/a&gt; but the reality is that businesses need to know approximately when projects will be done, contracts may depend on them! A team that seldom misses deadlines in a sustainable way is one that builds a tremendous amount of trust. It&amp;rsquo;s one of the key indicators of high performing teams.&lt;/p&gt;
-&lt;p&gt;You don&amp;rsquo;t need to be able to predict everything with high precision. In order to be predictable, you must break down projects into tiny increments. These tiny increments are a lot easier to predict. If you continuously deploy your incomplete increments behind feature flags, the chances of having something releasable when time runs out are much higher.&lt;/p&gt;
-&lt;h3 id=&#34;7--does-the-squad-engineering--pm--design-refine-the-backlog-together&#34;&gt;7. 👌 Does the squad (Engineering + PM + Design) refine the backlog together?&lt;/h3&gt;
-&lt;p&gt;Too often does one see teams where it&amp;rsquo;s just the lead and the PM who refine the backlog. Then, the lead breaks stories into tasks and assigns them to the team. That is a horrendous practice.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Not everyone will be aligned on what the team is making and why. People will make worse decisions during implementation, resulting in more back and forth or the wrong thing gets built.&lt;/li&gt;
-&lt;li&gt;When a diverse set of people who feel safe to contribute refine together, you will inevitably &lt;a href=&#34;https://hbr.org/2016/11/why-diverse-teams-are-smarter&#34;&gt;build a better product&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;Individuals will never learn how to break down a larger story into smaller chunks.&lt;/li&gt;
-&lt;li&gt;People lose agency over the work they do and become disengaged.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;8--do-engineers-have-sizeable-chunks-of-time-free-of-meetings&#34;&gt;8. 🤔 Do engineers have sizeable chunks of time free of meetings?&lt;/h3&gt;
-&lt;p&gt;Remote work has become more mainstream and many folks no longer need to deal with noisy open plan offices. However, that does not mean they are free to do deep work for large chunks of time because their calendars may be full with a collection of Zoom calls spread across the day.&lt;/p&gt;
-&lt;p&gt;Everybody is different, but most people are more productive when they can block out time for deep, uninterrupted work.&lt;/p&gt;
-&lt;h3 id=&#34;9--can-engineers-choose-the-best-tools-for-the-job&#34;&gt;9. 🛠️ Can engineers choose the best tools for the job?&lt;/h3&gt;
-&lt;p&gt;Being able to get the best tools money can buy is crucial. Engineers are expensive and you don&amp;rsquo;t want to pay them so that they can spend endless hours fighting their tools or doing work that could easily be automated by an off the shelf product.&lt;/p&gt;
-&lt;p&gt;We can take this forward and say that there isn&amp;rsquo;t a single toolbox to fit them all. People may feel more comfortable with a particular IDE and they should have the freedom to not have to rewire their brain in order to become proficient with another one.&lt;/p&gt;
-&lt;h3 id=&#34;10--does-the-team-collectively-own-quality-and-have-a-testing-strategy&#34;&gt;10. 🐛 Does the team collectively own quality and have a testing strategy?&lt;/h3&gt;
-&lt;p&gt;Traditionally, teams that cared about quality simply had a separate QA department. I think that dilutes the ownership of quality in product delivery teams. In my experience, quality is higher when the whole cross-functional squad cares about it and owns it. You may still have a QA role, but they should be embedded within the team.&lt;/p&gt;
-&lt;p&gt;It certainly helps when a testing strategy exists, it&amp;rsquo;s documented and actually applied. This document should outline the principles for automated and manual testing ans well as figuring out what to test.&lt;/p&gt;
-&lt;h3 id=&#34;11--do-you-have-a-standardized-interview-process&#34;&gt;11. 💬 Do you have a standardized interview process?&lt;/h3&gt;
-&lt;p&gt;The first step an organisation can take to avoid having a completely &lt;a href=&#34;https://betterprogramming.pub/the-software-engineering-hiring-process-is-broken-and-exclusionary-1632cc5a030c&#34;&gt;broken interview process&lt;/a&gt; is to &lt;a href=&#34;https://themanagershandbook.com/hiring-and-onboarding/hiring-101&#34;&gt;standardize it&lt;/a&gt;. An established process everyone goes through allows you to compare candidates more effectively while minimizing bias. It will become slightly easier to increase the diversity of the team, although it &lt;a href=&#34;https://lauratacho.medium.com/recruiting-more-underrepresented-candidates-wont-magically-make-your-organisation-inclusive-96651c6fb4b8&#34;&gt;won&amp;rsquo;t magically make your team more inclusive&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;A standard process is the absolute bare minimum. Do you want to work at a place where only buddies are hired, everyone thinks the same and it&amp;rsquo;s basically a group of techbros?&lt;/p&gt;
-&lt;h3 id=&#34;12--do-you-have-a-continuous-discovery-culture&#34;&gt;12. 🔍 Do you have a continuous discovery culture?&lt;/h3&gt;
-&lt;p&gt;The iterative process does not only apply to actually delivering the software, it&amp;rsquo;s extremely relevant within discovery as well. Organisations that continuously learn about users, test for product market fit and analyse the usage of the most recently released feature will always have the upper hand. When folks other than the PM and designer are involved, the team is set up for success. Look at whether, as an engineer, you can actively participate in the following.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;User interviews.&lt;/li&gt;
-&lt;li&gt;Design sprints.&lt;/li&gt;
-&lt;li&gt;A/B testing.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-what-is-your-organisations-score&#34;&gt;✅ What is your organisation&amp;rsquo;s score?&lt;/h3&gt;
-&lt;p&gt;12/12 is ideal. 10/12 is ok, it&amp;rsquo;s always good to aspire to do better! Anything below it and you should start making some changes, NOW.&lt;/p&gt;
-&lt;p&gt;🙌 Thanks for reading!&lt;/p&gt;
 </content>
     </item>
     

@@ -6,7 +6,18 @@
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 09 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The importance of solid technology strategy and principles</title>
+      <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</guid>
+      <description>By Nick on Unsplash  A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
+It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.
+ Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
+    </item>
+    
     <item>
       <title>10x developers really exist</title>
       <link>https://saltares.com/10x-developers-really-exist/</link>
@@ -103,17 +114,6 @@ Let&amp;rsquo;s take a moment to note that becoming a manager is not a promotion
       <description>Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.
 You will need plenty of support.
 Having a mentor was certainly invaluable, and you should aim to have one.</description>
-    </item>
-    
-    <item>
-      <title>The David Test - An updated Joel Test for 2022</title>
-      <link>https://saltares.com/the-david-test-an-updated-joel-test-for-2022/</link>
-      <pubDate>Mon, 07 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/the-david-test-an-updated-joel-test-for-2022/</guid>
-      <description>The famous Joel Test is a super quick and fun way to evaluate an engineering organisation by answering 12 simple &amp;ldquo;yes or no&amp;rdquo; questions. At the end, you get a score over 12. There is a problem however.
-The test is now 22 years old 😱.
-Tools and processes to build software have changed a fair bit over the last two decades. What was considered a potential nice to have, may have become an absolute basic.</description>
     </item>
     
   </channel>
