@@ -13,9 +13,9 @@
       <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
       
       <guid>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</guid>
-      <description>By Nick on Unsplash  A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
+      <description>By Nick on Unsplash A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
 It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.
- Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
+Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
       <content>&lt;p&gt;
   &lt;figure&gt;
     &lt;img class=&#34;figure-image&#34; src=&#34;./img/woman-looking-at-map.jpg&#34; alt=&#34;Woman looking at map&#34;&gt;
@@ -62,7 +62,7 @@ It is pretty standard for poor engineering leaders not to have a technology stra
       <description>Since the original 1968 article, &amp;ldquo;*Exploratory experimental studies comparing online and offline programming performance&amp;rdquo;*, there has been a lot of debate around the figure of the 10x developer. We’re talking about engineers who are an order of magnitude &amp;ldquo;better&amp;rdquo; than their peers by whatever measure.
 These engineers exist, but not in the way most people describe them.
 Typically, the stories describe them as those who:
- Can close 10 times more Jira issues.</description>
+Can close 10 times more Jira issues.</description>
       <content>&lt;p&gt;
   &lt;img src=&#34;./img/hacker-typer.gif&#34; alt=&#34;Screencast of hacker typer&#34;&gt;
 
@@ -215,7 +215,7 @@ We agreed that we would:&lt;/p&gt;
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
-      <description>By Sarah Kilian on Unsplash  To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
+      <description>By Sarah Kilian on Unsplash To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
 Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
       <content>&lt;p&gt;
   &lt;figure&gt;
@@ -281,7 +281,7 @@ Today, I thought it would be interesting to go through 6 mistakes I have made as
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://saltares.com/a-playbook-for-calm-incident-response/</guid>
-      <description>By Camilo Jimenez on Unsplash  Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
+      <description>By Camilo Jimenez on Unsplash Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
 The tension is so high that the incident responder forgets to communicate effectively or is so worried about keeping folks up to date that they take the wrong action, further compromising the system.</description>
       <content>&lt;p&gt;
   &lt;figure&gt;
@@ -363,7 +363,7 @@ The tension is so high that the incident responder forgets to communicate effect
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
-      <description>By Sieuwert Otterloo on Unsplash  Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
+      <description>By Sieuwert Otterloo on Unsplash Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
 An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
       <content>&lt;p&gt;
   &lt;figure&gt;
@@ -440,8 +440,8 @@ An incident can also be an opportunity. Your job is to make sure to seize it. In
       <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
       <description>Every engineer in the team must understand the why.
 Can everyone confidently answer the question:
- What problem are we trying to solve with this user story?
- Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
+What problem are we trying to solve with this user story?
+Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
 Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket.</description>
       <content>&lt;p&gt;
   &lt;img src=&#34;./img/understand-the-why.webp&#34; alt=&#34;team building a wooden house&#34;&gt;

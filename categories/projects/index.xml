@@ -14,7 +14,7 @@
       
       <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
- API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
+API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <guid>https://saltares.com/projects/sloppynauts-our-libgdxjam-entry/</guid>
       <description>After a crazy weekend before the deadline, we finally managed to put something playable together for LibGDXJAM.
 We&amp;quot;d love you to have a go, and leave some feedback.
- We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute.</description>
+We are definitely aware of the shortcomings of the game. We spent a lot of the jam working on a custom Overlap2D level loader and not so much on actual content, so you can actually finish the game in under a minute.</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ We&amp;quot;d love you to have a go, and leave some feedback.
       
       <guid>https://saltares.com/projects/ashley-1-7-1-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.1 below:
- API addition: expose IntervalSystem interval value (read-only). Bug fix: fixed pending entity operations not being processed in the right order. Bug fix: fixed adding component in empty family EntityListener causing wrong EntityListener calls. Bug fix: fixed some entity operations not being performed under special circumstances. Internals: split Engine internals into loosely coupled, single responsibility smaller classes. Update: uses Libgdx 1.</description>
+API addition: expose IntervalSystem interval value (read-only). Bug fix: fixed pending entity operations not being processed in the right order. Bug fix: fixed adding component in empty family EntityListener causing wrong EntityListener calls. Bug fix: fixed some entity operations not being performed under special circumstances. Internals: split Engine internals into loosely coupled, single responsibility smaller classes. Update: uses Libgdx 1.</description>
     </item>
     
     <item>
@@ -46,8 +46,8 @@ We&amp;quot;d love you to have a go, and leave some feedback.
       <guid>https://saltares.com/projects/libgdxjam-update-3/</guid>
       <description>Oh my God, enter panic mode, just 8 days left until the #LibGDXJAM deadline! We&amp;rsquo;ve been hard at work, especially @DrillerDev who&amp;rsquo;s pushed the character design and animation.
 Look at this bad boy for instance, better not to mess with his alien gun.
- Or the beholder powered alien surveillance.
- Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
+Or the beholder powered alien surveillance.
+Please, ignore the placeholder environment art, it&amp;rsquo;s the textures from the Overlap2D example project. Our chubby astronaut can run, crouch, jump and push boxes around.</description>
     </item>
     
     <item>
@@ -58,7 +58,7 @@ Look at this bad boy for instance, better not to mess with his alien gun.
       <guid>https://saltares.com/projects/libgdxjam-new-years-update/</guid>
       <description>We&amp;quot;re halfway through the #libGDXJAM and some work has been done between Christmas and New Year&amp;rsquo;s eve.
 Here&amp;rsquo;s a few updates.
- @DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&amp;rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
+@DrillerDev as joined us as an artist and has already produced some awesome concepts. Alberto and I have been working on an Overlap2D scene loader and it&amp;rsquo;s pretty much working supporting a bunch of things: composites, textures, lights, physics and particles. We have a somewhat buggy physics based platformer movement system.</description>
     </item>
     
     <item>
@@ -69,8 +69,8 @@ Here&amp;rsquo;s a few updates.
       <guid>https://saltares.com/projects/libjdxjam-is-on-life-in-space/</guid>
       <description>Check the keynote and all the awkward moments from the dev team, including mine!
 The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJAM and here&amp;rsquo;s our idea:
- Abe&amp;rsquo;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
- A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&amp;rsquo;s inhabited by big fat angry aliens with guns.</description>
+Abe&amp;rsquo;s Oddysee meets This War of Mine meets Boogerman&amp;hellip; in space!
+A bunch of dangerously unprepared astronauts land on a strange planet only to find out it&amp;rsquo;s inhabited by big fat angry aliens with guns. The whole crew is taken prisoner except our main character who has to rescue them all and get the hell out of that planet.</description>
     </item>
     
     <item>
@@ -80,7 +80,7 @@ The theme is Life in Space and I&amp;quot;m teaming up with Alberto for #libGDXJ
       
       <guid>https://saltares.com/projects/ashley-1-7-0-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.0 below:
- API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership().</description>
+API change: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games. Update: components are added/removed immediately, listeners are notified after the current system finishes updating. Bug fix: fixed entity listeners not being called if a component is added inside another listener. Bug fix: does not allocate memory inside updateFamilyMembership(). Update: uses Libgdx 1.</description>
     </item>
     
     <item>
@@ -100,7 +100,7 @@ Libgdx Cookbook is 50% off, use the code: &amp;quot;LCPGDC50&amp;quot; and RT to
       
       <guid>https://saltares.com/projects/libgdx-cookbook-50-off/</guid>
       <description>Libgdx Cross-platform Game Development Cookbook is 50% off until September 30th if you get it from Packt&amp;rsquo;s website using the code LCPGDC50. You have to admit it&amp;rsquo;s a total steal, considering it&amp;rsquo;s the most complete and up to date Libgdx book out there.
- Over 75 to-the-point articles that will show you how to leverage a particular aspect of Libgdx for your game. Every article is accompanied by a runnable sample available on GitHub.</description>
+Over 75 to-the-point articles that will show you how to leverage a particular aspect of Libgdx for your game. Every article is accompanied by a runnable sample available on GitHub.</description>
     </item>
     
     <item>

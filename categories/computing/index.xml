@@ -15,8 +15,8 @@
       <guid>https://saltares.com/projects/conjugate/</guid>
       <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
- Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
- I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
+Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
+I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.</description>
     </item>
     
     <item>
@@ -27,8 +27,8 @@ Conjugate is a verb conjugator service. Enter a verb in English and get the conj
       <guid>https://saltares.com/computing/recover-history-with-git/</guid>
       <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&amp;rsquo;t been pushed to origin yet. However, I didn&amp;rsquo;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
- Oh noes!
- Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.</description>
+Oh noes!
+Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.</description>
     </item>
     
     <item>
@@ -60,9 +60,9 @@ The problem It is extremely common to have an event generating system other comp
       
       <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
       <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
- Have you thought about contributing back?
- Who, me?
- Yes and here&amp;rsquo;s why.
+Have you thought about contributing back?
+Who, me?
+Yes and here&amp;rsquo;s why.
 So much win The beauty of a healthy community driven project such as Libgdx is that decisions are crowd-sourced and code is always peer reviewed.</description>
     </item>
     
@@ -112,7 +112,7 @@ Truth be told, over the years, standard after standard, C++ has become a behemot
       
       <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
       <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
- Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
+Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
     
   </channel>

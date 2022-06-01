@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
 <head>
-	<meta name="generator" content="Hugo 0.99.1" />
+	<meta name="generator" content="Hugo 0.100.0" />
   <link href="http://gmpg.org/xfn/11" rel="profile">
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
@@ -114,8 +114,8 @@
       
       While doing some cleanup of old feature branches, I accidentally deleted one that hadn&rsquo;t been pushed to origin yet. However, I didn&rsquo;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
- Oh noes!
- Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.
+Oh noes!
+Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. Using git reflog you can list the tip of branches, including the deleted ones.
       <a href="https://saltares.com/computing/recover-history-with-git/">Read On &rarr;</a>
       
     </div>
@@ -165,7 +165,7 @@ I talked about what Libgdx can offer developers as well as the advantages of usi
       
       Alberto Cejas, colleague and co-author of Libgdx Cross-platform Game Development Cookbook delivered a Libgdx workshop at Cadiz University (Spain) last Friday 21st of November.
 During a 2 hour session, the students put together a bunch of pieces to build Flappy Plane, a Flappy Bird clone originally developed by Mario Zechner. Moreover, there was free stuff! Alberto did a small raffle and gave two copies of our book away.
- We&rsquo;re really happy with the turnout, just take a look at the gallery below!
+We&rsquo;re really happy with the turnout, just take a look at the gallery below!
       <a href="https://saltares.com/games/libgdx-workshop-at-cadiz-university/">Read On &rarr;</a>
       
     </div>
@@ -181,7 +181,7 @@ During a 2 hour session, the students put together a bunch of pieces to build Fl
       </span>
       
       More features, bug fixes and improvements for Ashley entity framework on this new release.
- API addition: we now use a builder pattern to create Family objects. More about it on the wiki. API addition: new SortedIteratingSystem by Lusito. API addition: now ImmutableArray implements the Iterable interface, which makes it a lot easier to iterate over entity collections. Bug fix: avoid double entity removal by accident. Bug fix: fixes StackOverflowError when processing entity operations.
+API addition: we now use a builder pattern to create Family objects. More about it on the wiki. API addition: new SortedIteratingSystem by Lusito. API addition: now ImmutableArray implements the Iterable interface, which makes it a lot easier to iterate over entity collections. Bug fix: avoid double entity removal by accident. Bug fix: fixes StackOverflowError when processing entity operations.
       <a href="https://saltares.com/games/ashley-1-3-2-released/">Read On &rarr;</a>
       
     </div>
@@ -216,7 +216,7 @@ Naturally, I&rsquo;ll post the slides here for whoever&rsquo;s interested.
 Rafael Giordanno
 Congratulations, we&rsquo;ll get in touch with the winner to send him his paperback copy.
 Here&rsquo;s proof that everything was legit:
- Participants list Random draw  
+Participants list Random draw 
       
       
     </div>
@@ -234,7 +234,7 @@ Here&rsquo;s proof that everything was legit:
       In order to spread the good word of Libgdx Cross-platform Game Development Cookbook, Alberto and I suggested Packt Publishing the idea of a raffle.
 Simply give us a retweet to enter the giveaway. We&rsquo;ll announce the winners on Friday 7th November.
 Want a free copy of our Libgdx Cross-platform Game Development Cookbook? RT to enter the raffle! http://t.co/TVx4Zptc5y
-&mdash; David Saltares (@d_saltares) November 3, 2014  Good luck!
+&mdash; David Saltares (@d_saltares) November 3, 2014 Good luck!
       
       
     </div>
@@ -266,7 +266,7 @@ The cookbook has over 75 practical recipes on how to get stuff done with Libgdx.
       </span>
       
       The Google Nexus product line has always been the reference when it came to affordable high end smartphones. However, that seems to have changed a couple of days ago, the second the Nexus 6 was announced with a starting price tag of $649. Let us not forget that one could get a Nexus 5 for only $349.
- As many have pointed out, this is most likely Google&rsquo;s response to the pressure other vendors have put on the former.
+As many have pointed out, this is most likely Google&rsquo;s response to the pressure other vendors have put on the former.
       <a href="https://saltares.com/technology/the-future-of-affordable-high-end-android-phones/">Read On &rarr;</a>
       
     </div>
@@ -301,7 +301,7 @@ Bug fix: fixed nested iteration problem caused by adding/removing entities from 
       </span>
       
       Time for another Ashley entity framework release! This time, the focus has been on stability by getting rid of as many bugs as we could find. Check all the new goodies below.
- API addition: adds IntervalSystem and IntervalIteratingSystem, which are updated at a fixed interval. API addition: adds getEntities() to IteratingSystem and IntervalIteratingSystem. API change: entities use long as ID. Changes entity.getIndex() for entity.getId(). Ids are reset to 0 after the entity is removed from the engine.
+API addition: adds IntervalSystem and IntervalIteratingSystem, which are updated at a fixed interval. API addition: adds getEntities() to IteratingSystem and IntervalIteratingSystem. API change: entities use long as ID. Changes entity.getIndex() for entity.getId(). Ids are reset to 0 after the entity is removed from the engine.
       <a href="https://saltares.com/projects/ashley-1-3-0-released/">Read On &rarr;</a>
       
     </div>
@@ -318,7 +318,7 @@ Bug fix: fixed nested iteration problem caused by adding/removing entities from 
       
       As I have mentioned before, I have been working on a book titled Libgdx Cross-platform Game Development Cookbook, which is set to be released next month.
 Me and my co-author Alberto used a Git repository throughout the text and sample code development process. Using Gource, I have created a video that illustrates the repository&rsquo;s evolution. Neat, isn&rsquo;t it?
-  For those interested, here are the options I used.
+For those interested, here are the options I used.
 gource -1280x720 --seconds-per-day 0.
       <a href="https://saltares.com/projects/libgdx-cookbook-git-repository-evolution/">Read On &rarr;</a>
       
@@ -335,7 +335,7 @@ gource -1280x720 --seconds-per-day 0.
       </span>
       
       There have been quite a few things happening in Ashley during the past month, enough to call for a brand new release. Ashley 1.2.0 can now be fetched from Maven Central and this is what you&rsquo;ll find new.
- API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.
+API addition: people requested to put Entity#getComponent(Class) back in, so we accepted SgtCODFish‘s PR. ComponentMapper is still the most efficient and encouraged method to retrieve an entity&rsquo;s components. API addition: added PooledEngine#clearPools() to delete unused entity and component pool memory.
       <a href="https://saltares.com/projects/ashley-1-2-0-released/">Read On &rarr;</a>
       
     </div>
@@ -351,7 +351,7 @@ gource -1280x720 --seconds-per-day 0.
       </span>
       
       Just under a month of the first official release we are ready to release a new stable version: Ashley 1.1.0. Here is the list of changes.
- Performance improvements: massive performance gains with O(1) component retrieval through ComponentMapper and the use of Array&lt;Entity&gt; rather than IntMap&lt;Entity&gt;. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits. Complete Ashley manual: now the wiki has a lot more content, it fully covers Ashley.
+Performance improvements: massive performance gains with O(1) component retrieval through ComponentMapper and the use of Array&lt;Entity&gt; rather than IntMap&lt;Entity&gt;. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits. Complete Ashley manual: now the wiki has a lot more content, it fully covers Ashley.
       <a href="https://saltares.com/projects/ashley-1-1-0-released/">Read On &rarr;</a>
       
     </div>
@@ -383,8 +383,8 @@ This is really good news because Ashley lacked an image to make it a bit more me
       </span>
       
       Ashley, your favourite entity framework now has online javadocs and a wiki.
- Wooohooo!
- The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
+Wooohooo!
+The javadocs correspond to the latest repository snapshot. Our Jenkins instance grabs the code, runs the tests, builds the jars and publishes the javadocs to the badlogic.com server. Kudos to Mario for the setup.
 I just started putting stuff into the wiki yesterday so it&rsquo;s pretty empty as of now. Expect more content soon!
       
       
@@ -419,7 +419,7 @@ Maybe one day, I&rsquo;ll post a proper article explaining the design behind the
       
       Last night I added Ashley support to the official Libgdx setup tool. Creating Libgdx projects that use Ashley entity framework is now even easier. Simply make sure you tick the Ashley checkbox before generating your project.
 By the way, if you already have a a project, adding the extra dependency is also trivial.
- Core project: com.badlogicgames.ashley:ashley:1.0.1 Android project: com.badlogicgames.ashley:ashley:1.0.1 GWT project: com.badlogicgames.ashley:ashley:1.0.1:sources  Remember that using Ashley in non Libgdx projects is also perfectly fine.
+Core project: com.badlogicgames.ashley:ashley:1.0.1 Android project: com.badlogicgames.ashley:ashley:1.0.1 GWT project: com.badlogicgames.ashley:ashley:1.0.1:sources Remember that using Ashley in non Libgdx projects is also perfectly fine.
       <a href="https://saltares.com/games/libgdx-setup-tool-now-supports-ashley/">Read On &rarr;</a>
       
     </div>
@@ -452,7 +452,7 @@ It might have been possible to say that 5 years can make a blog be referred to a
       
       Finally! During the past couple of months me and a bunch of awesome collaborators have been working on a proper Ashley release and now it&rsquo;s done. Here is the list of the new shiny features.
 Mind that some of them break the previous API. However, this is our first official release, we&rsquo;ll push hard to keep the API backwards compatible from now on.
- Gradle: we got rid of the Eclipse projects and now use Gradle to manage our dependencies and build process.
+Gradle: we got rid of the Eclipse projects and now use Gradle to manage our dependencies and build process.
       <a href="https://saltares.com/games/ashley-1-0-1-released/">Read On &rarr;</a>
       
     </div>
@@ -468,7 +468,7 @@ Mind that some of them break the previous API. However, this is our first offici
       </span>
       
       Loads of stuff in the pipeline lately: new job, finishing my book and some Ashley development. What? You don&rsquo;t know what Ashley is? Here is a brief, straight from GitHub.
- A tiny entity framework written in Java. It&rsquo;s inspired by frameworks like Ash (hence the name) and Artemis. Ashley tries to be a high-performance entity framework without the use of black-magic and thus making the API easy and transparent to use.
+A tiny entity framework written in Java. It&rsquo;s inspired by frameworks like Ash (hence the name) and Artemis. Ashley tries to be a high-performance entity framework without the use of black-magic and thus making the API easy and transparent to use.
       <a href="https://saltares.com/games/ashley-entity-framework/">Read On &rarr;</a>
       
     </div>

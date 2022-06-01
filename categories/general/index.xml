@@ -48,9 +48,14 @@ Here&amp;rsquo;s a simple CD workflow for deploying a Huge site to Github pages.
       <description>PyCon ES 2017 was an absolute blast!
 The talks were very interesting and they&amp;rsquo;re all freely available on their Youtube channel.
 Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great choice. Beautiful medieval city center where some scenes in Game of Thrones were filmed, plus cheap and delicious food.
-   Caceres 01
-      Caceres 02
-      Caceres 03</description>
+Caceres 01
+Caceres 02
+Caceres 03
+Food 01
+Food 02
+Food 03
+Food 04
+The conference itself was hosted at an old monastery, repurposed for these kind of events.</description>
     </item>
     
     <item>
@@ -61,7 +66,7 @@ Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great cho
       <guid>https://saltares.com/general/come-to-pycon-es-2017/</guid>
       <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&amp;rsquo;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
 I&amp;rsquo;ll be helping out at a couple of presentations:
- Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io  For those not coming, I&amp;rsquo;m pretty sure all the talks will be recorded and made publicly available.</description>
+Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io For those not coming, I&amp;rsquo;m pretty sure all the talks will be recorded and made publicly available.</description>
     </item>
     
     <item>
@@ -103,7 +108,7 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       
       <guid>https://saltares.com/general/ashley-1-7-2-released/</guid>
       <description>Small Ashley release, check the changes for 1.7.2 below:
- Bug fix: Engine doesn&amp;rsquo;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws.  To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
+Bug fix: Engine doesn&amp;rsquo;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws. To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
     </item>
     
     <item>
@@ -112,9 +117,8 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
       <pubDate>Sat, 19 Dec 2015 10:59:07 +0000</pubDate>
       
       <guid>https://saltares.com/general/libgdx-cookbook-is-now-as-cheap-as-beer/</guid>
-      <description> This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&amp;rsquo;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&amp;rsquo;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
-Happy holidays!
- </description>
+      <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&amp;rsquo;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&amp;rsquo;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
+Happy holidays!</description>
     </item>
     
   </channel>

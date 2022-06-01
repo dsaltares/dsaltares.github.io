@@ -14,7 +14,6 @@
       
       <guid>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</guid>
       <description>✏️ Introducing Doodle, a crazy drawing &amp;amp; guessing chain game. Think Pictionary meets Telephone. Better played with your friends over a video call!
-
 🏠 Doodle is a little side project I made during covid-19 confinement to play with friends while we cannot meet face to face. Initially, I thought the crisis would end before I finished it, which would make me lose interest. Little did I know! Not only did I finish it, Doodle has already lightened up the mood in a few remote evenings.</description>
     </item>
     
@@ -36,7 +35,7 @@
       <guid>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</guid>
       <description>During the recent Godot Wild Jam 18, I implemented a full Continuous Delivery system to automatically publish Plague, our entry, on itch.io. The pipeline relies on Github Actions, the same mechanism I use to build and deploy this very blog.
 Setting up your own is easy peasy and possibly free!
-⚒️ Pipeline overview  Someone pushes to the master branch on the remote repo. The game is exported for all available platforms.</description>
+⚒️ Pipeline overview Someone pushes to the master branch on the remote repo. The game is exported for all available platforms.</description>
     </item>
     
     <item>
@@ -47,7 +46,7 @@ Setting up your own is easy peasy and possibly free!
       <guid>https://saltares.com/plague-godot-wild-jam-18/</guid>
       <description>My friend Jay and I recently took part in Godot Wild Jam, a week long game jam where entries must be made using Godot Engine.
 We had an absolute blast! The result is Plague, a procedurally generated action platformer. You can play it in the browser and use either a gamepad or keyboard!
- .Get &#34;linkText&#34;    Don&amp;rsquo;t congratulate us on the visuals just yet, we used the Rogue Noir asset pack.</description>
+.Get &#34;linkText&#34; Don&amp;rsquo;t congratulate us on the visuals just yet, we used the Rogue Noir asset pack.</description>
     </item>
     
     <item>
@@ -89,7 +88,7 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
       
       <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
- API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
+API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
     <item>
@@ -99,7 +98,7 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
       
       <guid>https://saltares.com/games/built-in-console-for-libgdx-games/</guid>
       <description>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.
- When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
+When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
     </item>
     
     <item>
