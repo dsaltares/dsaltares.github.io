@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Technology strategy on David Saltares</title>
+    <link>https://saltares.com/series/technology-strategy/</link>
+    <description>Recent content in Technology strategy on David Saltares</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-uk</language>
+    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/series/technology-strategy/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The importance of solid technology strategy and principles</title>
+      <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</link>
+      <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</guid>
+      <description>By Nick on Unsplash A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
+It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.
+Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
+    </item>
+    
+  </channel>
+</rss>
