@@ -6,7 +6,72 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 23 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4 steps to create a solid technology strategy</title>
+      <link>https://saltares.com/4-steps-to-create-a-solid-technology-strategy/</link>
+      <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/4-steps-to-create-a-solid-technology-strategy/</guid>
+      <description>By Anastasia Petrova on Unsplash As an Engineering leader, you want to create a solid technology strategy to provide the context your team needs to make excellent decisions. But how should you go about it?
+📚 1.Gather context Most of the difficulty resides in identifying and reflecting on the context of the business and your team. Once you do that, you will realise that actually writing a strategy doc is the easy part.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/man-holding-compass.jpg&#34; alt=&#34;Man holding compass&#34;&gt;
+    &lt;figcaption&gt;By Anastasia Petrova on &lt;a href=&#34;https://unsplash.com/photos/xu2WYJek5AI&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;As an Engineering leader, you want to create a solid technology strategy to provide &lt;a href=&#34;./the-importance-of-solid-technology-strategy-and-principles/&#34;&gt;the context your team needs to make excellent decisions&lt;/a&gt;. But how should you go about it?&lt;/p&gt;
+&lt;h2 id=&#34;-1gather-context&#34;&gt;📚 1.Gather context&lt;/h2&gt;
+&lt;p&gt;Most of the difficulty resides in identifying and reflecting on the context of the business and your team. Once you do that, you will realise that actually writing a strategy doc is the easy part.&lt;/p&gt;
+&lt;h3 id=&#34;business-goals-and-strategy&#34;&gt;Business goals and strategy&lt;/h3&gt;
+&lt;p&gt;Your technology strategy must serve the wider business goals and not the other way around. Take a look at what your organisation needs to achieve next this quarter or year. Perhaps you are in the middle of a &lt;a href=&#34;https://www.investopedia.com/terms/b/btob.asp&#34;&gt;B2B&lt;/a&gt; to &lt;a href=&#34;https://www.investopedia.com/terms/b/btoc.asp&#34;&gt;B2C&lt;/a&gt; transition, or everyone is getting ready to launch in the US.&lt;/p&gt;
+&lt;p&gt;Of course, if this is not clear, you have much bigger problems 🙃.&lt;/p&gt;
+&lt;h3 id=&#34;current-team&#34;&gt;Current team&lt;/h3&gt;
+&lt;p&gt;Everyone knows what needs to be achieved, now it’s time to take a look at whether you have the right team to do it.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Size&lt;/strong&gt;: will you need to hire or reduce the scope?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Skills&lt;/strong&gt;: alright, that new iOS app sounds great, but has anyone built one before? Are you going to provide training or hire a specialist?&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Strengths&lt;/strong&gt;: think about what the team does really well and lean on that to reduce risk. Perhaps it so happens that folks in your team are the target audience for your product. Make sure their thoughts are heard in product discussions!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Weaknesses&lt;/strong&gt;: what does the team struggle with? Perhaps all the knowledge of a particular area of the system is concentrated in a single individual. What can you do to share knowledge more effectively?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;current-technology-and-processes&#34;&gt;Current technology and processes&lt;/h3&gt;
+&lt;p&gt;It is really important you have a good grasp of how your engineering team operates. What is working? Where is the friction?&lt;/p&gt;
+&lt;p&gt;Perhaps communication is great, folks pair regularly and there rarely is any misalignment on requirements after a refinement session. It may be that the team finds the current release process frustrating or the current on-call rotation quite stressful.&lt;/p&gt;
+&lt;p&gt;Take your time really understanding what makes the team tick as your strategy will be highly dependent on it. A good tool to get data across teams is running quarterly &lt;a href=&#34;https://engineering.atspotify.com/2014/09/squad-health-check-model/&#34;&gt;team health surveys&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;company-values-and-operating-principles&#34;&gt;Company values and operating principles&lt;/h3&gt;
+&lt;p&gt;Think about the values in your organisation and how the company operates. Ideally, you’d want a strategy that reflects that.&lt;/p&gt;
+&lt;h3 id=&#34;establish-the-horizon&#34;&gt;Establish the horizon&lt;/h3&gt;
+&lt;p&gt;How far into the future should you look when creating your strategy? It depends! If you choose too short a timeframe, your strategy will change constantly and the team will lack continuity. In turn, looking too far into the future may render the strategy irrelevant fairly quickly.&lt;/p&gt;
+&lt;p&gt;For an early stage startup, you may want to look at a horizon of up to a year while later stage organisations may work better with plans north of a year. Is the company about to go through a major event such as a merger or a new round of investment that may alter goals significantly? You may want to take this into account as well.&lt;/p&gt;
+&lt;h2 id=&#34;-2write-a-draft&#34;&gt;✍️ 2. Write a draft&lt;/h2&gt;
+&lt;p&gt;Get started writing an initial draft. I recommend a proper document instead of a slide deck, so that you can convey nuances more clearly.&lt;/p&gt;
+&lt;p&gt;When talking about architecture, it is useful to include diagrams of current vs future state. Avoid being too prescriptive, you are trying to provide context so that your team can make decisions. You are not making every decision by yourself.&lt;/p&gt;
+&lt;p&gt;In terms of document structure, I find it useful to take the reader through the thought process that led you to the strategy itself.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Link to &lt;strong&gt;overall business strategy&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Product goals&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Team context&lt;/strong&gt;: size, strengths and weaknesses, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Engineering principles&lt;/strong&gt;: these are meant to be general guidelines to help decision making. Take a look at a couple of examples from &lt;a href=&#34;https://monzo.com/blog/2018/06/29/engineering-principles&#34;&gt;Monzo&lt;/a&gt; and &lt;a href=&#34;https://www.thoughtworks.com/insights/blog/what-are-our-core-values-and-practices-building-software&#34;&gt;Thoughtworks&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Technology and architecture vision&lt;/strong&gt;: remember to avoid being prescriptive. In this section you can detail direction of travel. For example, the team is moving from containers on EC2 to a serverless architecture. In some cases, it may be useful to compile a list of accepted technologies so as to ensure consistency within larger organisations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;-3get-feedback--iterate&#34;&gt;♻️ 3. Get feedback &amp;amp; iterate&lt;/h2&gt;
+&lt;p&gt;Share the document with the folks you want feedback from. Typically, this will be your manager, the rest of the leadership team and some individuals in Engineering. Google docs works best because everyone can give feedback async.&lt;/p&gt;
+&lt;p&gt;Feedback will help you clarify confusing elements and cover areas you omitted. It will also surface misalignment people had regarding goals, context or general direction of travel. Better to find these out early!&lt;/p&gt;
+&lt;p&gt;One important thing to remember is that your strategy will never be perfect. It’s better to &lt;strong&gt;ship it with confidence&lt;/strong&gt; and be completely transparent about the fact that it is your current best guess and that you will all improve it together over time.&lt;/p&gt;
+&lt;h2 id=&#34;-4communicate-it&#34;&gt;💬 4. Communicate it&lt;/h2&gt;
+&lt;p&gt;Your strategy will be of no use if nobody knows about it or is ignored. You have to communicate it effectively. Here are a few tips.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The full document should be easily accessible to everyone in the company. Normally this means Notion or whatever wiki you use.&lt;/li&gt;
+&lt;li&gt;Reference the strategy in team meetings, 1-1 sessions and technology discussions. Repetition helps.&lt;/li&gt;
+&lt;li&gt;Share the key points of your technology strategy with the broader organisation. This time a short slide deck may be best.&lt;/li&gt;
+&lt;li&gt;Make the full document part of engineering onboarding. This will help new joiners get on the same page much faster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🙌 Thanks for reading. Hopefully, these 4 steps have demystified the process of building a technology strategy. Would love to hear your thoughts on the article or if you have a different process.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The importance of solid technology strategy and principles</title>
       <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</link>
@@ -590,38 +655,6 @@ How did I know it was what I wanted to do?&lt;/p&gt;
 &lt;/ol&gt;
 &lt;p&gt;There&amp;rsquo;s no perfect answer, and you should come up with your own reasons for making the change. Arguably, one could go a long way being an amplifier of their team and helping people develop as an IC!&lt;/p&gt;
 &lt;p&gt;🙌 Thanks for reading. I hope it was useful!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>5 books you should read as a new Engineering Manager</title>
-      <link>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</link>
-      <pubDate>Mon, 14 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager/</guid>
-      <description>Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.
-You will need plenty of support.
-Having a mentor was certainly invaluable, and you should aim to have one.</description>
-      <content>&lt;p&gt;
-  &lt;img src=&#34;./img/books/library.webp&#34; alt=&#34;modern library&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;Stepping into the engineering manager role is challenging. The skills that got you there are not the skills that will make you succeed in your new role. If that wasn&amp;rsquo;t enough, you will feel lonely. The folks who were your peers are now your reports. Those relationships are entirely different now.&lt;/p&gt;
-&lt;p&gt;You will need plenty of support.&lt;/p&gt;
-&lt;p&gt;Having a mentor was certainly invaluable, and you should aim to have one. A few selected books gave me tremendously helpful insights. There is a lot of faff on the Internet out there about leadership. So, I thought writing a list may help you find the good ones!&lt;/p&gt;
-&lt;h2 id=&#34;-1-the-managers-handbookhttpsthemanagershandbookcom&#34;&gt;🙌 1. &lt;a href=&#34;https://themanagershandbook.com/&#34;&gt;The Manager&amp;rsquo;s Handbook&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Written by &lt;a href=&#34;https://alexmaccaw.com/&#34;&gt;Alex MacCaw&lt;/a&gt; as the actual handbook for managers at Clearbit. It covers a wide range of topics, such as self-awareness, hiring, coaching, expectation setting, and processes with down-to-earth, actionable advice.&lt;/p&gt;
-&lt;p&gt;The book is quite opinionated, which may not be an entirely bad thing if what you need right now is a bit of structure before you find your management principles and style.&lt;/p&gt;
-&lt;h2 id=&#34;-2-leading-snowflakeshttpsleadingsnowflakescom&#34;&gt;❄️ 2. &lt;a href=&#34;https://leadingsnowflakes.com/&#34;&gt;Leading Snowflakes&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://twitter.com/orenellenbogen&#34;&gt;Oren Ellenbogen&lt;/a&gt; takes you through the transition from Maker to Manager in this short and to the point guide. Each chapter comes with a bit of &amp;ldquo;homework&amp;rdquo; to put what you learned into practice.&lt;/p&gt;
-&lt;p&gt;As a bonus, you should subscribe to Oren&amp;rsquo;s newsletter &lt;a href=&#34;https://softwareleadweekly.com/&#34;&gt;Software Lead Weekly&lt;/a&gt;. It is &lt;strong&gt;the&lt;/strong&gt; engineering manager newsletter.&lt;/p&gt;
-&lt;h2 id=&#34;-3-radical-candorhttpswwwradicalcandorcomthe-book&#34;&gt;🌟 3. &lt;a href=&#34;https://www.radicalcandor.com/the-book/&#34;&gt;Radical Candor&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;As an Engineering Manager, you will need to have many challenging conversations. They can be a tremendous emotional drain. You need to let a team member know they are underperforming, but you don&amp;rsquo;t want to be an ass. I get it. Radical Candor by &lt;a href=&#34;https://twitter.com/kimballscott&#34;&gt;Kim Scott&lt;/a&gt; can give you some of the tools to deliver difficult feedback with care and make it easier on your mental health.&lt;/p&gt;
-&lt;h2 id=&#34;-4-the-five-dysfunctions-of-a-teamhttpsenwikipediaorgwikithe_five_dysfunctions_of_a_team&#34;&gt;✋ 4. &lt;a href=&#34;https://en.wikipedia.org/wiki/The_Five_Dysfunctions_of_a_Team&#34;&gt;The Five Dysfunctions of a Team&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;A fable by &lt;a href=&#34;https://en.wikipedia.org/wiki/Patrick_Lencioni&#34;&gt;Patrick Lencioni&lt;/a&gt; that tells the story of a newly appointed CEO who finds all sorts of politics and issues within her executive team. This book helped me realise that I no longer had one team, my engineering team. My teammates were now the engineering leadership group.&lt;/p&gt;
-&lt;h2 id=&#34;-5-the-new-one-minute-managerhttpswwwkenblanchardcomstorethe-new-one-minute-manager&#34;&gt;🕑 5. &lt;a href=&#34;https://www.kenblanchard.com/Store/The-New-One-Minute-Manager&#34;&gt;The New One Minute Manager&lt;/a&gt;&lt;/h2&gt;
-&lt;p&gt;Another fable, this time by &lt;a href=&#34;https://en.wikipedia.org/wiki/Ken_Blanchard&#34;&gt;Ken Blanchard&lt;/a&gt;. Perhaps this one is a bit dated, but I remember it dearly as it is one of the first ones I read. It tells the story of a new manager who seeks the knowledge of the legendary One Minute Manager.&lt;/p&gt;
-&lt;p&gt;🙌 Thanks for reading! Did you notice how only one of these is specific to engineering?&lt;/p&gt;
 </content>
     </item>
     
