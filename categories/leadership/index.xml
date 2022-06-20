@@ -6,7 +6,18 @@
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 13 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Plot technology strategy</title>
+      <link>https://saltares.com/the-plot-technology-strategy/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/the-plot-technology-strategy/</guid>
+      <description>I wrote this article as part of my role as VP Engineering at Plot. I wanted to share it here as an example of what a technology strategy could look like. It was our best guess at the time and by no means perfect!
+At Plot, we want a world in which technology enables everyone to design learning experiences that accelerate human thought, action &amp;amp; achievement.
+That is our product vision.</description>
+    </item>
+    
     <item>
       <title>4 steps to create a solid technology strategy</title>
       <link>https://saltares.com/4-steps-to-create-a-solid-technology-strategy/</link>
@@ -101,18 +112,6 @@ Sure, you have well-specified epics and user stories. Still, during delivery, th
       <guid>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
       <description>We&amp;rsquo;re in the middle of a heated tech job market. The most heated tech job market in history!
 I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great time to be an engineer right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.</description>
-    </item>
-    
-    <item>
-      <title>How I got into Engineering management</title>
-      <link>https://saltares.com/how-i-got-into-engineering-management/</link>
-      <pubDate>Mon, 21 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/how-i-got-into-engineering-management/</guid>
-      <description>Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.
-How did I get into it? How did I know it was what I wanted to do?
-The answer may be interesting to others, so I wrote it down.
-Let&amp;rsquo;s take a moment to note that becoming a manager is not a promotion. It&amp;rsquo;s a career change. There&amp;rsquo;s a myriad of reasons not to be a manager.</description>
     </item>
     
   </channel>
