@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>General on David Saltares</title>
-    <link>https://saltares.com/categories/general/</link>
+    <link>https://saltares.dev/categories/general/</link>
     <description>Recent content in General on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 02 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/general/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/general/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Schedule posts with Hugo</title>
-      <link>https://saltares.com/schedule-posts-with-hugo/</link>
+      <link>https://saltares.dev/schedule-posts-with-hugo/</link>
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/schedule-posts-with-hugo/</guid>
+      <guid>https://saltares.dev/schedule-posts-with-hugo/</guid>
       <description>Back in 2020, I migrated this blog to Hugo and Github pages. I also set up a &amp;ldquo;push to publish&amp;rdquo; CD pipeline with Github pages.
 Happy days.
 🤔 A couple of days ago I wondered if there was a low effort way to schedule posts. That way, I could easily bulk some writing together and publish it later on without having to come back to it.
@@ -21,30 +21,30 @@ It&amp;rsquo;s actually trivial to set up!</description>
     
     <item>
       <title>FOSDEM 2020 - Survival Guide</title>
-      <link>https://saltares.com/fosdem-2020-survival-guide/</link>
+      <link>https://saltares.dev/fosdem-2020-survival-guide/</link>
       <pubDate>Tue, 28 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/fosdem-2020-survival-guide/</guid>
+      <guid>https://saltares.dev/fosdem-2020-survival-guide/</guid>
       <description>This weekend FOSDEM 2020 will take place in Brussels. FOSDEM is a yearly conference about open source software. It&amp;rsquo;s totally free and no registration is required. As a consequence, it&amp;rsquo;s massive and chaotic, but also a lot of fun! I attended in 2017 and loved it, so I really look forward to this year&amp;rsquo;s edition.
 If this is your first time, here&amp;rsquo;s a few tips that may come in handy.</description>
     </item>
     
     <item>
       <title>Easily deploy your Hugo site to Github Pages</title>
-      <link>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</link>
+      <link>https://saltares.dev/easily-deploy-your-hugo-site-to-github-pages/</link>
       <pubDate>Fri, 17 Jan 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/easily-deploy-your-hugo-site-to-github-pages/</guid>
+      <guid>https://saltares.dev/easily-deploy-your-hugo-site-to-github-pages/</guid>
       <description>I had been using a DigitalOcean droplet to host this blog and personal projects for years. But&amp;hellip; Do I really need to spend the $6/month? It&amp;rsquo;s just a static Hugo site, which Github pages can do for free. Game hosting on itch.io is also free, it even gives you a mechanism to embed your web games. Looks like I&amp;rsquo;d be sorted!
 Here&amp;rsquo;s a simple CD workflow for deploying a Huge site to Github pages.</description>
     </item>
     
     <item>
       <title>Load test your backend services with locust.io at Pycon ES 2017</title>
-      <link>https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/</link>
+      <link>https://saltares.dev/general/load-test-your-services-with-locust-at-pycon-es/</link>
       <pubDate>Tue, 24 Oct 2017 20:49:32 +0100</pubDate>
       
-      <guid>https://saltares.com/general/load-test-your-services-with-locust-at-pycon-es/</guid>
+      <guid>https://saltares.dev/general/load-test-your-services-with-locust-at-pycon-es/</guid>
       <description>PyCon ES 2017 was an absolute blast!
 The talks were very interesting and they&amp;rsquo;re all freely available on their Youtube channel.
 Celebrating PyCon ES 2017 in Caceres, located in southern Spain, was a great choice. Beautiful medieval city center where some scenes in Game of Thrones were filmed, plus cheap and delicious food.
@@ -60,10 +60,10 @@ The conference itself was hosted at an old monastery, repurposed for these kind 
     
     <item>
       <title>Come to PyCon ES 2017!</title>
-      <link>https://saltares.com/general/come-to-pycon-es-2017/</link>
+      <link>https://saltares.dev/general/come-to-pycon-es-2017/</link>
       <pubDate>Tue, 12 Sep 2017 22:03:02 +0100</pubDate>
       
-      <guid>https://saltares.com/general/come-to-pycon-es-2017/</guid>
+      <guid>https://saltares.dev/general/come-to-pycon-es-2017/</guid>
       <description>PyCon ES 2017, which will be running from September 22nd to September 24th in Cáceres, Spain. I&amp;rsquo;ll be attending alongside some Bloomberg colleagues as we are one of the main sponsors of the event. If you have tickets, definitely come say hi!
 I&amp;rsquo;ll be helping out at a couple of presentations:
 Bloomberg - Landing on a top Tech Tier Company Load test your backend with locust.io For those not coming, I&amp;rsquo;m pretty sure all the talks will be recorded and made publicly available.</description>
@@ -71,20 +71,20 @@ Bloomberg - Landing on a top Tech Tier Company Load test your backend with locus
     
     <item>
       <title>JSConf EU 2017 - Recommended talks</title>
-      <link>https://saltares.com/general/jsconf-eu-2017-recommended-talks/</link>
+      <link>https://saltares.dev/general/jsconf-eu-2017-recommended-talks/</link>
       <pubDate>Mon, 29 May 2017 15:39:53 +0100</pubDate>
       
-      <guid>https://saltares.com/general/jsconf-eu-2017-recommended-talks/</guid>
+      <guid>https://saltares.dev/general/jsconf-eu-2017-recommended-talks/</guid>
       <description>JSConf EU is one of the biggest JS conferences in Europe and I was lucky enough to attend its 2017 edition earlier this month. This year the event took place in Arena Berlin, a place by the river, typically dedicated to concerts in the east side of the German capital.
 Overall, it was a pretty awesome weekend and although I wish there were more talks on advanced technical topics, I understand the event is more focused on community and diversity.</description>
     </item>
     
     <item>
       <title>FOSDEM 2017</title>
-      <link>https://saltares.com/general/fosdem-2017/</link>
+      <link>https://saltares.dev/general/fosdem-2017/</link>
       <pubDate>Sat, 18 Feb 2017 12:57:46 +0000</pubDate>
       
-      <guid>https://saltares.com/general/fosdem-2017/</guid>
+      <guid>https://saltares.dev/general/fosdem-2017/</guid>
       <description>Two weekends ago I attended FOSDEM in Brussels for the first time and it was awesome. FOSDEM is a free conference about software development and open source with no registration required. Just show up, meet the community and learn new things.
 Here are my highlights.
 Planning With over 8k developers, 600 talks and 50 tracks spread across the university campus, planning is essential. Popular talks would fill up the rooms very early and the best option was to attend the previous one and get a spot in advance.</description>
@@ -92,10 +92,10 @@ Planning With over 8k developers, 600 talks and 50 tracks spread across the univ
     
     <item>
       <title>Migration from Wordpress to Hugo</title>
-      <link>https://saltares.com/general/migration-from-wordpress-to-hugo/</link>
+      <link>https://saltares.dev/general/migration-from-wordpress-to-hugo/</link>
       <pubDate>Sun, 04 Dec 2016 12:18:32 +0000</pubDate>
       
-      <guid>https://saltares.com/general/migration-from-wordpress-to-hugo/</guid>
+      <guid>https://saltares.dev/general/migration-from-wordpress-to-hugo/</guid>
       <description>At long last, I got around to do something I had been meaning to do for a very long time. I migrated this Wordpress blog over to a statically generated site powered by Hugo.
 That&amp;rsquo;s 6 years or over 300 posts worth of content.
 Why not stay with Wordpress? First of all, I wanted to move away from Wordpress because it&amp;rsquo;s heavy and requires quite a bit of setup: PHP, database, plugins and so on.</description>
@@ -103,20 +103,20 @@ Why not stay with Wordpress? First of all, I wanted to move away from Wordpress 
     
     <item>
       <title>Ashley 1.7.2 released</title>
-      <link>https://saltares.com/general/ashley-1-7-2-released/</link>
+      <link>https://saltares.dev/general/ashley-1-7-2-released/</link>
       <pubDate>Mon, 29 Feb 2016 21:10:59 +0000</pubDate>
       
-      <guid>https://saltares.com/general/ashley-1-7-2-released/</guid>
+      <guid>https://saltares.dev/general/ashley-1-7-2-released/</guid>
       <description>Small Ashley release, check the changes for 1.7.2 below:
 Bug fix: Engine doesn&amp;rsquo;t use EntitySystem iterator(). Bug fix: Fixes Engine left unusable, in the updating state, after an uncaught exception in a subsystem. Bug fix: Fixes FamilyManager not cleaning up properly when a triggering a listener that throws. To use it, change your dependency to com.badlogicgames.gdx:ashley:1.7.2. The new nightly dependency is com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT.</description>
     </item>
     
     <item>
       <title>Libgdx Cookbook is now as cheap as beer!</title>
-      <link>https://saltares.com/general/libgdx-cookbook-is-now-as-cheap-as-beer/</link>
+      <link>https://saltares.dev/general/libgdx-cookbook-is-now-as-cheap-as-beer/</link>
       <pubDate>Sat, 19 Dec 2015 10:59:07 +0000</pubDate>
       
-      <guid>https://saltares.com/general/libgdx-cookbook-is-now-as-cheap-as-beer/</guid>
+      <guid>https://saltares.dev/general/libgdx-cookbook-is-now-as-cheap-as-beer/</guid>
       <description>This holiday season you can buy Libgdx Cross-platform Game Development Cookbook just for what a beer would set you back! It&amp;rsquo;s either £4, $6 or 5€ until January 6th. So, do you liver a favour, don&amp;rsquo;t down that extra pint and learn Libgdx! Remember we keep our samples up to date with the latest Libgdx releases on GitHub.
 Happy holidays!</description>
     </item>

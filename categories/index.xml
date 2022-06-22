@@ -2,80 +2,80 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on David Saltares</title>
-    <link>https://saltares.com/categories/</link>
+    <link>https://saltares.dev/categories/</link>
     <description>Recent content in Categories on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Leadership</title>
-      <link>https://saltares.com/categories/leadership/</link>
+      <link>https://saltares.dev/categories/leadership/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/leadership/</guid>
+      <guid>https://saltares.dev/categories/leadership/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>https://saltares.com/categories/development/</link>
+      <link>https://saltares.dev/categories/development/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/development/</guid>
+      <guid>https://saltares.dev/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>General</title>
-      <link>https://saltares.com/categories/general/</link>
+      <link>https://saltares.dev/categories/general/</link>
       <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/general/</guid>
+      <guid>https://saltares.dev/categories/general/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Games development</title>
-      <link>https://saltares.com/categories/games-development/</link>
+      <link>https://saltares.dev/categories/games-development/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/games-development/</guid>
+      <guid>https://saltares.dev/categories/games-development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://saltares.com/categories/projects/</link>
+      <link>https://saltares.dev/categories/projects/</link>
       <pubDate>Sat, 10 Sep 2016 14:16:40 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/projects/</guid>
+      <guid>https://saltares.dev/categories/projects/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Computing</title>
-      <link>https://saltares.com/categories/computing/</link>
+      <link>https://saltares.dev/categories/computing/</link>
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/computing/</guid>
+      <guid>https://saltares.dev/categories/computing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Technology</title>
-      <link>https://saltares.com/categories/technology/</link>
+      <link>https://saltares.dev/categories/technology/</link>
       <pubDate>Sun, 19 Oct 2014 10:33:49 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/technology/</guid>
+      <guid>https://saltares.dev/categories/technology/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hobbies</title>
-      <link>https://saltares.com/categories/hobbies/</link>
+      <link>https://saltares.dev/categories/hobbies/</link>
       <pubDate>Sat, 23 Jun 2012 16:50:38 +0000</pubDate>
       
-      <guid>https://saltares.com/categories/hobbies/</guid>
+      <guid>https://saltares.dev/categories/hobbies/</guid>
       <description></description>
     </item>
     

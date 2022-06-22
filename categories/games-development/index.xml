@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Games development on David Saltares</title>
-    <link>https://saltares.com/categories/games-development/</link>
+    <link>https://saltares.dev/categories/games-development/</link>
     <description>Recent content in Games development on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/games-development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/games-development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Doodle: a crazy drawing &amp; guessing game</title>
-      <link>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</link>
+      <link>https://saltares.dev/doodle-a-crazy-drawing-guessing-game/</link>
       <pubDate>Sun, 17 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/doodle-a-crazy-drawing-guessing-game/</guid>
+      <guid>https://saltares.dev/doodle-a-crazy-drawing-guessing-game/</guid>
       <description>✏️ Introducing Doodle, a crazy drawing &amp;amp; guessing chain game. Think Pictionary meets Telephone. Better played with your friends over a video call!
 🏠 Doodle is a little side project I made during covid-19 confinement to play with friends while we cannot meet face to face. Initially, I thought the crisis would end before I finished it, which would make me lose interest. Little did I know! Not only did I finish it, Doodle has already lightened up the mood in a few remote evenings.</description>
     </item>
     
     <item>
       <title>Plague: a Godot Wild Jam 18 game postmortem</title>
-      <link>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/</link>
+      <link>https://saltares.dev/plague-a-godot-wild-jam-18-game-postmortem/</link>
       <pubDate>Fri, 13 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem/</guid>
+      <guid>https://saltares.dev/plague-a-godot-wild-jam-18-game-postmortem/</guid>
       <description>A few weeks ago, Jay Cano and I took part in the week-long Godot Wild Jam 18 and submitted Plague. Here are some of my personal thoughts on how we did and maybe some lessons for the future!
 📈 Results Out of 43 submissions, we ranked 6th overall. That is the top 13th percentile. More importantly, we ranked 3th for fun or top 6th percentile. For the sake of comparison, Onederful Wizard, which we submitted to the GMTK 2019, ranked 294 out of 2617 entries (top 11th percentile).</description>
     </item>
     
     <item>
       <title>Continuous Delivery pipeline for Godot and itch.io</title>
-      <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</link>
+      <link>https://saltares.dev/continuous-delivery-pipeline-for-godot-and-itch.io/</link>
       <pubDate>Mon, 02 Mar 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itch.io/</guid>
+      <guid>https://saltares.dev/continuous-delivery-pipeline-for-godot-and-itch.io/</guid>
       <description>During the recent Godot Wild Jam 18, I implemented a full Continuous Delivery system to automatically publish Plague, our entry, on itch.io. The pipeline relies on Github Actions, the same mechanism I use to build and deploy this very blog.
 Setting up your own is easy peasy and possibly free!
 ⚒️ Pipeline overview Someone pushes to the master branch on the remote repo. The game is exported for all available platforms.</description>
@@ -40,10 +40,10 @@ Setting up your own is easy peasy and possibly free!
     
     <item>
       <title>Plague - Godot Wild Jam 18</title>
-      <link>https://saltares.com/plague-godot-wild-jam-18/</link>
+      <link>https://saltares.dev/plague-godot-wild-jam-18/</link>
       <pubDate>Thu, 27 Feb 2020 14:35:30 +0200</pubDate>
       
-      <guid>https://saltares.com/plague-godot-wild-jam-18/</guid>
+      <guid>https://saltares.dev/plague-godot-wild-jam-18/</guid>
       <description>My friend Jay and I recently took part in Godot Wild Jam, a week long game jam where entries must be made using Godot Engine.
 We had an absolute blast! The result is Plague, a procedurally generated action platformer. You can play it in the browser and use either a gamepad or keyboard!
 .Get &#34;linkText&#34; Don&amp;rsquo;t congratulate us on the visuals just yet, we used the Rogue Noir asset pack.</description>
@@ -51,20 +51,20 @@ We had an absolute blast! The result is Plague, a procedurally generated action 
     
     <item>
       <title>Run automated tests for your Godot game on CI</title>
-      <link>https://saltares.com/games/run-godot-tests-ci-travis/</link>
+      <link>https://saltares.dev/games/run-godot-tests-ci-travis/</link>
       <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/games/run-godot-tests-ci-travis/</guid>
+      <guid>https://saltares.dev/games/run-godot-tests-ci-travis/</guid>
       <description>Automated testing in gamedev Nowadays, most people agree that automated testing is absolutely crucial for all software development. Not so much when it comes to games development though. I still believe that the games industry would be able to iterate and ship faster by introducing unit and integration testing in the right places.
 Godot and Gut Butch Wesley appears to be onboard, considering he created Gut, an automated testing framework for the Godot Game Engine.</description>
     </item>
     
     <item>
       <title>Ludum Dare 38 - Theme ideas</title>
-      <link>https://saltares.com/games/ludum-dare-38-theme-ideas/</link>
+      <link>https://saltares.dev/games/ludum-dare-38-theme-ideas/</link>
       <pubDate>Thu, 20 Apr 2017 22:07:01 +0100</pubDate>
       
-      <guid>https://saltares.com/games/ludum-dare-38-theme-ideas/</guid>
+      <guid>https://saltares.dev/games/ludum-dare-38-theme-ideas/</guid>
       <description>Ludum Dare 38 starts in a couple of hours. This one is special as it marks the 15th anniversary of the biggest weekend game development friendly competition in the world!
 If you don&amp;rsquo;t know about Ludum Dare and are interested, check the documentary they just released.
 I was thinking of participating using Godot Engine. I have a couple of social compromises this weekend and, honestly, I am a bit scared of failing miserably, so I&amp;rsquo;m not too sure how far I&amp;rsquo;ll take this one.</description>
@@ -72,10 +72,10 @@ I was thinking of participating using Godot Engine. I have a couple of social co
     
     <item>
       <title>Trying Godot Engine out for the #godotjam</title>
-      <link>https://saltares.com/games/trying-godot-engine-out-for-the-godotjam/</link>
+      <link>https://saltares.dev/games/trying-godot-engine-out-for-the-godotjam/</link>
       <pubDate>Mon, 19 Dec 2016 11:09:53 +0000</pubDate>
       
-      <guid>https://saltares.com/games/trying-godot-engine-out-for-the-godotjam/</guid>
+      <guid>https://saltares.dev/games/trying-godot-engine-out-for-the-godotjam/</guid>
       <description>Godot Engine caught my eye a while back as a serious open source alternative to the ubiquitous Unity. Some of you may know I&amp;rsquo;ve been involved with the Libgdx project for some time, I even wrote a book about it!
 There&amp;rsquo;s nothing wrong with Libgdx, I absolutely love the project and the more than welcoming community around it.
 The problem is that shipping a game is hard. Doing so whilst working a full time job is harder.</description>
@@ -83,30 +83,30 @@ The problem is that shipping a game is hard. Doing so whilst working a full time
     
     <item>
       <title>Ashley 1.7.3 released!</title>
-      <link>https://saltares.com/projects/ashley-1-7-3-released/</link>
+      <link>https://saltares.dev/projects/ashley-1-7-3-released/</link>
       <pubDate>Sat, 10 Sep 2016 14:16:40 +0000</pubDate>
       
-      <guid>https://saltares.com/projects/ashley-1-7-3-released/</guid>
+      <guid>https://saltares.dev/projects/ashley-1-7-3-released/</guid>
       <description>There&amp;rsquo;s a new Ashley release, check the changes for 1.7.3 below:
 API addition: Adds ‘createComponent()&amp;quot; method to Engine class. Commit 07fc2ba6bcd9996c472c651b56b57b32fd8fd3a7. API addition: Adds ‘createEntity()&amp;quot; method to Engine class. Commit 45dd7e0e4a52c8d65f520fac4e8f4e83471b215b. API addition: Adds ‘addAndReturn()&amp;quot; method to Entity class. Commit 423148a2719873efb50d4f2b3982c247df4fceca. Bug fix: Fixes systems going out of priority order after removal. Issue #237. Bug fix: Fixes returning pooled entity to the entity pool twice. Issue #221. Update: uses Travis for CI.</description>
     </item>
     
     <item>
       <title>Built-in console for Libgdx games</title>
-      <link>https://saltares.com/games/built-in-console-for-libgdx-games/</link>
+      <link>https://saltares.dev/games/built-in-console-for-libgdx-games/</link>
       <pubDate>Sat, 20 Feb 2016 16:32:07 +0000</pubDate>
       
-      <guid>https://saltares.com/games/built-in-console-for-libgdx-games/</guid>
+      <guid>https://saltares.dev/games/built-in-console-for-libgdx-games/</guid>
       <description>A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.
 When you&amp;quot;re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI.</description>
     </item>
     
     <item>
       <title>2D vision system with Ashley and Box2D</title>
-      <link>https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/</link>
+      <link>https://saltares.dev/games/2d-vision-system-with-ashley-and-box2d/</link>
       <pubDate>Sat, 30 Jan 2016 16:07:46 +0000</pubDate>
       
-      <guid>https://saltares.com/games/2d-vision-system-with-ashley-and-box2d/</guid>
+      <guid>https://saltares.dev/games/2d-vision-system-with-ashley-and-box2d/</guid>
       <description>In Sloppynauts the player had to remain undetected, avoiding CCTV cameras and alien baddies. We constantly had to determine who could see who and whether the player was hidden behind something. We wrote a nice reusable system using Ashley and Box2D and I think it&amp;quot;d be a shame if it went to waste. So here it is in case you&amp;quot;d like to use it.
 This 2D vision system is generic enough to work with both side-scrolling and top-down games.</description>
     </item>

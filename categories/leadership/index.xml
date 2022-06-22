@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leadership on David Saltares</title>
-    <link>https://saltares.com/categories/leadership/</link>
+    <link>https://saltares.dev/categories/leadership/</link>
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Plot technology strategy</title>
-      <link>https://saltares.com/the-plot-technology-strategy/</link>
+      <link>https://saltares.dev/the-plot-technology-strategy/</link>
       <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/the-plot-technology-strategy/</guid>
+      <guid>https://saltares.dev/the-plot-technology-strategy/</guid>
       <description>I wrote this article as part of my role as VP Engineering at Plot. I wanted to share it here as an example of what a technology strategy could look like. It was our best guess at the time and by no means perfect!
 At Plot, we want a world in which technology enables everyone to design learning experiences that accelerate human thought, action &amp;amp; achievement.
 That is our product vision.</description>
@@ -20,20 +20,20 @@ That is our product vision.</description>
     
     <item>
       <title>4 steps to create a solid technology strategy</title>
-      <link>https://saltares.com/4-steps-to-create-a-solid-technology-strategy/</link>
+      <link>https://saltares.dev/4-steps-to-create-a-solid-technology-strategy/</link>
       <pubDate>Mon, 13 Jun 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/4-steps-to-create-a-solid-technology-strategy/</guid>
+      <guid>https://saltares.dev/4-steps-to-create-a-solid-technology-strategy/</guid>
       <description>By Anastasia Petrova on Unsplash As an Engineering leader, you want to create a solid technology strategy to provide the context your team needs to make excellent decisions. But how should you go about it?
 📚 1. Gather context Most of the difficulty resides in identifying and reflecting on the context of the business and your team. Once you do that, you will realise that actually writing a strategy doc is the easy part.</description>
     </item>
     
     <item>
       <title>The importance of solid technology strategy and principles</title>
-      <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</link>
+      <link>https://saltares.dev/the-importance-of-solid-technology-strategy-and-principles/</link>
       <pubDate>Mon, 23 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles/</guid>
+      <guid>https://saltares.dev/the-importance-of-solid-technology-strategy-and-principles/</guid>
       <description>By Nick on Unsplash A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. To better understand the importance of technology strategy, we can look at what happens to teams that don’t have one.
 It is pretty standard for poor engineering leaders not to have a technology strategy written down and shared with the entire organisation.
 Engineering leaders don’t need to think about strategy, and they can come up with a different one every day.</description>
@@ -41,10 +41,10 @@ Engineering leaders don’t need to think about strategy, and they can come up w
     
     <item>
       <title>10x developers really exist</title>
-      <link>https://saltares.com/10x-developers-really-exist/</link>
+      <link>https://saltares.dev/10x-developers-really-exist/</link>
       <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/10x-developers-really-exist/</guid>
+      <guid>https://saltares.dev/10x-developers-really-exist/</guid>
       <description>Since the original 1968 article, &amp;ldquo;*Exploratory experimental studies comparing online and offline programming performance&amp;rdquo;*, there has been a lot of debate around the figure of the 10x developer. We’re talking about engineers who are an order of magnitude &amp;ldquo;better&amp;rdquo; than their peers by whatever measure.
 These engineers exist, but not in the way most people describe them.
 Typically, the stories describe them as those who:
@@ -53,50 +53,50 @@ Can close 10 times more Jira issues.</description>
     
     <item>
       <title>Behind the scenes of Plot’s Learning Design Platform</title>
-      <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
+      <link>https://saltares.dev/behind-the-scenes-of-plots-learning-design-platform/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</guid>
+      <guid>https://saltares.dev/behind-the-scenes-of-plots-learning-design-platform/</guid>
       <description>At Plot, we’re building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.
 It took our small team about three months to create a prototype of the platform. As with all early-stage startups, we did this in an environment of high uncertainty, making some technology choices a bit tricky. That’s where our guiding principles come in - our principles are what enable us to make the best decisions for our customers and our business even when faced with great uncertainty.</description>
     </item>
     
     <item>
       <title>5 Mistakes I have made as an engineering leader</title>
-      <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</link>
+      <link>https://saltares.dev/5-mistakes-i-have-made-as-an-engineering-leader/</link>
       <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
+      <guid>https://saltares.dev/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
       <description>By Sarah Kilian on Unsplash To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
 Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
     </item>
     
     <item>
       <title>A playbook for calm incident response</title>
-      <link>https://saltares.com/a-playbook-for-calm-incident-response/</link>
+      <link>https://saltares.dev/a-playbook-for-calm-incident-response/</link>
       <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/a-playbook-for-calm-incident-response/</guid>
+      <guid>https://saltares.dev/a-playbook-for-calm-incident-response/</guid>
       <description>By Camilo Jimenez on Unsplash Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
 The tension is so high that the incident responder forgets to communicate effectively or is so worried about keeping folks up to date that they take the wrong action, further compromising the system.</description>
     </item>
     
     <item>
       <title>A template for great incident reviews</title>
-      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
+      <link>https://saltares.dev/a-template-for-great-incident-reviews/</link>
       <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
+      <guid>https://saltares.dev/a-template-for-great-incident-reviews/</guid>
       <description>By Sieuwert Otterloo on Unsplash Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
 An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
     </item>
     
     <item>
       <title>Help Engineers understand the Why</title>
-      <link>https://saltares.com/help-engineers-understand-the-why/</link>
+      <link>https://saltares.dev/help-engineers-understand-the-why/</link>
       <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
+      <guid>https://saltares.dev/help-engineers-understand-the-why/</guid>
       <description>Every engineer in the team must understand the why.
 Can everyone confidently answer the question:
 What problem are we trying to solve with this user story?
@@ -106,10 +106,10 @@ Sure, you have well-specified epics and user stories. Still, during delivery, th
     
     <item>
       <title>8 Questions to ask your potential future Engineering Manager during an interview</title>
-      <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
+      <link>https://saltares.dev/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
       <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
+      <guid>https://saltares.dev/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
       <description>We&amp;rsquo;re in the middle of a heated tech job market. The most heated tech job market in history!
 I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great time to be an engineer right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.</description>
     </item>

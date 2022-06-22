@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Development on David Saltares</title>
-    <link>https://saltares.com/categories/development/</link>
+    <link>https://saltares.dev/categories/development/</link>
     <description>Recent content in Development on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/development/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 21 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/development/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Behind the scenes of Plot’s Learning Design Platform</title>
-      <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</link>
+      <link>https://saltares.dev/behind-the-scenes-of-plots-learning-design-platform/</link>
       <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform/</guid>
+      <guid>https://saltares.dev/behind-the-scenes-of-plots-learning-design-platform/</guid>
       <description>At Plot, we’re building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.
 It took our small team about three months to create a prototype of the platform. As with all early-stage startups, we did this in an environment of high uncertainty, making some technology choices a bit tricky. That’s where our guiding principles come in - our principles are what enable us to make the best decisions for our customers and our business even when faced with great uncertainty.</description>
     </item>
     
     <item>
       <title>Sticky nav bar on scroll with React hooks</title>
-      <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</link>
+      <link>https://saltares.dev/sticky-nav-bar-on-scroll-with-react-hooks/</link>
       <pubDate>Sun, 23 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks/</guid>
+      <guid>https://saltares.dev/sticky-nav-bar-on-scroll-with-react-hooks/</guid>
       <description>Recently, I built a small React application that had a header, a navigation bar underneath and then the content. After scrolling past the header, the navigation bar was supposed to stay at the top and not scroll away.
 Like so.
 Making the navigation bar position: fixed; top 0; was not going to cut it because the header had to come first unless we scrolled past the navigation bar.
@@ -31,10 +31,10 @@ I wanted to keep the component that controls the layout as simple as possible, s
     
     <item>
       <title>Improve your NextAuth.js app local development experience with a dockerized SMTP server</title>
-      <link>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
+      <link>https://saltares.dev/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</link>
       <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
+      <guid>https://saltares.dev/improve-your-nextauth.js-app-local-development-experience-with-a-dockerized-smtp-server/</guid>
       <description>NextAuth.js makes it shockingly easy to add authentication to Next.js apps. It&amp;rsquo;s free, open source, it lets you own your data and it supports a ton of identity providers, including one time passwords or &amp;ldquo;magic links&amp;rdquo;.
 Working with NextAuth.js is trivial, it sounds too good to be true!
 Of course, there is a catch&amp;hellip;
@@ -43,10 +43,10 @@ The developer experience worsens because you now need a network connection to lo
     
     <item>
       <title>How to test and debug your localhost web app on a real Android device</title>
-      <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
+      <link>https://saltares.dev/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</link>
       <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</guid>
+      <guid>https://saltares.dev/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device/</guid>
       <description>When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
 The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don&amp;rsquo;t want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem.</description>
     </item>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Computing on David Saltares</title>
-    <link>https://saltares.com/categories/computing/</link>
+    <link>https://saltares.dev/categories/computing/</link>
     <description>Recent content in Computing on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 04 May 2015 17:27:20 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/computing/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 May 2015 17:27:20 +0000</lastBuildDate><atom:link href="https://saltares.dev/categories/computing/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Conjugate</title>
-      <link>https://saltares.com/projects/conjugate/</link>
+      <link>https://saltares.dev/projects/conjugate/</link>
       <pubDate>Mon, 04 May 2015 17:27:20 +0000</pubDate>
       
-      <guid>https://saltares.com/projects/conjugate/</guid>
+      <guid>https://saltares.dev/projects/conjugate/</guid>
       <description>For the past few weeks working on a new toy: Conjugate. It&amp;rsquo;s probably easier if I just stick a summary of the GitHub readme here.
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Reason to be When learning a new language, it is very common to struggle with verb conjugations. For example:
@@ -21,10 +21,10 @@ I want to know the third person singular form (masculine) of the future perfect 
     
     <item>
       <title>Recover history with Git</title>
-      <link>https://saltares.com/computing/recover-history-with-git/</link>
+      <link>https://saltares.dev/computing/recover-history-with-git/</link>
       <pubDate>Wed, 31 Dec 2014 13:00:26 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/recover-history-with-git/</guid>
+      <guid>https://saltares.dev/computing/recover-history-with-git/</guid>
       <description>While doing some cleanup of old feature branches, I accidentally deleted one that hadn&amp;rsquo;t been pushed to origin yet. However, I didn&amp;rsquo;t realise at the time.
 After a couple of weeks, a hundred commits and many other branches mingling about, I found myself looking for the one I had previously deleted.
 Oh noes!
@@ -33,10 +33,10 @@ Luckily for me, Git is somewhat idiot-proof and rarely truly deletes anything. U
     
     <item>
       <title>Book review: Clean Code</title>
-      <link>https://saltares.com/computing/book-review-clean-code/</link>
+      <link>https://saltares.dev/computing/book-review-clean-code/</link>
       <pubDate>Sun, 14 Dec 2014 21:27:11 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/book-review-clean-code/</guid>
+      <guid>https://saltares.dev/computing/book-review-clean-code/</guid>
       <description>I recently had the pleasure to attend a few lectures by Robert C. Martin, also known as Uncle Bob. He&amp;rsquo;s a software consultant, speaker and fierce advocate of agile methodologies as well as TDD. Not only were the talks entertaining, but also deeply inspirational.
 Seeking more information on his ideas, I decided that it would be good to take a look at his flagship book, Clean Code.
 And so I read it.</description>
@@ -44,10 +44,10 @@ And so I read it.</description>
     
     <item>
       <title>ListenerSet using variadic templates</title>
-      <link>https://saltares.com/computing/listenerset-using-variadic-templates/</link>
+      <link>https://saltares.dev/computing/listenerset-using-variadic-templates/</link>
       <pubDate>Thu, 24 Apr 2014 10:00:02 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/listenerset-using-variadic-templates/</guid>
+      <guid>https://saltares.dev/computing/listenerset-using-variadic-templates/</guid>
       <description>Important: variadic templates are only available from C++11, make sure your compiler supports it.
 Who has never used the Observer pattern? As long as you have been involved in any medium sized project, chances are you have come across it at some point.
 The problem It is extremely common to have an event generating system other components would like to subscribe to. However, oftentimes I see code to manage a collection of listeners being unnecessarily duplicated on a per system basis.</description>
@@ -55,10 +55,10 @@ The problem It is extremely common to have an event generating system other comp
     
     <item>
       <title>Contribute back to open source projects</title>
-      <link>https://saltares.com/computing/contribute-back-to-open-source-projects/</link>
+      <link>https://saltares.dev/computing/contribute-back-to-open-source-projects/</link>
       <pubDate>Fri, 14 Mar 2014 16:42:15 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/contribute-back-to-open-source-projects/</guid>
+      <guid>https://saltares.dev/computing/contribute-back-to-open-source-projects/</guid>
       <description>Developers love Libgdx, it&amp;rsquo;s an extremely efficient, easy to use, open source, feature rich, cross platform framework. It has a huge community, and a very active repository. What&amp;rsquo;s not to love? The fact that 1.40% apps on AppBrain use Libgdx backs that up.
 Have you thought about contributing back?
 Who, me?
@@ -68,10 +68,10 @@ So much win The beauty of a healthy community driven project such as Libgdx is t
     
     <item>
       <title>Using Ant behind a proxy</title>
-      <link>https://saltares.com/computing/using-ant-behind-a-proxy/</link>
+      <link>https://saltares.dev/computing/using-ant-behind-a-proxy/</link>
       <pubDate>Mon, 10 Mar 2014 12:49:15 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/using-ant-behind-a-proxy/</guid>
+      <guid>https://saltares.dev/computing/using-ant-behind-a-proxy/</guid>
       <description>Many Java projects use Ant to automate their build process. Libgdx, for instance, is among them. One could possibly say Ant is the Java version of Make. Targets, dependencies and other settings are defined in XML scripts.
 Downloading dependencies while your machine is behind a proxy might prove problematic. Luckily enough, you can specify your proxy settings inside the Ant script.
 &amp;lt;setproxy proxyhost=&amp;#34;host&amp;#34; proxyport=&amp;#34;port&amp;#34; proxypassword=&amp;#34;password&amp;#34;/&amp;gt; Users behind a proxy would now be able to download dependencies with Ant.</description>
@@ -79,38 +79,38 @@ Downloading dependencies while your machine is behind a proxy might prove proble
     
     <item>
       <title>Smart enums in C&#43;&#43; or: &#34;what is this madness?&#34;</title>
-      <link>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</link>
+      <link>https://saltares.dev/computing/smart-enums-in-c-or-what-is-this-madness/</link>
       <pubDate>Sun, 09 Feb 2014 20:45:57 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
+      <guid>https://saltares.dev/computing/smart-enums-in-c-or-what-is-this-madness/</guid>
       <description>Needless to say, C++ is a glorious language. Sadly, the attention it gets on the blog is far from representative of my appreciation towards it. Despite it being my main language at work, I only tend to talk about Libgdx side projects around here. Well, enough is enough!
 Truth be told, over the years, standard after standard, C++ has become a behemoth of a language. As Scott Meyers likes to say, it&amp;rsquo;s actually a set of languages.</description>
     </item>
     
     <item>
       <title>Don&#39;t be a dick with the community</title>
-      <link>https://saltares.com/computing/dont-be-a-dick-with-the-community/</link>
+      <link>https://saltares.dev/computing/dont-be-a-dick-with-the-community/</link>
       <pubDate>Sun, 14 Apr 2013 07:57:55 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/dont-be-a-dick-with-the-community/</guid>
+      <guid>https://saltares.dev/computing/dont-be-a-dick-with-the-community/</guid>
       <description>Open source is sometimes much more than just coding and committing to the most trendy repository at that point in time. It&amp;rsquo;s also about the community. When a piece of software grows, stops being a pet project and makes a certain impact, it is to be expected to see people flocking around it. Who knows, even other developers could start contributing via pull requests, documentation or support in your forums.</description>
     </item>
     
     <item>
       <title>Programming books, personal picks</title>
-      <link>https://saltares.com/computing/programming-books-personal-picks/</link>
+      <link>https://saltares.dev/computing/programming-books-personal-picks/</link>
       <pubDate>Sat, 22 Dec 2012 19:55:38 +0000</pubDate>
       
-      <guid>https://saltares.com/computing/programming-books-personal-picks/</guid>
+      <guid>https://saltares.dev/computing/programming-books-personal-picks/</guid>
       <description>A friend recently asked me about which either general or games specific programming books would I recommend. The true and legendary must read. I answered him directly as I was feeling lazy about posting a comment on each one of them but here I am now. Nevertheless, before going straight to the list, please bare in mind that just like any other best of [insert year here] collection, this is simply a matter of opinion.</description>
     </item>
     
     <item>
       <title>Recent projects and future changes</title>
-      <link>https://saltares.com/general/recent-projects-and-future-changes/</link>
+      <link>https://saltares.dev/general/recent-projects-and-future-changes/</link>
       <pubDate>Thu, 12 Jan 2012 22:00:27 +0000</pubDate>
       
-      <guid>https://saltares.com/general/recent-projects-and-future-changes/</guid>
+      <guid>https://saltares.dev/general/recent-projects-and-future-changes/</guid>
       <description>Lots of stuff has happened since I last posted something here. Crazy Eramus life, you want to do everything: projects, social life, studying… So, logically, the blog has been a little bit left behind. I just wanted to post a quick update about the two university projects I&amp;rsquo;ve been working on recently:
 Laterdroid: Read it Later client for Android created using the official SDK. Urban Race: time attack racing game developed using C# and the XNA framework.</description>
     </item>
