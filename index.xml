@@ -244,7 +244,7 @@ Engineering leaders don’t need to think about strategy, and they can come up w
 &lt;li&gt;The leader needs to join every single conversation. The lack of clarity becomes a massive blocker. Two things can happen: either the leader burns out or the team grinds to a halt. In any case, the leader will not be able to focus on the things only they can do.&lt;/li&gt;
 &lt;li&gt;Decisions based on an unclear or inexistent strategy will be inconsistent and push teams in different directions.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;I have been &lt;a href=&#34;https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/&#34;&gt;guilty&lt;/a&gt; of this in the past. Unfortunately, it seems to be more common than you’d think for companies not to have clear and easily reference-able technology strategies.&lt;/p&gt;
+&lt;p&gt;I have been &lt;a href=&#34;./5-mistakes-i-have-made-as-an-engineering-leader/&#34;&gt;guilty&lt;/a&gt; of this in the past. Unfortunately, it seems to be more common than you’d think for companies not to have clear and easily reference-able technology strategies.&lt;/p&gt;
 &lt;p&gt;Imagine a team that needs to add rich text editing to their web application. An engineer goes ahead and researches what the potential alternatives are. Their work output should be a walkthrough of their findings plus a recommendation. The team will review async and then get together to reach a final decision. The research becomes significantly more chaotic and stressful without a solid technology strategy.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;What should the criteria even be?&lt;/li&gt;
