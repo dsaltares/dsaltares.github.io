@@ -2,27 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apps &amp; tools on David Saltares</title>
-    <link>https://saltares.dev/apps-tools/</link>
+    <link>https://saltares.com/apps-tools/</link>
     <description>Recent content in Apps &amp; tools on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.dev/apps-tools/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/apps-tools/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Team Findr</title>
-      <link>https://saltares.dev/apps-tools/teamfindr/</link>
+      <link>https://saltares.com/apps-tools/teamfindr/</link>
       <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://saltares.dev/apps-tools/teamfindr/</guid>
+      <guid>https://saltares.com/apps-tools/teamfindr/</guid>
       <description>⚽ Team Findr is a mobile-first app to help you find nearby pick up games, organise games with your friends and find extra players. It is completely free and has no ads.
 🦠 I made it a side project during the winter holiday of 2020 as I had to self-isolate after direct contact with a covid-19 positive person. Later, my friend Cristi, did an entire UX pass and UI redesign.</description>
     </item>
     
     <item>
       <title>Conjugate</title>
-      <link>https://saltares.dev/apps-tools/conjugate/</link>
+      <link>https://saltares.com/apps-tools/conjugate/</link>
       <pubDate>Sat, 08 Aug 2015 22:19:46 +0000</pubDate>
       
-      <guid>https://saltares.dev/apps-tools/conjugate/</guid>
+      <guid>https://saltares.com/apps-tools/conjugate/</guid>
       <description>Conjugate is a responsive verb conjugator webapp. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 Motivation When learning a new language, it is very common to struggle with verb conjugations. For example:
 I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.
@@ -31,10 +31,10 @@ Unfortunately, the available resources are somehow limited:</description>
     
     <item>
       <title>Laterdroid</title>
-      <link>https://saltares.dev/apps-tools/laterdroid/</link>
+      <link>https://saltares.com/apps-tools/laterdroid/</link>
       <pubDate>Mon, 26 Dec 2011 22:38:39 +0000</pubDate>
       
-      <guid>https://saltares.dev/apps-tools/laterdroid/</guid>
+      <guid>https://saltares.com/apps-tools/laterdroid/</guid>
       <description> Simple Pocket client for Android.
 Role: designer and sole programmer Year: 2011 Development time: 1 week Technology: Java and the official Android SDK Download: Laterdroid 0.1 APK Screenshots Laterdroid add
 Laterdroid article
@@ -46,10 +46,10 @@ Features Login or create a new account Synchronize and cache your reading list B
     
     <item>
       <title>Tiny Backup</title>
-      <link>https://saltares.dev/apps-tools/tiny-backup/</link>
+      <link>https://saltares.com/apps-tools/tiny-backup/</link>
       <pubDate>Sun, 25 Sep 2011 22:25:56 +0000</pubDate>
       
-      <guid>https://saltares.dev/apps-tools/tiny-backup/</guid>
+      <guid>https://saltares.com/apps-tools/tiny-backup/</guid>
       <description>Open source tool to save and restore the list of installed packages in a Debian based Linux distribution. I developed this tool to learn Python basics and the GTK library.
 Role: project leader and sole programmer Year: 2010 Development time: 1 week Technology: Python language using pyGTK Download: Tiny Backup 0.2, source code Screenshots Tinybackup restore
 Tinybackup save
@@ -59,10 +59,10 @@ Features Save and restore your package list. Send an e-mail copy of the package 
     
     <item>
       <title>gLapse</title>
-      <link>https://saltares.dev/apps-tools/glapse/</link>
+      <link>https://saltares.com/apps-tools/glapse/</link>
       <pubDate>Tue, 31 May 2011 22:33:55 +0000</pubDate>
       
-      <guid>https://saltares.dev/apps-tools/glapse/</guid>
+      <guid>https://saltares.com/apps-tools/glapse/</guid>
       <description>Linux tool that allows you take screenshots at fixed intervals and glue them together to create a time lapse video. It’s actively used in the Ludum Dare 48h game competition by several contestants to record their development process.
 Role: project leader and sole programmer Year: 2011 Development time: 2 weeks Technology: Python language using pyGTK Download: gLapse 0.3, source code Screenshots Features Take PNG screenshots with custom interval and quality.</description>
     </item>
