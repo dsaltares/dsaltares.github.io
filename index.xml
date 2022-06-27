@@ -6,7 +6,48 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 20 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The problem of long-lived pull requests</title>
+      <link>https://saltares.com/the-problem-of-long-lived-pull-requests/</link>
+      <pubDate>Mon, 27 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/the-problem-of-long-lived-pull-requests/</guid>
+      <description>By John Schnobrich on Unsplash A developer in your team picks up a new ticket, dashes to implement the change and opens a brand new PR in no time. Brilliant! However, the team was not aligned on the solution approach. There are issues with the coding style, lack of tests and other little things. Back and forth ensues, and the PR stays open for about a week before it gets merged to main.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/code-review.jpg&#34; alt=&#34;People pointing at a laptop screen&#34;&gt;
+    &lt;figcaption&gt;By John Schnobrich on &lt;a href=&#34;https://unsplash.com/photos/FlPc9_VocJ4&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;A developer in your team picks up a new ticket, dashes to implement the change and opens a brand new PR in no time. Brilliant! However, the team was not aligned on the solution approach. There are issues with the coding style, lack of tests and other little things. Back and forth ensues, and the PR stays open for about a week before it gets merged to &lt;code&gt;main&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;It becomes a problem when this doesn’t happen just the one time. The good thing is that you’re not alone. I see this problem in teams all the time.&lt;/p&gt;
+&lt;p&gt;Typically, a misalignment as to what productivity means causes the problem. Some developers may be optimising for number of PRs created when what you want is to deliver value constantly. &lt;a href=&#34;https://lauratacho.com/blog&#34;&gt;Laura Tacho&lt;/a&gt; covers the issue exceptionally well in this &lt;a href=&#34;https://twitter.com/rhein_wein/status/1536351600620425216&#34;&gt;Twitter thread&lt;/a&gt;. Sometimes, folks may not be entirely aware of the impact of long-lived PRs.&lt;/p&gt;
+&lt;h2 id=&#34;the-impact&#34;&gt;🔥 The impact&lt;/h2&gt;
+&lt;p&gt;The impact of having many open PRs for too long can be significant.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;💸 As Software Delivery slows down, customers receive value less often, and you run fewer experiments that give you feedback to improve your &lt;a href=&#34;https://en.wikipedia.org/wiki/Product/market_fit&#34;&gt;PMF&lt;/a&gt;. You’re becoming less competitive!&lt;/li&gt;
+&lt;li&gt;🥵 As most of the work is only &lt;a href=&#34;https://www.simplethread.com/the-10x-programmer-myth/&#34;&gt;80% done&lt;/a&gt;, developers constantly jump between PRs and their in-progress work, resulting in a tremendous amount of context switching. This &lt;a href=&#34;https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/&#34;&gt;slows everything down&lt;/a&gt; and makes everyone more anxious.&lt;/li&gt;
+&lt;li&gt;⏳ Many changes may be making their way into &lt;code&gt;main&lt;/code&gt; while a PR remains open. The cost of integrating the stagnant PR skyrockets, and so does the risk of introducing somewhat incompatible changes that end up causing a regression. So much has changed in the meantime! High-performing teams tend to have a low &lt;a href=&#34;https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance&#34;&gt;&lt;em&gt;lead time for changes&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;🚢 &lt;em&gt;&lt;a href=&#34;https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance&#34;&gt;Deployment frequency&lt;/a&gt;&lt;/em&gt; also plummets. Each deployment ships more changes, increasing the risk of an outage and the difficulty of identifying the root cause.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-solution&#34;&gt;🧯 The solution&lt;/h2&gt;
+&lt;p&gt;So how might you fix the problem?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🎯 Set clear expectations for what is more valuable, time to PR or actual value delivered. Then, give feedback 1-1.&lt;/li&gt;
+&lt;li&gt;🥇 Reward delivering value to end-users. Praise individuals and teams who do so publicly and ensure real impact directly translates into better performance evaluations.&lt;/li&gt;
+&lt;li&gt;🤔 &lt;a href=&#34;./help-engineers-understand-the-why/&#34;&gt;Make sure engineers understand the Why&lt;/a&gt; of the work they are doing. That will help them focus on what matters most.&lt;/li&gt;
+&lt;li&gt;💬 Having sync tech discussions, &lt;a href=&#34;https://en.wikipedia.org/wiki/Request_for_Comments&#34;&gt;RFCs&lt;/a&gt; or pairing sessions will help increase consensus before folks even create PRs. This is especially key for non-trivial tasks.&lt;/li&gt;
+&lt;li&gt;🗺️ Make sure you have a &lt;a href=&#34;./series/technology-strategy/&#34;&gt;solid technology strategy&lt;/a&gt; to guide your team to make awesome decisions.&lt;/li&gt;
+&lt;li&gt;✅ When the discussion is about code formatting, it is a clear sign you need to use a linter and code formatter like eslint and prettier.&lt;/li&gt;
+&lt;li&gt;🧭 Having team-wide standards for writing UI components or implementing unit tests also helps get everyone on the same page.&lt;/li&gt;
+&lt;li&gt;📚 Make the team aware of the impact long PRs have. The points outlined above are a good starting point!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🙌 Thanks for reading! Let me know whether you found the article useful or if you have used a different strategy to make sure PRs in your team are healthy.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The Plot technology strategy</title>
       <link>https://saltares.com/the-plot-technology-strategy/</link>
@@ -695,54 +736,6 @@ Sure, you have well-specified epics and user stories. Still, during delivery, th
 &lt;h3 id=&#34;-make-time-for-it&#34;&gt;⏳ Make time for it&lt;/h3&gt;
 &lt;p&gt;Of course, you cannot just add new responsibilities to your team and expect nothing else to change. It&amp;rsquo;s an investment. The team may move slightly more slowly initially to increase quality and velocity later.&lt;/p&gt;
 &lt;p&gt;🙌 Do you have other practices or techniques? Please do let me know!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>8 Questions to ask your potential future Engineering Manager during an interview</title>
-      <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</link>
-      <pubDate>Sun, 27 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview/</guid>
-      <description>We&amp;rsquo;re in the middle of a heated tech job market. The most heated tech job market in history!
-I don&amp;rsquo;t know how long it will last. I know that it&amp;rsquo;s a great time to be an engineer right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.</description>
-      <content>&lt;p&gt;
-  &lt;img src=&#34;./img/interview-laptop.png&#34; alt=&#34;laptop with code on screen&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;re in the middle of a heated tech job market. &lt;a href=&#34;https://blog.pragmaticengineer.com/advice-for-tech-workers-to-navigate-a-heated-job-market/&#34;&gt;The most heated tech job market in history&lt;/a&gt;!&lt;/p&gt;
-&lt;p&gt;I don&amp;rsquo;t know how long it will last. I know that &lt;a href=&#34;https://www.forbes.com/sites/forbestechcouncil/2021/04/13/analyzing-the-software-engineer-shortage/?sh=8c36ed0321c6&#34;&gt;it&amp;rsquo;s a great time to be an engineer&lt;/a&gt; right now. Yet, many people seem to forget a job interview goes both ways. Too many great developers make it through the interview process, asking superficial questions. Reality slaps them in the face when they start in their new role.&lt;/p&gt;
-&lt;p&gt;Awful team dynamics, managers excluding valuable team members, ego contests, lack of feedback, no proper coaching, etc. The list goes on.&lt;/p&gt;
-&lt;p&gt;Has this ever happened to you? Read on!&lt;/p&gt;
-&lt;p&gt;I recognize that not everyone can afford to be picky when looking for a job. It is a privilege. You may even fear coming across as fussy or difficult to work with. However, good interviewers should see real and profound questions as positive. You show that you have clear values and a vision for the kind of organization you want to be a part of. As an experienced interviewer, I promise that you will be better off.&lt;/p&gt;
-&lt;p&gt;What questions should you be asking though?&lt;/p&gt;
-&lt;p&gt;Of course, you may want to learn all about the technology stack and their agile practices. Get those questions out of the way ASAP. Ideally, the team should have those &lt;a href=&#34;https://dev.to/aulaeducation/aula-behind-the-scenes-of-the-learning-experience-platform-our-stack-1gno&#34;&gt;publicly documented somewhere&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s go over eight questions you can ask your potential engineering manager. They will help you answer whether you want to work there.&lt;/p&gt;
-&lt;h3 id=&#34;1--what-are-the-expectations-of-the-role-what-would-you-expect-from-me-in-30-days-and-in-3-months&#34;&gt;1. 🏆 What are the expectations of the role? What would you expect from me in 30 days? And in 3 months?&lt;/h3&gt;
-&lt;p&gt;Some managers do not set clear expectations. Awful! Their reports are often surprised during performance reviews. If they can share an actual expectations doc, that would be perfect.&lt;/p&gt;
-&lt;p&gt;Actual expectations shape culture. That is what the people you may work with will optimize for.&lt;/p&gt;
-&lt;p&gt;Asking about different timeframes will help you understand the onboarding experience and timeframes.&lt;/p&gt;
-&lt;h3 id=&#34;2--what-is-the-teams-biggest-challenge&#34;&gt;2. 🏔️ What is the team&amp;rsquo;s biggest challenge?&lt;/h3&gt;
-&lt;p&gt;Does the answer feel like an exciting problem for you to solve? Or is it more like a glimpse into a world of chaos that makes you want to run away and never look back?&lt;/p&gt;
-&lt;h3 id=&#34;3--how-are-technical-decisions-made&#34;&gt;3. 🤔 How are technical decisions made?&lt;/h3&gt;
-&lt;p&gt;Are technical decisions exclusively made by a little boys club no one can join? I have been on the receiving end of that, and it is frustrating as hell. You want to look for a team where individuals of all levels make proposals.&lt;/p&gt;
-&lt;p&gt;The &lt;a href=&#34;https://en.wikipedia.org/wiki/Request_for_Comments&#34;&gt;RFC&lt;/a&gt;/&lt;a href=&#34;https://adr.github.io/&#34;&gt;ADR&lt;/a&gt; format works well. This is because &lt;a href=&#34;https://www.forbes.com/sites/laurelfarrer/2020/12/10/the-art-of-asynchronous-optimizing-efficiency-in-remote-teams/?sh=42bfa18a747c&#34;&gt;async communication acts as a leveler&lt;/a&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;4--how-are-product-decisions-made-what-role-do-engineers-play&#34;&gt;4. 🧪 How are product decisions made? What role do engineers play?&lt;/h3&gt;
-&lt;p&gt;Are engineers treated like code monkeys, key pushers, or mere resources? In too many places, it&amp;rsquo;s the Engineering Manager, the only one who talks to the Product Manager.&lt;/p&gt;
-&lt;p&gt;Are you passionate about the products you build? Then you want to make sure engineers join ideation sessions and even user interviews.&lt;/p&gt;
-&lt;h3 id=&#34;5--what-does-career-progression-look-like&#34;&gt;5. 🧗‍♀️ What does career progression look like?&lt;/h3&gt;
-&lt;p&gt;When you talk about expectations, it&amp;rsquo;s a great time to ask about career progression. Are great engineers forced into management as the only option available?&lt;/p&gt;
-&lt;p&gt;As long as they document expectations, you should be able to check out those for the level above the one you applied for.&lt;/p&gt;
-&lt;h3 id=&#34;6--how-do-you-run-your-1-1s-what-is-your-coaching-style&#34;&gt;6. 🤝 How do you run your 1-1s? What is your coaching style?&lt;/h3&gt;
-&lt;p&gt;Many managers run them as status updates with little to no structure. Instead, 1-1 time should be &lt;a href=&#34;https://themanagershandbook.com/coaching-and-feedback/running-one-on-ones&#34;&gt;structured and belong to you&lt;/a&gt;. They are a place for you to give and receive feedback, build a trusting relationship, and discuss growth.&lt;/p&gt;
-&lt;h3 id=&#34;7--whats-your-strategy-to-break-down-silos-and-avoid-a-small-bus-factor&#34;&gt;7. 🚌 What&amp;rsquo;s your strategy to break down silos and avoid a small bus factor?&lt;/h3&gt;
-&lt;p&gt;Teams where people work in their little corner, will hamper your development. They also tend to descend into chaos when the person who does X is on holiday or ill. Presumably, you want to be part of a team where sharing knowledge is rewarded.&lt;/p&gt;
-&lt;p&gt;The team may work in cross-functional groups, pair, organize tech talks or run guilds.&lt;/p&gt;
-&lt;h3 id=&#34;8--think-of-the-last-couple-of-engineers-who-left-what-were-their-reasons&#34;&gt;8. 🚪 Think of the last couple of engineers who left. What were their reasons?&lt;/h3&gt;
-&lt;p&gt;The reasons may be complex as people usually are. Now is the moment to try and sense whether you are about to step into a drama fest. Most people who leave because it was the natural step in their career do so in friendly ways.&lt;/p&gt;
-&lt;p&gt;🙌 Want more?&lt;/p&gt;
-&lt;p&gt;I recently wrote &lt;a href=&#34;./the-david-test-an-updated-joel-test-for-2022/&#34;&gt;The David test&lt;/a&gt;, a list of questions to evaluate engineering teams. You may also find inspiration there.&lt;/p&gt;
-&lt;p&gt;Did you ever ask a question that provides you with lots of insight about the company you were about to join? Please do share!&lt;/p&gt;
 </content>
     </item>
     
