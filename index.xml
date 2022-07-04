@@ -6,7 +6,62 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>In support of hiring generalists for most early-stage startups</title>
+      <link>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</guid>
+      <description>By Denise Jan on Unsplash The vast majority of early-stage startup products consist of an application made of a handful of UI screens, a few CRUD APIs, real-time updates, notifications and not much else. However, when it is time to build a small team, many hire specialist roles from day one. For example, in a team of 4 engineers, you often see specific frontend, backend, iOS and DevOps roles. If the company later wanted to build an Android app, they would also hire an Android engineer.</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/swiss-army-knife.jpg&#34; alt=&#34;Swiss army knife&#34;&gt;
+    &lt;figcaption&gt;By Denise Jan on &lt;a href=&#34;https://unsplash.com/photos/-J1cTtVpj8k&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;The vast majority of early-stage startup products consist of an application made of a handful of UI screens, a few CRUD APIs, real-time updates, notifications and not much else. However, when it is time to build a small team, many hire specialist roles from day one. For example, in a team of 4 engineers, you often see specific frontend, backend, iOS and DevOps roles. If the company later wanted to build an Android app, they would also hire an Android engineer.&lt;/p&gt;
+&lt;p&gt;I think this is a mistake in 95% of cases.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/generalists/specialised-org.png&#34; alt=&#34;Specialised Engineering organisation&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Here are some of the consequences of a heavily specialised team early on in a startup’s life.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🛑 Development can halt whenever anyone goes on holiday or gets sick.&lt;/li&gt;
+&lt;li&gt;😱 There’s always severe disruption when someone leaves the company as they are typically the only person holding all the knowledge of a particular system area.&lt;/li&gt;
+&lt;li&gt;🛣️ The team is less able to adapt to changing priorities. For example, the iOS app is abandoned in favour of a web application with a larger scope. Startups are high uncertainty environments, and this is likely to happen.&lt;/li&gt;
+&lt;li&gt;🤔 It’s easy for engineers to fall into the trap of thinking in terms of UI screens and API endpoints instead of user experiences and real value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Instead, I would encourage CTOs and founders to consider hiring fullstack engineers or generalists.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/generalists/generalist-org.png&#34; alt=&#34;Generalist Engineering organisation&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Generalists are not experts and thought leaders in every software development field. Such a person does not exist. At the very least, you’ll have a tough time finding and hiring them. I am talking about engineers with t-shaped skillsets. A fullstack engineer may know more about building amazing frontends and prefer to work in that area. At the same time, they will be versatile enough to be productive and create quality work for others.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/generalists/t-shaped-skillset.png&#34; alt=&#34;T-Shaped Skillset diagram&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Before going to hire, you should analyse the current gaps of the team so that you can bring a generalist aboard whose top skills fill some of those gaps. Then, you can promote activities like tech talks and pairing so that the knowledge of the new joiner spreads across the team.&lt;/p&gt;
+&lt;p&gt;Some of the benefits of hiring generalists early on are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;💪 Your team is more resilient to people being out, whether on holiday or permanently.&lt;/li&gt;
+&lt;li&gt;🧘‍♀️ Increased flexibility, you have folks who can work on the most important thing™.&lt;/li&gt;
+&lt;li&gt;🥅 It becomes easier to encourage product thinking and help engineers focus on finding &lt;a href=&#34;https://en.wikipedia.org/wiki/Product/market_fit&#34;&gt;PMF&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, everything comes with a disclaimer, as there are few absolute truths when building products. I said that hiring specialists early on may be a bad idea 95% of the time. Well, what about the remaining 5%.&lt;/p&gt;
+&lt;p&gt;When hiring, you should always work back from business goals. In some cases, hiring specialists from the get-go may make sense. Here are a couple of examples.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Your mobile experience cannot be replicated as a web or React Native app, and you need folks who can write iOS or Android native apps.&lt;/li&gt;
+&lt;li&gt;Your product is a REST API with a complex AI system behind the scenes and no graphical UI. You may want AI engineers who can also write APIs.&lt;/li&gt;
+&lt;li&gt;You run a web3 Ponzi scheme and need blockchain experts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🙌 Thanks for reading.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>The problem of long-lived pull requests</title>
       <link>https://saltares.com/the-problem-of-long-lived-pull-requests/</link>
@@ -683,59 +738,6 @@ An incident can also be an opportunity. Your job is to make sure to seize it. In
 &lt;h3 id=&#34;-share-it&#34;&gt;👐 Share it&lt;/h3&gt;
 &lt;p&gt;Always share the document with the entire organization. In some cases, consider sharing an adapted version with customers. It may feel scary and shameful. However, being open about mistakes and your actions to improve is a great way to protect the trust you worked so hard to build.&lt;/p&gt;
 &lt;p&gt;🙌 Thanks for reading. Hopefully, this template can help you make the most of the situation when your system blows up. I would love to hear from you if you&amp;rsquo;re approaching things differently.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>Help Engineers understand the Why</title>
-      <link>https://saltares.com/help-engineers-understand-the-why/</link>
-      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
-      <description>Every engineer in the team must understand the why.
-Can everyone confidently answer the question:
-What problem are we trying to solve with this user story?
-Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
-Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket.</description>
-      <content>&lt;p&gt;
-  &lt;img src=&#34;./img/understand-the-why.webp&#34; alt=&#34;team building a wooden house&#34;&gt;
-
-&lt;/p&gt;
-&lt;p&gt;Every engineer in the team must understand the &lt;em&gt;why&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Can everyone confidently answer the question:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;What problem are we trying to solve with this user story?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Understanding the &lt;em&gt;why&lt;/em&gt; is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.&lt;/p&gt;
-&lt;p&gt;Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket. There are two options. Either delivery grinds to a halt, with engineers constantly asking the Designer/PM. Or they make the decisions themselves. To make the right decisions, everyone needs to understand users, the problem, and the solution.&lt;/p&gt;
-&lt;p&gt;Everyone needs to understand the &lt;em&gt;why&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;Many organizations struggle with this. Engineers focus on closing the next ticket in time for sprint review, and PMs are frustrated when features suffer delays because they were subpar.&lt;/p&gt;
-&lt;p&gt;As an engineering leader, the bad news is that you are responsible for the situation. The good news is that you can turn the ship around.&lt;/p&gt;
-&lt;h3 id=&#34;-dog-food-the-product&#34;&gt;🐶 Dog-food the product&lt;/h3&gt;
-&lt;p&gt;What easier way to understand the product better than to use it every day?&lt;/p&gt;
-&lt;p&gt;Well&amp;hellip; None.&lt;/p&gt;
-&lt;p&gt;Admittedly, some organizations have it easier than others. Engineers at &lt;a href=&#34;https://honeycomb.io/&#34;&gt;Honeycomb&lt;/a&gt; use their own product to observe Honeycomb. If your product doesn&amp;rsquo;t lend itself naturally to be used by engineers, there are still things you can do.&lt;/p&gt;
-&lt;p&gt;At &lt;a href=&#34;https://www.plot.co/&#34;&gt;Plot&lt;/a&gt;, we build a tool to help you create learning experiences like the world&amp;rsquo;s best learning designer. We&amp;rsquo;re running a challenge where we will all design a course using our tool. Not only will everyone familiarize themselves with the experience of using the product, but we will also collect loads of valuable feedback.&lt;/p&gt;
-&lt;h3 id=&#34;-engineers-join-ux-interviews&#34;&gt;🧪 Engineers join UX interviews&lt;/h3&gt;
-&lt;p&gt;Engineers who talk to users are bound to get to know them better. They can read written feedback, but there&amp;rsquo;s nothing like talking to them face to face.&lt;/p&gt;
-&lt;p&gt;You can suggest they join your team&amp;rsquo;s Designer on the next series of user interviews that validate the solution they will work on next. Start with Engineers shadowing, so they become comfortable. Perhaps you&amp;rsquo;ll get a few individuals interested in conducting interviews themselves!&lt;/p&gt;
-&lt;h3 id=&#34;-the-team-refines-together&#34;&gt;👌 The team refines together&lt;/h3&gt;
-&lt;p&gt;Many teams do not refine user stories together. I am shocked at the number of instances when just the Engineering Manager, Product Manager, and Designer discuss the backlog. The Engineering Manager breaks down stories into tasks and assigns them to individuals in the team.&lt;/p&gt;
-&lt;p&gt;I cannot state how extremely damaging that is.&lt;/p&gt;
-&lt;p&gt;Firstly, Engineers only receive a piece of the puzzle, making it impossible to see the bigger picture. Secondly, they never get the chance to break stories into smaller chunks, missing out on developing a crucial skill.&lt;/p&gt;
-&lt;p&gt;Refining together is a great way to share knowledge about the system, where the pitfalls and the opportunities are.&lt;/p&gt;
-&lt;h3 id=&#34;-design-sprints--ideation-sessions&#34;&gt;👨‍🎨 Design sprints &amp;amp; ideation sessions&lt;/h3&gt;
-&lt;p&gt;Having Engineers and other roles participate in design sprints or ideation sessions before a solution is presented to them is fantastic. Instead of thinking about the solution at hand, everyone is now thinking about the actual problem or frictions users face.&lt;/p&gt;
-&lt;p&gt;There are a couple of bonuses. One is that Engineers feel more ownership over what they build. The other one is that Engineers might identify great solutions a Designer or PM thought to be technically infeasible. Yet another classic example of why diverse teams build better products.&lt;/p&gt;
-&lt;h3 id=&#34;-everyone-does-support&#34;&gt;💬 Everyone does support!&lt;/h3&gt;
-&lt;p&gt;It&amp;rsquo;s typical of early-stage startups for everyone to help out with the help desk rotation. The Product Support team may not even exist yet! However, this normally stops the second the Support team assembles.&lt;/p&gt;
-&lt;p&gt;A day where the Product Development team helps with Product Support will be a true eye-opener. There is nothing like seeing raw user frustration first-hand. It puts the roadmap into perspective.&lt;/p&gt;
-&lt;h3 id=&#34;-make-product-part-of-the-jd-and-interview-process&#34;&gt;👩‍💻 Make Product part of the JD and interview process&lt;/h3&gt;
-&lt;p&gt;If your interview process focuses exclusively on technical knowledge, you may attract Engineers who are not interested in understanding users.&lt;/p&gt;
-&lt;p&gt;Think about the questions and conversations you may have to understand better how candidates think about user problems and solutions.&lt;/p&gt;
-&lt;h3 id=&#34;-make-time-for-it&#34;&gt;⏳ Make time for it&lt;/h3&gt;
-&lt;p&gt;Of course, you cannot just add new responsibilities to your team and expect nothing else to change. It&amp;rsquo;s an investment. The team may move slightly more slowly initially to increase quality and velocity later.&lt;/p&gt;
-&lt;p&gt;🙌 Do you have other practices or techniques? Please do let me know!&lt;/p&gt;
 </content>
     </item>
     

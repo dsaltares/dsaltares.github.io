@@ -6,7 +6,16 @@
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 27 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>In support of hiring generalists for most early-stage startups</title>
+      <link>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</guid>
+      <description>By Denise Jan on Unsplash The vast majority of early-stage startup products consist of an application made of a handful of UI screens, a few CRUD APIs, real-time updates, notifications and not much else. However, when it is time to build a small team, many hire specialist roles from day one. For example, in a team of 4 engineers, you often see specific frontend, backend, iOS and DevOps roles. If the company later wanted to build an Android app, they would also hire an Android engineer.</description>
+    </item>
+    
     <item>
       <title>The problem of long-lived pull requests</title>
       <link>https://saltares.com/the-problem-of-long-lived-pull-requests/</link>
@@ -98,19 +107,6 @@ The tension is so high that the incident responder forgets to communicate effect
       <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
       <description>By Sieuwert Otterloo on Unsplash Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
 An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
-    </item>
-    
-    <item>
-      <title>Help Engineers understand the Why</title>
-      <link>https://saltares.com/help-engineers-understand-the-why/</link>
-      <pubDate>Mon, 14 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/help-engineers-understand-the-why/</guid>
-      <description>Every engineer in the team must understand the why.
-Can everyone confidently answer the question:
-What problem are we trying to solve with this user story?
-Understanding the why is essential to the success of a project and the team&amp;rsquo;s performance. A group of people who don&amp;rsquo;t understand users or their problems cannot build a high-quality product.
-Sure, you have well-specified epics and user stories. Still, during delivery, the team will have to make dozens of decisions that are not detailed in the ticket.</description>
     </item>
     
   </channel>
