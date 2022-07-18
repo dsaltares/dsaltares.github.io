@@ -6,7 +6,17 @@
     <description>Recent content in Posts on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fully integrate contractors into your team</title>
+      <link>https://saltares.com/fully-integrate-contractors-into-your-team/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/fully-integrate-contractors-into-your-team/</guid>
+      <description>Sky Sports Your team has to hit a key milestone this year, but capacity is short. Everyone is worried, and tensions build up. As an Engineering leader, you are keen to reduce the burnout risk and consider hiring a couple of contractors or working with a software agency to speed things up without hiring full-time folks. But are you fully aware of the trade-offs?
+This article covers the benefits and risks of working with engineering contractors as well as the measures you can put in place to maximise your chances of success!</description>
+    </item>
+    
     <item>
       <title>In support of hiring generalists for most early-stage startups</title>
       <link>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</link>
@@ -97,16 +107,6 @@ Today, I thought it would be interesting to go through 6 mistakes I have made as
       <guid>https://saltares.com/a-playbook-for-calm-incident-response/</guid>
       <description>By Camilo Jimenez on Unsplash Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
 The tension is so high that the incident responder forgets to communicate effectively or is so worried about keeping folks up to date that they take the wrong action, further compromising the system.</description>
-    </item>
-    
-    <item>
-      <title>A template for great incident reviews</title>
-      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
-      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
-      <description>By Sieuwert Otterloo on Unsplash Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
-An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
     </item>
     
   </channel>

@@ -6,7 +6,65 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Fully integrate contractors into your team</title>
+      <link>https://saltares.com/fully-integrate-contractors-into-your-team/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/fully-integrate-contractors-into-your-team/</guid>
+      <description>Sky Sports Your team has to hit a key milestone this year, but capacity is short. Everyone is worried, and tensions build up. As an Engineering leader, you are keen to reduce the burnout risk and consider hiring a couple of contractors or working with a software agency to speed things up without hiring full-time folks. But are you fully aware of the trade-offs?
+This article covers the benefits and risks of working with engineering contractors as well as the measures you can put in place to maximise your chances of success!</description>
+      <content>&lt;p&gt;
+  &lt;figure&gt;
+    &lt;img class=&#34;figure-image&#34; src=&#34;./img/contractors/spanish-women-team.jpg&#34; alt=&#34;Spain’s women’s national football team celebrate a goal&#34;&gt;
+    &lt;figcaption&gt;&lt;a href=&#34;https://www.skysports.com/football/news/11095/12649982/womens-euros-2022-preview-germany-face-spain-in-potential-group-b-decider-while-denmark-play-finland&#34;&gt;Sky Sports&lt;/a&gt;&lt;/figcaption&gt;
+  &lt;/figure&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Your team has to hit a key milestone this year, but capacity is short. Everyone is worried, and tensions build up. As an Engineering leader, you are keen to reduce the burnout risk and consider hiring a couple of contractors or working with a software agency to speed things up without hiring full-time folks. But are you fully aware of the trade-offs?&lt;/p&gt;
+&lt;p&gt;This article covers the benefits and risks of working with engineering contractors as well as the measures you can put in place to maximise your chances of success!&lt;/p&gt;
+&lt;p&gt;Working with contractors and agencies can benefit your team in a few ways.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;🏎️ Quickly add capacity to a team. Finding a great contractor is way faster than finding full-time engineers (FTE).&lt;/li&gt;
+&lt;li&gt;💼 Push a critical project over the finish line.&lt;/li&gt;
+&lt;li&gt;👩‍🔬 Help with highly specialised work and train the team in some new technology.&lt;/li&gt;
+&lt;li&gt;💸 Avoid the long-term commitment of full-time employees.&lt;/li&gt;
+&lt;li&gt;🌡️ Deal with seasonal surges of work.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Of course, working with agencies and contractors presents risks and trade-offs.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;😕 Reduced vetting can lead to cultural misalignment and quality issues. Most agencies won’t allow you to interview their people. They already do their vetting! Similarly, hiring processes for independent contractors tend to be lighter for companies to remain competitive.&lt;/li&gt;
+&lt;li&gt;😞 Onboarding is still required to fully understand the product and make the right decisions when building new features, both from technical and UX standpoints.&lt;/li&gt;
+&lt;li&gt;😩 Incentives may be misaligned. Agencies want to finish the project they were hired for and upsell you. Independent contractors will be worried about finding their next gig instead of having to maintain the code they just wrote while working with you.&lt;/li&gt;
+&lt;li&gt;💸 When the experience level is equal, contractors are far more expensive than full-time employees.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The best way to hedge these risks is to treat contractors like any other member of the team. Contractors are people too! Building personal connections and trust with the rest of the organisation and staying tuned into current priorities will give them the context and tools to succeed.&lt;/p&gt;
+&lt;p&gt;Here is a list of practical measures you can put in place to maximise the success of your contractor bet.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;🥐 Hold a welcome breakfast. On their first day, introduce them to the team in an informal setting. Doing it over a remote coffee works too!&lt;/li&gt;
+&lt;li&gt;🤗 Accelerated onboarding. Focus on getting to know the product, basic architecture and team practices. For example, &lt;em&gt;this is how we write our React components&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;🔐 Make sure they have access to all the systems and information they need. Whenever they need to ask for access, it reminds them they do not belong.&lt;/li&gt;
+&lt;li&gt;🥇 Set expectations as early as possible. Use your expectations framework if possible! Not every contractor may have worked in a highly integrated manner. Understanding your expectations and the support available to them will be vital in setting them up for success.&lt;/li&gt;
+&lt;li&gt;🤝 Include them in team rituals: all hands, refinement, ideation, and others. This will help them &lt;a href=&#34;./help-engineers-understand-the-why/&#34;&gt;understand why you are building things&lt;/a&gt; and the trade-offs they should be making.&lt;/li&gt;
+&lt;li&gt;🎮 Team building/socials that help build relationships and trust&lt;/li&gt;
+&lt;li&gt;💬 Hold 1-1s with them. Perhaps you won’t focus on career goals, but you can share feedback early, course correct and understand what they need to succeed.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Another aspect to consider is team topology. I often see leaders spinning up contractor-only teams who work in quasi-isolation.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/contractors/isolated-contractor-team.png&#34; alt=&#34;Isolated contractor team&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Instead, I recommend you consider spreading contractors across multiple teams whenever possible. This way, engineering contractors will benefit from a far more robust support network as they onboard. They can pair with more tenured engineers and pick up on their knowledge and context.&lt;/p&gt;
+&lt;p&gt;
+  &lt;img src=&#34;./img/contractors/integrated-contractors.png&#34; alt=&#34;Integrated contractors&#34;&gt;
+
+&lt;/p&gt;
+&lt;p&gt;Hiring contractors or working with agencies is a significant investment. To get the most out of it, optimise for integrating them into your existing teams as much as possible.&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading! Do you have other ideas to improve the way you work with contractors? Please share them with me!&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>In support of hiring generalists for most early-stage startups</title>
       <link>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups/</link>
@@ -663,81 +721,6 @@ The tension is so high that the incident responder forgets to communicate effect
 &lt;/ul&gt;
 &lt;p&gt;Of course, you can adapt this template to your needs. The main idea is that having a checklist in the first place avoids stress when responding to a problem.&lt;/p&gt;
 &lt;p&gt;🙌 Thanks for reading! I would love to hear from you if you have any thoughts around checklists for incident response.&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>A template for great incident reviews</title>
-      <link>https://saltares.com/a-template-for-great-incident-reviews/</link>
-      <pubDate>Mon, 21 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/a-template-for-great-incident-reviews/</guid>
-      <description>By Sieuwert Otterloo on Unsplash Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.
-An incident can also be an opportunity. Your job is to make sure to seize it. Incident review docs followed by a discussion help a lot.</description>
-      <content>&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;figure-image&#34; src=&#34;./img/mission-control.jpeg&#34; alt=&#34;NASA mision control room&#34;&gt;
-    &lt;figcaption&gt;By Sieuwert Otterloo on &lt;a href=&#34;https://unsplash.com/photos/6SyrBaRjLJ4&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
-  &lt;/figure&gt;
-
-&lt;/p&gt;
-&lt;p&gt;Software incidents suck big time. Suddenly, you have more work to do; the sprint is derailed; stakeholders raise their eyebrows and start asking questions. Nobody wants that! Unfortunately, incidents do happen. Complex software systems are bound to fail from time to time.&lt;/p&gt;
-&lt;p&gt;An incident can also be an opportunity. Your job is to make sure to seize it. &lt;strong&gt;Incident review docs&lt;/strong&gt; followed by a discussion help a lot. Above all else, the main goal of incident reviews is to &lt;strong&gt;learn&lt;/strong&gt;, although great incident reviews can achieve much more.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Identify ways to make the system more robust.&lt;/li&gt;
-&lt;li&gt;Identify and close process gaps.&lt;/li&gt;
-&lt;li&gt;Learn about the system they maintain and develop.&lt;/li&gt;
-&lt;li&gt;Protect the trust with the rest of the company and customers by being transparent.&lt;/li&gt;
-&lt;li&gt;Understand user impact better and develop user empathy.&lt;/li&gt;
-&lt;li&gt;Help future team members understand the systems&amp;rsquo; weak points and how incidents are handled.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;I recommend the following approach, which &lt;a href=&#34;./6-tips-to-make-remote-meetings-more-inclusive/&#34;&gt;makes the process more inclusive&lt;/a&gt;.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;The incident leader/responder writes the review doc.&lt;/li&gt;
-&lt;li&gt;The team reads and comments async.&lt;/li&gt;
-&lt;li&gt;Everyone gets together to reflect and align on actions.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Here&amp;rsquo;s an incident review doc template that has worked well in my teams.&lt;/p&gt;
-&lt;h3 id=&#34;-authors&#34;&gt;✍️ Authors&lt;/h3&gt;
-&lt;p&gt;List the people who put the incident review document together. It will help future readers know who to ask for more information.&lt;/p&gt;
-&lt;h3 id=&#34;-summary&#34;&gt;🗞️ Summary&lt;/h3&gt;
-&lt;p&gt;Write out the TLDR version of what happened.&lt;/p&gt;
-&lt;h3 id=&#34;-impact&#34;&gt;🔥 Impact&lt;/h3&gt;
-&lt;p&gt;When talking about impact, you should consider several dimensions.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;🚶‍♂️ &lt;strong&gt;User&lt;/strong&gt;: were users unable to carry out a particular action? Was their data lost? Was their data compromised? How did that affect their lives or jobs?&lt;/li&gt;
-&lt;li&gt;👩‍💼 &lt;strong&gt;Business&lt;/strong&gt;: a helpful way to think about this one is to try to answer the question, how much money did the company lose with this incident?&lt;/li&gt;
-&lt;li&gt;⚽ &lt;strong&gt;Team&lt;/strong&gt;: did someone wake up in the middle of the night to respond? Did people work late? Was the sprint interrupted because many team members had to work on remediation?&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-detection&#34;&gt;🚨 Detection&lt;/h3&gt;
-&lt;p&gt;How did the team become aware of the issue? At best, an alert told you something was wrong even before users became aware. At worst, a user had to submit a ticket to Product Support.&lt;/p&gt;
-&lt;h3 id=&#34;-triage&#34;&gt;🔍 Triage&lt;/h3&gt;
-&lt;p&gt;What were the actions taken by the responder to assess the severity of the issue and escalate?&lt;/p&gt;
-&lt;h3 id=&#34;-root-causes&#34;&gt;🐛 Root causes&lt;/h3&gt;
-&lt;p&gt;Share the team&amp;rsquo;s steps to investigate the issue and identify the root cause. Include information gathered from observability tools like screenshots or links to dashboards. Do not spare details here. Everyone can learn a lot about how the system works from this section.&lt;/p&gt;
-&lt;p&gt;I am a firm believer in &lt;a href=&#34;https://sre.google/sre-book/postmortem-culture/&#34;&gt;blameless postmortems&lt;/a&gt;, although I am conscious of how easy it is to avoid attribution. Focus on the circumstances that triggered the incident instead of the individuals. But be careful not to skip the root cause entirely.&lt;/p&gt;
-&lt;h3 id=&#34;-resolution&#34;&gt;🧯 Resolution&lt;/h3&gt;
-&lt;p&gt;What actions did the team take to bring the system back to normal? How did you make sure everything was, indeed, okay?&lt;/p&gt;
-&lt;p&gt;Again, don&amp;rsquo;t forget the charts!&lt;/p&gt;
-&lt;h3 id=&#34;-timeline&#34;&gt;⏱️ Timeline&lt;/h3&gt;
-&lt;p&gt;Share the complete list of events. Compiling the actual timeline is much easier when the incident leader takes notes during the incident.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Timestamp.&lt;/li&gt;
-&lt;li&gt;Action or discovery.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;-lessons-learned&#34;&gt;👩‍🎓 Lessons learned&lt;/h3&gt;
-&lt;p&gt;Knowing what happened, it&amp;rsquo;s time to reflect. I like to focus on three categories.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;👍 What went well&lt;/li&gt;
-&lt;li&gt;👎 What went wrong&lt;/li&gt;
-&lt;li&gt;🤞 Where we got lucky&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Think about it in terms of software and processes and avoid attributing individual blame.&lt;/p&gt;
-&lt;h3 id=&#34;-actions-and-issues&#34;&gt;⏭️ Actions and issues&lt;/h3&gt;
-&lt;p&gt;List of remediation and preemptive actions. Ideally, all of them have a corresponding ticket. Focus on process improvements and technical work to address what went wrong and avoid depending on luck. As an engineering leader, it&amp;rsquo;s your job to work with Product Management and prioritize those tickets.&lt;/p&gt;
-&lt;h3 id=&#34;-share-it&#34;&gt;👐 Share it&lt;/h3&gt;
-&lt;p&gt;Always share the document with the entire organization. In some cases, consider sharing an adapted version with customers. It may feel scary and shameful. However, being open about mistakes and your actions to improve is a great way to protect the trust you worked so hard to build.&lt;/p&gt;
-&lt;p&gt;🙌 Thanks for reading. Hopefully, this template can help you make the most of the situation when your system blows up. I would love to hear from you if you&amp;rsquo;re approaching things differently.&lt;/p&gt;
 </content>
     </item>
     
