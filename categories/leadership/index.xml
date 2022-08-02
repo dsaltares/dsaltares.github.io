@@ -6,7 +6,17 @@
     <description>Recent content in Leadership on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/categories/leadership/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>7 ways to make performance reviews painless and fair</title>
+      <link>https://saltares.com/7-ways-to-make-performance-reviews-painless-and-fair/</link>
+      <pubDate>Tue, 02 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/7-ways-to-make-performance-reviews-painless-and-fair/</guid>
+      <description>By Celpax on Unsplash Periodical performance reviews are typical in medium and larger organisations. Whether quarterly or yearly, it&amp;rsquo;s interesting to see reports and managers universally dread them. Reports get anxious about a bad review or a pay rise below their expectations. At the same time, managers feel the process is cumbersome, wasteful and are concerned they are not being fair with all team members.
+Luckily, it doesn&amp;rsquo;t have to be like that at all.</description>
+    </item>
+    
     <item>
       <title>Fully integrate contractors into your team</title>
       <link>https://saltares.com/fully-integrate-contractors-into-your-team/</link>
@@ -97,16 +107,6 @@ It took our small team about three months to create a prototype of the platform.
       <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
       <description>By Sarah Kilian on Unsplash To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
 Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
-    </item>
-    
-    <item>
-      <title>A playbook for calm incident response</title>
-      <link>https://saltares.com/a-playbook-for-calm-incident-response/</link>
-      <pubDate>Mon, 28 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/a-playbook-for-calm-incident-response/</guid>
-      <description>By Camilo Jimenez on Unsplash Incident response can be stressful. The system is on fire, the team has to fix it ASAP, and you&amp;rsquo;re working against the clock. Your users are getting frustrated, the company loses money, stakeholders constantly check for updates, and trust is at risk. What a nightmare!
-The tension is so high that the incident responder forgets to communicate effectively or is so worried about keeping folks up to date that they take the wrong action, further compromising the system.</description>
     </item>
     
   </channel>
