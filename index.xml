@@ -102,6 +102,36 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;before-and-after&#34;&gt;📈 Before and after&lt;/h2&gt;
 &lt;p&gt;TeamFindr has 18% less code and deploys 54% faster as a Next.js app running on Vercel than a CRA+Express app on EC2. The REST API response times are mostly unchanged except for cold starts. When you hit a cold route, response times may &lt;a href=&#34;https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/#:~:text=According%20to%20an%20analysis%20of,ms%20to%20over%201%20second.&#34;&gt;increase by between 100 and 1000ms&lt;/a&gt;. Given the performance requirements of TeamFindr, I would say this is a fair tradeoff, and the benefits far outweigh the compromises.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Metric&lt;/th&gt;
+&lt;th&gt;Before&lt;/th&gt;
+&lt;th&gt;After&lt;/th&gt;
+&lt;th&gt;Change&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Lines of code&lt;/td&gt;
+&lt;td&gt;12663&lt;/td&gt;
+&lt;td&gt;10414&lt;/td&gt;
+&lt;td&gt;-18%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Deployment times&lt;/td&gt;
+&lt;td&gt;~5m30s&lt;/td&gt;
+&lt;td&gt;~2m30s&lt;/td&gt;
+&lt;td&gt;-54%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;API response times (average)&lt;/td&gt;
+&lt;td&gt;~80-200ms&lt;/td&gt;
+&lt;td&gt;~80-300ms&lt;/td&gt;
+&lt;td&gt;Negligible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;p&gt;🙌 Thanks for reading. I hope you find my experience migrating a CRA app to Next.js helpful.&lt;/p&gt;
 </content>
     </item>
