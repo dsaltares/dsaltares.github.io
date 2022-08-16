@@ -6,7 +6,106 @@
     <description>Recent content on David Saltares</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-uk</language>
-    <lastBuildDate>Tue, 02 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Aug 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Migrating Teamfindr from CRA&#43;Express&#43;AWS to Next.js&#43;Vercel</title>
+      <link>https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-next.js-vercel/</link>
+      <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-next.js-vercel/</guid>
+      <description>TeamFindr is a mobile-first web application that helps you find nearby pick-up games, organise games with your friends and find extra players. My friend Cristi and I built it during the pandemic. Back then, I used CRA for the client and Express for the REST API. The client was deployed to Github pages and the server to an EC2 machine on AWS via Docker. The whole thing is open source.</description>
+      <content>&lt;p&gt;
+  &lt;img src=&#34;./img/teamfindr/teamfindr_00001.png&#34; alt=&#34;TeamFindr header banner&#34;&gt;
+
+
+&lt;a href=&#34;https://teamfindr.saltares.com/&#34;&gt;TeamFindr&lt;/a&gt; is a mobile-first web application that helps you find nearby pick-up games, organise games with your friends and find extra players. My friend &lt;a href=&#34;https://www.linkedin.com/in/cristian-iordan-26b1abb7/&#34;&gt;Cristi&lt;/a&gt; and I built it during the pandemic. Back then, I used &lt;a href=&#34;https://create-react-app.dev/&#34;&gt;CRA&lt;/a&gt; for the client and &lt;a href=&#34;https://expressjs.com/&#34;&gt;Express&lt;/a&gt; for the REST API. The client was deployed to &lt;a href=&#34;https://create-react-app.dev/docs/deployment/#github-pages&#34;&gt;Github pages&lt;/a&gt; and the server to an &lt;a href=&#34;https://github.com/dsaltares/teamfindr/blob/784c972d5e2bd1e7cd3d213c462d8a1cc0839485/.github/workflows/lint_test_and_deploy.yaml#L75-L108&#34;&gt;EC2 machine on AWS via Docker&lt;/a&gt;. The whole thing is &lt;a href=&#34;https://github.com/dsaltares/teamfindr&#34;&gt;open source&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Recently, I migrated TeamFindr to &lt;a href=&#34;https://nextjs.org/&#34;&gt;Next.js&lt;/a&gt; and deployed it to &lt;a href=&#34;https://vercel.com/&#34;&gt;Vercel&lt;/a&gt;. In this article, I go over the reasons for the change, the actual migration process and some comparative metrics.&lt;/p&gt;
+&lt;h2 id=&#34;reasons-to-migrate&#34;&gt;🤔 Reasons to migrate&lt;/h2&gt;
+&lt;p&gt;What prompted me to migrate was that the EC2 free tier in my AWS account expired. My &lt;code&gt;t2.micro&lt;/code&gt; instance was ~$10/month, and Vercel’s free tier limits are more than enough to keep TeamFindr online. My rule is that side projects must remain free to run 😅.&lt;/p&gt;
+&lt;p&gt;There were other reasons as well.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;⛰️ Next.js and Vercel support &lt;a href=&#34;https://nextjs.org/docs/api-routes/introduction&#34;&gt;API routes&lt;/a&gt;, which allows me to keep both client and API in the same deployment unit.&lt;/li&gt;
+&lt;li&gt;🎉 A single codebase means sharing typescript types between client and API is more manageable without the need for complex monorepo setups like yarn workspaces.&lt;/li&gt;
+&lt;li&gt;🔥 Vercel offers zero-config deployments and eliminates a bunch of technologies from my project. Just Vercel now replaces Docker, ECR, Nginx and EC2. Fewer tools and less config mean easier reproducibility.&lt;/li&gt;
+&lt;li&gt;🔒 There is no vendor lock-in because one can quickly &lt;a href=&#34;https://blog.logrocket.com/deploying-nextjs-aws-serverless-next-js/#features&#34;&gt;deploy Next.js apps elsewhere&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;🏎️ Next.js developer experience is better, and you get other niceties like automatic code splitting and optimised images.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;the-migration-process&#34;&gt;🦜 The migration process&lt;/h2&gt;
+&lt;p&gt;Overall, it was a smooth ride that only took a couple of days from start to shipping.&lt;/p&gt;
+&lt;p&gt;The first step was to port the &lt;strong&gt;client&lt;/strong&gt; from CRA to Next.js. The original application was a client-rendered &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Glossary/SPA&#34;&gt;SPA&lt;/a&gt;, and I kept it that way for several reasons.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The entire package assumed it runs on the client. The app uses &lt;code&gt;window&lt;/code&gt; and other browser APIs such as &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API&#34;&gt;&lt;code&gt;navigator.geolocation&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;I didn’t have to bother migrating away from &lt;a href=&#34;https://reactrouter.com/&#34;&gt;&lt;code&gt;react-router&lt;/code&gt;&lt;/a&gt; to Next.js&amp;rsquo;s router.&lt;/li&gt;
+&lt;li&gt;The old app used &lt;a href=&#34;https://v5.reactrouter.com/web/api/HashRouter&#34;&gt;&lt;code&gt;HashRouter&lt;/code&gt;&lt;/a&gt;. Switching to regular routing would mean breaking links such as &lt;a href=&#34;https://teamfindr.saltares.com/#/venues/8d37b22c-6563-4723-a97c-a5fcc0747695&#34;&gt;&lt;code&gt;https://teamfindr.saltares.com/#/venues/8d37b22c-6563-4723-a97c-a5fcc0747695&lt;/code&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;I followed the Next.js docs to &lt;a href=&#34;https://nextjs.org/docs/migrating/from-create-react-app&#34;&gt;migrate from a CRA&lt;/a&gt;, particularly &lt;a href=&#34;https://nextjs.org/docs/migrating/from-create-react-app#single-page-app-spa&#34;&gt;the SPA section&lt;/a&gt;. At that point, I had a Next.js-powered frontend that talked to my old Express API. To test components in isolation, I used &lt;a href=&#34;https://storybook.js.org/&#34;&gt;Storybook&lt;/a&gt;, so I followed their official &lt;a href=&#34;https://storybook.js.org/blog/get-started-with-storybook-and-next-js/&#34;&gt;guide to set it up in Next.js&lt;/a&gt;, and all my old stories worked perfectly.&lt;/p&gt;
+&lt;p&gt;Migrating the &lt;strong&gt;API&lt;/strong&gt; was slightly trickier, especially getting &lt;a href=&#34;https://www.passportjs.org/&#34;&gt;passport&lt;/a&gt; authentication to work. My Express server relied on a bunch of middleware: &lt;code&gt;passport&lt;/code&gt;, &lt;a href=&#34;https://www.npmjs.com/package/cookie-session&#34;&gt;&lt;code&gt;cookie-session&lt;/code&gt;&lt;/a&gt;, &lt;a href=&#34;https://www.npmjs.com/package/cookie-parser&#34;&gt;&lt;code&gt;cookie-parser&lt;/code&gt;&lt;/a&gt;, logging, protected routes, etc.&lt;/p&gt;
+&lt;p&gt;Fortunately, I discovered &lt;a href=&#34;https://www.npmjs.com/package/next-connect&#34;&gt;next-connect&lt;/a&gt;, which you can plug into your Next.js API routes and inject all your middleware. That made it super easy to keep middleware and endpoint handlers mostly as-is.&lt;/p&gt;
+&lt;p&gt;This is what my API routes look like.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tsx&#34; data-lang=&#34;tsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getEvents&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;Handler&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; ({ &lt;span style=&#34;color:#a6e22e&#34;&gt;query&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;user&lt;/span&gt; }) &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;events&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;searchEvents&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;query&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;parseSearchEventsQuery&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;query&lt;/span&gt;),
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;userId&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;user?.id&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;as&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;string&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;status&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;200&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;body&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; { &lt;span style=&#34;color:#a6e22e&#34;&gt;events&lt;/span&gt; },
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  };
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;createRoute&lt;/span&gt;([
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;method&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;get&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;getEvents&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;requiresAuth&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  }
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;And here’s part of my &lt;code&gt;createRoute&lt;/code&gt; function.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-tsx&#34; data-lang=&#34;tsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;createRoute&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;endpoints&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;EndpointDefinition&lt;/span&gt;[]) &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ...
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;connect&lt;/span&gt;()
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;cors&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;origin&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;Config.hostUrl&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;methods&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;GET,HEAD,PUT,PATCH,POST,DELETE&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;credentials&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;cookieSession&lt;/span&gt;({
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;session&amp;#39;&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;keys&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;Config&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;authentication&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;cookieKey&lt;/span&gt;],
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;maxAge&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;365&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;24&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;60&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1000&lt;/span&gt;, &lt;span style=&#34;color:#75715e&#34;&gt;// 1 year
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;overwrite&lt;/span&gt;: &lt;span style=&#34;color:#66d9ef&#34;&gt;true&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;cookieParser&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;passport&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;initialize&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;passport&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;session&lt;/span&gt;())
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;withRenewSession&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;withRequestLogger&lt;/span&gt;)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    .&lt;span style=&#34;color:#a6e22e&#34;&gt;use&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;withAuthenticatedUser&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;endpoints&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;forEach&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;endpoint&lt;/span&gt;) &lt;span style=&#34;color:#f92672&#34;&gt;=&amp;gt;&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;endpoint&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;method&lt;/span&gt;](&lt;span style=&#34;color:#a6e22e&#34;&gt;createRawHandler&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;endpoint&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;handler&lt;/span&gt;));
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  });
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;router&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;};
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;As an aside, &lt;a href=&#34;https://next-auth.js.org/&#34;&gt;NextAuth&lt;/a&gt; makes it far easier to get authentication in a Next.js app. I would totally use it if I were to build the app from scratch.&lt;/p&gt;
+&lt;p&gt;At last, I could point the client to talk to the new Next.js API routes.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Shipping&lt;/strong&gt; was the easiest part.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Merge to the &lt;code&gt;main&lt;/code&gt; branch.&lt;/li&gt;
+&lt;li&gt;Configure a new app in Vercel and get it deployed.&lt;/li&gt;
+&lt;li&gt;Make the &lt;code&gt;teamfindr.saltares.com&lt;/code&gt; domain point at Vercel.&lt;/li&gt;
+&lt;li&gt;Delete the EC2 instance in AWS.&lt;/li&gt;
+&lt;li&gt;Save $10/month 🤑😅.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;before-and-after&#34;&gt;📈 Before and after&lt;/h2&gt;
+&lt;p&gt;TeamFindr has 18% less code and deploys 54% faster as a Next.js app running on Vercel than a CRA+Express app on EC2. The REST API response times are mostly unchanged except for cold starts. When you hit a cold route, response times may &lt;a href=&#34;https://aws.amazon.com/blogs/compute/operating-lambda-performance-optimization-part-1/#:~:text=According%20to%20an%20analysis%20of,ms%20to%20over%201%20second.&#34;&gt;increase by between 100 and 1000ms&lt;/a&gt;. Given the performance requirements of TeamFindr, I would say this is a fair tradeoff, and the benefits far outweigh the compromises.&lt;/p&gt;
+&lt;p&gt;🙌 Thanks for reading. I hope you find my experience migrating a CRA app to Next.js helpful.&lt;/p&gt;
+</content>
+    </item>
+    
     <item>
       <title>7 ways to make performance reviews painless and fair</title>
       <link>https://saltares.com/7-ways-to-make-performance-reviews-painless-and-fair/</link>
@@ -641,72 +740,6 @@ We agreed that we would:&lt;/p&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;-thanks-for-reading&#34;&gt;🙌 Thanks for reading&lt;/h2&gt;
 &lt;p&gt;I hope our stack inspires you to build great things in 2022 and that this post has provided some helpful guidance for developing a high-quality web application from the ground up!&lt;/p&gt;
-</content>
-    </item>
-    
-    <item>
-      <title>5 Mistakes I have made as an engineering leader</title>
-      <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</link>
-      <pubDate>Mon, 18 Apr 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader/</guid>
-      <description>By Sarah Kilian on Unsplash To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to reflect and learn from mistakes, so that our system becomes more robust and we grow as professionals.
-Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.</description>
-      <content>&lt;p&gt;
-  &lt;figure&gt;
-    &lt;img class=&#34;figure-image&#34; src=&#34;./img/ruined_ice_cream.jpg&#34; alt=&#34;Dropped ice cream cone&#34;&gt;
-    &lt;figcaption&gt;By Sarah Kilian on &lt;a href=&#34;https://unsplash.com/photos/52jRtc2S_VE&#34;&gt;Unsplash&lt;/a&gt;&lt;/figcaption&gt;
-  &lt;/figure&gt;
-
-&lt;/p&gt;
-&lt;p&gt;To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. Undoubtedly, I still have quite a few yet to make. Like with software incidents, it is vital to &lt;a href=&#34;./a-template-for-great-incident-reviews&#34;&gt;reflect and learn from mistakes&lt;/a&gt;, so that our system becomes more robust and we grow as professionals.&lt;/p&gt;
-&lt;p&gt;Today, I thought it would be interesting to go through 6 mistakes I have made as an engineering leader.&lt;/p&gt;
-&lt;h3 id=&#34;1-skipping-1-1s&#34;&gt;1. Skipping 1-1s&lt;/h3&gt;
-&lt;p&gt;Skipping 1-1s was never really a habit for me. I’ve always made it a priority to be available for my team. However, I’ve had reports who didn’t take enough ownership over their 1-1s. When that time of the week came, I would sometimes get a chat message:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Hey, I don’t have anything for 1-1 today. Shall we skip it?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;We were super busy, so agreeing was highly tempting. In doing so, I was missing out on the opportunity to:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Share my expectations and feedback around 1-1 ownership.&lt;/li&gt;
-&lt;li&gt;Empower and motivate the individual.&lt;/li&gt;
-&lt;li&gt;Set goals and maintain accountability.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Later, I learned to ask &lt;a href=&#34;https://lauratacho.com/blog/how-can-i-make-my-1-1s-less-boring&#34;&gt;better questions&lt;/a&gt;, put the individuals in the driver&amp;rsquo;s seat, and make the most of 1-1s.&lt;/p&gt;
-&lt;h3 id=&#34;2-underestimating-having-a-clear-technology-strategy&#34;&gt;2. Underestimating having a clear technology strategy&lt;/h3&gt;
-&lt;p&gt;Many managers dictate and involve themselves in every technical decision their teams make. I want to empower my teams to make their own decisions and genuinely have agency over the software they build, ship and maintain. However, for multiple squads to do that consistently, you need a couple of things:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Excellent communication across teams/squads.&lt;/li&gt;
-&lt;li&gt;A clear technology vision and strategy.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;It took me too long to support my teams by sharing a clear technology vision and strategy that would become the principles on which they could base technical decisions. Once I did that, it felt like magic. We were all rowing our technology in the same direction.&lt;/p&gt;
-&lt;p&gt;It doesn’t need to be too comprehensive. Just be clear about the kinds of tradeoffs you want the team to make. I will dive deeper into this one at some point with a separate article.&lt;/p&gt;
-&lt;h3 id=&#34;3-not-setting-clear-expectations&#34;&gt;3. Not setting clear expectations&lt;/h3&gt;
-&lt;p&gt;There have been instances where an individual was surprised when receiving feedback from me. That is usually a robust signal that expectations were not clear enough. As long as expectations are clear, folks have enough self-awareness to reflect and identify a problem after receiving feedback about something not working out great.&lt;/p&gt;
-&lt;p&gt;Making the expectations of each role in your organization public is a fantastic tool.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Help everyone understand what is expected of them.&lt;/li&gt;
-&lt;li&gt;Increase equity, people in the same role are not evaluated against different standards.&lt;/li&gt;
-&lt;li&gt;Greater understading of what it takes to progress.&lt;/li&gt;
-&lt;li&gt;When shared externally, it can be a great recruiting tool.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Of course, you should complement this with &lt;a href=&#34;https://themanagershandbook.com/coaching-and-feedback/running-one-on-ones&#34;&gt;great 1-1 sessions&lt;/a&gt;, good cross-team understanding of roles and responsibilities, etc.&lt;/p&gt;
-&lt;h3 id=&#34;4-not-hiring-engineering-managers-first&#34;&gt;4. Not hiring Engineering Managers first&lt;/h3&gt;
-&lt;p&gt;Back in January 2021, I found myself in the position to increase capacity fast. To do that, I had to &lt;a href=&#34;./how-to-hire-8-engineers-in-8-weeks&#34;&gt;grow the Aula engineering team from 7 to 25 in record time&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Yikes!&lt;/p&gt;
-&lt;p&gt;I knew hiring Engineers was hard, but finding fantastic Engineering Managers (EMs) is much worse. In Europe, managers also tend to have longer notice periods, up to 3 months!. The pressure to increase capacity was so high that I mistakenly prioritized individual contributor (IC) roles over the manager ones.&lt;/p&gt;
-&lt;p&gt;As a consequence, my team grew well beyond my management capacity. If I remember correctly, I had 15 reports at one point. I still had to do all these Engineering Manager interviews, so the quality of my feedback went down, and it became increasingly hard to help the team push in the same direction.&lt;/p&gt;
-&lt;p&gt;What would have happened if I had focused on increasing managerial capacity first? Maybe short-term velocity would not have gone up, but I would have achieved a few things:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Much higher hiring capacity with lower pressure on ICs.&lt;/li&gt;
-&lt;li&gt;Significant improvements to feedback.&lt;/li&gt;
-&lt;li&gt;Greater alignment across product squads.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;5-not-investing-enough-in-team-building&#34;&gt;5. Not investing enough in team building&lt;/h3&gt;
-&lt;p&gt;In a rapidly growing organization, folks start working closely with other people they do not know at all. Even though everyone works hard, software delivery does not progress as expected.&lt;/p&gt;
-&lt;p&gt;There is no trust.&lt;/p&gt;
-&lt;p&gt;Not because you hired the wrong people, but simply because you have made no room for individuals to build trust with each other. Thanks to the feedback I received, we invested much more in getting to know each other and building that trust. The team gelled and worked much more effectively together after that.&lt;/p&gt;
-&lt;p&gt;🙌 Thanks for reading. Hopefully, some of these have provided you with some insight.&lt;/p&gt;
 </content>
     </item>
     
