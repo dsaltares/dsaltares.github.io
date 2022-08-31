@@ -1,0 +1,70 @@
+---
+categories: ['Games development']
+date: '2017-04-20T22:07:01+01:00'
+title: 'Ludum Dare 38 - Theme ideas'
+url: '/games/ludum-dare-38-theme-ideas'
+---
+
+![ludum-dare-logo](/img/ld38/ludumdare.png)
+
+[Ludum Dare 38](https://ldjam.com/events/ludum-dare/38) starts in a couple of hours.
+This one is special as it marks the 15th anniversary of the biggest weekend
+game development friendly competition in the world!
+
+If you don't know about Ludum Dare and are interested, check the
+[documentary](https://www.youtube.com/watch?v=Hrkv31Lep9s) they just released.
+
+I was thinking of participating using [Godot Engine](https://godotengine.org/).
+I have a couple of social compromises this weekend and, honestly, I am a bit
+scared of failing miserably, so I'm not too sure how far I'll take this one.
+
+### Theme
+
+The initial [theme voting](https://ldjam.com/events/ludum-dare/38/theme) stages
+have taken place throughout the week and now it's down to the final round. The
+final theme will be announced right when the competition starts.
+
+16 themes made it into the final round, I picked my top 5 and came up with
+quick pitches for each one of them. I know, some call this cheating but
+chances of success and for any of these themes to win are rather slim anyway!
+
+#### Parallel Dimensions
+
+Split-screen platformer where you control the same character in two
+parallel universes. Simple but slightly different levels. The goal is to
+reach the end, however hazards may be placed in different locations and both
+characters need to make it alive.
+
+Inspiration: [Ninja Twins](https://play.google.com/store/apps/details?id=com.kronbits.ninjatwins&hl=en)
+
+#### Pausing has Consequences
+
+Rogue-like that becomes increasingly harder the longer you take to
+find the exit to each level. Enemies keep respawning.
+
+Inspiration: [Heroes of Loot](https://play.google.com/store/apps/details?id=com.orangepixel.dungeon&hl=en_GB)
+and [Left 4 Dead](http://www.l4d.com/blog/).
+
+#### Two Colors
+
+Visceral top-down action game where everything is grayscale except for blood.
+
+Inspiration: [Hotline Miami](http://store.steampowered.com/agecheck/app/219150/)
+meets [Sin City](http://www.imdb.com/title/tt0401792/).
+
+#### Island
+
+You're a castaway who must survive in a procedurally generated island. Find food,
+shelter, craft tools and keep threats off.
+
+Inspiration: [Stranded Deep](http://store.steampowered.com/app/313120/) and
+[Castaway](http://www.imdb.com/title/tt0162222/)
+
+#### Everything has a Cost
+
+Strategy card game where you're a stock broker. Climb up the ladder,
+make money or get fired. Stay honest or rot in jail!
+
+Inspiration: [Reigns](https://play.google.com/store/apps/details?id=com.devolver.reigns&hl=en_GB)
+
+Good luck everybody!

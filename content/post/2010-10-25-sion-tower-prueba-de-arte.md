@@ -1,0 +1,60 @@
+---
+id: 603
+title: 'Sion Tower: prueba de arte'
+date: 2010-10-25T01:07:36+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=603
+url: /games/sion-tower-prueba-de-arte/
+views:
+  - 964
+dsq_thread_id:
+  - 1852023350
+categories:
+  - Games development
+tags:
+  - 3D
+  - Blender
+  - modelado
+  - Sion Tower
+  - texturizado
+  - The Gimp
+  - uv mapping
+  - videojuegos
+---
+
+![prueba-de-arte.jpg](/img/wp/prueba-de-arte.jpg)
+
+Mientras continúo con los artículos de IberOgre **he querido comenzar el desarrollo** del videojuego que ejemplificará todo su contenido, **Sion Tower**. El trabajo de este fin de semana lo he invertido en hacer **pruebas de concepto** para aclarar las ideas y **tantear el modelado con [Blender](http://www.blender.org/)**. Próximamente redactaré un documento de diseño más formal entrando en un mayor nivel de detalle. A continuación, aparte de demostrar que el diseño no es lo mío (¿algún artista se ofrece a colaborar?) hago un repaso sobre el proceso referenciando los tutoriales que he seguido.
+
+*Disclaimer:* en absoluto estoy capacitado para dar lecciones sobre diseño o modelado 3D. En las siguientes líneas **expongo mi experiencia** durante el proceso con el objetivo de documentar mi trabajo. Si a alguien le resulta útil o encuentra ayuda en las referencias que menciono, mejor que mejor.
+
+### Bocetos
+
+El **estilo cartoon**, de dibujo animado funciona estupendamente y no necesita de un nivel de detalle elevado, por ello lo he elegido para Sion Tower. Los bocetos son una **buena forma de visualizar** lo que se tiene en la cabeza, además, serán la base para el modelado 3D. **Tomé como fuentes** a personajes como **Link** ([The Legend of Zelda](http://es.wikipedia.org/wiki/The_Legend_of_Zelda)) o **Luneth** ([Final Fantasy III](http://es.wikipedia.org/wiki/Monkey_Island)) aunque las malas lenguas dicen que también se parece a **Guybrush Threepwood** ([Monkey Island](http://es.wikipedia.org/wiki/Final_Fantasy_III)).
+
+Empecé con una vista en perspectiva aunque después realicé un **alzado y un perfil** simplificados **con vistas a la fase de modelado**. A base de ensayo/error me di cuenta de que las proporciones y los tamaños entre vistas deben ser iguales para poder construir el modelo con mayor comodidad.
+
+![bocetos.jpg](/img/wp/bocetos.jpg)
+
+### Modelado
+
+**El modelado fue una fase complicada** "gracias" a mi escasa experiencia. Existen varias opciones en cuanto a software de modelado (Maya, 3D Studio…) aunque la única opción libre es Blender. Para poder seguir cualquier tutorial que pulule por Internet **es imprescindible tener cierto manejo** de las operaciones básicas y su interfaz no es precisamente intuitiva. Lo que me interesaba era aprender lo básico de forma rápida, sin detenerse a examinar la funcionalidad de cada botón. Al respecto [*"Aprende Blender en 24"*](http://www.scribd.com/doc/13380350/aprende-blender-en-24-horas) de Carlos González Morcillo **es un imprescindible**, además, está liberado bajo Creative Commons.
+
+Habiendo alcanzado el grado de *"Maestro Liendre"* en Blender encontré este [**tutorial para modelar personajes**](http://vimeo.com/1048354) con pocos polígonos. El proceso se ilustra con un superhéroe, no obstante, la técnica se aplica a cualquier modelo humanoide. Iba con miedo por si metía la pata pero al final me di cuenta de que es algo inevitable si se quiere aprender y avanzar. Como consejos finales puntualizaría que hay que tener mucho **cuidado para no duplicar vértices** y es importante **mantener las normales hacia afuera** (que las caras del modelo no miren hacia adentro).
+
+![personaje-sin-text.jpg](/img/wp/personaje-sin-text.jpg)
+
+### Texturizado
+
+**La fase de texturizado** puede convertirse en una verdadera pesadilla si no se siguen las indicaciones correctas. Cuando proyectamos el personaje en un plano bidimensional **se producen deformaciones** al igual que ocurre con un globo terráqueo sobre un mapa. Si no distribuimos los vértices sobre el plano de forma correcta la textura no encajará jamás y obtendremos un resultado muy malo.
+
+**[Este tutorial](http://www.foro3d.com/f216/preparing-a-model-low-poly-for-uv-mapping-76525.html) me fue de gran ayuda** aunque prefiero exportar la plantilla de la textura y **editarla desde [The Gimp](http://www.gimp.org/)** utilizando la potencia que ofrece esta herramienta en contraposición con el editor de Blender (capas, pinceles, colores…).
+
+![personaje-text.png](/img/wp/personaje-text.png)
+
+### Conclusiones
+
+Han sido **un par de días de incertidumbre y trabajo duro** ¡y aún no he empezado con la animación! **He aprendido muchísimo** y estoy seguro de que la próxima vez que trate de crear un personaje tardaré menos y el resultado tendrá mayor calidad. Eso sí, si algún artista está interesado en colaborar… ¡dejo el pincel por el resto de facetas del desarrollo!
+
+![personajes3d.png](/img/wp/personajes3d.png)

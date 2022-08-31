@@ -1,0 +1,35 @@
+---
+id: 1739
+title: London, here we go!
+date: 2011-09-24T13:28:24+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1739
+url: /general/london-here-we-go/
+views:
+  - 797
+dsq_thread_id:
+  - 1861210914
+categories:
+  - General
+---
+
+![kingstonuniversity.jpg](/img/wp/kingstonuniversity.jpg)
+
+It's been a while since I wrote anything on the blog but hey, this time I have an excuse. I"m in Kingston Upon Thames (London) to study computing science and games development for a whole year with an Erasmus exchange scholarship. I arrived on September the 13th and since then, it's been a nonstop of activities: tourism, paperwork, parties, meeting people, housework, etc. Finally I can sit for a while to write this.
+
+![IMAG0210.jpg](/img/wp/IMAG0210.jpg)
+
+
+[Kingston Upon Thames](http://en.wikipedia.org/wiki/Kingston_upon_Thames) is a little city in southwest London, the advantage of its reduced extension is that you can walk almost everywhere. However is also really close to Central London, if you catch a train (there's one each 15 minutes) you"ll be in Waterloo station in about 20 minutes. So far I think it's a great combination. I live in a hall of residence, specifically in a flat shared with other 5 international students, such a great place to meet new people and party! My hall is 5 minutes walking from the center, which has a nice main street full of shops. Of course, I couldn't forget the pubs and clubs. Although they close extremely early, we always have a great time hanging out there. It's real fun when we gather to watch a football (soccer if you"re American) game while drinking a pint!
+
+![IMAG0183.jpg](/img/wp/IMAG0183.jpg)
+
+
+Computing science is taught at the main campus which is called Penrhyn Road, 15 minutes away if you walk. I was amazed with the huge amount of money they should invest to have proper facilities: a huge library, great fully equipped labs and comfortable classrooms. It's unbelievable how active the people is around here, there are students societies for almost everything you can imagine: DJs, skydiving, fencing, cake eating, wine tasting, gaming, market investment… And the list goes on!
+
+![IMAG0235.jpg](/img/wp/IMAG0235.jpg)
+
+I've chosen 4 modules in computing science and 4 in games development, so it's going to be some kind of mixture. I"m very excited because the year looks really promising! I"ll try to learn as much as possible not only in games development but in other skills such as English, speaking in public, teamwork, etc.
+
+I"ll keep you posted!

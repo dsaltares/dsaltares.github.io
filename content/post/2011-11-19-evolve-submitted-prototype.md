@@ -1,0 +1,32 @@
+---
+id: 2063
+title: 'Evolve: submitted prototype'
+date: 2011-11-19T01:40:13+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2063
+url: /games/evolve-submitted-prototype/
+views:
+  - 146
+dsq_thread_id:
+  - 1935231022
+categories:
+  - Games development
+tags:
+  - action
+  - Blender
+  - Evolve
+  - games
+  - games development
+  - Kingston
+  - Kingston University project
+  - PSP; FPS
+---
+
+![evolve.png](/img/wp/evolve.png)
+
+I've been working quite hard in **Evolve, the PSP First Person Shooter prototype** I"m developing for the Advanced Games Programming module here at Kingston University. The submission deadline is getting dangerously closer and I've had to crunch a little bit to get the basic features I wanted to include and be able to write a report on the game. In the following lines I"ll give my impressions on the development and at the bottom you"ll find a doubtful quality trailer.
+
+The game **looks awful**, has several known bugs and needs some performance tweaks. However, note that I've only had a month and a half of development time. Furthermore, the whole PSP official SDK was completely new to me and I've had to divide my time between coding and creating the assets (the cute dog enemy was pre-made).
+
+Nevertheless, the system is fairly **extensible**. One of the things I"m proud of is the **Blender level exporting** which works fairly well. Only a couple features were requisites for passing the coursework and many more have been implemented, so it's been a positive exercise. I've learned lots of things about developing for small devices and time management. You can watch the lame video just below this.

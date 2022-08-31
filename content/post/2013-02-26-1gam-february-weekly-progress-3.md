@@ -1,0 +1,35 @@
+---
+id: 2515
+title: '#1GAM February: weekly progress 3'
+date: 2013-02-26T18:31:38+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2515
+url: /games/1gam-february-weekly-progress-3/
+dsq_thread_id:
+  - 1852022358
+categories:
+  - Games development
+tags:
+  - games development
+  - Java
+  - libgdx
+  - one game a month
+  - programming
+---
+
+It pleases me to say that this past week I've been able to keep it real and stick to my humble set of tasks:
+
+**Victory and defeat mechanic**: the spaceship has a limited amount of energy which diminishes after each collision with the world geometry. Once it's empty, the game enters the defeat state and restarts. If the player manages to abduct all the astronauts in the level, the game goes into the victory state. The whole entity creation – deletion cycle has allowed me to spot some bugs and flaws in the entity system design, which is good.
+
+**Placeholder HUD**: I've used the simple and yet powerful libgdx scene 2D elements to compose a minimalistic HUD which shows remaining astronauts, spaceship energy and elapsed time. Relax, it won't look this bad forever as the assets will be replaced by the final art in due time. I just wanted to get something functional.
+
+**Improved control and abduction system**: this is where I've put most of the effort. Speed limits, collision restitution, impulses and so on have all been tweaked to make the spaceship control feel good. Luckily enough, I've made it a lot smoother and pleasant, which was paramount to make the game fun. However, beware! For abducting all the astronauts shall not be an easy task.
+
+![abduction.jpg](/img/wp/abduction.jpg)
+
+This week I"ll be working on:
+
+*   Refucktoring: some modules need a small cleanup.
+*   Animated toasts: adding some effects for victory, defeat, abduction and collision situations.
+*   Level system with locked/unlocked levels.

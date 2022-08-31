@@ -1,0 +1,68 @@
+---
+title: "How to test and debug your localhost web app on a real Android device"
+date: 2021-12-29T00:00:00+00:00
+author: "David Saltares"
+tags: ["development", "android", "chrome", "localhost", "DX"]
+description: "Tutorial to develop a website locally and test on a real Android device"
+keywords: ["web app", "local development", "developer experience", "Android", "Chrome"]
+categories: ["Development"]
+---
+
+When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
+
+The desktop browser device toolbar may not be enough to reproduce it. You may actually have to use a real device! However, you don't want to have to publish your app to a public URL every time you want to test whether a given change fixes the problem. That would be a massive pain in the butt!
+
+Fortunately there is a simple trick you can use to be able to quickly iterate and test on a real mobile device while keeping an awesome developer experience.
+
+- 🏎️ Hot reload with instant feedback.
+- 🖥️ Access to the console.
+- 🐛 Full debugger with breakpoints, etc.
+
+## 📱 Enable USB debugging
+
+First, make sure USB debugging is enabled on your device.
+1. Go to `Settings -> About phone`
+2. Tap the build number seven times.
+3. Enable USB debugging by going to `Settings -> Developer options -> USB Debugging`.
+
+Great, now you can connect your device to your development machine via USB. You should see a notification that USB debugging is enabled.
+
+## 🚇 Tunnel localhost
+
+Run your local development server. I am working on a [Next.js](https://nextjs.org/) app, so I can just run:
+
+```shell
+$ yarn dev
+```
+
+Your web app is probably now running on `localhost`, but your real device cannot connect directly. In order to access your local development server from a different device we can use [localtunnel](https://localtunnel.me/).
+
+No need to install, you can use `npx` to run it directly. Make sure to tell it to tunnel to the port your local development server is using. In my case, that is `3000`.
+
+```shell
+$ npx localtunnel --port 3000
+```
+
+`localtunnel` will give you a temporary URL that is accessible from anywhere in the world. In my case, I got `https://little-fox-32.loca.lt`. You can now open that URL in the device you want to test.
+
+Be mindful that, running localtunnel will essentially expose your local app traffic to their public servers. Depending on what you are working on, that may be a show stopper. In any case, [localtunnel](https://github.com/localtunnel/localtunnel) is an open source tool, you could get a private server going if privacy is a concern.
+
+## 🛰️ Remote Chrome inspector
+
+Open your Chromium based browser and enter:
+
+```
+chrome://inspect/#devices
+```
+
+You should see a list of remote targets and the pages that are open in each target.
+
+![chrome inspect](/img/remote-mobile-debugging/chrome-inspect.png)
+
+Clicking `inspect` on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.
+
+![chrome remote debugging](/img/remote-mobile-debugging/chrome-remote-debugging.png)
+
+You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.
+
+Hope this helps your workflow!

@@ -1,0 +1,34 @@
++++
+date = "2010-07-07T19:31:12Z"
+description = ""
+keywords = []
+title = "Granny's Bloodbath"
+
++++
+
+[![](/img/grannys-bloodbath/grannysbloodbath.png "grannysbloodbath")](http://siondream.com/blog/wp-content/uploads/2010/07/grannysbloodbath.png)
+
+Open source side scrolling platform action game in which the player controls a peaceful grandma who gets really angry when a horde of zombies disturbs her. It’s a university project developed in a team of three.
+
+* **Role**: game designer, lead programmer, 2D artist and level designer
+* **Year**: 2010
+* **Development time**: 3 months
+* **Team**: 2 additional programmers
+* **Technology**: C++ language using SDL
+* **Download**: [Granny’s Bloodbath 0.5 (Windows)](https://github.com/dsaltares/grannys-bloodbath/releases/download/grannysbloodbath-0.1/grannysbloodbath-0.1beta-win.zip), [Granny’s Bloodbath 0.5 (Linux)](https://github.com/dsaltares/grannys-bloodbath/releases/download/grannysbloodbath-0.1/grannysbloodbath-0.1beta-lin.zip), [Granny’s Bloodbath (PSP)](https://github.com/dsaltares/grannys-bloodbath/releases/download/grannysbloodbath-0.1/grannysbloodbath-0.1beta-psp.zip), [source code](https://github.com/dsaltares/grannys-bloodbath)
+
+### Screenshots
+
+{{< gallery dir="/img/grannys-bloodbath/gallery/" />}}
+{{< load-photoswipe >}}
+
+
+### Features
+
+* 3 levels, 3 zombie archetypes and 1 final boss.
+* Level creation using Tiled.
+* Data driven, designer friendly.
+
+### Videos
+
+{{< youtube lkw52cya-9c >}}

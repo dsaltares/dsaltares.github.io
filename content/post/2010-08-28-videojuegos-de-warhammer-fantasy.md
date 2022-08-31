@@ -1,0 +1,95 @@
+---
+id: 324
+title: Videojuegos de Warhammer Fantasy
+date: 2010-08-28T17:38:23+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=324
+url: /hobbies/videojuegos-de-warhammer-fantasy/
+views:
+  - 2278
+dsq_thread_id:
+  - 1852023652
+categories:
+  - Hobbies
+tags:
+  - Age of Reckoning
+  - Battle for Atluma
+  - Battle March
+  - Black Hole Entertainment
+  - Dark Omen
+  - estrategia
+  - Games Workshop
+  - Mark of Chaos
+  - Mindscape
+  - Mythic Entertainment
+  - Namco Bandai
+  - PC
+  - PSP
+  - Shadow of the Horned Rat
+  - videojuegos
+  - Warhammer Fantasy
+  - X-Box 360
+---
+
+![warhammer-logo.png](/img/wp/warhammer-logo.png)
+
+Apenas **era un pipiolo** cuando comencé a **interesarme por el mundo de [Warhammer](http://en.wikipedia.org/wiki/Warhammer_Fantasy_Battle)**, a partir de entonces pasé una buena temporada reclutando mi ejercito Alto Elfo, pintando o librando batallas. De eso hace ya casi ocho años pero antes de mutar en la entrañable figura del abuelo cebolleta voy a centrarme en el objetivo de este artículo, hacer un repaso sobre los videojuegos existentes basados en el mundo de Warhammer Fantasy.
+
+*"Warhammer, el juego de las batallas fantásticas"* fue lanzado en 1983 por [Games Workshop](http://es.wikipedia.org/wiki/Games_Workshop). Para el deleznable ser que no lo conozca se trata de un juego de estrategia por turnos en el que los jugadores enfrentan sus ejércitos formados por regimientos de miniaturas que han de montar y pintar ellos mismos. Es un juego bastante complejo y profundo que permite desarrollar tácticas elaboradas. En efecto, es de esos **juegos para frikazos** cuyo manual tiene un grosor respetable. El Viejo Mundo y sus facciones tuvieron bastante éxito por lo que Games Workshop, ni corta ni perezosa, se dispuso a llevar la licencia al terreno de los videojuegos y aquí se muestra su recorrido.
+
+### [Warhammer Shadow of the Horned Rat](http://en.wikipedia.org/wiki/Warhammer:_Shadow_of_the_Horned_Rat): PC (1995) y Playstation (1996)
+
+**El primer juego** basado en Warhammer Fantasy fue desarrollado por [Mindscape](Mindscape) y pertenecía al género de los **RTS** (Real Time Strategy). Encarnábamos al comandante **mercenario Morgan Bernhardt** siendo nuestra misión detener a los Skavens. Destacaba su considerable dificultad producida por la pérdida de bajas de una batalla a otra. El jugador se veía obligado a planificar los encuentros con cuidado ya que los refuerzos para enfrentamientos futuros podrían no ser comparables con las bajas sufridas.
+
+Me resulta especialmente curioso el uso de unas **rudimentarias tres dimensiones** en tiempos en los que escaseaban dentro de este género. Tiene una pinta retro de lo más atractiva. Actualmente la manera más sencilla de hacerse con él es a través del mercado de **segunda mano**.
+
+![warhammer-shadow-of-the-hornet-rat.gif](/img/wp/warhammer-shadow-of-the-hornet-rat.gif)
+
+### [Warhammer Dark Omen](http://en.wikipedia.org/wiki/Warhammer:_Dark_Omen): PC (1998) y Playstation (1998)
+
+La clara secuela de Shadow of the Horned Rat (también desarrollada por Mindscape) da un salto importante al hacer **uso de las primeras tarjetas gráficas con aceleración 3D** (Voodoo 3dfx) lo que nos permite rotar la cámara y hacer zoom con total libertad. En esta ocasión Morgan Bernhardt tiene la misión de detener una invasión de Orcos en el Imperio aunque se descubre que todo es consecuencia de la **resurrección de un rey No Muerto**.
+
+**Controlamos regimientos** de distintos tipos: infantería, caballería, artillería… Aunque también podemos encontrar guerreros individuales como criaturas sobrenaturales, magos o héroes. En esta ocasión entra en juego un elemento fundamental en el mundo de Warhammer, la **psicología**. Las unidades que sobreviven enfrentamientos ganan experiencia y pueden ser equipadas con mejores armas o armaduras.
+
+Como curiosidad cabe añadir que se planeaba una expansión que nunca vio la luz. Al igual que su predecesor, es posible encontrarlo en páginas como Ebay, de hecho suelen venderse juntos.
+
+![warhammer-dark-omen.jpg](/img/wp/warhammer-dark-omen.jpg)
+
+### [Warhammer Battle for Atluma](http://en.wikipedia.org/wiki/Warhammer:_Battle_for_Atluma): PSP (2006)
+
+No todo iban a ser productos aceptables, siempre hay **una piedra en el camino** y en esta ocasión es Battle for Atluma, desarrollado por [Namco Bandai](http://es.wikipedia.org/wiki/Namco_Bandai_Games). Dieron un giro drástico y **adaptaron el juego de cartas** intercambiables **[WarCry](http://en.wikipedia.org/wiki/WarCry_%28game%29)** que, a su vez, se basa en el mundo de Warhammer. PSP no es precisamente la plataforma idílica para crear juegos de estrategia en tiempo real aunque los aficionados no suelen tolerar este tipo de cambios en el planteamiento de sus sagas.
+
+En Metacritic tiene una puntuación de [55](http://www.metacritic.com/game/psp/warhammer-battle-for-atluma) con lo que ya nos hacemos una idea. En su momento se le achacó el no añadir nada nuevo al juego de cartas original, ser aburrido y la dificultad para leer el texto de las cartas en la pantalla de PSP. Lógicamente aquellos insensatos que cayeron en la trampa de comprarlo **lo están vendiendo como locos** por la red.
+
+![warhammer-battle-for-atluma.jpg](/img/wp/warhammer-battle-for-atluma.jpg)
+
+### [Warhammer Mark of Chaos](http://en.wikipedia.org/wiki/Warhammer:_Mark_of_Chaos): PC (2006)
+
+[Black Hole Entertainment](http://en.wikipedia.org/wiki/Black_Hole_Entertainment) de la mano de Namco Bandai **devolvió la licencia al camino de la rectitud** con este título de estrategia en tiempo real de una apariencia completamente actual. Una pena que no estén todas las facciones disponibles sino que únicamente podemos ponernos al mando de: Altos Elfos, Imperio, Hordas del Caos o Skavens. El juego se compone de dos campañas en el modo multijugador y el siempre demandado modo multijugador local o a través de la red.
+
+Fue muy criticado por los jugadores más tradicionales al no contar con todos los ejércitos y no ser completamente fiel al transfondo de Warhammer. Está vez recibió un [73](http://www.metacritic.com/game/pc/warhammer-mark-of-chaos) en Metacritic ya que **provocó división de opiniones** en los medios. Algunos valoraron su calidad en los efectos gráficos mientras que otros echaban de menos más profundidad en los combates. En su momento le dediqué cierto tiempo y **disfruté bastante** con el.
+
+![warhammer-mark-of-chaos.jpg](/img/wp/warhammer-mark-of-chaos.jpg)
+
+### [Warhammer Battle March](http://en.wikipedia.org/wiki/Warhammer:_Battle_March): PC (2008) y X-Box 360 (2008)
+
+Battle March es el nombre de la **expansión de Mark of Chaos** la cual añadía como razas jugables a los Elfos Oscuros y a los Orcos. La opinión general coincide en que **mejoraba la jugabilidad** en diversos aspectos. Es posible encontrar tanto esta expansión como el título general en perfecto estado o completamente nuevos en varias tiendas online.
+
+Lo más curioso es que Battle March **fue lanzado en X-Box 360** siendo uno de los pocos juegos de estrategia en tiempo real de la consola (junto con EndWar y Halo Wars). Como era fácilmente previsible, el sistema de control echó a perder lo que podría haber sido una experiencia de juego estupenda.
+
+![warhammer-mark-of-chaos-battle-march.jpg](/img/wp/warhammer-mark-of-chaos-battle-march.jpg)
+
+### [Warhammer Online Age of Reckoning](http://en.wikipedia.org/wiki/Warhammer_Online:_Age_of_Reckoning): (PC, 2008)
+
+Llegamos a la última incursión de Warhammer Fantasy en el mundo del ocio electrónico y como no podía ser de otra forma, lo hace a modo de **MMORPG**. Lo desarrolló [Mythic Entertainment](http://en.wikipedia.org/wiki/Mythic_Entertainment) y ofrece a los jugadores **6 razas** a elegir: Enanos, Imperio, Altos Elfos, Pieles-verdes, Caos y Elfos Oscuros aunque el número de clases y la personalización del avatar potencia las posibilidades. Se basa en el concepto **Realm VS Realm** (RvR) que pone en conflicto a varios bandos de jugadores según su procedencia. Destaca por no exigir al jugador demasiadas horas de juego para disfrutar del mismo, lo cual es de agradecer en un género tan duro como el del MMO.
+
+Recibió **buenas críticas en general** y aunque no es rival para World of Warcraft, el peso pesado del género, cuenta con una comunidad activa de tamaño respetable.
+
+![warhammer-online-age-of-reckoning.jpg](/img/wp/warhammer-online-age-of-reckoning.jpg)
+
+### Conclusiones
+
+Warhammer Fantasy goza de **apariciones dignas de admiración** en el mundo de los videojuegos pero como la mayoría de licencias tiene puntos negros en su expediente. Varias de sus entregas son productos de coleccionista y muchos sentirán cierta nostalgia al hacerles una visita. Espero que os haya parecido mínimamente interesante este pequeño tocho que acabo de soltar, al menos yo me lo he pasado bien recopilando la información y mis recuerdos.
+
+Quizás algún día me anime a hacer el equivalente en Warhammer 40.000.

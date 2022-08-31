@@ -1,0 +1,33 @@
+---
+id: 3229
+title: Ashley 1.3.3 released
+date: 2015-01-18T11:30:56+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3229
+url: /games/ashley-1-3-3-released/
+dsq_thread_id:
+  - 3431627848
+categories:
+  - Games development
+tags:
+  - Ashley
+  - entity systems
+  - games development
+  - libgdx
+  - programming
+---
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+[As you can see](https://github.com/libgdx/ashley/pulse/monthly), Ashley development has slowed down a bit. I would like to think it's because we have a feature rich and stable framework rather than people having lost interest! Anyhow, there's still been quite a bit of progress, enough to warrant a new release.
+
+[Ashley 1.3.3](https://github.com/libgdx/ashley/releases/tag/ahsley-1.3.3) is now out.
+
+  * **[API addition](https://github.com/libgdx/ashley/commit/1c21f972998df9d5125617f3e6b0c6cc279829d2)**: added `getEntity()` method to `Engine`, it is now possible to retrieve entities by their ID. This will ease networked entity systems.
+  * **[API addition](https://github.com/libgdx/ashley/commit/ed3d3b7ef040023c8bd4d64efb6e9fcad69dc9aa)**: added `getEntities()` method to `Engine`, which returns an immutable array of all the entities registered with said engine.
+  * **[Bug fix](https://github.com/libgdx/ashley/commit/3910be7b4ae472f415c22c0f5109e4f140056f7d)**: remove old component when adding a new one of the same type to an entity.
+  * **[Bug fix](https://github.com/libgdx/ashley/commit/9f6aa51229544f9a66c12f7f7fdcff7e6bf5dbde)**: fixes component not being added to an entity when done from an `entityRemoved()` family entity listener handler.
+
+The new nightly dependency is `com.badlogicgames.gdx:ashley:1.3.4-SNAPSHOT`.
+
+[All unit tests are passing](http://libgdx.badlogicgames.com:8080/job/ashley/), the wiki is up to date and life is good. Enjoy Ashley and don't forget to report anything that doesn't work as expected.

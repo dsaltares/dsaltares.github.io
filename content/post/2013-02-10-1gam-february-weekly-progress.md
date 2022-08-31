@@ -1,0 +1,49 @@
+---
+id: 2504
+title: '#1GAM February: weekly progress'
+date: 2013-02-10T18:46:43+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2504
+url: /games/1gam-february-weekly-progress/
+dsq_thread_id:
+  - 1852024435
+categories:
+  - Games development
+tags:
+  - games development
+  - games programming
+  - libgdx
+  - one game a month
+---
+
+One week ago I posted about the [initial game design for my February One Game A Month entry](/games/1gam-february-game-design/). I believe, it's time to report back with the work I've done during the past seven days. Actually, I've realised how good an incentive is to leave written proof of what you intend to do in advance, forcing yourself to deliver just to avoid the public humiliation.
+
+### What I have so far
+
+Without further ado, here's the update.
+
+*   Started a [GitHub repo](https://github.com/dsaltares/rescuecopter).
+*   Integrated my codebase with some improvements across the board: engine facade, ID generator, i18n support, animated sprites, physics objects.
+*   Integrated the [mapsapi libgdx branch](https://github.com/libgdx/libgdx/tree/mapsapi/gdx/src/com/badlogic/gdx/maps) to do some further testing on my Gleed system. Found a bug and already [pull requested the fix](https://github.com/libgdx/libgdx/pull/237).
+*   Component based entity system with an [Artemis](https://code.google.com/p/artemis-framework/) like API but fully compatible with the GWT backend. Nice thing is, it enforces garbage collector friendliness (through entity and component pooling). I"ll talk more about it on a different post.
+*   Static bodies creation from map's shape data and material system. This might as well deserve another post, why the hell not!
+
+![abduction-progress.jpg](/img/wp/abduction-progress.jpg)
+
+### Coming this week
+
+I hereby make the compromise of delivering the following within a week.
+
+*   Spaceship entity with controls.
+*   Camera movement behavior.
+*   Collision handlers for the spaceship.
+*   Foreground shapes set.
+
+Let's leave it at that and stay realistic.
+
+### And now for something completely different
+
+I've deleted my SionEngine repository from GitHub as I don't feel it meets the appropriate quality standards just yet. I will surely continue developing its components along every One Game a Month project, which, as you can see, will be open source too. I never pretended it to be a killer engine of any sort, this is just my codebase and a way of developing my software design skills.
+
+See you guys next week.

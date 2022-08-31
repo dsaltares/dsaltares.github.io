@@ -1,0 +1,68 @@
+---
+id: 831
+title: Batman Arkham Asylum
+date: 2011-01-03T22:09:25+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=831
+url: /hobbies/batman-arkham-asylum/
+views:
+  - 800
+dsq_thread_id:
+  - 1899528153
+categories:
+  - Hobbies
+tags:
+  - acción
+  - Bane
+  - Batman Arkham Asylum
+  - El Caballero Oscuro
+  - Harley Quinn
+  - Hiedra venenosa
+  - Joker
+  - PS3
+  - Unreal Engine
+  - videojuegos
+---
+
+![batman-arkham-asylum-5.jpg](/img/wp/batman-arkham-asylum-5.jpg)
+
+¿Otro comentario de un juego de hace año y medio? Caballeros, qué quieren que les diga, me tomo las cosas con calma. Mientras la masa se deja los cuartos en el Call of Duty de turno yo estaba **a dos bandas entre [Fifa 11](/hobbies/fifa-11/)** con su delicioso vestíbulo online 2vs2 **y [Batman Arkham Asylum](http://es.wikipedia.org/wiki/Batman:_Arkham_Asylum)**. [Rocksteady](http://en.wikipedia.org/wiki/Rocksteady_Studios) le ha dado una patada en la boca a todos aquellos que decían que los juegos de superhéroes no podían ser buenos. La ausencia de presión por un lanzamiento coincidente con el estreno de [*"El Caballero Oscuro"*](http://www.imdb.com/title/tt0468569/) le vino de maravilla. Lo que sigue es **mi experiencia en la prisión psiquiátrica** de Arkham.
+
+![batman-arkham-asylum-4.jpg](/img/wp/batman-arkham-asylum-4.jpg)
+
+### El Joker es un troll de cuidado
+
+**Arkham Asylum se inspira en el [cómic](http://es.wikipedia.org/wiki/Asilo_Arkham)** de mismo nombre y nos cuenta cómo Batman consigue atrapar a Joker y llevarlo hasta la prisión psiquiátrica de Arkham. **El Joker, como buen troll que es, tenía preparada una sorpresita**. Finalmente consigue tomar la prisión al completo sometiendo al personal de seguridad entre risas diabólicas. Como cabía esperar, nuestra misión consiste en recuperar el control de la isla y capturar al Joker.
+
+No cuento más ante riesgo de spoilers. Si bien este tipo de títulos no suelen contar con argumentos de interés, en esta ocasión la historia adquiere más importancia. En absoluto es la quintaesencia de los guiones pero me ha parecido bastante **interesante descubrir el entramado**.
+
+![batman-arkham-asylum-6.jpg](/img/wp/batman-arkham-asylum-6.jpg)
+
+### Camarero, agite bien el cóctel
+
+Podríamos decir que **Batman Arkham Asylum es un juego de acción** en tercera persona pero nos quedaríamos cortos. Lo que cautivó a la crítica en su momento y lo que me ha mantenido pegado al mando ha sido su **magnífica combinación de géneros**. En primer lugar destacaría **el** **sigilo**. No basta con saltar en medio de una reunión de presos ciclados armados hasta los dientes para liarnos a mamporros porque recibiremos una buena dosis de plomo. Estamos obligados a estudiar el entorno y acabar con los enemigos uno a uno, tal y como trabaja Batman. El diseño de los emplazamientos es lo suficientemente rico como para proporcionar distintas formas de abordar una solución y eso siempre se agradece.
+
+El sistema de golpes, esquivas y contraataques es sencillo pero efectivo. Los enemigos desarmados no son demasiado complicados pero a veces no queda otra que medir cuidadosamente los tiempos. A pesar de todo, he echado de menos un combate algo más profundo y variado en enemigos. Por último tenemos **la exploración y la recolección de objetos**. La isla de Arkham tiene cientos de recovecos con secretos por descubrir, lo cual aumenta la rejugabilidad.
+
+**Los gadgets típicos** del hombre murciélago estarán presentes y nos ayudarán tanto en el combato como en el avance por el escenario. Atención porque a pesar de lo que ya he mencionado me dejo mecánicas por comentar.
+
+![batman-arkham-asylum-2.jpg](/img/wp/batman-arkham-asylum-2.jpg)
+
+### Unreal Engine 3, un motor que da la talla
+
+**Muchos se quejan del reaprovechamiento del motor** [Unreal Engine 3](http://es.wikipedia.org/wiki/Unreal_Engine) desarrollado por Epic y lanzado en 2006\. Tendrá sus añitos pero hace un papel excepcional a la hora de plagar de detalles el tétrico entorno de Batman Arkham Asylum. Iluminación, reflejos, anatomía o escenarios son algunos de los campos en los que destaca el apartado técnico. Sobre todo me ha llamado la atención la **casi total ausencia de cargas entre zonas**. Simplemente las transacciones de disco se hacen en paralelo, por streamming. Si tengo que quejarme de algo lo haría de las sombras, algo pixeladas. Precisamente, el Unreal Engine se renueva dentro de poco para ponerse al día en la carrera de los gráficos.
+
+![batman-arkham-asylum-3.jpg](/img/wp/batman-arkham-asylum-3.jpg)
+
+### De paseo por Arkham Asylum
+
+Es cierto que el Unreal Engine hace mucho pero **el trabajo de los diseñadores de Rocksteady ha sido descomunal**. El universo Batman está recreado a la perfección incluyendo entornos y personajes. No sólo me refiero a los modelos y texturas sino al sonido. El Joker siempre se guarda un chascarrillo y los enemigos finales no dejan pasar la ocasión de lanzarnos mensajes en función de nuestra actuación en el combate.
+
+Nos veremos **inmersos en la locura de la penitenciaría psiquiátrica** de la mano de presos dementes y enemigos finales como el Espantapájaros, Hiedra venenosa, Bane o Harley Quinn. La apariencia de Batman va cambiando a medida que avanzamos con heridas y estropicios en el traje. Hablo en serio, la ambientación es absolutamente magistral, ¡si incluso el doblaje al castellano es el mejor que recuerdo en mucho tiempo!
+
+![batman-arkham-asylum-1.jpg](/img/wp/batman-arkham-asylum-1.jpg)
+
+### Resumiendo
+
+Es complicado describir la experiencia de Arkham Asylum en un simple artículo y ya me estoy extendiendo demasiado, **deben jugarlo**. Quizás no sea la magnánima obra maestra que muchos medios proclamaban pero sin duda es el mejor título de superhéroes al que he tenido el placer de jugar. Lo mejor de todo es que la segunda parte, Arkham City, ya viene de camino. En fin, les dejo que he desprecintado hace nada Castlevania Lords of Shadows, ¡producto patrio!

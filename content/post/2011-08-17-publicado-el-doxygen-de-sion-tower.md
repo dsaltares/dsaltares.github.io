@@ -1,0 +1,29 @@
+---
+id: 1715
+title: Publicado el Doxygen de Sion Tower
+date: 2011-08-17T17:00:29+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1715
+url: /games/publicado-el-doxygen-de-sion-tower/
+views:
+  - 1389
+dsq_thread_id:
+  - 2128957670
+categories:
+  - Games development
+tags:
+  - documentación
+  - Doxygen
+  - Ogre3D
+  - Sion Tower
+  - videojuegos
+---
+
+![doxygen.png](/img/wp/doxygen.png)
+
+La **documentación del código de Sion Tower 1.0** ha sido generada de forma automática con [Doxygen](http://www.stack.nl/~dimitri/doxygen/), una estupenda herramienta libre para realizar esta tarea. El resultado es una **[sencilla página web](https://saltares.com/docs/siontower-doxygen/)** que contiene información sobre todas las clases, métodos y atributos del sistema. Espero que sea útil a aquel que desee comprender cómo funciona el juego de forma interna.
+
+Poco a poco voy preparando el **lanzamiento formal de la versión 1.0** del videojuego de acción y estrategia Sion Tower. Espero poder publicar la versión en una semana aproximadamente.
+
+¡Hasta pronto!

@@ -1,0 +1,37 @@
+---
+id: 2177
+title: "Ludum Dare #24: I'm in!"
+date: 2012-08-23T23:06:43+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2177
+url: /games/ludum-dare-24-im-in/
+dsq_thread_id:
+  - 1899905459
+categories:
+  - Games development
+tags:
+  - Game development
+  - Game Jam
+  - Java
+  - libgdx
+  - Ludum Dare
+  - programming
+---
+
+![Ludum-Dare-featured-image-thumb-478x222-3939.jpg](/img/wp/Ludum-Dare.jpg)
+
+This weekend I"ll be joining [Ludum Dare](http://ludumdare.com/compo/) #24, the crazy 48h solo game making online competition. Pick the tools of your choice but everything has to be made from scratch, and according to a theme selected by the community through strict democracy. Last edition got over 1000 submissions, so it looks really promising. I"m gathering with a couple of friends from work in some sort of LAN game jamming party and there will be food aplenty, fun times.
+
+As I [posted](http://www.ludumdare.com/compo/2012/08/23/and-yet-another-im-in-post/) on the official Ludum Dare blog, I"ll be using:
+
+*   **Language**: Java using Eclipse as IDE.
+*   **Libraries**: libgdx and my personal [code base](https://dl.dropbox.com/u/1439807/siondream-engine.zip).
+*   **Graphics**: Inkscape, Photoshop and Spriter (maybe).
+*   **Audio**: sfxr and Audacity.
+
+I honestly don't know what's gonna come out of this and I"d be happy just to deliver something minimally playable by Sunday night. The plan is implementing every gameplay element with placeholders, then produce some mediocre art and finally polish whatever piece of rubbish entertainment experienced I"d have created.
+
+Like I said, at least it"ll be fun and I"m looking forward to test my work in progress framework in an almost real situation.
+
+I shall keep you posted!

@@ -1,0 +1,34 @@
+---
+id: 3297
+title: Libgdx Cookbook samples updated to support Libgdx 1.6.0
+date: 2015-05-17T11:02:20+00:00
+author: David Saltares
+layout: post
+guid: /?p=3297
+url: /projects/libgdx-cookbook-samples-updated-to-support-libgdx-1-6-0/
+dsq_thread_id:
+  - 3771017093
+categories:
+  - Games development
+  - Projects
+tags:
+  - book
+  - cookbook
+  - libgdx cookbook
+  - programming
+  - projects
+---
+
+![libgdx-cookbook-cover.png](/img/libgdx-cookbook-cover.png)
+
+Haven't bought [Libgdx Cross-platform Game Development Cookbook](https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook)
+yet? Stop reading and go get it!
+
+Quick update to inform you that I just updated the
+[samples repository](https://github.com/dsaltares/libgdx-cookbook) to use Libgdx 1.6.0
+and Ashley 1.5.0, both recently released.
+
+Libgdx 1.6.0 introduces [changes in our font rendering API](http://www.badlogicgames.com/wordpress/?p=3658),
+which require a few minor tweaks to the framework calls, nothing major.
+
+7 months after the release of the book, we continue to support it. Rest assured, it is the most up to date Libgdx publication at this point in time. Thanks for your support!

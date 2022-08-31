@@ -1,0 +1,106 @@
+---
+id: 141
+title: Periplo por un entorno de trabajo para Ogre
+date: 2010-08-06T16:59:31+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=141
+url: /games/periplo-por-un-entorno-de-trabajo-para-ogre/
+views:
+  - 965
+dsq_thread_id:
+  - 1852022692
+categories:
+  - Games development
+tags:
+  - C++
+  - cbp2mak
+  - CMake
+  - Code::Blocks
+  - IberOgre
+  - make
+  - Ogre3D
+  - PFC
+  - Software Libre
+  - Visual Studio
+---
+
+Estos días he estado tratando de establecer un **entorno de trabajo multiplataforma** para trabajar en los ejemplos de **[IberOgre](http://osl.uca.es/iberogre/)** y en el propio **Sion Tower**. Lo ideal, para mí, era poder compilar con herramientas libres y sin tener que depender de ningún IDE. Al no ser la forma habitual de desarrollar de la comunidad de Ogre, la documentación era escasa y acertar ha sido sorprendentemente complicado. Les contaré mi periplo:
+
+![VisualStudio.png](/img/wp/VisualStudio.png)
+
+### Herramientas privativas
+
+La wiki oficial de Ogre da mucho soporte a **[Microsoft Visual Studio](http://es.wikipedia.org/wiki/Microsoft_Visual_Studio)** pero al ser privativo **no encajaba con la filosofía** de IberOgre y lo descarté. No creo que utilizar herramientas no libres sea bueno en un proyecto que pretende ser accesible con facilidad. Suficientes trabas pone ya el hecho de tener que interiorizar conceptos complejos como para encontrarse en la necesidad de piratear software, violar licencias etc.
+
+Cualquier desarrollador debería poder, siguiendo el manual de IberOgre, establecer un entorno de trabajo sin costes de ningún tipo y sin problemas con licencias. Ogre3D es software LGPL y creo que, en el marco en el que estamos moviéndonos, sería recomendable mantenerse en la línea.
+
+![cmake.png](/img/wp/cmake.png)
+
+### CMake, el generador de makefiles
+
+[**CMake**](http://es.wikipedia.org/wiki/CMake) es una herramienta multiplataforma y open source capaz de g**enerar makefiles específicos** para cada plataforma. Debemos crear un fichero CMakeLists.txt con las instrucciones pertinentes: código a compilar, librerías requeridas y demás dependencias. Parecía algo estupendo, con un solo fichero de CMake podría generar makefiles para compilar proyectos tanto en GNU/Linux (GCC) como en Windows (MinGW).
+
+Finalmente, los inconvenientes de CMake me hicieron prescindir de él. Existe poca documentación y su **curva de aprendizaje** es alta. Además no crea objetivos *"clean"* que verdaderamente limpien los ficheros que se generan en la compilación. Estos inconvenientes no compensaban añadir una capa de abstracción más al proceso.
+
+![codeblocks-logo.png](/img/wp/codeblocks-logo.png)
+
+### Code::Blocks, el IDE libre
+
+[**Code::Blocks**](http://es.wikipedia.org/wiki/Code::Blocks) es un entorno de desarrollo integrado libre con versiones para Linux y Windows. Además, cuenta con **asistentes para la creación de proyectos** de Ogre. Mi desesperación en ese momento era considerable y estaba dispuesto a usar un IDE si merecía la pena.
+
+Todo no podía ser bueno y comencé a encontrarme con varios obstáculos. Los asistentes generaban proyectos que escribían en el directorio de instalación de Ogre y que precisaban de múltiples ajustes. Por si fuera poco el asistente de Windows **no era compatible con la versión 1.7** del motor (la más reciente) y tuve que descargar la nueva versión del wizard desde aquí.
+
+Code::Blocks utiliza el compilador GCC en Linux y, si lo deseas, MinGW en Windows. Era muy posible que internamente utilizase make (o algo parecido) para compilar sus proyectos. Si ese era el caso, **seguramente existiera un exportador** que tomara un proyecto de Code::Blocks y lo convirtiera en un makefile.
+
+### Makefile a partir de un proyecto de Code::Blocks
+
+Al encontrar, **cbp2mak**, el deseado exportador vislumbré un rayo de esperanza. Quizás, finalmente pudiera utilizar un makefile para cada plataforma que se ajustara exactamente a mis necesidades. El proceso es muy sencillo, [descargamos cbp2mak](http://bblean.berlios.de/cbp2mak-0.2.zip) y ejecutamos las siguientes instrucciones:
+
+```
+unzip cbp2mak-0.2.zip
+cd cbp2mak.zip
+make
+
+./cbp2mak -C ruta_al_proyecto proyecto.cbp
+```
+
+
+El makefile resultante es un poco extraño y complejo pero, utilizando ese como base he podido crear unos a mi medida. Un proyecto de Code::Blocks es un **XML** en el fondo, podemos abrirlo con un editor y ver qué flags utiliza para el compilador y el enlazador.
+
+![gnu.png](/img/wp/gnu.png)
+
+### El resultado
+
+En contra de todo pronóstico, **el resultado ha sido excelente**. A continuación, coloco un ejemplo de cómo sería una jerarquía de directorios para un proyecto básico en Ogre:
+
+```
+|- proyecto
+|
+|- src
+|   |- ficheros.cpp
+|
+|- include
+|   |- ficheros.h
+|
+|- plugins (en caso de ser necesarios)
+|
+|- makefile-linux
+|- makefile-windows
+```
+
+
+Para **compilar** sólo tendríamos que hacer (según el sistema operativo):
+
+```
+make -f makefile-linux depend
+make -f makefile-linux
+
+mingw32-make -f makefile-windows depend
+mingw32-make -f makefile-windows
+```
+
+
+Para personalizar el nombre del proyecto sólo tenemos que modificar el valor de una variable en cada makefile. Por supuesto, esto supone tener una serie de paquetes en el sistema y ciertas variables de entorno, todo el proceso de instalación acabará ampliamente detallado en IberOgre.
+
+**Ahora a seguir trabajando duro** y llenar de contenido el wiki.

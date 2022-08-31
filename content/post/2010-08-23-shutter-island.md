@@ -1,0 +1,43 @@
+---
+id: 273
+title: Shutter Island
+date: 2010-08-23T16:00:13+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=273
+url: /hobbies/shutter-island/
+views:
+  - 702
+dsq_thread_id:
+  - 1852022951
+categories:
+  - Hobbies
+tags:
+  - cine
+  - Inception
+  - Leonardo DiCaprio
+  - Martin Scorsese
+  - misterio
+  - Shutter Island
+  - thriller
+---
+
+![shutter-island-05.jpg](/img/wp/shutter-island-05.jpg)
+
+Tras haber visto a [Leonardo DiCaprio](http://www.imdb.com/name/nm0000138/) en un largometraje notable como ha sido [Inception](/ocio/cine/inception-%C2%BFel-sueno-es-real/) (aunque su actuación no fuera excepcional) decidí darle **una oportunidad [Shutter Island](http://www.imdb.com/title/tt1130884/)**, una película que había dejado pasar durante su proyección en salas. Excepto su protagonista los involucrados son totalmente distintos, **dirigida por [Martin Scorsese](http://www.imdb.com/name/nm0000217/)** y escrita por [Laeta kalogridis](http://www.imdb.com/name/nm0436164/) aunque la novela original es de [Dennis Lehane](http://www.imdb.com/name/nm1212331/). No obstante, tal y como fui advertido resulta **tremendamente similar a Origen** y no solo por el actor principal.
+
+![shutter-island-01.jpg](/img/wp/shutter-island-01.jpg)
+
+**Shutter Island** está ambientada en Estados Unidos durante los años 50 y cuenta **la historia de Teddy Daniels** (Leonardo DiCaprio), un investigador judicial y ex combatiente en la Segunda Guerra Mundial. A él y su compañero Chuck Aule se les asigna el caso de una fuga en el **hospital para criminales enfermos mentales** situado en Shutter Island. Un lugar oscuro, siniestro, azotado por las inclemencias meteorológicas y que parece ocultar algo más. Dado que el misterio de la isla forma parte del eje principal de la trama no voy a desvelar una palabra más.
+
+No me gustaría dedicar esta pequeña reseña a listar las similitudes con Inception pero las referencias se hacen inevitables al tener tan reciente su visionado. Los sueños dejan paso a los **delirios provocados por traumas** del pasado pero la realidad es igualmente indistinguible de la fantasía. La sensación de inquietud, potenciada por el **halo de misterio** que desprende la isla, aborda al espectador y consigue que éste se implique antes que con la obra de [Christophen Nolan](http://www.imdb.com/name/nm0634240/). Me resultó divertida la forma en la que la música tensa y el lento avance de la cámara hacia una zona oscura destilan un **toque clásico y cutre** recordando a obras clásicas como [Psicosis](http://www.imdb.com/title/tt0054215/), salvando las considerables diferencias.
+
+![shutter-island-02.jpg](/img/wp/shutter-island-02.jpg)
+
+**El guión es decente** aunque en última instancia acude a recursos ya explotados para demostrarnos que **no está inventando nada nuevo**. Lo importante es que consigue distraer y mantener nuestra atención con el arma del misterio, la conspiración y los giros de guión. Diría que hasta más de la mitad del metraje resulta complicado distinguir bandos y olerse el desenlace aunque no puedo prometer nada pues no soy ningún as del misterio.
+
+DiCaprio muestra una **mejor interpretación** en Shutter Island pero aún así no me termina de convencer y no es que le tenga tirria por [Titanic](http://www.imdb.com/title/tt0120338/) ni nada parecido, supongo que es cuestión de gustos. Curiosamente el trasfondo de los personajes de sus dos últimos trabajos es sospechosamente similar aunque en esta ocasión desde el guión le llega uno con más fuerza. La película no destaca por sus actuaciones y su interés radica en la inquietante trama.
+
+![shutter-island-03.jpg](/img/wp/shutter-island-03.jpg)
+
+Echando la vista atrás no consigo recordar porqué deje pasar Shutter Island pero ahora me arrepiento ya que esta notable película **merece ser vista en el cine**. Un thriller lleno de misterio, personajes que ponen los pelos de punta y un aire a obra antigua que me ha encandilado. Por supuesto queda recomendada.

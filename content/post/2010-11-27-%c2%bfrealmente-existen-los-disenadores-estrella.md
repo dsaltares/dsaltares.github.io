@@ -1,0 +1,41 @@
+---
+id: 736
+title: ¿Realmente existen los diseñadores estrella?
+date: 2010-11-27T22:23:47+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=736
+url: /hobbies/%c2%bfrealmente-existen-los-disenadores-estrella/
+views:
+  - 847
+dsq_thread_id:
+  - 1852023026
+categories:
+  - Hobbies
+tags:
+  - diseñadores
+  - Kojima
+  - Mikami
+  - Molyneux
+  - protesta
+  - videojuegos
+  - Yamauchi
+---
+
+![cliff.jpg](/img/wp/cliff.jpg)
+
+**Dentro de cada equipo** que desarrolla un título AAA siempre sobresale la cabeza del *"diseñador estrella"*. Suelen ser personajes carismáticos y polémicos cuyas declaraciones nos bombardean cerca de la fecha de lanzamiento. Señores como Kojima (Metal Gear Solid), Molyneux (Fable), Mikami (Resident Evil) o Yamauchi (Gran Turismo) entre otros muchos. Reyes del hype y de la venta del humo, de eso no cabe duda pero, **¿imprescindibles genios dentro de los estudios de desarrollo?**
+
+### La imagen que se tiene de ellos
+
+Cuando uno de estos diseñadores abandona un estudio por los motivos que sean parece que el mundo se viene abajo en la prensa especializada. He llegado a escuchar que el estudio jamás será el mismo, que el próximo título de la saga de turno será una patraña. Los pobres miembros del equipo no podrán continuar sin **la ilustre figura** que les ha llevado de la mano todo el tiempo. Vamos, que parecen unas **estrellas del rock**. Menos mal que navegando un poco se puede dar un algún medio más razonable aunque minoritario.
+
+También está la vertiente del *"vendedor de humo"* con la cual coincido. Aunque los medios idolatren a estas figuras, son conscientes de que **tratan de colarte sus productos** aunque sean morralla de la mala. Al final, acaban siendo meras **herramientas de la maquinaria de marketing** de la distribuidora. Por supuesto, todo esto es más que respetable, otra cosa distinta es que nos los tomemos enserio.
+
+### Lo que yo creo que ocurre en la realidad
+
+En los juegos triple A **trabajan equipos que en muchas ocasiones supera el centenar** de personas. Entre ellas se encuentran programadores, ingenieros, artistas, traductores, diseñadores etc. El jefe de proyecto o de diseño puede conducir el desarrollo por una vía u otra pero, **no trabaja solo**. Estas *"estrellas"* seguramente sean buenos diseñadores y tengan muy ideas estupendas pero es el equipo el que las pule, complementa, desecha, recicla y, finalmente, implementa.
+
+Desgraciadamente no tengo una perspectiva interna de la industria pero creo que basta con hacer uso del sentido común para ver la realidad. En cualquier proyecto en el que trabaje un gran número de personas **hay poco espacio para las individualidades** aunque el jefe sea quien tenga la última palabra. De hecho, estoy convencido de que en más de una ocasión el *"jefecillo"* se llevará el crédito por la idea del *"becario"* de turno.
+
+En fin, estas son las palabras de alguien que está **cansado de la idolatría** de estas figuras en la prensa. No me hagáis demasiado caso.

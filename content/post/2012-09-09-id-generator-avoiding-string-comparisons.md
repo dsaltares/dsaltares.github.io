@@ -1,0 +1,123 @@
+---
+id: 2205
+title: ID generator, avoiding string comparisons
+date: 2012-09-09T19:58:44+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2205
+url: /projects/id-generator-avoiding-string-comparisons/
+dsq_thread_id:
+  - 1852024372
+categories:
+  - Games development
+  - Projects
+tags:
+  - games development
+  - Java
+  - libgdx
+  - programming
+---
+
+![stringcomparesarebade.png](/img/wp/stringcomparesarebade.png)
+
+**Disclaimer**: IDGenerator is being used in [**SionEngine**](https://github.com/dsaltares/sionengine) and it's an useful but rather simple approach to the problem described in the paragraphs below.
+
+Needless to say that **in games development we care very much about performance**. It becomes an even more critical issue when we"re dealing with non native languages such as Python, C# or Java (being the later my case in these dire times). One of the countless things that can negatively impact performance in games are strings comparisons. They are bad, slow, nasty pieces of code, specially when placed inside the main loop.
+
+### Sometimes they"re needed!
+
+But sometimes they"re needed! A little person shouts in the crowd. Let's say we define our character's animations in an XML file the following way.
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<sprite name="data/character.png"
+	      frameDuration="0.03333"
+	      rows="7"
+	      columns="8" >
+
+	<animation name="idle" mode="loop" frames="0-13" />
+	<animation name="walk" mode="loop" frames="14-39" />
+	<animation name="jump" mode="normal" frames="40-55" />
+</sprite>
+```
+
+
+It's natural to use strings to name our animations, they"re human readable and comfy but again, expensive to work with. Our character will want to change animation from time to time and the code for that could be something like:
+
+```
+caveman.setAnimation("walk");
+```
+
+
+The *setAnimation()* method has to look into its map, performing *log(n)* ugly string comparisons to find the right animation. We"re righteous game programmers and that makes us sad.
+
+### Working our way around string comparisons
+
+Well, in that case we"d want to use an alternative method. It"d be nice to be able to numerically identify a string in the global scope of our game, so when we have two generated IDs we could just compare them. That's very cheap, yay! ID generation and retrieval might not be lightning fast but that would only be performed during start up or once in a while, definitely not in the very middle of our game loop.
+
+The first approach that someone might come up with are **[hashes](http://en.wikipedia.org/wiki/Hash_function)** which basically turn a string into a number. The problem being: if the string is fairly big and you"re unlucky, you may end up having the same hash code for two different strings and you don't want that, do you? Pretty sure some funny to hunt bug will be the result of such thing.
+
+We are most definitely not going to use all the infinite strings in the world so we could **generate new IDs for them as they"re needed**. Obviously, when we find two IDs generated from the same string, we"d like them to be equal. Our solution would have to keep track of the strings that have already been identified and return the same ID when it's requested again. Easy peasy.
+
+### A simple but decent solution: _IDGenerator_
+
+This might not be the most intelligent implementation for the present problem, however it certainly serves the purpose of the post. Our IDGenerator has two static public methods:
+
+* **_getID()_**: given a string, returns its ID. Creates a new one if it didn't exist. * _**getString()**_: given an ID, return its original string. Returns the string representation of the ID if it wasn't registered.
+
+To do so, it has a *HashMap* using strings as keys. ID retrieval ends up being logarithmic whereas name checks are linear. I've gone for this approach because the second operation is much less likely to be executed than the first one except to make IDs human readable for the poor coder who's debugging our crappy work in logging methods.
+
+Here's the *"beauty"* in question.
+
+```
+public class IDGenerator {
+	private static int m_next = 1;
+	private static HashMap<string , Integer> m_ids = new HashMap<string , Integer>();
+
+	public static int getID(String string) {
+		Integer id = m_ids.get(string);
+
+		if (id == null) {
+			id = m_next;
+			m_ids.put(string, m_next++);
+		}
+
+		return id;
+	}
+
+	public static String getString(int id) {
+		Iterator<entry <String, Integer>> it = m_ids.entrySet().iterator();
+
+		while (it.hasNext()) {
+			Entry<string , Integer> entry = it.next();
+
+			if (entry.getValue() == id) {
+				return entry.getKey();
+			}
+		}
+
+		return null;
+	}
+}
+```
+
+
+### Example of use
+
+Sticking to our previous animation example, our character could cache its animations right in its constructor this way. **Once!**
+
+```
+private static final int m_idle = IDGenerator.getID("idle");
+private static final int m_walk = IDGenerator.getID("walk");
+private static final int m_jump = IDGenerator.getID("jump");
+```
+
+
+Now, at the time of picking an animation we use an int instead of a string and therefore, a beautiful smile is drawn on our faces.
+
+```
+caveman.setAnimation(m_walk);
+```
+
+
+Of course, this can be extensively use in your project, hope it helps. By the way, know than more and hopefully better is yet to come.

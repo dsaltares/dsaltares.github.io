@@ -1,0 +1,55 @@
+---
+id: 3138
+title: The future of affordable high end Android phones
+date: 2014-10-19T10:33:49+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3138
+url: /technology/the-future-of-affordable-high-end-android-phones/
+dsq_thread_id:
+  - 3132864085
+categories:
+  - Technology
+tags:
+  - Android
+  - HTC
+  - OnePlus
+  - Samsung
+  - smartphones
+  - Sony
+  - technology
+  - Xiaomi
+---
+The Google Nexus product line has always been the reference when it came to affordable high end smartphones. However, that seems to have changed a couple of days ago, the second the [Nexus 6](http://www.google.com/nexus/6/) was announced with a starting price tag of $649. Let us not forget that one could get a [Nexus 5](http://www.google.com/nexus/5/) for only $349.
+
+![nexus6.jpg](/img/wp/nexus6.jpg)
+
+As many have pointed out, this is most likely Google's response to the pressure other vendors have put on the former. Nexus' low prices were damaging companies such as HTC, Sony and, to a lower degree, Samsung. Of course, Google does not seek these companies to stop making Android devices, do they?
+
+> I want to get a high spec Android phone that won't set me back too badly. 
+
+Recently, I asked myself the same question.
+
+Normally I don't follow the latest gadgets too closely as I find the topic rather boring and repetitive. Nevertheless, one must do his little research when looking for a new phone. Right?
+
+The aforementioned brands, especially Sony, offer prohibitive prices for their flagship devices, unless you want to sell your soul to some carrier for 2 years. I'm talking [well over $500](http://www.amazon.com/s/ref=sr_nr_p_72_0?rh=n%3A2335752011%2Cn%3A%212335753011%2Cn%3A7072561011%2Cn%3A2407749011%2Cp_n_feature_seven_browse-bin%3A6215730011%7C6215731011%2Cp_n_feature_keywords_four_browse-bin%3A6787346011%2Cp_72%3A2491149011&bbn=2407749011&ie=UTF8&qid=1413713986&rnid=2491147011). That pushed me to look into the Asian brands.
+
+![htconem8.jpg](/img/wp/htconem8.jpg)
+
+Loaded with skepticism and possibly prejudices, I started checking out reviews of devices like the [Xiaomi Mi 4](http://www.gsmarena.com/xiaomi_mi_4-6518.php) ($399) and the [OnePlus One](http://oneplus.net/one) ($299). Both of them feature a 2.5Ghz quad core processor, 3GB RAM, decent batteries, high quality lenses and a big ass screen (5&#8243; and 5.5&#8243; respectively). While the Xiaomi runs [MIUI](http://en.miui.com/), the OnePlus One uses [CyanogenMod](http://www.cyanogenmod.org/), both popular Android flavours with strong support and frequent updates.
+
+> Surely they are built with poor quality materials. 
+
+After trying a OnePlus One from [a friend](http://josetomastocino.com/), I was really impressed with its built quality. Undoubtedly, it's at the same level of its overly expensive counterparts. And for half the price! It's ridiculous.
+
+Finally, I got my own.
+
+![oneplus-one.jpg](/img/wp/oneplus-one.jpg)
+
+These devices are extremely successful in the Asian market but it is fairly rare to see them in the UK. My wild guess is that western consumers still don't trust these new Asian successes, which is funny, since HTC is Chinese, Samsung is South Korean and Sony is Japanese.
+
+I can honestly say, these claims are unfounded.
+
+As OnePlus and Xiaomi become more and more popular in the west, other brands will have to rethink their strategy. How are they supposed to compete against same spec and similar built quality for half the price.
+
+Interesting times might be coming to the mobile scene.

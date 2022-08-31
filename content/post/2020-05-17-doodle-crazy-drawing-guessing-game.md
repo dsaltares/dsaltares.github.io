@@ -1,0 +1,21 @@
+---
+title: "Doodle: a crazy drawing & guessing game"
+date: 2020-05-17T00:00:00+00:00
+author: "David Saltares"
+tags: ["gamedev", "react", "typescript", "node"]
+categories: ["Games Development"]
+description: "I made a fun multiplayer doodling game during the pandemic"
+keywords: ["games development", "pandemic projects", "web development", "react games"]
+---
+
+✏️ Introducing [Doodle](https://github.com/dsaltares/doodle), a crazy drawing & guessing chain game. Think Pictionary meets Telephone. Better played with your friends over a video call!
+
+[![doodle brainstorming](/img/doodle/gallery/brainstorming.png)](/img/doodle/gallery/brainstorming.png)
+
+🏠 Doodle is a little side project I made during covid-19 confinement to play with friends while we cannot meet face to face. Initially, I thought the crisis would end before I finished it, which would make me lose interest. Little did I know! Not only did I finish it, Doodle has already lightened up the mood in a few remote evenings.
+
+💻 The game is entirely written in Typescript, which I had never used before. I've had lots of fun building it, getting feedback and playing with friends. I hope to soon post a more detailed post-mortem on the whole process. Maybe even a couple of articles about things I learned.
+
+🤓 In the meantime, you can check out the source code on [Github](https://github.com/dsaltares/doodle).
+
+🙌 Give it a try and be sure to let me know any thoughts or feedback!

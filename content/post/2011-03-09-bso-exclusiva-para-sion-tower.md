@@ -1,0 +1,47 @@
+---
+id: 1115
+title: BSO exclusiva para Sion Tower
+date: 2011-03-09T11:00:44+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1115
+url: /games/bso-exclusiva-para-sion-tower/
+enclosure:
+  - |
+    |
+        /wp-content/uploads/2011/03/Sion-Tower-partida.mp3
+        5306667
+        audio/mpeg
+        
+views:
+  - 995
+dsq_thread_id:
+  - 1852022032
+categories:
+  - Games development
+tags:
+  - audio
+  - BSO
+  - colaboración
+  - Creative Commons
+  - música
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - Twitter
+  - videojuegos
+---
+
+![bso-exclusiva.png](/img/wp/bso-exclusiva.png)
+
+Cuando me propuse buscar colaboradores para el proyecto no me esperaba tener una acogida tan buena. Hace unas semanas, **Antonio Caro Oca** ([@Hempfreud](http://twitter.com/#!/Hempfreud)) contactó conmigo [vía Twitter](http://twitter.com/#!/Hempfreud/status/38933531031908352) ofreciéndose junto a **Daniel Pellicer García** ([@Danpelgar](http://twitter.com/#!/Danpelgar)) para componer la música de algún juego que desarrollase. Mis ojos se abrieron como platos rápidamente, ¡música expresamente compuesta para Sion Tower! Hoy os muestro los primeros resultados.
+
+Antonio Caro y Daniel Pellicer solían componer y editar piezas para juegos imaginarios y se han mostrado muy entusiasmados por ver reflejado su trabajo en un producto tangible. Tengo que decirles que el placer es totalmente mío, **es un gustazo trabajar con gente tan profesional** y con capacidad para adaptarse a las circunstancias. Han hecho un encomiable esfuerzo a la hora de entregar los primeros resultados antes de la fase local del CUSL. **Partieron de las descripciones del documento de diseño** (de nuevo queda patente su importancia) y fuimos comentando el estilo que debía tener la música. Con cada prueba que me mandaban íbamos opinando y en pocos días tenían los cambios listos.
+
+Con esta banda sonora **están haciendo que Sion Tower crezca muchísimo**. A continuación tenéis una versión prácticamente acabada (aunque sujeta a cambios) de la canción que sonará durante las partidas. Toda la banda sonora está sujeta a una **licencia [Creative Commons by-nc-sa](http://creativecommons.org/licenses/by-nc-sa/3.0/)** (atribución, no comercial, compartir igual).
+
+{{% audio "/audio/Sion-Tower-partida.mp3" %}}
+
+Además de esta pista, **están decididos a seguir trabajando** con melodías para los menús y otras canciones para distintos niveles. Un lujo impagable.
+
+**¡Muchísimas gracias!**

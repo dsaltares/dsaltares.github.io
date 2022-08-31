@@ -1,0 +1,61 @@
+---
+id: 620
+title: Game design document
+date: 2010-11-01T12:14:35+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=620
+url: /games/game-design-document/
+views:
+  - 1112
+dsq_thread_id:
+  - 1855472563
+categories:
+  - Games development
+tags:
+  - desarrollo
+  - diseño
+  - ERS
+  - Game Design Document
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+![game-design-document.jpg](/img/wp/game-design-document.jpg)
+
+**En Sion Tower no quiero perder demasiado tiempo con papeleo** pero **necesito llevar cierta organización** dada la mediana envergadura del proyecto, conozco el valor de la Ingeniería del Software. Debo definir cuantos detalles pueda y conseguir que las mecánicas estén enfocadas a los objetivos que deseo y no otros, que pocas cosas se coloquen por casualidad. Además, si pretendo contactar con artistas en busca de colaboraciones no puedo ir con las manos vacías, hay que mostrar al menos un documento o prototipo que demuestre lo que se necesita y que el asunto es serio. Ahí es donde entra en juego el *Game design document*.
+
+### ¿Qué es el Game design document?
+
+Como su propio nombre indica, es un documento en el que **se recogen todos los detalles relativos al diseño del juego**. Se especifican elementos como la jugabilidad, historia, personajes, posibilidades, entorno, ambientación etc. Es una especie de *[Especificación de Requisitos Software (ERS)](http://es.wikipedia.org/wiki/Especificaci%C3%B3n_de_Requisitos_Software)* bastante más laxo y orientado al mundo del videojuego. Comienza dando simples pinceladas sobre el juego que se va a modelar hasta llegar al máximo nivel de detalle, definiendo controles, pantallas de juego y mecánicas concretas. En él **se plasman todas y cada una de las ideas** que aparecerán en el juego.
+
+### ¿Para qué sirve?
+
+Se han escrito muchos artículos sobre los GDD y la lista de **sus utilidades** podría extenderse mucho por lo que, a continuación, listo algunas de ellas:
+
+*   **Concretar ideas**: podemos divagar largo y tendido sobre las características con las que contará nuestro juego pero sólo serán eso, divagaciones. En el momento de plasmar ese pequeño caos en un papel aclararemos nuestros pensamientos y los de nuestro equipo. Así mismo, podremos discernir (de forma muy preliminar) las buenas ideas de las malas.
+*   **Estar en el mismo barco**: no es extraño que entre compañeros de equipo comencemos a hacer un *brainstorming* y cada uno se vaya a su casa con una idea diametralmente opuesta del juego. Durante la elaboración del GDD detectaremos puntos de desacuerdo y podremos zanjarlos. De esta manera nos aseguramos de que todos los compañeros están en el mismo barco y tienen un objetivo común.
+*   **Preparar el desarrollo**: como en cualquier proceso de construcción de software, la fase de ingeniería nos prepara para la implementación. Gracias al GDD nos embarcaremos en etapas posteriores conociendo a la bestia a la que nos enfrentamos.
+*   **Comunicación**: tanto en desarrollos comerciales como el que nos ocupa en este momento la comunicación con el exterior es importante. En el caso de un juego comercial, el equipo querrá conseguir la financiación de una editora (o *"publisher"*). En mi caso, pretendo conseguir colaboraciones para el apartado artístico. Con el GDD puedo conseguir que la gente comprenda mi idea y compruebe que es un proyecto serio y no una mera bravuconada.
+
+### ¿Por qué no un documento ERS?
+
+En el proceso de desarrollo de un sistema más *"convencional"* suele utilizarse el clásico documento de Especificación de Requisitos Software. Es posible encorsetarse a un estándar o a otro pero lo cierto es que u**n videojuego es un sistema software *"especial"*. Si se mira cualquier guión de ERS nos daremos cuenta de que **es muy complicado definir las mecánicas de un juego en los apartados disponibles**.
+
+La estructura de un Game design document no tiene porqué ser fija ya que no existe ningún estándar sobre el mismo. De hecho, suelen variar los puntos que tratan en función del género al que pertenezca el juego en cuestión. Este tipo de documento **se acerca mucho más a mis necesidades** para un desarrollo más ágil y tener una pequeña carta de presentación.
+
+### Mi escasa experiencia
+
+**En proyectos anteriores como [Granny's Bloodbath](/proyectos/grannys-bloodbath/)** el equipo elaboró un documento de diseño aunque no teníamos tanta información sobre cómo hacerlo. Aún así, logramos definir el juego con mucho detalle, lo que nos ayudó enormemente en el desarrollo. Estuvimos medianamente organizados desde el principio y no perdimos el tiempo con discusiones, pues ya habíamos llegado a un acuerdo previamente.
+
+Ahora tengo una pizca más de conocimiento sobre el Game design document y valoro más, si cabe, su utilidad. Como podréis comprobar en la [forja del proyecto](https://forja.rediris.es/projects/cusl5-iberogre/) **estoy trabajando en su redacción**. La experiencia está siendo completamente positiva, me está ayudando a **ordenar mis ideas** y a concretarlas en papel. Cuando se está obligado a plasmar conceptos nos vamos dando cuenta de las cosas que podrían funcionar y de las ideas que son completamente absurdas.
+
+### Referencias
+
+Para informarme sobre las generalidades y los detalles de los Game design documents he consultado los siguientes artículos. Los **recomiendo encarecidamente a cualquier interesado** en el tema, pues aportan mucha más riqueza sobre el tema que esta mísera parrafada:
+
+* [The Anatomy of a Design Document Part 1](http://www.gamasutra.com/view/feature/3384/the_anatomy_of_a_design_document_.php) (Gamasutra, Tim Ryan)
+* [The Anatomy of a Design Document Part 2](http://www.gamasutra.com/view/feature/3411/the_anatomy_of_a_design_document_.php) (Gamasutra, Tim Ryan)
+* [Game Design Document Template](http://www.google.es/url?url=http://www-personal.engin.umd.umich.edu/~bmaxim/cis488/BaldwinGameDesignDocumentTemplate.doc&rct=j&sa=U&ei=OY3NTOOFK8-dOpHnnJEB&sqi=2&ved=0CBwQFjAA&sig2=neDZkwkd6bcKQ-CMr9VRXA&q=game+design+document+template&usg=AFQjCNHGRaFPUKkLZPbB9xcpTi0ozNrtSw&cad=rja) (Mark Baldwin)
+* [Game Design Docs – pros and cons](http://www.fourdoorlemon.com/2010/10/16/game-design-docs/) (Four Door Lemon)

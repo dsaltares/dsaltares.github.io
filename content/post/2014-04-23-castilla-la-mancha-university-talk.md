@@ -1,0 +1,35 @@
+---
+id: 2989
+title: 'Castilla: La Mancha University talk'
+date: 2014-04-23T08:34:33+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2989
+url: /games/castilla-la-mancha-university-talk/
+dsq_thread_id:
+  - 2632467151
+categories:
+  - Games development
+tags:
+  - 'Castilla - La Mancha University'
+  - games development
+  - games industry
+  - presentation
+  - slides
+  - talk
+  - UCLM
+---
+Oh `$deity`, it is hard to be back after a 5 day break! Following a healing long weekend in Madrid, yesterday I went over to Ciudad Real to deliver my presentation titled _"How to break into the Games Industry with Open Source Software"_ at the engineering university school.
+
+I would dare to say it was well received. A zero total count of rotten tomatoes thrown at me shall be good enough of an indicator to back up my previous statement. Or maybe they didn't have any vegetables at hand!
+
+The focus ended up being my experience in the Games Industry, what companies are looking for in graduates and how they can achieve those skills. All of it by using and producing open source software. Oh, I also did some Libgdx preaching!
+
+You're more than welcome to take a look at the talk here although I spoke in Spanish all the time! Scroll down for the slides in English.
+
+{{< youtube A7FO2E5hb6g >}}
+
+Here's the presentation with and without notes.
+
+  * [How to break into the Games Industry with Open Source Software: notes](/docs/uclm-talk.pdf)
+  * [How to break into the Games Industry with Open Source Software](/docs/uclm-talk-no-notes.pdf)

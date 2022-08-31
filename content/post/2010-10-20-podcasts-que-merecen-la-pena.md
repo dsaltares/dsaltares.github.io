@@ -1,0 +1,68 @@
+---
+id: 591
+title: Podcasts que merecen la pena
+date: 2010-10-20T00:23:20+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=591
+url: /hobbies/podcasts-que-merecen-la-pena/
+views:
+  - 1089
+dsq_thread_id:
+  - 1852023744
+categories:
+  - Hobbies
+tags:
+  - audio
+  - Dame la voz
+  - Game Over
+  - Linux
+  - Pánico en el núcleo
+  - podcast
+  - radio
+  - sociedad
+  - videojuegos
+  - Wildgames
+---
+
+![podcasts.jpg](/img/wp/podcasts.jpg)
+
+No hay duda de que la **democratización en la producción y distribución de contenidos** a través de la red ha permitido proliferación de blogs, podcasts, wikis, etc. Ahora bien, que alguien pueda producir contenido es muy distinto a que lo haga bien. **Diferenciar la calidad de lo mediocre** en la inmensidad de Internet puede ser complicado y no todos tenemos tiempo para indagar. Todos aquellos que invierten su tiempo en producir un podcast merecen respeto, no obstante, hay que reconocer que algunos no cuentan con la calidad de audio, regularidad o nivel de preparación que nos gustaría.
+
+**Si quieres divertirte, informarte o aprender con programas de calidad, sigue leyendo**. Recomiendo 4 que realmente merecen la pena.
+
+![gameover.jpg](/img/wp/gameover.jpg)
+
+### Game Over
+
+[Game Over](http://www.portalgameblogger.com/) se autoproclama como *"el primer programa satírico de videojuegos"* y viene avalado por **más de 10 años** de experiencia en Radio Despí, Barcelona. Semanalmente publican una grabación de dos horas en las que priman parodias de los personajillos más famosos de la industria (tanto virtuales como reales). Entre risas aún queda tiempo para análisis muy bien montados en los que **no tratan de caerle bien a las distribuidoras** precisamente. Son bastante justos y si tienen que poner verde al juego hypeado de turno, lo hacen.
+
+Han conseguido montar una curiosa comunidad alrededor del programa en la que cabe destacar el foro, el blog, los concursos y el chat en directo. Gente que sabe de lo que habla pero que, sobre todo, se lo pasa en grande emitiendo. Los más veteranos lo disfrutarán ya que **suelen tratar temas retro** y rebosantes de amor.
+
+![damelavoz.jpg](/img/wp/damelavoz.jpg)
+
+### Dame la voz
+
+Conozco muchos de debates emitidos en la radio en los que se trata la **actualidad política y social en España** pero ninguno está **producido por jóvenes sin pelos en la lengua**. [Dame la voz](http://blog.damelavoz.es/) rellena el vacío que existe en la podcastfera en lo referente a actualidad (no tecnológica, claro está). Se agradece que los temas delicados sean tratados por **gente informada** y honrada, cuando alguno no conoce los detalles,se calla y aquí no ha pasado nada. La hora estricta que dura el programa lo hace ameno y suelen dejar las noticias absurdas o estrambóticas para el final.
+
+Me llama la atención la forma que tienen de **introducir el bilingüismo** (castellano/catalán) en su programa publicando **dos audios semanales**. En su blog también se intercalan artículos en los dos idiomas aunque nos dan la oportunidad de elegir a la hora de suscribirnos.
+
+![wildgames.jpg](/img/wp/wildgames.jpg)
+
+### Wildgames
+
+[Wildgames](http://wildgames.es/) es otro **programa de videojuegos** que también se emite por radio con periodicidad semanal. No son tan veteranos como en Game Over pero cuentan con **varias temporadas a sus espaldas** y la calidad de voces o el uso de la mesa de mezclas no desmerece en absoluto. Entre sus contenidos encontramos noticias, los patazos de la industria (más conocidos como *"bichillos"*) o el juego de la semana.
+
+Queda patente que **el humor mezclado con el ocio electrónico es el cóctel perfecto** para este tipo de programas y es que los videojuegos están para eso, para disfrutarlos. Además, en Wildgames **se respira un ambiente de comunidad**, cercanía y buen rollo que da gusto. Ofrecen un **streamming para escuchar el programa en directo** aunque, dicho sea de paso, no siempre funciona. En cualquier caso, de lo mejorcito de su categoría.
+
+![panicoenelnucleo.jpg](/img/wp/panicoenelnucleo.jpg)
+
+### Pánico en el Núcleo
+
+[Pánico en el Núcleo](http://www.panicoenelnucleo.com/) es un **podcast sobre Linux** y el único que conozco que **emite en directo** por streamming (sin ser radio), lo que demuestra el tremendo esfuerzo que depositan en el proyecto. Su formato me recuerda al de Game Over ya que incluyen noticias, parodias y mucho humor. Hilarantes **los flames que se montan** debatiendo cúal es la mejor distribución en los que los propios oyentes defienden a capa y espada su elección.
+
+El nivel no es elevado y, aunque vaya con mentalidad de ingeniero (¡casi!), estoy seguro de que **cualquier interesado en el software libre podría hacerse con él**. Llevan muy pocos episodios aunque mantienen una regularidad que muchos quisieran.
+
+### Para terminar
+
+**Los puntos que más valoro** en un podcast son: calidad de sonido, regularidad y nivel de preparación en los contenidos. Los 4 que he recomendado cumplen con nota estos apartados y son de **escucha obligada**. Como aficionado acérrimo al medio podría recomendar otros muchos programas que merecen la pena pero esos me los guardos para un futuro *"el podcast contraataca"*.

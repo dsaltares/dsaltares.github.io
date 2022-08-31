@@ -1,0 +1,39 @@
+---
+id: 494
+title: Community, 1ª temporada
+date: 2010-10-02T12:53:08+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=494
+url: /hobbies/community-1%c2%aa-temporada/
+views:
+  - 824
+dsq_thread_id:
+  - 1852023689
+categories:
+  - Hobbies
+tags:
+  - comedia
+  - Community
+  - How I met your mother
+  - humor
+  - NBC
+  - series
+  - TV
+---
+
+![community.jpg](/img/wp/community.jpg)
+
+**Cuando uno llega agotado a casa** es posible que no tenga ánimos de ver algo demasiado complejo, leer un libro profundo ni nada que suponga un esfuerzo extra. Para esos días, **las comedias son un remedio estupendo**, por eso y varias recomendaciones de amigos **me zampé la primera temporada completa de [Community](http://www.imdb.com/title/tt1439629/)**. En las líneas que siguen, una breve opinión sobre esta serie de creciente éxito de la [NBC](http://en.wikipedia.org/wiki/NBC).
+
+**Community nos lleva a la completamente lamentable Universidad de Greendale** en la que convergen personajes de lo más variopinto. Como protagonista tenemos a **[Jeff](http://www.imdb.com/name/nm0570364/), abogado sin escrúpulos** hasta que descubrieron que su título era falso y ahora debe conseguir el verdadero. **[Britta](http://www.imdb.com/name/nm1843026/), es típica chica independiente** que Jeff tratará de atrapar por todos los medios (aunque éstos sean poco éticos). **[Pierce](http://www.imdb.com/name/nm0000331/) es un jubilado prepotente**, racista y algo homófobo casado y divorciado en 7 ocasiones. **[Troy](http://www.imdb.com/name/nm2255973/) era el típico campeón de fútbol** en el instituto que ahora, venido a menos, no se encuentra cómodo en la Universidad. **[Abed](http://www.imdb.com/name/nm2209821/) es un adicto a películas y series de TV** capaz de convertir y relacionar cualquier suceso de *"la realidad"* con un momento de ficción. **[Shirley](http://www.imdb.com/name/nm1304328/) es una ama de casa** muy católica que no tuvo la oportunidad de estudiar. Finalmente, [**Annie**](http://www.imdb.com/name/nm1555340/), la más joven del grupo, es una **ex-adicta a pastillas** traumatizada por su paso por el instituto.
+
+![community-02.jpg](/img/wp/community-02.jpg)
+
+Esta colección tan estrambótica se verá obligado a colaborar en forma de **grupo de estudio** para aprobar las **clases de español con el temible [Señor Chang](http://www.imdb.com/name/nm0421822/)**. Community no pretende ser una serie razonable ni realista, **es una hipérbole de personalidades** que chocan y explotan. Situaciones absurdas, extremas pero, sobretodo, geniales e hilarantes. Sabemos que dista mucho de la realidad pero lo aceptamos sin rechistar. Destaca por encima de todo la **ausencia de las ridículas risas enlatadas** que tanto fuerzan las situaciones. Tendremos que enfrentarnos a silencios incómodos y una pequeña ración de esa vergüenza ajena tan divertida que tienen las series cómicas británicas.
+
+**Me encanta que la serie se ría de sí misma** por medio de Abed, el seriéfilo. El que considero uno de los mejores personajes cómicos en mucho tiempo, siempre señala con el dedo los clichés haciendo constantes referencias al cine de forma que rompe con el monótono ritmo que llevarían otras producciones.
+
+![community-03.jpg](/img/wp/community-03.jpg)
+
+**Es posible que le cueste arrancar**, es algo que he leído y escuchado de otros compañeros pero el que tenga paciencia durante los tres primeros episodios no se arrepentirá. Vienen en dosis de 20 minutos y eso se agradece, tanto que ya voy a catar la segunda temporada que acaba de comenzar. Si crees que series como la excepcional [*"How I met your mother"*](http://www.imdb.com/title/tt0460649/) están algo quemadas puede que necesites algo nuevo, Community es **de tus mejores opciones**.

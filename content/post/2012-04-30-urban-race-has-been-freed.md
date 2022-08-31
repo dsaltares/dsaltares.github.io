@@ -1,0 +1,37 @@
+---
+id: 2156
+title: Urban Race has been freed
+date: 2012-04-30T21:22:16+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2156
+url: /games/urban-race-has-been-freed/
+dsq_thread_id:
+  - 1897421732
+categories:
+  - Games development
+tags:
+  - C++
+  - Creative Commons
+  - games
+  - Google Code
+  - GPL v3
+  - Microsoft
+  - racing
+  - Urban Race
+  - Windows
+  - Xbox 360
+  - XNA
+---
+
+![urbanrace.jpg](/img/wp/urbanrace.jpg)
+
+A few months ago I developed [Urban Race](/games/urban-race/), a very simple (and quite lame) time attack racing game using XNA. It was a University project so I couldn't release the source until it was graded but then, I totally forgot about it. Recently, a reader asked me to publish the source and here we are. Please, bare in mind it's for educational purposes, it was developed in one month without previous knowledge of neither C# or XNA and it's not intended to be a fully playable product.
+
+*   [Urban Race in Google Code](http://code.google.com/p/urban-race/)
+*   [Urban Race essay (documentation)](http://urban-race.googlecode.com/files/urbanrace-essay.pdf)
+*   [Urban Race 1.0 for Windows](http://urban-race.googlecode.com/files/urbanrace-1.0-win.zip)
+
+I usually document my projects with Doxygen and several articles or tutorials, this time has been different. At least I've uploaded a PDF file with the documentation I submitted for my project to be graded. You"ll have to excuse me for lack of further and more accessible documentation but I don't have much time now and, prior to this moment, I didn't think this game was worth making public.
+
+Anyways, you can freely access the source, reuse components and re-share. Bare in mind that the code is under [GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) and the media is under [Creative Commons 3.0 BY-NC](http://creativecommons.org/licenses/by-nc/3.0/) so, please, stick to their conditions.

@@ -1,0 +1,69 @@
+---
+id: 639
+title: Spotify vs Grooveshark
+date: 2010-11-06T18:35:07+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=639
+url: /computing/spotify-vs-grooveshark/
+views:
+  - 1125
+dsq_thread_id:
+  - 1852023417
+categories:
+  - Computing
+tags:
+  - GNU/Linux
+  - Grooveshark
+  - Internet
+  - Mac
+  - música
+  - Spotify
+  - streaming
+  - Windows
+  - Wine
+---
+
+![spotify-vs-grooveshark.png](/img/wp/spotify-vs-grooveshark.png)
+
+**Llevo bastante tiempo utilizando [Spotify](http://www.spotify.com/es/)** en Linux a través de [Wine](http://www.winehq.org/) y últimamente me estaba dando más disgustos que alegrías por problemas relacionados con el sonido. Raudo y veloz **acudí a su alternativa más evidente, [Grooveshark](http://listen.grooveshark.com/)**. En este artículo **comentaré mi experiencia** con ambos servicios de música por streaming de forma que puedan decidirse por alguno de los dos en caso de duda.
+
+### La aplicación
+
+**Spotify** cuenta con clientes de escritorio compatibles con Windows y Mac. Hace poco tiempo han lanzado una beta del cliente para GNU/Linux pero sólo está disponible si eres usuario Premium. Como ya he mencionado, he estado utilizando la versión para Windows a través de Wine. El sistema es **rápido y bastante intuitivo**, buscar canciones es sencillo. Podemos guardar listas de reproducción, compartirlas y acceder a las búsquedas recientes. Desconozco su funcionamiento en Mac, en Windows funciona sin problemas y **bajo wine falla mucho el sonido** (aunque es posible que sea de mi tarjeta).
+
+![spotify-300x157.png](/img/wp/spotify.png)
+
+**Grooveshark**, en cambio, es una **aplicación web** escrita en ActionScript y Java lo que lo hace bastante más pesado que Spotify. Como ventaja, es **compatible con todos los sistemas operativos** en los que funcionen estos dos lenguajes de programación (prácticamente todos). En el fondo su interfaz es muy similar a la de Spotify, en este apartado andan a la par.
+
+![grooveshark-300x133.png](/img/wp/grooveshark.png)
+
+### Catálogo de música
+
+**Spotify** llega a acuerdos con las discográficas para poder distribuir sus canciones a través de su servicio. El catálogo es tremendamente amplio pero existen **ausencias imperdonables** como Led Zeppelin, AC/DC o The Beatles. A su favor hay que reconocer que **la música está muy bien indexada**, no hay duplicidades y sus metadatos (autor, álbum, año, etc) siempre son correctos. Navegar por los contenidos se hace muy cómodo
+
+Por su parte, **Grooveshark** se vale de las canciones que suben los usuarios. La **oferta es más rica** aunque la **catalogación** es, en demasiados casos, **deficiente**. Si el usuario que sube la música comete errores en los metadatos, éstos permanecerán una vez las canciones se encuentren flotando en la nube. Si nos curramos listas de reproducción limpias o utilizamos las de nuestros amigos de confianza no tendremos problemas. No obstante, no es tan directo y elegante como en Spotify.
+
+![facebook-logo.jpg](/img/wp/facebook-logo.jpg)
+
+### Vertiente social
+
+Hoy en día si las aplicaciones no están conectadas con el *"Feisbuk"* no son nada y en esta ocasión no podía ser menos. **Spotify** nos ofrece **conectarnos con nuestros amigos** de la gran red social que usen el servicio. Esto nos permite acceder a sus listas de reproducción y descubrir grupos nuevos cada día. ¡También podemos comprobar si nuestro amigote "*el duro"* escucha Hannah Montana en secreto! El sistema está muy integrado en la aplicación y funciona de maravilla.
+
+En **Grooveshark** podemos tener amigos pero son exclusivos de la aplicación, no podemos *"importarlos"* del exterior. Tenemos acceso a sus listas, canciones preferidas etc. La novedad de Grooveshark es que podemos escuchar "*radios"*, **listas de reproducción que se componen de forma inteligente** a través de un motor de recomendaciones que sigue las canciones que nos gusten.
+
+![spotify-premium.jpg](/img/wp/spotify-premium.jpg)
+
+### Cuentas Premium
+
+En **Spotify** tendremos que **soportar horribles anuncios** de vez en cuando a menos que pasemos por caja. Por 5€ al mes tenemos música ilimitada sin anuncios y por 10€ al mes podremos escuchar listas de reproducción offline y utilizar los clientes para **plataformas móviles** (Android, iPhone, Windows Phone y Symbian). No he utilizado ningún servicio de pago porque con la cuenta gratuita voy "sobrado" pero hay que reconocer que los precios no son desorbitados.
+
+**Grooveshark** es más permisivo al respecto porque **¡no tiene anuncios sonoros!** No tener interrupciones en la reproducción es de agradecer (en la interfaz sí tiene anuncios). Eso sí, podemos pagar 3€ al mes para utilizar los **clientes móviles** (Android y Blackberry) y disponer de ventajas como personalización de la interfaz y otras **pijadas inmensas**.
+
+![grooveshark-android.png](/img/wp/grooveshark-android.png)
+
+### Conclusiones
+
+Spotify ofrece un catálogo más controlado y ordenado mientras que Grooveshark no inserta anuncios en la reproducción de nuestras listas. Eso, junto con la amplia gama de música y su carácter completamente multiplataforma hace que haya elegido como servicio de música por streaming a Grooveshark.
+
+¿Alguien prefiere Spotify? En tal caso le animo a que nos exponga sus razones.

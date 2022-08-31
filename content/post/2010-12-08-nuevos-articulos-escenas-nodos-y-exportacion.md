@@ -1,0 +1,68 @@
+---
+id: 767
+title: 'Nuevos artículos: escenas, nodos y exportación'
+date: 2010-12-08T11:26:02+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=767
+url: /games/nuevos-articulos-escenas-nodos-y-exportacion/
+views:
+  - 731
+dsq_thread_id:
+  - 1852023743
+categories:
+  - Games development
+tags:
+  - Blender
+  - escenas
+  - forja Red Iris
+  - IberOgre
+  - nodos
+  - Ogre3D
+  - PFC
+  - videojuegos
+  - Wiki
+---
+
+![escenas-nodos-exportacion.png](/img/wp/escenas-nodos-exportacion.png)
+
+El puente se acaba y , entre otras cosas, me ha permitido darle un pequeño pero **importante impulso a [IberOgre](http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal)**. Ligeras correcciones o ampliaciones en varios artículos y un par completamente nuevos. **La wiki va sobre ruedas** y no hemos tenido problemas de disponibilidad desde el cambio de servidor, ¡gracias de nuevo a la OSLUCA! Lo que sigue es un pequeño resumen del trabajo de los últimos días.
+
+### [Creación básica de escenas](http://osl2.uca.es/iberogre/index.php/Creaci%C3%B3n_b%C3%A1sica_de_escenas)
+
+Hasta el momento sólo conocíamos el proceso de inicialización de Ogre. Este artículo pretendía continuar desde dicho punto y **llegar hasta la carga de un modelo 3D en pantalla**. Debido a la multitud de pasos necesarios y las distintas vías que se nos abren, el texto resultante tiene una extensión considerable. Finalmente se tratan los siguientes puntos: 
+
+* Creación de una ventana.
+* Elección y creación del gestor de escenas adecuado (SceneManager).
+* La cámara y el frustrum.
+* La utilidad de los viewports, juego a pantalla dividida.
+* Creación de una escena, añadiendo nodos con entidades adjuntas.
+* Dos aproximaciones al main loop en Ogre.
+* Ejemplo comentado a modo de resumen.
+
+En mi opinión, se trata de un **artículo de máxima importancia** ya que es el primero en el que comenzamos a renderizar elementos. Llevaba cierto tiempo publicado y estos días me he dedicado a completarlo (prestando especial atención al ejemplo).
+
+### [Manipulación de nodos](http://osl2.uca.es/iberogre/index.php/Manipulaci%C3%B3n_de_nodos#Ejemplo)
+
+¿Qué sería de nuestro videojuego si no pudiésemos darle movimiento a los elementos que lo componen? Este artículo se centra en la **manipulación del scene graph** tanto en cuanto a su jerarquía como a sus componentes individuales (SceneNodes). Básicamente se abarcan los siguientes aspectos:
+
+* Sistema de coordenadas de Ogre.
+* Información de un nodo, objetos adjuntos y descendientes.
+* Espacios de transformación.
+* Movimiento, rotación y escalado.
+* Control de tiempo en el bucle de juego.
+* Ejemplo. El artículo aún no está completo ya que **le falta el ejemplo principal** y un par de esquemas explicativos. 
+
+He querido publicarlo para que los lectores puedan seguir aprendiendo y reportando los problemas encontrados (aunque creo que es correcto en su mayoría).
+
+### [Exportar modelos desde Blender](http://osl2.uca.es/iberogre/index.php/Exportar_modelos_desde_Blender)
+
+Ogre sólo acepta su propio formato binario _.mesh_ a la hora de cargar modelos tridimensionales por razones de eficiencia y optimización. Esto significa que **debemos exportar nuestras creaciones** a dicho formato. En IberOgre daremos soporte a Blender y su **magnífico script Blender Exporter**. En este artículo encontraréis:
+
+* Instalación de Blender Exporter (Windows y GNU/Linux).
+* Proceso de exportación de un modelo con todas las opciones comentadas.
+* Recomendaciones a la hora de realizar una exportación.
+
+### El trabajo duro continua
+
+Durante la última semana he estado trabajando fuerte y se ha notado en la forja de Red Iris. **Un porcentaje de actividad que rozaba el 100% y me situaba entre los 5 proyectos más activos**. ¡Creo que para contar con un único desarrollador es mucho decir! Espero continuar siendo productivo y generar más contenido pronto.

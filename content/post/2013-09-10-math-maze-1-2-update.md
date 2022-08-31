@@ -1,0 +1,38 @@
+---
+id: 2751
+title: Math Maze 1.2 update
+date: 2013-09-10T17:15:25+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2751
+url: /games/math-maze-1-2-update/
+dsq_thread_id:
+  - 1852024009
+categories:
+  - Games development
+tags:
+  - Android
+  - brain
+  - Google Play
+  - libgdx
+  - math
+  - Math Maze
+  - puzzle
+  - update
+---
+
+[![google-play](/img/google-play-small.png)](https://play.google.com/store/apps/details?id=com.siondream.math)
+
+Quick update just to let you guys now that [Math Maze 1.2 is now live on the Google Play Store](https://play.google.com/store/apps/details?id=com.siondream.math). This is yet another update with tweaks motivated directly by incredibly wise and valuable user feedback. Here's the small list of changes:
+
+*   Added option to disable vibration
+*   Now allows to move app to the SD card
+*   Increased help text size
+
+I cannot thank enough those who are taking the time to play Math Maze and write a small review or send me an e-mail afterwards. I was aware of some of these little inconveniences but a few people raised new valid issues. The download count is far from being up the roof but the implication of certain users has certainly impressed me.
+
+A side note for fellow developers. Up until now, I only knew this from articles, but acknowledging legitimate user claims by leaving a reply on Google Play and then fixing their issue is a great practise. They will show you appreciation and probably change their rating along their comment.
+
+For the following days, the plan is to keep *"promoting"* Math Maze to try and reach its target audience and work on some real content. That is correct, new levels!
+
+Stay tuned.

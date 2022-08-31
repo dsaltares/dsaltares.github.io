@@ -1,0 +1,40 @@
+---
+title: "The problem of long-lived pull requests"
+date: 2022-06-27T00:00:00+00:00
+author: "David Saltares"
+categories: ["Leadership"]
+description: "PRs that stay open for too long can have a negative impact on team velocity, value delivered, stress levels and software quality. In this article I cover ways to make sure PRs do not stagnate while maintaining quality and velocity"
+keywords: ["Pull request", "leadership", "code review", "DORA metrics", "lead time for changes", "deployment frequency", "customer value", "software quality"]
+---
+
+![People pointing at a laptop screen](/img/code-review.jpg "By John Schnobrich on [Unsplash](https://unsplash.com/photos/FlPc9_VocJ4)")
+
+A developer in your team picks up a new ticket, dashes to implement the change and opens a brand new PR in no time. Brilliant! However, the team was not aligned on the solution approach. There are issues with the coding style, lack of tests and other little things. Back and forth ensues, and the PR stays open for about a week before it gets merged to `main`.
+
+It becomes a problem when this doesn’t happen just the one time. The good thing is that you’re not alone. I see this problem in teams all the time.
+
+Typically, a misalignment as to what productivity means causes the problem. Some developers may be optimising for number of PRs created when what you want is to deliver value constantly. [Laura Tacho](https://lauratacho.com/blog) covers the issue exceptionally well in this [Twitter thread](https://twitter.com/rhein_wein/status/1536351600620425216). Sometimes, folks may not be entirely aware of the impact of long-lived PRs.
+
+## 🔥 The impact
+
+The impact of having many open PRs for too long can be significant.
+
+- 💸 As Software Delivery slows down, customers receive value less often, and you run fewer experiments that give you feedback to improve your [PMF](https://en.wikipedia.org/wiki/Product/market_fit). You’re becoming less competitive!
+- 🥵 As most of the work is only [80% done](https://www.simplethread.com/the-10x-programmer-myth/), developers constantly jump between PRs and their in-progress work, resulting in a tremendous amount of context switching. This [slows everything down](https://pacohq.com/blog/guide/the-high-price-of-context-switching-for-developers/) and makes everyone more anxious.
+- ⏳ Many changes may be making their way into `main` while a PR remains open. The cost of integrating the stagnant PR skyrockets, and so does the risk of introducing somewhat incompatible changes that end up causing a regression. So much has changed in the meantime! High-performing teams tend to have a low [*lead time for changes*](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance).
+- 🚢 *[Deployment frequency](https://cloud.google.com/blog/products/devops-sre/using-the-four-keys-to-measure-your-devops-performance)* also plummets. Each deployment ships more changes, increasing the risk of an outage and the difficulty of identifying the root cause.
+
+## 🧯 The solution
+
+So how might you fix the problem?
+
+- 🎯 Set clear expectations for what is more valuable, time to PR or actual value delivered. Then, give feedback 1-1.
+- 🥇 Reward delivering value to end-users. Praise individuals and teams who do so publicly and ensure real impact directly translates into better performance evaluations.
+- 🤔 [Make sure engineers understand the Why](/help-engineers-understand-the-why/) of the work they are doing. That will help them focus on what matters most.
+- 💬 Having sync tech discussions, [RFCs](https://en.wikipedia.org/wiki/Request_for_Comments) or pairing sessions will help increase consensus before folks even create PRs. This is especially key for non-trivial tasks.
+- 🗺️ Make sure you have a [solid technology strategy](/series/technology-strategy/) to guide your team to make awesome decisions.
+- ✅ When the discussion is about code formatting, it is a clear sign you need to use a linter and code formatter like eslint and prettier.
+- 🧭 Having team-wide standards for writing UI components or implementing unit tests also helps get everyone on the same page.
+- 📚 Make the team aware of the impact long PRs have. The points outlined above are a good starting point!
+
+🙌 Thanks for reading! Let me know whether you found the article useful or if you have used a different strategy to make sure PRs in your team are healthy.

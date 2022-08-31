@@ -1,0 +1,36 @@
+---
+id: 1152
+title: 'Un nuevo enemigo: el Diablillo'
+date: 2011-03-15T15:00:07+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1152
+url: /games/un-nuevo-enemigo-el-diablillo/
+views:
+  - 860
+dsq_thread_id:
+  - 1852023950
+categories:
+  - Games development
+tags:
+  - AJR
+  - colaboración
+  - diablillo
+  - enemigos
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+![diablillo-collage.jpg](/img/sion-tower/collage-diablillo.jpg)
+
+El colaborador [Antonio Jiménez Rodríguez](http://ajr-portafolio.blogspot.com/) (AJR) continua trabajando con intensidad en el modelado, texturizado y animación de los personajes de Sion Tower. La prueba es este **nuevo enemigo, el Diablillo**.
+
+AJR partió de la descripción del enemigo en el [documento de diseño (GDD)](/proyectos/pfc/sion-tower/primera-version-del-gdd-de-sion-tower/ "Primera versión del GDD de Sion Tower"):
+
+> Criatura del averno de estatura ligeramente superior al Goblin. Cuenta con la cola y los cuernos clásicos de los demonios. No lleva ropa y su rojo oscuro de piel le confiere un aspecto más despiadado. Ataca con sus afiladas garras y no necesita ningún tipo de arma adicional.
+
+![diablillo-render-300x191.jpg](/img/sion-tower/diablillo.jpg)
+
+Los colaboradores están trabajando a un nivel impresionante, ¡hay que ponerse las pilas para estar a la altura! El siguiente paso es integrar el protagonista animado creado por AJR dentro de la demo técnica.

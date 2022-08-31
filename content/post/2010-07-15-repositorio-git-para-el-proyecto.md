@@ -1,0 +1,39 @@
+---
+id: 84
+title: Repositorio Git para el proyecto
+date: 2010-07-15T17:43:17+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=84
+url: /games/repositorio-git-para-el-proyecto/
+views:
+  - 859
+dsq_thread_id:
+  - 1852022741
+categories:
+  - Games development
+tags:
+  - Git
+  - Gitorious
+  - PFC
+  - Pro Git
+  - Subversion
+  - videojuegos
+---
+
+![git.png](/img/wp/git.png)
+
+Hasta ahora en los trabajos en los que he participado y que han requerido un sistema de control de versiones se ha utilizado [Subversion](http://es.wikipedia.org/wiki/Subversion). Funciona de maravilla en grupos pequeños y cuenta con una curva de aprendizaje más que razonable. Cuando la elección del sistema de control de versiones para mi proyecto parecía estar clara ha surgido la idea de utilizar [Git](http://en.wikipedia.org/wiki/Git_%28software%29) en su lugar.
+
+Muchos compañeros en la Universidad me han hablado de sus virtudes y he seguido su consejo. Git tiene un enorme potencial e incita a ser ordenado a la hora de realizar commits. Aunque tendría que añadir una línea a la lista de tecnologías a dominar de cara al proyecto me he lanzado a la piscina creando un repositorio Git en [Gitorious](http://gitorious.org/).
+
+Para hacer clone simplemente:
+
+```
+git clone git@gitorious.org:sion-tower/sion-tower.git
+```
+
+
+Para ir aprendiendo estoy leyendo [Pro Git](http://progit.org/book/), un libro excelente que explica detalladamente y de manera accesible tanto los conceptos como la forma de trabajar con Git. Se puede comprar una versión impresa aunque está disponible al completo en la página web.
+
+Por ahora sólo está la planificación pero espero que en breve tenga más contenido.

@@ -1,0 +1,59 @@
+---
+id: 170
+title: Play English, cómo hacer un juego educativo
+date: 2010-08-08T17:37:26+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=170
+url: /hobbies/play-english-como-hacer-un-juego-educativo/
+views:
+  - 1285
+dsq_thread_id:
+  - 1852023623
+categories:
+  - Hobbies
+tags:
+  - Arsgames
+  - educativo
+  - Play English
+  - PSP
+  - Tonika Games
+  - UCM
+  - videojuegos
+---
+
+El término *"juego educativo"* está lleno de connotaciones negativas, parece que necesariamente ha de ser un tostón impresionante jugarlo. Hace cierto tiempo me recomendaron escuchar una serie de conferencias pertenecientes al [*I Congreso Internacional de Videojuegos en la Universidad Complutense de Madrid*](http://videojuegoscongresoucm.blogspot.com/) publicadas en el feed de [Arsgames](http://www.arsgames.net/). En uno de los archivos sonoros encontré una exposición de Juancho Carrillo, Project Manager en [Tonika Games](http://tonika.es/) (pequeño estudio español), sobre juegos educativos. Allí fue donde descubrí **Play English**.
+
+![tonika.png](/img/wp/tonika.png)
+
+### Diversión mayor que aprendizaje
+
+Juancho explicaba que para hacer un videojuego educativo había que tener un concepto muy presente. **La diversión debe superar al aprendizaje**, en caso contrario el producto deja de ser un juego para convertirse en software educativo sin más. No soy un experto en videojuegos educativos, no obstante Play English es lo más cercano a ese concepto que he visto.
+
+Podéis escuchar la [conferencia completa aquí](http://blip.tv/file/3474673?filename=Arsgames-JuanchoCarrilloTheMoreYouPlayTheMoreYouLearn909.mp3):
+
+![play-english-01.png](/img/wp/play-english-01.png)
+
+### Investigando un robo
+
+Play English es una suerte de **aventura gráfica para PSP** en la que nos metemos en el pellejo de **Jaime Rubio** (James Blond), un detective de una agencia privada que recibe la misión de **investigar un robo** en la National Gallery. Jaime Rubio es un grandioso detective pero tiene un pequeño defecto, mintió en su currículum sobre su nivel de inglés… ¡no tiene ni idea y le va a caer una buena! Deberás conducirlo por su investigación conversando con decenas de personajes y tratando de salir airoso de situaciones de peligro.
+
+### Las mecánicas
+
+La variedad de situaciones no es su punto más fuerte, no obstante cuenta con suficientes como para no caer en la monotonía. Tendremos que **interrogar** a otros personajes, resolver **puzles** y seguir indicaciones mediante voz. Algunos ejemplos que se me ocurren son: tener que conducir siguiendo las instrucciones sonoras de un GPS, desactivar una bomba escuchando qué colores cortar etc. En cualquier caso, la mayoría del tiempo estaremos **conversando** y tratando de formular frases correctas. En media hora de juego habremos practicado más inglés del que creemos.
+
+![play-english-03.jpg](/img/wp/play-english-03.jpg)
+
+### Distrayendo al alumno
+
+El humor es muy importante en Play English, aprender debe ser divertido y en esta ocasión lo es. Las **conversaciones están llenas de guiños**, referencias y sutilezas que nos harán esbozar una sonrisa en más de una ocasión. Constantemente habrá toques de humor en las respuestas incorrectas, cuidadosamente escogidas pensando en los fallos que suelen cometer los españoles al aprender inglés. El simple hecho de que James Rubio haya mentido en su CV es un buen ejemplo.
+
+El discurso de Juancho Carrillo se demuestra en Play English, es un **juego sin grandiosas pretensiones**. No quiere ser el próximo Chains of Olympus pero hace un gran trabajo dentro de su categoría. Uniendo el humor con un guión interesante consigue que un niño **no perciba estar aprendiendo**. Logro, digno de admiración.
+
+Por supuesto, el título está principalmente dirigido a niños aunque existen **dos niveles de dificultad** que incidirán notablemente en la jugabilidad. La velocidad de las frases aumenta así como su contenido. Sin duda, un buen trabajo a la hora de ofrecer cierta adaptabilidad a los conocimientos del usuario.
+
+![play-english-04.png](/img/wp/play-english-04.png)
+
+### Resumiendo
+
+Play English es un producto de un pequeño estudio español con un objetivo muy claro, conseguir que practicar inglés sea divertido y no podemos negar que lo haya conseguido. Sabiendo que en otros aspectos resulta limitado (sobre todo en cuanto a tecnología se refiere) resulta una opción muy interesante para los niños de la casa. Desde luego, **todo un caso de estudio** para aprender sobre juegos educativos.

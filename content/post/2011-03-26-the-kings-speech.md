@@ -1,0 +1,35 @@
+---
+id: 1177
+title: "The King's Speech"
+date: 2011-03-26T14:00:23+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1177
+url: /hobbies/the-kings-speech/
+views:
+  - 837
+dsq_thread_id:
+  - 1852023889
+categories:
+  - Hobbies
+tags:
+  - cine
+  - Colin Firth
+  - drama
+  - El discurso del Rey
+  - histórico
+  - Oscar
+  - "The King's Speech"
+---
+
+![the-kings-speech.jpg](/img/wp/the-kings-speech.jpg)
+
+Lamentablemente siempre me las arreglo para ver en la gran pantalla películas mediocres y acabo dejando lo mejor para después. Ayer pude sentarme con tranquilidad a ver la **cuatro veces galardonada en los Oscar** (dirección, guión, protagonista y fotografía): **[El discurso del rey](http://www.imdb.com/title/tt1504320/)**.
+
+**Bertie** es como llama cariñosamente su familia al Duque de York ([Colin Firth](http://www.imdb.com/name/nm0000147/)), segundo hijo del rey George V de Inglaterra. **Su grave tartamudez le persigue** constantemente y lo atormenta cada vez que debe hablar en público. Ha probado decenas de métodos y doctores de renombre sin éxito alguno. Cuando ya había perdido toda esperanza, encuentra a Lionel Rogue, un especialista en problemas del habla que empleará técnicas poco ortodoxas para ayudarle.
+
+**Colin Firth se ha ganado el Oscar a pulso** con su emotiva interpretación de George VI llena de matices y contrastes. Consigue imprimir el temperamento, frustración y fuerza necesarios a su personaje de forma que alcanza de lleno al espectador. No sé si esto le ha ocurrido a más gente pero desde el primer minuto **consiguió conectar conmigo**. El resto de actores hacen papeles muy buenos pero es Firth quien sobresale por encima del resto con diferencia.
+
+Sin ser un gurú gafa-pasta pienso que **el guión es magnífico**. Conseguir que una película de dos horas sin acción alguna fluya como un riachuelo sin ningún altibajo es terriblemente complicado. El discurso del rey intercambia las escenas de máxima importancia con el resto de forma muy equilibrada. Así consigue mantener el interés durante todo el metraje.
+
+Poco puedo criticar de la que en mi opinión es una de las mejores películas del año pasado. No tengo constancia de la calidad del doblaje ni si las interpretaciones pierden fuerza por el mismo ya que la he visto en **versión original** (inglés británico). No me queda otra que **recomendarla al 100%**.

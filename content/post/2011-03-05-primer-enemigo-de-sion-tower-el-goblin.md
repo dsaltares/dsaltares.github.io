@@ -1,0 +1,37 @@
+---
+id: 1094
+title: 'Primer enemigo de Sion Tower: el Goblin'
+date: 2011-03-05T13:55:39+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1094
+url: /games/primer-enemigo-de-sion-tower-el-goblin/
+views:
+  - 920
+dsq_thread_id:
+  - 1852023737
+categories:
+  - Games development
+tags:
+  - AJR
+  - arte
+  - colaboración
+  - PFC
+  - Sion Tower
+  - V CUSL
+  - videojuegos
+---
+
+![goblin-collage.jpg](/img/sion-tower/collage-goblin.jpg)
+
+[Antonio Jiménez Rodríguez (AJR)](http://ajr-portafolio.blogspot.com/), nuestro artista 3D nos ofrece el **primer enemigo del juego: el Goblin**. Una vez más, demuestra su profesionalidad a través de este genial trabajo. ¡Con colaboradores así, da gusto trabajar!
+
+La descripción del enemigo en el [documento de diseño de Sion Tower](/proyectos/pfc/sion-tower/primera-version-del-gdd-de-sion-tower/ "Primera versión del GDD de Sion Tower") es lo que ha tomado AJR para el bocetado y posterior modelado. Esto demuestra la **importancia del GDD** para transmitir los conceptos del juego a todos los miembros del equipo.
+
+> Enemigo básico sin ninguna afinidad elemental. Clásica criatura verde, desagradable y de baja estatura. Va armado con una tosca espada corta y un burdo taparrabos. Acuden en gran número (su gran ventaja), son ágiles pero no tienen grandes habilidades en combate. 
+
+![goblin-boceto.jpg](/img/sion-tower/boceto-goblin.jpg)
+
+**Es improbable que me sea posible incluir enemigos en la demo técnica** que quiero lanzar de cara a la fase local del CUSL. Aún necesito trabajar mucho la búsqueda de caminos y la inteligencia artificial. No obstante, el protagonista que ya he mostrado en otra ocasión sí hará acto de presencia.
+
+Estad atentos porque **en los próximos días hablaré de más colaboraciones**. Ni yo mismo me lo creo y es que IberOgre y Sion Tower ya no son sólo cosa mía, lo que me enorgullece muchísimo. La cooperación y el trabajo en comunidad **es exactamente lo que se pretende con el CUSL**.

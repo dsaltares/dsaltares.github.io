@@ -1,0 +1,36 @@
+---
+id: 3269
+title: New domain and hosting
+date: 2015-03-22T14:36:18+00:00
+author: David Saltares
+layout: post
+guid: /?p=3269
+url: /general/new-domain-and-hosting/
+dsq_thread_id:
+  - 3617028677
+categories:
+  - General
+---
+It's been [over 5 years](/general/5-years-old/) since I registered `siondream.com`. At that time, I also signed up for a shared hosting plan with [Hostgator](http://hostgator.com/). Unfortunately, I'm no longer 16 years old, so the domain felt a bit dated. A change was long overdue, but I can be real lazy during the weekend. Finally I got around to do a proper migration of both domain name and hosting.
+
+Welcome to `saltares.com`!
+
+Here's a brief of my experience with Hostgator and the migration process.
+
+![hostgator.png](/img/others/hostgator.png)
+
+Hostgator wasn't actually that bad. It had excellent client support and my plan offered "unlimited" disk space and monthly data transfer at a fair price. However, at the end of the day, both were limited by the number of people you shared your instance with. In all honestly, the uptime could have been better as it wasn't rare for me to get notifications about the blog being unreachable.
+
+The worst part about Hostgator were the access limitations. I couldn't just run whatever software I wanted on the server. Whilst it supported PHP, I believe Java or Python weren't among the list. I simply didn't have the permissions to install anything.
+
+![digitalocean.png](/img/others/digitalocean.png)
+
+A few friends have [Digital Ocean](https://www.digitalocean.com/) droplets and are very happy with the service, so I went for it and got my Ubuntu SSD machine. I took advantage of the [GitHub student pack](https://education.github.com/pack), which offers a $100 voucher, meaning I don't have to pay at all for the first 20 months.
+
+Yes, you have to set absolutely everything up yourself, including a web server, PHP, MySQL, etc. Conveniently, Digital Ocean's website has a myriad of [tutorials](https://www.digitalocean.com/community/tutorials) with detailed steps on how to do all of this. Great way to polish up my rusty Linux skills.
+
+![namecheap.png](/img/others/namecheap.png)
+
+After digging around for a bit, I registered `saltares.com` with [Namecheap](https://www.namecheap.com/). Despite being put off by the name, a lot of people recommended it and now I can see why. The DNS setup propagated extremely quickly and there is no fuss. Additionally, it's really easy to find a [discount code](http://www.namecheapcoupons.com/), so I got the domain during a year for £6, not bad.
+
+All of this should have been seamless for everyone, so please contact me if something is not working quite well. Requests to `siondream.com` now point to my droplet, so the old domain points to the same thing as `saltares.com`.

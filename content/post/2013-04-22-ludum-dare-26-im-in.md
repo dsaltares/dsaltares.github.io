@@ -1,0 +1,35 @@
+---
+id: 2594
+title: 'Ludum Dare #26: I"m in!'
+date: 2013-04-22T22:19:31+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2594
+url: /games/ludum-dare-26-im-in/
+dsq_thread_id:
+  - 1885385349
+categories:
+  - Games development
+tags:
+  - competition
+  - Game Jam
+  - Inkscape
+  - Java
+  - libgdx
+  - Ludum Dare
+  - SFXR
+---
+
+![Ludum-Dare-featured-image-thumb-478x222-3939.jpg](/img/wp/Ludum-Dare.jpg)
+
+[Ludum Dare #24](/games/ld24-evolution-postmortem/ "LD#24 – Evolution Postmortem") was my first game jam, an experience I found most enjoyable. Sadly, I couldn't make it to its 25th edition. However, unless something major happens, I"m totally in for [Ludum Dare #26](http://www.ludumdare.com/compo/category/ld-26/) which will take place next weekend. Aiming at respecting tradition I shall post my arsenal of choice, unsurprisingly, they are as follow.
+
+*   **Environment**: Java + Eclipse.
+*   **Libraries**: libgdx & friends, maybe something from my [codebase](https://github.com/dsaltares).
+*   **Graphics**: Inkscape, TexturePacker and Flash if I require animations.
+*   **Audio**: Audacity and the dodgy effects produced by sfxr.
+*   **Others**: depending on game details I could use Tiled for level design, Photoshop.
+
+The goal is to finish a game that sucks as less as possible while retaining my mental sanity and some physical health. That means going for a jog each day and keeping the caffeine intake under control.
+
+Keeping things short, I"ll be posting progress updates on [Twitter](https://twitter.com/siondream) all weekend and a proper postmortem article will follow on this very blog.

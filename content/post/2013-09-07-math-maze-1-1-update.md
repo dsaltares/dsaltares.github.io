@@ -1,0 +1,42 @@
+---
+id: 2742
+title: Math Maze 1.1 update
+date: 2013-09-07T20:25:03+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2742
+url: /games/math-maze-1-1-update/
+dsq_thread_id:
+  - 1852024015
+categories:
+  - Games development
+tags:
+  - Android
+  - educational games
+  - Google Play
+  - libgdx
+  - math
+  - Math Maze
+  - puzzle
+  - update
+  - videogames
+---
+
+I released [Math Maze](https://play.google.com/store/apps/details?id=com.siondream.math) 4 days ago and, even though it's not on any top list of any kind, I"m getting loads of positive feedback through Twitter and Google Play itself. Only 17 ratings but averaging a total of 4.9 stars. Some of the comments might not even come from family nor friends! Impressive, isn't it?
+
+My intent was to make changes as per user feedback and so, today, Math Maze 1.1 went live featuring the following improvements:
+
+*   New languages: French and German
+*   Fixes to the Spanish localisation (shame on me, really…)
+*   Rate button added to the main menu
+*   Feedback button added to the main menu
+
+![math-maze-menu.png](/img/math-maze/math-maze-menu.png)
+
+Math Maze 1.2 is already on the way and will be available soon. Unfortunately, it won't feature any new content just yet, that will come later. There are plans for, at least, 10 additional levels and I"ll take it from there once those are out.
+
+Marketing was uncharted territory to me and it pretty much still is. I've been posting regularly on [Twitter](https://twitter.com/siondream) and [Facebook](https://www.facebook.com/siondream) and sent a few emails out to small games/educational sites. Surprisingly, Math Maze has been featured on [The Android Parent](http://www.androidparent.us/2013/09/06/math-maze-new-game/) and [AndroidTapp](http://www.androidtapp.com/app-weekender-40-brand-new-apps-you-should-try-this-weekend-week-36/) so far. Additionally, I've been trying to reach out to local primary schools, we"ll see how that goes.
+
+As much time consuming the process is, the net result is being really positive. The reward of learning this for myself is priceless.
+
+Will keep you updated!

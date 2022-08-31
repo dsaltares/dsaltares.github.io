@@ -1,0 +1,38 @@
+---
+id: 1692
+title: 'Humble Indie Bundle #3'
+date: 2011-07-30T12:52:02+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1692
+url: /hobbies/humble-indie-bundle-3/
+views:
+  - 1514
+dsq_thread_id:
+  - 1852022878
+categories:
+  - Hobbies
+tags:
+  - And Yet it Moves
+  - "Child's Play"
+  - Cogs
+  - Crayon Physics
+  - DRM
+  - Electronic Frontier Foundation
+  - Hammerfight
+  - Humble Indie Bundle
+  - Linux
+  - Steam
+  - videojuegos
+  - VVVVVV
+---
+
+![hiumble-indie-bundle-3.jpg](/img/wp/hiumble-indie-bundle-3.jpg)
+
+Vuelvo de las sombras de la memoria de mi [Proyecto Fin de Carrera](/category/proyectos/pfc/) (siento la ausencia de actualizaciones) con una fugaz intervención. Quiero hablarlos de la tercera edición del magnífico pack **[Humble Indie Bundle](http://www.humblebundle.com/)**, que aglutina 5 nuevos juegos independientes.
+
+En esta ocasión **están disponibles [Crayon Physics](http://www.crayonphysics.com/), [Cogs](http://www.cogsgame.com/), [VVVVVV](http://thelettervsixtim.es/), [Hammerfight](http://store.steampowered.com/app/41100) y [And Yet It Moves](http://store.steampowered.com/app/18700/)**. La gracia de esta colección es que **puedes pagar la cifra que desees**, desde un mísero centavo de dólar (no seas tacaño) hasta los más de 4.000 dólares que ha apoquinado Notch (creador de Minecraft). Como nos tienen acostumbrados, todos los juegos están **libres de DRM** y son **multiplataforma** (Windows, GNU/Linux y Mac). Por si fuera poco, puedes añadirlos a tu cuenta de **Steam** sin ningún problema.
+
+El proceso es similar al de las ocasiones anteriores, introduces la cifra y la divides entre desarrolladores, organizadores del Bundle y organizaciones benéficas ([Child's Play](http://www.childsplaycharity.org/) y la [Electronic Frontier Foundation](http://www.eff.org/)). Pagas por Paypal, Amazon o Google Checkout y los enlaces de descarga llegan a tu correo electrónico.
+
+Yo ya tengo mi pack, ahora la pregunta es, **¿cuándo podré jugarlo tranquilamente?**

@@ -1,0 +1,31 @@
+---
+id: 3306
+title: Libgdx at Intel Buzz Workshop Stockholm 2015
+date: 2015-06-28T21:41:47+00:00
+author: David Saltares
+layout: post
+guid: /?p=3306
+url: /games/libgdx-at-intel-buzz-workshop-stockholm-2015/
+dsq_thread_id:
+  - 3887511951
+categories:
+  - Games development
+tags:
+  - conference
+  - games development
+  - Intel Buzz Workshop
+  - libgdx
+  - programming
+  - talk
+---
+
+![intell-buzz-workshop.png](/img/wp/intell-buzz-workshop.png)
+
+Quick update to let you know I have been invited to talk about all Libgdx things
+at [Intel Buzz Workshop 2015](http://intelbuzz.bemyapp.com/), which will take
+place in Stockholm on July 17th. It will be a one day conference on mobile games
+development and will feature talks on virtual reality, Unreal Engine 4 and lots
+of cool stuff, check the [programme](http://intelbuzz.bemyapp.com/stockholm/#schedule)
+for more details.
+
+[Register](http://intelbuzz.bemyapp.com/stockholm/#schedule) if you are interested, tickets are free until July 6th! Hope to see you there!

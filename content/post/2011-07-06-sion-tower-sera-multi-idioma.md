@@ -1,0 +1,34 @@
+---
+id: 1680
+title: Sion Tower será multi-idioma
+date: 2011-07-06T15:52:08+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1680
+url: /games/sion-tower-sera-multi-idioma/
+views:
+  - 1573
+dsq_thread_id:
+  - 1852024303
+categories:
+  - Games development
+tags:
+  - gettext
+  - i18n
+  - IberOgre
+  - internacionalización
+  - MyGUI
+  - Ogre3D
+  - Sion Tower
+  - videojuegos
+---
+
+![siontower-gettext.png](/img/wp/siontower-gettext.png)
+
+Era algo que llevaba queriendo implementar en [Sion Tower](/tag/sion-tower/) y finalmente he visto la oportunidad. **Sion Tower estará disponible en varios idiomas** gracias a la biblioteca libre de internacionalización gettext. Por el momento os puedo confirmar tres idiomas: español, inglés y francés. Sigue leyendo para conocer los detalles.
+
+**[GNU gettext](http://en.wikipedia.org/wiki/Gettext) es prácticamente un estándar** en la internacionalización de software. Hasta el momento lo había utilizado en [gLapse](/proyectos/glapse/) pero estoy encantado con el sistema. Soy consciente de que Sion Tower es el ejemplo final de IberOgre y no pretendo llegar a demasiado público. No obstante, uno de los objetivos de la wiki es fomentar buenas prácticas de desarrollo y este puede ser un gran ejemplo.
+
+**Internacionalizar un proyecto abre las puertas** a que nuevos colaboradores se interesen y aporten traducciones. La experiencia con gLapse no podría haber sido mejor, no tardé en recibir traducciones al francés, japonés y alemán. Si quieres aprender, te **recomiendo un [pequeño, directo y claro manual](http://osl.uca.es/files/hackathon/gettext.pdf)** que confeccionó mi compañero José Tomás Tocino.
+
+Pronto escribiré sobre los problemas a la hora de internacionalizar un juego que utilice [MyGUI](http://mygui.info/) como biblioteca para la interfaz. He desarrollado un pequeño script que puede facilitarle las cosas a personas en mi misma situación.

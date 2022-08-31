@@ -1,0 +1,48 @@
+---
+id: 762
+title: Sistema de gestión de tareas en Red Iris
+date: 2010-12-05T19:37:50+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=762
+url: /games/sistema-de-gestion-de-tareas-en-red-iris/
+views:
+  - 700
+dsq_thread_id:
+  - 2017934939
+categories:
+  - Games development
+tags:
+  - Forja
+  - IberOgre
+  - PFC
+  - Red Iris
+  - Sion Tower
+  - tareas
+  - V CUSL
+---
+
+![gestion-tareas.png](/img/wp/gestion-tareas.png)
+
+**Gestionar de forma eficiente el tiempo que le dedico al proyecto es complicado**. Tras una dura mañana de trabajo, redactar un artículo para IberOgre o programar un módulo de Sion Tower se vuelve una carrera cuesta arriba. Aún así no me ha ido del todo mal hasta el momento, pues la wiki tiene varios artículos publicados y el GDD del videojuego está avanzado. En cualquier caso, espero no ser el único que tenga estos problemas. Al grano, con el objetivo de aumentar mi rendimiento h**e decido utilizar el [sistema de tareas que ofrece la forja de Red Iris](https://forja.rediris.es/pm/?group_id=820)**.
+
+### ¿Por qué el sistema de Red Iris?
+
+Sé que no es el mejor software para administrar y controlar las tareas de un proyecto pero tiene sus ventajas. La primera es su **carácter público**. No tendría sentido trabajar en software libre y mantener las tareas en un fichero privado de mi disco duro. De esta manera los interesados pueden ver en qué se trabaja actualmente y cuáles serán las características o artículos que se harán públicos en el futuro próximo.
+
+Además, cualquier interesado conocerá los puntos flacos y las tareas que se han quedado descolgadas esperando un empujón. Por tanto, creo que es una **buena estrategia para atraer colaboradores** y facilitarles su integración. ¡Aún estoy a la caza de artistas!
+
+### Organización de las tareas
+
+Para una mayor claridad, he organizado las tareas de la siguiente forma:
+
+*   [**Artículos IberOgre**](https://forja.rediris.es/pm/task.php?group_project_id=1457&group_id=820&func=browse): artículos que tengo pensado incluir en la wiki así como los puntos a mejorar en los ya existentes.
+*   [**Sion Tower – Diseño**](https://forja.rediris.es/pm/task.php?group_project_id=1458&group_id=820&func=browse): tareas de diseño del videojuego.
+*   [**Sion Tower – Análisis**](https://forja.rediris.es/pm/task.php?group_project_id=1661&group_id=820&func=browse): tareas relacionadas con la fase de análisis del videojuego.
+*   [**Sion Tower – Sistema de menús**](https://forja.rediris.es/pm/task.php?group_project_id=1662&group_id=820&func=browse): tareas para el sistema de menús. El juego cuenta con muchas pantallas intermedias, por lo que se merece una categoría independiente.
+*   [**Sion Tower – Juego**](https://forja.rediris.es/pm/task.php?group_project_id=1663&group_id=820&func=browse): tareas relacionadas con la implementación del sistema de juego.
+*   [**Sion Tower – Arte**](https://forja.rediris.es/pm/task.php?group_project_id=1664&group_id=820&func=browse): tareas relacionadas con el apartado gráfico y sonoro del juego.
+
+De cara al Hackathon que se celebrará en la Universidad de Cádiz para los participantes del V CUSL y otros proyectos, crearé las tareas que necesito. ¡Seguro que será una experiencia que merece la pena!
+
+**Espero poder aumentar mi productividad** estableciendo tareas cortas y objetivos realizables a corto plazo. Trabajando poco a poco pero de forma constante conseguiré buenos resultados.

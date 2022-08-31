@@ -1,0 +1,28 @@
+---
+id: 3092
+title: Super Jumper Ashley remake
+date: 2014-07-27T20:08:56+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3092
+url: /general/super-jumper-ashley-remake/
+dsq_thread_id:
+  - 2877983092
+categories:
+  - General
+tags:
+  - Ashley
+  - entity systems
+  - games development
+  - Java
+  - libgdx
+  - programming
+---
+
+![super-jumper-ashley](/img/wp/super-jumper-ashley.png)
+
+[Ashley Super Jumper](https://github.com/dsaltares/ashley-superjumper) has been my weekend project. It is nothing more than a clone of the [Libgdx demo game](https://github.com/libgdx/libgdx-demo-superjumper). The catch is that it goes for an entity system approach rather than the classic inheritance model. Naturally, it uses Ashley.
+
+The point was to have a reference project folks could check out in order to understand how entity systems in general and Ashley in particular work.
+
+Maybe one day, I'll post a proper article explaining the design behind the entity systems at play in Super Jumper. I guess that could be useful.

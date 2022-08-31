@@ -1,0 +1,74 @@
+---
+id: 1248
+title: Gestión de estados de juego
+date: 2011-04-06T14:10:13+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1248
+url: /games/gestion-de-estados-de-juego/
+views:
+  - 992
+dsq_thread_id:
+  - 1852024258
+categories:
+  - Games development
+tags:
+  - estados de juego
+  - Ogre3D
+  - OIS
+  - PFC
+  - Sion Tower
+  - State
+  - StateManager
+  - videojuegos
+---
+
+![titulo-statemanager.png](/img/wp/titulo-statemanager.png)
+
+**Sion Tower cuenta con varios estados y transiciones** los cuales están especificados en el [Documento de Diseño (GDD)](http://forja.rediris.es/frs/download.php/2019/gdd.pdf) que publiqué hace tiempo. Por supuesto, me refiero a estados como *"Juego"*, *"Menú"*, *"Selección de nivel"*. Me parece interesante comentar a vista de pájaro estos estados así como el sistema subyacente que los gestiona. Puede ser una buena manera para saber hasta dónde pretende llegar el juego. En este artículo hablaremos de las clases *State* y *StateManager* entre otras.
+
+### Diagrama de estados
+
+En el siguiente diagrama se muestran los distintos estados en los que se puede encontrar Sion Tower:
+
+![flowchart.png](/img/wp/flowchart.png)
+
+*   **Menú principal**: se muestra el logo del juego y la torre desde el exterior. El usuario puede elegir entre *"Selección de perfil"*, *"Créditos"* o *"Salir"*.
+*   **Créditos**: en la pantalla de créditos se sustituyen las opciones del menú principal por los nombres de los implicados en el desarrollo, como era de esperar. La única opción es volver al menú.
+*   **Selección de perfil**: el usuario puede seleccionar su partida entre la lista de partidas guardadas. Así podrá recuperar los niveles desbloqueados y las habilidades adquiridas por el personaje.
+*   **Selección de nivel**: se muestra una lista de los niveles disponibles según el perfil elegido. De cada nivel aparece el nombre, una descripción y un icono.
+*   **Selección de habilidades**: no es posible utilizar todas las habilidades en cada nivel, el usuario debe seleccionar un número limitado de ellas.
+*   **Juego**: la pantalla de juego, donde se desarrolla la acción. Si el usuario vence a los enemigos se pasa a la pantalla de victoria, en caso contrario le aparece un mensaje y se reinicia el nivel.
+*   **Fin de nivel**: cuando el usuario vence se muestran los puntos obtenidos y otros logros como haber desbloqueado alguna habilidad nueva.
+
+Para detalles adicionales podéis acudir al documento de diseño que incluye bocetos completos de cada uno de los estados.
+
+### Diagrama de clases
+
+A continuación podéis ver un diagrama UML con las clases que gestionan los estados del juego. Es bastante grande así que lo mejor es hacer click sobre la imagen para ampliarla.
+
+![statemanager.png](/img/wp/statemanager.png)
+
+### La clase State
+
+*State* es una clase abstracta que **modela un estado de juego genérico**. Cuenta con los métodos virtuales *load* y *clear* para cargar y liberar los elementos que contiene sin necesidad de destruir el estado completamente. Todos los estados poseen un método *update* que recibe el tiempo en ms desde el último frame (*deltaT*) para actualizar lógicamente los elementos de dicho estado. Los estados están preparados para recibir los eventos que captura el *StateManager*, por ello cuenta con los manejadores típicos de la biblioteca OIS ([más sobre OIS en IberOgre](http://osl2.uca.es/iberogre/index.php/Manejo_b%C3%A1sico_de_OIS)).
+
+**Por cada estado de juego tendríamos una clase** que herede de *State* como podrían ser *StateGame*, *StateMenu* o *StateCredits*. Por ejemplo, el estado de juego controlaría al personaje, los enemigos y el escenario. Como podéis ver es un sistema muy genérico y extensible para otros proyectos. De hecho estoy pensando en liberarlo de forma independiente.
+
+![menu-principal.png](/img/wp/menu-principal.png)
+
+### La clase StateManager
+
+La clase *StateManager* lleva internamente una **pila de estados** lo que nos permite volver atrás por los menús del juego de forma muy sencilla. **El tope de la pila sería el estado activo** mientras que el resto pueden estar en pausa o ejecutándose en segundo plano. A través de los metodos *changeState*, *pushState*, *popState* y *popAllStates* se nos permite gestionar los cambios entre estados. No hay que tener cuidado con el momento en el que se hace un *popState*, no se destruye ningún estado en ese preciso instante. El *StateManager* espera a un momento seguro para hacerlo, **no más segmentos violados** en ese aspecto.
+
+![statestack.png](/img/wp/statestack.png)
+
+*StateManager* inicia el bucle de juego con el método *start* y se comporta como un *FrameListener*. En cada iteración se disparan los eventos *frameStarted*, *frameEnded* y *frameRenderingQueued* para actualizar lógicamente los estados activos de la pila. Así mismo recibe eventos de ventana, de teclado y de ratón que transmite a los eventos que controla.
+
+**La idea de la pila de estados** y las transiciones seguras la tomé de uno de los proyectos de mi compañero [José Tomás Tocino](http://josetomastocino.com/). Lo utilizaba en un juego con [Gosu](http://www.libgosu.org/) mientras que yo lo he adaptado a Ogre y OIS.
+
+### Conclusiones
+
+Con esto terminamos la documentación de la gestión de estados de Sion Tower. Habréis comprobado que **de una forma sencilla y ordenada** podemos añadir, modificar y manejar nuestros estados de juego. Sed libres (GPL 3) de reutilizar este código alojado en la [forja de Red Iris](http://forja.rediris.es/scm/?group_id=820).
+
+**¡Se aceptan sugerencias, críticas y lanzamiento de fruta podrida!**

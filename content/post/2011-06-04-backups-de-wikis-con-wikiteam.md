@@ -1,0 +1,55 @@
+---
+id: 1587
+title: Backups de wikis con Wikiteam
+date: 2011-06-04T10:45:05+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1587
+url: /computing/backups-de-wikis-con-wikiteam/
+views:
+  - 1130
+dsq_thread_id:
+  - 1894444331
+categories:
+  - Computing
+tags:
+  - backups
+  - IberOgre
+  - PFC
+  - Software Libre
+  - Wiki
+  - Wikimedia
+  - Wikiteam
+---
+
+![backups-wikiteam1.png](/img/wp/backups-wikiteam1.png)
+
+**[IberOgre](http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal) está alojada en los servidores de la [OSLUCA](http://osl.uca.es/)** a los que no tengo acceso y, aunque sé que se hacen **copias de seguridad** diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: **[Wikiteam](http://code.google.com/p/wikiteam/)**. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.
+
+### ¿Qué hace Wikiteam?
+
+**Wikiteam** es un script GPL v3 escrito en Python que **descarga todo el contenido de una wiki** que utilice el sistema Mediawiki (actualmente el más extendido). No sólo es capaz de obtener el estado actual de una wiki sino que también recupera **todo el historial** de cambios así como las **imágenes y ficheros** que se hayan subido. El único (pero comprensible) problema es que no recupera los usuarios ya que no requiere acceso a la base de datos.
+
+El objetivo principal de Wikiteam es **permitir que cualquier usuario pueda hacer una copia de una wiki**. Si el sitio deja de existir por cualquier motivo, el conocimiento no se habrá perdido ya que este usuario podría restaurar la copia en un nuevo servidor. De hecho, en la forja del proyecto tienen disponibles backups de diversas wikis.
+
+### Hacer backups con Wikiteam
+
+Generar copias de seguridad es harto sencillo y sólo requiere ejecutar el script con los parámetros adecuados. Sigue los siguientes pasos:
+
+1.  [Descarga el script](http://code.google.com/p/wikiteam/source/browse/trunk/dumpgenerator.py) desde su forja de Google Code.
+2.  Ejecuta el siguiente comando en el directorio en elque desees guardar la copia:
+
+```
+python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
+```
+
+
+El significado de los parámetros es el siguiente:
+
+*   **api**: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: [http://osl2.uca.es/iberogre/api.php](http://osl2.uca.es/iberogre/api.php)
+*   **xml**: recupera todas las páginas de la wiki junto a su historial-
+*   **images**: recupera todas las imágenes y ficheros de la wiki.
+
+### Restaurar backups con Wikiteam
+
+Volcar las copias en otra instancia de Mediawiki es ligeramente más complejo y requiere, evidentemente, de acceso al servidor. Lo recomendable es que sigas [el proceso detallado en la propia wiki de Mediawiki](http://www.mediawiki.org/wiki/Manual:Importing_XML_dumps).

@@ -1,0 +1,49 @@
+---
+id: 904
+title: Próximos objetivos en IberOgre y Sion Tower
+date: 2011-01-23T11:19:51+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=904
+url: /games/proximos-objetivos-en-iberogre-y-sion-tower/
+views:
+  - 838
+dsq_thread_id:
+  - 1852023783
+categories:
+  - Games development
+tags:
+  - desarrollo
+  - IberOgre
+  - Ogre 3D
+  - PFC
+  - Sion Tower
+  - videojuegos
+  - Wiki
+---
+
+![objetivos-pfc.png](/img/wp/objetivos-pfc.png)
+
+Hace mes y medio comencé a utilizar el [sistema de gestión de tareas de Red Iris](/proyectos/pfc/sistema-de-gestion-de-tareas-en-red-iris/) para organizarme. Es mucho mejor **marcarse tareas realizables en poco tiempo** que trabajar con un plan a largo plazo. Por supuesto, estos objetivos deben estar encaminados hacia el plan global pero he comprobado que en proyectos pequeños se es más productivo con tareas concretas. Recientemente he ido cubriendo los objetivos cumplidos en forma de artículos publicados o sistemas desarrollados. A continuación, **comento el camino a seguir en ambas ramas de mi proyecto**.
+
+### IberOgre
+
+*   **Difusión**: IberOgre ha conseguido lectores principalmente desde Twitter pero va siendo hora de ampliar miras. Debo emprender una pequeña campaña de difusión por foros de desarrolladores. Los objetivos principales serían comunidades de hispanohablantes y sitios directamente relacionados con Ogre en busca de los usuarios que hablen español.
+*   **Contacto con la comunidad**: creo que la comunicación con la comunidad es buena ya que he recibido sugerencias, consejos y reportes de errores. No obstante, estoy decidido a mejorarla. Para ello le daré más actividad a la cuenta de Twitter y haré más visibles todos los medios de comunicación con el proyecto (correo, blog, etc).
+*   **"Inicialización del motor"**: desde el comienzo está pendiente un artículo sobre la inicialización de Ogre, imprescindible para los principiantes. Este pequeño objetivo tiene la máxima prioridad.
+*   **"Animación"**: artículo que repase el subsistema de animación de Ogre. Nos centraremos principalmente en Skeletal Animation pero mencionaremos el resto de técnicas disponibles.
+*   **"Materiales"**: artículo que desgrane el sistema de materiales de Ogre. Aprenderemos a aplicar texturas y efectos sencillos a los objetos de nuestra escena.
+
+Tengo más objetivos en mente pero primero nos centraremos en un subconjunto de ellos. Si algo estoy aprendiendo es que no se puede abarcar demasiado de buenas a primeras.
+
+### Sion Tower
+
+*   **Sistema de colisiones**: he estudiado bibliotecas como [Bullet](http://www.ogre3d.org/tikiwiki/OgreBullet&structure=Libraries) y [ODE](http://www.ogre3d.org/tikiwiki/OgreODE) pero son proyectos demasiado grandes (matar moscas a cañonazos). Prefiero desarrollar mi pequeño subsistema de detección y respuesta de colisiones. De esta forma aprenderé las bases de las técnicas disponibles. Es posible que decida publicar el sistema de forma independiente ya que es un elemento muy solicitado en el foro de Ogre.
+*   **Sistema de niveles**: sigo estudiando la forma de cargar los niveles a partir de ficheros. Es probable que acabe utilizando el [formato DotScene](/proyectos/pfc/sion-tower/ogitor-instalacion-en-linux-y-el-formato-dotscene) como ya mencioné pero tengo que manejar información que no contempla dicho formato. Nombre y descripción del nivel, icono, música que sonará, formas que componen el modelo de colisiones de los objetos… Sin duda, un tema peliagudo.
+*   **Demo técnica**: es imprescindible llegar a la fase local del concurso con una demo del juego. No importa que no tenga los menús, efectos bonitos y demás accesorios prescindibles. Para esa fecha deben poder cargarse los niveles por los que controlemos al personaje principal. Lo ideal sería tener una Inteligencia Artificial básica implementada para los enemigos.
+
+### Periodo de exámenes
+
+Por último, me gustaría comentar que en época de exámenes es complicado encontrar tiempo para trabajar en el proyecto y llevar una vida social al mismo tiempo. Desde hace una semana IberOgre y Sion Tower están parados aunque calculo que en muy pocos días retomaré el trabajo con intensidad e ilusión.
+
+Infinitas gracias a todos los que me muestran su apoyo con el proyecto.

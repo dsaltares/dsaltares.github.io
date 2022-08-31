@@ -1,0 +1,37 @@
+---
+id: 2701
+title: Math Maze closed alpha
+date: 2013-07-24T21:32:32+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2701
+url: /games/math-maze-closed-alpha/
+dsq_thread_id:
+  - 1852024452
+categories:
+  - Games development
+tags:
+  - alpha
+  - Android
+  - brain
+  - games development
+  - libgdx
+  - math
+  - Math Maze
+  - puzzle
+  - user experience
+---
+
+![math-maze](/img/math-maze/math-maze-banner.jpg)
+
+Math Maze is what's been keeping me busy after work for the past three months and now it's dangerously approaching a state I"m happy with. Woohooo!
+
+> Is your head agile enough to succeed at this math based brain teaser game? Reach the exit of the labyrinth as fast as you can by using operations that will open the conditional blockages. Freshen up your mental calculus without even realising!
+
+I just wanted to make a really simple Android game so as to be able to polish it without giving up my job nor my social life. Then I came across with this [Ludum Dare game](http://www.ludumdare.com/compo/ludum-dare-26/?action=preview&uid=4628) and loved the concept. Reduced scope, perfect for short play sessions on a mobile device and an interesting educational flavour that convinced me to target kids.
+
+Last week I launched a closed alpha through Google Play and Google Plus. Involving relatives and friends as soon as I could has proven to be of huge help. The alpha resulted in very positive feedback and loads of design suggestions which are going to help me make a better game. Also a couple of bugs were found, so I would expect the final version to be pretty solid. Actually, I even put together a questionnaire and may even publish some of the conclusions I got from it.
+
+All they say about how important is early external playtesting is true. Do it.
+
+So far it's been excellent. Math Maze is coming together nicely and I"m learning loads about libgdx, user experience for kids and general game development. Don't take me wrong, it's a tiny game, but I"m humbly happy with it. If I could focus on some PR towards launch, that"d be just fantastic.

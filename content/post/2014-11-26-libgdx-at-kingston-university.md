@@ -1,0 +1,31 @@
+---
+id: 3204
+title: Libgdx at Kingston University
+date: 2014-11-26T18:00:09+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3204
+url: /games/libgdx-at-kingston-university/
+dsq_thread_id:
+  - 3265414345
+categories:
+  - Games development
+tags:
+  - games development
+  - Kingston University
+  - libgdx
+  - libgdx cookbook
+  - open source
+  - programming
+  - talks
+---
+
+![kingston-phones.jpg](/img/wp/kingston-phones.jpg)
+
+Last Monday 24th of November I delivered a small lecture about Libgdx at Kingston University of London. This complements [Alberto's Libgdx workshop](/games/libgdx-workshop-at-cadiz-university/) at Cadiz University last week as part of a series of activities to promote Libgdx and our recently released [book](https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook).
+
+I talked about what Libgdx can offer developers as well as the advantages of using open source tools as opposed to proprietary technologies, especially when it comes to students. Just like in Alberto's talk, we gave two copies of our book away to a couple of lucky students!
+
+Sadly, no pictures were taken this time round, you'll have to take my word when I say that quite a few people showed up. Thanks for that!
+
+As promised, here are [the slides](/docs/libgdx-talk-notes.pdf) in case anyone is interested.

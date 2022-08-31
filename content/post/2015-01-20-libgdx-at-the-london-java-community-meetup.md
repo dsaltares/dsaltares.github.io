@@ -1,0 +1,26 @@
+---
+id: 3233
+title: Libgdx at the London Java Community Meetup
+date: 2015-01-20T13:26:29+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3233
+url: /general/libgdx-at-the-london-java-community-meetup/
+dsq_thread_id:
+  - 3438101835
+categories:
+  - General
+tags:
+  - games development
+  - libgdx
+  - London Java Community
+  - Meetup
+  - programming
+  - public speaking
+  - talks
+---
+![ljc.jpeg](/img/wp/ljc.jpeg)
+
+Next Tuesday 3rd of February I will be talking about [Libgdx at the London Java Community Meetup](http://www.meetup.com/Londonjavacommunity/). Things won't get too technical, I'll introduce the framework, explain why it's so awesome, show who is currently using it in commercial products and give a quick demo at the end. Of course I won't miss this golden opportunity to cheekily mention my [Libgdx Cookbook](/libgdx-cross-platform-game-development-cookbook/)!
+
+If you're interested, sign up and come to the [The Skills Matter eXchange](https://www.google.com/maps?f=q&hl=en&q=116-120+Goswell+Road,+London,+gb), doors open at 6.15pm and the presentation should be around 40 minutes long.

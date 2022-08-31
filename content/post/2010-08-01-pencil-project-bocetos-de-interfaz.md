@@ -1,0 +1,32 @@
+---
+id: 118
+title: Pencil Project, bocetos de interfaz
+date: 2010-08-01T11:06:53+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=118
+url: /games/pencil-project-bocetos-de-interfaz/
+views:
+  - 1677
+dsq_thread_id:
+  - 1852022770
+categories:
+  - Games development
+tags:
+  - desarrollo
+  - Firefox
+  - GPL
+  - informática
+  - Pencil Project
+  - Software Libre
+---
+
+![pencil-project-logo.png](/img/wp/pencil-project-logo.png)
+
+A la hora de desarrollar software es muy importante **diseñar correctamente la interfaz**, no importa si es una web o una aplicación de escritorio. Antes de lanzarnos a programar como posesos, durante el análisis y el diseño es altamente recomendable realizar bocetos o esquemas de las pantallas con las que contará la aplicación así como la forma de interactuar con las mismas. Para ello nos podemos ayudar de alguna herramienta para crear bocetos de interfaces de usuario (mockups o sketching).
+
+**[Pencil Project](http://pencil.evolus.vn/en-US/Home.aspx)** es la alternativa libre ([GPL v2](http://www.gnu.org/licenses/gpl-2.0.html)) y multiplataforma para realizar esta tarea. Es una simple extensión de Firefox pero cuenta con una potencia y flexibilidad considerables. Nos permite crear proyectos con varias pantallas, en las cuales es posible añadir cualquier elemento de una GUI típica (botones, tablas, cajas de activación, deslizadores…). No sólo será útil para aplicaciones de escritorio sino que cuenta con multitud de elementos web. Una de sus características más importantes es la capacidad de alinear objetos para que el conjunto quede ordenado.
+
+![pencil-project.png](/img/wp/pencil-project.png)
+
+Los proyectos se guardan en XML aunque podemos **exportar nuestros diseños a otros formatos** como: PNG, PDF, ODT o HTML eligiendo entre varias plantillas disponibles. La curva de aprendizaje es prácticamente nula y resulta completamente **intuitivo**. Se trabaja de manera rápida y ayuda mucho a despejar las ideas sobre la interfaz del software a desarrollar. Una excelente alternativa a herramientas privativas como Balsamiq Mockups.

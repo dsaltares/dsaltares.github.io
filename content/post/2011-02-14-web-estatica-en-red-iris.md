@@ -1,0 +1,29 @@
+---
+id: 997
+title: Web estática en Red Iris
+date: 2011-02-14T11:34:56+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=997
+url: /games/web-estatica-en-red-iris/
+views:
+  - 718
+dsq_thread_id:
+  - 1889028575
+categories:
+  - Games development
+tags:
+  - forja Red Iris
+  - IberOgre
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - V CUSL
+  - videojuegos
+---
+
+[![web-estatica-iberogre-214x300.png](/img/wp/web-estatica-iberogre-214x300.png)](http://cusl5-iberogre.forja.rediris.es/)
+
+**La Forja de Red Iris proporciona a cada proyecto un espacio** para colgar una web estática sencilla. Es una tontería no aprovechar dicho espacio ya que Red Iris cuenta con un indexado en buscadores excelente. Simplemente [he colgado un panel](http://cusl5-iberogre.forja.rediris.es/) explicando en qué consiste mi proyecto junto con enlaces a otros medios (wiki, blog, forja y Twitter).
+
+No es nada del otro mundo ya que mis habilidades de diseño tienden a cero pero creo que será s**uficiente para ampliar un poco más la difusión del proyecto**. Cualquiera que llegue a esa página podrá acceder de forma sencilla a los focos en los hay más actividad. Creo que es una buena idea y algo que debería haber hecho hace cierto tiempo.

@@ -1,0 +1,34 @@
+---
+id: 2228
+title: My projects migrated to GitHub
+date: 2012-11-05T23:09:42+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2228
+url: /projects/my-projects-migrated-to-github/
+dsq_thread_id:
+  - 1852023074
+categories:
+  - Projects
+tags:
+  - Git
+  - GitHub
+  - programming
+  - projects
+---
+
+![github_logo_social_coding_outlined.png](/img/wp/github_logo_social_coding_outlined.png)
+
+I've been a busy bee lately but here it comes yet another post with a piece of not so relevant news related to my projects.
+
+Even though I've always been kind of sceptical about GitHub, I've finally decided to migrate most of my projects. After getting a bit deeper into the libgdx community over there, I've come to see the benefits of this self proclaimed social coding platform. Forking, pulling and giving/receiving feedback is easy and motivating (kind of a must when working on side projects). This way I"ll also force myself to use Git, which is full of love and we"re here to learn aren't we?
+
+I've successfully exported the following projects, now available from my [profile](https://github.com/dsaltares):
+
+*   [gLapse](https://github.com/dsaltares/glapse)
+*   [Urban Race](https://github.com/dsaltares/urbanrace)
+*   [Freegemas gdx](https://github.com/dsaltares/freegemas-gdx)
+
+In order to carry out the migration whilst keeping the full commit history I've used [svn2git](https://github.com/nirvdrum/svn2git). It's just a ridiculously easy to use Ruby script built upon the git svn tool. I could write a post on how to do it, but it"d be pointless since it's very well detailed in the project's readme.
+
+Expect updates soonish!

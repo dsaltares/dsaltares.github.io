@@ -1,0 +1,43 @@
+---
+id: 3489
+title: 'LibJDX jam is on: Life in Space'
+date: 2015-12-19T12:45:32+00:00
+author: David Saltares
+layout: post
+guid: /?p=3489
+url: /projects/libjdxjam-is-on-life-in-space/
+dsq_thread_id:
+  - 4417113590
+categories:
+  - Games development
+  - Projects
+tags:
+  - Game Jam
+  - games development
+  - libgdx
+  - libGDXJAM
+  - programming
+---
+
+{{< youtube JDegBOpvCPM >}}
+
+Check the keynote and all the awkward moments from the dev team, including mine!
+
+The theme is **Life in Space** and I"m teaming up with [Alberto](http://itch.io/profile/omniyo) for [#libGDXJAM](http://itch.io/jam/libgdxjam) and here's our idea:
+
+> [Abe's Oddysee](https://www.google.co.uk/search?q=boogerman&safe=off&espv=2&biw=768&bih=347&source=lnms&tbm=isch&sa=X&sqi=2&ved=0ahUKEwi476DF9efJAhXIuBoKHTmdAd4Q_AUIBigB#safe=off&tbm=isch&q=abe%27s+oddysee) meets [This War of Mine](https://www.google.co.uk/search?q=boogerman&safe=off&espv=2&biw=768&bih=347&source=lnms&tbm=isch&sa=X&sqi=2&ved=0ahUKEwi476DF9efJAhXIuBoKHTmdAd4Q_AUIBigB#safe=off&tbm=isch&q=this+war+of+mine) meets [Boogerman](https://www.google.co.uk/search?q=boogerman&safe=off&espv=2&biw=768&bih=347&source=lnms&tbm=isch&sa=X&sqi=2&ved=0ahUKEwi476DF9efJAhXIuBoKHTmdAd4Q_AUIBigB)... in space!
+
+A bunch of dangerously unprepared astronauts land on a strange planet only to find out it's inhabited by big fat angry aliens with guns. The whole crew is taken prisoner except our main character who has to rescue them all and get the hell out of that planet. Problem is he's unarmed and will have to sneak his way through
+
+A few of our references.
+
+{{< gallery dir="/img/sloppynauts/gallery_announcement" />}}
+{{< load-photoswipe >}}
+
+Want to follow our progress?
+
+* We"ll be working on [GitHub](https://github.com/dsaltares/libgdxjam) and using its issue tracker to manage tasks.
+* Join the chat on Twitter: [@d_saltares](https://twitter.com/d_saltares) and [@omniyo](https://twitter.com/omniyo).
+* We"ll report regularly here.
+
+Best of luck to all the jammers!

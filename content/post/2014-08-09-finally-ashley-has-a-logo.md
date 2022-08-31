@@ -1,0 +1,25 @@
+---
+id: 3104
+title: Finally, Ashley has a logo
+date: 2014-08-09T21:41:53+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3104
+url: /projects/finally-ashley-has-a-logo/
+dsq_thread_id:
+  - 2914122964
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - entity systems
+  - games development
+  - Java
+  - programming
+---
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+Ashley now has a logo and it's awesome! What an amazing contribution.
+
+This is really good news because Ashley lacked an image to make it a bit more memorable. Now back to work, there will soon be a new release. Despite it involving some API changes, it will make for a much faster framework.

@@ -1,0 +1,38 @@
+---
+id: 742
+title: Primera versión del GDD de Sion Tower
+date: 2010-11-28T12:34:35+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=742
+url: /games/primera-version-del-gdd-de-sion-tower/
+views:
+  - 2001
+dsq_thread_id:
+  - 1852023150
+categories:
+  - Games development
+tags:
+  - desarrollo
+  - diseño
+  - GDD
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+![gdd-siontower.png](/img/wp/gdd-siontower.png)
+
+He sudado un poco de tinta para conseguirlo pero ya **he publicado la primera versión del documento de diseño de Sion Tower**, el videojuego que acompañará a IberOgre. Hace algunas semanas os hablaba del [Game Design Document (GDD)](/proyectos/pfc/sion-tower/game-design-document/) en general y desde entonces he estado redactando el mío. Ha sido un paso duro (no disfruto con el papeleo) pero **necesario para aclararme las ideas**.
+
+El documento se divide en varias secciones diferenciadas:
+
+*   **Introducción**: pequeña sección de un par de páginas en el que se habla del planteamiento del juego, sus características, género, público objetivo y mecánicas a grandes rasgos.
+*   **Mecánicas de juego**: se especifica los elementos de los que se compone el juego y se detalla la forma en la que el jugador interactuará con el mismo. Después, se listan los personajes junto con sus descripciones, habilidades y atributos. Finalmente se aclaran aspectos relacionados con las físicas, colisiones y movimiento.
+*   **Interfaz**: un diagrama general con las distintas pantallas y sus transiciones seguido de un boceto detallado de cada una de ellas.
+*   **Arte**: lista con los recursos necesarios para el juego. Iconos, GUI, texturas, modelos 3D, fondos, letreros, efectos de sonido y canciones.
+
+**Seguramente necesite retoques** para completar las lagunas que vayan surgiendo en la mecánica de juego (estoy seguro de que me he dejado algo). No obstante, quería tener una primera versión lo antes posible para c**omenzar a buscar colaboradores** en el plano artístico. Si les presento una lista de tareas disponibles estoy seguro de que la búsqueda será menos complicada (que no sencilla).
+
+**Sería genial que el documento estuviera lleno de bocetos** artísticos para ilustrar la descripción del juego, ¿alguien se anima? Si le echáis una ojeada y veis cualquier cosa extraña o algo que no os parezca, estaré encantado de hacer correcciones o debatirlo en los comentarios. Mientras tanto, [**podéis descargar el GDD aquí**](http://forja.rediris.es/frs/download.php/2019/gdd.pdf), en la [sección de ficheros de la forja](http://forja.rediris.es/frs/?group_id=820).

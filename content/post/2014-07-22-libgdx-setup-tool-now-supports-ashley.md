@@ -1,0 +1,33 @@
+---
+id: 3087
+title: Libgdx setup tool now supports Ashley
+date: 2014-07-22T18:00:08+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3087
+url: /games/libgdx-setup-tool-now-supports-ashley/
+dsq_thread_id:
+  - 2864785173
+categories:
+  - Games development
+tags:
+  - Ashley
+  - entity systems
+  - games development
+  - Java
+  - libgdx
+  - open source
+  - programming
+---
+
+![gdx-setup-ashley.png](/img/wp/gdx-setup-ashley.png)
+
+[Last night](https://github.com/libgdx/libgdx/commit/dfbb2dc4c5a146f5255bc358a7c8a591735bff3f) I added Ashley support to the official [Libgdx setup tool](http://libgdx.badlogicgames.com/nightlies/dist/gdx-setup.jar). Creating Libgdx projects that use Ashley entity framework is now even easier. Simply make sure you tick the Ashley checkbox before generating your project.
+
+By the way, if you already have a a project, adding the extra dependency is also trivial.
+
+  * Core project: `com.badlogicgames.ashley:ashley:1.0.1`
+  * Android project: `com.badlogicgames.ashley:ashley:1.0.1`
+  * GWT project: `com.badlogicgames.ashley:ashley:1.0.1:sources`
+
+Remember that using Ashley in non Libgdx projects is also perfectly fine.

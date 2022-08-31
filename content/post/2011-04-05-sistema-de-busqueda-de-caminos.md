@@ -1,0 +1,73 @@
+---
+id: 1237
+title: Sistema de búsqueda de caminos
+date: 2011-04-05T20:23:30+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1237
+url: /games/sistema-de-busqueda-de-caminos/
+views:
+  - 961
+dsq_thread_id:
+  - 1863252641
+categories:
+  - Games development
+tags:
+  - 'A*'
+  - Blender
+  - búsqueda de caminos
+  - colaboración
+  - IA
+  - navigation mesh
+  - Ogre
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+![titulo-navmesh.png](/img/wp/titulo-navmesh.png)
+
+Hace unos días publicaba un [vídeo](/proyectos/pfc/sion-tower/sion-tower-navigation-mesh-y-a/ "Sion Tower, navigation mesh y A*") mostrando el **sistema de búsqueda de caminos empleando mallas de navegación** y el algoritmo A estrella para Sion Tower. Pudisteis ver que el personaje recorría el camino de forma brusca, actualmente el problema se ha solucionado gracias a la **inclusión de splines en una colaboración** del compañero [Javier Santacruz](http://ragingbit.com/blog/) ([@arld101](http://twitter.com/#!/arld101)). ¡La primera colaboración en forma de código! En este artículo nos centraremos en ilustrar a grandes rasgos **como funciona la búsqueda** de caminos internamente.
+
+### Conceptos generales
+
+El problema inicial era la **necesidad de que los enemigos pudiesen moverse** por el escenario hacia un objetivo evitando los obstáculos estáticos. El ejemplo más común sería el de perseguir al protagonista para atacarle. Para ello es necesario definir las zonas transitables de alguna manera y la respuesta es emplear una malla de navegación.
+
+En [Blender](http://www.blender.org/) se crea una **malla compuesta de triángulos interconectados** tal y como se ilustra en la imagen que ya he mostrado en alguna ocasión. El sistema de carga de niveles procesa la malla y genera un grafo de forma interna. Realizar búsqueda de caminos dentro del grafo es un problema conocido y relativamente sencillo de resolver como veremos más adelante. Además el sistema soporta celdas con inclinación (como en las escaleras) aunque al algoritmo esto le es indiferente.
+
+![blender-navmesh.jpg](/img/wp/blender-navmesh.jpg)
+
+### Clases implicadas
+
+El sistema de búsqueda de caminos de Sion Tower está compuesto por las clases del siguiente diagrama:
+
+![clases-navmesh.png](/img/wp/clases-navmesh.png)
+
+*   *Cell*: representa una celda triangular de la malla.*   *NavigationMesh*: malla de navegación formada por un grafo de *Cells*. Permite localizar elementos en celdas de la malla, conocer la altura a la que debe colocarse un personaje para pegarlo al suelo, realizar consultas de línea de visión y búsqueda de caminos.*   *CellNode*: nodo de la búsqueda de caminos. Tiene asociado una *Cell*, y los costes de la heurística.*   *Level*: ya hablamos de ella en [otra ocasión](/proyectos/pfc/sion-tower/creacion-de-escenarios-en-formato-dotscene-con-blender/ "Creación de escenarios en formato DotScene con Blender"). Se encarga de cargar y almacenar la información de los niveles desde ficheros en formato XML. Entre la información del nivel, carga un *NavigationMesh*.
+
+### Algoritmo A*
+
+El **[algoritmo A*](http://en.wikipedia.org/wiki/A*_search_algorithm)** es de sobra conocido por muchos y puede obtenerse mucha información sobre el mismo en decenas de fuentes. En la búsqueda de Sion Tower le indicamos una posición de comienzo y una de destino al método *buildPath* de *NavigationMesh* y se nos devuelve una lista de puntos por los que hay que pasar. De forma esquematizada **se hace lo siguiente**:
+
+1.  Encontrar las celdas en las que se encuentran las posiciones de inicio y destino
+2.  Crear un [montículo](http://en.wikipedia.org/wiki/Heap_(data_structure)) con un *CellNode* asociado a la primera celda.
+3.  Bucle:
+    1.  Sacar el nodo más prometedor del montículo.
+    2.  Si el nodo corresponde a la celda final, hemos terminado.
+    3.  Introducimos en el montículo los nodos cuyas celdas son vecinas a las del nodo actual.
+    4.  Comenzar de nuevo el paso 3.
+4.  Reconstruir el camino de puntos empleando un spline para evitar cambios bruscos.
+
+### Colaboración para suavizar el camino
+
+El compañero Francisco Javier Santacruz se interesó en suavizar la ruta resultante de la búsqueda y rápidamente se puso manos a la obra. Tras un par de días de trabajo me envió un parche que apliqué gustosamente por sus **impresionantes resultados**.
+
+La forma de suavizar la ruta consiste en generar muchos puntos intermedios **siguiendo un [spline](http://es.wikipedia.org/wiki/Spline)**. Los splines son curvas definidas mediante polinomios: ¡por fin las clases de Métodos Numéricos sirven para algo! En el caso que nos ocupa utilizó el [spline de Catmull-Roll](http://en.wikipedia.org/wiki/Cubic_Hermite_spline#Catmull.E2.80.93Rom_spline), un tipo de interpolación cúbica. En la prueba que me mandó se visualizaba la ruta del personaje ya suavizada como una línea en el suelo dibujada con primitivas de Ogre. Simplemente restan por hacer unos pequeños ajustes, **¡muchas gracias!**
+
+![siontower-navmesh.jpg](/img/wp/siontower-navmesh.jpg)
+
+### Conclusiones
+
+Implementar el sistema de búsqueda de caminos con una malla de navegación **ha sido muy enriquecedor** ya que era una materia completamente desconocida por mí hasta el momento. He aprendido mucho sobre las distintas aproximaciones existentes y la forma de aplicarla a un juego tridimensional. Además he obtenido la primera colaboración en términos de código a través de un parche. Los que estéis interesados en los detalles podéis acudir a [la rama correspondiente de la forja](https://forja.rediris.es/plugins/scmsvn/viewcvs.php/siontower/branches/navmesh-javi/?root=cusl5-iberogre).
+
+¡Seguiré informando!

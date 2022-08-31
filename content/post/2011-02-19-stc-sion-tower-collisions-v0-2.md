@@ -1,0 +1,43 @@
+---
+id: 1034
+title: 'STC: Sion Tower Collisions v0.2'
+date: 2011-02-19T00:27:53+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1034
+url: /games/stc-sion-tower-collisions-v0-2/
+views:
+  - 781
+dsq_thread_id:
+  - 2002039050
+categories:
+  - Games development
+tags:
+  - collisiones
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - STC
+  - videojuegos
+---
+
+![stc-v02.png](/img/wp/stc-v02.png)
+
+Tras unas semanas de duro trabajo **acabo de liberar la versión 0.2 de STC**, el sistema de detección de colisiones de Sion Tower. Mientras implementaba la carga de niveles con elementos colisionables (de la que hablaré otro día) he probado más a fondo la primera versión descubriendo muchos puntos en los que la mejora era necesaria.
+
+Muchas líneas del blog han versado sobre este tema. Si aún no conoces las funcionalidades de STC puedes leer el [lanzamiento de su primera versión](/proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-1/). Si deseas documentación en profundidad sobre su diseño e implementación, puedes acudir a [la serie de artículos al respecto](/proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/). Más detalles sobre la nueva versión a continuación.
+
+### Changelog
+
+*   Clase *OrientedBox*.
+*   Nuevos tests de colisión para la forma *OrientedBox*.
+*   Método *CollisionManager::addCollisionTest* para poder añadir o modificar tests de colisión a gusto del usuario.
+*   Mejoras de rendimiento.
+*   Correcciones de bugs.
+*   3 tipos de callbacks: comenzar colisión, durante colisión y finalizar colisión.
+
+### Descarga
+
+Como siempre, podéis descargar el código fuente desde la Forja de Red Iris (incluye documentación generada con Doxygen):
+
+*   [Descargar STC v0.2](http://forja.rediris.es/frs/download.php/2092/siontower-collisions-v0.2.zip)

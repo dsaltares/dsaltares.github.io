@@ -1,0 +1,36 @@
+---
+id: 135
+title: Guía de estilo para C++ de Google
+date: 2010-08-03T20:48:56+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=135
+url: /computing/guia-de-estilo-para-c-de-google/
+views:
+  - 682
+dsq_thread_id:
+  - 1854067577
+categories:
+  - Computing
+tags:
+  - C++
+  - cpplint
+  - Google
+  - programación
+  - Python
+---
+
+![Google_logo_png.png](/img/wp/Google_logo_png.png)
+
+Cuando se programa es de suma importancia que el estilo sea uniforme, máxime, si trabajamos en un equipo de varias personas. Por si no supusiera suficiente esfuerzo comprender código ajeno aunque éste cuente con comentarios, hacerlo cuando cada desarrollador sigue su propio criterio puede ser una pesadilla. Es ahí donde entran en juego las **guías de estilo**. Hay muchas y ninguna tiene por qué ser mejor que otra a priori, no obstante, es recomendable ceñirse a una.
+
+Hace varias semanas me recomendaron la **[guía de estilo para C++ de Google](http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml)**. Sus directrices están perfectamente detalladas, no limitándose a plantear una simple lista sino que podemos descubrir decenas de buenas prácticas perfectamente justificadas. Se nos presenta el problema junto con las ventajas e inconvenientes de tomar una decisión concreta. Finalmente, de manera razonada, llegamos a una convención. Leyéndola he descubierto detalles sobre C++ y la programación en general que desconocía, la recomiendo encarecidamente aunque no esté completamente de acuerdo en todos sus puntos.
+
+Acompañando a la guía se ofrece [cpplint.py](http://google-styleguide.googlecode.com/svn/trunk/cpplint/cpplint.py), un script en Python para **validar nuestro código** siguiendo el estilo de Google. Utilizarlo puede ser una buena manera de tratar ser disciplinado con nuestro propio trabajo. Funciona con ficheros .h y .cpp, para ejecutarlo nos situamos en el directorio donde se aloje el script y tecleamos la siguiente orden:
+
+```
+python cpplint.py fichero.cpp
+```
+
+
+He comprobado que ofrece resultados completos y claros por lo que voy a utilizarlo en mis proyectos actuales: *IberOgre* y *Sion Tower*. Sion Tower es un videojuego en el que trabajaré en solitario pero IberOgre, al ser una wiki colaborativa, cobra importancia mantener un estilo limpio y consistente.

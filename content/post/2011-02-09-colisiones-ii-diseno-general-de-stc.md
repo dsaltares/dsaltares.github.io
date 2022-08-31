@@ -1,0 +1,59 @@
+---
+id: 943
+title: 'Colisiones II: Diseño general de STC'
+date: 2011-02-09T08:00:45+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=943
+url: /games/colisiones-ii-diseno-general-de-stc/
+views:
+  - 1034
+dsq_thread_id:
+  - 1852023432
+categories:
+  - Games development
+tags:
+  - colisiones
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - Sion Tower Collisions
+  - videojuegos
+---
+
+![colisiones-2.png](/img/wp/colisiones-2.png)
+
+Entregas:
+
+*   [Colisiones I: Introducción, requisitos y alternativas](/proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/)
+*   *Colisiones II: Diseño general de STC*
+*   [Colisiones III: La clase Shape y Collision Dispatching](/proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/)
+*   [Colisiones IV: Tests de colisión](/proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/)
+
+En la primera entrega de la serie de artículos sobre el **sistema de detección de colisiones de Sion Tower (STC)** comenté los requisitos que debía cumplir y las alternativas que valoré antes de decidirme a implementarlo por cuenta propia. En esta ocasión me dispongo a hacer **un repaso por el diseño de esta pequeña biblioteca**. Tras el diagrama de clases voy a tratar los componentes de forma breve pero individualizada. En posteriores entregas del artículo tendremos espacio suficiente para conocer en profundidad cada clase y algunos puntos relevantes de su implementación.
+
+### Diagrama de clases de diseño
+
+El sistema de colisiones de Sion Tower es bastante sencillo y únicamente cuenta con las clases que se muestran a continuación.
+
+Este primer diagrama sólo muestra las clases y sus relaciones:
+
+![collisions-simplified.png](/img/wp/collisions-simplified.png)
+
+En este segundo diagrama podemos ver los métodos que componen la interfaz de cada clase, haz click sobre la imagen para verlo ampliado.
+
+[![collisions-interface.png](/img/wp/collisions-interface.png)](/img/wp/collisions-interface.png)
+
+### Componentes
+
+La siguiente lista repasa de forma superficial las responsabilidades de cada clase dentro de Sion Tower Collisions.
+
+*   **Shape**: clase abstracta que modela formas básicas colisionables. Es la encargada del *"collision dispatching"*. Mediante el método estático *Shape::getCollision* podemos saber si dos formas concretas colisionan sin necesidad de conocer su clase concreta. El sistema detecta los tipos en tiempo de ejecución ([RTTI](http://en.wikipedia.org/wiki/Run-time_type_information)) y elije el test de colisión apropiado de manera eficiente.
+*   **Plane**: forma especializada para modelar un plano representado por un punto y un vector normal. Dentro del juego lo utilizaremos para modelar las colisiones del suelo.
+*   **Sphere**: forma especializada para modelar una esfera a partir de un punto (centro) y un radio. Nos será de extrema utilidad para modelar el volumen colisionable de los proyectiles mágicos.
+*   **AABB**: forma especializada para modelar una caja de colisión alineada con los ejes ([Axis Aligned Bounding Box](http://en.wikipedia.org/wiki/Bounding_volume#Common_types_of_bounding_volume)), se representa mediante su punto mínimo y máximo. Será útil para modelar elementos que no roten ya que los AABB pierden mucha precisión en estas situaciones.
+*   **Body**: cuerpo colisionable formado por varios objetos *Shape* y una transformación (translación con respecto al origen, escala y rotación). Representará la parte física de los objetos del juego dentro de la escena (*world space*). Proporciona el método estático *Body::getCollision* para conocer si dos cuerpos se interseccionan. Los cuerpos tienen un tipo para poder distinguir entre clases de cuerpos de cara al filtrado de colisiones.
+*   **CollisionManager**: registra todos los cuerpos de la escena y permite detectar colisiones entre ellos. Habilita el registro de callbacks para ser informados de colisiones entre dos tipos concretos de cuerpos.
+*   **GameObject**: encapsula el aspecto colisionable (*Body*) junto con el visual (*Ogre::Entity* – *Ogre::SceneNode*) de los elementos de juego. Los elementos que no tengan un comportamiento definido serán instancias de esta clase. Aquellos que deseen un comportamiento concreto deberán heredar de *GameObject*.
+
+Básicamente esto es lo que proporciona STC, **no es mucho pero es fácil de extender** y es independiente del resto de componentes de un videojuego.

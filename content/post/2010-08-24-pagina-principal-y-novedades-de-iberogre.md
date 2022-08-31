@@ -1,0 +1,34 @@
+---
+id: 289
+title: Página principal y novedades de IberOgre
+date: 2010-08-24T17:43:47+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=289
+url: /games/pagina-principal-y-novedades-de-iberogre/
+views:
+  - 706
+dsq_thread_id:
+  - 1852022810
+categories:
+  - Games development
+tags:
+  - IberOgre
+  - Ogre3D
+  - proyectos
+  - videojuegos
+  - Wikimedia
+  - WikiUnix
+---
+
+![iberogre-logo-wiki.png](/img/wp/iberogre-logo-wiki.png)
+
+He estado trabajando en artículos para [**IberOgre**](http://osl2.uca.es/iberogre) desde su comienzo pero, tristemente, no se mostraba nada en la página principal. Esto producía una s**ensación de inactividad** y dejadez que debía solucionar cuanto antes y, tras unos retoques, ya es posible ver los **primeros resultado**s.
+
+Debía utilizar [plantillas](http://meta.wikimedia.org/wiki/Help:Template) para estructurar la página principal y otros elementos, además era necesario [categorizar](http://meta.wikimedia.org/wiki/Ayuda:Categorias) los artículos existentes. Mi desconocimiento sobre la edición en wikis supone un gran problema a tal efecto. Echándole un vistazo a la ayuda de mediawiki y consultando el código del fantástico proyecto de una compañera, [WikiUnix](http://osl2.uca.es/wikiunix/index.php/P%C3%A1gina_principal) lo he logrado. La prioridad era mostrar la actividad existente en la portada por encima de la estética por lo que el diseño de IberOgre no es nada del otro mundo en estos momentos (**¡se aceptan sugerencias y colaboraciones!**).
+
+Como podéis ver en la página principal, IberOgre está temporalmente cerrada a ediciones externas por encontrarse en una fase temprana de su desarrollo. Mientras tanto se anima a los visitantes a enviar opiniones o críticas a través del **e-mail oficial**. Por si no lo habéis visto, esta es la dirección de contacto para IberOgre:
+
+[![iberogre-gmail.png](/img/wp/iberogre-gmail.png)](mailto:iberogre@gmail.com)
+
+IberOgre crecerá durante los próximos días con nuevos artículos y más contenido. Por supuesto, seguiré comentando mis experiencias y vicisitudes con este proyecto en el blog.

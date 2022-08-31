@@ -1,0 +1,83 @@
+---
+title: "4 steps to create a solid technology strategy"
+date: 2022-06-13T00:00:00+00:00
+author: "David Saltares"
+categories: ["Leadership"]
+description: "As an Engineering leader, you want to create a solid technology strategy to provide the context your team needs to make excellent decisions. But how should you go about it? This article goes over 4 steps to help you create it"
+keywords: ["technology strategy", "team", "leadership", "business goals", "technology vision", "product goals", "feedback"]
+series: ["Technology strategy"]
+---
+
+![Man holding compass](/img/man-holding-compass.jpg "By Anastasia Petrova on [Unsplash](https://unsplash.com/photos/xu2WYJek5AI)")
+
+As an Engineering leader, you want to create a solid technology strategy to provide [the context your team needs to make excellent decisions](/the-importance-of-solid-technology-strategy-and-principles/). But how should you go about it?
+
+## 📚 1. Gather context
+
+Most of the difficulty resides in identifying and reflecting on the context of the business and your team. Once you do that, you will realise that actually writing a strategy doc is the easy part.
+
+### Business goals and strategy
+
+Your technology strategy must serve the wider business goals and not the other way around. Take a look at what your organisation needs to achieve next quarter or year. Perhaps you are in the middle of a [B2B](https://www.investopedia.com/terms/b/btob.asp) to [B2C](https://www.investopedia.com/terms/b/btoc.asp) transition, or everyone is getting ready to launch in the US.
+
+Of course, if this is not clear, you have much bigger problems 🙃.
+
+### Current team
+
+Everyone knows what needs to be achieved, now it’s time to take a look at whether you have the right team to do it.
+
+- **Size**: will you need to hire or reduce the scope?
+- **Skills**: alright, that new iOS app sounds great, but has anyone built one before? Are you going to provide training or hire a specialist?
+- **Strengths**: think about what the team does really well and lean on that to reduce risk. Perhaps it so happens that folks in your team are the target audience for your product. Make sure their thoughts are heard in product discussions!
+- **Weaknesses**: what does the team struggle with? Perhaps all the knowledge of a particular area of the system is concentrated in a single individual. What can you do to share knowledge more effectively?
+
+### Current technology and processes
+
+It is really important you have a good grasp of how your engineering team operates. What is working? Where is the friction?
+
+Perhaps communication is great, folks pair regularly and there rarely is any misalignment on requirements after a refinement session. It may be that the team finds the current release process frustrating or the current on-call rotation quite stressful.
+
+Take your time really understanding what makes the team tick as your strategy will be highly dependent on it. A good tool to get data across teams is running quarterly [team health surveys](https://engineering.atspotify.com/2014/09/squad-health-check-model/).
+
+### Company values and operating principles
+
+Think about the values in your organisation and how the company operates. Ideally, you’d want a strategy that reflects that.
+
+### Establish the horizon
+
+How far into the future should you look when creating your strategy? It depends! If you choose too short a timeframe, your strategy will change constantly and the team will lack continuity. In turn, looking too far into the future may render the strategy irrelevant fairly quickly.
+
+For an early stage startup, you may want to look at a horizon of up to a year while later stage organisations may work better with plans north of a year. Is the company about to go through a major event such as a merger or a new round of investment that may alter goals significantly? You may want to take this into account as well. 
+
+## ✍️ 2. Write a draft
+
+Get started writing an initial draft. I recommend a proper document instead of a slide deck, so that you can convey nuances more clearly.
+
+When talking about architecture, it is useful to include diagrams of current vs future state. Avoid being too prescriptive, you are trying to provide context so that your team can make decisions. You are not making every decision by yourself.
+
+In terms of document structure, I find it useful to take the reader through the thought process that led you to the strategy itself.
+
+- Link to **overall business strategy**.
+- **Product goals**.
+- **Team context**: size, strengths and weaknesses, etc.
+- **Engineering principles**: these are meant to be general guidelines to help decision making. Take a look at a couple of examples from [Monzo](https://monzo.com/blog/2018/06/29/engineering-principles) and [Thoughtworks](https://www.thoughtworks.com/insights/blog/what-are-our-core-values-and-practices-building-software).
+- **Technology and architecture vision**: remember to avoid being prescriptive. In this section you can detail direction of travel. For example, the team is moving from containers on EC2 to a serverless architecture. In some cases, it may be useful to compile a list of accepted technologies so as to ensure consistency within larger organisations.
+
+## ♻️ 3. Get feedback & iterate
+
+Share the document with the folks you want feedback from. Typically, this will be your manager, the rest of the leadership team and some individuals in Engineering. Google docs works best because everyone can give feedback async.
+
+Feedback will help you clarify confusing elements and cover areas you omitted. It will also surface misalignment people had regarding goals, context or general direction of travel. Better to find these out early!
+
+One important thing to remember is that your strategy will never be perfect. It’s better to **ship it with confidence** and be completely transparent about the fact that it is your current best guess and that you will all improve it together over time.
+
+## 💬 4. Communicate it
+
+Your strategy will be of no use if nobody knows about it or is ignored. You have to communicate it effectively. Here are a few tips.
+
+- The full document should be easily accessible to everyone in the company. Normally this means Notion or whatever wiki you use.
+- Reference the strategy in team meetings, 1-1 sessions and technology discussions. Repetition helps.
+- Share the key points of your technology strategy with the broader organisation. This time a short slide deck may be best.
+- Make the full document part of engineering onboarding. This will help new joiners get on the same page much faster.
+
+ 🙌 Thanks for reading. Hopefully, these 4 steps have demystified the process of building a technology strategy. Would love to hear your thoughts on the article or if you have a different process.

@@ -1,0 +1,65 @@
+---
+id: 259
+title: Sony, PSP y el gaming en Android
+date: 2010-08-22T18:55:21+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=259
+url: /hobbies/sony-psp-y-el-gaming-en-android/
+views:
+  - 433
+dsq_thread_id:
+  - 1935227308
+categories:
+  - Hobbies
+tags:
+  - Android
+  - Call of Duty
+  - God of War
+  - Google
+  - GTA
+  - iPhone
+  - Little Big Planet
+  - NDS
+  - PSP
+  - Sony
+  - videojuegos
+---
+
+![psp-android.png](/img/wp/psp-android.png)
+
+Hace un par de semanas blogs especializados como [El Androide Libre](http://www.elandroidelibre.com/2010/08/sony-ericsson-quiere-ser-el-rey-de-los-juegos-en-android.html) publicaban **rumores sobre una posible asociación entre Google y Sony** para crear un terminal Android dedicado al gaming. Sé que llego tarde, como de costumbre, pero me pareció una oportunidad interesante para mostrar mi opinión al respecto. Evidentemente aún no ha sido confirmado nada y en este artículo no puedo sino dejar llevar mi imaginación por un mundo ficticio de color rosa.
+
+Los datos son escasos pero básicamente indican que este supuesto terminal vendría bajo el sello *"Playstation"*, es decir, sería la sucesora de la actual PSP. Entre sus características se encontrarían un procesador S
+
+napDragon, una pantalla de 4 pulgadas, cámara de 5 megapíxels y la versión 3.0 de Android. Al contar con el apoyo de Sony recibiría franquicias como [God of War](http://es.wikipedia.org/wiki/God_of_War), [Little Big Planet](http://en.wikipedia.org/wiki/LittleBigPlanet) o [Call of Duty](http://es.wikipedia.org/wiki/Call_of_Duty). Teóricamente se confirmaría de cara a la campaña navideña convirtiéndose en la **competencia directa de iPhone**.
+
+![gta-chinatown-wars.jpg](/img/wp/gta-chinatown-wars.jpg)
+
+### Un paso lógico
+
+El incremento de potencia y el aumento de demanda de los **smartphones** posibilitan **videojuegos más avanzados y profundos**, por ello vemos títulos de amplio presupuesto como [GTA](http://es.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars)
+
+[Chinatown Wars](http://es.wikipedia.org/wiki/Grand_Theft_Auto:_Chinatown_Wars) en iPhone a la vez que en PSP o NDS. El supuesto paso de Sony y Google puede parecer sorprendente aunque en el fondo me parece tremendamente lógico. Nintendo tiene una parcela ganada en el terreno portátil, no obstante, PSP al estar dirigida a un público ligeramente más adulto y habituado a jugar se enfrenta a Apple cada vez de forma más directa.
+
+**El mercado de aplicaciones en iPhone es mastodóntico** gracias a la store y la comunidad que hay detrás. Sony ya se ha aventurado en el mundo de la distribución digital con **PSP Go** obteniendo **resultados catastróficos**. El elevado precio de la consola, la imposibilidad de recuperar títulos ya adquiridos y el deficiente acceso a los juegos la condenaron casi de forma inmediata.
+
+**Google desea expandir** cada vez más **su sistema operativo** para móviles y su punto débil es el terreno multimedia dentro del cual se encuentran los videojuegos. Desde hace meses Google ha comprado varios pequeños estudios de la industria. Maniobras que, unidas a esta, denotan el impulso que se le pretende dar al gaming en Android para equipararlo con iPhone.
+
+![android_market.jpg](/img/wp/android_market.jpg)
+
+### Las posibilidades
+
+Como **soñar es gratis** puedo escribir en este apartado lo que me venga en gana aunque trataré de hacerlo con un mínimo de sensatez porque los eventos jamás se desarrollan exactamente como nos gustaría. Combinar las características de una consola cerrada clásica (distribuidoras, estudios y proyectos grandes que la apoyen) con el tinte libre y de aplicaciones pequeñas que tiene Android puede ser complicado. Para empezar con buen pie pienso firmemente en **la necesidad de una reforma en el Android market** de forma que sea mucho más sencillo acceder a aplicaciones.
+
+Muchos usuarios **se decantan por iPhone debido a los juegos**, amenizar el camino al trabajo o a la universidad con unas partidillas no tiene precio. Desgraciadamente deben dejar en el camino las libertades que proporciona Android. Si a dicho público se le pudiera ofrecer un dispositivo que aunara las posibilidades de **personalización y flexibilidad con juegos** de sellos importantes podrían cambiar de opinión. Mi caso es similar: me encantaría disfrutar de los juegos de iPhone pero al otorgarle más valor a las ventajas de Android, me decanté por este último.
+
+Más que la llegada de Sony al mercado de los smarphones considero más interesante el posible **crecimiento de Android gracias a los videojuegos**. Las facilidades de publicación de software en el market en contraposición con el filtro que impone Apple **atraerían a desarrolladores jóvenes y a estudios pequeños**. Sin duda, una ventana abierta a su propia madure
+
+z y expansión. Las empresas que acaban de formarse asumen riesgos importantes y suelen tener problemas de financiación, desarrollar en Android en este futuro deseable aumentaría sus posibilidades de poder lanzar un pequeño juego rentable en un corto periodo de tiempo.
+
+### Mi previsión
+
+Suponiendo que el acuerdo entre las dos compañías y el dispositivo sean reales **me surgen numerosas dudas**. Sería determinante conocer si los juegos *"Playstation"* se distribuirían a través del market al que estamos acostumbrados. Además, está por ver si se proporcionará un SDK específico para videojuegos y si la política de publicación en el market al usar este supuesto SDK cambiarán con respecto a la actual. ¿Será Sony un publisher más en el market o tratará de tomar un control más directo? Podría producirse un cambio a mejor pero los interrogantes y los puntos en los que el asunto se puede ir al traste son demasiados.
+
+**No pretendo hacer de adivino místico**, simplemente me ha parecido interesante exponer mis impresiones sobre los rumores que han surgido.

@@ -1,0 +1,42 @@
+---
+id: 1202
+title: 'Sion Tower, navigation mesh y A*'
+date: 2011-04-01T14:42:08+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1202
+url: /games/sion-tower-navigation-mesh-y-a/
+views:
+  - 884
+dsq_thread_id:
+  - 1852024196
+categories:
+  - Games development
+tags:
+  - 'A*'
+  - Blender
+  - DotScene
+  - IA
+  - navigation mesh
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+{{< youtube 2Q2tJxcTqoE >}}
+
+En este nuevo vídeo podemos ver el **sistema de búsqueda de caminos** empleando el conocido **[algoritmo A*](http://en.wikipedia.org/wiki/A*_search_algorithm)** junto a una malla de triángulos diseñada con [Blender](http://www.blender.org/). Es una sencilla demostración en la que el usuario mueve el marcador verde, pulsa la barra espaciadora y el personaje se dirige automáticamente al punto indicado por dicho marcador. Este sistema se integrará dentro del **comportamiento de los enemigos** de Sion Tower.
+
+El sistema está **orientado a la optimización del flujo de trabajo** y permite que los diseñadores puedan definir desde Blender las zonas del mapa que serán transitables por los enemigos:
+
+1.  Creación de una malla de triángulos
+2.  Exportación de la malla a formato *.mesh* (Ogre)
+3.  Exportación del nivel completo en *DotScene* (incluyendo la malla)
+4.  Carga del escenario en el motor del juego
+
+![navigationMesh2.png](/img/wp/navigationMesh2.png)
+
+Sobra decir que aún **queda un gran espacio para la mejora**. Actualmente el sistema nos devuelve la lista de celdas que componen el camino hacia el destino indicado. Posteriormente, el personaje recorre los puntos centrales de las celdas cambiando su orientación de forma brusca. La única optimización implementada consiste en tratar de saltar todas las celdas intermedias posibles siempre que haya una línea recta transitable entre el origen y el destino.
+
+En posteriores artículos ofreceré documentación adicional sobre el diseño y el funcionamiento interno del sistema. ¡Hay tanto trabajo por hacer!

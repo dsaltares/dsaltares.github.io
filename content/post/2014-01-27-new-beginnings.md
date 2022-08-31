@@ -1,0 +1,36 @@
+---
+id: 2809
+title: New beginnings
+date: 2014-01-27T08:46:10+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2809
+url: /general/new-beginnings/
+dsq_thread_id:
+  - 2180387431
+categories:
+  - General
+  - Projects
+tags:
+  - book
+  - Crytek UK
+  - games development
+  - Playstation 4
+  - 'R&D'
+  - Sony Computer Entertainment Europe
+  - Sony Soho
+---
+
+![ps4-controller.png](/img/wp/ps4-controller.png)
+
+It's been almost a full quarter since the last blog post, shame on me! How could I dare commit such outrageous atrocity, right? To be completely honest with you, I hadn´t been so busy in a very long time.
+
+In a spark of madness, after **[Math Maze](/games/math-maze/ "Math Maze")** was done, I partnered with a publisher to start writing a **game development book**. Let me tell you right now, combining a full time job and a side project full of deadlines is a hazardous cocktail ready to blow up in your face, making you require serious reconstructive surgery. It didn't matter how much safety net time I added to the schedule, I was wrong every time. Fortunately enough, the publisher has been most understanding so far and we"re currently studying alternatives such as coauthorship.
+
+There has been, however, a much more serious issue at hand. Just before Christmas, I made the decision to leave **Crytek UK** to go to **Sony Soho** to work as a programmer in the R&D department.
+
+I"m starting today!
+
+My adventure in the games industry started at Crytek two years ago. Not that my knowledge is worth mentioning but, in comparison, I was a complete n00b back then. Everything that I know is thanks to the people there. I cannot begin to express what an honour has been to work with the team on a triple A game.
+
+As sad as leaving Crytek and all the ridiculously talented people there was, I"m very excited about the new beginning and to be back in the London life.

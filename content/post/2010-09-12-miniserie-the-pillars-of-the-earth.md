@@ -1,0 +1,33 @@
+---
+id: 432
+title: Miniserie The Pillars of the Earth
+date: 2010-09-12T17:40:40+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=432
+url: /hobbies/miniserie-the-pillars-of-the-earth/
+views:
+  - 728
+dsq_thread_id:
+  - 1857902698
+categories:
+  - Hobbies
+tags:
+  - Ken Follet
+  - Los Pilares de la Tierra
+  - miniserie
+  - series
+  - The Pillars of the Earth
+---
+
+![the-pillars-of-the-earth.jpg](/img/wp/the-pillars-of-the-earth.jpg)
+
+Hace bastante tiempo tuve la ocasión de leer **el best-seller por antonomasia de [Ken Follet](http://es.wikipedia.org/wiki/Ken_Follett) [*"Los Pilares de la Tierra"*](http://es.wikipedia.org/wiki/Los_pilares_de_la_Tierra)**. Un libro extenso que, lejos de ser una obra maestra, te conduce en un fantástico viaje por la Inglaterra del S.XII y los inicios de la arquitectura gótica en Europa utilizando el desarrollo de sus personajes como medio de transporte. Desconocía que se estaba rodando una **[miniserie](http://en.wikipedia.org/wiki/The_Pillars_of_the_Earth_%28TV_miniseries%29)** basada en la novela y me he lanzado a verla durante los últimos días, a continuación unas breves impresiones.
+
+No me gustaría entretenerme en exponer mi opinión de la obra completa, sino de la miniserie como adaptación del original. Por supuesto, el texto está **libre de spoilers**. Ocho episodios de una hora aproximadamente que se antojan insuficientes componen el resumen del mastodóntico libro. El texto de Follet se recrea en los espléndidos avances arquitectónicos mostrándonos su belleza y majestuosidad. Por otro lado, esta adaptación toma la **guerra de sucesión inglesa** así como el entramado de odio, venganza y amor entre los personajes como **eje principal**. Un cambio de prioridades que deja cojo al conjunto aunque permite que conectemos más con los personajes.
+
+![the-pillars-of-the-earth-2.jpg](/img/wp/the-pillars-of-the-earth-2.jpg)
+
+Si obviamos el cambio de enfoque encontraremos **una versión televisiva más que digna**. Esta historia llena de detalles demuestra hasta dónde puede llegar la ambición humana, ya saben, aquello de *"el fin justifica los medios"*. Monjes corruptos, nobles crueles pero supersticiosos, una corona en juego, el resurgir de las cenizas de Kingsbridge y la construcción de una catedral gótica nos mantendrán suficientemente entretenidos.
+
+Los sibaritas de la pequeña pantalla deben estar avisados, no es una producción sobresaliente aunque merece una oportunidad, máxime si se sabe disfrutar de una historia de estas características. Si bien **las licencias que se toman los productores de la serie son abundantes** las considero comprensibles al tratarse de medios notablemente distintos. Sé que las puntuaciones en webs especializadas de poco sirven, pero para que se hagan una idea les diré que tiene [**un 8.8 en IMDB**](http://www.imdb.com/title/tt1453159/). En España se estrena el martes, emitiéndose los episodios en packs dobles. En cualquier caso, siempre recomiendo el **visionado en versión original** (curioso el marcado acento inglés).

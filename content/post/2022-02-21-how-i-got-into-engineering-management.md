@@ -1,0 +1,62 @@
+---
+title: "How I got into Engineering management"
+date: 2022-02-21T00:00:00+00:00
+author: "David Saltares"
+categories: ["Leadership"]
+description: "The story of how I got into Engineering management and started my leadership career."
+keywords: ["engineering leadership", "engineering manager", "leadership", "career", "career progression", "manager track"]
+---
+
+![A girl faces a fork in the road](/img/management/girl-fork-road.png)
+
+
+Recently, people, who are considering becoming Engineering Managers, have asked about my own experience.
+
+How did I get into it?
+How did I know it was what I wanted to do?
+
+The answer may be interesting to others, so I wrote it down.
+
+Let's take a moment to note that [becoming a manager is not a promotion](https://themanagershandbook.com/introduction#it-and-x27-s-not-a-promotion-it-and-x27-s-a-career-change). It's a career change. There's a myriad of [reasons not to be a manager](https://charity.wtf/2019/09/08/reasons-not-to-be-a-manager/). Being a great individual contributor (IC) does not mean you will be a great manager. And, leadership does not equal management.
+
+Additionally, my personal experience may not be similar to that of others. As a white, young, straight man, I have enjoyed loads of privilege throughout my career. Even as an immigrant. People often paid attention to what I had to say and, until recently, I didn't even notice. My career is the result of hard work, (earned) luck, and privilege.
+
+Let's get into it.
+
+### What I did before becoming a manager
+
+![crytek uk reception](/img/management/crytek.png)
+
+My full-time career started at **Crytek UK**, a video games studio, where I spent a couple of years. In the beginning, I was a Junior Developer. Later I was a mid-level one. I spent most of that time at the intersection between character AI and animation. I made the baddies and civilians look natural. The job required me to collaborate with many disciplines. It was quite the list: designers, animators, producers, and gameplay/AI/animation programmers. Later, I took on the role of Scrum Master. That role helped me focus on outcomes over my contributions. This also gave me some stakeholder management skills!
+
+![entrance to Sony Computer Entertainment Europe's offices in London](/img/management/sony.png)
+
+Right after, I spent six months at **Sony** as an R&D Software Engineer. There, I had to manage up to improve our engineering practices and introduce CI. That is also when I started having some difficult conversations related to feedback. Those would prove invaluable later on.
+
+![Bloomberg London Office's central staircase](/img/management/bloomberg.png)
+
+Then, I joined **Bloomberg**, where things kicked off big time. During the first two years, my role was Senior Software Engineer. After that, I took on the Team Lead role, Bloomberg's title for Engineering Manager in other places. In total, I was there for five years.
+
+Here are some of the things I did before becoming a team lead.
+- 🕸️ **Owning projects with many dependencies**: ours was an applications team. That meant we depended on many infrastructure teams. Projects usually had a significant coordination overhead.
+- 🏈 **Being a Scrum master**: similarly to what I was doing at Crytek.
+- 👩‍💻 **Mentoring and coaching**: we regularly had interns or new hires joining the team. A few times, I would be their mentor/buddy. This involved running my first 1-1s, setting goals, and giving feedback.
+- 🏫 **Helping with the graduate training class**: Bloomberg ran several graduate cohorts a year. Each ran for 12 weeks. During the workshops, engineers helped the grads with their projects by talking through problems or doing code reviews.
+- ✅ **Being an interviewer**: during my time there, I did hundreds of interviews and hired many engineers. I became more comfortable building rapport with new people and handling difficult situations. It made me think hard about the interview process and its faults. I wanted to be responsible for the process and improve it.
+- 📚 **Taking leadership training**: everyone had to take this course before becoming a manager.
+- 🦸‍♂️ **Having a mentor**: right after I became a people manager, I started working with a mentor. It was invaluable to have someone I could talk to about specific situations and peer review decisions. It helped me to explore and establish my management style and principles.
+
+Many of these opportunities would not have come my way without a supporting manager. At some point, my manager moved to another team. I was offered the role, and I took it.
+
+### Was I sure I wanted to get into management?
+
+Hell no!
+
+I loved the individual contributor (IC) role. Solving technical problems and building a product people enjoyed. Losing that was scary! In the end, two factors made me give it a try:
+
+1. The incredible reward of amplifying the powers of the team. Helping people develop and breaking down some organizational silos felt terrific.
+2. I had seen people make the opposite transition, going from manager back to IC. It could be a [two-way door decision](https://www.inc.com/jeff-haden/amazon-founder-jeff-bezos-this-is-how-successful-people-make-such-smart-decisions.html) after all.
+
+There's no perfect answer, and you should come up with your own reasons for making the change. Arguably, one could go a long way being an amplifier of their team and helping people develop as an IC!
+
+🙌 Thanks for reading. I hope it was useful!

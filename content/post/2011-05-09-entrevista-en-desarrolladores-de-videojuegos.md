@@ -1,0 +1,28 @@
+---
+id: 1349
+title: Entrevista en Desarrolladores de videojuegos
+date: 2011-05-09T08:15:31+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1349
+url: /games/entrevista-en-desarrolladores-de-videojuegos/
+views:
+  - 856
+dsq_thread_id:
+  - 1859660017
+categories:
+  - Games development
+tags:
+  - desarrollo
+  - entrevista
+  - IberOgre
+  - indie
+  - PFC
+  - Sion Tower
+  - trabajo
+  - videojuegos
+---
+
+![desarrolladoresdevideojuegos.jpg](/img/wp/desarrolladoresdevideojuegos.jpg)
+
+Un pequeño apunte, se acaba de publicar una **[entrevista que me hicieron en el blog Desarrolladores de videojuegos](http://desarrolladoresdevideojuegos.es/2011/05/09/entrevista-a-david-saltares-marquez-iberogre/)** sobre IberOgre y Sion Tower. Se trata de una comunidad hispanohablante que publica artículos, tutoriales y mucho material relacionado con el desarrollo de videojuegos. Hablamos principalmente sobre la concepción y el desarrollo de mi proyecto actual aunque también tocamos temas como los juegos independientes o la formación. **Quiero agradecerle a [Epifanio Suárez](http://twitter.com/#!/episuarez) su tiempo** y el espacio que me ha concedido en su página, esto contribuirá a la difusión de IberOgre y Sion Tower.

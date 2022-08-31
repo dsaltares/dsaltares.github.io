@@ -1,0 +1,61 @@
+---
+id: 1583
+title: 'gLapse: take screenshots, glue them together'
+date: 2011-06-01T22:00:26+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1583
+url: /projects/glapse-take-screenshots-glue-them-together/
+views:
+  - 1304
+dsq_thread_id:
+  - 1852022675
+categories:
+  - Projects
+tags:
+  - desarrollo
+  - ffmpeg
+  - Glade
+  - programación
+  - PyGTK
+  - Python
+  - scrot
+  - Software Libre
+  - time lapse
+  - vídeo
+---
+
+![glapse-logo.png](/img/glapse/glapse-logo.png)
+
+Several days ago I was a bit tired of working on [IberOgre](/en/proyectos/iberogre/), the Spanish Ogre wiki so I started procrastinating. Then I discovered the [Ludum Dare](http://ludumdare.com/compo/) 48h game development competition and I was amazed about the idea. Lots of developers use to **[record their progress in time lapse videos](http://www.vimeo.com/23581777)** to show how their mini games evolved. There are very good Windows tools to do that but **on GNU/Linux systems you have to use command line scripts** and **that's where gLapse comes into play**.
+
+### What is gLapse?
+
+[gLapse](http://code.google.com/p/glapse/) is a visual GNU/Linux tools to take desktop screenshots at a fixed custom time interval and them glue them together to make a time lapse video. It can be used to show your progress in any project you"re working on. It doesn't have too many features but hey, the bright side is that gLapse is extremely easy to use.
+
+It's written in Python using [pyGTK](http://www.pygtk.org/) and [Glade](http://glade.gnome.org/) as GUI designing tool. Internally it uses [ffmpeg](http://ffmpeg.org/) to encode video and [scrot](http://freshmeat.net/projects/scrot/) to take screenshots. Feel free to use it as you wish since it's licensed under the [GPL v3](http://www.gnu.org/licenses/gpl-3.0.html) license.
+
+![glapse-02.png](/img/glapse/glapse-02.png)
+
+### Features
+
+I released gLapse 0.1 two weeks ago and gLapse 0.2 launched two days ago, the following list shows the features it has now:
+
+*   Take *.png* screenshots with custom quality and time interval.
+*   Make videos using saved screenshots with custom quality and FPS.
+*   Multilanguage: English, Spanish and German.
+
+If you happen to find any kind of problem using gLapse or have a feature request, please go directly to the [issues section](http://code.google.com/p/glapse/issues/list) at Google Code. **Contributions are hugely welcome!**
+
+### Downloads
+
+*   [gLapse 0.2 Debian package](http://glapse.googlecode.com/files/glapse_0.2_all.deb)
+*   [gLapse 0.2 source package](http://glapse.googlecode.com/files/glapse-0.2.tar.gz)
+
+### What's next?
+
+I've been thinking a lot about **improving gLapse** and here are some possible new features for next versions:
+
+*   Webcam time lapse support.
+*   Additional languages: French, Portuguese or Italian.
+*   ...

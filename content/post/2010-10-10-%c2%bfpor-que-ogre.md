@@ -1,0 +1,128 @@
+---
+id: 535
+title: ¿Por qué Ogre?
+date: 2010-10-10T12:04:08+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=535
+url: /games/%c2%bfpor-que-ogre/
+views:
+  - 561
+dsq_thread_id:
+  - 1915746191
+categories:
+  - Games development
+tags:
+  - Direct3D
+  - Haunted
+  - IberOgre
+  - Irrlicht
+  - Ogre
+  - OpenGL
+  - Pacific Storm
+  - Panda3D
+  - Plugins
+  - QT
+  - Venetica
+  - Victory
+  - videojuegos
+---
+
+![porque.jpg](/img/wp/porque.jpg)
+
+**Antes de decidirme a utilizar Ogre** frente a otros motores de renderizado ([Irrlicht](http://irrlicht.sourceforge.net/)) o incluso motores de juego completos ([Panda 3D](http://www.panda3d.org/)) estuve mirando lo que ofrecía cada uno. Es complicado guiarse por foros y comunidades ya que **cada uno barre para casa**, a veces con un ferviente fanatismo, ya os podéis imaginar. Ni de lejos soy un experto en desarrollo de videojuegos 3D y puede que haya pasado detalles por alto pero lo que más me llamó la atención de Ogre fue su **capacidad de adaptación** a todo tipo de situaciones. Tas el salto, mis razones.
+
+![pacific-storm.jpg](/img/wp/pacific-storm.jpg)
+
+### Pon el piloto automático o toma el control
+
+En Ogre hay **decenas de formas de hacer las cosas** dependiendo del grado de control que quieras tomar sobre el proceso. Podemos indicarle el motor que lleve a cabo determinada tarea y que lo haga con el **comportamiento por defecto** o, aunque también es posible **indicar de forma explícita decenas de parámetros** para que se comporte exactamente como deseamos. Es cierto que características como está hacen que la curva de aprendizaje tenga una pendiente abrumadora en los primeros compases. No obstante, no he visto ningún engine con **la flexibilidad de Ogre**.
+
+Podría citar muchos ejemplos en los que reluce esta filosofía como, por ejemplo, **la secuencia de inicialización de Ogre** en la que se nos presentan dos vías principales. Lo que sigue es un pequeño ejemplo pasando por alto ciertas reglas de estilo con el objetivo de no extenderme demasiado.
+
+*Método automático:*
+
+```
+// Creamos la raíz con ficheros de plugin y configuración válidos
+Root* raiz = new Root("plugins.cfg", "ogre.cfg", "ogre.log");
+
+// Ventana de Ogre
+RenderWindow* ventana;
+
+// Restauramos la configuración
+raiz->restoreConfig();
+
+// Inicializamos la librería
+ventana = Ogre->initialize(true,"SionDream - Ogre automático");
+```
+
+
+*Método manual:*
+
+```
+// Creamos la raíz
+Root* raiz = new Root();
+
+// Ventana de Ogre
+RenderWindow* ventana;
+
+// Seleccionamos el plugin de renderizado de Open GL
+raiz->loadPlugin("RenderSystem_GL");
+String nombreGL("OpenGL Rendering Subsystem");
+RenderSystemList *listaRender = raiz->getAvaiableRenderers();
+RenderSystemList::iterator i;
+bool stop = false;
+
+for (i = listaRender->begin(); i != listaRender->end() && !stop; i++) {
+    if ((*i)->getName = nombreGL) {
+        raiz->setRenderSystem(*i);
+        stop = true;
+    }
+}
+
+if (raiz->getRenderSystem() == NULL) {
+    // Mensaje de error
+    delete raiz;
+    exit(1);
+}
+
+// Inicializamos Ogre
+raiz->initialise(false);
+
+// Creamos la ventana
+ventana = raiz->createRenderWindow(
+  "SionDream - Ogre inicialización manual",
+  1280, 720,
+  true,
+  0
+);
+```
+
+
+Podríamos haber ido más allá hasta lograr **embeber una ventana de Ogre en una de QT** para conseguir un render dentro de una aplicación de diseño de interiores, por ejemplo. Parámetros como la sincronización vertical y decenas de pijadas más, pueden ser personalizados.
+
+![venetica.jpg](/img/wp/venetica.jpg)
+
+### Extensibilidad a través de plugins
+
+La arquitectura de Ogre ofrece un **sistema de plugins** de forma que podemos sobreescribir la gestión por defecto de un subsistema por el que necesitemos. Como se ha visto en el ejemplo anterior, el propio sistema de renderizado viene en forma de plugin (Open GL o Direct3D). Ogre provee una interfaz para llevar a cabo una determinada tarea por lo que es posible proporcionar **distintas implementaciones** para dicha interfaz.
+
+Que Ogre se base en gran parte en plugins no quiere decir que nos toque desarrollar los nuestros. **La comunidad se ha encargado de desarrollar multitud** de extensiones para efectos de partículas, colisiones, gestión del scene graph etc. Simplemente debemos escoger el que se ajuste a nuestras necesidades.
+
+![victory.jpg](/img/wp/victory.jpg)
+
+### Construye escenas de todo tipo
+
+**El SceneManager** es la interfaz que se encarga de ordenar y **gestionar el scene graph** para su renderizado entre otros. Una de las características que más me llamó la atención de Ogre fue la existencia de una gran variedad de SceneManager especializados en situaciones diferentes.
+
+Imagina que estamos desarrollando **un título de acción** en el que nuestro protagonista debe recorrer los pasillos de una instalación acabando con monstruos procedentes de un experimento fallido, ¿alguien dijo Half-Life?. Necesitaremos representar **escenarios cerrados con una gran densidad de elementos**. ¡Bien! Existe un SceneManager específico para este caso de manera que obtendremos un rendimiento mucho mayor utilizándolo.
+
+Puede que nuestro proyecto consista en **un juego de rol** en el que nuestro héroe debe recorrer grandes extensiones de terreno acabando con criaturas mitológicas. Un mundo abierto difiere muchísimo de la instalación pasillera del caso anterior. **El escenario es cientos de veces mayor** pero precisa de menos detalle. Estamos de suerte porque en Ogre existe un plugin para gestionar entornos abiertos virtualmente infinitos.
+
+![haunted.jpg](/img/wp/haunted.jpg)
+
+### Multitud de features adicionales
+
+Ogre cuenta con muchas características adicionales listadas [aquí](http://osl.uca.es/iberogre/index.php/Conociendo_Ogre3D#Caracter.C3.ADsticas) aunque en este artículo he expuesto lo que más útil y sorprendente me ha parecido. Supongo que cada uno tendrá sus features preferidas. En cualquier caso, consideraba interesante exponer en el blog las razones de mi elección las cuales c**ompensan ampliamente la empinada curva de dificultad**.
+
+Próximamente más novedades sobre IberOgre.

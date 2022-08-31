@@ -1,0 +1,35 @@
+---
+id: 2075
+title: Official open source PlayStation Move library
+date: 2011-11-27T09:13:43+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2075
+url: /games/official-open-source-playstation-move-library/
+views:
+  - 205
+dsq_thread_id:
+  - 1859435484
+categories:
+  - Games development
+tags:
+  - API
+  - C++
+  - games development
+  - Library
+  - Linux
+  - PlayStation Move
+  - Sony
+  - Wand
+  - Windows
+---
+
+![playstationmove.jpg](/img/wp/playstationmove.jpg)
+
+Just a quick update: Sony has released **[moveme](http://code.google.com/p/moveme)**, an **official and open source PlayStation Move API** that enables developers to create Windows and Linux applications controlled using Sony's famous wand. You can read more about the library in the following paragraphs.
+
+They have published a **C/C++** version and a **C#** one. Within the Google Code repository you can find the sources for all the versions, some **sample programs** and a brief but **accessible documentation**. This small API provides functions to connect with several PlayStation Move controllers; to get the wand's info such as position, orientation or button presses and even to manage rumble effects. It looks like Sony has published the library the proper way.
+
+It's **surprising** that such a secretive company like Sony publishes a library to work with their proprietary controller. However, given the unofficial Kinect SDK situation, it's certainly more desirable providing your own version before the unofficial one comes around. Furthermore, no one can deny that Kinect SDK has given Microsoft's device more popularity across the Net.
+
+It's a pity that I don't own one of these controllers. Otherwise I could maybe create a Move compatible version of [Sion Tower](/games/sion-tower/ "Sion Tower"). Who knows?

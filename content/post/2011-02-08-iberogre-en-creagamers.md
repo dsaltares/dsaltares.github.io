@@ -1,0 +1,31 @@
+---
+id: 948
+title: IberOgre en Creagamers
+date: 2011-02-08T11:12:29+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=948
+url: /games/iberogre-en-creagamers/
+views:
+  - 899
+dsq_thread_id:
+  - 1852023772
+categories:
+  - Games development
+tags:
+  - Creagamers
+  - difusión
+  - IberOgre
+  - Ogre3D
+  - PFC
+  - videojuegos
+  - Wiki
+---
+
+![creagamers.jpg](/img/wp/creagamers.jpg)
+
+**Se ha publicado un [artículo sobre IberOgre en Creagamers](http://www.creagamers.es/iberogre-un-proyecto-espanol-de-ogre-engine/)**, una comunidad de desarrollo de videojuegos española. Tras contactar con el administrador hemos llegado a un acuerdo de colaboración de forma que contaremos con el respaldo de Creagamers más allá de este artículo inicial. Esto significa muchísimo para IberOgre ya que como cualquier wiki que se precie necesita de un grupo de usuarios que la siga, mejore y amplíe.
+
+Uno de mis próximos objetivos para IberOgre era mejorar su difusión y parece que vamos viento en popa. No obstante aún estamos lejos de contar con una base de usuarios estable, todo se andará.
+
+¡Muchas gracias Creagamers!

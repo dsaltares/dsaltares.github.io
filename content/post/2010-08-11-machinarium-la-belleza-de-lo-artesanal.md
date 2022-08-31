@@ -1,0 +1,58 @@
+---
+id: 212
+title: Machinarium, la belleza de lo artesanal
+date: 2010-08-11T14:00:10+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=212
+url: /hobbies/machinarium-la-belleza-de-lo-artesanal/
+views:
+  - 718
+dsq_thread_id:
+  - 1859910789
+categories:
+  - Hobbies
+tags:
+  - Amanita Design
+  - aventura gráfica
+  - indie
+  - Machinarium
+  - videojuegos
+  - Wall-E
+---
+
+![machinarium-01.jpg](/img/wp/machinarium-01.jpg)
+
+Según [Amanita Design](http://amanita-design.net/) su último título, **[Machinarium](http://machinarium.net/demo/)**, sólo había sido adquirido de forma lícita por entre el 5% y el 15% de los que lo habían jugado. En lugar de ponerse a llorar por los rincones han decidido **declarar la *"amnistía"* a los piratas** dándoles una segunda oportunidad y dejando el juego a 5 dólares, es decir, algo menos de 4€. La crítica alabó a este producto indie tras su lanzamiento en octubre de 2009 así que, ni corto ni perezoso, lo compré y he estado jugándolo durante los últimos días.
+
+![machinarium-02.jpg](/img/wp/machinarium-02.jpg)
+
+### La belleza de lo artesanal
+
+Machinarium es una **aventura gráfica** de lo más sencilla desarrollada en flash en la que controlamos a un pequeño robot que es arrojado a un vertedero. Nuestro objetivo es infiltrarnos en una misteriosa ciudad de máquinas para rescatar a nuestra amada ya que ha sido secuestrada. Como podéis comprobar por las capturas lo que más destaca en Machinarium es su **diseño artístico**. Glorioso trabajo al impregnar absolutamente todos los elementos que lo componen con un look de dibujado a mano.
+
+Todo es irregular pero a la vez armonioso en Machinarium, desde los robots, pasando por los edificios, los fondos o cualquier objeto. Los detalles de calidad están por todas partes: animaciones, rincones de escenarios, colores etc. Machinarium es un juego que **enternece desde el primer momento** y nos desplaza a un mundo triste y lleno de vida al mismo tiempo. Las similitudes con la magnífica producción de Pixar, [Wall-E](http://www.imdb.com/title/tt0910970/), son más que evidentes y van más allá de la ambientación. No hay ningún tipo de diálogo en todo el desarrollo, no obstante, la comunicación con el jugador es constante a través de **los gestos y la música**.
+
+![machinarium-03.jpg](/img/wp/machinarium-03.jpg)
+
+### Ejercitando las neuronas
+
+La ciudad máquina nos pondrá a prueba a través de decenas de puzzles en los que se combinan elementos clásicos de los point & click (como mezcla y uso de objetos) con rompecabezas, laberintos y otros enrevesados elementos. No soy ningún experto en aventuras gráficas, siempre he disfrutado de clásicos como [Monkey Island](http://es.wikipedia.org/wiki/Monkey_Island) o [Day of the Tentacle](http://es.wikipedia.org/wiki/Day_of_the_Tentacle) pero poco más y quizás mis impresiones con respecto a la dificultad de los puzzles sean erróneas. Lo cierto es que me he visto obligado a **rebanarme los sesos** para llegar al ansiado final de la aventura.
+
+No sólo algunas soluciones entrañan una dificultad considerable sino que es posible toparse con **callejones sin salida**, situación que no he visto en ninguna otra aventura. Esto nos obligará a andar con pies de plomo y guardar nuestros avances muy a menudo. Si tuviera que achacarle algo a su mecánica es la necesidad de depositar los ítems en el inventario manualmente en lugar de utilizar el botón derecho del ratón para descartarlos. Esto se debe al uso de flash como plataforma aunque tampoco es algo que afecte demasiado.
+
+![machinarium-04.jpg](/img/wp/machinarium-04.jpg)
+
+### Una gran iniciativa
+
+Amanita Design ha demostrado **saber tratar a los usuarios** con la iniciativa *"Aministía a los piratas"*. Cuando las grandes distribuidoras no hacen más que tratar de poner trabas a las copias ilegales de forma infructuosa mientras que descuidan y maltratan al jugador lícito, un pequeño estudio checo da un fuerte golpe en la mesa rebajando su trabajo a un precio muy atractivo. No sólo eso, sino que nos ofrecen las versiones Windows, GNU/Linux y Mac junto con la banda sonora completa del juego en MP3, todo **sin DRM**.
+
+Los éxitos de estas acciones como esta o la que tuvo lugar hace unos meses con el [Humble Indie Bundle](http://www.wolfire.com/humble) (5 juegos indie al precio que el usuario decida) dejan claro que la solución no pasa por establecer **validaciones absurdas en los juegos**. Aunque también es cierto que grandes producciones conllevan más riesgo por lo que se dan patadas desesperadamente para bajar los índices de piratería.
+
+![machinarium-05.jpg](/img/wp/machinarium-05.jpg)
+
+### Compra obligada
+
+Cuando fue lanzado se puso a la venta por 20 dólares, precio que estimo un poco alto para los costes y valores de producción del proyecto. En cualquier caso, el hecho de haber descendido hasta los 5 dólares lo convierte en un imprescindible, así de claro. Máxime cuando lo hacen compatible con los 3 sistemas operativos mayoritarios (aunque sea a través de Flash).
+
+**Machinarium es una delicia** que se disfruta cada segundo.

@@ -1,0 +1,39 @@
+---
+id: 3131
+title: Ashley 1.3.1 released
+date: 2014-10-13T21:31:37+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3131
+url: /projects/ashley-1-3-1-released/
+dsq_thread_id:
+  - 3113769615
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - ECS
+  - entity systems
+  - games development
+  - open source
+  - programming
+  - projects
+---
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+Small stability [release](https://github.com/libgdx/ashley/releases/tag/ashley-1.3.1) for [Ashley](https://github.com/libgdx/ashley) entity framework this time.
+
+**[Bug fix](https://github.com/libgdx/ashley/issues/77)**: fixed `IllegalArgumentException` thrown when trying to remove components from an already reset entity. The call has no effect now. Thanks for that [SgtCoDFish](https://github.com/SgtCoDFish).
+  
+**[Bug fix](https://github.com/libgdx/ashley/issues/78)**: fixed family match failure due to silly silly hashing.
+  
+**[Bug fix](https://github.com/libgdx/ashley/issues/82)**: fixed `entity.getId()` always returning `` for recycled pooled entities.
+  
+**[Bug fix](https://github.com/libgdx/ashley/issues/81)**: fixed nested iteration problem caused by adding/removing entities from an entity added/removed listener handler.
+  
+**[Bug fix](https://github.com/libgdx/ashley/commit/cb3347239504972b86653efab8d9051ec5366760)**: fixed missing type error in GWT when using `PooledEngine`. GWT should be quite smooth now.
+
+The new nightly dependency is `com.badlogicgames.gdx:ashley:1.3.2-SNAPSHOT`.
+
+Big thanks to everyone who reported issues and especially to those who also contributed with PRs. Keep it up!

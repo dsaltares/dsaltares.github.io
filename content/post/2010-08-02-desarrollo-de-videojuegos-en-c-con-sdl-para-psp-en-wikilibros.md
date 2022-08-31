@@ -1,0 +1,31 @@
+---
+id: 125
+title: Desarrollo de videojuegos en C++ con SDL para PSP en Wikilibros
+date: 2010-08-02T12:42:59+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=125
+url: /games/desarrollo-de-videojuegos-en-c-con-sdl-para-psp-en-wikilibros/
+views:
+  - 602
+dsq_thread_id:
+  - 1852744064
+categories:
+  - Games development
+tags:
+  - C++
+  - documentación
+  - "Granny's Bloodbath"
+  - PSP
+  - SDL
+  - videojuegos
+  - wikilibros
+---
+
+![portpsp.png](/img/wp/portpsp.png)
+
+Mientras trabajamos en **[Granny's Bloodbath](https://grannysbloodbath.wordpress.com/)** se nos ocurrió la idea de hacer un **port a PSP** del juego. Fui el encargado de la tarea y, cuando me puse manos la obra, descubrí que la documentación era pobre y en la mayoría de casos errónea. Lo cierto es que fue toda una aventura descubrir cómo crear un juego para PSP en C++ usando SDL y otras librerías sin cambiar el código original.
+
+Debido a la dificultad que me supuso, redacté una guía en PDF bajo Creative Commons y la publiqué en el repositorio del proyecto. Recibí consejos por parte de mis compañeros para publicarla en algún lugar donde pudiera tener más difusión, por ejemplo **[Wikilibros](http://es.wikibooks.org/wiki/Portada)**. Después de bastante tiempo les he hecho caso y, tras superar los entresijos de las reglas de nombrado de páginas, la guía ya está alojada allí. Podéis acceder a ella desde [aquí](http://es.wikibooks.org/wiki/Desarrollo_de_videojuegos_para_PSP_con_C%2B%2B_y_SDL).
+
+Sería estupendo si le sirviera a alguien para crear algún proyecto en PSP.

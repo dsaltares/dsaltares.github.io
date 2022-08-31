@@ -1,0 +1,62 @@
+---
+id: 517
+title: Final Fantasy XIII
+date: 2010-10-29T17:22:04+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=517
+url: /hobbies/final-fantasy-xiii/
+views:
+  - 1017
+dsq_thread_id:
+  - 1852023790
+categories:
+  - Hobbies
+tags:
+  - Final Fantasy XIII
+  - J-RPG
+  - Square-Enix
+  - videojuegos
+---
+
+![final-fantasy-xiii-07.jpg](/img/wp/final-fantasy-xiii-07.jpg)
+
+Aunque **lo terminé hacer un par de días**, el decimotercer capítulo de la franquicia que más expectación genera se lanzó hace 8 meses. Ante las **duras críticas** que recibió, esperé a que alguna tienda online decidiese deshacerse desesperadamente del stock [rebajándolo de forma considerable](http://www.zavvi.com/games/platforms/ps3/final-fantasy-xiii/10048635.html). Después de tanto tiempo es lógico que un artículo de estas características carezca de interés. No obstante, a lo largo de las líneas que siguen, **ofrezco mi humilde opinión, libre de las ataduras de medios más politizados**.
+
+![final-fantasy-xiii-06.jpg](/img/wp/final-fantasy-xiii-06.jpg)
+
+### Lu"cie, Fal"cie… ¿Cómo?
+
+La ciudad del Nido está gobernada por un **organismo militar y religioso conocido como el Sanctum** que trata de preservar el mundo de la region llamada Paals. El Gobierno se propone llevar a cabo una purga de ciudadanos que hayan entrado en contacto con Paals (algo así como el envío de judíos a campos de concentración nazis). En ese momento entra en juego **Lightning**, una soldado del Sanctum que **se subleva** cuando se disponen a *"purgar"* a su hermana Serah.
+
+Hasta ahí tenemos **una historia de religión, despotismo y lucha por los seres queridos**. El problema es que las variables que manejan los guionistas son mucho más numerosas. Pronto empezamos a oír hablar de los **Fal"cie**, unos seres místicos que controlan a humanos llamados **Lu"cie** convirtiéndose en enemigos del Nido. **Durante las primeras horas del juego no nos enteramos de mucho** y sólo podemos ser meros espectadores de conversaciones y parrafadas que aparentemente no tienen sentido. La historia es interesante pero la forma de **aparentar ser profunda** confundiendo al jugador es un poco cutre.
+
+![final-fantasy-xiii-09.jpg](/img/wp/final-fantasy-xiii-09.jpg)
+
+### Pasillos
+
+Sin lugar a dudas **lo más horroroso del juego es su linealidad**. El juego es un compendio de pasillos sin bifurcaciones, combates y escenas cinemáticas. En la mayoría de casos, los escenarios cuentan con un espacio para avanzar de apenas 2 o 3 metros de ancho. Cuando vemos una desviación podremos asegurar que en un lado está el camino correcto mientras que el otro encontraremos un ítem y un muro infranqueable. La **repetición de texturas y piezas del escenario** es absolutamente descarada.
+
+El juego no solo es lineal con respecto al camino a seguir sino que, además, las posibilidades que nos ofrece son muy reducidas. **¿Dónde quedan los minijuegos?** En FFVIII y FFIX teníamos las **cartas** mientras que en FFX el **Bliztball** pero en esta ocasión no nos queda más que que avanzar, luchar y ver las secuencias (espectaculares, por cierto). Las misiones de eliminar enemigos no suponen un añadido sustancial. El hecho de no tener ciudades propiamente dichas en las que interactuar con los ciudadanos e incluso contar con las tiendas en los puntos de guardado le resta gracia y valor.
+
+![final-fantasy-xiii-03.jpg](/img/wp/final-fantasy-xiii-03.jpg)
+
+### Cambio en el sistema de combate
+
+No todo iba a ser negativo en este FFXIII, **¡por fin algo que me ha gustado!** Square-Enix ha estado trabajando en adaptar el sistema de turnos clásico a los tiempos que corren con una mecánica más activa y, sobreponiéndose a la polémica suscitada, creo que lo ha conseguido. Durante los encuentros la acción se desarrolla **en tiempo real** y sólo controlamos a uno de los personajes. Tendremos que **configurar distintas formaciones** que determinarán las habilidades de cada personaje (apoyo, cura…) e ir intercambiándolas durante la batalla.
+
+A pesar del rechazo inicial que me produjo controlar a un sólo combatiente, poco a poco me fue enganchando. Nos veremos obligados a **pensar con celeridad controlando todos los aspectos** de la contienda y configurar formaciones de roles equilibradas. No obstante (en FFXIII siempre hay un **"pero"**), **hasta que no avanza el juego no adquiere profundidad suficiente**.
+
+![final-fantasy-xiii-01.jpg](/img/wp/final-fantasy-xiii-01.jpg)
+
+### ¿Crisis en la industria japonesa?
+
+No quiero dar la impresión de que FF XIII es un mal juego aunque parezca lo contrario. Los combates son divertidos y la historia no está nada mal pero **en cuanto a riqueza de contenidos es más bien pobre** y no es la única saga japonesa que no levanta cabeza. No puedo evitar la sensación de que no han sabido adaptarse a la actual generación. FFXIII cuenta con **5 años de desarrollo** y aunque **dura más de 40 horas** abusa de la repetición y tiene un acabado encorsetado. Parece que a cambio de ofrecer buenos gráficos y efectos se han visto obligados en restarle posibilidades el jugador.
+
+Mucho se ha hablado del tema pero ahora lo estoy experimentando por mí mismo. **No he disfrutado de un J-RPG de verdadera calidad desde que me hice con la PS3** (algunos dirán que en X-Box 360 está Lost Oddisey). Puede que mi afición por el género haya disminuido y que me atraigan más el rol occidental de juegos como Oblivion, pero es un hecho.
+
+![final-fantasy-xiii-05.jpg](/img/wp/final-fantasy-xiii-05.jpg)
+
+### Resumiendo
+
+Algunos amigos me han preguntado sin realmente merece la pena. La respuesta es que pagar 70 euros por el es una locura pero **desembolsar 20 no está mal**. Desde luego no debería haber estado más abajo en mi lista de juegos pendientes. Les dejo que **voy a echar una partida a Batman Arkham Asylum**.

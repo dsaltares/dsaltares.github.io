@@ -1,0 +1,53 @@
+---
+id: 933
+title: 'STC: Sion Tower Collisions v0.1'
+date: 2011-02-06T18:11:17+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=933
+url: /games/stc-sion-tower-collisions-v0-1/
+views:
+  - 647
+dsq_thread_id:
+  - 2120752506
+categories:
+  - Games development
+tags:
+  - Boost
+  - C++
+  - colisiones
+  - Doxygen
+  - Ogre3D
+  - PFC
+  - Red Iris
+  - Sion Tower
+  - videojuegos
+---
+
+![colisiones-0-1.png](/img/wp/colisiones-0-1.png)
+
+El siguiente objetivo en el desarrollo de Sion Tower era la implementación de un **sistema de detección de colisiones**. Hablamos de un apartado crítico en el desarrollo de un videojuego por la cantidad de cálculos que implica, hay que tener especial cuidado en ese sentido. Llevo un par de semanas trabajando en él de forma intensiva y al menos puedo decir que he conseguido algo que funciona. Les presento la versión 0.1 de STC: *Sion Tower Collisions*.
+
+### Modular y reutilizable
+
+Al ser modular y completamente independiente del resto del juego **he decidido liberarlo también por separado**. Se puede utilizar sin ningún tipo de problemas en cualquier proyecto. Las únicas dependencias son Ogre y Boost. El código es C++ estándar así que es compatible con cualquier plataforma que soporte las dos bibliotecas anteriormente mencionadas.
+
+### Características
+
+*   **Shape**: formas de colisión básicas: esfera, plano y AABB.
+*   **Collision Dispatching**: elección del test de colisión de forma adecuado de forma transparente a partir de dos figuras génericas.
+*   **Body**: cuerpo colisionable compuesto de varias formas básicas.
+*   **CollisionManager**: gestor de colisiones que lleva el registro de de los cuerpos colisionables.
+*   **Filtrado de colisiones**: el usuario define explícitamente qué tipos de cuerpos pueden colisionar.
+*   **Particionado del espacio**: para aumentar el rendimiento se incorpora un filtrado inicial para evitar tests exhaustivos. Muy básico por el momento.
+*   **Callbacks**: es posible indicarle al gestor de colisiones que llame a una función miembro con una signatura determinada ante una colisión entre dos cuerpos de un tipo predefinido.
+
+### Descarga
+
+He habilitado una **descarga en la forja de Red Iris** para que podáis acceder sin problemas. Incluye el código fuente, licencia (GPL 3) y documentación generada con [Doxygen](http://www.stack.nl/~dimitri/doxygen/). Ruego que me enviéis algún mensaje en caso de encontrar cualquier tipo de problemas: bugs, uso, posibles mejoras, etc.
+
+*   [Descargar STC v0.1](http://forja.rediris.es/frs/download.php/2072/siontower-collisions-v0.1.zip)
+
+### Documentación adicional
+
+Estoy preparando una serie de varios artículos en los que desgranaré con todo lujo de detalles el proceso de diseño e implementación de este sistema de detección de colisiones. Unir toda la documentación en un sólo artículo lo haría demasiado extenso y prefiero ir poco a poco.

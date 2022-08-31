@@ -1,0 +1,73 @@
+---
+id: 938
+title: 'Colisiones I: Introducción, requisitos y alternativas'
+date: 2011-02-08T10:00:27+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=938
+url: /games/colisiones-i-introduccion-requisitos-y-alternativas/
+views:
+  - 896
+dsq_thread_id:
+  - 1872151160
+categories:
+  - Games development
+tags:
+  - Beastie
+  - colisiones
+  - MOC
+  - Ogre Bullet
+  - Ogre ODE
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - Sion Tower Collisions
+  - videojuegos
+---
+
+![colisiones-1.png](/img/wp/colisiones-1.png)
+
+Entregas:
+
+* _Colisiones I: Introducción, requisitos y alternativas_
+* [Colisiones II: Diseño general de STC](/proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/)
+* [Colisiones III: La clase Shape y Collision Dispatching](../proyectos/pfc/sion-tower/colisiones-iii-shape-y-collision-dispatching/)
+* [ColisionesIV: Tests de colisión](/proyectos/pfc/sion-tower/colisiones-iv-tests-de-colision/)
+
+Mientras diseñaba e implementaba el [**sistema de detección de colisiones de Sion Tower (STC)**](/proyectos/pfc/sion-tower/stc-sion-tower-collisions-v0-1/) he leído bastante y aprendido mucho al respecto. Es un tema muy complejo, crítico y delicado estudiado con detalle en varias ocasiones. Me queda muchísimo por aprender al respecto pero por razones de calendario no puedo permitirme abarcarlo todo antes de ponerme a trabajar. Este es el primero de **una serie de artículos en los que documento el sistema de colisiones que he desarrollado**. Comenzamos con los requisitos del sistema y las alternativas disponibles.
+
+### Requisitos del sistema
+
+En el [documento de diseño de Sion Tower](http://forja.rediris.es/frs/download.php/2019/gdd.pdf) se especifican los **posibles tipos de colisiones** que pueden darse en el transcurso de una partida típica (sección 3.4.1):
+
+*   Personaje-Personaje
+*   Personaje-Escenario
+*   Hechizo-Personaje
+*   Hechizo-Escenario
+*   Trampa-Personaje
+*   Trampa-Escenario
+
+El área de colisión del protagonista y los enemigos podrían modelarse utilizando una o varias cajas. El escenario estará compuesto por el suelo y diversas piezas de mobiliario, es decir, un plano y otro puñado de cajas. Las trampas también pueden modelarse como cajas mientras que el área de efecto de un proyectil mágico podría ser representado mediante una sencilla esfera. Parte de la mecánica de juego consiste en seleccionar un hechizo o trampa utilizando los botones de la interfaz y colocarlo en el escenario con el ratón. Para ello hay que transformar coordenadas de pantalla (donde se desplaza el ratón) a un rayo que atraviesa el escenario y detectar las intersecciones con elementos del juego (técnica conocida como mouse raycasting).
+
+Antes de lanzarme a la piscina redacté una pequeña **lista de las funcionalidades** que debía ofrecer el sistema de colisiones que utilizase Sion Tower. Básicamente se reducían a las siguientes:
+
+*   Soporte para varias **formas**: esferas, planos, AABB y OBB
+*   **Tests de colisión** para las combinaciones de dichas formas. El usuario de la API le pasa varias formas de un tipo genérico al sistema y éste selecciona el test adecuado (collision dispatching).
+*   **Elementos de juego** compuestos de una o varias formas básicas.
+*   **Gestor de colisiones** que controle los elementos del juego y pueda detectar solapamientos entre ellos.
+*   Rendimiento, debe incorporar técnicas de **particionado del espacio** para ahorrar recursos.
+*   **Filtrado de colisiones**, el usuario debe poder definir clases de elementos de juego que pueden colisionar.
+*   Registro de **callbacks** para tipos de colisiones concretas. Por ejemplo, debe ser posible definir una función que será llamada automáticamente por el gestor de colisiones cuando un enemigo reciba el impacto de un hechizo.
+
+### Alternativas disponibles
+
+Reinventar la rueda siempre es una mala idea así que lo primero que hice fue salir en busca de un sistema que se ajustase a mis necesidades. A continuación listo las alternativas disponibles junto con el motivo que me llevó a desecharlas.
+
+*   [**Ogre Bullet**](http://www.ogre3d.org/tikiwiki/OgreBullet): wrapper de la mastodóntica biblioteca de físicas *Bullet* para Ogre3D. Es multiplataforma (disponible en decenas de sistemas) y ofrece todas las funcionalidades que uno podría desear con una eficiencia envidiable. No obstante, era como matar moscas a cañonazos. Para empezar sólo me interesaba el subsistema de detección de colisiones, no el de físicas. Además, añadía nuevas dependencias al proyecto y aprender a utilizarla no iba a ser trivial.
+*   [**Ogre ODE**](http://www.ogre3d.org/tikiwiki/OgreODE): el correspondiente wrapper de *Open Dynamics Engine* para Ogre3D. Básicamente presenta las mismas ventajas e inconvenientes que la anterior. El problema es que el proyecto no está muy activo hablando suavemente.
+*   [**MOC**](http://www.ogre3d.org/forums/viewtopic.php?t=45267): *Minimal Ogre Collision* es una biblioteca tremendamente sencilla que proporciona al usuario lo mínimo para detectar colisiones. Se compone únicamente de dos ficheros sólo hay que añadir al proyecto. El problema es que obliga al uso del gestor de terrero ETM y no incluye callbacks.
+*   [**Beastie**](http://www.ogre3d.org/forums/viewtopic.php?f=11&t=59063&sid=cc6db1211f8a5d839f73e2039a40711b): sencilla biblioteca compuesta únicamente por un fichero de cabecera enfocada a la detección de colisiones entre formas básicas y raycasting (emisión de rayos sobre la escena). Su interfaz no me acababa de convencer y tampoco ofrece callbacks ni cuerpos compuestos de varias formas.
+
+Es cierto que podría haber hecho el esfuerzo y adaptarme a cualquiera de las cuatro bibliotecas anteriores (sobre todo a Beastie) pero como Sion Tower forma parte de mi Proyecto Fin de Carrera **decidí que era mejor aprender los fundamentos** de la detección de colisiones. Por supuesto era imprescindible mantener al mínimo la complejidad con el objetivo de no hacerme viejo antes de terminarla.
+
+Por el momento no ofrezco más que este pequeño aperitivo introductorio. En el próximo artículo de la serie veremos el diseño general de **Sion Tower Collisions (STC)**. Más adelante nos centraremos en cada uno de los componentes de dicho sistema.

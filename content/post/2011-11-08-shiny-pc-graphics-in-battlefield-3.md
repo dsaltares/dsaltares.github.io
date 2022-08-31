@@ -1,0 +1,34 @@
+---
+id: 2047
+title: '"Shiny PC graphics in Battlefield 3"'
+date: 2011-11-08T19:15:49+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2047
+url: /computing/shiny-pc-graphics-in-battlefield-3/
+views:
+  - 175
+dsq_thread_id:
+  - 2151383977
+categories:
+  - Computing
+  - Games development
+tags:
+  - Battlefield 3
+  - conference
+  - Frostbite 2
+  - games
+  - graphics
+  - PC
+  - rendering
+  - talk
+  - vídeo
+---
+
+![frostbite2.jpg](/img/wp/frostbite2.jpg)
+
+Just a quick update, you really should spend a few minutes watching this presentation. Johan Andersson, Rendering architech at DICE, gave a talk called **"Shiny PC graphics in Battlefield 3"** during the last nVidia GeForce LAN. It's focused on the latest improvements the [Frostbite 2](http://en.wikipedia.org/wiki/Frostbite_(game_engine)) engine includes and I think it's a pretty good example of where the graphics technology is going.
+
+Click on more to see the videos.
+
+{{< youtube KMaL6j7Ry6c >}}

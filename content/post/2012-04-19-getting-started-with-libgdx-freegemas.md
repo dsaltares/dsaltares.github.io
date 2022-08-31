@@ -1,0 +1,40 @@
+---
+id: 2137
+title: Getting started with libgdx, Freegemas!
+date: 2012-04-19T22:33:46+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2137
+url: /games/getting-started-with-libgdx-freegemas/
+dsq_thread_id:
+  - 1870201620
+categories:
+  - Games development
+tags:
+  - Android
+  - Bejeweled
+  - desktop
+  - Freegemas
+  - games
+  - games development
+  - Java
+  - libgdx
+  - Linux
+  - Mac
+  - puzzle
+  - Windows
+---
+
+![freegemas](/img/freegemas/freegemas-banner.png)
+
+I can't believe it's been almost three months since I started at Crytek UK, time has passed amazingly fast! Nevertheless, I've managed to get some stuff done game development wise. I've always wanted to jump into mobile and that's what I've been doing during the last couple of weeks. **May I present you [Freegemas libgdx](/games/freegemas-for-android-and-html5/) edition!**
+
+It's basically a libgdx port of the original Freegemas, a simple Bejeweled like C++ Gosu puzzle game developed by [José Tomás Tocino](http://josetomastocino.com/) who I have to thank for the neat original code and the excellent art. This means you can run it on your [desktop](http://freegemas-libgdx.googlecode.com/files/freegemas-1.0.jar), [Android phone](https://play.google.com/store/apps/details?id=com.siondream.freegemas) and very soon on your browser through HTML5 sweetness.
+
+![freegemas](/img/freegemas/freegemas-02.png)
+
+**[Libgdx](http://code.google.com/p/libgdx/)** it's an open source Java library that allows you to create multiplatform games (desktop, Android, HTML5) sharing the **same code base**. That alone is amazing enough, so kudos to [Mario](http://www.badlogicgames.com/wordpress) for the titanic work. The library uses OpenGL so the performance it's quite good even though we"re talking about Java! It has so many features and associated tools that it"d take me a few days to cover them all. Plus the community is always very helpful, besides the forums there's always someone on the IRC channel willing to save your ass. However, to be honest it's a bit of a downside to me it's lack of UFT-8 font rendering support. Maybe some other day I"ll talk with some more insight about libgdx.
+
+This was a warm up project, bigger things are yet to come!
+
+PS: I must not forget about the HTML5 version of the game, it"ll be available soon.

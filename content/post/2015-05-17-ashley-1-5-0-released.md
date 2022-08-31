@@ -1,0 +1,43 @@
+---
+id: 3295
+title: Ashley 1.5.0 released
+date: 2015-05-17T10:24:29+00:00
+author: David Saltares
+layout: post
+guid: /?p=3295
+url: /projects/ashley-1-5-0-released/
+dsq_thread_id:
+  - 3770946462
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - ECS
+  - entity framework
+  - games development
+  - GitHub
+  - Java
+  - Maven
+  - programming
+---
+
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+Thanks to the contributors, here's a new version of [Ashley](https://github.com/libgdx/ashley),
+which now stands at [1.5.0](https://github.com/libgdx/ashley/releases/tag/ashley-1.5.0).
+A new version of your favorite component based entity framework is out.
+
+The version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
+
+* **[API addition](https://github.com/libgdx/ashley/commit/55241f5256c0ec186992262c7d598811bc4664fe)**: adds `getFamily()` method to `IntervalIteratingSystem` and `IteratingSystem`.
+* **[API change](https://github.com/libgdx/ashley/commit/bffa44cd5a59ca156e63b2ce7919869e41538907)**: `IntervalSystem`‘s `update()` method is now `final`, as it doesn't make sense to override it.
+* **[Update](https://github.com/libgdx/ashley/commit/9b0eb90d1a73f8e9ce5e42435a81bf49eb0ed29b)**: updated Libgdx version to 1.6.0.
+* **[Enhancement](https://github.com/libgdx/ashley/issues/151)**: allows `IntervalSystem` to update faster than the main loop.
+* **[Enhancement](https://github.com/libgdx/ashley/commit/b01cb15082df1358e620214f4bdef272cad700c4)**: improved `hashCode()` and `equals()` implementation of `Family`.
+* **[Bug fix](https://github.com/libgdx/ashley/commit/e2be43e39c1634c3ef0c64fcb8f84f2e3e0ad3b1)**: fixed GWT build and made a [Jenkins job](http://libgdx.badlogicgames.com:8080/job/ashley-superjumper/) to make sure we also test GWT integrity.
+* **[Bug fix](https://github.com/libgdx/ashley/commit/db1286f69c22a5bb4b9e7055d8f65d3063824a9b)**: empty `Family` now matches empty entities.
+
+To use it, change your dependency to `com.badlogicgames.gdx:ashley:1.5.0`. The new nightly dependency is `com.badlogicgames.gdx:ashley:1.5.1-SNAPSHOT`. As usual, [all unit tests are passing](http://libgdx.badlogicgames.com:8080/job/ashley/) and the wiki is up to date.
+
+Please keep up the good work sending more pull requests and reporting bugs.

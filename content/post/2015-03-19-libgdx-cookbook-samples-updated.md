@@ -1,0 +1,33 @@
+---
+id: 3261
+title: Libgdx Cookbook samples updated
+date: 2015-03-19T23:27:03+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3261
+url: /projects/libgdx-cookbook-samples-updated/
+dsq_thread_id:
+  - 3610424174
+categories:
+  - Games development
+  - Projects
+tags:
+  - AI
+  - book
+  - cookbook
+  - games development
+  - libgdx
+  - libgdx cookbook
+  - programming
+  - projects
+---
+
+![libgdx-cookbook-cover.png](/img/libgdx-cookbook-cover.png)
+
+It's been a few months since [Libgdx Cross-platform Game Development Cookbook](https://www.packtpub.com/game-development/libgdx-cross-platform-game-development-cookbook) came out. Quite a few things have happened since then in the Libgdx world, libraries are updated and some things break over time.
+
+As promised, we have updated our [samples repository](https://github.com/dsaltares/libgdx-cookbook) to use the latest versions of Libgdx (1.5.5), Ashley (1.4.0), gdx-ai (1.5.0) and RoboVM (1.0.0) among others. Luckily enough, [only a few changes](https://github.com/dsaltares/libgdx-cookbook/commit/380ee2ea90481f2b80b62df2dccd312db0af7964) were necessary to make everything work again.
+
+I'm very pleased to see that, 5 months after the book came out, it's still as relevant as it was on launch day. Moreover, [people seem to like it!](http://www.amazon.com/Libgdx-Cross-platform-Game-Development-Cookbook/dp/1783287292/ref=sr_1_1?ie=UTF8&qid=1426806867&sr=8-1&keywords=libgdx+cookbook)
+
+> [This cookbook is certainly a great resource for learning and improving your libgdx skills and in my opinion it is the best book on libgdx at the moment &#91;.&#93;](http://www.amazon.com/review/RIXAWPKQKCKOY/ref=cm_cr_dp_title?ie=UTF8&ASIN=1783287292&channel=detail-glance&nodeID=283155&store=books)

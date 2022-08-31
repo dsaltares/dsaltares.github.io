@@ -1,0 +1,31 @@
+---
+id: 656
+title: Los ojos de Julia
+date: 2010-11-07T20:11:51+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=656
+url: /hobbies/los-ojos-de-julia/
+views:
+  - 783
+dsq_thread_id:
+  - 1852023366
+categories:
+  - Hobbies
+tags:
+  - Belén Rueda
+  - ciegos
+  - cine
+  - Guillermo del Toro
+  - terror
+---
+
+![los-ojos-de-julia.jpg](/img/wp/los-ojos-de-julia.jpg)
+
+[*Los ojos de Julia*](http://www.imdb.com/title/tt1512685/) se ha enfrentado a las obligadas comparaciones con el anterior largometraje de terror protagonizada por Belén Rueda, [*El orfanato*](http://www.imdb.com/title/tt0464141/). Ya saben, aquello de *"la anterior era mucho mejor…"*. Bah, pamplinas y lo dice alguien a quien le gustó mucho El orfanato. **Hacía tiempo que todos los presentes de la sala se estremecían al unísono**. Incluso algunos graciosos trataban de paliar su estrés soltando alguna ridícula burla en todo un alarde de testosterona. A continuación, unas breves impresiones.
+
+Julia sufre una **enfermedad degenerativa en la vista** mientras que su hermana gemela ya se había quedado completamente ciega. Cuando ésta aparece colgada de una soga en el sótano de su casa Julia es la única que, irónicamente, ve más allá y piensa que **su hermana no se ha suicidado**. Entonces es cuando inicia una b**úsqueda solitaria por la oscuridad** con el fin de aclarar la bruma que envuelve a la muerte de su hermana.
+
+*Los ojos de Julia* nos pone en la piel de alguien que no ve en absoluto pero puede percibir una amenaza constante que otros no pueden ver. Funciona porque **recurre al miedo más básico**, el miedo a la oscuridad. No el tipo de oscuridad que se esfuma cuando encendemos la luz, hablamos de negrura permanente. Es posible que algo horrible esté ocurriendo a nuestro alrededor mientras **sólo podemos imaginar**. La mente nos juega malas pasadas, creemos que hay algo cuando en realidad no lo hay o viceversa.
+
+Estamos ante un **largometraje de tensión y sensaciones** por el que merece la pena dejarse unos pocos euros. Sin lugar a dudas **me ha dejado impresionado** y puede que por ello me haya excedido ligeramente. Por favor, guarden el lanzamiento de tomates para los comentarios.

@@ -1,0 +1,62 @@
+---
+id: 192
+title: Tiny Backup, PyGTK y Glade
+date: 2010-08-10T17:30:00+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=192
+url: /projects/tiny-backup-pygtk-y-glade/
+views:
+  - 1277
+dsq_thread_id:
+  - 1852021979
+categories:
+  - Projects
+tags:
+  - backup
+  - Glade
+  - GPL
+  - programación
+  - PyGTK
+  - Python
+  - Software Libre
+  - Tiny Backup
+---
+
+![tiny-backup1.png](/img/wp/tiny-backup1.png)
+
+Si quieres conocer una biblioteca o un lenguaje nuevos lo mejor es, sin lugar a dudas, utilizarlos. Había mirado ya algunas cosas sobre Python pero hace algunos meses sentí la necesidad de programar algo pequeño para adquirir un mínimo de destreza. Había oído maravillas de lo sencillo y elegante que era diseñar la interfaz de una aplicación de escritorio con **[Glade](http://glade.gnome.org/)** y manejarla con **[PyGTK](http://www.pygtk.org/)** desde Python. Por tanto me puse manos a la obra y **desarrollé Tiny Backup** en un par de días.
+
+![tiny-backup.png](/img/wp/tiny-backup.png)
+
+### Tiny Backup y su funcionamiento
+
+Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un **listado de todos los paquetes** que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por **correo electrónico** (por el momento es compatible con Gmail, Hotmail y Yahoo).
+
+Está diseñado siguiendo las directrices del patrón **[*"Arquitectura en tres capas"*](http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas)** aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios **comandos básicos** de GNU/Linux:
+
+```
+# Guardar listado de paquetes
+dpkg --get-selections | grep -v deinstall > paquetes_backup
+#Guardar listado de repositorios
+cp /etc/apt/sources.list repositorios_backup
+
+# Restaurar listado de repositorios
+mv repositorios_backup /etc/apt/sources.list
+gksudo apt-get update
+# Restaurar paquetes
+dpkg --set-selections < paquetes_backup
+```
+
+
+Por supuesto, es posible configurar los ficheros destino mediante el asistente de backup y restauración. Tiny Backup es libre bajo **licencia [GPL v3](http://gplv3.fsf.org/)** y podéis obtenerlo a través de la [forja en Google Code](http://code.google.com/p/python-tiny-backup/).
+
+![glade.png](/img/wp/glade.png)
+
+### Glade, un gran editor de interfaces
+
+Glade es una herramienta con licencia GPL que nos permite diseñar interfaces para aplicaciones de escritorio y guardarlas en formato XML. Posteriormente, esos ficheros pueden ser cargados mediante la clase [GtkBuilder](http://library.gnome.org/devel/gtk/stable/GtkBuilder.html) perteneciente a la API de [GTK](http://www.gtk.org/). Lo que significa que es compatible con [cualquier lenguaje que posea un port](http://www.gtk.org/language-bindings.html) de GTK entre los que, por supuesto, se encuentra Python (con PyGTK).
+
+La filosofía de Glade consiste en **separar por completo la interfaz del código** de manera que podemos editarla sin necesidad de recompilaciones. Esto difiere bastante de los clásicos IDE que generan código automáticamente (muchas veces sucio y poco elegante) para manejar la vista. Como inconveniente tenemos un aumento de tiempo en el inicio de la aplicación, no obstante, es leve y no se aprecia en exceso. Existen muchas aplicaciones open source que han hecho uso de Glade, sin ir más lejos, el reproductor de música [Exaile](http://www.exaile.org/screens) es una de ellas.
+
+Entre las bondades de Glade también se encuentra la capacidad para decidir la **redistribución de los componentes** al redimensionar los formularios, algo muy de agradecer. Es posible que tratar de abarcar el software de buenas a primeras puede ser duro pero siguiendo un [buen tutorial](http://live.gnome.org/Glade/Tutorials) en un par de días de puede estar utilizando sin problemas.

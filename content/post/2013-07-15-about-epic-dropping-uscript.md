@@ -1,0 +1,42 @@
+---
+id: 2689
+title: About Epic dropping UScript
+date: 2013-07-15T22:45:50+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2689
+url: /games/about-epic-dropping-uscript/
+dsq_thread_id:
+  - 1872361463
+categories:
+  - Games development
+tags:
+  - C++
+  - Develop
+  - Tim Sweeny
+  - Unity
+  - Unreal
+  - Unreal Script
+---
+
+![6686_Tim-Sweeney-engine.jpg](/img/wp/6686_Tim-Sweeney-engine.jpg)
+
+Last week I went to [Develop in Brighton](https://www.google.co.uk/search?safe=off&output=search&sclient=psy-ab&q=develop%20brighton&oq=&gs_l=&pbx=1&bav=on.2,or.r_cp.r_qf.&bvm=bv.48705608,d.d2k&biw=1097&bih=541&ion=1&pf=p&pdl=300&emsg=NCSR&noj=1&ei=HXnkUbHZBqe_0QXKroHYAw) with work, had a great time and attended talks full of insight, so lucky me! While that might very well be a whole post on its own, I want to focus on [Tim Sweeney](http://en.wikipedia.org/wiki/Tim_Sweeney_(game_developer))"s interview on the past and future of Unreal Engine and Epic Games. More specifically, on the fact that they"ll be dropping their widely used [scripting language](http://en.wikipedia.org/wiki/UnrealScript) entirely towards Unreal 4\. Programmers will work exclusively with C++.
+
+> Hang on, what?! I've been trying so hard to master it cause I heard it"d get me a job in the industry… Now what?
+
+That's exactly my point.
+
+So many people, mostly games students, tend to focus way too much on proprietary technologies arguing a high demand for them within the industry. Today, the cool kid in the block is mostly Unity but Unreal also gets a piece of the cake. As much as that may be true at this point in time, it's a very dangerous long term investment. Please be aware that my argument doesn't apply if you"re all about the fun of making games. If so, by all means, use whatever makes you happy.
+
+Don't get me wrong, learning a cool engine is always useful. Quick prototyping and discovering real life workflows are, indeed, great perks. Nevertheless, restricting yourself can backfire big time. Those who didn't become good enough at C++ while they were playing around with the Unity scene editor, will have a much harder time getting a job once the company behind their fancy engine goes bankrupt or simply stops being popular.
+
+As long as you"re fluent using common data structures, know how a computer memory works, understand the concepts behind algorithmic complexity (big O) and are able to write clean, fast C++ code you"ll be absolutely fine. Those skills are a must have in the games industry and even more so in AAA territory.
+
+Are you comfortable with pointers? What about bit shifting? Avoiding string compares? Preventing memory leaks?
+
+> But loads of small and medium sized companies use Unity!
+
+Companies want you to adapt quickly to their way of doing things and you"ll become a much more versatile programmer by being decent at a low level language. Switching from C++ to C# is relatively easy while the opposite can quickly become an awful nightmare. Hey, you can always prove you"re an amazingly fast learner by adding a scripting based project to your portfolio.
+
+Don't let modern shininess blind you. C++ will continue to be the most widely used language for games programming in the foreseeable future. Cool stuff will show up, but it might not be there tomorrow, don't bet everything on the same runner.

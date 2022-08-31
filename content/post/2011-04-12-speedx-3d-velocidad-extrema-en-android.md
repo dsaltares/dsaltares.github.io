@@ -1,0 +1,35 @@
+---
+id: 1276
+title: Speedx 3D, velocidad extrema en Android
+date: 2011-04-12T10:26:18+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1276
+url: /hobbies/speedx-3d-velocidad-extrema-en-android/
+views:
+  - 938
+dsq_thread_id:
+  - 1852022641
+categories:
+  - Hobbies
+tags:
+  - Android
+  - HTC Desire HD
+  - móvil
+  - Speedx 3D
+  - videojuegos
+---
+
+![speedx.jpg](/img/wp/speedx.jpg)
+
+Durante las últimas semanas **he estado probando varios juegos en Android** y es sorprendente la cantidad que no sabe adaptarse a las características de un dispositivo móvil en términos de control. **[Speedx 3D](http://www.facebook.com/Speedx3D) es de los que más gratas sensaciones** me ha producido por su sencillez y adictiva mecánica. A continuación sigue un breve comentario sobre el juego.
+
+![speedx-03.jpg](/img/wp/speedx-03.jpg)
+
+En Speedx 3D **avanzamos por una especie de túnel** de colores planos y vivos de corte futurista a gran velocidad. Debemos utilizar el acelerómetro para girar ante los obstáculos que se cruzan en nuestro camino. Básicamente el objetivo consiste en acumular puntos **aguantando el mayor tiempo posible** sin colisionar con ningún bloque. Lo apuesta todo a una única carta: poner nuestros reflejos al límite pero la jugada le sale de maravilla.
+
+Está **bastante nivelado** gracias a los cuatro niveles de dificultad disponibles y no produce frustración cuando nos estampamos con algún cubo. Al contrario, el ansia por **batir nuestro récord** personal o colocarnos en algún puesto interesante en la clasificación global (mediante el sistema Open Feint) hace que sigamos intentándolo. Eso sí, el nivel "Pure" se vuelve demencial a los pocos segundos. Cabe destacar que **el escenario se genera de forma [procedural](http://en.wikipedia.org/wiki/Procedural_generation)** de forma que nunca se repite.
+
+![speedx-02.jpg](/img/wp/speedx-02.jpg)
+
+Existe una [versión gratuita](https://market.android.com/details?id=com.beepstreet.speedxads) con anuncios el menú principal y una [de pago](https://market.android.com/details?id=com.beepstreet.speedx) (0.60€) sin publicidad. El precio es irrisorio pero si sois unos tacaños sabed que los anuncios no son demasiado intrusivos. **Para partidas rápidas en el autobús es perfecto**, queda recomendado.

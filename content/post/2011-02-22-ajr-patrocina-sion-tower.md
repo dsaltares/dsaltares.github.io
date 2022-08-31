@@ -1,0 +1,34 @@
+---
+id: 1062
+title: AJR patrocina Sion Tower
+date: 2011-02-22T22:13:53+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1062
+url: /games/ajr-patrocina-sion-tower/
+views:
+  - 784
+dsq_thread_id:
+  - 1852023839
+categories:
+  - Games development
+tags:
+  - AJR
+  - arte 3D
+  - Ogre3D
+  - PFC
+  - Sion Tower
+  - videojuegos
+---
+
+![personaje-siontower.jpg](/img/sion-tower/collage-protagonista.jpg)
+
+Vengo con una fantástica noticia para el proyecto Sion Tower: **¡tenemos patrocinador!** Antonio Jiménez Rodríguez (AJR) es socio de una empresa de diseño gráfico de Cádiz y se ha interesado por el proyecto.
+
+**Antonio Jiménez colaborará modelando, texturizando y animando los personajes**, una aportación de lo más impresionante. Hará un encomiable esfuerzo compatibilizando sus compromisos profesionales con la colaboración en un proyecto de Software Libre como es Sion Tower. Por el momento nos muestra al protagonista del juego en varias poses demostrando su talento. Podéis encontrar más información sobre sus trabajos en [su blog personal](http://ajr-portafolio.blogspot.com/).
+
+![ajr1-300x90.png](/img/wp/ajr1.png)
+
+Es muy común que a los programadores se nos resista el arte de nuestros proyectos y por ello considero **un paso gigante** la incorporación de Antonio Jiménez. Desde aquí, le doy las gracias colocándolo en la sección de patrocinadores de IberOgre y Sion Tower (barra lateral del blog).
+
+¡Pronto mostraremos más!

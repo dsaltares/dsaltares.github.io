@@ -1,0 +1,30 @@
+---
+id: 918
+title: El Señor de los Anillos en Vandal
+date: 2011-02-09T20:53:51+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=918
+url: /hobbies/el-senor-de-los-anillo-en-vandal/
+views:
+  - 852
+dsq_thread_id:
+  - 1852022852
+categories:
+  - Hobbies
+tags:
+  - análisis
+  - blog
+  - El Señor de los Anillos
+  - noticias
+  - Vandal
+  - videojuegos
+---
+
+![lotr-vandal.jpg](/img/wp/lotr-vandal.jpg)
+
+Si seguís mi blog desde hace cierto tiempo sabréis que me encanta desarrollar videojuegos tanto como jugarlos y luego escribir sobre ellos. Hace pocos días se me brindó la oportunidad de trabajar para una de las webs del sector más importantes en España, [Vandal Online](http://www.vandal.net/). ¿Cómo iba a rechazar tamaña oferta? He empezado con un [avance sobre El Señor de los Anillos la Guerra del Norte](http://www.vandal.net/avances/ps3/el-senor-de-los-anillos-la-guerra-del-norte/12250/1) y algunas noticias. Además, está en camino un especial bastante interesante.
+
+He aprendido muchas cosas mientras recopilaba información para redactar el artículo y creo que continuar en Vandal puede ser una experiencia enriquecedora. Trabajaré de forma regular cubriendo noticias aunque también redactaré análisis y especiales más elaborados. Eso no significa el final de los textos sobre videojuegos en Sion Dream. El blog es mi espacio personal, donde tienen cabida contenidos que en Vandal carecerían de sentido o interés.
+
+Deseadme suerte.

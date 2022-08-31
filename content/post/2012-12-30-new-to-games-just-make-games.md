@@ -1,0 +1,59 @@
+---
+id: 2345
+title: New to games? Just make games
+date: 2012-12-30T08:59:16+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2345
+url: /games/new-to-games-just-make-games/
+dsq_thread_id:
+  - 1867611382
+categories:
+  - Games development
+tags:
+  - beginner
+  - game engine
+  - games development
+  - KISS
+---
+
+<span style="color: #ff0000;">Disclaimer</span>: this text is aimed at games programming beginners.
+
+Diving into games development for the first time is exciting but offtimes confusing, a great piece of advice would be: just make games. Get things done, period. I've often found myself researching which available technology would suit my requirements best, as if I needed a sophisticated tailored tuxedo. The fear of finding a dead end was as powerful as counterproductive. Such a time wasting approach.
+
+> What's the most powerful games framework out there? Should I learn a new language to start making games?
+
+Stop it.
+
+Needless to say, you"ll make mistakes along the way and that is not a stigma we"re going to get rid off anytime soon. When I was working on my [final degree project](/games/sion-tower/), I happened to realize quite often I needed to rewrite a whole subsystem from scratch (sad face) but that's part of the learning process. Spending weeks going through feature lists of well advertised frameworks you most likely don't understand isn't. Take this as a piece of advice to help you stay focused on what really matters, creating games.
+
+![siontower-game11.png](/img/sion-tower/siontower-game11.png)
+
+[KISS](http://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple, Stupid) is a principle to live by.
+
+This field's learning curve is steep enough for us to try complicate things any further. If you"re already half decent in a certain language, don't try to learn a new one with the sole purpose of using a specific engine. Beware! It's dauntingly easy to fall for this.
+
+A couple Google or Stack Overflow queries will suffice to discover a suitable game engine that gets along with your language of choice. Be almost certain that it"ll feature everything you need and more. If you think that being able to use the latest computer graphics algorithm is important, you"re wrong. Tetris, R-Type, Snake and the like are encouraged as first projects and they don't need to be fancy at all. Once again, put everything else aside and push forward to complete it.
+
+![pong.jpeg](/img/wp/pong.jpeg)
+
+After finishing a couple of small projects you should ask yourself the following: are you in this for fun? In that case, you can stick with the environment you"re most comfortable with. Keep producing awesome games, no pressure! However, you might be aiming at making a living out of it. When the latter applies, learn new languages to broaden your skill set bearing in mind that proficiency in C++ is paramount.
+
+Summarizing, unless you code in [Brainfuck](http://en.wikipedia.org/wiki/Brainfuck), there are plenty of valid tools that will provide you with more power than you could possibly use.
+
+*   C: [SDL](http://www.libsdl.org/)
+*   C++: [SFML](http://www.sfml-dev.org/)
+*   Python: [PyGame](http://www.pygame.org/news.html)
+*   Java: [libgdx](http://libgdx.badlogicgames.com/)
+*   Ruby: [Gosu](http://www.libgosu.org/)
+*   Flash: [Flashpunk](http://flashpunk.net/)
+*   Lua: [Love2D](https://love2d.org/)
+*   PHP: are you kidding me?
+
+Still skeptical? Examine the showcase forum of each one of them, you"d be surprised.
+
+![vampire-runner.jpg](/img/wp/vampire-runner.jpg)
+
+Actually, the only thing to be concerned about is whether the candidate is well documented and counts with an active community or not. Watch out for niche and cryptic technology. Fortunately, those are easily to spot by paying their online platform a quick visit. Excellent, now you will enjoy the wonders of a helpful bunch of fellow coders when you get stuck.
+
+Wrapping things up, are you still desperately looking for the ultimate panacea? Don't worry too much and just make games.

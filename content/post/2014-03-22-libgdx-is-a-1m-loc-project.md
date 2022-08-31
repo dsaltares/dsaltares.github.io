@@ -1,0 +1,30 @@
+---
+id: 2950
+title: 'Libgdx has >1M LoC project'
+date: 2014-03-22T17:59:03+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2950
+url: /games/libgdx-is-a-1m-loc-project/
+dsq_thread_id:
+  - 2485316655
+categories:
+  - Games development
+tags:
+  - Code Analyzer
+  - Java
+  - libgdx
+  - lines of code
+  - trivia
+---
+Don't exactly remember how, but last night I came across [Code Analyzer](http://sourceforge.net/projects/codeanalyze-gpl/), an open source Java desktop utility that counts lines of code. Out of curiosity, I downloaded the runnable jar file and tried it with Libgdx.
+
+![libgdx-code-stats.png](/img/wp/libgdx-code-stats.png)
+
+I was very much aware that Libgdx was a pretty big project but certainly didn't expect it to be that large. At the time of writing the `HEAD` of the repository contains 1.048.646 lines of Java, C and C++. 712.016 of which are actual code, 17% are comments while the rest are just whitespaces.
+
+Not bad, huh?
+
+Although this is obviously not a quality indicator, it shows how big of a baby it is.
+
+There you go, your fun fact of the day.

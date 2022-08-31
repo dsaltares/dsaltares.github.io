@@ -1,0 +1,57 @@
+---
+id: 1043
+title: PES 2011 para Android
+date: 2011-02-20T11:49:43+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1043
+url: /hobbies/pes-2011-para-android/
+views:
+  - 1255
+dsq_thread_id:
+  - 1852994527
+categories:
+  - Hobbies
+tags:
+  - Android
+  - deportes
+  - fútbol
+  - Konami
+  - PES 2011
+  - Pro Evolution Soccer
+  - videojuegos
+---
+
+![pes-2011-android.jpeg](/img/wp/pes-2011-android.jpeg)
+
+Como ya he comentado, hace unas semanas me hice con un HTC Desire HD y desde entonces he estado matando las esperas de autobús con un buen puñado de juegos. En esta ocasión **vengo a hablaros de Pro Evolution Soccer 2011 para Android**. Durante los últimos años he preferido FIFA a PES aunque decidí darle una oportunidad, total, en un móvil no busco simulación sino una partida rápida.
+
+![pes-2011-android-02.jpeg](/img/wp/pes-2011-android-02.jpeg)
+
+### Jugabilidad directa
+
+Es muy de agradecer poder arrancar el juego y **comenzar un partido a los pocos segundos** ya que no suelo dedicarle más de diez minutos de una sentada a ningún título móvil. Ya saben: viajes en autobús, salas de espera, visitas al WC, etc. Una vez empezamos un partido no es necesario un largo periodo de adaptación por lo que estaremos metiendo goles y enlazando jugadas en poco tiempo. Básicamente se traslada el **espíritu simple, directo y arcade** de las versiones mayores a la pantalla del terminal. En algunos momentos me recordó a esos juegos de fútbol de Mega Drive (en el buen sentido de la expresión).
+
+PES no cuenta con la licencia de la LFP pero sí podremos jugar una Champions y controlar a varios de los equipos europeos de mayor importancia. Así mismo, se ofrece un modo entrenamiento, partidos rápidos y ligas personalizadas. La variedad es aceptable para lo que se espera de una versión como esta, tampoco voy a exigir que nos den un modo mánager, sería ridículo. **Al final lo que importa es que sea divertido y PES 2011 para Android lo es**.
+
+![pes-2011-android-04.jpeg](/img/wp/pes-2011-android-04.jpeg)
+
+### Control aceptable pero interfaz mal adaptada
+
+Una de las mayores preocupaciones que tenía al probar una adaptación a móviles de una saga concebida para consolas de sobremesa era el control. En PES 2011 se nos da la posibilidad de elegir entre **tres configuraciones de control** distintas: un pad virtual de dos botones, un pad de un solo botón o el acelerómetro. Me he centrado sobre todo en la primera por ser la que te da más posibilidades y he de reconocer que **no funciona del todo mal**. No obstante, a veces no tocaba exactamente en la cruceta y el jugador se paraba desperdiciando así la jugada.
+
+**La interfaz** es agradable pero emula demasiado a la de la versión de consolas y **no funciona bien en una pantalla táctil**. Se echa de menos un poco de feedback adicional cuando el usuario interactúa con los menús. Si le hubiesen dedicado tiempo a adaptar la interfaz como es debido, todos los botones se hundirían al pulsarlos o harían vibrar ligeramente el teléfono cuando en realidad sólo lo hacen los de algunas pantallas. No es un despropósito total pero Konami evidencia signos de **falta de dedicación o experiencia** en el terreno móvil.
+
+![pes-2011-android-01.jpeg](/img/wp/pes-2011-android-01.jpeg)
+
+### Gráficos sorprendentes en mi Android
+
+No estoy acostumbrado a juegos técnicamente punteros en el terreno móvil por lo que PES 2011 me ha impresionado mucho. **Todo es magnífico**: desde la recreación de los estadios a los modelos 3D de los jugadores pasando por la suavidad con la que se mueve el conjunto. Quizás cuando pueda probar otros títulos 3D llenos de efectos chuflas me ponga el monóculo y mute en una especie de *"graphics whore"* pero creo que PES cumple y de sobra en este sentido.
+
+Desconozco los requisitos mínimos para que funcione con dignidad pero **en mi HTC Desire HD va como un tiro**. No he sufrido ninguna ralentización y los tiempos de cargas son mínimos.
+
+![pes-2011-android-03.jpeg](/img/wp/pes-2011-android-03.jpeg)
+
+### Para terminar
+
+Es cierto que aún queda margen de mejora en lo que a interfaz y control se refiere pero Pro Evolution Soccer 2011 para Android me ha sorprendido gratamente por diversión y gráficos. El port le debe haber costado su dinerito a Konami, lo que **evidencia el auge del mercado móvil en general y Android en particular**. Es de agradecer que poco a poco más compañías de reconocida relevancia se dediquen al sistema operativo de Google para móviles.

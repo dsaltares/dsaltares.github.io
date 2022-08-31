@@ -1,0 +1,47 @@
+---
+id: 715
+title: Steve Streeting recomienda IberOgre por Twitter
+date: 2010-11-21T15:52:47+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=715
+url: /games/steve-streeting-recomienda-iberogre-por-twitter/
+views:
+  - 738
+dsq_thread_id:
+  - 1852023168
+categories:
+  - Games development
+tags:
+  - IberOgre
+  - Ogre3D
+  - PFC
+  - redes sociales
+  - Steve Streeting
+  - Twitter
+  - videojuegos
+---
+
+![sinbad-twitter.png](/img/wp/sinbad-twitter.png)
+
+Así es, **yo tampoco me lo creía cuando lo vi** pero el hecho es que **el creador de Ogre**, nuestro amado motor de renderizado, **recomendaba [IberOgre](http://osl2.uca.es/iberogre)** a través de la red de microblogging. Por supuesto, agradecerle infinitamente su interés con este pequeño pero importantísimo gesto que proporciona al proyecto más difusión. Sigan leyendo y les contaré los detalles.
+
+### Steve Streeting y Ogre
+
+**[Steve Streeting](http://www.stevestreeting.com/) estuvo en el proyecto Ogre durante años** y ahora está embarcado en el desarrollo de una GUI para Git y Mercurial en Mac llamada [SourceTree](http://www.stevestreeting.com/2010/10/26/introducing-sourcetree/). Sin duda es una persona que **ha contribuido mucho al mundo del Software Libre** en general y a la democratización del desarrollo de videojuegos en particular. El hecho de tener una licencia muy permisiva ha posibilitado que pequeñas compañías puedan lanzar juegos de tremenda calidad sin tener que invertir en una millonada en el engine comercial de turno. Por supuesto también contribuye a que gente como un servidor, aprenda a desarrollar juegos en 3D.
+
+Sus logros no son pocos y es que, **Ogre fue nombrado durante 2005 [*"Proyecto del mes"* en SourceForge](http://en.wikipedia.org/wiki/OGRE#History)** (ahí es nada). Recientemente aparece en *["The Game Developer 50"](http://www.stevestreeting.com/2010/11/06/im-in-the-game-developer-50/)* dentro de la [Game Developer Magazine](http://www.gdmag.com/), galardones que otorgan a los miembros más destacado del mundo del desarrollo de videojuegos.
+
+### Un ciber-encuentro ¿casual?
+
+**Steve Streeting dio con IberOgre** en una de sus, al parecer, asiduas [búsquedas del hashtag #Ogre3D](http://twitter.com/#!/sinbad_ogre/status/5966571453288448) en Twitter. Debido a la barrera del idioma, sólo pudo saber que era una cuenta de Twitter bastante activa que hablaba sobre Ogre en castellano. Y lo comentó en [este mensaje](http://twitter.com/#!/sinbad_ogre/status/5966016421036033). Más tarde le respondí en inglés comentándole que, además, era una wiki con documentación sobre el engine. Al poco tiempo ya había **[retwitteado mi respuesta](http://twitter.com/#!/IberOgre/status/5977828923277312)** e IberOgre contaba con unos cuantos seguidores adicionales.
+
+### Twitter como herramienta de difusión
+
+> *¿Todo este revuelo por un simple retweet? ¡Menuda porquería! ¡Fuera!*
+
+Es muy probable que pienses así pero yo creo que es mucho más que eso. Estamos ante **una muestra más del potencial que tienen las redes sociales**, en especial Twitter, para que un proyecto gane en visibilidad.
+
+Hablar mucho sobre un tema, ser activos y hacer un buen uso de las etiquetas (hashtags) puede marcar la diferencia. El motor de **Twitter rápidamente indexará y catalogará** nuestros mensajes de forma que seamos muy accesibles a usuarios potenciales. Esto vendrá en forma de búsquedas o recomendaciones directas a muchos usuarios.
+
+**Gracias al pequeño grano de arena del señor Streeting** y a toda la gente que sigue sus mensajes, IberOgre ha ganado usuarios. De hecho, podría decirse que IberOgre ha conseguido casi la totalidad de su comunidad a través de Twitter.

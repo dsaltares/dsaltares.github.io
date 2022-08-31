@@ -1,0 +1,27 @@
+---
+id: 2056
+title: 'Evolve: early stage demo'
+date: 2011-11-11T08:39:35+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2056
+url: /games/evolve-early-stage-demo/
+views:
+  - 211
+dsq_thread_id:
+  - 1921677255
+categories:
+  - Games development
+tags:
+  - action
+  - demo
+  - Evolve
+  - FPS
+  - games development
+  - PSP
+  - vídeo
+---
+
+{{< youtube 7YKUMgVqrRs >}}
+
+Yesterday I had an **in class demo** at university of my **PSP First Person Shooter prototype, [Evolve](/games/evolve-psp-project/ "Evolve: PSP project")**. The professor was impressed with the software engineering behind the system so, apparently, it went quite well although the project is in a very early stage of development. As always, I was in the games lab (it's becoming my second home), so I recorded a video of the demo to keep track of the process.

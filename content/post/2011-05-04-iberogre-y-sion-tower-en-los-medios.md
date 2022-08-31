@@ -1,0 +1,35 @@
+---
+id: 1336
+title: IberOgre y Sion Tower en los medios
+date: 2011-05-04T22:56:34+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1336
+url: /projects/iberogre-y-sion-tower-en-los-medios/
+views:
+  - 981
+dsq_thread_id:
+  - 1852022655
+categories:
+  - Projects
+tags:
+  - Bahía de Cádiz
+  - difusión
+  - IberOgre
+  - medios
+  - periódico
+  - PFC
+  - Sion Tower
+  - UCA
+  - videojuegos
+  - Viva Cádiz
+---
+
+![cusl-local.jpg](/img/wp/cusl-local.jpg)
+
+**[La Universidad de Cádiz ha publicado la noticia](http://www.uca.es/es/cargarAplicacionNoticia.do;jsessionid=C9A74492BEB7A6BB292CDC3E893494F6.wwwucaes3?identificador=3045)** de que IberOgre y Sion Tower es proyecto finalista en el V CUSL que se celebrará en Granada. Desde entonces, muchos **otros medios se han hecho eco** dándole una mayor difusión al proyecto. No podemos estar más contentos por el apoyo recibido.
+
+El periódico gratuito Viva Cádiz nos dedica la mayor parte de su contraportada (podéis ver la noticia completa más abajo) y aparecemos en la versión digital de [Diario Bahía de Cádiz](http://www.diariobahiadecadiz.com/detalle-noticia-11877). Son pasos pequeños pero muy importantes para que el proyecto crezca.
+
+Por cierto, me gustaría **agradecer formalmente a todos aquellos que nos han felicitado** ya sea por correo, twitter u otro medio. La comunidad es básicamente lo que define a IberOgre y Sion Tower. Antes de irme, la enhorabuena a [FreePhyloTree](http://freephylotree.blogspot.com/) que también aparece mencionado en todo momento.
+

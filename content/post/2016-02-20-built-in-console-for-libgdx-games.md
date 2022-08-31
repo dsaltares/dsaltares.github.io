@@ -1,0 +1,80 @@
+---
+id: 3599
+title: Built-in console for Libgdx games
+date: 2016-02-20T16:32:07+00:00
+author: David Saltares
+layout: post
+guid: /?p=3599
+url: /games/built-in-console-for-libgdx-games/
+dsq_thread_id:
+  - 4596260122
+categories:
+  - Games development
+tags:
+  - games development
+  - in-game console
+  - libgdx
+  - programming
+---
+
+A lot of games come with a built-in console that lets you enter commands, which is especially useful during development. Most times, it gets disabled before shipping although, occasionally, devs let you bring it up and enter cheat codes. CryEngine comes with a built-in console.
+
+![console1.jpg](/img/others/console1.jpg)
+
+When you"re testing a new feature you just wrote, it can be incredibly useful to pause, reset the scene, teleport your character, become invincible, switch to a different level or even adjust some parameters in the AI. Some engines use a scripting language that can hot-reload new or modified scripts, but that may not always be feasible. Having a built-in console to enter these commands surely is pretty darn handy! It would be reasonably easy to write a custom console with Libgdx, you just need to leverage Scene2D and have some logic to support arbitrary commands and let the game code handle them. But why do that when you have [`libgdx-inGameConsole`](https://github.com/StrongJoshua/libgdx-inGameConsole)? No reason at all! It's incredibly simple to set it up. First, add the following dependency to your `build.gradle` file and refresh your project's dependencies. compile "com.strongjoshua:libgdx-inGameConsole:0.3.2" You can instantiate the `Console` inside your `create()` method. Use the `setSizePercent()` and `setPositionPercent()` methods to configure where your console will show up and how much of the screen it"ll take. Finally, you can also override the key to toggle the console.
+
+```
+private Console console;
+
+@Override
+public void create() {
+    ...
+
+    console = new Console();
+    console.setSizePercent(100, 33);
+    console.setPositionPercent(0, 67);
+    console.setKeyID(Keys.Z);
+}
+```
+
+Remember to call `draw()` inside your `render()` method.
+
+```
+console.draw();
+```
+
+Wonderful, we now have a working in-game console capable of doing absolutely nothing. We need to add our command processing logic. Let's specialize the `CommandExecutor` class and add some methods to load a level and spawn baddies.
+
+```
+public class GameCommandExecutor extends Command {
+    private Console console;
+
+    public GameCommandExecutor(Console console) {
+        this.console = console;
+    }
+
+    public void loadLevel(String levelName) {
+        console.log("loading level " + levelName, Console.LogLevel.SUCCESS);
+    }
+
+    public void spawnEnemy(String type, float x, float y, float z) {
+        console.log("spawning enemy " + type, Console.LogLevel.SUCCESS);
+    }
+
+    public void clear() {
+        console.clear();
+    }
+}
+```
+
+At some point, we need to register the executor with the console.
+
+```
+console.setCommandExecutor(new GameCommandExecutor(console));
+```
+
+Done, that's it!
+
+![libgdx-console.png](/img/others/libgdx-console.png)
+
+The console uses the Libgdx reflection module to figure out which commands your `CommandExecutor` supports, which means it's fully compatible with the WebGL backend. It's also possible to configure the look and feel of the console if you provide a `Skin` to its constructor. To know more, check its comprehensive [documentation](http://strongjoshua.com/javadocs/in-game_console/).

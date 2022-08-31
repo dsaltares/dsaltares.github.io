@@ -1,0 +1,31 @@
+---
+id: 3050
+title: Libgdx Cross-platform Development Cookbook announced
+date: 2014-06-30T12:24:00+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3050
+url: /projects/libgdx-cross-platform-development-cookbook-announced/
+dsq_thread_id:
+  - 2806944275
+categories:
+  - Projects
+tags:
+  - book
+  - cookbook
+  - games development
+  - libgdx
+  - programming
+  - project
+---
+![libgdx-cookbook-cover.png](/img/libgdx-cookbook-cover.png)
+
+Almost a year ago, I started working on a Libgdx recipe book with Alberto Cejas, an old University mate. Now, Packt Publishing, have announced the project on their website, **[Libgdx Cross-platform Development Cookbook](http://www.packtpub.com/libgdx-cross-platform-development-cookbook/book)**.
+
+You can even pre-order a printed copy or the e-book version (DRM free).
+
+Exciting times!
+
+The book offers step-by-step guides on how to master Libgdx subsystems to build 2D games that run almost everywhere: Windows, GNU/Linux, Mac, Android, iOS and browsers. It only requires basic knowledge of games development and comes with a ton of sample code to help readers understand each topic.
+
+I will post more information soon!

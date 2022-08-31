@@ -1,0 +1,62 @@
+---
+id: 1400
+title: Box2D en la !BarraLibreCamp
+date: 2011-05-28T12:51:30+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1400
+url: /games/box2d-en-la-barralibrecamp/
+views:
+  - 1224
+dsq_thread_id:
+  - 1852023880
+categories:
+  - Games development
+tags:
+  - '!BarraLibreCamp'
+  - Android
+  - Arduino
+  - Beamer
+  - Blender
+  - Box2D
+  - Flamewar
+  - Gosu
+  - Guifi.net
+  - Merengue
+  - talleres
+  - UCK
+---
+
+![barcamp2011.jpg](/img/wp/barcamp2011.jpg)
+
+Ayer se celebró la **[!BarraLibreCamp](/proyectos/pfc/barralibrecamp-2011-en-cadiz/ "!BarraLibreCamp 2011 en Cádiz") en la UCA**, una jornada de **ponencias y talleres informales** en la que todos los participantes deben aportar algo. Al final es un día lleno de actividades heterogéneas para **pasarlo bien con amigos** de todas partes y hablar (o flamear) sobre intereses comunes. A continuación, un pequeño resumen del evento y mi aportación.
+
+### Actividades
+
+Estas son todas las **actividades que os perdisteis**. Podéis encontrar muchos de los materiales utilizados en la [wiki](http://osl.uca.es/wikiosluca/doku.php?id=notbarralibrecamp).
+
+*   Videojuegos 2D con [Gosu](http://www.libgosu.org/).
+*   Emacs + [org-mode](http://orgmode.org/) para crear presentaciones con Beamer.
+*   Introducción a [Blender](http://www.blender.org/).
+*   Problemas de seguridad en Android.
+*   Flamewar: SVN vs Git vs Mercurial y proyectos libres exitosos.
+*   Sensores y robótica con Arduino con [Ardulander](https://forja.rediris.es/projects/ardulander/).
+*   Redes inalámbricas libres [Guifi.net](http://guifi.net/).
+*   [Merengue](http://www.merengueproject.org/), un CMS sobre Django.
+*   Personalización de distribuciones con [UCK](http://uck.sourceforge.net/) y Preseed.
+
+![ardulander.jpg](/img/wp/ardulander.jpg)
+
+### Mi taller: Box2D
+
+Hace poco más de un mes estuve trasteando con la popular **biblioteca de colisiones y simulaciones físicas [Box2D](http://www.box2d.org/)** (utilizada por Angry Birds) y vi que era extremadamente **sencilla de utilizar**. Sin saber nada de ella conseguí una demo con Gosu para la parte gráfica en poco más de una hora. Rápidamente se me iluminó la bombilla, ¡era el tema perfecto para la !BarraLibreCamp! Creo y espero que a la gente le pareció interesante así que os dejo todo el material (código GPL v3 + transparencias) para que podáis aprender por vuestra cuenta.
+
+*   **[Descargar materiales del taller Box2D](http://dl.dropbox.com/u/1439807/boxes.tar.gz).**
+
+{{< youtube xFSgnO6n2GY >}}
+
+### ¡A la próxima me apunto!
+
+Obviando la cantidad de cosas nuevas que se aprenden, **lo mejor de estos eventos es la convivencia** y el buen ambiente que se respira. Nada como discutir sobre temas variados, últimas noticias y abrir un poco las miras. ¡Además vino mucha gente de Granada, Sevilla y Málaga!
+
+Lo tengo clarísimo, para la próxima que haya por aquí cerca, me apunto sin dudarlo. Gracias a [Ana Rey](http://www.flickr.com/photos/anarey/sets/72157626820864868/with/5766457066/) por sus fotografías (CC by-sa).

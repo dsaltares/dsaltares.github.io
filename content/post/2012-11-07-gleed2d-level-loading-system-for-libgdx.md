@@ -1,0 +1,81 @@
+---
+id: 2232
+title: GLEED2D level loading system for libgdx
+date: 2012-11-07T10:00:52+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2232
+url: /games/gleed2d-level-loading-system-for-libgdx/
+dsq_thread_id:
+  - 1852023511
+categories:
+  - Games development
+tags:
+  - GLEED2D
+  - level editor
+  - libgdx
+---
+
+<span style="color: #ff0000;">**Update**</span>: the system had been [moved into the official libgdx repository](https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed) as an extension but then it was removed. Gleed doesn't support basic features such as relative paths for textures.
+
+I"m happy to announce that I've made my first contribution to a relatively big open source project. I feel honoured to contribute to the brilliant [libgdx framework](https://github.com/libgdx/libgdx) with these humble loader and renderer for GLEED2D levels. Hold on, what the hell is that? Please, read on.
+
+### About GLEED
+
+[GLEED2D](http://gleed2d.codeplex.com/) is a non tiled based open source general purpose level editor. You can place textures and shapes, rotate and scale them. As usual, elements are laid in layers and it is also possible to add custom properties which makes it adequate for all kinds of purposes. Level are saved in an easy to parse XML format. It's based on XNA 3 but XNA 4 and Mono versions are on the works. What's good aboutGLEED2D is that it allows you to create smooth levels in a very nice way. Shapes can be used to define collision areas, triggers and so on.
+
+This means you can set a few rules and conventions of your own and be able to fire up scripts, set the player spawn point and all sorts of level design sweetness.
+
+![gleed-editor.png](/img/wp/gleed-editor.png)
+
+
+### Features
+
+*   Full XML GLEED2D spec: layers, custom properties, textures, shapes (circle, rectangle, polygon), visibility, color tints…
+*   Transforms: object positioning, rotation and scaling.
+*   LevelRenderer class with frustum culling
+*   AssetManager integration through the LevelLoader class
+*   Use multiple Texture files or a single TextureAtlas for performance gain.
+
+### Possible improvements
+
+*   Make the renderer use a SpriteCache (tricky due to texture rotation)
+*   Create a JSON exporter and loader for performance gain
+*   Load levels without using the AssetManager? Some people don't use it but they really should since levels tend to be heavy to load
+*   Suggest more!
+
+![gleed-level-ingame.jpg](/img/wp/gleed-level-ingame.jpg)
+
+### Usage
+
+When creating the level you need to specify the textures root folder or atlas file as a top level custom property:
+
+* If using individual textures create the "assetRoot" property
+* If using an atlas create the "atlas" property
+
+```
+// Set loader in the Asset manager
+m_assetManager.setLoader(Level.class, new LevelLoader(new InternalFileHandleResolver()));
+
+...
+
+// Tell the manager to load the level
+m_assetManager.load("data/braidtest.xml", Level.class);
+
+...
+
+// When it's ready, fetch the level and create renderer
+m_level = m_assetManager.get("data/braidtest.xml", Level.class);
+m_levelRenderer = new LevelRenderer(m_level, null, Game.mpp);
+
+...
+
+// Render all layers
+m_levelRenderer.render(m_camera);
+```
+
+However, if you get lost, there are Javadoc comments [everywhere in the code](https://github.com/dsaltares/sionengine/tree/master/sionengine/src/com/siondream/engine/gleed).
+
+### Where do I get it?
+
+It should be soon in the [libgdx nightly builds](libgdx.badlogicgames.com/nightlies/) but if you"re really eager to use it and can't wait any longer (seriously?) you can go to the libgdx repository and find it in the [extensions section](https://github.com/libgdx/libgdx/tree/master/extensions/gdx-gleed). Remember to leave some feedback of any flavour: rotten tomatoes, rocks and so on and so forth.

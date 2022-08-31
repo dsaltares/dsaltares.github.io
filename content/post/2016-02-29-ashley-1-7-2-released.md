@@ -1,0 +1,31 @@
+---
+id: 3611
+title: Ashley 1.7.2 released
+date: 2016-02-29T21:10:59+00:00
+author: David Saltares
+layout: post
+guid: /?p=3611
+url: /general/ashley-1-7-2-released/
+dsq_thread_id:
+  - 4622822439
+categories:
+  - General
+tags:
+  - Ashley
+  - component based entity systems
+  - ECS
+  - games development
+  - libgdx
+  - programming
+  - projects
+---
+
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+Small [Ashley](https://github.com/libgdx/ashley) release, check the changes for [1.7.2](https://github.com/libgdx/ashley/releases/tag/ashley-1.7.2) below:
+
+* [**Bug fix**](https://github.com/libgdx/ashley/issues/209): `Engine` doesn't use `EntitySystem` `iterator()`.
+* [**Bug fix**](https://github.com/libgdx/ashley/issues/210): Fixes `Engine` left unusable, in the updating state, after an uncaught exception in a subsystem.
+* [**Bug fix**](https://github.com/libgdx/ashley/issues/210): Fixes `FamilyManager` not cleaning up properly when a triggering a listener that throws.
+
+To use it, change your dependency to `com.badlogicgames.gdx:ashley:1.7.2`. The new nightly dependency is `com.badlogicgames.gdx:ashley:1.7.3-SNAPSHOT`.

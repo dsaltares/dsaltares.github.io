@@ -1,0 +1,44 @@
+---
+id: 3376
+title: Ashley 1.7.0 released
+date: 2015-11-10T21:48:23+00:00
+author: David Saltares
+layout: post
+guid: /?p=3376
+url: /projects/ashley-1-7-0-released/
+dsq_thread_id:
+  - 4307511476
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - component based entity system
+  - ECS
+  - games development
+  - libgdx
+  - open source
+  - programming
+---
+
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+There's a new [Ashley](https://github.com/libgdx/ashley) release, check the changes for
+[1.7.0](https://github.com/libgdx/ashley/releases/tag/ashley-1.7.0) below:
+
+* **[API change](https://github.com/libgdx/ashley/issues/182)**: removed UUIDs from entities, users should implement their own ID system when needed. This helps with networked games.
+* **[Update](84de67991b343828c668985bd1cd5a4a1309cafa)**: components are added/removed immediately, listeners are notified after the current system finishes updating.
+* **[Bug fix](https://github.com/libgdx/ashley/commit/b611dd98e28f4dc15d64b7340c8d507ba29153d5)**: fixed entity listeners not being called if a component is added inside another listener.
+* **[Bug fix](https://github.com/libgdx/ashley/commit/9ae5e459b437d7a51bfc48283cf5cd20e82989f9)**: does not allocate memory inside `updateFamilyMembership()`.
+* **[Update](https://github.com/libgdx/ashley/commit/4799007c457f714ad9fe0ad606a4a0f25b825ab7)**: uses Libgdx 1.7.1.
+
+To use it, change your dependency to `com.badlogicgames.gdx:ashley:1.7.0`.
+The new nightly dependency is `com.badlogicgames.gdx:ashley:1.7.1-SNAPSHOT`.
+
+Next, I am going to be focusing on code quality and maintainability. Particularly, try
+and [split `Engine`](https://github.com/libgdx/ashley/issues/178) internally into smaller
+logical components whilst keeping the API intact.
+
+As usual, [all unit tests are passing](http://libgdx.badlogicgames.com:8080/job/ashley/)
+and the wiki is up to date. Please keep up the good work sending more pull
+requests and reporting bugs!

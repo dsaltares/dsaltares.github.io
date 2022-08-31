@@ -1,0 +1,74 @@
+---
+id: 3283
+title: Conjugate
+date: 2015-05-04T17:27:20+00:00
+author: David Saltares
+layout: post
+guid: /?p=3283
+url: /projects/conjugate/
+dsq_thread_id:
+  - 3735709703
+categories:
+  - Computing
+  - Projects
+tags:
+  - backend
+  - Flask
+  - mobile
+  - Python
+  - responsive design
+  - side project
+  - sqlalchemy
+  - Verb conjugator
+  - web development
+---
+For the past few weeks working on a new toy: [Conjugate](https://github.com/dsaltares/conjugate). It's probably easier if I just stick a summary of the GitHub readme here.
+
+Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
+
+![languages.jpg](/img/conjugate/languages.jpg)
+
+### Reason to be
+
+When learning a new language, it is very common to struggle with verb conjugations. For example:
+
+> I want to know the third person singular form (masculine) of the future perfect tense of the verb to eat in French.
+
+Unfortunately, the available resources are somehow limited:
+
+  * Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.
+  * Apps: seriously? I don't want to install yet another app!
+  * Websites: lists are limited, the sites are old, full of ads and/or don't play well with mobile devices.
+
+Conjugate tries to solve that use case.
+
+### Project structure
+
+The project is divided in two parts:
+
+  * Scraper
+  * Mobile friendly website
+
+#### Scraper
+
+I wrote a [web scraper](https://github.com/dsaltares/conjugate/tree/master/scraping) in Python using [BeautifulSoup4](https://pypi.python.org/pypi/beautifulsoup4) that grabs translation and conjugation data from [Verbix](http://www.verbix.com/). This site doesn't work very well on mobile, their API returns a 404 and their e-mail address is no longer valid. Honestly, I feared their comprehensive database is going to be lost at some point in the near future. Besides, they allow people to user their data for non profit purposes.
+
+The script currently supports Romanian (which I'm trying to learn) and Spanish. Luckily, it's pretty easy to add support for new languages, although no thanks to Verbix's poor use of web standards.
+
+#### Website
+
+Currently, I'm in the process of writing the mobile friendly application. It'll be extremely simple:
+
+  1. Enter a verb in English (infinitive).
+  2. Select a language from a dropdown.
+  3. Hit "Go".
+
+![flask.png](/img/conjugate/flask.png)
+
+For the backend I'm using [Flask](http://flask.pocoo.org/docs/0.10/) and [sqlalchemy](http://www.sqlalchemy.org/) to keep things in the Python world, not to mention that they're really easy to get started with. Not too sure about the frontend, but I'll probably go for a framework that makes responsive design simple enough.
+
+Any suggestions?
+
+### Progress
+
+I've been pretty lazy these days, blame it on FarCry 4 and Daredevil but I hope to report some progress on the project soon. Of course, I'd be more than happy to accept PR's if you're interested to help!

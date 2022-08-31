@@ -1,0 +1,101 @@
+---
+id: 1604
+title: Google Music en Linux y Android desde España
+date: 2011-06-08T23:17:11+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1604
+url: /computing/google-music-en-linux-y-android-desde-espana/
+views:
+  - 3815
+dsq_thread_id:
+  - 1852022885
+categories:
+  - Computing
+tags:
+  - Android
+  - APK
+  - Google Music
+  - Google Music Manager
+  - Internet
+  - Linux
+  - música
+  - nube
+  - Proxy
+  - streamming
+  - Ubuntu
+  - Wine
+---
+
+**Google anunció [Music](http://music.google.com/)**, su servicio de música gratuito a través de streamming en su evento I/O 2010 pero no fue hasta hace poco cuando se comenzaron a permitir registros para la fase beta. El problema es que **sólo usuarios de Estados Unidos** pueden solicitar la invitación y utilizar el cliente para Android. Afortunadamente hay un pequeño y sencillo **procedimiento para poder saltarse esta barrera**, sigue leyendo para saber cuál es. Gracias a mi buen amigo [Javier](http://ragingbit.com/blog/) por los enlaces y las pistas.
+
+### Características
+
+Google Music nos permite subir **hasta 20.000 canciones** de nuestra biblioteca de música local a través de una sencilla aplicación de escritorio que sincroniza directorios de forma automática. Es una lástima que el cliente solo esté para Windows y Mac aunque de forma extra-oficial se puede utilizar en Linux bajo Wine (hablaremos de ello más adelante). El servicio toma los **metadatos de las canciones** para clasificarlas, por lo que es recomendable tener una biblioteca ordenada aunque podamos editarlas más tarde desde la aplicación web.
+
+Una vez tengamos nuestra biblioteca de música en la nube, podremos **escucharla desde cualquier PC** con navegador y Flash instalados. La aplicación web no tiene muchas opciones por el momento pero es ligera y funciona mejor de lo esperado. Por su parte, también tenemos la **aplicación para Android** que nos permite reproducir por streamming y guardar las canciones en local.
+
+### Registrarse en la Beta desde España
+
+![solo-eeuu.png](/img/wp/solo-eeuu.png)
+
+Si acudimos a la web de [Google Music](http://music.google.com/) desde España nos aparecerá un descorazonador mensaje que nos impide solicitar la invitación. Simplemente utilizaremos un proxy para engañar al servicio, siguiendo los pasos que nos indican en [El Androide Libre](http://www.elandroidelibre.com/2011/05/tutorial-apuntate-a-la-beta-de-google-music-desde-cualquier-pais-y-con-cualquier-cuenta-google.html) no tendrás problemas:
+
+* Entra en [proxy.org](http://proxy.org).
+* Elije un proxy americano, los que aparecen en verde.
+* En la web del proxy introduce la URL: <http: music.google.com="" music="" usernotinvited="">.
+* Inicia sesión con tu cuenta de Google, no importa que sea española.
+* Elije la opción de participar en la beta.
+
+**Recibirás un e-mail confirmándote el acceso** a Google Music, no sé cuanto tiempo puede tardar.
+
+### Google Music Manager en Ubuntu bajo Wine
+
+Google no nos deja descargar el manager si estamos en Linux así que tenemos que obtener el programa por otros medios como bien apuntan en [Android Central](http://www.androidcentral.com/using-google-music-manager-ubuntu-made-easy). Los siguientes pasos son válidos para distribuciones basadas en Debian:
+
+* Si tenías la versión de Wine de los repositorios oficiales debes desinstalarla:
+
+```
+sudo apt-get remove wine --purge
+```
+
+
+* Añade el PPA con la última versión de Wine, actualiza e instálalo de nuevo:
+
+```
+sudo add-apt-repository ppa:ubuntu-wine/ppa
+sudo apt-get update
+sudo apt-get install wine
+```
+
+
+* [Descarga el paquete con Google Music Manager](http://dl.dropbox.com/u/1439807/gmm.zip).
+* Descomprime el fichero.
+* Accede desde una terminal, dale permisos de ejecución e instala:
+
+```
+chmod +x install.sh
+./install.sh
+```
+
+
+![musicmanager.png](/img/wp/musicmanager.png)
+
+
+¡Listo! **Ya puedes utilizar Google Music Manager en Linux** desde *Aplicaciones -> Internet -> Google Music Manager*.
+
+### Aplicación para Android
+
+La aplicación de Google Music para Android sólo se puede descargar desde la web del market y detecta si nuestro dispositivo no es estadounidense. Para saltarnos este impedimento simplemente **nos descargamos el APK** con la última versión en la fecha de redacción de este artículo, la 3.1. Para instalarla debes tener **Android 2.2 o superior** ya que requiere OpenGL ES 2.0.
+
+* [Descargar APK Google Music 3.1 para Android](http://dl.dropbox.com/u/1439807/com.google.android.music-2.apk)
+
+![google-music-android.jpg](/img/wp/google-music-android.jpg)
+
+Lo cierto es que me da mucho miedo instalar un APK que no sea del Market pero los permisos que pide no son extraños. Nada de mandar SMS, por ejemplo. Así que con esto ya podréis disfrutar de Google Music allá donde estéis mientras el 3G no os traicione.
+
+### Primeras impresiones
+
+Por el momento **estoy muy contento con el servicio**: la aplicación de Android reproduce por streamming sin problemas, la música se sube a buena velocidad y todo es bastante limpio.
+
+**¡A disfrutar de Google Music!**

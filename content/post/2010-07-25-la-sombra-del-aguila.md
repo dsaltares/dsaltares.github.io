@@ -1,0 +1,30 @@
+---
+id: 96
+title: La sombra del águila
+date: 2010-07-25T16:26:44+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=96
+url: /hobbies/la-sombra-del-aguila/
+views:
+  - 429
+dsq_thread_id:
+  - 1866467059
+categories:
+  - Hobbies
+tags:
+  - Arturo Pérez-Reverte
+  - La sombra del águila
+  - literatura
+  - Napoleón
+---
+
+![la-sombra-del-aguila.jpg](/img/wp/la-sombra-del-aguila.jpg)
+
+["La sombra del águila"](http://es.wikipedia.org/wiki/La_sombra_del_%C3%A1guila), una novela bélica escrita por [Arturo Pérez-Reverte](http://es.wikipedia.org/wiki/Arturo_P%C3%A9rez-Reverte) en 1993. Hacía, quizás, demasiado tiempo que no leía un libro y esta breve narración me ha venido de maravilla para recuperar el gusanillo.
+
+1812, **Napoleón** y sus consejeros vigilan la batalla de **Sbodonovo** desde una colina durante la invasión a Rusia. Su flanco derecho estaba siendo arrasado cuando, a través del catalejo se divisa al batallón 326 de infantería. Contra todo pronóstico, los soldados que lo forman, avanzan impasibles hacia el fuego de los cañones rusos. Precisamente ese batallón estaba formado por prisioneros españoles y habían sido forzados a luchar. *"¡Son unos valientes!" "¡Son unos auténticos hijos de Francia!"* Al menos eso es lo que pensó *"Le Petit Cabrón"* por lo que mandó una carga de caballería para apoyarlos. Lo que Napoleón no sabía es que los españoles no estaban, en absoluto, emprendiendo una acción heroica, estaban desertando.
+
+Una tarde y parte de una mañana me llevó la lectura de esta pequeña novela basada en hechos reales, una fantástica recreación de una batalla napoleónica llena del **humor irónico y satírico** que caracteriza a Perez-Reverte. A veces resulta escalofriante reír durante la lectura de un par de párrafos para después estremecerse por la crudeza de la guerra y el invierno rusos.
+
+Mis queridos *tovarisch*, estamos ante una lectura obligada.

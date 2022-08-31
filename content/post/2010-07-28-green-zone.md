@@ -1,0 +1,34 @@
+---
+id: 112
+title: Green Zone
+date: 2010-07-28T18:37:00+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=112
+url: /hobbies/green-zone/
+views:
+  - 447
+dsq_thread_id:
+  - 3207112941
+categories:
+  - Hobbies
+tags:
+  - acción
+  - cine
+  - Green Zone
+  - Irak
+  - Matt Damon
+  - Paul Greengrass
+---
+
+![Green-Zone.png](/img/wp/Green-Zone.png)
+
+**[Green Zone](http://www.imdb.com/title/tt0947810/)** es una película que, para mí, pasó **desapercibida** durante su proyección en salas pero finalmente me he decidido a verla. Basada en la novela [*"Vida imperial en la ciudad Esmeralda"*](http://en.wikipedia.org/wiki/Imperial_Life_in_the_Emerald_City) con un guión escrito por [Brian Helgeland](http://www.imdb.com/name/nm0001338/) y dirigida por [Paul Greengrass](http://www.imdb.com/name/nm0339030/). ¿Qué me ha impulsado a verla? Una tarde por delante y pocas ganas de digerir una película compleja. Finalmente es lo que, en cierto modo, he obtenido.
+
+El oficial americano Roy Miller ([Matt Damon](http://www.imdb.com/name/nm0000354/)) dirige a su unidad en misiones de búsqueda de las tan cacareadas armas de destrucción masiva en la **guerra de Irak**. Ninguna de las indicaciones que recibe de inteligencia da sus frutos hasta que se ve abordado por un civil que le ofrece información. Inicia así, la búsqueda de un general iraquí, Al-Rawi, sospechoso de conocer el paradero de dichas armas. Las teorías de la **conspiración** brotan de todas partes y Miller pronto empieza a cuestionar los fundamentos de la guerra en Irak.
+
+No me extraña en absoluto que la película haya **dividido a la crítica**, sobre todo a la americana ya que muestra a los altos cargos del Gobierno desde el prisma de la corrupción. No pienso meterme en el barrizal que puede ser discutir sobre la guerra de Irak pero comprendo perfectamente que este largometraje levante ampollas. En cualquier caso, se está abordando un tema extremadamente reciente en favor de la espectacularidad. Lo correcto es aguardar cierto tiempo si se desea mostrar una perspectiva rigurosa, al menos eso es lo que diría cualquier historiador.
+
+La película no deja de ser un intento de mezclar la acción de forma épica y espectacular con la crítica hacia el drama de Irak. Un cóctel que no acaba de funcionar acertadamente. Matt Damon es un actor correcto, ha funcionado bien en la trilogía Bourne. No obstante, desde mi punto de vista no consigue dotar al conjunto del dramatismo que se merece. El ritmo es correcto y logra entretener, que no es poco. Por lo demás tendremos tiroteos, asaltos y explosiones en la forma en la que estamos acostumbrados en el **cine bélico palomitero**.
+
+Podéis imaginaros el resto.

@@ -1,0 +1,105 @@
+---
+id: 670
+title: "Postmortem: Granny's Bloodbath"
+date: 2010-11-11T14:00:59+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=670
+url: /games/postmortem-grannys-bloodbath/
+views:
+  - 721
+dsq_thread_id:
+  - 1852023813
+categories:
+  - Games development
+tags:
+  - C++
+  - desarrollo
+  - "Granny's Bloodbath"
+  - postmortem
+  - programación
+  - SDL
+  - TinyXML++
+  - videojuegos
+  - XML
+---
+
+![grannysbloodbath-banner.png](/img/wp/grannysbloodbath-banner.png)
+
+**[Granny's Bloodbath](/proyectos/grannys-bloodbath/)** fue el proyecto que desarrollamos tres compañeros **para la asignatura Diseño de Videojuegos** en la Universidad de Cádiz durante el segundo cuatrimestre del curso 2009-2010. Se trata de un juego open source de **plataformas y acción de scroll horizontal** en el que manejamos a una **abuelita que trata de sobrevivir a una invasión zombie**. Armada con su bastón y la escopeta de su difunto marido avanzaba por tres niveles con sus correspondientes escenas narrativas y el obligado final boss. En este articulo diseccionaré el desarrollo de Granny's Bloodbath a modo de reflexión.
+
+![grannysbloodbath-1.png](/img/wp/grannysbloodbath-1.png)
+
+### Datos técnicos
+
+Granny's Bloodbath está **desarrollado en C++ utilizando la librería multimedia [SDL](http://www.libsdl.org/)**, varias de sus extensiones y el parser [TinyXML++](http://www.grinninglizard.com/tinyxml/). Inicialmente estaban previstas versiones para Windows y GNU/Linux aunque finalmente tratamos de portarlo a Playstation Portable. Por razones de tiempo sólo pudimos publicar una versión beta pero el resultado fue satisfactorio. Además, publiqué  en Wikibooks, un artículo sobre [desarrollo de juegos en PSP utilizando SDL](http://es.wikibooks.org/wiki/Desarrollo_de_videojuegos_para_PSP_con_C%2B%2B_y_SDL). El grupo lo formábamos 3 proyectos de ingenieros y ningún artista (craso error).
+
+![portpsp.png](/img/wp/portpsp.png)
+
+### Sobre el Postmortem
+
+Antes de entrar en faena creo que debería comentar **qué es un Postmortem** para que los que no hayan oído hablar del término puedan subirse al tren. Tras el lanzamiento y recepción de un videojuego suele redactarse una reflexión en la que se analiza **tanto lo que salió bien durante el desarrollo como los errores cometidos** por el equipo. Se tocan temas de diseño, gestión de poyectos, programación etc. No es que me esté dando delirios de grandeza, simplemente escribo esto para reflexionar sobre mi experiencia con Granny's Bloodbath y si a alguien le sirve de algo, mucho mejor
+
+![grannysbloodbath-4.png](/img/wp/grannysbloodbath-4.png)
+
+### Lo que salió bien
+
+#### Planificación inicial
+
+Desde el principio **supimos que debíamos acotar las dimensiones del proyecto** a nuestras circunstancias: 3 meses de desarrollo y muchas más asignaturas a las que atender. Nos decantamos por la biblioteca SDL y teníamos un largo trecho por delante para crear una capa por encima orientada a objetos que nos facilitase la vida. Partiendo de esa base confeccionamos una planificación utilizando [Planner](http://live.gnome.org/Planner) y **redactamos un GDD** (Game Design Document) tosco pero muy fácil de comprender.
+
+Definir exactamente lo que estaba dentro y fuera del proyecto fue un punto fundamental para el *"éxito"*. **Fue complicado** conocer de antemano las mecánicas que debíamos implementar y los recursos artísticos necesarios pero más tarde nos ayudó más de lo que pensábamos. **Hubo consenso en el equipo**, durante todo el desarrollo permanecimos en el mismo barco y respetamos el acuerdo inicial. Ahora acudo al documento de diseño y me parece tremendamente pobre pero, sin lugar a dudas, era mejor eso que nada. Lo tenéis [aquí por si os interesa.
+
+![grannysbloodbath-2.png](/img/wp/grannysbloodbath-2.png)
+
+#### Disfrutamos mucho
+
+No estábamos trabajando en Granny's Bloodbath por trabajo y los requisitos para aprobar la asignatura estaban por debajo del resultado obtenido. Entonces, ¿por qué trabajamos tan duro? El desarrollo de videojuegos nos gustaba a los tres miembros del equipo y e**stábamos deseosos de aprender** (aunque el entusiasmo no estuviera repartido de forma equitativa). **Escogimos una idea muy divertida y creemos que original**, aunque ahora haya juegos, series y películas de zombies hasta debajo de las piedras.
+
+**El hecho de disfrutar de lo que hicimos fue clave** para la consecución del proyecto. Parece una idea obvia pero no lo es tanto. Mantener la moral del equipo alta incluso en los momentos más estresantes del desarrollo no es tarea fácil. ¡No penséis que fui el jefe del equipo! Nuestra jerarquía era completamente horizontal y nos apoyamos los unos a los otros.
+
+![grannysbloodbath-3.png](/img/wp/grannysbloodbath-3.png)
+
+#### Motor modular y separado de los datos
+
+SDL es una biblioteca muy sencilla pero compatible con gran cantidad de plataformas sin tocar casi ninguna línea de código. La pega es que es de muy bajo nivel. Por comodidad **tuvimos que crear capas de abstracción superiores** conformando un motor orientado a objetos y, a riesgo de perder modestia, diría que no hicimos un mal trabajo. Entre otros, creamos un módulo de **gestión de recursos** multimedia que funcionaba realmente bien. Esto nos permitía no duplicar recursos y utilizar lo estrictamente necesario en un momento dado. Tuvimos que **adaptar el motor a PSP** y fue muy sencillo, se cambió la implementación de la gestión de entrada sin afectar al resto del código.
+
+Hicimos un **uso extensivo del formato XML** para separar del código fuente todos los datos: atributos de los personajes, cajas de colisión, animaciones, niveles, escenas narrativas e incluso el guión del juego. Esto nos permite **modificar una gran cantidad de parámetros sin tener que recompilar** todo el proyecto. Ajustar velocidades, modificar posiciones de enemigos o cambiar el orden de los niveles era muy sencillo y cualquiera podría hacerlo sin conocimientos de programación. **No desarrollamos herramientas de diseño** ya que se salía completamente de las dimensiones del proyecto.
+
+![grannysbloodbath-5.png](/img/wp/grannysbloodbath-5.png)
+
+#### Testeo
+
+Como todos sabréis hacer pruebas de forma exhaustiva es primordial para desarrollar software de calidad. En esta ocasión no me refiero a pruebas unitarias o de integración sino de jugabilidad. En un juego **es imprescindible pulir las mecánicas** para obtener la mayor diversión posible porque de eso es lo que se trata. Todo debe ser intuitivo y directo, nada de controles confusos o mecánicas que distraigan al usuario. **Los desarrolladores acabamos demasiado implicados** y no podemos aportar una visión objetiva del conjunto, se necesita gente de fuera.
+
+A medida que avanzaba el desarrollo **engañamos a familiares y amigos para que echaran una partida** a Granny's Bloodbath. Incluso tuvimos una pequeña presencia en alguna red social. Gracias a eso pudimos recibir feedback, detectar a tiempo fallos de conceptos y conseguir una versión final más depurada.
+
+![grannysbloodbath-9.png](/img/wp/grannysbloodbath-9.png)
+
+### Lo que salió mal
+
+#### Problemas de diseño
+
+A pesar de las pruebas, cometimos ciertos **fallos de diseño** bastante graves. **El scroll horizontal daba muy poco margen** al jugador para anticipar los movimientos de los enemigos. Éstos aparecían en nuestras narices y era muy complicado hacerles frente. Por otra parte, l**os elementos sobre los que podías saltar** (coches, muebles, cajas, etc ) **no contrastaban** en absoluto con el resto del escenario. El jugador podía confundirse y no aprovechar todas las posibilidades.
+
+Como he mencionado antes, es indispensable que el jugador se haga rápidamente con los controles y la mecánica le resulte natural y cómoda. Desde luego, es uno de los apartados más difíciles de aprender. **Trataremos de aplicarnos el cuento** para la próxima vez.
+
+![grannysbloodbath-8.png](/img/wp/grannysbloodbath-8.png)
+
+#### Distintas expectativas
+
+Es cierto que los tres componentes del equipo queríamos aprender y compartíamos la misma visión del juego. No obstante, **no hubo una dedicación (en términos de tiempo) equitativa** en el equipo. Supongo que no fue problema de organización, ni de motivación. Creo que este tipo de problemas vienen de serie cuando trabajas en un proyecto tan pequeño, sin repercusión alguna ni un trabajo de por medio. Cada uno invierte en él lo que quiere o puede.
+
+![grannysbloodbath-7.png](/img/wp/grannysbloodbath-7.png)
+
+#### No externalizar el trabajo artístico
+
+**No somos artistas** 2D ni muchísimo menos aunque decidimos encargarnos nosotros mismos de los sprites, niveles y GUI (el sonido lo obtuvimos de Jamendo y otros bancos libres). Esto **nos retrasó muchísimo** y nos restó ingentes cantidades de tiempo y fuerzas. El trabajo gráfico fue mucho más grande de lo que pudimos prever. Otros compañeros de la asignatura consiguieron colaboraciones externas para el plano artístico. ¡Mi intención no es criticarlos! **Fueron más inteligentes** y se centraron en lo que mejor sabían hacer.
+
+Sin duda, **deberíamos haber buscado activamente colaboradores**. Quizás sea una de las lecciones más valiosas aprendidas durante el desarrollo de Granny's Bloodbath (al menos en lo que a mí respecta). No existe un concepto más básico: los desarrolladores no podemos trabajar solos, necesitamos muchos artistas.
+
+![grannysbloodbath-6.png](/img/wp/grannysbloodbath-6.png)
+
+### Conclusiones
+
+¡Oh, veo que has aguantado este artículo tan extenso como un campeón! Uhmm… quizás hayas hecho scroll hasta aquí abajo para ir directamente a las conclusiones. Granny's Bloodbath era el proyecto más grande al que nos habíamos enfrentado hasta el momento y aprendimos muchísimo. Creo que no es descabellado decir que **no salió mal teniendo en cuenta los recursos** (tiempo, equipo y conocimientos) con los que contábamos. **Espero que este artículo me ayude a recordar nuestras equivocaciones** y tenerlas siempre presentes para que no se vuelvan a repetir.

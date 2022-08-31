@@ -1,0 +1,32 @@
+---
+id: 3028
+title: 'Ludum Dare #29: Beneath the surface'
+date: 2014-04-29T15:53:11+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3028
+url: /games/ludum-dare-29-beneath-the-surface/
+dsq_thread_id:
+  - 2647958419
+categories:
+  - Games development
+tags:
+  - Game Jam
+  - games development
+  - libgdx
+  - Ludum Dare
+---
+
+![beneath-the-surface-title.png](/img/ld29/beneath-the-surface-title.png)
+
+As I mentioned here a few days ago, last weekend I entered the 29th edition of the [Ludum Dare](http://www.ludumdare.com) game jam, which had _Beneath the surface_ as a theme. To be completely honest, I was only bothered to work on the project for about 4 hours each day. That probably explains why is my worst [game jam](/game-jams/) entry so far.
+
+Beneath the surface is a very simple, classic text adventure where the player needs to escape an underground cave by using commands in the form of `verb object` like:
+
+> Open door 
+
+![beneath-the-surface.png](/img/ld29/beneath-the-surface.png)
+
+The game is too basic and needed more user testing before the deadline. I was quite unhappy with it but then thought I'd rather submit it than dropping out completely. But hey, at least I managed to work on shaders a little bit, an area I really need to get better at.
+
+Maybe next time I'll manage to pull off something better.

@@ -1,0 +1,45 @@
+---
+id: 2733
+title: Math Maze 1.0 is now on Google Play!
+date: 2013-09-03T21:47:48+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2733
+url: /games/math-maze-1-0-is-now-on-google-play/
+dsq_thread_id:
+  - 1852024194
+categories:
+  - Games development
+tags:
+  - Android
+  - educational games
+  - games development
+  - Google Play
+  - kids
+  - libgdx
+  - math
+  - Math Maze
+  - release
+---
+
+[![math-maze-relased.jpg](/img/math-maze/math-maze-relased.jpg)](https://play.google.com/store/apps/details?id=com.siondream.math)
+
+Today Math Maze 1.0 went live on Google Play!
+
+> Woohooo!!
+
+If you don't know what [Math Maze](https://play.google.com/store/apps/details?id=com.siondream.math) is, please check its [dedicated page on this blog](/games/math-maze/ "Math Maze").
+
+Go, download it, share it with your friends, like the [Facebook page](https://www.facebook.com/siondream), [drop me feedback](/contact/ "Contact") and give it some shiny stars (preferably 5 of them). You won't be making me rich because it's a free download and doesn't feature ads of any kind. However you might help me boost my insatiable ego… Or something like that.
+
+[Math Maze](https://play.google.com/store/apps/details?id=com.siondream.math) shipped with 35 levels and 5 languages but will be receiving extra content shortly. 3 more languages are confirmed, I have a few level packs in mind and I"ll also be fixing any issues people find. Luckily enough, it's behaved flawlessly, as far as I know.
+
+Please do report any issues were you to find them.
+
+Even though it's been 5 busy months of hard work after my full time job, I don't regret a thing. I"m quite proud of what I've achieved, as [Math Maze](https://play.google.com/store/apps/details?id=com.siondream.math) looks decent and plays well even on humble devices. I guess, it's something considering I"m just a mere programmer having to do design and art. Let's not forget about PR and the [trailer](http://www.youtube.com/watch?v=mYbCyXeNJuM), areas that were uncharted territory for me up until this point.
+
+Cannot possibly forget to thank everyone who's helped me on the project: soundtrack, sound effects and localisation. [Math Maze](https://play.google.com/store/apps/details?id=com.siondream.math) is a hell of a lot better because of them. Check the credits for more info.
+
+In the upcoming days/weeks, I"ll do what I can to post further details about the development process, fun facts and more bits and pieces that may remotely seem interesting to someone.
+
+Escape the maze!

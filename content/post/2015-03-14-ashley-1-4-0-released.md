@@ -1,0 +1,38 @@
+---
+id: 3259
+title: Ashley 1.4.0 released
+date: 2015-03-14T16:04:37+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3259
+url: /projects/ashley-1-4-0-released/
+dsq_thread_id:
+  - 3594984836
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - ECS
+  - entity framework
+  - games development
+  - GitHub
+  - Java
+  - Maven
+  - programming
+---
+
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+A new version of [Ashley](https://github.com/libgdx/ashley), your favourite component based entity framework is out. The [1.4.0](https://github.com/libgdx/ashley/releases/tag/ashley-1.4.0) version comes with a bunch of bug fixes that, hopefully, will iron out some of the rough edges in Ashley.
+
+  * **[API deprecation](https://github.com/libgdx/ashley/commit/d6222d9ee0cca6f06dd61b04bae6d092497425a5)**: finallt removed the `Family.getFor()` methods. In order to retrieve a family, you can do `Family.all().one().exclude().get()`.
+  * **[API change](https://github.com/libgdx/ashley/issues/137)**: makes family `Builder` package protected.
+  * **[Bug fix](https://github.com/libgdx/ashley/commit/356cf4097f7c870cccc67cffca62ff3f32f103da)**: `EntityOperation` and `ComponentOperation` are now properly reset when put back into their pools. This doesn't affect the API at all and it's an implementation detail fix.
+  * **[Bug fix](https://github.com/libgdx/ashley/commit/eff243f65e98a57c5e1a8045f85465cd1acf085d)**: fixes `PooledEngine` always returning new components.
+  * **[Bug fix](https://github.com/libgdx/ashley/issues/135)**: fixes GWT build. 
+  * **[Bug fix](https://github.com/libgdx/ashley/commit/cf7a02006d2269cd64976de6e7b56bd7553708de)**: avoids removing a `PooledEntity` twice.
+
+To use it, change your dependency to `com.badlogicgames.gdx:ashley:1.4.0`. The new nightly dependency is `com.badlogicgames.gdx:ashley:1.4.1-SNAPSHOT`.
+
+As usual, [all unit tests are passing](http://libgdx.badlogicgames.com:8080/job/ashley/) and the wiki is up to date. Please keep up the good work sending more pull requests and reporting bugs.

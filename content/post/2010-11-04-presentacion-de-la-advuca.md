@@ -1,0 +1,52 @@
+---
+id: 630
+title: Presentación de la ADVUCA
+date: 2010-11-04T20:30:22+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=630
+url: /games/presentacion-de-la-advuca/
+views:
+  - 869
+dsq_thread_id:
+  - 1852023389
+categories:
+  - Games development
+tags:
+  - ADVUCA
+  - asociación de videojuegos
+  - desarrollo
+  - proyectos
+  - videojuegos
+---
+
+![advuca.png](/img/wp/advuca.png)
+
+Cuando entré en la carrera se estaba constituyendo la **Asociación de Desarrollo de Videojuegos de la Universidad de Cádiz** (ADVUCA). Como os podéis imaginar, era un tema que me interesaba muchísimo y asistí emocionado al taller que organizaron sobre desarrollo en Nintendo DS con [PAlibs](http://palib-dev.com/). Este fue uno de mis primeros pasos en la programación de juegos. Desgraciadamente, la asociación nunca llegó a formalizarse y quedó en el olvido. **¡Este año unos compañeros nos hemos animado para alcanzar el resurgir de la ADVUCA!**
+
+### ¿Quiénes somos?
+
+Aún no hemos recibido el beneplácito de la administración pública pero estamos trabajando duro y con mucha ilusión para organizar actividades en la Universidad. Actualmente, **la Junta Directiva la formamos**:
+
+*   Presidente: David Saltares Márquez (¡ese soy yo!)
+*   Vicepresidente: Jose Marente Florín
+*   Secretario: Sebastián Guerrero Selma
+*   Tesorero: Alberto Cejas Sánchez
+*   Vocal: Javier Santacruz López-Cepero
+
+Hasta que no tengamos respuesta del Registro de Asociaciones no podremos abrir la veda a inscripciones pero **estamos deseando poder recibir socios**. ### Objetivos
+
+Como se podrá leer en nuestros estatutos **nuestros principales objetivos son**:
+
+*   Promover la creación de grupos de desarrollo de videojuegos interdisciplinares (diseñadores, programadores, artistas…).
+*   Generar y compartir documentación sobre desarrollo de videojuegos.
+*   Introducción y profundización en la programación a través de los videojuegos.
+*   Colaboración con profesores de las asignaturas de la carrera.
+*   Investigar y promover nuevas formas de ocio electrónico.
+*   (…) y muchos más.
+
+No somos grandes expertos pero **tenemos muchas ganas de crear una comunidad activa** en el desarrollo de videojuegos dentro (y fuera) de nuestra Universidad. Por supuesto, seguiremos aprendiendo porque nos queda un larguísimo camino que recorrer.
+
+### Próximamente
+
+Próximamente comentaré más novedades como el taller que estamos organizando y la página web actualmente en construcción. Mientras tanto, **podéis seguirnos por Twitter en [@advuca](http://twitter.com/#!/advuca)**. Hala, con este grandioso *"cliffhanger"* termino por hoy y me despido.

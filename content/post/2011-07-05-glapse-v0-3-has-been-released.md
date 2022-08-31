@@ -1,0 +1,41 @@
+---
+id: 1677
+title: gLapse v0.3 has been released
+date: 2011-07-05T01:28:09+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=1677
+url: /projects/glapse-v0-3-has-been-released/
+views:
+  - 872
+dsq_thread_id:
+  - 1911870827
+categories:
+  - Projects
+tags:
+  - Debian
+  - Free Software
+  - gLapse
+  - GNU/Linux
+  - time lapse
+  - vídeo
+---
+
+![glapse-logo.redimensionado1.png](/img/glapse/glapse-logo.png)
+
+I've been really busy with the development of [Sion Tower](/en/proyectos/sion-tower/) but it's also been possible to spend some time working in [gLapse](/en/proyectos/glapse/). After introducing new stuff and fixing broken pieces, I"m proud to announce **the third release of the GNU/Linux time lapse tool: gLapse v0.3!** Continue reading to find about its new features and to get download links.
+
+### Changelog
+
+*   Improves video quality but the slider to configure it had to be deleted.
+*   French translation thanks to my little sister.
+*   Japanese translation thanks to [@jjbernalr](http://twitter.com/#!/jjbernalr).
+*   Updates other translations.
+*   Bugfixes (see [SVN log](http://code.google.com/p/glapse/source/list) for more details).
+
+### Download
+
+*   [gLapse v0.3 Debian package](http://glapse.googlecode.com/files/glapse_0.3_all.deb)
+*   [gLapse v.03 Source package](http://glapse.googlecode.com/files/glapse-0.3.tar.gz)
+
+Hope you like it! Feedback, bugs reports and feature request are hugely welcome at the [issues section](http://code.google.com/p/glapse/issues/list).

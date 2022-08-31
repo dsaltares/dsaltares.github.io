@@ -1,0 +1,72 @@
+---
+id: 483
+title: Backup a través de la red con tar y ssh
+date: 2010-10-01T19:38:16+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=483
+url: /computing/backup-a-traves-de-la-red-con-tar-y-ssh/
+views:
+  - 1289
+dsq_thread_id:
+  - 1852022858
+categories:
+  - Computing
+tags:
+  - backup
+  - copia de seguridad
+  - informática
+  - ssh
+  - sysadmin
+  - tar
+---
+
+![tar-ssh.png](/img/wp/tar-ssh.png)
+
+La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas **tuvimos que actualizar una aplicación web** que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync **estimamos oportuno hacer una copia completa** y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer **una copia gigantesca y mandarla mediante ssh** a otra máquina **sin perder demasiado el tiempo**.
+
+### La respuesta rápida (y cutre)
+
+Comprimir **200GB** con tar y transferirlos vía ssh es extremadamente lento aunque las máquinas estén en la misma subred. Este sería **el enfoque inicial**:
+
+```
+# Comprimimos
+tar cvzf directorio directorio.tar.gz
+
+# Enviamos
+scp directorio.tar.gz usuario@host:directorio_destino
+```
+
+
+### La solución
+
+Decidimos que **el tiempo era oro**, máxime cuando el backup y la actualización implicaban cortar el servicio a todos los usuarios. Lo ideal sería ir enviando datos a medida que éstos se van comprimiendo. Un poco de búsqueda en Google y retoque de parámetros para ajustarlo a nuestras necesidades bastaron para ahorrar prácticamente la mitad de tiempo. A continuación **el script que encierra la magia** (obviando datos concretos):
+
+```
+#!/bin/sh
+
+# Fecha de la copia
+FECHA=$(date +"%F-%H-%M-%S")
+
+# Directorio a copiar
+DIR_BACKUP=/home/david
+
+# Máquina remota
+HOST=backups.saltares.com
+
+# Usuario de la máquina remota
+USER=siondream
+
+# Directorio destino
+HOST_DIR=/home/siondream/backups
+
+# Hacemos el backup
+tar cvzf - $DIR_BACKUP | ssh $USER@$HOST "cat > ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz"
+```
+
+
+Con el clásico *tar cvzf* tenemos una compresión común de *$DIR_BACKUP*. No obstante, el guión *–* sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería *|*. El chorro de bytes se envía mediante *ssh* (al equipo *$HOST* con nuestro usuario *$USER*) y se vuelca en el fichero *$DIR_BACKUP-$FECHA.tar.gz* utilizando *cat*. Puede parecer algo confuso pero **si lo piensas es maravilloso** y tiene todo el sentido del mundo.
+
+### Lo mismo casi en la mitad de tiempo
+
+Si tienes que hacer grandes copias y enviarlas por la red, **este pequeño truco es tu amigo**. Tras completar el proceso de actualización con éxito hice algunas pruebas para calcular la mejora que proporciona esta técnica. Obtuve **resultados impresionantes**: enviar los datos mientras éstos se comprimen lleva **casi la mitad de tiempo** que hacerlo en etapas separadas.

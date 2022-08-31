@@ -1,0 +1,31 @@
+---
+id: 3108
+title: Ashley 1.1.0 released
+date: 2014-08-10T17:22:29+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=3108
+url: /projects/ashley-1-1-0-released/
+dsq_thread_id:
+  - 2915912020
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - entity systems
+  - games development
+  - Java
+  - programming
+---
+![ashley-logo.png](/img/ashley/ashley-logo.png)
+
+Just under a month of the first official release we are ready to release a new stable version: Ashley 1.1.0. Here is the list of changes.
+
+  * **[Performance improvements](https://github.com/libgdx/ashley/commit/8c98e9799bb6cc65cf61669eed36d7f8f04a2da4#diff-d41d8cd98f00b204e9800998ecf8427e)**: massive performance gains with O(1) component retrieval through `ComponentMapper` and the use of [`Array<Entity>`](https://github.com/libgdx/ashley/commit/db641f9697719e97d31017e46ea2003a43eb83cd) rather than `IntMap<Entity>`. Unfortunately this changes the API slightly, but hopefully you guys will appreciate the benefits.
+  * **[Complete Ashley manual](https://github.com/libgdx/ashley/wiki)**: now the wiki has a lot more content, it fully covers Ashley. The rest is sugar.
+  * **[API Cleanup](https://github.com/libgdx/ashley/commit/3182782dfd71e13f0bf1c03490512d91921117a3)**: renames `Family.getFamilyFor()` to `Family.getFor()` for simplicity.
+  * **[Configurable pools](https://github.com/libgdx/ashley/commit/569f089f9236dc8c2da09f4fe3b4d33880745d8a)**: `PooledEngine` now accepts the initial and maximum sizes for the entity and components pools. This will add a lot more flexibility to bigger games.
+  * **[Libgdx 1.3.0](https://github.com/libgdx/ashley/commit/aa97ecbf8344ea6de5afeb608ac65ccd12e80965)**: Ashley now depends on gdx-core 1.3.0.
+
+Keep the feedback coming and happy coding!

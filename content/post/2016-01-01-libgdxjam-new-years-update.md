@@ -1,0 +1,35 @@
+---
+id: 3507
+title: "LibGDXJAM New Year's update"
+date: 2016-01-01T19:39:03+00:00
+author: David Saltares
+layout: post
+guid: /?p=3507
+url: /projects/libgdxjam-new-years-update/
+dsq_thread_id:
+  - 4452732477
+categories:
+  - Games development
+  - Projects
+tags:
+  - Ashley
+  - games development
+  - libgdx
+  - libGDXJAM
+  - Overlap2D
+  - platformer
+---
+
+We"re halfway through the [#libGDXJAM](https://twitter.com/search?src=typd&q=libgdxjam) and some work has been done between Christmas and New Year's eve.
+
+Here's a few updates.
+
+* [@DrillerDev](https://twitter.com/DrillerDev) as joined us as an artist and has already produced some awesome concepts.
+* Alberto and I have been working on an Overlap2D scene loader and it's pretty much working supporting a bunch of things: composites, textures, lights, physics and particles.
+* We have a somewhat buggy physics based platformer movement system.
+* There are cameras you have to stay away from!
+
+{{< gallery dir="/img/sloppynauts/gallery_progress_1" />}}
+{{< load-photoswipe >}}
+
+We really need to focus on gameplay now, hopefully we"ll have something playable by the deadline. Make sure to follow the [Twitter feed](https://twitter.com/search?src=typd&q=libgdxjam) for the jam. Gotta say that I"m shocked to see how much coolness people have managed to put together in such a short amount of time.
