@@ -5,7 +5,13 @@ import Head from 'next/head';
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>My new cool app</title>
+      <title>
+        David Saltares · Engineering Leadership &amp; Software Development
+      </title>
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+      ></meta>
     </Head>
     <Component {...pageProps} />
   </>
