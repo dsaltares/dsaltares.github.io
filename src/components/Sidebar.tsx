@@ -9,7 +9,7 @@ import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const SidebarWidth = 'md:w-[360px]';
+const SidebarWidth = 'md:max-w-[360px]';
 
 const NavBarItems = [
   { text: 'Blog', href: '/' },
@@ -44,7 +44,7 @@ const Sidebar = () => (
     <aside
       className={cn(
         SidebarWidth,
-        'bg-primary px-10 py-10 text-white text-xl md:fixed md:top-0 md:left-0 md:h-full flex flex-col justify-end'
+        'bg-primary px-10 py-10 text-white text-xl md:fixed md:top-0 md:left-0 md:h-full flex flex-col justify-end items-center md:items-start'
       )}
     >
       <div>
@@ -74,7 +74,7 @@ const Sidebar = () => (
         </a>
       </Link>
       <nav className="mb-5">
-        <ul>
+        <ul className="flex flex-col items-center md:items-start">
           {NavBarItems.map((item) => (
             <li key={item.href} className="leading-7">
               <Link href={item.href}>
@@ -97,7 +97,7 @@ const Sidebar = () => (
       </ul>
       <p className="text-contentLight text-lg">{`© ${new Date().getFullYear()} David Saltares.`}</p>
     </aside>
-    <div className={cn(SidebarWidth, 'hidden md:flex')}></div>
+    <div className={cn(SidebarWidth, 'w-full hidden md:block')}></div>
   </>
 );
 
