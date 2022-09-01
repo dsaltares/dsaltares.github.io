@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
+import { titleToHref } from './href';
 
 const PostsPath = './content/post';
 
@@ -17,12 +18,6 @@ export type PostMetadata = {
 
 export const getNumberOfPosts = () => fs.readdirSync(PostsPath).length;
 
-export const titleToHref = (title: string) =>
-  title
-    .toLowerCase()
-    .replace(/ /g, '-')
-    .replace(/[^a-z0-9-]/g, '');
-
 export const getPostsMetadata = (): PostMetadata[] =>
   fs
     .readdirSync(PostsPath)
@@ -33,7 +28,7 @@ export const getPostsMetadata = (): PostMetadata[] =>
         path: file,
         title: frontMatter.data.title as string,
         date: new Date(frontMatter.data.date).toISOString(),
-        categories: frontMatter.data.categories as string[],
+        categories: (frontMatter.data.categories || []) as string[],
         description: (frontMatter.data.description || null) as string | null,
         href: titleToHref(frontMatter.data.title),
         readingTime: readingTime(content).text,
