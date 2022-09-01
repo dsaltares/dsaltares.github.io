@@ -9,7 +9,7 @@ type PostListItemProps = {
 
 const PostListItem = ({ post }: PostListItemProps) => (
   <article>
-    <Link href={post.href}>
+    <Link href={post.slug}>
       <a>
         <h1 className="font-bold text-4xl mb-2 text-primary">{post.title}</h1>
       </a>
@@ -17,7 +17,7 @@ const PostListItem = ({ post }: PostListItemProps) => (
     <p className="flex text-contentLight mb-1">
       {`${formatDate(post.date)} · ${post.readingTime}`}
       <span>&nbsp;·&nbsp;</span>
-      <Link href={`${post.href}#disqus_thread`}>
+      <Link href={`${post.slug}#disqus_thread`}>
         <a className="text-contentLink">{'Comments'}</a>
       </Link>
     </p>
@@ -33,7 +33,7 @@ const PostListItem = ({ post }: PostListItemProps) => (
     {post.description && (
       <>
         <p className="text-content mb-3">{post.description}</p>
-        <Link href={post.href}>
+        <Link href={post.slug}>
           <a className="text-contentLink">Read on →</a>
         </Link>
       </>

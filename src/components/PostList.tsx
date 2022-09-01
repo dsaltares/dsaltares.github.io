@@ -8,7 +8,7 @@ type PostListProps = {
 const PostList = ({ posts }: PostListProps) => (
   <div className="flex flex-col gap-20">
     {posts.map((post) => (
-      <PostListItem key={post.href} post={post} />
+      <PostListItem key={post.slug} post={post} />
     ))}
   </div>
 );

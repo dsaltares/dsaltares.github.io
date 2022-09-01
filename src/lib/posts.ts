@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
-import { titleToHref } from './href';
+import { titleToSlug } from './href';
 
 const PostsPath = './content/post';
 
@@ -12,7 +12,7 @@ export type PostMetadata = {
   date: string;
   categories: string[];
   description: string | null;
-  href: string;
+  slug: string;
   readingTime: string;
 };
 
@@ -30,7 +30,7 @@ export const getPostsMetadata = (): PostMetadata[] =>
         date: new Date(frontMatter.data.date).toISOString(),
         categories: (frontMatter.data.categories || []) as string[],
         description: (frontMatter.data.description || null) as string | null,
-        href: titleToHref(frontMatter.data.title),
+        slug: titleToSlug(frontMatter.data.title),
         readingTime: readingTime(content).text,
       };
     })

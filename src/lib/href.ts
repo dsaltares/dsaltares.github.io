@@ -1,4 +1,4 @@
-export const titleToHref = (title: string) =>
+export const titleToSlug = (title: string) =>
   title
     .toLowerCase()
     .replace(/ /g, '-')
@@ -6,4 +6,4 @@ export const titleToHref = (title: string) =>
     .replace(/[^a-z0-9-]/g, '');
 
 export const categoryToHref = (category: string) =>
-  `/categories/${titleToHref(category)}`;
+  `/categories/${titleToSlug(category)}`;
