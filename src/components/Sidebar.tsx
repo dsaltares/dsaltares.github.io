@@ -1,4 +1,9 @@
-import type { IconLookup } from '@fortawesome/fontawesome-svg-core';
+import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGithubSquare,
+  faTwitterSquare,
+  faLinkedinIn,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cn from 'classnames';
 import Image from 'next/image';
@@ -17,19 +22,19 @@ const NavBarItems = [
 
 const SocialLinks = [
   {
-    icon: { prefix: 'fab', iconName: 'github-square' } as IconLookup,
+    icon: faGithubSquare,
     href: 'https://github.com/dsaltares',
   },
   {
-    icon: { prefix: 'fab', iconName: 'linkedin' } as IconLookup,
+    icon: faLinkedinIn,
     href: 'https://www.linkedin.com/in/davidsaltares/',
   },
   {
-    icon: { prefix: 'fab', iconName: 'twitter-square' } as IconLookup,
+    icon: faTwitterSquare,
     href: 'https://twitter.com/dsaltares',
   },
   {
-    icon: { prefix: 'fas', iconName: 'rss-square' } as IconLookup,
+    icon: faRssSquare,
     href: 'https://saltares.com/index.xml',
   },
 ];
@@ -54,7 +59,7 @@ const Sidebar = () => (
                 alt="profile picture"
               />
             </div>
-            <h1 className="text-white font-bold text-4xl hover:underline leading-10">
+            <h1 className="text-white font-bold text-4xl leading-10">
               David Saltares
             </h1>
           </a>
@@ -64,7 +69,7 @@ const Sidebar = () => (
         {'Engineering Leadership & Software Development'}
       </p>
       <Link href="https://tinyletter.com/dsaltares/">
-        <a className="hover:underline">
+        <a>
           <p className="mb-5">✉️ Subscribe</p>
         </a>
       </Link>
@@ -73,7 +78,7 @@ const Sidebar = () => (
           {NavBarItems.map((item) => (
             <li key={item.href} className="leading-7">
               <Link href={item.href}>
-                <a className="hover:underline">{item.text}</a>
+                <a>{item.text}</a>
               </Link>
             </li>
           ))}
