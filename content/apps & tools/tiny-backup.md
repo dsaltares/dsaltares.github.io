@@ -1,20 +1,19 @@
-+++
-date = "2011-09-25T22:25:56Z"
-description = ""
-keywords = []
-title = "Tiny Backup"
-
-+++
+---
+date: '2011-09-25T22:25:56Z'
+description: ''
+keywords: []
+title: 'Tiny Backup'
+---
 
 ![](/img/tiny-backup/tiny-backup1.png)
 
 Open source tool to save and restore the list of installed packages in a Debian based Linux distribution. I developed this tool to learn Python basics and the GTK library.
 
-* **Role**: project leader and sole programmer
-* **Year**: 2010
-* **Development time**: 1 week
-* **Technology**: Python language using pyGTK
-* **Download**: [Tiny Backup 0.2](http://code.google.com/p/python-tiny-backup/downloads/detail?name=tinybackup-0.2.tar.gz&can=2&q=), [source code](http://code.google.com/p/python-tiny-backup/source/browse/)
+- **Role**: project leader and sole programmer
+- **Year**: 2010
+- **Development time**: 1 week
+- **Technology**: Python language using pyGTK
+- **Download**: [Tiny Backup 0.2](http://code.google.com/p/python-tiny-backup/downloads/detail?name=tinybackup-0.2.tar.gz&can=2&q=), [source code](http://code.google.com/p/python-tiny-backup/source/browse/)
 
 ### Screenshots
 
@@ -23,5 +22,5 @@ Open source tool to save and restore the list of installed packages in a Debian 
 
 ### Features
 
-* Save and restore your package list.
-* Send an e-mail copy of the package list.
+- Save and restore your package list.
+- Send an e-mail copy of the package list.

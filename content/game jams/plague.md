@@ -1,15 +1,16 @@
-+++
-date = "2020-02-23T00:00:00Z"
-description = ""
-keywords = []
-title = "Plague"
-+++
+---
+date: '2020-02-23T00:00:00Z'
+description: ''
+keywords: []
+title: 'Plague'
+---
 
 {{< itch-widget
-  id="574758"
-  link="https://david-saltares.itch.io/plague"
-  linkText="Plague by David Saltares and Jay Cano"
->}}
+id="574758"
+link="https://david-saltares.itch.io/plague"
+linkText="Plague by David Saltares and Jay Cano"
+
+> }}
 
 The world has turned into a very dark place. First, dangerous electric storms fall from the sky. But now... demons from hell plague the earth. All hope is lost.
 
@@ -22,16 +23,18 @@ Plague is an infinite action platformer with procedurally generated levels. It's
 ### 💻 Godot Wild Jam 18
 
 The theme was "Plague" and the three optional wildcards where:
-* 80s aesthetic.
-* Random content/chance.
-* Weather/rain.
+
+- 80s aesthetic.
+- Random content/chance.
+- Weather/rain.
 
 ### 💡 More info
-* Game Jam: [Godot Wild Jam 18](https://itch.io/jam/godot-wild-jam-18)
-* Development time: 1 week
-* Technology: Godoot Engine
-* Team: [@senthe](https://twitter.com/senthe) and [@d_saltares](https://twitter.com/d_saltares)
-* [Source code](https://github.com/dsaltares/godot-wild-jam-18)
+
+- Game Jam: [Godot Wild Jam 18](https://itch.io/jam/godot-wild-jam-18)
+- Development time: 1 week
+- Technology: Godoot Engine
+- Team: [@senthe](https://twitter.com/senthe) and [@d_saltares](https://twitter.com/d_saltares)
+- [Source code](https://github.com/dsaltares/godot-wild-jam-18)
 
 ### 📷 Screenshots
 

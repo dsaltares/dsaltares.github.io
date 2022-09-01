@@ -1,12 +1,11 @@
-+++
-date = "2014-04-28T22:11:09Z"
-description = ""
-keywords = []
-title = "Beneath the surface"
+---
+date: '2014-04-28T22:11:09Z'
+description: ''
+keywords: []
+title: 'Beneath the surface'
+---
 
-+++
-
-Beneath the surface is a very simple, classic text adventure where the player needs to escape an underground cave by using commands in the form of *verb* + *object*.
+Beneath the surface is a very simple, classic text adventure where the player needs to escape an underground cave by using commands in the form of _verb_ + _object_.
 
 > Open door
 

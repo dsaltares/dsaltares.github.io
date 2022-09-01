@@ -1,18 +1,18 @@
-+++
-date = "2020-10-06T00:00:00Z"
-description = ""
-keywords = []
-title = "Chronolooper"
-+++
+---
+date: '2020-10-06T00:00:00Z'
+description: ''
+keywords: []
+title: 'Chronolooper'
+---
 
 {{< itch-widget
-  id="773332"
-  link="https://david-saltares.itch.io/chronolooper"
-  linkText="Chronolooper by David Saltares and Jay Cano"
->}}
+id="773332"
+link="https://david-saltares.itch.io/chronolooper"
+linkText="Chronolooper by David Saltares and Jay Cano"
+
+> }}
 
 They put you in a facility and ran all sorts of experiments because you can control time. Now you are stuck in a time loop!
-
 
 ### 🎮 The game
 
@@ -20,14 +20,15 @@ Plague is an infinite action platformer with procedurally generated levels. It's
 
 ### 💻 Ludum Dare 47
 
-Chronolooper was developed using [Godot Engine](https://godotengine.org/) for [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47), a 72h jam. The theme was *Stuck in a loop*.
+Chronolooper was developed using [Godot Engine](https://godotengine.org/) for [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47), a 72h jam. The theme was _Stuck in a loop_.
 
 ### 💡 More info
-* Game Jam: [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47)
-* Development time: 72h
-* Technology: Godoot Engine
-* Team: [@senthe](https://twitter.com/senthe) and [@d_saltares](https://twitter.com/d_saltares)
-* [Source code](https://github.com/dsaltares/ludumdare-47)
+
+- Game Jam: [Ludum Dare 47](https://ldjam.com/events/ludum-dare/47)
+- Development time: 72h
+- Technology: Godoot Engine
+- Team: [@senthe](https://twitter.com/senthe) and [@d_saltares](https://twitter.com/d_saltares)
+- [Source code](https://github.com/dsaltares/ludumdare-47)
 
 ### 📷 Screenshots
 
