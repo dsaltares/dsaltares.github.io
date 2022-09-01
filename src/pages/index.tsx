@@ -1,6 +1,8 @@
 import type { GetStaticProps, NextPage } from 'next';
 import { getPostsMetadata, type PostMetadata } from '@lib/posts';
 import Layout from '@components/Layout';
+import Config from '@lib/config';
+import PostList from '@components/PostList';
 
 type HomePageProps = {
   posts: PostMetadata[];
@@ -8,18 +10,13 @@ type HomePageProps = {
 
 const HomePage: NextPage<HomePageProps> = ({ posts }) => (
   <Layout>
-    <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    <ul>
-      {posts.map((post) => (
-        <li key={post.path}>{post.title}</li>
-      ))}
-    </ul>
+    <PostList posts={posts} />
   </Layout>
 );
 
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    posts: getPostsMetadata(),
+    posts: getPostsMetadata().slice(0, Config.postsPerPage),
   },
 });
 

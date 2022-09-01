@@ -13,6 +13,7 @@ module.exports = {
         primary: '#202020',
         content: '#515151',
         contentLight: '#9a9a9a',
+        contentLink: '#268bd2',
       },
     },
   },
