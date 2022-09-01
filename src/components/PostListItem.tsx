@@ -14,12 +14,13 @@ const PostListItem = ({ post }: PostListItemProps) => (
         <h1 className="font-bold text-4xl mb-2 text-primary">{post.title}</h1>
       </a>
     </Link>
-    <span className="flex text-contentLight mb-1">
-      {`${formatDate(post.date)} · ${post.readingTime}`} ·{' '}
+    <p className="flex text-contentLight mb-1">
+      {`${formatDate(post.date)} · ${post.readingTime}`}
+      <span>&nbsp;·&nbsp;</span>
       <Link href={`${post.href}#disqus_thread`}>
-        <a className="text-contentLink">Comments</a>
+        <a className="text-contentLink">{'Comments'}</a>
       </Link>
-    </span>
+    </p>
     <div className="flex flex-row gap-1 mb-3">
       {post.categories.map((category) => (
         <Link key={category} href={categoryToHref(category)}>
