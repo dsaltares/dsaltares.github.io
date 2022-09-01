@@ -6,7 +6,9 @@ import isFuture from 'date-fns/isFuture';
 import { titleToSlug } from './href';
 import Config from './config';
 
-const PostsPath = './content/post';
+const ContentPath = './content';
+const PostsPath = path.join(ContentPath, 'post');
+const SupportedExtensions = ['.md', '.mdx'];
 
 export type PostMetadata = {
   path: string;
@@ -24,27 +26,61 @@ export const getNumberOfPosts = () => fs.readdirSync(PostsPath).length;
 export const getPostsMetadata = (): PostMetadata[] =>
   fs
     .readdirSync(PostsPath)
-    .map((file) => {
-      const content = fs.readFileSync(path.join(PostsPath, file), 'utf8');
-      const frontMatter = matter(content);
-      return {
-        path: file,
-        title: frontMatter.data.title as string,
-        date: new Date(frontMatter.data.date).toISOString(),
-        categories: (frontMatter.data.categories || []) as string[],
-        description: (frontMatter.data.description || null) as string | null,
-        slug: titleToSlug(frontMatter.data.title),
-        readingTime: readingTime(content).text,
-        draft: (frontMatter.data.draft || false) as boolean,
-      };
-    })
-    .filter((post) => {
-      if (!Config.includeFuture && isFuture(new Date(post.date))) {
-        return false;
-      }
-      if (!Config.includeDrafts && post.draft) {
-        return false;
-      }
-      return true;
-    })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    .map((file) => path.join(PostsPath, file))
+    .map(getPostMetadata)
+    .filter(filterPost)
+    .sort(byDateDescending);
+
+export const getAllSlugs = () => getAllMetadata().map(({ slug }) => slug);
+
+export const getPostMetadataBySlug = (slug: string) =>
+  getAllMetadata().find((post) => post.slug === slug);
+
+const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
+
+const getAllFiles = (): string[] => {
+  const queue = [ContentPath];
+  const files: string[] = [];
+
+  while (queue.length > 0) {
+    const file = queue.pop() as string;
+    const stat = fs.statSync(file);
+    if (stat.isDirectory()) {
+      fs.readdirSync(file).forEach((child) => {
+        queue.push(path.join(file, child));
+      });
+    } else if (SupportedExtensions.includes(path.extname(file))) {
+      files.push(file);
+    }
+  }
+
+  return files;
+};
+
+const getPostMetadata = (file: string) => {
+  const content = fs.readFileSync(file, 'utf8');
+  const frontMatter = matter(content);
+  return {
+    path: file,
+    title: frontMatter.data.title as string,
+    date: new Date(frontMatter.data.date).toISOString(),
+    categories: (frontMatter.data.categories || []) as string[],
+    description: (frontMatter.data.description || null) as string | null,
+    slug: titleToSlug(frontMatter.data.title),
+    readingTime: readingTime(content).text,
+    draft: (frontMatter.data.draft || false) as boolean,
+  };
+};
+
+const filterPost = (post: PostMetadata) => {
+  if (!Config.includeFuture && isFuture(new Date(post.date))) {
+    return false;
+  }
+  if (!Config.includeDrafts && post.draft) {
+    return false;
+  }
+  return true;
+};
+
+const byDateDescending = (a: PostMetadata, b: PostMetadata) =>
+  new Date(b.date).getTime() - new Date(a.date).getTime();
