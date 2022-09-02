@@ -11,6 +11,8 @@ import type {
 import Audio from './Audio';
 import ImageGallery from './ImageGallery';
 import ItchGame from './ItchGame';
+import Loom from './Loom';
+import Youtube from './Youtube';
 
 const Components = {
   p: (
@@ -152,6 +154,8 @@ const Components = {
   Audio,
   ImageGallery,
   ItchGame,
+  Youtube,
+  Loom,
 };
 
 export default Components;
