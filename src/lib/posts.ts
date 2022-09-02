@@ -3,6 +3,10 @@ import path from 'path';
 import matter from 'gray-matter';
 import readingTime from 'reading-time';
 import isFuture from 'date-fns/isFuture';
+import { serialize } from 'next-mdx-remote/serialize';
+import remarkGfm from 'remark-gfm';
+import remarkUnwrapImages from 'remark-unwrap-images';
+import remarkPrism from 'remark-prism';
 import { titleToSlug } from './href';
 import Config from './config';
 
@@ -35,6 +39,14 @@ export const getAllSlugs = () => getAllMetadata().map(({ slug }) => slug);
 
 export const getPostMetadataBySlug = (slug: string) =>
   getAllMetadata().find((post) => post.slug === slug);
+
+export const getPostSource = (file: string) =>
+  serialize(fs.readFileSync(file, 'utf8'), {
+    parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm, remarkUnwrapImages, remarkPrism],
+    },
+  });
 
 const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
 
