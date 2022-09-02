@@ -12,4 +12,8 @@
   blockquote > p {
     @apply text-quote;
   }
+
+  blockquote > p.mb-5 {
+    @apply mb-0;
+  }
 }
