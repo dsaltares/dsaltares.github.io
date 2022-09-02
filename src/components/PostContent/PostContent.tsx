@@ -6,9 +6,7 @@ type PostContentProps = {
 };
 
 const PostContent = ({ source }: PostContentProps) => (
-  <article className="text-content">
-    <MDXRemote {...source} components={Components} />
-  </article>
+  <MDXRemote {...source} components={Components} />
 );
 
 export default PostContent;

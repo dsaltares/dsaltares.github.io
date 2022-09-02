@@ -17,8 +17,10 @@ type PostPageProps = {
 
 const PostPage = ({ metadata, source }: PostPageProps) => (
   <Layout>
-    <PostHeader post={metadata} />
-    <PostContent source={source} />
+    <article className="text-content">
+      <PostHeader post={metadata} />
+      <PostContent source={source} />
+    </article>
   </Layout>
 );
 
