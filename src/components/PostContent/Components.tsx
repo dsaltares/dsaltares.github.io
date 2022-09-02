@@ -10,6 +10,7 @@ import type {
 } from 'react';
 import Audio from './Audio';
 import ImageGallery from './ImageGallery';
+import ItchGame from './ItchGame';
 
 const Components = {
   p: (
@@ -150,6 +151,7 @@ const Components = {
   ) => <strong className="font-bold text-primary" {...props} />,
   Audio,
   ImageGallery,
+  ItchGame,
 };
 
 export default Components;
