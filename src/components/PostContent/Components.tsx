@@ -8,6 +8,7 @@ import type {
   TableHTMLAttributes,
   TdHTMLAttributes,
 } from 'react';
+import Audio from './Audio';
 
 const Components = {
   p: (
@@ -146,6 +147,7 @@ const Components = {
   strong: (
     props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
   ) => <strong className="font-bold text-primary" {...props} />,
+  Audio,
 };
 
 export default Components;

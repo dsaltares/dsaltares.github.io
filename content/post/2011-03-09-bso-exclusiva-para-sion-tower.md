@@ -12,7 +12,7 @@ enclosure:
         /wp-content/uploads/2011/03/Sion-Tower-partida.mp3
         5306667
         audio/mpeg
-        
+
 views:
   - 995
 dsq_thread_id:
@@ -40,7 +40,7 @@ Antonio Caro y Daniel Pellicer solían componer y editar piezas para juegos imag
 
 Con esta banda sonora **están haciendo que Sion Tower crezca muchísimo**. A continuación tenéis una versión prácticamente acabada (aunque sujeta a cambios) de la canción que sonará durante las partidas. Toda la banda sonora está sujeta a una **licencia [Creative Commons by-nc-sa](http://creativecommons.org/licenses/by-nc-sa/3.0/)** (atribución, no comercial, compartir igual).
 
-{{% audio "/audio/Sion-Tower-partida.mp3" %}}
+<Audio src="/audio/Sion-Tower-partida.mp3"></Audio>
 
 Además de esta pista, **están decididos a seguir trabajando** con melodías para los menús y otras canciones para distintos niveles. Un lujo impagable.
 

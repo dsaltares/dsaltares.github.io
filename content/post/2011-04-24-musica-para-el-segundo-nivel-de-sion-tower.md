@@ -12,7 +12,7 @@ enclosure:
         /wp-content/uploads/2011/04/sion-tower-2-fade-out.mp3
         13953789
         audio/mpeg
-        
+
 views:
   - 929
 dsq_thread_id:
@@ -34,6 +34,6 @@ En el [Estudio Evergreen](http://estudioevergreen.wordpress.com/) siguen componi
 
 Daniel Pellicer y Antonio Caro ya estaban consiguiendo buenos resultados para la banda sonora pero no se han conformado y siguen queriendo aprender nuevas técnicas. Os recomiendo encarecidamente que [leáis el artículo correspondiente](http://estudioevergreen.wordpress.com/2011/04/23/sion-tower-fase-2-hydorah-y-gryzor87/) en su blog en el que explican todo el proceso.
 
-{{% audio "/audio/sion-tower-2-fade-out.mp3" %}}
+<Audio src="/audio/sion-tower-2-fade-out.mp3"></Audio>
 
 Desde aquí ¡muchas gracias!
