@@ -9,6 +9,7 @@ import type {
   TdHTMLAttributes,
 } from 'react';
 import Audio from './Audio';
+import ImageGallery from './ImageGallery';
 
 const Components = {
   p: (
@@ -148,6 +149,7 @@ const Components = {
     props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
   ) => <strong className="font-bold text-primary" {...props} />,
   Audio,
+  ImageGallery,
 };
 
 export default Components;
