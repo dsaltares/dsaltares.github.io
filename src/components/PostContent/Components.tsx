@@ -12,7 +12,7 @@ import Audio from './Audio';
 import ImageGallery from './ImageGallery';
 import ItchGame from './ItchGame';
 import Loom from './Loom';
-import Youtube from './Youtube';
+import YouTube from './YouTube';
 
 const Components = {
   p: (
@@ -154,7 +154,7 @@ const Components = {
   Audio,
   ImageGallery,
   ItchGame,
-  Youtube,
+  YouTube,
   Loom,
 };
 
