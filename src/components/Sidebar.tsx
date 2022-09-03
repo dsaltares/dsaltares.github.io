@@ -13,7 +13,7 @@ const SidebarWidth = 'md:max-w-[360px]';
 
 const NavBarItems = [
   { text: 'Blog', href: '/' },
-  { text: 'About', href: '/about' },
+  { text: 'About', href: '/about-me' },
   { text: 'Apps & Tools', href: '/apps-tools' },
   { text: 'Game Jams', href: '/game-jams' },
   { text: 'Games', href: '/games' },
