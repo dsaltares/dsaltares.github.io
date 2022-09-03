@@ -1,0 +1,73 @@
+---
+id: 2148
+title: Localisation for libgdx projects
+date: 2012-04-29T14:41:25+00:00
+author: David Saltares
+layout: post
+guid: http://siondream.com/blog/?p=2148
+url: /games/internationalization-for-libgdx-projects/
+dsq_thread_id:
+  - 1852024382
+categories:
+  - Games development
+tags:
+  - Android
+  - games development
+  - gettext
+  - GPL v3
+  - internationalization
+  - Java
+  - libgdx
+  - localization
+  - multi language
+  - PC
+  - translation
+  - XML
+---
+
+**Warning**: Libgdx now counts with [localisation support](https://github.com/libgdx/libgdx/wiki/Internationalization-and-Localization), rendering this approach obsolete.
+
+**Edit:** I just added UTF-8 support
+
+**[Localization is a key aspect in games](http://www.altdevblogaday.com/2012/04/19/localization-notes/)**, specially if you want to reach a wider audience. I recently [ported Freegemas](https://github.com/dsaltares/freegemas-gdx) to the libgdx platform and, as the original one, I wanted to ship it with multi-language support. There is no such a thing as [gettext](http://www.gnu.org/software/gettext/) for Java and I didn't see the Android internationalization system as a good fit in a multiplatform development. That's why I developed my little own internationalization module.
+
+**[Download LanguagesManager.java](https://github.com/dsaltares/freegemas-gdx/blob/master/freegemas/src/com/siondream/freegemas/LanguagesManager.java)**
+
+Its usage is extremely simple, first we need a _media/languages.xml_ file where all the strings in our project will be located. The syntax is pretty straight forward, we lay language sections identified with the code for each language. Inside every language, we provide a list of key value pairs with the localized strings.
+
+```
+< ?xml version="1.0" encoding="UTF-8"?>
+<languages>
+
+   <language name="en_UK" >
+
+      <string key="Timetrial mode" value="Timetrial mode" />
+      <string key="How to play" value="How to play" />
+      <string key="Exit" value="Exit" />
+   </language>
+
+
+   <language name="es_ES" >
+
+      <string key="Timetrial mode" value="Contrarreloj" />
+      <string key="How to play" value="Ayuda" />
+      <string key="Exit" value="Salir" />
+   </language>
+</languages>
+```
+
+We can retrieve localized strings in our project through the _LanguagesManager_ class and its _getString()_ method. It's been implemented using the [Singleton](http://en.wikipedia.org/wiki/Singleton_pattern) design pattern as we only need one instance accessible from, potentially, everywhere in the code. When we ask our manager for a certain string we will use its key, if it finds it within the current language, it"ll return it, otherwise it"ll return the key itself. That's why using strings in a base language (English) as keys can be a good idea, those will be returned by default.
+
+For now, it uses [lazy initialization](http://en.wikipedia.org/wiki/Lazy_initialization) which means it"ll load the language the first time the _getInstance()_ method is called but that might change in the future. It automatically detects the system language (no matter if we are on Android or a desktop environment) and it fallsback to English if the system language is not among the available ones in the _data/languages.xml_ file. However, you can explicitly specify the language you want to load through the _loadLanguage()_ method.
+
+```
+LanguagesManager lang;
+
+lang = LanguagesManager.getInstance();
+
+String option1 = lang.getString("Timetrial mode");
+String option2 = lang.getString("How to play");
+String option3 = lang.getString("Exit");
+```
+
+Freegemas libgdx is open source ([GPL v3](http://www.gnu.org/licenses/quick-guide-gplv3.html)) as is this internationalization module which means you"re more than welcome to download it, use it and improve it. If you do the latest, make sure you distribute it the same way as me.

@@ -9,9 +9,13 @@ import type {
   TdHTMLAttributes,
 } from 'react';
 import Audio from './Audio';
+import CodeSandbox from './CodeSandbox';
 import ImageGallery from './ImageGallery';
 import ItchGame from './ItchGame';
 import Loom from './Loom';
+import Slideshare from './Slideshare';
+import Tweet from './Tweet';
+import Vimeo from './Vimeo';
 import YouTube from './YouTube';
 
 const Components = {
@@ -156,6 +160,10 @@ const Components = {
   ItchGame,
   YouTube,
   Loom,
+  Vimeo,
+  Tweet,
+  CodeSandbox,
+  Slideshare,
 };
 
 export default Components;
