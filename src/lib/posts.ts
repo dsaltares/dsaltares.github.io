@@ -9,6 +9,7 @@ import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkPrism from 'remark-prism';
 import { slugify } from './href';
 import Config from './config';
+import type { TaxonomyWithDate } from './types';
 
 const ContentPath = './content';
 const PostsPath = path.join(ContentPath, 'post');
@@ -19,6 +20,7 @@ export type PostMetadata = {
   title: string;
   date: string;
   categories: string[];
+  series: string | null;
   description: string | null;
   slug: string;
   readingTime: string;
@@ -49,19 +51,52 @@ export const getPostSource = (file: string) =>
   });
 
 export const getCategories = () =>
-  Array.from(
-    new Set(
-      getPostsMetadata()
-        .map(({ categories }) => categories)
-        .flat()
+  Object.values(
+    getPostsMetadata().reduce(
+      (acc, { categories, date }) =>
+        categories.reduce((acc, category) => {
+          if (!acc[category] || acc[category].date < date) {
+            return {
+              ...acc,
+              [category]: { label: category, date },
+            };
+          }
+          return acc;
+        }, acc),
+      {} as { [key: string]: TaxonomyWithDate }
     )
-  );
-
-export const getCategorySlugs = () => getCategories().map(slugify);
+  ).sort(byDateDescending);
 
 export const getPostsMetadataByCategory = (category: string) =>
   getPostsMetadata().filter((post) =>
     post.categories.map(slugify).includes(category)
+  );
+
+export const getCategorySlugs = () =>
+  getCategories().map(({ label }) => slugify(label));
+
+export const getSeries = () =>
+  Object.values(
+    getPostsMetadata().reduce((acc, { series, date }) => {
+      if (!series) {
+        return acc;
+      }
+      if (!acc[series] || acc[series].date < date) {
+        return {
+          ...acc,
+          [series]: { label: series, date },
+        };
+      }
+      return acc;
+    }, {} as { [key: string]: TaxonomyWithDate })
+  ).sort(byDateDescending);
+
+export const getSeriesSlugs = () =>
+  getSeries().map(({ label }) => slugify(label));
+
+export const getPostsMetadataBySeries = (series: string) =>
+  getPostsMetadata().filter(
+    (post) => post.series && slugify(post.series) === series
   );
 
 const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
@@ -93,6 +128,7 @@ const getPostMetadata = (file: string) => {
     title: frontMatter.data.title as string,
     date: new Date(frontMatter.data.date).toISOString(),
     categories: (frontMatter.data.categories || []) as string[],
+    series: (frontMatter.data.series || null) as string | null,
     description: (frontMatter.data.description || null) as string | null,
     slug: slugify(frontMatter.data.title),
     readingTime: readingTime(content).text,
@@ -110,5 +146,5 @@ const filterPost = (post: PostMetadata) => {
   return true;
 };
 
-const byDateDescending = (a: PostMetadata, b: PostMetadata) =>
+const byDateDescending = <T extends { date: string }>(a: T, b: T) =>
   new Date(b.date).getTime() - new Date(a.date).getTime();

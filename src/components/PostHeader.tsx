@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import formatDate from '@lib/formatDate';
-import { categoryToHref } from '@lib/href';
 import type { PostMetadata } from '@lib/posts';
 import Categories from './Categories';
 

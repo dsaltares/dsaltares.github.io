@@ -9,3 +9,5 @@ export const slugify = (text: string) =>
 
 export const categoryToHref = (category: string) =>
   `/categories/${slugify(category)}`;
+
+export const seriesToHref = (series: string) => `/series/${slugify(series)}`;

@@ -4,9 +4,8 @@ import {
   getPostsMetadataByCategory,
   type PostMetadata,
 } from '@lib/posts';
-import Layout from '@components/Layout';
-import PostTitleList from '@components/PostTitleList';
 import { slugify } from '@lib/href';
+import PostTitleListPage from '@components/PostTitleListPage';
 
 type CategoryPageProps = {
   posts: PostMetadata[];
@@ -14,10 +13,7 @@ type CategoryPageProps = {
 };
 
 const CategoryPage: NextPage<CategoryPageProps> = ({ category, posts }) => (
-  <Layout>
-    <h1 className="mb-2 text-primary text-4xl font-bold ">{category}</h1>
-    <PostTitleList posts={posts} />
-  </Layout>
+  <PostTitleListPage title={category} posts={posts} />
 );
 
 export const getStaticPaths: GetStaticPaths = () => ({
@@ -45,7 +41,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      posts: getPostsMetadataByCategory(category),
+      posts,
       category: categoryName,
     },
   };
