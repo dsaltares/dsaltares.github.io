@@ -1,6 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import {
-  getCategories,
+  getCategorySlugs,
   getPostsMetadataByCategory,
   type PostMetadata,
 } from '@lib/posts';
@@ -22,7 +22,7 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ category, posts }) => (
 
 export const getStaticPaths: GetStaticPaths = () => ({
   fallback: false,
-  paths: getCategories().map((category) => ({ params: { category } })),
+  paths: getCategorySlugs().map((category) => ({ params: { category } })),
 });
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {

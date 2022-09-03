@@ -54,9 +54,10 @@ export const getCategories = () =>
       getPostsMetadata()
         .map(({ categories }) => categories)
         .flat()
-        .map(slugify)
     )
   );
+
+export const getCategorySlugs = () => getCategories().map(slugify);
 
 export const getPostsMetadataByCategory = (category: string) =>
   getPostsMetadata().filter((post) =>
