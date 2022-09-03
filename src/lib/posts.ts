@@ -7,7 +7,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import remarkGfm from 'remark-gfm';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import remarkPrism from 'remark-prism';
-import { titleToSlug } from './href';
+import { slugify } from './href';
 import Config from './config';
 
 const ContentPath = './content';
@@ -78,7 +78,7 @@ const getPostMetadata = (file: string) => {
     date: new Date(frontMatter.data.date).toISOString(),
     categories: (frontMatter.data.categories || []) as string[],
     description: (frontMatter.data.description || null) as string | null,
-    slug: titleToSlug(frontMatter.data.title),
+    slug: slugify(frontMatter.data.title),
     readingTime: readingTime(content).text,
     draft: (frontMatter.data.draft || false) as boolean,
   };

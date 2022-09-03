@@ -1,5 +1,5 @@
-export const titleToSlug = (title: string) =>
-  title
+export const slugify = (text: string) =>
+  text
     .toLowerCase()
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
@@ -8,4 +8,4 @@ export const titleToSlug = (title: string) =>
     .replace(/[^a-z0-9-]/g, '');
 
 export const categoryToHref = (category: string) =>
-  `/categories/${titleToSlug(category)}`;
+  `/categories/${slugify(category)}`;
