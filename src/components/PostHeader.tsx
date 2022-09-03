@@ -2,6 +2,7 @@ import Link from 'next/link';
 import formatDate from '@lib/formatDate';
 import { categoryToHref } from '@lib/href';
 import type { PostMetadata } from '@lib/posts';
+import Categories from './Categories';
 
 type PostHeaderProps = {
   post: PostMetadata;
@@ -21,14 +22,8 @@ const PostHeader = ({ post }: PostHeaderProps) => (
         <a className="text-contentLink">{'Comments'}</a>
       </Link>
     </p>
-    <div className="flex flex-row gap-1 mb-3">
-      {post.categories.map((category) => (
-        <Link key={category} href={categoryToHref(category)}>
-          <a className="px-2 py-1 bg-slate-900 text-white rounded font-bold text-sm">
-            {category}
-          </a>
-        </Link>
-      ))}
+    <div className="mb-3">
+      <Categories categories={post.categories} />
     </div>
   </div>
 );

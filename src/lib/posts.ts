@@ -48,6 +48,21 @@ export const getPostSource = (file: string) =>
     },
   });
 
+export const getCategories = () =>
+  Array.from(
+    new Set(
+      getPostsMetadata()
+        .map(({ categories }) => categories)
+        .flat()
+        .map(slugify)
+    )
+  );
+
+export const getPostsMetadataByCategory = (category: string) =>
+  getPostsMetadata().filter((post) =>
+    post.categories.map(slugify).includes(category)
+  );
+
 const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
 
 const getAllFiles = (): string[] => {
