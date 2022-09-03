@@ -1,11 +1,12 @@
 ---
-title: "Continuous Delivery pipeline for Godot and itch.io"
+title: 'Continuous Delivery pipeline for Godot and itch.io'
 date: 2020-03-02T00:00:00+00:00
-author: "David Saltares"
-tags: ["Godot", "itch", "gamedev", "cd"]
-categories: ["Games Development"]
-description: "This tutorial helps you configure a continuous delivery pipeline for your Godot games to automatically publish to itch.io using Github Actions"
-keywords: ["godot engine", "games development", "CD for games", "Github Actions"]
+author: 'David Saltares'
+tags: ['Godot', 'itch', 'gamedev', 'cd']
+categories: ['Games development']
+description: 'This tutorial helps you configure a continuous delivery pipeline for your Godot games to automatically publish to itch.io using Github Actions'
+keywords:
+  ['godot engine', 'games development', 'CD for games', 'Github Actions']
 ---
 
 During the recent [Godot Wild Jam 18](/plague-godot-wild-jam-18/), I implemented a full [Continuous Delivery](https://en.wikipedia.org/wiki/Continuous_delivery) system to automatically publish [Plague](https://github.com/dsaltares/godot-wild-jam-18), our entry, on [itch.io](https://itch.io/). The pipeline relies on Github Actions, the same [mechanism I use to build and deploy this very blog](easily-deploy-your-hugo-site-to-github-pages/).
@@ -54,24 +55,23 @@ jobs:
     runs-on: ubuntu-latest
     name: Export game
     steps:
-    - name: checkout
-      uses: actions/checkout@v2.0.0
-    - name: export
-      uses: firebelley/godot-export@v1.1.0
-      with:
-        base_version: 0.1.0
-        godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.2/Godot_v3.2-stable_linux_headless.64.zip
-        godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2/Godot_v3.2-stable_export_templates.tpz
-        godot_template_version: 3.2.stable
-        relative_project_path: ./game
-      env:
-        GITHUB_TOKEN: ${{ secrets.EXPORT_GITHUB_TOKEN }}
+      - name: checkout
+        uses: actions/checkout@v2.0.0
+      - name: export
+        uses: firebelley/godot-export@v1.1.0
+        with:
+          base_version: 0.1.0
+          godot_executable_download_url: https://downloads.tuxfamily.org/godotengine/3.2/Godot_v3.2-stable_linux_headless.64.zip
+          godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/3.2/Godot_v3.2-stable_export_templates.tpz
+          godot_template_version: 3.2.stable
+          relative_project_path: ./game
+        env:
+          GITHUB_TOKEN: ${{ secrets.EXPORT_GITHUB_TOKEN }}
 ```
 
 Whenever you push these changes to your repo, you should already start seeing [jobs being triggered](https://github.com/dsaltares/godot-wild-jam-18/actions) and [releases being published](https://github.com/dsaltares/godot-wild-jam-18/releases).
 
 [![export-job](/img/cd-godot-itch/export-job.png)](/img/cd-godot-itch/export-job.png)
-
 
 ### 🚢 Ship the game
 
@@ -101,7 +101,7 @@ jobs:
         with:
           file: plague-windows.zip
         env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - name: release windows
         uses: josephbmanley/butler-publish-itchio-action@master
         env:
@@ -124,11 +124,11 @@ One last thing to remember is that you need to manually tag your HTML build as b
 
 ### ✅ Advantages
 
-* ⏳ Automated. Do not waste time exporting your game regularly and updating various stores.
-* 🚀 Fast. Exporting and publishing for a jam sized game takes only 2 minutes.
-* 🎥 Restrospect. Check out how your game looked at an arbitrary point in the past without opening the editor.
-* 💰 Cost effective. You get unlimited GH Actions minutes for open source projects and 3000 minutes for the Pro plan. That could easily equal 600 builds a month!
-* 🤸 Flexible. No need to publish on every push, you can change the triggers to publish on every push to a `release` branch or simply on a fixed schedule.
-* 🔭 Extensible. Add jobs to publish to other stores or platforms.
+- ⏳ Automated. Do not waste time exporting your game regularly and updating various stores.
+- 🚀 Fast. Exporting and publishing for a jam sized game takes only 2 minutes.
+- 🎥 Restrospect. Check out how your game looked at an arbitrary point in the past without opening the editor.
+- 💰 Cost effective. You get unlimited GH Actions minutes for open source projects and 3000 minutes for the Pro plan. That could easily equal 600 builds a month!
+- 🤸 Flexible. No need to publish on every push, you can change the triggers to publish on every push to a `release` branch or simply on a fixed schedule.
+- 🔭 Extensible. Add jobs to publish to other stores or platforms.
 
 It would be amazing if you let me know your thoughts on this solution. Maybe you have a much better automated process or ideas on how to improve this one!
