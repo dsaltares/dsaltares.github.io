@@ -25,6 +25,7 @@ export type PostMetadata = {
   slug: string;
   readingTime: string;
   draft: boolean;
+  disableComments: boolean;
 };
 
 export const getNumberOfPosts = () => fs.readdirSync(PostsPath).length;
@@ -146,6 +147,7 @@ const getPostMetadata = (file: string) => {
     slug: slugify(frontMatter.data.title),
     readingTime: readingTime(content).text,
     draft: (frontMatter.data.draft || false) as boolean,
+    disableComments: (frontMatter.data.disableComments || false) as boolean,
   };
 };
 

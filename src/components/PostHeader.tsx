@@ -9,7 +9,7 @@ type PostHeaderProps = {
 
 const PostHeader = ({ post }: PostHeaderProps) => (
   <div>
-    <Link href={post.slug}>
+    <Link href={`/${post.slug}`}>
       <a>
         <h1 className="font-bold text-4xl mb-2 text-primary">{post.title}</h1>
       </a>
@@ -17,7 +17,7 @@ const PostHeader = ({ post }: PostHeaderProps) => (
     <p className="flex text-contentLight mb-1">
       {`${formatDate(post.date)} · ${post.readingTime}`}
       <span>&nbsp;·&nbsp;</span>
-      <Link href={`${post.slug}#disqus_thread`}>
+      <Link href={`/${post.slug}#disqus_thread`}>
         <a className="text-contentLink">{'Comments'}</a>
       </Link>
     </p>

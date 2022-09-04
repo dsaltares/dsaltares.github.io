@@ -11,6 +11,7 @@ import {
 import PostHeader from '@components/PostHeader';
 import PostContent from '@components/PostContent';
 import PostSeries from '@components/PostSeries';
+import Disqus from '@components/Disqus';
 
 type PostPageProps = {
   metadata: PostMetadata;
@@ -20,13 +21,14 @@ type PostPageProps = {
 
 const PostPage = ({ metadata, series, source }: PostPageProps) => (
   <Layout>
-    <article className="text-content">
+    <article className="text-content mb-10">
       <PostHeader post={metadata} />
       {series && metadata.series && (
         <PostSeries name={metadata.series} posts={series} />
       )}
       <PostContent source={source} />
     </article>
+    <Disqus post={metadata} />
   </Layout>
 );
 

@@ -12,7 +12,7 @@ const PostListItem = ({ post }: PostListItemProps) => (
     {post.description && (
       <>
         <p className="text-content mb-3">{post.description}</p>
-        <Link href={post.slug}>
+        <Link href={`/${post.slug}`}>
           <a className="text-contentLink">Read on →</a>
         </Link>
       </>
