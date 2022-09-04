@@ -15,6 +15,13 @@ const ContentPath = './content';
 const PostsPath = path.join(ContentPath, 'post');
 const SupportedExtensions = ['.md', '.mdx'];
 
+let PostMetadataCache: PostMetadata[] | undefined;
+let AllMetadataCache: PostMetadata[] | undefined;
+const FolderMetadataCache: { [key: string]: PostMetadata[] } = {};
+
+// eslint-disable-next-line no-console
+console.log('USE CACHE', Config.useCache);
+
 export type PostMetadata = {
   path: string;
   title: string;
@@ -29,23 +36,35 @@ export type PostMetadata = {
   keywords: string[];
 };
 
-export const getNumberOfPosts = () => fs.readdirSync(PostsPath).length;
+export const getPostsMetadata = (): PostMetadata[] => {
+  if (Config.useCache && PostMetadataCache) {
+    return PostMetadataCache;
+  }
 
-export const getPostsMetadata = (): PostMetadata[] =>
-  fs
+  PostMetadataCache = fs
     .readdirSync(PostsPath)
     .map((file) => path.join(PostsPath, file))
     .map(getPostMetadata)
     .filter(filterPost)
     .sort(byDateDescending);
 
-export const getPostsMetadataFromFolder = (folder: string): PostMetadata[] =>
-  fs
+  return PostMetadataCache!;
+};
+
+export const getPostsMetadataFromFolder = (folder: string): PostMetadata[] => {
+  if (Config.useCache && FolderMetadataCache[folder]) {
+    return FolderMetadataCache[folder];
+  }
+
+  FolderMetadataCache[folder] = fs
     .readdirSync(path.join(ContentPath, folder))
     .map((file) => path.join(path.join(ContentPath, folder), file))
     .map(getPostMetadata)
     .filter(filterPost)
     .sort(byDateDescending);
+
+  return FolderMetadataCache[folder];
+};
 
 export const getAllSlugs = () => getAllMetadata().map(({ slug }) => slug);
 
@@ -114,7 +133,15 @@ export const getSeriesMetadata = (series: string) =>
     .filter((post) => post.series === series)
     .sort(byDateAscending);
 
-const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
+const getAllMetadata = (): PostMetadata[] => {
+  if (Config.useCache && AllMetadataCache) {
+    return AllMetadataCache;
+  }
+
+  AllMetadataCache = getAllFiles().map(getPostMetadata);
+
+  return AllMetadataCache!;
+};
 
 const getAllFiles = (): string[] => {
   const queue = [ContentPath];

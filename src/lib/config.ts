@@ -8,6 +8,7 @@ const Config = {
   includeDrafts: process.env.INCLUDE_DRAFTS === 'true',
   disqusShortname: 'siondream',
   googleAnalyticsId: 'G-W8KS4SKGM6',
+  useCache: process.env.USE_CACHE === 'true',
 };
 
 export default Config;
