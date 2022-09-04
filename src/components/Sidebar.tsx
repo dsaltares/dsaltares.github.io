@@ -73,8 +73,8 @@ const Sidebar = () => (
           <p className="mb-5">✉️ Subscribe</p>
         </a>
       </Link>
-      <nav className="mb-5">
-        <ul className="flex flex-col items-center md:items-start">
+      <nav>
+        <ul className="mb-5 flex flex-col items-center md:items-start list-none pl-0">
           {NavBarItems.map((item) => (
             <li key={item.href} className="leading-7">
               <Link href={item.href}>
@@ -84,7 +84,7 @@ const Sidebar = () => (
           ))}
         </ul>
       </nav>
-      <ul className="mb-5">
+      <ul className="mb-5 list-none pl-0">
         {SocialLinks.map((item) => (
           <li key={item.href} className="inline">
             <Link href={item.href}>
