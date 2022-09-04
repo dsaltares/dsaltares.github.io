@@ -7,6 +7,7 @@ const Config = {
   includeFuture: process.env.INCLUDE_FUTURE === 'true',
   includeDrafts: process.env.INCLUDE_DRAFTS === 'true',
   disqusShortname: 'siondream',
+  googleAnalyticsId: 'G-W8KS4SKGM6',
 };
 
 export default Config;

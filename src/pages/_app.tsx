@@ -5,6 +5,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Config from '@lib/config';
+import GoogleAnalytics from '@components/GoogleAnalytics';
 
 config.autoAddCss = false;
 
@@ -17,6 +18,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         content="width=device-width, initial-scale=1"
       ></meta>
     </Head>
+    <GoogleAnalytics />
     <Component {...pageProps} />
   </>
 );
