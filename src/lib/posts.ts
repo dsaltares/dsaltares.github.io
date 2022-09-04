@@ -99,6 +99,11 @@ export const getPostsMetadataBySeries = (series: string) =>
     (post) => post.series && slugify(post.series) === series
   );
 
+export const getSeriesMetadata = (series: string) =>
+  getPostsMetadata()
+    .filter((post) => post.series === series)
+    .sort(byDateAscending);
+
 const getAllMetadata = (): PostMetadata[] => getAllFiles().map(getPostMetadata);
 
 const getAllFiles = (): string[] => {
@@ -148,3 +153,6 @@ const filterPost = (post: PostMetadata) => {
 
 const byDateDescending = <T extends { date: string }>(a: T, b: T) =>
   new Date(b.date).getTime() - new Date(a.date).getTime();
+
+const byDateAscending = <T extends { date: string }>(a: T, b: T) =>
+  new Date(a.date).getTime() - new Date(b.date).getTime();

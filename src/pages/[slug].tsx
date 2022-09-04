@@ -6,19 +6,25 @@ import {
   getPostSource,
   getPostMetadataBySlug,
   type PostMetadata,
+  getSeriesMetadata,
 } from '@lib/posts';
 import PostHeader from '@components/PostHeader';
 import PostContent from '@components/PostContent';
+import PostSeries from '@components/PostSeries';
 
 type PostPageProps = {
   metadata: PostMetadata;
+  series?: PostMetadata[];
   source: MDXRemoteSerializeResult;
 };
 
-const PostPage = ({ metadata, source }: PostPageProps) => (
+const PostPage = ({ metadata, series, source }: PostPageProps) => (
   <Layout>
     <article className="text-content">
       <PostHeader post={metadata} />
+      {series && metadata.series && (
+        <PostSeries name={metadata.series} posts={series} />
+      )}
       <PostContent source={source} />
     </article>
   </Layout>
@@ -51,6 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       metadata,
       source,
+      series: metadata.series && getSeriesMetadata(metadata.series),
     },
   };
 };
