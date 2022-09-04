@@ -37,6 +37,14 @@ export const getPostsMetadata = (): PostMetadata[] =>
     .filter(filterPost)
     .sort(byDateDescending);
 
+export const getPostsMetadataFromFolder = (folder: string): PostMetadata[] =>
+  fs
+    .readdirSync(path.join(ContentPath, folder))
+    .map((file) => path.join(path.join(ContentPath, folder), file))
+    .map(getPostMetadata)
+    .filter(filterPost)
+    .sort(byDateDescending);
+
 export const getAllSlugs = () => getAllMetadata().map(({ slug }) => slug);
 
 export const getPostMetadataBySlug = (slug: string) =>
