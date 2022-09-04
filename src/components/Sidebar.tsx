@@ -2,7 +2,7 @@ import { faRssSquare } from '@fortawesome/free-solid-svg-icons';
 import {
   faGithubSquare,
   faTwitterSquare,
-  faLinkedinIn,
+  faLinkedin,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cn from 'classnames';
@@ -17,7 +17,10 @@ const NavBarItems = [
   { text: 'Apps & Tools', href: '/apps-tools' },
   { text: 'Game Jams', href: '/game-jams' },
   { text: 'Games', href: '/games' },
-  { text: 'Libgdx Cookbook', href: '/libgdx-cookbook' },
+  {
+    text: 'Libgdx Cookbook',
+    href: '/libgdx-cross-platform-game-development-cookbook',
+  },
 ];
 
 const SocialLinks = [
@@ -26,7 +29,7 @@ const SocialLinks = [
     href: 'https://github.com/dsaltares',
   },
   {
-    icon: faLinkedinIn,
+    icon: faLinkedin,
     href: 'https://www.linkedin.com/in/davidsaltares/',
   },
   {
