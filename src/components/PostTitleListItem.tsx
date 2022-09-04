@@ -12,8 +12,12 @@ const PostTitleListItem = ({ post }: PostTitleListItemProps) => (
     <Link href={`/${post.slug}`}>
       <a className="text-contentLink">{post.title}</a>
     </Link>
-    <span>&nbsp;·&nbsp;</span>
-    <Categories categories={post.categories} />
+    {post.categories.length > 0 && (
+      <>
+        <span>&nbsp;·&nbsp;</span>
+        <Categories categories={post.categories} />
+      </>
+    )}
     <span>&nbsp;·&nbsp;</span>
     <span className="text-content">{`${formatDate(post.date)}`}</span>
   </li>
