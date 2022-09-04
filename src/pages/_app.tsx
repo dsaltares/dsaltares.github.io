@@ -4,15 +4,14 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Config from '@lib/config';
 
 config.autoAddCss = false;
 
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>
-        David Saltares · Engineering Leadership &amp; Software Development
-      </title>
+      <title>{`${Config.title} · ${Config.description}`}</title>
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1"

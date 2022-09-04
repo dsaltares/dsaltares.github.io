@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cn from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+import Config from '@lib/config';
 
 const SidebarWidth = 'md:max-w-[360px]';
 
@@ -63,13 +64,13 @@ const Sidebar = () => (
               />
             </div>
             <h1 className="text-white font-bold text-4xl leading-10">
-              David Saltares
+              {Config.title}
             </h1>
           </a>
         </Link>
       </div>
       <p className="text-contentLight text-2xl mb-5 leading-9">
-        {'Engineering Leadership & Software Development'}
+        {Config.description}
       </p>
       <Link href="https://tinyletter.com/dsaltares/">
         <a>
@@ -98,7 +99,9 @@ const Sidebar = () => (
           </li>
         ))}
       </ul>
-      <p className="text-contentLight text-lg">{`© ${new Date().getFullYear()} David Saltares.`}</p>
+      <p className="text-contentLight text-lg">{`© ${new Date().getFullYear()} ${
+        Config.author
+      }.`}</p>
     </aside>
     <div className={cn(SidebarWidth, 'w-full hidden md:block')}></div>
   </>
