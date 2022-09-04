@@ -1,5 +1,6 @@
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
+import Head from 'next/head';
 import Layout from '@components/Layout';
 import {
   getAllSlugs,
@@ -12,6 +13,7 @@ import PostHeader from '@components/PostHeader';
 import PostContent from '@components/PostContent';
 import PostSeries from '@components/PostSeries';
 import Disqus from '@components/Disqus';
+import Config from '@lib/config';
 
 type PostPageProps = {
   metadata: PostMetadata;
@@ -21,6 +23,18 @@ type PostPageProps = {
 
 const PostPage = ({ metadata, series, source }: PostPageProps) => (
   <Layout>
+    <Head>
+      <title>{`${metadata.title} · ${Config.title}`}</title>
+      {metadata.description && (
+        <meta name="description" content={metadata.description} />
+      )}
+      <meta name="keywords" content={metadata.keywords.join(',')} />
+      <link
+        rel="canonical"
+        href={`${Config.url}/${metadata.slug}`}
+        itemProp="url"
+      />
+    </Head>
     <article className="text-content mb-10">
       <PostHeader post={metadata} />
       {series && metadata.series && (

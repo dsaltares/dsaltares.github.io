@@ -1,4 +1,5 @@
 import type { GetStaticProps, NextPage } from 'next';
+import Head from 'next/head';
 import { getPostsMetadata, type PostMetadata } from '@lib/posts';
 import Layout from '@components/Layout';
 import Config from '@lib/config';
@@ -13,6 +14,14 @@ type HomePageProps = {
 
 const HomePage: NextPage<HomePageProps> = ({ posts, pages }) => (
   <Layout>
+    <Head>
+      <link
+        href={`${Config.url}/index.xml`}
+        rel="alternate"
+        type="application/rss+xml"
+        title={`${Config.title} · ${Config.description}`}
+      />
+    </Head>
     <PostList posts={posts} />
     <Pagination current={1} total={pages} />
   </Layout>

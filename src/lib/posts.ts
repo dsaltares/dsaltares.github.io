@@ -26,6 +26,7 @@ export type PostMetadata = {
   readingTime: string;
   draft: boolean;
   disableComments: boolean;
+  keywords: string[];
 };
 
 export const getNumberOfPosts = () => fs.readdirSync(PostsPath).length;
@@ -148,6 +149,7 @@ const getPostMetadata = (file: string) => {
     readingTime: readingTime(content).text,
     draft: (frontMatter.data.draft || false) as boolean,
     disableComments: (frontMatter.data.disableComments || false) as boolean,
+    keywords: (frontMatter.data.keywords || []) as string[],
   };
 };
 
