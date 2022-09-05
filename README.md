@@ -9,6 +9,14 @@ Personal blog built using Next.js.
 
 ## Run locally
 
+Copy the `.env.sample` file and edit according to your needs.
+
+```bash
+cp .env.sample .env
+```
+
+Then:
+
 ```bash
 yarn install
 yarn dev
