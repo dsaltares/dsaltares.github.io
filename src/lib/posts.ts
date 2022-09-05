@@ -19,9 +19,6 @@ let PostMetadataCache: PostMetadata[] | undefined;
 let AllMetadataCache: PostMetadata[] | undefined;
 const FolderMetadataCache: { [key: string]: PostMetadata[] } = {};
 
-// eslint-disable-next-line no-console
-console.log('USE CACHE', Config.useCache);
-
 export type PostMetadata = {
   path: string;
   title: string;
