@@ -73,7 +73,7 @@ const Sidebar = () => (
           </a>
         </Link>
       </div>
-      <p className="text-contentLight text-2xl mb-5 leading-9">
+      <p className="text-contentLight text-2xl mb-5 leading-9 text-center md:text-left">
         {Config.description}
       </p>
       <Link href="https://tinyletter.com/dsaltares/">
