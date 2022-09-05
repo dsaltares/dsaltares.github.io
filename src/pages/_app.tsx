@@ -17,6 +17,11 @@ const App = ({ Component, pageProps }: AppProps) => (
         name="viewport"
         content="width=device-width, initial-scale=1"
       ></meta>
+      <meta
+        name="description"
+        content="I am David and I write about engineering leadership, remote teams, software development and games development."
+      ></meta>
+      <link rel="canonical" href={Config.url} itemProp="url"></link>
     </Head>
     <GoogleAnalytics />
     <Component {...pageProps} />
