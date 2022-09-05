@@ -17,58 +17,64 @@ const Pagination = ({ current, total }: PaginationProps) => {
   const buttonBase = 'px-3 py-2 border-neutral-300';
   const disabled = 'cursor-not-allowed text-contentLight hover:bg-transparent';
   const enabled = 'text-contentLink hover:bg-neutral-100';
-  const prevIcon = <FontAwesomeIcon icon={faBackward} />;
-  const nextIcon = <FontAwesomeIcon icon={faForward} />;
   const prevDisabled = current === 1;
   const nextDisabled = current === total;
+  const prevItem = (
+    <li
+      className={cn(buttonBase, 'border-y', {
+        [disabled]: prevDisabled,
+        [enabled]: !prevDisabled,
+      })}
+    >
+      <FontAwesomeIcon icon={faBackward} />
+    </li>
+  );
+  const nextItem = (
+    <li
+      className={cn(buttonBase, 'border-y', {
+        [disabled]: nextDisabled,
+        [enabled]: !nextDisabled,
+      })}
+    >
+      <FontAwesomeIcon icon={faForward} />
+    </li>
+  );
   return (
     <div className="mt-10 mb-5 flex flex-row justify-center">
       <ul className="p-0 m-0 list-none flex flex-row">
-        <li className={cn(buttonBase, enabled, 'border rounded-l')}>
-          <Link href="/">
-            <a>
+        <Link href="/">
+          <a>
+            <li className={cn(buttonBase, enabled, 'border rounded-l')}>
               <FontAwesomeIcon icon={faBackwardFast} />
-            </a>
+            </li>
+          </a>
+        </Link>
+        {!prevDisabled ? (
+          <Link href={`/page/${current - 1}`}>
+            <a>{prevItem}</a>
           </Link>
-        </li>
-        <li
-          className={cn(buttonBase, 'border-y', {
-            [disabled]: prevDisabled,
-            [enabled]: !prevDisabled,
-          })}
-        >
-          {!prevDisabled ? (
-            <Link href={`/page/${current - 1}`}>
-              <a>{prevIcon}</a>
-            </Link>
-          ) : (
-            prevIcon
-          )}
-        </li>
+        ) : (
+          prevItem
+        )}
         <li className="text-white bg-contentLink px-3 py-2 border-y border-neutral-300">
           {current}
         </li>
-        <li
-          className={cn(buttonBase, 'border-y', {
-            [disabled]: nextDisabled,
-            [enabled]: !nextDisabled,
-          })}
-        >
-          {!nextDisabled ? (
-            <Link href={`/page/${current + 1}`}>
-              <a>{nextIcon}</a>
-            </Link>
-          ) : (
-            nextIcon
-          )}
-        </li>
-        <li className={cn(buttonBase, enabled, 'border rounded-r')}>
-          <Link href={`/page/${total}`}>
-            <a>
-              <FontAwesomeIcon icon={faForwardFast} />
-            </a>
+
+        {!nextDisabled ? (
+          <Link href={`/page/${current + 1}`}>
+            <a>{nextItem}</a>
           </Link>
-        </li>
+        ) : (
+          nextItem
+        )}
+
+        <Link href={`/page/${total}`}>
+          <a>
+            <li className={cn(buttonBase, enabled, 'border rounded-r')}>
+              <FontAwesomeIcon icon={faForwardFast} />
+            </li>
+          </a>
+        </Link>
       </ul>
     </div>
   );
