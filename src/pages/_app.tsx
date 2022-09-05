@@ -21,6 +21,7 @@ const App = ({ Component, pageProps }: AppProps) => (
         name="description"
         content="I am David and I write about engineering leadership, remote teams, software development and games development."
       ></meta>
+      <meta name="robots" content="all" />
       <link rel="canonical" href={Config.url} itemProp="url"></link>
     </Head>
     <GoogleAnalytics />
