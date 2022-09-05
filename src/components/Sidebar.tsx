@@ -28,18 +28,22 @@ const SocialLinks = [
   {
     icon: faGithubSquare,
     href: 'https://github.com/dsaltares',
+    label: 'Github profile',
   },
   {
     icon: faLinkedin,
     href: 'https://www.linkedin.com/in/davidsaltares/',
+    label: 'Linkedin profile',
   },
   {
     icon: faTwitterSquare,
     href: 'https://twitter.com/dsaltares',
+    label: 'Twitter profile',
   },
   {
     icon: faRssSquare,
     href: 'https://saltares.com/index.xml',
+    label: 'RSS feed',
   },
 ];
 
@@ -92,7 +96,7 @@ const Sidebar = () => (
         {SocialLinks.map((item) => (
           <li key={item.href} className="inline">
             <Link href={item.href}>
-              <a>
+              <a aria-label={item.label}>
                 <FontAwesomeIcon className="text-4xl mr-2" icon={item.icon} />
               </a>
             </Link>
