@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://saltares.com
+
+# Sitemaps
+Sitemap: https://saltares.com/sitemap.xml

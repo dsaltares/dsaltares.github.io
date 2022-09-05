@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title><![CDATA[David Saltares]]></title>
+        <description><![CDATA[Engineering Leadership & Software Development]]></description>
+        <link>https://saltares.com</link>
+        <generator>RSS for Node</generator>
+        <lastBuildDate>Mon, 05 Sep 2022 08:15:12 GMT</lastBuildDate>
+        <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
+        <pubDate>Mon, 05 Sep 2022 08:15:12 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2022, Your Name]]></copyright>
+        <language><![CDATA[en]]></language>
+        <item>
+            <title><![CDATA[Migrating Teamfindr from CRA+Express+AWS to Next.js+Vercel]]></title>
+            <description><![CDATA[TeamFindr is an app to organise games with friends. I migrated it from a CRA to a Next.js app. In this post, I cover why, the process and some resulting metrics.]]></description>
+            <link>https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</link>
+            <guid isPermaLink="true">https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</guid>
+            <pubDate>Tue, 16 Aug 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[7 ways to make performance reviews painless and fair]]></title>
+            <description><![CDATA[Performance reviews are typical in larger organisations. Reports get anxious about a bad review or a pay rise below their expectations. Managers feel the process is cumbersome, wasteful and are concerned they are not being fair with all team members. In this article, I go through 7 tips to make performance reviews painless and fair for everybody involved.]]></description>
+            <link>https://saltares.com/7-ways-to-make-performance-reviews-painless-and-fair</link>
+            <guid isPermaLink="true">https://saltares.com/7-ways-to-make-performance-reviews-painless-and-fair</guid>
+            <pubDate>Tue, 02 Aug 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Fully integrate contractors into your team]]></title>
+            <description><![CDATA[As an Engineering leader, you are keen to reduce burnout risk and consider hiring a couple of contractors when the team needs to deliver a large project fast. But are you fully aware of the trade-offs?
+This article covers the benefits and risks of working with engineering contractors as well as the measures you can put in place to maximise your chances of success!]]></description>
+            <link>https://saltares.com/fully-integrate-contractors-into-your-team</link>
+            <guid isPermaLink="true">https://saltares.com/fully-integrate-contractors-into-your-team</guid>
+            <pubDate>Mon, 18 Jul 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[In support of hiring generalists for most early-stage startups]]></title>
+            <description><![CDATA[The vast majority of early-stage startups hire a team of specialists when they just need to build a web application. I think this is a mistake in 95% of cases. In this article I present the benefits of hiring specialists in most organisations.]]></description>
+            <link>https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups</link>
+            <guid isPermaLink="true">https://saltares.com/in-support-of-hiring-generalists-for-most-early-stage-startups</guid>
+            <pubDate>Mon, 04 Jul 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The problem of long-lived pull requests]]></title>
+            <description><![CDATA[PRs that stay open for too long can have a negative impact on team velocity, value delivered, stress levels and software quality. In this article I cover ways to make sure PRs do not stagnate while maintaining quality and velocity]]></description>
+            <link>https://saltares.com/the-problem-of-long-lived-pull-requests</link>
+            <guid isPermaLink="true">https://saltares.com/the-problem-of-long-lived-pull-requests</guid>
+            <pubDate>Mon, 27 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The Plot technology strategy]]></title>
+            <description><![CDATA[I wrote this article as part of my role as VP Engineering at Plot. I wanted to share it here as an example of what a technology strategy could look like. It was our best guess at the time and by no means perfect!]]></description>
+            <link>https://saltares.com/the-plot-technology-strategy</link>
+            <guid isPermaLink="true">https://saltares.com/the-plot-technology-strategy</guid>
+            <pubDate>Mon, 20 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[4 steps to create a solid technology strategy]]></title>
+            <description><![CDATA[As an Engineering leader, you want to create a solid technology strategy to provide the context your team needs to make excellent decisions. But how should you go about it? This article goes over 4 steps to help you create it]]></description>
+            <link>https://saltares.com/4-steps-to-create-a-solid-technology-strategy</link>
+            <guid isPermaLink="true">https://saltares.com/4-steps-to-create-a-solid-technology-strategy</guid>
+            <pubDate>Mon, 13 Jun 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The importance of solid technology strategy and principles]]></title>
+            <description><![CDATA[A solid technology strategy is a requirement for building a high-performing engineering organisation that consistently hits business goals. In this article I cover what happens when teams don't have one compared to teams that do.]]></description>
+            <link>https://saltares.com/the-importance-of-solid-technology-strategy-and-principles</link>
+            <guid isPermaLink="true">https://saltares.com/the-importance-of-solid-technology-strategy-and-principles</guid>
+            <pubDate>Mon, 23 May 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[10x developers really exist]]></title>
+            <description><![CDATA[Since the original 1968 article, there has been a lot of debate around the figure of the 10x developer. We're talking about engineers who are an order of magnitude better than their peers by whatever measure.
+These engineers exist, but not in the way most people describe them.]]></description>
+            <link>https://saltares.com/10x-developers-really-exist</link>
+            <guid isPermaLink="true">https://saltares.com/10x-developers-really-exist</guid>
+            <pubDate>Mon, 09 May 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Behind the scenes of Plot's Learning Design Platform]]></title>
+            <description><![CDATA[The Engineering team at Plot had to deliver a prototype of our technology product and lay the foundations for the future in under 3 months. Take a look at the technology choices we made to build high quality web applications in 2022.]]></description>
+            <link>https://saltares.com/behind-the-scenes-of-plots-learning-design-platform</link>
+            <guid isPermaLink="true">https://saltares.com/behind-the-scenes-of-plots-learning-design-platform</guid>
+            <pubDate>Thu, 21 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[5 Mistakes I have made as an engineering leader]]></title>
+            <description><![CDATA[To err is human, and I certainly have made my share of mistakes in my career as an engineering leader. It is vital to learn from these mistakes. Here are five mistakes I have made in my career as an engineering leader.]]></description>
+            <link>https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader</link>
+            <guid isPermaLink="true">https://saltares.com/5-mistakes-i-have-made-as-an-engineering-leader</guid>
+            <pubDate>Mon, 18 Apr 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A playbook for calm incident response]]></title>
+            <description><![CDATA[Responding to an outage can be extremely stressful. Having a checklist of everything that needs to be done can help engineers in your team stay calm and handle incidents more effectively.]]></description>
+            <link>https://saltares.com/a-playbook-for-calm-incident-response</link>
+            <guid isPermaLink="true">https://saltares.com/a-playbook-for-calm-incident-response</guid>
+            <pubDate>Mon, 28 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[A template for great incident reviews]]></title>
+            <description><![CDATA[Software incidents suck big time but are unavoidable in complex systems. A great incident review doc can help you and your team learn to do better next time. Here is a template to help you have great incident reviews.]]></description>
+            <link>https://saltares.com/a-template-for-great-incident-reviews</link>
+            <guid isPermaLink="true">https://saltares.com/a-template-for-great-incident-reviews</guid>
+            <pubDate>Mon, 21 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Help Engineers understand the Why]]></title>
+            <description><![CDATA[Understanding the why is essential to the success of a project and the team's performance. A group of people who don't understand users or their problems cannot build a high-quality product. Here are a few practices Engineering Managers can put in place to help their teams understand their users better.]]></description>
+            <link>https://saltares.com/help-engineers-understand-the-why</link>
+            <guid isPermaLink="true">https://saltares.com/help-engineers-understand-the-why</guid>
+            <pubDate>Mon, 14 Mar 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[8 Questions to ask your potential future Engineering Manager during an interview]]></title>
+            <description><![CDATA[We are in the most heated tech job market in history. Many people forget a job interview goes both ways. You can avoid ending up in an awful team by asking some of these questions.]]></description>
+            <link>https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview</link>
+            <guid isPermaLink="true">https://saltares.com/8-questions-to-ask-your-potential-future-engineering-manager-during-an-interview</guid>
+            <pubDate>Sun, 27 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How I got into Engineering management]]></title>
+            <description><![CDATA[The story of how I got into Engineering management and started my leadership career.]]></description>
+            <link>https://saltares.com/how-i-got-into-engineering-management</link>
+            <guid isPermaLink="true">https://saltares.com/how-i-got-into-engineering-management</guid>
+            <pubDate>Mon, 21 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[5 books you should read as a new Engineering Manager]]></title>
+            <description><![CDATA[Stepping into the engineering manager role can be tough. These five books gave me insights and helped me reflect in ways that eased my journey. Hope they can help you too!]]></description>
+            <link>https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager</link>
+            <guid isPermaLink="true">https://saltares.com/5-books-you-should-read-as-a-new-engineering-manager</guid>
+            <pubDate>Mon, 14 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[The David Test - An updated Joel Test for 2022]]></title>
+            <description><![CDATA[The famous Joel Test is a quick and fun way to evaluate an engineering organisation by answering 12 simple yes or no questions. The test is over 20 years old! So, I outline a new, updated test for the engineering organisations of today.]]></description>
+            <link>https://saltares.com/the-david-test---an-updated-joel-test-for-2022</link>
+            <guid isPermaLink="true">https://saltares.com/the-david-test---an-updated-joel-test-for-2022</guid>
+            <pubDate>Mon, 07 Feb 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Remote work panel at UOC (Spanish)]]></title>
+            <description><![CDATA[Video recording of the panel about remote work organised by Universtat Oberta de Catalunya (UOC) I participated in.]]></description>
+            <link>https://saltares.com/remote-work-panel-at-uoc-spanish</link>
+            <guid isPermaLink="true">https://saltares.com/remote-work-panel-at-uoc-spanish</guid>
+            <pubDate>Thu, 27 Jan 2022 13:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Sticky nav bar on scroll with React hooks]]></title>
+            <description><![CDATA[Tutorial for how to create a sticky navbar below a header that stays at the top of the page when scrolling using React and hooks]]></description>
+            <link>https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks</link>
+            <guid isPermaLink="true">https://saltares.com/sticky-nav-bar-on-scroll-with-react-hooks</guid>
+            <pubDate>Sun, 23 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Improve your NextAuth.js app local development experience with a dockerized SMTP server]]></title>
+            <description><![CDATA[Tutorial on how to improve your local development experience when using NextAuth.js by spinning up a MailHog SMTP server container.]]></description>
+            <link>https://saltares.com/improve-your-nextauthjs-app-local-development-experience-with-a-dockerized-smtp-server</link>
+            <guid isPermaLink="true">https://saltares.com/improve-your-nextauthjs-app-local-development-experience-with-a-dockerized-smtp-server</guid>
+            <pubDate>Sun, 16 Jan 2022 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to test and debug your localhost web app on a real Android device]]></title>
+            <description><![CDATA[Tutorial to develop a website locally and test on a real Android device]]></description>
+            <link>https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device</link>
+            <guid isPermaLink="true">https://saltares.com/how-to-test-and-debug-your-localhost-web-app-on-a-real-android-device</guid>
+            <pubDate>Wed, 29 Dec 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[6 tips to make remote meetings more inclusive]]></title>
+            <description><![CDATA[Guide on how to make meetings more inclusive in an era of remote work and zoom calls]]></description>
+            <link>https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive</link>
+            <guid isPermaLink="true">https://saltares.com/6-tips-to-make-remote-meetings-more-inclusive</guid>
+            <pubDate>Tue, 04 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Schedule posts with Hugo]]></title>
+            <description><![CDATA[Schedule your hugo blog posts using Github Actions and CI]]></description>
+            <link>https://saltares.com/schedule-posts-with-hugo</link>
+            <guid isPermaLink="true">https://saltares.com/schedule-posts-with-hugo</guid>
+            <pubDate>Sun, 02 May 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[How to hire 8 engineers in 8 weeks]]></title>
+            <description><![CDATA[Hiring engineers fast can be hard but it is definitely possible. This blog post gives a few tips and techniques to make it happen without destroying your team.]]></description>
+            <link>https://saltares.com/how-to-hire-8-engineers-in-8-weeks</link>
+            <guid isPermaLink="true">https://saltares.com/how-to-hire-8-engineers-in-8-weeks</guid>
+            <pubDate>Mon, 26 Apr 2021 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Doodle: a crazy drawing & guessing game]]></title>
+            <description><![CDATA[I made a fun multiplayer doodling game during the pandemic]]></description>
+            <link>https://saltares.com/doodle-a-crazy-drawing--guessing-game</link>
+            <guid isPermaLink="true">https://saltares.com/doodle-a-crazy-drawing--guessing-game</guid>
+            <pubDate>Sun, 17 May 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Plague: a Godot Wild Jam 18 game postmortem]]></title>
+            <link>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</link>
+            <guid isPermaLink="true">https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</guid>
+            <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Continuous Delivery pipeline for Godot and itch.io]]></title>
+            <description><![CDATA[This tutorial helps you configure a continuous delivery pipeline for your Godot games to automatically publish to itch.io using Github Actions]]></description>
+            <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</link>
+            <guid isPermaLink="true">https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</guid>
+            <pubDate>Mon, 02 Mar 2020 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Plague - Godot Wild Jam 18]]></title>
+            <link>https://saltares.com/plague---godot-wild-jam-18</link>
+            <guid isPermaLink="true">https://saltares.com/plague---godot-wild-jam-18</guid>
+            <pubDate>Thu, 27 Feb 2020 12:35:30 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[FOSDEM 2020 - Survival Guide]]></title>
+            <link>https://saltares.com/fosdem-2020---survival-guide</link>
+            <guid isPermaLink="true">https://saltares.com/fosdem-2020---survival-guide</guid>
+            <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F","\u002F[slug]","\u002Fapps-tools","\u002Fcategories","\u002Fcategories\u002F[category]","\u002Fgame-jams","\u002Fgames","\u002Fpage\u002F[page]","\u002Fseries","\u002Fseries\u002F[series]"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
