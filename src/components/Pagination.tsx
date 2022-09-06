@@ -20,33 +20,33 @@ const Pagination = ({ current, total }: PaginationProps) => {
   const prevDisabled = current === 1;
   const nextDisabled = current === total;
   const prevItem = (
-    <li
+    <div
       className={cn(buttonBase, 'border-y', {
         [disabled]: prevDisabled,
         [enabled]: !prevDisabled,
       })}
     >
       <FontAwesomeIcon icon={faBackward} />
-    </li>
+    </div>
   );
   const nextItem = (
-    <li
+    <div
       className={cn(buttonBase, 'border-y', {
         [disabled]: nextDisabled,
         [enabled]: !nextDisabled,
       })}
     >
       <FontAwesomeIcon icon={faForward} />
-    </li>
+    </div>
   );
   return (
     <div className="mt-10 mb-5 flex flex-row justify-center">
-      <ul className="p-0 m-0 list-none flex flex-row">
+      <nav className="p-0 m-0 list-none flex flex-row">
         <Link href="/">
           <a>
-            <li className={cn(buttonBase, enabled, 'border rounded-l')}>
+            <div className={cn(buttonBase, enabled, 'border rounded-l')}>
               <FontAwesomeIcon icon={faBackwardFast} />
-            </li>
+            </div>
           </a>
         </Link>
         {!prevDisabled ? (
@@ -56,9 +56,9 @@ const Pagination = ({ current, total }: PaginationProps) => {
         ) : (
           prevItem
         )}
-        <li className="text-white bg-contentLink px-3 py-2 border-y border-neutral-300">
+        <div className="text-white bg-contentLink px-3 py-2 border-y border-neutral-300">
           {current}
-        </li>
+        </div>
 
         {!nextDisabled ? (
           <Link href={`/page/${current + 1}`}>
@@ -70,12 +70,12 @@ const Pagination = ({ current, total }: PaginationProps) => {
 
         <Link href={`/page/${total}`}>
           <a>
-            <li className={cn(buttonBase, enabled, 'border rounded-r')}>
+            <div className={cn(buttonBase, enabled, 'border rounded-r')}>
               <FontAwesomeIcon icon={faForwardFast} />
-            </li>
+            </div>
           </a>
         </Link>
-      </ul>
+      </nav>
     </div>
   );
 };
