@@ -7,11 +7,14 @@ const generateRSSFeed = (posts: PostMetadata[]) => {
   const feed = new RSS({
     title: Config.title,
     description: Config.description,
+    managingEditor: Config.author,
+    webMaster: Config.author,
     site_url: Config.url,
     feed_url: `${Config.url}/index.xml`,
+    image_url: `${Config.url}/img/favicon.png`,
     language: 'en',
     pubDate: new Date(),
-    copyright: `All rights reserved ${new Date().getFullYear()}, Your Name`,
+    copyright: `All rights reserved ${new Date().getFullYear()}, David Saltares`,
     custom_namespaces: { media: 'http://search.yahoo.com/mrss/' },
   });
 
