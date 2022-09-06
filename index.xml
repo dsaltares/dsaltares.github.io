@@ -3,18 +3,26 @@
         <title><![CDATA[David Saltares]]></title>
         <description><![CDATA[Engineering Leadership & Software Development]]></description>
         <link>https://saltares.com</link>
+        <image>
+            <url>https://saltares.com/img/favicon.png</url>
+            <title>David Saltares</title>
+            <link>https://saltares.com</link>
+        </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 06 Sep 2022 06:49:44 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Sep 2022 07:36:03 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 06 Sep 2022 06:49:44 GMT</pubDate>
-        <copyright><![CDATA[All rights reserved 2022, Your Name]]></copyright>
+        <pubDate>Tue, 06 Sep 2022 07:36:03 GMT</pubDate>
+        <copyright><![CDATA[All rights reserved 2022, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
+        <managingEditor><![CDATA[David Saltares]]></managingEditor>
+        <webMaster><![CDATA[David Saltares]]></webMaster>
         <item>
             <title><![CDATA[Migrating Teamfindr from CRA+Express+AWS to Next.js+Vercel]]></title>
             <description><![CDATA[TeamFindr is an app to organise games with friends. I migrated it from a CRA to a Next.js app. In this post, I cover why, the process and some resulting metrics.]]></description>
             <link>https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</link>
             <guid isPermaLink="true">https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</guid>
             <pubDate>Tue, 16 Aug 2022 00:00:00 GMT</pubDate>
+            <media:content url="https://saltares.com/img/teamfindr/teamfindr_00001.png" type="image/*"/>
         </item>
         <item>
             <title><![CDATA[7 ways to make performance reviews painless and fair]]></title>
