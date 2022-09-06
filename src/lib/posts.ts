@@ -31,6 +31,7 @@ export type PostMetadata = {
   draft: boolean;
   disableComments: boolean;
   keywords: string[];
+  banner: string | null;
 };
 
 export const getPostsMetadata = (): PostMetadata[] => {
@@ -174,6 +175,7 @@ const getPostMetadata = (file: string) => {
     draft: (frontMatter.data.draft || false) as boolean,
     disableComments: (frontMatter.data.disableComments || false) as boolean,
     keywords: (frontMatter.data.keywords || []) as string[],
+    banner: (frontMatter.data.banner || null) as string | null,
   };
 };
 
