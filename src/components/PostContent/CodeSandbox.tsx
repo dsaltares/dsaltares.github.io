@@ -4,6 +4,7 @@ type CodeSandboxProps = {
 
 const CodeSandbox = ({ id }: CodeSandboxProps) => (
   <iframe
+    className="mb-5"
     src={`https://codesandbox.io/embed/${id}?fontsize=14&hidenavigation=1&theme=dark&view=preview`}
     style={{
       width: '100%',
