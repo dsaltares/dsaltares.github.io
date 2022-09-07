@@ -1,6 +1,7 @@
 import type { GetStaticProps, GetStaticPaths } from 'next';
 import type { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import Layout from '@components/Layout';
 import {
   getAllSlugs,
@@ -23,17 +24,25 @@ type PostPageProps = {
 
 const PostPage = ({ metadata, series, source }: PostPageProps) => (
   <Layout>
+    <NextSeo
+      title={`${metadata.title} · ${Config.title}`}
+      description={metadata.description || Config.description}
+      canonical={`${Config.url}/${metadata.slug}`}
+      openGraph={{
+        type: 'website',
+        title: `${metadata.title} · ${Config.title}`,
+        description: metadata.description || Config.description,
+        images: metadata.banner
+          ? [
+              {
+                url: `${Config.url}${metadata.banner}`,
+              },
+            ]
+          : [],
+      }}
+    />
     <Head>
-      <title>{`${metadata.title} · ${Config.title}`}</title>
-      {metadata.description && (
-        <meta name="description" content={metadata.description} />
-      )}
       <meta name="keywords" content={metadata.keywords.join(',')} />
-      <link
-        rel="canonical"
-        href={`${Config.url}/${metadata.slug}`}
-        itemProp="url"
-      />
     </Head>
     <article className="text-content mb-10">
       <PostHeader post={metadata} />
