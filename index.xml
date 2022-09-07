@@ -9,9 +9,9 @@
             <link>https://saltares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 07 Sep 2022 10:31:53 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 07 Sep 2022 11:46:52 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Wed, 07 Sep 2022 10:31:53 GMT</pubDate>
+        <pubDate>Wed, 07 Sep 2022 11:46:52 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[David Saltares]]></managingEditor>
@@ -22,7 +22,7 @@
             <link>https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</link>
             <guid isPermaLink="true">https://saltares.com/migrating-teamfindr-from-cra-express-aws-to-nextjs-vercel</guid>
             <pubDate>Tue, 16 Aug 2022 00:00:00 GMT</pubDate>
-            <media:content url="https://saltares.com/img/teamfindr/teamfindr_00001.png" type="image/*"/>
+            <media:content url="https://saltares.com/img/teamfindr/teamfindr_00001.webp" type="image/*"/>
         </item>
         <item>
             <title><![CDATA[7 ways to make performance reviews painless and fair]]></title>
