@@ -23,17 +23,17 @@ tags:
   - Tiny Backup
 ---
 
-![tiny-backup1.png](/img/wp/tiny-backup1.png)
+![tiny-backup1.png](/img/wp/tiny-backup1.webp)
 
 Si quieres conocer una biblioteca o un lenguaje nuevos lo mejor es, sin lugar a dudas, utilizarlos. Había mirado ya algunas cosas sobre Python pero hace algunos meses sentí la necesidad de programar algo pequeño para adquirir un mínimo de destreza. Había oído maravillas de lo sencillo y elegante que era diseñar la interfaz de una aplicación de escritorio con **[Glade](http://glade.gnome.org/)** y manejarla con **[PyGTK](http://www.pygtk.org/)** desde Python. Por tanto me puse manos a la obra y **desarrollé Tiny Backup** en un par de días.
 
-![tiny-backup.png](/img/wp/tiny-backup.png)
+![tiny-backup.png](/img/wp/tiny-backup.webp)
 
 ### Tiny Backup y su funcionamiento
 
 Tiny Backup es una sencilla utilidad dirigida a usuarios de sistemas Debian para guardar un **listado de todos los paquetes** que tengan instalados y poder restaurarlos en caso de reinstalación del Sistema Operativo. Incluso es capaz de protegernos del un fallo grave en el disco duro ya que puede enviar dicho listado por **correo electrónico** (por el momento es compatible con Gmail, Hotmail y Yahoo).
 
-Está diseñado siguiendo las directrices del patrón **[*"Arquitectura en tres capas"*](http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas)** aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios **comandos básicos** de GNU/Linux:
+Está diseñado siguiendo las directrices del patrón **[_"Arquitectura en tres capas"_](http://es.wikipedia.org/wiki/Programaci%C3%B3n_por_capas)** aunque la capa de datos no ha sido necesaria en este caso. Ha sido un ejercicio muy interesante y, sin tener en cuenta el envío por e-mail, simplemente utiliza varios **comandos básicos** de GNU/Linux:
 
 ```
 # Guardar listado de paquetes
@@ -48,10 +48,9 @@ gksudo apt-get update
 dpkg --set-selections < paquetes_backup
 ```
 
-
 Por supuesto, es posible configurar los ficheros destino mediante el asistente de backup y restauración. Tiny Backup es libre bajo **licencia [GPL v3](http://gplv3.fsf.org/)** y podéis obtenerlo a través de la [forja en Google Code](http://code.google.com/p/python-tiny-backup/).
 
-![glade.png](/img/wp/glade.png)
+![glade.png](/img/wp/glade.webp)
 
 ### Glade, un gran editor de interfaces
 

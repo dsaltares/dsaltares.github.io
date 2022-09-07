@@ -25,7 +25,7 @@ tags:
   - trailer
 ---
 
-![math-maze-banner.jpg](/img/math-maze/math-maze-banner.jpg)
+![math-maze-banner.jpg](/img/math-maze/math-maze-banner.webp)
 
 After approximately 5 months of work, [Math Maze went live on Google Play](https://play.google.com/store/apps/details?id=com.siondream.math) on September the 2nd, so I thought a little postmortem was in order. For those who are not aware, Math Maze is a very simple brain teaser math based game.
 
@@ -35,21 +35,21 @@ The player has to move a purple block across a labyrinth towards the exit. Howev
 
 Technologies:
 
-* Java
-* [LibGDX framework](http://libgdx.badlogicgames.com/)
-* [Universal Tween Engine](https://code.google.com/p/java-universal-tween-engine/)
-* [Ashley component based entity system](https://github.com/stbachmann/ashley)
+- Java
+- [LibGDX framework](http://libgdx.badlogicgames.com/)
+- [Universal Tween Engine](https://code.google.com/p/java-universal-tween-engine/)
+- [Ashley component based entity system](https://github.com/stbachmann/ashley)
 
 Tools:
 
-* Eclipse
-* [Inkscape](http://inkscape.org/) for all the graphics
-* [Tiled](http://www.mapeditor.org/) as a level editor
-* [TexturePacker](http://www.codeandweb.com/texturepacker) to optimise textures * Adobe Flash and Adobe Premiere to produce the trailer
+- Eclipse
+- [Inkscape](http://inkscape.org/) for all the graphics
+- [Tiled](http://www.mapeditor.org/) as a level editor
+- [TexturePacker](http://www.codeandweb.com/texturepacker) to optimise textures \* Adobe Flash and Adobe Premiere to produce the trailer
 
 Most of the time I worked on my own but, luckily enough, I got help from a bunch of people in areas such as localisation, SFX ([Ross Tregenza](http://www.imdb.com/name/nm2178040/)) and OST ([Evergreen Studio](http://estudioevergreen.wordpress.com/)).
 
-![math-maze-texture-packer.png](/img/math-maze/math-maze-texture-packer.png)
+![math-maze-texture-packer.png](/img/math-maze/math-maze-texture-packer.webp)
 
 ## Downloads, ratings and press coverage
 
@@ -57,11 +57,11 @@ Despite the fact of having worked hard on PR, its non existence price barrier an
 
 Here's a chart showing the current user installs over time, each pin corresponds to one of the app updates released up until now.
 
-![downloads.png](/img/math-maze/downloads.png)
+![downloads.png](/img/math-maze/downloads.webp)
 
 On the other hand, reviews and ratings have been quite positive. 33 people rated the app giving it an average of 4.88 stars. Judging by feedback I got from reviews and emails, users seemed to like the core mechanic as well as the music and the overall simplicity of the game, which was very nice to read. I hugely appreciate the fact that people went through the trouble of contacting me.
 
-![ratings.png](/img/math-maze/ratings.png)
+![ratings.png](/img/math-maze/ratings.webp)
 
 Along Math Maze, I also released a [pressKit() site](https://saltares.com/press/sheet.php?p=math_maze) and the trailer you saw at the start of the article, which took me ages to put together. After reading tons of articles about PR and how to approach the press, I proceeded to do so. My target audience are kids and their parents who would presumably introduce the former to the game. That's why I sent dozens of emails to educational and indie games websites as well as schools in the East Midlands area.
 
@@ -75,7 +75,7 @@ Here's a video illustrating the progress of Math Maze's Git repository during de
 
 ### Localisation
 
-Math Maze is mostly for kids and I wanted it to reach as many territories as possible, so localisation was pretty much mandatory. I wrote a simple *LanguageManager* that grabs the system's locale strings from a CSV file, so they would be easily editable by potential contributors (let it be with Excel or Calc). A neat Python script would scan the project directory in search of strings that needed localising using regular expressions so as to generate the CSV templates.
+Math Maze is mostly for kids and I wanted it to reach as many territories as possible, so localisation was pretty much mandatory. I wrote a simple _LanguageManager_ that grabs the system's locale strings from a CSV file, so they would be easily editable by potential contributors (let it be with Excel or Calc). A neat Python script would scan the project directory in search of strings that needed localising using regular expressions so as to generate the CSV templates.
 
 Math Maze ended up being localised to English, Spanish, German, French, Romanian, Finnish, Portuguese and Polish.
 
@@ -89,7 +89,7 @@ With Math Maze I had the goal of learning the basics of PR and games. Despite th
 
 I read [so many articles and presentation](http://www.gamasutra.com/view/news/198381/How_to_talk_to_the_video_game_press_in_2013.php) on how to approach the press and pretty much followed their advice.
 
-* Make a trailer: I"m no film director and I did what I could, but I think the result is acceptable. * Carefully choose your target: only emailed small indie games and parenting sites as well as schools. * Tidy and up to date pressKit(). * Links to download and trailer always on sight. * Personalise every single email, be friendly but polite. * Come up with a hook: AI programmer in the AAA industry working on free mobile titles for kids on his spare time. * Use Twitter and Facebook. * …
+- Make a trailer: I"m no film director and I did what I could, but I think the result is acceptable. _ Carefully choose your target: only emailed small indie games and parenting sites as well as schools. _ Tidy and up to date pressKit(). _ Links to download and trailer always on sight. _ Personalise every single email, be friendly but polite. _ Come up with a hook: AI programmer in the AAA industry working on free mobile titles for kids on his spare time. _ Use Twitter and Facebook. \* …
 
 You get the gist of it.
 
@@ -99,7 +99,7 @@ In the end, only [The Android Parent](http://www.androidparent.us/2013/09/06/mat
 
 Early in development, some people started to point out that the game lacked a tutorial to explain the core mechanics. To address that issue I just added some help text at the beginning of each level where a new concept was about to be introduced. Although this did the job, I should have worked harder on a completely integrated in game tutorial system that relied more on icons rather than text.
 
-![division.png](/img/math-maze/division.png)
+![division.png](/img/math-maze/division.webp)
 
 ### Content generation
 
@@ -107,13 +107,13 @@ Level creation was exclusively data driven and required zero programming work. H
 
 To be completely fair, the time I had to work on Math Maze had always been very limited so this was to be expected. Next time I intend to explore the realms of procedural content generation. Even though it requires a huge investment up front, I think it"d pay off in the long run given my circumstances.
 
-![tiled.png](/img/math-maze/tiled.png)
+![tiled.png](/img/math-maze/tiled.webp)
 
 ### Player engagement
 
 The corollary of the previous point is that player engagement became impossible once they finished the 40 levels Math Maze puts on the table. Mistake that I believe it really hurt the game. These days, every single game comes with a mission system, leaderboards and achievements. Math Maze's design should have been built taking mid to long term player engagement into account.
 
-![jetpack.jpg](/img/math-maze/jetpack.jpg)
+![jetpack.jpg](/img/math-maze/jetpack.webp)
 
 ## What went right
 
@@ -125,7 +125,7 @@ LibGDX has a brilliant performance and, as long as you don't write crappy game c
 
 Currently, there is no other open source framework that can rival LibGDX and I"d dare to say it tops some commercial packages thanks to its flexibility, performance and access to the source. Eat that Corona & company.
 
-![libgdx-glossy.png](/img/math-maze/libgdx-glossy.png)
+![libgdx-glossy.png](/img/math-maze/libgdx-glossy.webp)
 
 ### Scope
 
@@ -141,9 +141,9 @@ Moreover, I decided to organise a little Closed Alpha among a broader circle for
 
 The process goes as follows:
 
-* Upload your alpha/beta build to Google Play as such
-* Create a Google+ community and invite people to it
-* From your developer console, provide the community with access to the build
+- Upload your alpha/beta build to Google Play as such
+- Create a Google+ community and invite people to it
+- From your developer console, provide the community with access to the build
 
 Now everyone invited can download the game as if it was any other Google Play app and provide feedback through comments on the community. Moreover, you can update your test build and everyone will automatically get it. It's comfortable and highly convenient.
 
@@ -155,7 +155,7 @@ Math Maze art is not super fancy but I think it works because I decided to keep 
 
 Fortunately, that alone makes a difference and it's the takeaway from all this. No need for flashy effects, just give the product a clear, consistent style. As if this wasn't hard enough already!
 
-![inskcape.png](/img/math-maze/inkscape.png)
+![inskcape.png](/img/math-maze/inkscape.webp)
 
 ### Localisation
 

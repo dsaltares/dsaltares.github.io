@@ -20,7 +20,7 @@ Setting up your own is easy peasy and possibly free!
 3. A new Github release is created with attached files, one per platform.
 4. The release artifacts are pushed as new versions of the game to itch.io.
 
-[![pipeline](/img/cd-godot-itch/pipeline.png)](/img/cd-godot-itch/pipeline.png)
+[![pipeline](/img/cd-godot-itch/pipeline.webp)](/img/cd-godot-itch/pipeline.webp)
 
 ### 🤖 Configure Godot exports
 
@@ -71,7 +71,7 @@ jobs:
 
 Whenever you push these changes to your repo, you should already start seeing [jobs being triggered](https://github.com/dsaltares/godot-wild-jam-18/actions) and [releases being published](https://github.com/dsaltares/godot-wild-jam-18/releases).
 
-[![export-job](/img/cd-godot-itch/export-job.png)](/img/cd-godot-itch/export-job.png)
+[![export-job](/img/cd-godot-itch/export-job.webp)](/img/cd-godot-itch/export-job.webp)
 
 ### 🚢 Ship the game
 
@@ -114,11 +114,11 @@ jobs:
 
 That's it! Once you push the publish workflow and make a change to the game, Github will export, create a new release and update your game on itch.io.
 
-[![publish-job](/img/cd-godot-itch/publish-job.png)](/img/cd-godot-itch/publish-job.png)
+[![publish-job](/img/cd-godot-itch/publish-job.webp)](/img/cd-godot-itch/publish-job.webp)
 
 On your itch.io game page, you should see something like:
 
-[![itch-downloads](/img/cd-godot-itch/itch-downloads.png)](/img/cd-godot-itch/itch-downloads.png)
+[![itch-downloads](/img/cd-godot-itch/itch-downloads.webp)](/img/cd-godot-itch/itch-downloads.webp)
 
 One last thing to remember is that you need to manually tag your HTML build as browser playable from the itch.io website as [specified in the Butler docs.](https://itch.io/docs/butler/pushing.html#html--playable-in-browser-games). You will only need to do this once as long as future HTML builds have the same channel.
 

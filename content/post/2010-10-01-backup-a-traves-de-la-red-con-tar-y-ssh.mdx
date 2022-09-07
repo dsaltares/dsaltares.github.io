@@ -21,7 +21,7 @@ tags:
   - tar
 ---
 
-![tar-ssh.png](/img/wp/tar-ssh.png)
+![tar-ssh.png](/img/wp/tar-ssh.webp)
 
 La administración de sistemas no es una de mis pasiones pero en mi trabajo actual tengo que ejercer dicha actividad combinada con el desarrollo web. Hace unas semanas **tuvimos que actualizar una aplicación web** que manejaba un volumen bastante importante de datos. A pesar de que se hacían copias incrementales diarias utilizando rsync **estimamos oportuno hacer una copia completa** y colocarla en una máquina distinta por si la ley de Murphy decidía darnos una lección. El texto que sigue es un truco para hacer **una copia gigantesca y mandarla mediante ssh** a otra máquina **sin perder demasiado el tiempo**.
 
@@ -36,7 +36,6 @@ tar cvzf directorio directorio.tar.gz
 # Enviamos
 scp directorio.tar.gz usuario@host:directorio_destino
 ```
-
 
 ### La solución
 
@@ -64,8 +63,7 @@ HOST_DIR=/home/siondream/backups
 tar cvzf - $DIR_BACKUP | ssh $USER@$HOST "cat > ${HOST_DIR}/${DIR_BACKUP}-${FECHA}.tar.gz"
 ```
 
-
-Con el clásico *tar cvzf* tenemos una compresión común de *$DIR_BACKUP*. No obstante, el guión *–* sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería *|*. El chorro de bytes se envía mediante *ssh* (al equipo *$HOST* con nuestro usuario *$USER*) y se vuelca en el fichero *$DIR_BACKUP-$FECHA.tar.gz* utilizando *cat*. Puede parecer algo confuso pero **si lo piensas es maravilloso** y tiene todo el sentido del mundo.
+Con el clásico _tar cvzf_ tenemos una compresión común de _$DIR_BACKUP_. No obstante, el guión _–_ sirve para desviar el flujo a la salida estándar la cual convertimos en la entrada estándar del siguiente comando mediante la tubería _|_. El chorro de bytes se envía mediante _ssh_ (al equipo _$HOST_ con nuestro usuario _$USER_) y se vuelca en el fichero _$DIR_BACKUP-$FECHA.tar.gz_ utilizando _cat_. Puede parecer algo confuso pero **si lo piensas es maravilloso** y tiene todo el sentido del mundo.
 
 ### Lo mismo casi en la mitad de tiempo
 

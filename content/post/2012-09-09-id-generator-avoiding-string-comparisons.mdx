@@ -18,7 +18,7 @@ tags:
   - programming
 ---
 
-![stringcomparesarebade.png](/img/wp/stringcomparesarebade.png)
+![stringcomparesarebade.png](/img/wp/stringcomparesarebade.webp)
 
 **Disclaimer**: IDGenerator is being used in [**SionEngine**](https://github.com/dsaltares/sionengine) and it's an useful but rather simple approach to the problem described in the paragraphs below.
 
@@ -41,15 +41,13 @@ But sometimes they"re needed! A little person shouts in the crowd. Let's say we 
 </sprite>
 ```
 
-
 It's natural to use strings to name our animations, they"re human readable and comfy but again, expensive to work with. Our character will want to change animation from time to time and the code for that could be something like:
 
 ```
 caveman.setAnimation("walk");
 ```
 
-
-The *setAnimation()* method has to look into its map, performing *log(n)* ugly string comparisons to find the right animation. We"re righteous game programmers and that makes us sad.
+The _setAnimation()_ method has to look into its map, performing _log(n)_ ugly string comparisons to find the right animation. We"re righteous game programmers and that makes us sad.
 
 ### Working our way around string comparisons
 
@@ -63,11 +61,11 @@ We are most definitely not going to use all the infinite strings in the world so
 
 This might not be the most intelligent implementation for the present problem, however it certainly serves the purpose of the post. Our IDGenerator has two static public methods:
 
-* **_getID()_**: given a string, returns its ID. Creates a new one if it didn't exist. * _**getString()**_: given an ID, return its original string. Returns the string representation of the ID if it wasn't registered.
+- **_getID()_**: given a string, returns its ID. Creates a new one if it didn't exist. \* _**getString()**_: given an ID, return its original string. Returns the string representation of the ID if it wasn't registered.
 
-To do so, it has a *HashMap* using strings as keys. ID retrieval ends up being logarithmic whereas name checks are linear. I've gone for this approach because the second operation is much less likely to be executed than the first one except to make IDs human readable for the poor coder who's debugging our crappy work in logging methods.
+To do so, it has a _HashMap_ using strings as keys. ID retrieval ends up being logarithmic whereas name checks are linear. I've gone for this approach because the second operation is much less likely to be executed than the first one except to make IDs human readable for the poor coder who's debugging our crappy work in logging methods.
 
-Here's the *"beauty"* in question.
+Here's the _"beauty"_ in question.
 
 ```
 public class IDGenerator {
@@ -101,7 +99,6 @@ public class IDGenerator {
 }
 ```
 
-
 ### Example of use
 
 Sticking to our previous animation example, our character could cache its animations right in its constructor this way. **Once!**
@@ -112,12 +109,10 @@ private static final int m_walk = IDGenerator.getID("walk");
 private static final int m_jump = IDGenerator.getID("jump");
 ```
 
-
 Now, at the time of picking an animation we use an int instead of a string and therefore, a beautiful smile is drawn on our faces.
 
 ```
 caveman.setAnimation(m_walk);
 ```
-
 
 Of course, this can be extensively use in your project, hope it helps. By the way, know than more and hopefully better is yet to come.

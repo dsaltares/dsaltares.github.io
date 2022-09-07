@@ -19,13 +19,13 @@ tags:
   - Python
 ---
 
-![titulo-pycha.png](/img/wp/titulo-pycha.png)
+![titulo-pycha.png](/img/wp/titulo-pycha.webp)
 
 En una práctica de la Universidad pedían medir los tiempos de ejecución de un algoritmo paralelo empleando un número diferente de hilos en cada ocasión. En la correspondiente memoria debía aparecer una comparativa del rendimiento así que decidí adjuntar una gráfica para ilustrarlo mejor. Introducir los datos a manubrio iba a ser horriblemente tedioso. Me entró el gusanillo y me hice un sencillo **script en Python que genera la gráfica utilizando [PyCha](https://bitbucket.org/lgs/pycha/)**. A continuación más información sobre esta genial biblioteca.
 
 ### ¿PyCha? Eso suena muy mal
 
-**[PyCha](https://bitbucket.org/lgs/pycha/) (Python Charts) es una biblioteca libre** (LGPL) creada por Lorenzo Gil que nos ayuda a **generar gráficas con [Cairo](http://en.wikipedia.org/wiki/Cairo_(graphics))**. A cambio de no incorporar un gran número de opciones resulta fácil de usar, lo cual es una gran ventaja. El único defecto que le veo es que no todas las opciones están documentadas. A pesar de ello, aprender a usar PyCha no me llevó más de diez minutos.
+**[PyCha](https://bitbucket.org/lgs/pycha/) (Python Charts) es una biblioteca libre** (LGPL) creada por Lorenzo Gil que nos ayuda a **generar gráficas con [Cairo](<http://en.wikipedia.org/wiki/Cairo_(graphics)>)**. A cambio de no incorporar un gran número de opciones resulta fácil de usar, lo cual es una gran ventaja. El único defecto que le veo es que no todas las opciones están documentadas. A pesar de ello, aprender a usar PyCha no me llevó más de diez minutos.
 
 ### Instalación de PyCha en Debian
 
@@ -37,13 +37,11 @@ Instalar PyCha en un sistema basado en Debian como Ubuntu es **harto sencillo**.
 sudo apt-get install python-dev python-setuptools build-essential
 ```
 
-
 2. Descargar e instalar PyCha:
 
 ```
 sudo eassy_install pycha
 ```
-
 
 ### Generando una gráfica con PyCha
 
@@ -102,7 +100,7 @@ def main():
         },
     }
 
-    # Creamos la gráfica 
+    # Creamos la gráfica
     chart = pycha.bar.VerticalBarChart(surface, options)
     chart.addDataset(dataSet)
     chart.render()
@@ -114,7 +112,6 @@ if __name__ == "__main__":
     main()
 ```
 
-
 El resultado es el siguiente:
 
-![chart.png](/img/wp/chart.png)
+![chart.png](/img/wp/chart.webp)

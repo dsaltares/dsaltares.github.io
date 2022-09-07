@@ -24,7 +24,7 @@ tags:
   - videojuegos
 ---
 
-![titulo-enemyspawn.jpg](/img/wp/titulo-enemyspawn.jpg)
+![titulo-enemyspawn.jpg](/img/wp/titulo-enemyspawn.webp)
 
 Estos días he estado trabajando en la **carga de enemigos** dentro de Sion Tower y en las **barras de vida** que veis sobre sus cabezas. Tras algún que otro comedero de cabeza he acabado con un sistema bastante sencillo y que funciona exactamente como yo quería. En los siguientes párrafos explico cómo están diseñadas la aparición (spawn) de enemigos y las barras de vida para finalizar con un **vídeo del resultado**.
 
@@ -39,11 +39,11 @@ Como ya he mencionado en varias ocasiones, **Blender será el editor de niveles 
 - Tipo de enemigo.
 - Momento en el que aparece.
 
-![blender-enemy.jpg](/img/wp/blender-enemy.jpg)
+![blender-enemy.jpg](/img/wp/blender-enemy.webp)
 
 En Blender utilizamos una pequeñas pirámides horizontales para indicar la aparición de enemigos. Los dos primeros puntos ya los da la propia posición y orientación del objeto mientras que el resto lo conseguimos con el nombre del mismo. Los nombres tienen la estructura _"enemy.tipo.tiempo"_. Por ejemplo, un Goblin que aparezca en el segundo 1 se llamaría _"enemy.goblin.1"_ tal y como podéis ver en la siguiente figura.
 
-![nombre-objeto-blender.png](/img/wp/nombre-objeto-blender.png)
+![nombre-objeto-blender.png](/img/wp/nombre-objeto-blender.webp)
 
 La clase _Level_ guarda un vector de objetos _EnemySpawn_ que simplemente contienen la información de los cuatro puntos anteriores. El cada iteración de _StateGame_ se consulta si en el momento actual debería aparecer algún enemigo y en caso afirmativo se crea uno con las propiedades adecuadas.
 
@@ -53,7 +53,7 @@ Si colocamos los enemigos en el centro del escenario aparecerán súbitamente (c
 
 **Las barras de vida son [Billboards](http://www.ogre3d.org/docs/api/html/classOgre_1_1Billboard.html)** de Ogre, rectángulos que se colocan en el espacio 3D de la escena que siempre permanecen de frente hacia la cámara. En este caso les asignamos un material con **una sencilla textura que cuenta con las dos partes** de la vida: la roja y la verde. La idea es que según el porcentaje de energía que le reste al enemigo, seleccionemos una porción de dicha textura utilizando las coordenadas UV. En el siguiente diagrama se ilustra el sencillo mecanismo.
 
-![barra-de-vida.png](/img/wp/barra-de-vida.png)
+![barra-de-vida.png](/img/wp/barra-de-vida.webp)
 
 Al no haber usado Billboards con anterioridad, este fue el paso que más tiempo me llevó. La ignorancia es terrible porque al final no era nada complicado, en la clase _Enemy_ tenemos los siguientes atributos.
 

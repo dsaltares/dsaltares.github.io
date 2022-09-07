@@ -31,11 +31,11 @@ The mighty libgdx library saw itself to yet another addition a couple of weeks a
 
 It primarily focuses on modelling how maps data is represented as well as in providing a way of easily implementing loaders and renderers for specific formats. The API comes with built in loaders and renderers for the [TMX](http://www.mapeditor.org/), [Tide](http://tide.codeplex.com/) and [Gleed](http://gleed2d.codeplex.com/) formats. However, the latter might be deprecated at some point in the future due its absolute paths horribleness. Believe me, I've tried to work my way around it but there is just no elegant solution. Although there hasn't been any releases since it's inclusion, it's accessible in the [nightly builds](http://libgdx.badlogicgames.com/nightlies/). For those interested in the implementation, please go to the Github repository.
 
-![maps-api-300x125.png](/img/wp/maps-api-300x125.png)
+![maps-api-300x125.png](/img/wp/maps-api-300x125.webp)
 
 Take this cutie as an example, [a minimalistic platformer using the new API](https://github.com/libgdx/libgdx/blob/master/tests/gdx-tests/src/com/badlogic/gdx/tests/superkoalio/SuperKoalio.java) in just under 300 lines.
 
-![koalio-300x216.png](/img/wp/koalio-300x216.png)
+![koalio-300x216.png](/img/wp/koalio-300x216.webp)
 
 Enjoy.
 
@@ -47,13 +47,13 @@ Let's say you"re working on a 2D game which mechanics require some sort of colli
 
 If you"re going for tile based levels, you could add properties to the map to determine tiles walkability, a perfectly valid approach when presented with just a bunch of tiles. However, adding or changing tiles can become tedious really soon. Why don't you take advantage of Box2D collision detection algorithms and [space partitioning](http://en.wikipedia.org/wiki/Space_partitioning) techniques? No worries, you could do so regardless of the need of running a real time physics simulation, just create the bodies, move them according to the game logic and query the world for intersections without stepping it. In case of dealing with a physics based game, then, by all means, make full use of Box2D.
 
-![tiled-caveman-300x154.png](/img/wp/tiled-caveman-300x154.png)
+![tiled-caveman-300x154.png](/img/wp/tiled-caveman-300x154.webp)
 
 I"m going to assume basic knowledge of this popular physics library, if you don't consider yourself minimally familiar with it, please [take some time to get the basics](http://box2d.org/manual.pdf).
 
 Alright, your textures are all set in your level and it looks stunningly beautiful! Sadly, you lack any kind of collision data. A good practice is to create a separate layer named _"physics"_ or similar for sanity reasons. Now you can start placing shapes (rectangles, circles, polygons or polylines) so they adjust to the non walkable areas. Here's an example in my WIP casual abduction game.
 
-![gleed-abduction-collisions-300x158.png](/img/wp/gleed-abduction-collisions-300x158.png)
+![gleed-abduction-collisions-300x158.png](/img/wp/gleed-abduction-collisions-300x158.webp)
 
 As you could have guessed, having thousands of shapes won't do your game's performance any favours. It"d be a good idea to keep the shape count under control while preserving a decent granularity. Ideally, the editor would have a _"generate physics"_ option that would automatically create collision data from a texture layer using [contour tracing](http://www.imageprocessingplace.com/downloads_V3/root_downloads/tutorials/contour_tracing_Abeer_George_Ghuneim/alg.html). Sadly, that's not the case in the state of the art open source software we have today.
 
@@ -83,7 +83,7 @@ mapBodyManager.createPhysics(map, "physics");
 
 This will automatically create a static body per shape in your _"physics"_ layer as shown in the screenshot below.
 
-![abduction.jpg](/img/wp/abduction.jpg)
+![abduction.jpg](/img/wp/abduction.webp)
 
 So the player heroically beats the level and makes it to the next one. You surely will want to get rid of all those bodies (reference to murder not intended) before adding any more. Interestingly enough, our handy _MapBodyManager_ keeps track of all registered bodies, so voilá, easy as cake.
 
@@ -108,7 +108,7 @@ How can our _MapBodyManager_ deal with all this? It's actually dead easy, I went
 
 Assigning materials to elements in our editor is also fairly simple. Add a _"material"_ custom property per shape you want to behave in a non default manner. Every editor has its own GUI element for this and all of them are almost identical.
 
-![material.png](/img/wp/material.png)
+![material.png](/img/wp/material.webp)
 
 The _MapBodyManager_ will automatically pick up each shape's material and create bodies with the desired properties. Adding new materials is trivial and, whilst reassigning them is not comfortable, it's not a deal breaker either.
 

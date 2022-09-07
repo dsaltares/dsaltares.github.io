@@ -24,7 +24,7 @@ tags:
   - videojuegos
 ---
 
-![escenarios-blender.png](/img/wp/escenarios-blender.png)
+![escenarios-blender.png](/img/wp/escenarios-blender.webp)
 
 Como pudisteis ver en [el anterior vídeo](/proyectos/pfc/sion-tower/sion-tower-carga-de-escenarios-desde-blender-y-colisiones/ 'Sion Tower, carga de escenarios desde Blender y colisiones') ya **he conseguido cargar un escenario creado con Blender**. En este artículo pretendo explicar porqué he escogido Blender como editor de escenarios y cómo funciona el **sistema de carga y gestión de niveles**. Como veremos, aún me quedan puntos por implementar pero no quería abarcarlo todo desde el principio. Todo a su tiempo, al menos el diseño está pensado para ser escalable.
 
@@ -32,7 +32,7 @@ Como pudisteis ver en [el anterior vídeo](/proyectos/pfc/sion-tower/sion-tower-
 
 A comienzos de enero escribí [un artículo](/proyectos/pfc/sion-tower/ogitor-instalacion-en-linux-y-el-formato-dotscene/ 'Ogitor: instalación en Linux y el formato DotScene') en el que hablaba sobre un editor de escenarios desarrollado con QT y Ogre llamado **[Ogitor](http://www.ogitor.org/HomePage)**. Más tarde hice pruebas para ver si soportaba todo lo que necesitaba pero me di cuenta de que **se quedaba corto**. Es un proyecto muy prometedor pero le falta madurez y algunas cosas por implementar.
 
-![ogitor.png](/img/wp/ogitor.png)
+![ogitor.png](/img/wp/ogitor.webp)
 
 En cambio, **[Blender](http://www.blender.org/) es un editor 3D consagrado**, flexible, estable y con una comunidad mucho mayor. Busqué más alternativas y pregunté en Twitter por un buen editor de niveles **compatible con el formato DotScene**. El usuario [@makiolo](http://twitter.com/#!/makiolo) también sugirió amablemente Blender. Tras varias pruebas pude obtener el vídeo del anterior artículo. Si todo va bien y no me encuentro con ningún obstáculo insalvable utilizaré Blender.
 
@@ -125,7 +125,7 @@ Para exportar una escena de Blender al formato DotScene es necesario **instalar 
 - Si utilizas GNU/Linux, copia el plugin en _~/.blender/scripts/_ y dale permisos de ejecución.
 - Si utilizas Windows copia el plugin en la carpeta plugins dentro del directorio de instalación de Blender. Por defecto es _C:\Archivos de Programa\Blender Foundation\Blender_.
 
-![exportar-dotscene.png](/img/wp/exportar-dotscene.png)
+![exportar-dotscene.png](/img/wp/exportar-dotscene.webp)
 
 Cuando tengamos nuestra escena en Blender hacemos click en _file → export → OGRE Scene_. Debemos seleccionar los objetos que queramos exportar (normalmente todos) y corregir los ejes X,Z ya que en Blender se disponen al revés que en Ogre. Por último elegimos la ruta destino y pulsamos sobre _"exportar"_.
 
@@ -133,7 +133,7 @@ Cuando tengamos nuestra escena en Blender hacemos click en _file → export → 
 
 El sistema de carga de niveles de Sion Tower se compone de dos clases principales: _Level_ y _LevelManager_. La clase _Level_ contiene la información de un nivel de juego completo (escena, oleadas de enemigos, posición inicial del personaje, etc). Una vez creado, un objeto _Level_ puede encontrarse en dos estados: **inicializado** o **cargado**. Al estar inicializado sólo estará disponible su información básica como el nombre o la descripción. Si empleamos el método _Level::load_ podremos acceder a los objetos del escenario, la música que deberíamos reproducir, etc aunque ocupará mucha más memoria.
 
-![levels.png](/img/wp/levels.png)
+![levels.png](/img/wp/levels.webp)
 
 Cuando se crea un nivel, se lee la i**nformación básica** de un sencillo fichero xml independiente del DotScene. Los niveles tienen un identificador de forma que el fichero DotScene debe ser i*d_scene.xml* y el que contiene información básica debe ser _id_info.xml_. Lo siguiente es un ejemplo de fichero de información básica:
 
@@ -148,7 +148,7 @@ Cuando se crea un nivel, se lee la i**nformación básica** de un sencillo fiche
 
 La clase _LevelManager_ es la encargada de detectar los niveles disponibles, inicializarlos, controlar su ciclo de vida y permitir al usuario el acceso a los mismos. Sigue el patrón [Singleton](http://es.wikipedia.org/wiki/Singleton) y en el momento de su creación toma todos los ficheros _\_info.xml_ del directorio _media/levels_ para construir los niveles.
 
-![level_system.png](/img/wp/level_system.png)
+![level_system.png](/img/wp/level_system.webp)
 
 ### Convenciones en el nombrado
 
@@ -163,7 +163,7 @@ El fichero DotScene generado con Blender deberá contener información adicional
 - **Navigation mesh**: maya que indica la superficie por la que pueden desplazarse los enemigos. Resultará muy útil para la búsqueda de caminos y la inteligencia artificial.
 - **Oleadas de enemigos**: otras entidades deberán definir el tipo de enemigo, el momento en el que entrará y por dónde lo hará.
 
-![wow-navmesh.jpg](/img/wp/wow-navmesh.jpg)
+![wow-navmesh.jpg](/img/wp/wow-navmesh.webp)
 
 El navigation mesh puede representarse mediante pequeñas esferas, así como la posición inicial de la reliquia o el personaje, a gusto del diseñador de niveles. Lo importante es que se cumplan las reglas de nombrado.
 

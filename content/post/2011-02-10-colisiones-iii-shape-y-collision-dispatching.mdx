@@ -22,25 +22,25 @@ tags:
   - videojuegos
 ---
 
-![colisiones-3.png](/img/wp/colisiones-3.png)
+![colisiones-3.png](/img/wp/colisiones-3.webp)
 
 Entregas
 
-* [Colisiones I: Introducción, requisitos y alternativas](/proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/)
-* [Colisiones II: Diseño general de STC](/proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/)
-* _Colisiones III: Shape y Collision Dispatching _
+- [Colisiones I: Introducción, requisitos y alternativas](/proyectos/pfc/sion-tower/colisiones-i-introduccion-requisitos-y-alternativas/)
+- [Colisiones II: Diseño general de STC](/proyectos/pfc/sion-tower/colisiones-ii-diseno-general-de-stc/)
+- _Colisiones III: Shape y Collision Dispatching _
 
-Comenzamos la tercera entrega de la serie de artículos sobre **STC, el sistema de detección de colisiones de Sion Tower. En esta ocasión vamos a entrar en detalle en **la clase *Shape*, la encargada de modelar los volúmenes colisionables básicos entre otras tareas. Los tests de colisión entre formas concretas también pertenecen a esta clase pero por su complejidad los dejaremos para el siguiente artículo.
+Comenzamos la tercera entrega de la serie de artículos sobre **STC, el sistema de detección de colisiones de Sion Tower. En esta ocasión vamos a entrar en detalle en **la clase _Shape_, la encargada de modelar los volúmenes colisionables básicos entre otras tareas. Los tests de colisión entre formas concretas también pertenecen a esta clase pero por su complejidad los dejaremos para el siguiente artículo.
 
 ### La clase Shape
 
-*Shape* es una clase abstracta y como tal no puede instanciarse directamente por lo que otros objetos han de heredar de ella e implementar los métodos convenientes. *Shape* modela un volumen geométrico genérico colisionable y está pensada para que todas sus implementaciones sean tratadas de manera uniforme.
+_Shape_ es una clase abstracta y como tal no puede instanciarse directamente por lo que otros objetos han de heredar de ella e implementar los métodos convenientes. _Shape_ modela un volumen geométrico genérico colisionable y está pensada para que todas sus implementaciones sean tratadas de manera uniforme.
 
-![shapes.png](/img/wp/shapes.png)
+![shapes.png](/img/wp/shapes.webp)
 
 ### Collision Dispatching
 
-La clase *Shape* dispone de un método estático *getCollision* que recibe dos punteros a *Shape* y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.
+La clase _Shape_ dispone de un método estático _getCollision_ que recibe dos punteros a _Shape_ y devuelve verdadero o falso en función de si se ha producido o no intersección. Internamente cuenta con otros métodos estáticos para detectar colisiones entre formas concretas, por ejemplo: la intersección entre una esfera y un AABB.
 
 ```
 class Shape {
@@ -64,10 +64,9 @@ private:
 };
 ```
 
+El **Collision Dispatching** es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques _if_ con _dynamic_cast_ capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de [RTTI](http://en.wikibooks.org/wiki/C++_Programming/RTTI).
 
-El **Collision Dispatching** es la tarea de seleccionar el test de colisión apropiado a partir de dos formas cuyo tipo desconocemos. En principio se podría pensar en emplear muchos bloques *if* con *dynamic_cast* capturando posibles excepciones para aseguramos de que seleccionamos los tipos apropiados. No obstante, ese tipo de casting son operaciones extremadamente costosas que no podemos permitirnos en un punto tan crítico como este. Estuve mucho tiempo dándole vueltas hasta dar con un sistema seguro, sencillo y eficiente de [RTTI](http://en.wikibooks.org/wiki/C++_Programming/RTTI).
-
-Es posible conocer la clase a la que pertenece una forma génerica incorporando un método virtual puro en *Shape*. Cada especialización está obligado a implementarlo, devolviendo un valor de un enumerado indicando su tipo.
+Es posible conocer la clase a la que pertenece una forma génerica incorporando un método virtual puro en _Shape_. Cada especialización está obligado a implementarlo, devolviendo un valor de un enumerado indicando su tipo.
 
 ```
 class Shape {
@@ -93,10 +92,9 @@ public:
 };
 ```
 
+Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un _static_cast_ sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. _static_cast_ es mucho más rápido que _dynamic_cast_ al no hacer comprobaciones.
 
-Podemos tener una tabla estática que dados dos tipos de formas nos devuelva el método que efectúa el test de colisión entre ambas. En cada test de colisión se puede hacer un *static_cast* sin temor a encontrar con problemas ya que hemos comprobado el tipo con anterioridad. *static_cast* es mucho más rápido que *dynamic_cast* al no hacer comprobaciones.
-
-No vamos a manejar punteros a función sino que **haremos uso de las mágicas *[boost::function](http://www.boost.org/doc/libs/1_45_0/doc/html/function.html)* y [*boost:bind*](http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html)**. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces [Boost](http://www.boost.org/) deberías echarle un ojo ya que muchos de sus componentes **entrarán en el próximo estándar de C++**. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales [aquí](http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost). Para la tabla utilizaremos *[boost::unordered_map](http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html)*, similar a [*std::map*](http://www.cppreference.com/wiki/container/map/start) pero mucho más eficiente.
+No vamos a manejar punteros a función sino que **haremos uso de las mágicas _[boost::function](http://www.boost.org/doc/libs/1_45_0/doc/html/function.html)_ y [_boost:bind_](http://www.boost.org/doc/libs/1_45_0/libs/bind/bind.html)**. Esto nos permitirá encapsular un método en un objeto y llamarlo posteriormente con el operador (). Si no conoces [Boost](http://www.boost.org/) deberías echarle un ojo ya que muchos de sus componentes **entrarán en el próximo estándar de C++**. El año pasado, mi compañero José Tomás Tocino impartió un taller de esta biblioteca, podéis encontrar los materiales [aquí](http://softwarelibre.uca.es:9001/redmine/repositories/show/taller-boost). Para la tabla utilizaremos _[boost::unordered_map](http://www.boost.org/doc/libs/1_38_0/doc/html/boost/unordered_map.html)_, similar a [_std::map_](http://www.cppreference.com/wiki/container/map/start) pero mucho más eficiente.
 
 ```
 class Sphere:
@@ -118,8 +116,7 @@ private:
 };
 ```
 
-
-El método *configureCollisionDispatching* se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase *CollisionManager* ya lo hace por tí.
+El método _configureCollisionDispatching_ se encarga de inicializar la tabla que asocia dos tipos con el método que implementa el test de colisión. Es necesario llamar a este método al comienzo de la aplicación aunque la clase _CollisionManager_ ya lo hace por tí.
 
 ```
 void Shape::configureCollisionDispatching() {
@@ -138,32 +135,31 @@ void Shape::configureCollisionDispatching() {
 }
 ```
 
-
 De esta forma **conseguimos un Collision Dispatching muy eficiente, cómodo y extensible**.
 
 ### Formas disponibles
 
-Como habréis deducido por los diagramas de clases, la versión 0.1 de STC incorpora **tres tipos de formas diferentes**: *Sphere*, *Plane* y *AxisAlignedBox*. A continuación vemos las distintas formas junto a su representación interna y un pequeño diagrama.
+Como habréis deducido por los diagramas de clases, la versión 0.1 de STC incorpora **tres tipos de formas diferentes**: _Sphere_, _Plane_ y _AxisAlignedBox_. A continuación vemos las distintas formas junto a su representación interna y un pequeño diagrama.
 
 La **esfera** se representa por un punto (centro) y un real (radio) tal y como se muestra en el siguiente esquema. Es una forma sencilla que permite tests de colisión muy rápidos. Es muy común representar formas utilizando cuatro números reales ya que los chips gráficos están optimizados para hacer operaciones en paralelo con cuatro datos.
 
-![sphere.png](/img/wp/sphere.png)
+![sphere.png](/img/wp/sphere.webp)
 
 El **plano** está formado por un punto (distancia con respecto al origen) y un vector (normal o perpendicular a sí mismo). Podéis visualizarlo en el siguiente esquema.
 
-![plane.png](/img/wp/plane.png)
+![plane.png](/img/wp/plane.webp)
 
-Existen dos tipos de cajas: las *AxisAlignedBox* y las *OrientedBox*. Las primeras, como indica su nombre, siempre están alineadas con los ejes y no presentan rotación. En cambio, las segundas son volúmenes rotados. Las cajas alineadas con los ejes las representamos a través de dos puntos (mínimo y máximo) como podéis ver en el siguiente diagrama.
+Existen dos tipos de cajas: las _AxisAlignedBox_ y las _OrientedBox_. Las primeras, como indica su nombre, siempre están alineadas con los ejes y no presentan rotación. En cambio, las segundas son volúmenes rotados. Las cajas alineadas con los ejes las representamos a través de dos puntos (mínimo y máximo) como podéis ver en el siguiente diagrama.
 
-![aabb.png](/img/wp/aabb.png)
+![aabb.png](/img/wp/aabb.webp)
 
-Las *AABB* ofrecen tests de colisión sencillos pero **no funcionan bien con objetos que rotan**. Al no poder rotar la caja debemos reajustarla con la consecuente pérdida de precisión, en algunos casos inaceptable. El siguiente esquema muestra a un coche y su *AABB* de colisión en ambos estados: sin rotar y tras ser rotado.
+Las _AABB_ ofrecen tests de colisión sencillos pero **no funcionan bien con objetos que rotan**. Al no poder rotar la caja debemos reajustarla con la consecuente pérdida de precisión, en algunos casos inaceptable. El siguiente esquema muestra a un coche y su _AABB_ de colisión en ambos estados: sin rotar y tras ser rotado.
 
-![aabb-precission-loss.png](/img/wp/aabb-precission-loss.png)
+![aabb-precission-loss.png](/img/wp/aabb-precission-loss.webp)
 
 ### Extendiendo la clase Shape
 
-Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase *Shape*:
+Para crear nuevas formas sólo hay que elegir la representación deseada e implementar los siguientes métodos virtuales puros de la clase _Shape_:
 
 ```
 class Shape {
@@ -181,7 +177,6 @@ public:
 };
 ```
 
-
-El método *applyTransform* transforma la forma actual a partir de *localShape* incluyendo desplazamiento, escala y rotación. El método *getTransformedCopy* devuelve una copia de sí misma tras aplicar la transformación. Esto se utiliza para traducir formas de local space a world space. Deberás añadir los tests de colisión que desees y completar la inicialización de la tabla en el método *configureCollisionDispatching*. Puedo adelantar que para la versión 0.2 de STC (Sion Tower Collisions) estoy implementando la forma *OrientedBox* y sus correspondientes tests de colisión.
+El método _applyTransform_ transforma la forma actual a partir de _localShape_ incluyendo desplazamiento, escala y rotación. El método _getTransformedCopy_ devuelve una copia de sí misma tras aplicar la transformación. Esto se utiliza para traducir formas de local space a world space. Deberás añadir los tests de colisión que desees y completar la inicialización de la tabla en el método _configureCollisionDispatching_. Puedo adelantar que para la versión 0.2 de STC (Sion Tower Collisions) estoy implementando la forma _OrientedBox_ y sus correspondientes tests de colisión.
 
 Hasta aquí la tercera entrega de los artículos sobre el sistema de detección de colisiones de Sion Tower.

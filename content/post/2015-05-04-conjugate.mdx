@@ -22,11 +22,12 @@ tags:
   - Verb conjugator
   - web development
 ---
+
 For the past few weeks working on a new toy: [Conjugate](https://github.com/dsaltares/conjugate). It's probably easier if I just stick a summary of the GitHub readme here.
 
 Conjugate is a verb conjugator service. Enter a verb in English and get the conjugations for all tenses in a variety of languages.
 
-![languages.jpg](/img/conjugate/languages.jpg)
+![languages.jpg](/img/conjugate/languages.webp)
 
 ### Reason to be
 
@@ -36,9 +37,9 @@ When learning a new language, it is very common to struggle with verb conjugatio
 
 Unfortunately, the available resources are somehow limited:
 
-  * Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.
-  * Apps: seriously? I don't want to install yet another app!
-  * Websites: lists are limited, the sites are old, full of ads and/or don't play well with mobile devices.
+- Google translator: usually gets conjugations wrong for most languages, especially in terms of gender.
+- Apps: seriously? I don't want to install yet another app!
+- Websites: lists are limited, the sites are old, full of ads and/or don't play well with mobile devices.
 
 Conjugate tries to solve that use case.
 
@@ -46,8 +47,8 @@ Conjugate tries to solve that use case.
 
 The project is divided in two parts:
 
-  * Scraper
-  * Mobile friendly website
+- Scraper
+- Mobile friendly website
 
 #### Scraper
 
@@ -59,11 +60,11 @@ The script currently supports Romanian (which I'm trying to learn) and Spanish. 
 
 Currently, I'm in the process of writing the mobile friendly application. It'll be extremely simple:
 
-  1. Enter a verb in English (infinitive).
-  2. Select a language from a dropdown.
-  3. Hit "Go".
+1. Enter a verb in English (infinitive).
+2. Select a language from a dropdown.
+3. Hit "Go".
 
-![flask.png](/img/conjugate/flask.png)
+![flask.png](/img/conjugate/flask.webp)
 
 For the backend I'm using [Flask](http://flask.pocoo.org/docs/0.10/) and [sqlalchemy](http://www.sqlalchemy.org/) to keep things in the Python world, not to mention that they're really easy to get started with. Not too sure about the frontend, but I'll probably go for a framework that makes responsive design simple enough.
 

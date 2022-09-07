@@ -23,7 +23,7 @@ tags:
   - videojuegos
 ---
 
-![audio3d-ogre1.png](/img/wp/audio3d-ogre1.png)
+![audio3d-ogre1.png](/img/wp/audio3d-ogre1.webp)
 
 Como todo buen hijo de vecino, **[Sion Tower](/category/proyectos/pfc/sion-tower/) necesitará reproducir efectos de sonido y música** de fondo, de otro modo al jugador se le caerían dos lagrimones y lo cerraría para siempre. Ogre es un motor de renderizado y no incorpora elementos como un subsistema de audio, por tanto, debía buscarlo en otro lugar. Como he comentado anteriormente, Ogre cuenta con un sistema de gestión de recursos muy potente y ampliable. Sobra decir que mi audio debería **integrarse completamente** con dicho sistema. A continuación, relato mi pequeña odisea para conseguir lo deseado.
 
@@ -41,10 +41,10 @@ Los recursos que queramos **integrar con Ogre** deben implementar la interfaz [R
 
 SDL Mixer trata de forma distinta la música y los efectos de sonido por lo que planteé **dos nuevos recursos: Musica y Sonido**. A continuación tenéis la lista de clases resultante aunque al final de este artículo se expone un diagrama UML completo.
 
-* SoundFX y SoundFXPtr
-* Song y SongPtr
-* SoundFXManager
-* SongManager
+- SoundFX y SoundFXPtr
+- Song y SongPtr
+- SoundFXManager
+- SongManager
 
 La forma de trabajar con los nuevos recursos es semejante al estilo de Ogre. Queda completamente integrado:
 
@@ -64,12 +64,11 @@ sound->play();
 delete soundFXManager;
 ```
 
-
 ### Sencillo pero resultón sonido 3D
 
 No todos los sonidos tienen porqué reproducirse con efecto 3D por lo que he modelado este pequeño sistema de forma independiente. **La clase Sound3D** tiene un SoundFXPtr y dos punteros a SceneNode. Uno de los nodos es el emisor y el otro el que escucha. El volumen varía en función de la distancia entre ambos nodos mientras que el ángulo entre ambos elementos produce un efecto estéreo. El siguiente diagrama lo ilustra:
 
-![audio3d-esquema.png](/img/wp/audio3d-esquema.png)
+![audio3d-esquema.png](/img/wp/audio3d-esquema.webp)
 
 SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado a tal efecto. Un mismo Sound3D puede estar reproduciéndose en canales distintos al mismo tiempo. La clase Sound3D controla internamente qué sonido tiene asociado cada canal. Se pone a disposición del desarrollador un **método estático para actualizar todos los sonidos 3D** en reproducción. Preferiblemente una vez por cada iteración del game loop deberíamos hacer:
 
@@ -78,12 +77,11 @@ SDL Mixer distribuye los efectos de sonido en los canales que se hayan reservado
 Sound3D::update3DSound();
 ```
 
-
 ### A vista de pájaro
 
 El siguiente **diagrama de clases** simplificado ilustra a grandes rasgos los elementos de este sistema de audio y sus relaciones.
 
-![audio3d-clases1.png](/img/wp/audio3d-clases1.png)
+![audio3d-clases1.png](/img/wp/audio3d-clases1.webp)
 
 ### Para terminar
 

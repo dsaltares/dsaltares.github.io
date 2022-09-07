@@ -27,7 +27,7 @@ keywords:
   ]
 ---
 
-![Plot logo](/img/plot/plot-logo.png)
+![Plot logo](/img/plot/plot-logo.webp)
 
 At [Plot](https://www.plot.co/), we're building a Learning Design Platform that enables companies to rapidly scale the design of high-quality learning experiences by helping learning designers to make better design decisions faster.
 
@@ -63,7 +63,7 @@ Additionally, the Javascript/Node.js/Typescript ecosystem is [incredibly popular
 
 We use [Terraform](https://www.terraform.io/) to declare our infrastructure components. That way, our environments are easily reproducible; we can spin them up in a matter of minutes. Additionally, all infrastructure changes go through the same peer-review and CI/CD pipeline as the rest of the system.
 
-![Terraform plan](/img/plot/terraform-plan.png)
+![Terraform plan](/img/plot/terraform-plan.webp)
 
 ### 🚀 Next.js - The Full-stack Framework
 
@@ -85,17 +85,17 @@ Using [Docker Compose](https://docs.docker.com/compose/), we ran a persistent da
 
 We implemented our own design system using [TailwindCSS](https://tailwindcss.com/) and [HeadlessUI](https://headlessui.dev/). TailwindCSS gave us best-in-class DX with complete freedom to make our application look neat and consistent without being too similar to [Material-UI](https://v4.mui.com/). Once we became proficient with it, translating wireframes to components and screens came naturally. HeadlessUI was a “Pit of Success” for our app to be accessible.
 
-![Plot storybook](/img/plot/plot-stories.png)
+![Plot storybook](/img/plot/plot-stories.webp)
 
 [React Query](https://react-query.tanstack.com/) helps us manage our server-side state on the client. We get cache invalidation, retries, online/offline management, request cancellation, pagination, and more with no effort at all.
 
 Plot users need to be able to collect documentation in a rich and structured way. So, we needed to provide a rich text editor, but creating a great text editing experience on the web that works well across devices is a brutal challenge. I speak [from experience](https://portal.aula.education/c/59-better-faster-more-accessible-aula-editor)! That is precisely why we chose [remirror](https://remirror.io/), an open-source, off-the-shelf editor for React based on [Prosemirror](https://prosemirror.net/). With remirror, the team had the whole, bug-free, rich text editing experience working in our app in under a week.
 
-![Plot editor](/img/plot/remirror-editor.png)
+![Plot editor](/img/plot/remirror-editor.webp)
 
 Authentication is probably one of the most critical parts of any application. It is one of the first flows users experience and a typical attack vector. We could have chosen an authentication-as-a-service provider, like [Auth0](https://auth0.com/), but we decided to go with [NextAuth.js](https://next-auth.js.org/). It was tremendously simple to set up and lets us heavily customize the experience. Plus, we're able to keep all of the data.
 
-![Plot login screen](/img/plot/plot-auth.png)
+![Plot login screen](/img/plot/plot-auth.webp)
 
 ### ☁️ Cloud Hosting
 
@@ -117,13 +117,13 @@ All our code lives in a monorepo (via [yarn workspaces](https://classic.yarnpkg.
 
 A workflow kicks off when a PR is open that runs linting, unit/integration tests, and a preview deployment. Everything happens in parallel and takes less than 3 minutes.
 
-![Plot deploy workflow](/img/plot/app-preview.png)
+![Plot deploy workflow](/img/plot/app-preview.webp)
 
 Another workflow starts when a PR is merged to main. It deploys the application to production after all other checks have passed. Every change goes [from main to production in under 5 minutes](https://charity.wtf/2021/02/19/how-much-is-your-fear-costing-you/).
 
 Our continuous delivery culture of fast & frequent deployments coupled with feature flags via [LaunchDarkly](https://launchdarkly.com/) has enabled us to excel at software delivery. We have been releasing over 6 times/day with a failure rate of `<1%`.
 
-![Plot delivery metrics](/img/plot/delivery-metrics.png)
+![Plot delivery metrics](/img/plot/delivery-metrics.webp)
 
 ### 🚨 Observability
 

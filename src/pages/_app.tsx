@@ -25,7 +25,7 @@ const App = ({ Component, pageProps }: AppProps) => (
       <link
         rel="apple-touch-icon-precomposed"
         sizes="144x144"
-        href="./touch-icon-144-precomposed.png"
+        href="/img/touch-icon-144-precomposed.png"
       ></link>
     </Head>
     <GoogleAnalytics />

@@ -27,7 +27,7 @@ tags:
 
 Estos días he estado tratando de establecer un **entorno de trabajo multiplataforma** para trabajar en los ejemplos de **[IberOgre](http://osl.uca.es/iberogre/)** y en el propio **Sion Tower**. Lo ideal, para mí, era poder compilar con herramientas libres y sin tener que depender de ningún IDE. Al no ser la forma habitual de desarrollar de la comunidad de Ogre, la documentación era escasa y acertar ha sido sorprendentemente complicado. Les contaré mi periplo:
 
-![VisualStudio.png](/img/wp/VisualStudio.png)
+![VisualStudio.png](/img/wp/VisualStudio.webp)
 
 ### Herramientas privativas
 
@@ -35,15 +35,15 @@ La wiki oficial de Ogre da mucho soporte a **[Microsoft Visual Studio](http://es
 
 Cualquier desarrollador debería poder, siguiendo el manual de IberOgre, establecer un entorno de trabajo sin costes de ningún tipo y sin problemas con licencias. Ogre3D es software LGPL y creo que, en el marco en el que estamos moviéndonos, sería recomendable mantenerse en la línea.
 
-![cmake.png](/img/wp/cmake.png)
+![cmake.png](/img/wp/cmake.webp)
 
 ### CMake, el generador de makefiles
 
 [**CMake**](http://es.wikipedia.org/wiki/CMake) es una herramienta multiplataforma y open source capaz de g**enerar makefiles específicos** para cada plataforma. Debemos crear un fichero CMakeLists.txt con las instrucciones pertinentes: código a compilar, librerías requeridas y demás dependencias. Parecía algo estupendo, con un solo fichero de CMake podría generar makefiles para compilar proyectos tanto en GNU/Linux (GCC) como en Windows (MinGW).
 
-Finalmente, los inconvenientes de CMake me hicieron prescindir de él. Existe poca documentación y su **curva de aprendizaje** es alta. Además no crea objetivos *"clean"* que verdaderamente limpien los ficheros que se generan en la compilación. Estos inconvenientes no compensaban añadir una capa de abstracción más al proceso.
+Finalmente, los inconvenientes de CMake me hicieron prescindir de él. Existe poca documentación y su **curva de aprendizaje** es alta. Además no crea objetivos _"clean"_ que verdaderamente limpien los ficheros que se generan en la compilación. Estos inconvenientes no compensaban añadir una capa de abstracción más al proceso.
 
-![codeblocks-logo.png](/img/wp/codeblocks-logo.png)
+![codeblocks-logo.png](/img/wp/codeblocks-logo.webp)
 
 ### Code::Blocks, el IDE libre
 
@@ -65,10 +65,9 @@ make
 ./cbp2mak -C ruta_al_proyecto proyecto.cbp
 ```
 
-
 El makefile resultante es un poco extraño y complejo pero, utilizando ese como base he podido crear unos a mi medida. Un proyecto de Code::Blocks es un **XML** en el fondo, podemos abrirlo con un editor y ver qué flags utiliza para el compilador y el enlazador.
 
-![gnu.png](/img/wp/gnu.png)
+![gnu.png](/img/wp/gnu.webp)
 
 ### El resultado
 
@@ -89,7 +88,6 @@ En contra de todo pronóstico, **el resultado ha sido excelente**. A continuaci�
 |- makefile-windows
 ```
 
-
 Para **compilar** sólo tendríamos que hacer (según el sistema operativo):
 
 ```
@@ -99,7 +97,6 @@ make -f makefile-linux
 mingw32-make -f makefile-windows depend
 mingw32-make -f makefile-windows
 ```
-
 
 Para personalizar el nombre del proyecto sólo tenemos que modificar el valor de una variable en cada makefile. Por supuesto, esto supone tener una serie de paquetes en el sistema y ciertas variables de entorno, todo el proceso de instalación acabará ampliamente detallado en IberOgre.
 

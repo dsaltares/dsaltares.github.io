@@ -20,7 +20,7 @@ tags:
   - pooling
 ---
 
-I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non [garbage collected languages](http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)), say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey's about memory won't necessarily make your game crash. Nonetheless, it can be silently devastating to the point of dragging your frame rate below ground absent previous notice.
+I bet you already know that keeping memory allocation under control in real time applications is absolutely essential. Bad memory management in non [garbage collected languages](<http://en.wikipedia.org/wiki/Garbage_collection_(computer_science)>), say C++, results in irresponsible footprints. $deity forbid we incur in a std::bad_alloc exception! That can be a deal breaker for mobile phones or consoles. However, the other family of languages is what really haunts me. In Java, for instance, the consequences of not giving a monkey's about memory won't necessarily make your game crash. Nonetheless, it can be silently devastating to the point of dragging your frame rate below ground absent previous notice.
 
 You don't want that now, do you?
 
@@ -28,11 +28,11 @@ Please, let me take a step back and point out the irony of having to be extremel
 
 This article is aimed at developers who code in GC environments to make real time applications. Concepts here also apply to broader fields in spite of the focus mainly being Java and games development using the libgdx framework. Actually, I decided to write this post after seeing the same performance related questions [over](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=3572) and [over](http://www.badlogicgames.com/forum/viewtopic.php?f=11&t=6785&hilit=performance+garbage) again in the libgdx forums. Most of them are closely tied to memory allocation.
 
-![garbage-collector-strikes-back.jpg](/img/wp/garbage-collector-strikes-back.jpg)
+![garbage-collector-strikes-back.jpg](/img/wp/garbage-collector-strikes-back.webp)
 
 ### Be aware of the GC and why it's critical in mobile/consoles
 
-The GC is fired up every now and then and asks: *"what objects are currently not being referenced by any variable?"*. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that's awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.
+The GC is fired up every now and then and asks: _"what objects are currently not being referenced by any variable?"_. The next step is freeing the memory those objects were occupying so it becomes available for other purposes. It keeps the playground clean and neat and that's awesome to some extent. Surely enough, this might not cause too much trouble in classic applications. However, it can be deadly in a situation where you have less than 1/60s to compute a discrete simulation step.
 
 Note: I just told a white lie. JVM's GC actually follows several strategies to free up unused memory as pointed out in [this Stack Overflow post](http://stackoverflow.com/questions/1582209/java-garbage-collector-when-does-it-collect).
 
@@ -120,7 +120,6 @@ public class GleedMapRenderer implements MapRenderer, Disposable {
 }
 ```
 
-
 As illustrated above, the Rectangle instances are created along the renderer and properly set every frame. Consequently, what initially would have involved memory allocations, assignments and GC activity is reduced to just a few unavoidable assignments. Let's mention it once again, in spite of rectangles being cheap, you don't want to mess with the GC on mobile devices!
 
 ### Consider object pooling
@@ -152,10 +151,9 @@ abstract public class Pool {
 }
 ```
 
-
 As you can probably deduce after reading the previous snippet, in order to make a resource poolable it's required to implement the reset() method of such interface. Then you need to create a new [Pool](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/utils/Pool.html) class that implements the newObject() method which means the poolable object must provide a default constructor. Easy peasy. However, if by any chance you come across any problems while implementing this yourself, take a look at the official documentation or at this [sample to have efficient bullets](http://www.ziggysgames.com/my-weapon-bullet-system-using-artemis-and-libgdx-box2d).
 
-![/img/freegemas/freegemas-03.png](/img/freegemas/freegemas-03.png)
+![/img/freegemas/freegemas-03.png](/img/freegemas/freegemas-03.webp)
 
 For those who remain skeptic, I used the libgdx ParticleEffectPool class in Freegemas to enhance efficiency with noticeable improvements in mobile devices. Every time you connect a group of 3 or more gems you get a sparkle effect right away. Even though this can be found in the Freegemas game state class implementation, I"ll attach the interesting bits below.
 
@@ -176,14 +174,13 @@ if (effect.isComplete()) {
 }
 ```
 
-
 Here we go, GC friendly particles. Neat, isn't it?
 
 ### Still in trouble? Do some profiling
 
 > Alright, I"m pretty sure your advice is utter bullshit, my app is still laggy! I want my money back.
 
-![visualvm-300x187.png](/img/wp/visualvm.png)
+![visualvm-300x187.png](/img/wp/visualvm.webp)
 
 Before throwing that rotten tomato you"re waving in anger, please consider giving profiling a shot. Get VisualVM, make it analyze your game while it's running and take a close look at the results. You might find out that a seemingly harmless method is consuming an obscene amount of CPU time. Who knows, perhaps you've missed several memory allocations within the game loop. Despite of its simplicity, yes, I will tackle profiling with depth further ahead in this very same blog.
 

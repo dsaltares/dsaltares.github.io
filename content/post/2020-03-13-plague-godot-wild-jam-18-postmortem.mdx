@@ -6,7 +6,7 @@ tags: ['Godot', 'gamejam', 'gamedev']
 categories: ['Games development']
 ---
 
-![plague-banner](/img/plague/header.png)
+![plague-banner](/img/plague/header.webp)
 
 A few weeks ago, [Jay Cano](https://twitter.com/senthe) and I took part in the week-long [Godot Wild Jam 18](https://itch.io/jam/godot-wild-jam-18) and submitted [Plague](https://dsaltares.itch.io/plague). Here are some of my personal thoughts on how we did and maybe some lessons for the future!
 
@@ -16,7 +16,7 @@ Out of 43 submissions, we ranked 6th overall. That is the top 13th percentile. M
 
 Even though both games received positive feedback, Plague ranked high for fun. We're very happy about that!
 
-[![jam-results](/img/plague/jam-results.png)](/img/plague/jam-results.png)
+[![jam-results](/img/plague/jam-results.webp)](/img/plague/jam-results.webp)
 
 ## 👍 What went well
 
@@ -45,7 +45,7 @@ Additionally, we implemented a very simple [Coyote Time](https://github.com/dsal
 
 The game is a procedurally-generated infinite side-scroller. However, we do not procedurally place tiles. We have 8 hand crafted chunks. Then, the [`InfiniteLevelManager`](https://github.com/dsaltares/godot-wild-jam-18/blob/5da19b57e42014a3a9f26b64c782a51b5925a39c/game/Levels/InfiniteLevelManager.gd) script is responsible for randomly selecting the next chunk as the player approaches the end of the current chunk. Finally, it populates the chunk with enemies and ammo pickups.
 
-[![level chunk](/img/plague/levelchunk.png)](/img/plague/levelchunk.png)
+[![level chunk](/img/plague/levelchunk.webp)](/img/plague/levelchunk.webp)
 
 This gave us an infinite scroller with a very simple procedural generation algorithm and super tight control over the end result. We even managed to progressively increase difficulty by spawning more and tougher enemies.
 

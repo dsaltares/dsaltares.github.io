@@ -24,7 +24,7 @@ tags:
   - Tiny Backup
 ---
 
-![tiny-backup1.png](/img/wp/tiny-backup1.png)
+![tiny-backup1.png](/img/wp/tiny-backup1.webp)
 
 Tiny Backup es una pequeña interfaz para algunas de las funcionalidades del **comando dpkg** que permite a usuarios de GNU/Linux **realizar y restaurar copias** de la lista de paquetes instalados en el sistema. Está **desarrollado en Python utilizando PyGTK y Glade** para la GUI aunque de eso ya hablé suficiente en [el artículo](/desarrollo-informatica/tiny-backup-pygtk-y-glade/) que le dediqué hace algo más de un mes. En este pequeño escrito hablaré de la acogida de la primera versión y de los arreglos que incorpora la segunda.
 
@@ -50,14 +50,13 @@ path = os.path.dirname(__file__) + os.sep + 'glade/TinyBackup.glade'
 builder.add_from_file(path)
 ```
 
-
 Cuando vi su aporte acudí velozmente a modificar el código, probarlo y subir una nueva versión a la [forja](http://code.google.com/p/python-tiny-backup/). Desde estos momentos podéis **[descargar Tiny Backup 0.2](http://python-tiny-backup.googlecode.com/files/tinybackup-0.2.tar.gz)**.
 
 ### Futuras versiones
 
 El tiempo es un bien del que ando bastante escaso últimamente y, en estos momentos, mi tiempo de desarrollo lo acapara IberOgre y Sion Tower. No obstante, se me ocurren **un par de ideas para Tiny Backup 0.3**:
 
-*   **Internacionalización**: empecé a desarrollar Tiny Backup en inglés pero me gustaría que estuviese disponible en algunos idiomas más: español, francés, alemán, etc. Tengo entendido que con Glade es sencillo incorporar internacionalización y sería interesante aprender cómo.
-*   **Barra de progreso**: los usuarios necesitan feedback constante por parte del software que utilizan. Si encargan una tarea pesada y no aparece una barra de progreso creerán que la aplicación se ha colgado. Si queremos restaurar una extensa lista de paquetes el proceso puede llevar bastante tiempo así que esta característica tiene bastante prioridad.
+- **Internacionalización**: empecé a desarrollar Tiny Backup en inglés pero me gustaría que estuviese disponible en algunos idiomas más: español, francés, alemán, etc. Tengo entendido que con Glade es sencillo incorporar internacionalización y sería interesante aprender cómo.
+- **Barra de progreso**: los usuarios necesitan feedback constante por parte del software que utilizan. Si encargan una tarea pesada y no aparece una barra de progreso creerán que la aplicación se ha colgado. Si queremos restaurar una extensa lista de paquetes el proceso puede llevar bastante tiempo así que esta característica tiene bastante prioridad.
 
 Desconozco cuando podré dedicarle el tiempo suficiente para incorporar estas mejoras. En cualquier caso le vuelvo a agradecer a Cristian Arbazua su inestimable colaboración en este pequeño proyecto. **¡El feedback siempre es bienvenido!**

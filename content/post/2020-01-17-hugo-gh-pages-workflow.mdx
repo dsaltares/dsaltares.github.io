@@ -14,13 +14,13 @@ Here's a simple CD workflow for deploying a Huge site to Github pages.
 
 Create a Github repo with the name `<username>.github.io`. Make sure it has a `README.md` so that you can start pushing to it. Anything pushed to this repo will be accessible from `http://<username>.github.io`. This will be your production repository. If you have a PRO Github account, you can make the repo private. This means users will be able to access the `github.io` site but not the repo sources.
 
-![dsaltares.github.io](/img/gh-pages-workflow/production-repo.png)
+![dsaltares.github.io](/img/gh-pages-workflow/production-repo.webp)
 
 ### Create your dev repository
 
 Create a new repo to host your dev Hugo site from which we will deploy to the production repo. Name it something like `<username>.github.io-dev`. That's where you will write your Hugo pages in Markdown.
 
-![dsaltares.github.io-dev](/img/gh-pages-workflow/dev-repo.png)
+![dsaltares.github.io-dev](/img/gh-pages-workflow/dev-repo.webp)
 
 ### Configure the CD pipeline
 
@@ -34,11 +34,11 @@ ssh-keygen -t rsa -b 4096 -C "<email>" -f publish_key -P ""
 
 Now, go to the production repo Settings, Deploy keys and paste the contents of `publish_key.pub` here.
 
-![deploy_keys](/img/gh-pages-workflow/deploy-keys.png)
+![deploy_keys](/img/gh-pages-workflow/deploy-keys.webp)
 
 Go to the dev repo Settings, Secrets and add a new secret called `ACTIONS_DEPLOY_KEY` with the contents of the `publish_key` file.
 
-![secrets](/img/gh-pages-workflow/secrets.png)
+![secrets](/img/gh-pages-workflow/secrets.webp)
 
 Create a `.github/workflows/deploy.yml` file in your dev repo with the following contents:
 
@@ -71,7 +71,7 @@ jobs:
 
 After you push this file and every time you push to dev, the `Build and Deploy` action will be triggered. It will checkout the dev repo, install the latest Hugo binary, build your site and deploy to the master branch of your production repo. Once it's done, the latest version of your site will be available on `https://<username>.github.io`.
 
-![actions](/img/gh-pages-workflow/actions.png)
+![actions](/img/gh-pages-workflow/actions.webp)
 
 Even though my blog contains hundreds of posts, images and files, `Build and Deploy` takes less than 1 minute!
 
@@ -88,7 +88,7 @@ Obviously, this step only applies if you have your own domain. Go to your provid
 
 The screenshot below shows the Namecheap DNS config panel for my account.
 
-![dsaltares.github.io](/img/gh-pages-workflow/dns-config.png)
+![dsaltares.github.io](/img/gh-pages-workflow/dns-config.webp)
 
 Finally, go to your dev repo and create a `static/CNAME` file with your domain name. For example, mine contains:
 
@@ -98,7 +98,7 @@ saltares.com
 
 Once that is done and deployed to production, you should see the following in your production repository Settings, inside the Github Pages section. Tick the "Enforce HTTPS" to redirect all traffic from `http://<domain>` to `https://<domain>`.
 
-![gh-pages-section](/img/gh-pages-workflow/gh-pages-section.png)
+![gh-pages-section](/img/gh-pages-workflow/gh-pages-section.webp)
 
 Note that this may take up to 24h to work as your new DNS settings propagate, so be patient!
 

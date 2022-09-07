@@ -26,8 +26,7 @@ Fair enough, you can probably afford to brainlessly waste some memory on PC when
 
 The sooner you face this, the better. Asset management can be a pain in the arse.
 
-![fuck-this-shit-table-flip-300x271.jpg](/img/wp/fuck-this-shit-table-flip.jpg)
-
+![fuck-this-shit-table-flip-300x271.jpg](/img/wp/fuck-this-shit-table-flip.webp)
 
 Throughout this article, I"d like to illustrate some of the challenges one has to face when dealing with many assets within a medium sized project. Later on, I"ll be presenting some classic approaches to finish with one that seems to be working for me quite well. The examples are focused on the [libgdx framework](libgdx.badlogicgames.com/), although the concepts are widely applicable.
 
@@ -35,26 +34,26 @@ Throughout this article, I"d like to illustrate some of the challenges one has t
 
 Just to make sure we"re on the same page, these two are the very fundamental items to take into account when managing resources in a game.
 
-*   Don't load things twice. Eg. If you have identical looking sprites, share the texture data and render it as needed.
-*   Don't load anything that you won't need in the near future. Why would you load the final level when the user has just fired up the game for the very first time?
+- Don't load things twice. Eg. If you have identical looking sprites, share the texture data and render it as needed.
+- Don't load anything that you won't need in the near future. Why would you load the final level when the user has just fired up the game for the very first time?
 
 Basically, we"re going to try to use the smallest portion of memory we possibly can at a given point in execution.
 
 ### Use the AssetManager Luke
 
-Luckily enough, libgdx provides the splendid [AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html), so, for *$deity*"s sake, please don't reinvent the wheel. Are you not using libgdx? Fear not, fellow developer, for most modern libraries feature similar components. Eg. In [Ogre3D](http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Basic+knowledge+about+Resources) we have [ResourceGroupManager](http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html) class.
+Luckily enough, libgdx provides the splendid [AssetManager](http://libgdx.badlogicgames.com/nightlies/docs/api/com/badlogic/gdx/assets/AssetManager.html), so, for _$deity_"s sake, please don't reinvent the wheel. Are you not using libgdx? Fear not, fellow developer, for most modern libraries feature similar components. Eg. In [Ogre3D](http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Basic+knowledge+about+Resources) we have [ResourceGroupManager](http://www.ogre3d.org/docs/api/html/classOgre_1_1ResourceGroupManager.html) class.
 
 Take all the time you need to read the correspondent [wiki page](https://code.google.com/p/libgdx/wiki/AssetManager) in case you were oblivious to its existence. Long story short, here's what AssetManager can do for you.
 
-*   Store one copy of each asset.
-*   Reference counting.
-*   Inter asset dependencies handling.
-*   Asynchronous asset loading, keeps your app responsive.
-*   Easily extensible, implement your custom loaders for arbitrary types of assets.### The naive approach
+- Store one copy of each asset.
+- Reference counting.
+- Inter asset dependencies handling.
+- Asynchronous asset loading, keeps your app responsive.
+- Easily extensible, implement your custom loaders for arbitrary types of assets.### The naive approach
 
 The most straightforward approach is to use AssetManager to load all your assets upfront and make the manager globally available. That way you"d be able to easily retrieve resources.
 
-![sharememe1348806647-300x225.jpg](/img/wp/loadalltheassets.jpg)
+![sharememe1348806647-300x225.jpg](/img/wp/loadalltheassets.webp)
 
 ```
 public class MyGame extends Game {
@@ -91,7 +90,6 @@ public class MyGame extends Game {
 }
 ```
 
-
 While this is a very comfortable thing to do and renders itself valid in most cases, we"re still loading assets that won't be needed right away. Actually this snippet is taken almost as it was in my [Ludum Dare #26 entry](/game-jams/lightbyrinth/), and it was perfectly fine. It's highly likely for you to get away with this. However, if you want to go the extra mile to achieve maximum performance, you know exactly what can be improved.
 
 ### Slightly more advanced approaches
@@ -102,15 +100,14 @@ We only want to load the resources that will be used at a given time while avoid
 
 Obviously, the soft spot will be closely tied to the scope and genre in play but let's list a few possibilities.
 
-* Everything at a time – Not an option
-* Menus, levels
-* Individual menu screen, individual level, all characters
-* Individual menu screen, individual level, needed characters
-* Individual menu screen, streaming level chunks, needed characters
-* …
+- Everything at a time – Not an option
+- Menus, levels
+- Individual menu screen, individual level, all characters
+- Individual menu screen, individual level, needed characters
+- Individual menu screen, streaming level chunks, needed characters
+- …
 
-![max-payne-cod.jpg](/img/wp/max-payne-cod.jpg)
-
+![max-payne-cod.jpg](/img/wp/max-payne-cod.webp)
 
 Different games take different paths. On one hand you have Max Payne 3 which loads common assets upfront and then it seamlessly streams the rest as needed. On the other hand we find the Call of Duty example, where there's a load screen masked behind a briefing before each level.
 
@@ -118,9 +115,9 @@ Different games take different paths. On one hand you have Max Payne 3 which loa
 
 As you can see, it can get mental institution level of crazy in terms of deciding who loads what and when. Retrieving an asset you erroneously thought to be in memory could become an everyday issue. You want to simplify it.
 
-The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I"ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game *Screen* is responsible for loading and unloading its own resource group. If you think it's going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.
+The most annoying thing is to manually load each asset in the appropriate place and to handle the asynchronous process. Then why not gather resources and group them? Loading or freeing up an asset group by a single name would be much easier. I"ll leave the grouping policy entirely up to you to decide as it depends on your needs. However, it seems like the simple way to go is that each game _Screen_ is responsible for loading and unloading its own resource group. If you think it's going to take some time, then it might be appropriate to render a loading screen meanwhile. Moreover, you could have a base group of common assets that will always remain available.
 
-![load-sequence.png](/img/wp/load-sequence.png)
+![load-sequence.png](/img/wp/load-sequence.webp)
 
 Taking a data driven approach to group assets is like the cherry on top as it enables you to make adjustments to balance out the workload as you iterate on the process. I started using XML as file format but JSON or similar would also be fit. Here's an example.
 
@@ -134,8 +131,7 @@ Taking a data driven approach to group assets is like the cherry on top as it en
 </assets>
 ```
 
-
-Qualified types and reflection are used to make the *AssetManager#load* calls.
+Qualified types and reflection are used to make the _AssetManager#load_ calls.
 
 ### Grouped Asset Manager code
 
@@ -273,13 +269,12 @@ public class Assets implements Disposable, AssetErrorListener {
 }
 ```
 
-
 ### Conclusions and further improvements
 
 This small grouped asset manager will do the trick for me. Nevertheless I believe it could be improved in a few ways.
 
-* JSON format for faster parsing.
-* Automatically scan asset folders.
-* Associate file extensions to asset types. * …
+- JSON format for faster parsing.
+- Automatically scan asset folders.
+- Associate file extensions to asset types. \* …
 
 Anyhow, I hope I made my point of showing some different approaches to asset management along their pros and cons. I"d love to hear your thoughts on the topic, and were you to find yourself disagreeing with me, by all means, share your point of view.

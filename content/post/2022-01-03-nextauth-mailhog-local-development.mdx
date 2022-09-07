@@ -1,14 +1,20 @@
 ---
-title: "Improve your NextAuth.js app local development experience with a dockerized SMTP server"
+title: 'Improve your NextAuth.js app local development experience with a dockerized SMTP server'
 date: 2022-01-16T00:00:00+00:00
-author: "David Saltares"
-tags: ["development", "localhost", "DX"]
-categories: ["Development"]
-description: "Tutorial on how to improve your local development experience when using NextAuth.js by spinning up a MailHog SMTP server container."
-keywords: ["local development", "nextauth.js local development", "mailhog testing SMTP server", "docker SMTP server"]
+author: 'David Saltares'
+tags: ['development', 'localhost', 'DX']
+categories: ['Development']
+description: 'Tutorial on how to improve your local development experience when using NextAuth.js by spinning up a MailHog SMTP server container.'
+keywords:
+  [
+    'local development',
+    'nextauth.js local development',
+    'mailhog testing SMTP server',
+    'docker SMTP server',
+  ]
 ---
 
-![NextAuth.js logo](/img/nextjs/nextauth.png)
+![NextAuth.js logo](/img/nextjs/nextauth.webp)
 
 [NextAuth.js](https://next-auth.js.org/) makes it shockingly easy to add authentication to [Next.js](https://nextjs.org/) apps. It's free, open source, it lets you own your data and it supports a ton of identity providers, including [one time passwords](https://en.wikipedia.org/wiki/One-time_password) or "magic links".
 
@@ -41,7 +47,7 @@ export default NextAuth({
       },
       from: 'NextAuth <noreply@example.com>',
     }),
-  ]
+  ],
 });
 ```
 
@@ -104,10 +110,10 @@ $ yarn docker:up && yarn dev
 
 Go to `https://localhost:3000`, click Sign in and enter your email.
 
-![NextAuth.js login screen](/img/nextjs/nextauth-login.png)
+![NextAuth.js login screen](/img/nextjs/nextauth-login.webp)
 
 Now you can open `http://localhost:8025/` and see the email with the magic link.
 
-![MailHog inbox](/img/nextjs/mailhog.png)
+![MailHog inbox](/img/nextjs/mailhog.webp)
 
 🎉 That's it, you can now manage authentication in your app and work locally without an internet connection.

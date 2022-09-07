@@ -20,7 +20,7 @@ tags:
   - tutorial
 ---
 
-![quicksynergy.png](/img/wp/quicksynergy.png)
+![quicksynergy.png](/img/wp/quicksynergy.webp)
 
 **Cuando trabajamos no es extraño tener varias ventanas abiertas**: navegador, documentación, código y cliente de Twitter (¡ejem!). Cambiar constantemente de ventana puede ser un suplicio por lo que muchos optan por utilizar dos pantallas conectadas a su equipo. Menos usual pero igualmente posible es tener que manejar dos ordenadores al mismo tiempo, por ejemplo, el equipo de trabajo y el de pruebas. En tal caso **tu mesa puede convertirse en un verdadero caos** con tanto teclado y ratón estorbando, **la solución es Synergy**. A continuación, un sencillo tutorial de instalación y configuración.
 
@@ -30,8 +30,8 @@ tags:
 
 Hay que distinguir entre **dos conceptos**:
 
-*   **Servidor**: equipo que comparte el teclado y el ratón con los clientes. Sólo tendremos un servidor.
-*   **Cliente**: equipo que recibe la señal de teclado y ratón del servidor. Podemos tener varios clientes conectados a un servidor.### Instalación
+- **Servidor**: equipo que comparte el teclado y el ratón con los clientes. Sólo tendremos un servidor.
+- **Cliente**: equipo que recibe la señal de teclado y ratón del servidor. Podemos tener varios clientes conectados a un servidor.### Instalación
 
 **En el servidor vamos a instalar QuickSynergy** mientras que **en los clientes sólo necesitamos Synergy** (aunque también podemos instalar el pack completo. En sistemas no basados en Debian será necesario descargar y compilar el código (en [su forja](http://code.google.com/p/quicksynergy/downloads/list) de Google Code), pero en el resto podemos hacer:
 
@@ -43,14 +43,13 @@ sudo apt-get install quicksynergy
 sudo apt-get install synergy
 ```
 
-
 ### Configuración y uso
 
-El primer paso es **poner el servidor en marcha** para que comience a enviar la señal. Para ello, abrimos QuickSynergy y nos centraremos únicamente en la pestaña *"Share"* (compartir). Los pasos son tremendamente sencillos:
+El primer paso es **poner el servidor en marcha** para que comience a enviar la señal. Para ello, abrimos QuickSynergy y nos centraremos únicamente en la pestaña _"Share"_ (compartir). Los pasos son tremendamente sencillos:
 
 1\. Elegimos la posición del cliente con respecto al servidor (arriba, abajo, izquierda o derecha). 2\. Introducimos la dirección IP o nombre de host del cliente. 3\. Hacemos click en _"Execute"_.
 
-![quicksynergy-share.png](/img/wp/quicksynergy-share.png)
+![quicksynergy-share.png](/img/wp/quicksynergy-share.webp)
 
 Si **el cliente** está encendido y no tenemos fácil acceso a su teclado y ratón podemos activar Synergy a través de SSH y todos tan contentos:
 
@@ -58,13 +57,12 @@ Si **el cliente** está encendido y no tenemos fácil acceso a su teclado y rat�
 ssh usuario@host "synergyc –name nombreHost ipServidor"
 ```
 
+En cambio, si preferimos utilizar QuickSynergy para configurar el cliente será necesario acudir a la pestaña _"Use"_. Introducimos la IP del servidor y hacemos click sobre _"Execute"_.
 
-En cambio, si preferimos utilizar QuickSynergy para configurar el cliente será necesario acudir a la pestaña *"Use"*. Introducimos la IP del servidor y hacemos click sobre *"Execute"*.
-
-![quicksynergy-use.png](/img/wp/quicksynergy-use.png)
+![quicksynergy-use.png](/img/wp/quicksynergy-use.webp)
 
 ### Reputación++
 
 Listo, ahora es posible compartir teclado y ratón entre varios equipos con lo que **nuestro estatus como informático profesional habrá ganado enteros**. Seremos aclamados y mereceremos el respeto y temor de todos nuestros compañeros.
 
-![3-screens.png](/img/wp/3-screens.png)
+![3-screens.png](/img/wp/3-screens.webp)

@@ -22,7 +22,7 @@ tags:
   - Wikiteam
 ---
 
-![backups-wikiteam1.png](/img/wp/backups-wikiteam1.png)
+![backups-wikiteam1.png](/img/wp/backups-wikiteam1.webp)
 
 **[IberOgre](http://osl2.uca.es/iberogre/index.php/P%C3%A1gina_Principal) está alojada en los servidores de la [OSLUCA](http://osl.uca.es/)** a los que no tengo acceso y, aunque sé que se hacen **copias de seguridad** diarias, me gustaría tener algunas en local del trabajo que tanto sudor ha costado. Para eso, me viene de maravilla la herramienta que ha desarrollado el compañero Emilio José Rodríguez Posada: **[Wikiteam](http://code.google.com/p/wikiteam/)**. A continuación, más información sobre la herramienta y cómo hacer backups de wikis con ella.
 
@@ -43,12 +43,11 @@ Generar copias de seguridad es harto sencillo y sólo requiere ejecutar el scrip
 python dumpgenerator.py –api=http://wikidomain.com/path/to/api.php –xml --images
 ```
 
-
 El significado de los parámetros es el siguiente:
 
-*   **api**: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: [http://osl2.uca.es/iberogre/api.php](http://osl2.uca.es/iberogre/api.php)
-*   **xml**: recupera todas las páginas de la wiki junto a su historial-
-*   **images**: recupera todas las imágenes y ficheros de la wiki.
+- **api**: ruta a la API de la wiki, normalmente es la URL de la wiki seguida de api.php. Por ejemplo, en IberOgre es: [http://osl2.uca.es/iberogre/api.php](http://osl2.uca.es/iberogre/api.php)
+- **xml**: recupera todas las páginas de la wiki junto a su historial-
+- **images**: recupera todas las imágenes y ficheros de la wiki.
 
 ### Restaurar backups con Wikiteam
 

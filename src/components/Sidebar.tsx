@@ -61,7 +61,7 @@ const Sidebar = () => (
             <div className="mb-5">
               <Image
                 className="rounded-full"
-                src="/img/profile.jpg"
+                src="/img/profile.webp"
                 width={200}
                 height={200}
                 alt="profile picture"

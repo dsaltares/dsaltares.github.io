@@ -18,6 +18,7 @@ tags:
   - physics
   - programming
 ---
+
 _[Fix your Timestep](http://gafferongames.com/game-physics/fix-your-timestep/)_ is a fantastic article by Glenn Fiedler that explains the different ways to tick a physics simulation. Show some self-respect, go read it and check some of his other articles on physics and network code. Some might be 8 years old but still totally relevant.
 
 Essentially, it covers different approaches to pick a delta value to pass through to the physics engine along their strengths and weaknesses. The topic is complex but has an undeniable impact on games' behaviour.
@@ -30,13 +31,13 @@ It starts with a fix time step of 1/60th of a second, which makes for a stable s
 
 The logical upgrade is to pass exactly how much time has passed since the last frame. Obviously, not every frame takes the same, which means the simulation could be unstable. Moreover, it will vary across devices as they can feature a wide range of specifications. This is definitely not the way to go.
 
-> Everything is lost! 
+> Everything is lost!
 
 ### Fixed timestep
 
 If only we had the best of both worlds! A fixed timestep and a mechanism that caters for the render loop being too slow. As the article explains, the physics will always be stepped by a fixed amount, let's say 1/60s. Some machines may be too fast and render at 120fps, so we can run the physics twice. However, others might be too slow and render at 30fps, in which case we'd only step the physics one every two frames.
 
-> What happens when the game runs at 50fps? 
+> What happens when the game runs at 50fps?
 
 We need an `accumulator` where we can put the time spent by the renderer. Then we step the physics by a fixed amount until they sync as best as possible. There might be still be some time left, but we can save it for the next frame.
 
@@ -113,10 +114,10 @@ Although it's been simplified for the purpose of this text, the following snippe
 
 Libgdx community memeber, Just4phil, pointed out in the comments the advantages of using a fixed timestep with interpolation. He kindly provided a working sample that lets you switch between all approaches explained in this article. Not only that, he also linked to the source, which is really awesome. Kudos.
 
-![Fixed timestep demo](/img/wp/just4phil-fixed-timestep.png)
+![Fixed timestep demo](/img/wp/just4phil-fixed-timestep.webp)
 
-  * [Download demo jar](http://goo.gl/aF0wSJ)
-  * [Fixed timestep code](https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java)
-  * [Interpolation code](https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java)
+- [Download demo jar](http://goo.gl/aF0wSJ)
+- [Fixed timestep code](https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameScreen.java)
+- [Interpolation code](https://github.com/just4phil/bubblr3_00.010a/blob/master/bubblr3/src/de/philweb/bubblr3/GameObjectManager.java)
 
 Again, read [the original article](http://gafferongames.com/game-physics/fix-your-timestep/) if you haven't done so already.

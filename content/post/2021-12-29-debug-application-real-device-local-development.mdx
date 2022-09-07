@@ -1,11 +1,12 @@
 ---
-title: "How to test and debug your localhost web app on a real Android device"
+title: 'How to test and debug your localhost web app on a real Android device'
 date: 2021-12-29T00:00:00+00:00
-author: "David Saltares"
-tags: ["development", "android", "chrome", "localhost", "DX"]
-description: "Tutorial to develop a website locally and test on a real Android device"
-keywords: ["web app", "local development", "developer experience", "Android", "Chrome"]
-categories: ["Development"]
+author: 'David Saltares'
+tags: ['development', 'android', 'chrome', 'localhost', 'DX']
+description: 'Tutorial to develop a website locally and test on a real Android device'
+keywords:
+  ['web app', 'local development', 'developer experience', 'Android', 'Chrome']
+categories: ['Development']
 ---
 
 When building cross-platform web application, you can mostly get away with working locally on your desktop browser. However, from time to time you may have to deal with a pesky bug that only happens on mobile.
@@ -21,6 +22,7 @@ Fortunately there is a simple trick you can use to be able to quickly iterate an
 ## 📱 Enable USB debugging
 
 First, make sure USB debugging is enabled on your device.
+
 1. Go to `Settings -> About phone`
 2. Tap the build number seven times.
 3. Enable USB debugging by going to `Settings -> Developer options -> USB Debugging`.
@@ -57,11 +59,11 @@ chrome://inspect/#devices
 
 You should see a list of remote targets and the pages that are open in each target.
 
-![chrome inspect](/img/remote-mobile-debugging/chrome-inspect.png)
+![chrome inspect](/img/remote-mobile-debugging/chrome-inspect.webp)
 
 Clicking `inspect` on the one you want to debug will open the Chrome Developer Tools and connect to the remote browser.
 
-![chrome remote debugging](/img/remote-mobile-debugging/chrome-remote-debugging.png)
+![chrome remote debugging](/img/remote-mobile-debugging/chrome-remote-debugging.webp)
 
 You can now see the viewport, tap around and use tools like the console, debugger, etc. You can give the URL to a colleague and have them remotely help out too.
 
