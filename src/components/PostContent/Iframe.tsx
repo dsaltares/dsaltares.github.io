@@ -31,7 +31,7 @@ const Iframe = ({ src, ratio, children }: PropsWithChildren<IframeProps>) => (
         top: 0,
         left: 0,
         width: '100%',
-        height: '100%;',
+        height: '100%',
       }}
     ></iframe>
     {children}
