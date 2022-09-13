@@ -9,13 +9,21 @@
             <link>https://saltares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 12 Sep 2022 01:10:05 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 13 Sep 2022 01:09:41 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 12 Sep 2022 01:10:05 GMT</pubDate>
+        <pubDate>Tue, 13 Sep 2022 01:09:41 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[David Saltares]]></managingEditor>
         <webMaster><![CDATA[David Saltares]]></webMaster>
+        <item>
+            <title><![CDATA[How I keep up with technology as an engineering leader]]></title>
+            <description><![CDATA[Keeping current with industry and technology is a challenge for engineering leaders. Here are some of the principles and sources I follow to do that.]]></description>
+            <link>https://saltares.com/how-i-keep-up-with-technology-as-an-engineering-leader</link>
+            <guid isPermaLink="true">https://saltares.com/how-i-keep-up-with-technology-as-an-engineering-leader</guid>
+            <pubDate>Tue, 13 Sep 2022 00:00:00 GMT</pubDate>
+            <media:content url="https://saltares.com/img/book-pile.webp" type="image/*"/>
+        </item>
         <item>
             <title><![CDATA[Migrating Teamfindr from CRA+Express+AWS to Next.js+Vercel]]></title>
             <description><![CDATA[TeamFindr is an app to organise games with friends. I migrated it from a CRA to a Next.js app. In this post, I cover why, the process and some resulting metrics.]]></description>
@@ -219,12 +227,6 @@ These engineers exist, but not in the way most people describe them.]]></descrip
             <link>https://saltares.com/plague---godot-wild-jam-18</link>
             <guid isPermaLink="true">https://saltares.com/plague---godot-wild-jam-18</guid>
             <pubDate>Thu, 27 Feb 2020 12:35:30 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[FOSDEM 2020 - Survival Guide]]></title>
-            <link>https://saltares.com/fosdem-2020---survival-guide</link>
-            <guid isPermaLink="true">https://saltares.com/fosdem-2020---survival-guide</guid>
-            <pubDate>Tue, 28 Jan 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
