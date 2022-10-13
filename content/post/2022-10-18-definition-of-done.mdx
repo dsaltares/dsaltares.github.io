@@ -1,0 +1,40 @@
+---
+title: 'A Definition of Done to align everyone'
+date: 2022-10-18T00:00:00+00:00
+author: 'David Saltares'
+categories: ['Leadership']
+description: "Your company already has a definition of done, even if it's not writen down. Here is a template to keep everybody align on expected quality."
+keywords:
+  [
+    'engineering leadership',
+    'definition of done',
+    'software delivery',
+    'expectations',
+  ]
+banner: '/img/trees.webp'
+---
+
+![Path with trees at each side](/img/trees.webp 'By Annette Schuman on Unsplash')
+
+> **Definition of Done** - the criteria to meet to put a ticket in the Done column.
+
+Everyone has a definition of done in their heads. It doesn't matter whether it is written down and standardised across an organisation. Each of us has a mental model for the quality standards we want to achieve and expect of others. Some folks may consider a user story done even without any automated tests, while others may deem it unacceptable. There are no absolute truths here, only alignment or misalignment.
+
+Having a well-established Definition of Done brings the following advantages.
+
+- 🤝 Shared understanding and expectations for what quality means.
+- 💯 Giving feedback is more effortless.
+- ⚖️ What matters and what we're willing to compromise on is explicit.
+- 🚀 Onboarding is easier for both full-time and contractors
+
+Here's an example definition of done. You should adapt it to the context and priorities of your organisation.
+
+- **🌊 UX.** Does the feature/workflow solve the user's problem, and does it meet the acceptance criteria? Beyond that, how does it feel to use? Is the UI responsive or sluggish? What does the network tab look like? Does the user receive appropriate feedback?
+- **🧪 Tests.** Every change must come with high-quality test coverage to have sufficient confidence to deploy it to production. Have you thought about the right combination between unit, integration, E2E and manual tests? Make sure to follow the existing testing principles.
+- **🔐 Security.** Are you following security best practices? Have you appropriately tested access control business logic? Are you sure you are not logging [PII](https://www.investopedia.com/terms/p/personally-identifiable-information-pii.asp)?
+- **📈 Analytics.** Are you recording user activity in a way that will allow the team to effectively measure the success of the change and make data-informed decisions in the future? Have you discussed it with the PM in your team?
+- **🕵️‍♂️ Observability.** Assume things will go wrong with the change/feature because they will. Do you have enough mechanisms in place to quickly identify what the problem is? Have you considered logging, alerting and tracing?
+- **♿ Accessibility.** Is the feature accessible? Are you using appropriate markup? What is the experience like for keyboard-only users and people with assistive technologies? For example, we aim at WCAG 2.1 AA. To learn more, you can look at the [WCAG guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).
+- **📚 Documentation.** When “future you” or someone else in the team wants to make a change in the same area, will they find their way around? Have you added appropriate documentation or updated the existing one?
+
+Your organisation may not need a written Definition of Done. That's fine! Just be aware that you already have one, whether intentional or accidental. If you want to implement one, feel free to use mine as a starter. There are many other examples out there worth checking out too!
