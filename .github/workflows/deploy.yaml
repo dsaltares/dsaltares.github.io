@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 0 * * *' # Once per day at midnight
+    - cron: '0 5 * * *' # Daily at 5am
 
 jobs:
   deployment:
