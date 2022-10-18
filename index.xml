@@ -9,13 +9,21 @@
             <link>https://saltares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 17 Oct 2022 01:23:27 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 18 Oct 2022 01:16:28 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 17 Oct 2022 01:23:27 GMT</pubDate>
+        <pubDate>Tue, 18 Oct 2022 01:16:28 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[David Saltares]]></managingEditor>
         <webMaster><![CDATA[David Saltares]]></webMaster>
+        <item>
+            <title><![CDATA[A Definition of Done to align everyone]]></title>
+            <description><![CDATA[Your company already has a definition of done, even if it's not writen down. Here is a template to keep everybody align on expected quality.]]></description>
+            <link>https://saltares.com/a-definition-of-done-to-align-everyone</link>
+            <guid isPermaLink="true">https://saltares.com/a-definition-of-done-to-align-everyone</guid>
+            <pubDate>Tue, 18 Oct 2022 00:00:00 GMT</pubDate>
+            <media:content url="https://saltares.com/img/trees.webp" type="image/*"/>
+        </item>
         <item>
             <title><![CDATA[How I keep up with technology as an engineering leader]]></title>
             <description><![CDATA[Keeping current with industry and technology is a challenge for engineering leaders. Here are some of the principles and sources I follow to do that.]]></description>
@@ -221,12 +229,6 @@ These engineers exist, but not in the way most people describe them.]]></descrip
             <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</link>
             <guid isPermaLink="true">https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</guid>
             <pubDate>Mon, 02 Mar 2020 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Plague - Godot Wild Jam 18]]></title>
-            <link>https://saltares.com/plague-godot-wild-jam-18</link>
-            <guid isPermaLink="true">https://saltares.com/plague-godot-wild-jam-18</guid>
-            <pubDate>Thu, 27 Feb 2020 12:35:30 GMT</pubDate>
         </item>
     </channel>
 </rss>
