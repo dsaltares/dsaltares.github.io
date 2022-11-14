@@ -3,6 +3,7 @@ import {
   faGithubSquare,
   faTwitterSquare,
   faLinkedin,
+  faMastodon,
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cn from 'classnames';
@@ -44,6 +45,11 @@ const SocialLinks = [
     icon: faRssSquare,
     href: 'https://saltares.com/index.xml',
     label: 'RSS feed',
+  },
+  {
+    icon: faMastodon,
+    href: 'https://fosstodon.org/@dsaltares',
+    rel: 'me',
   },
 ];
 
@@ -96,7 +102,7 @@ const Sidebar = () => (
         {SocialLinks.map((item) => (
           <li key={item.href} className="inline">
             <Link href={item.href}>
-              <a aria-label={item.label}>
+              <a aria-label={item.label} rel={item.rel}>
                 <FontAwesomeIcon className="text-4xl mr-2" icon={item.icon} />
               </a>
             </Link>
