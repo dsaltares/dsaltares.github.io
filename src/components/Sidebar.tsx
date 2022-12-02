@@ -113,7 +113,12 @@ const Sidebar = () => (
         Config.author
       }.`}</p>
     </aside>
-    <div className={cn(SidebarWidth, 'w-full hidden md:block')}></div>
+    <div
+      className={cn(
+        SidebarWidth,
+        'w-full hidden md:block flex-grow-0 flex-shrink-0'
+      )}
+    ></div>
   </>
 );
 

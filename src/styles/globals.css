@@ -76,4 +76,12 @@
   strong {
     @apply font-bold text-primary;
   }
+
+  .width-without-sidebar {
+    width: calc(100% - 360px);
+  }
+  
+  .main-content {
+    @apply w-full md:width-without-sidebar 
+  }
 }
