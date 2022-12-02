@@ -1,0 +1,113 @@
+---
+title: 'A template for lightning-fast full-stack app development'
+date: 2022-12-06T00:00:00+00:00
+author: 'David Saltares'
+categories: ['Development']
+description: 'A walkthrough of the template I use to build full-stack apps with lightning speed. Featuring technologies like Next.js, Typescript, Tailwind CSS, tRPC and Prisma.'
+keywords:
+  [
+    'full-stack development stack',
+    'Next.js',
+    'Typescript',
+    'Web development',
+    'GitHub',
+    'open source',
+    'PostgreSQL',
+    'TailwindCSS',
+    'Deployment',
+    'Docker',
+    'tRPC',
+    'NextAuth.js',
+    'Prisma',
+    'Vercel',
+    'Jest',
+    'React Testing Library',
+  ]
+banner: '/img/scaffolding.webp'
+---
+
+![Scaffolding with the sky as background](/img/scaffolding.webp 'By Hu Jiarui on Unsplash')
+
+The Javascript ecosystem is wonderful. It enables us to ship and iterate on web applications extremely fast. It has never been so easy to build something. However, far too often, we spend a ridiculous amount of time fine-tuning configuration, choosing a particular set of libraries, bike-shedding over eslint settings or wiring up CI/CD pipelines.
+
+Instead, we should focus on building the product itself. So I did all the dirty work, so you don't have to.
+
+Here is my [Next.js starter template](https://github.com/dsaltares/next-starter), which I use for all my projects. Credit goes to the exceptional open-source maintainers who created all the great libraries. I simply wired them together.
+
+## 🧑‍🏫 Principles
+
+Here are the principles I followed when making every technology choice in this template.
+
+- World-class developer experience
+- Tight feedback loops
+- [Pit of Success](https://blog.codinghorror.com/falling-into-the-pit-of-success)
+- Focus on building the product, not managing the infrastructure
+- Speed of iteration over flexibility
+
+## **🧰** The stack
+
+Knowing the principles for each decision, here's the set of technologies you will find in the template.
+
+- [**⚛️ Next.js**](https://nextjs.org/) - **the** fullstack framework for JS/TS. It has, by far, the most active community and development.
+- [**🚀 Typescript**](https://www.typescriptlang.org/) - for the superior developer experience and to catch issues early.
+- [**🎨 Tailwind CSS**](https://tailwindcss.com/) - never write CSS again. Ship as little as possible to the client. Works great with Tailwind UI and [headless UI](https://headlessui.com/).
+- [**🔗 tRPC**](https://trpc.io/) - end-to-end typesafe APIs. This setup makes it easy to test procedures in isolation.
+- [**🌍 React Query**](https://tanstack.com/query/v4) - the best server state management library. The template includes a `useMutation` hook that makes optimistic updates an absolute breeze. The setup is inspired by the recommendations of [TKDodo's series](https://tkdodo.eu/blog/practical-react-query).
+- [**🔒 NextAuth.js**](https://next-auth.js.org/) - trivial authentication for Next.js apps while owning all of your data.
+- [**📙 Prisma**](https://www.prisma.io/) - the best ORM for Typescript. This template assumes you'll be using PostgreSQL.
+- [🐳 **Docker**](https://www.docker.com/) - enabling 100% offline development using a local **PostgreSQL** DB and an email server via **[MailHog](https://github.com/mailhog/MailHog)**.
+- [**🃏 Jest**](https://jestjs.io/) - unit tests with **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)** and [**msw**](https://mswjs.io/). Integration tests that can talk to an ephemeral PostgreSQL database. Coverage is automatically collected.
+- **🚢 [GitHub Actions](https://github.com/features/actions) and [Vercel](https://vercel.com/)** - linting, testing, and full preview and production deployments.
+- [**🌳 Dependabot**](https://github.com/dependabot) - to keep all your dependencies up to date.
+
+## **🏎️** Get started
+
+Install dependencies:
+
+- [Docker](https://www.docker.com/)
+- node (ideally via [fnm](https://github.com/Schniz/fnm))
+
+Create a new Next.js project using this starter template. You can use either `yarn` or `npm`.
+
+```bash
+yarn create next-app --example https://github.com/dsaltares/next-starter <your_app_name>
+npx create-next-app --example https://github.com/dsaltares/next-starter <your_app_name>
+```
+
+Set up your local environment variables.
+
+```bash
+cp .env.sample .env
+```
+
+Spin up infrastructure dependencies locally.
+
+```bash
+yarn docker:up
+```
+
+Start the development server.
+
+```bash
+yarn dev
+```
+
+Run all tests, only unit tests or only integration tests.
+
+```bash
+yarn test yarn test:unit yarn test:integration
+```
+
+Run tests in watch mode and break stuff!
+
+```bash
+yarn test:unit --watch
+```
+
+The local development database is persisted locally in the `database` folder.
+
+## 🚀 Wrapping it up
+
+At the end of the day, this is my personal Next.js starter template. I could have used a different set of technologies and configuration, but ultimately, this is what works best for me. I am also aware of the similarities with the [T3 stack](https://create.t3.gg/). However, my template is more opinionated about testing, deployment and other development workflows.
+
+🙌 Thanks for reading! I hope you find the template useful by working with it directly or as inspiration for your setup.
