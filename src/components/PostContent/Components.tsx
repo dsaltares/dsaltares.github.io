@@ -39,7 +39,7 @@ const Components = {
     // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
     const imgElement = <img className="mb-1" {...props} />;
     return title ? (
-      <figure>
+      <figure className="mb-5">
         {imgElement}
         <figcaption className="text-center text-xs">{title}</figcaption>
       </figure>
