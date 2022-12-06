@@ -9,13 +9,21 @@
             <link>https://saltares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 05 Dec 2022 05:17:59 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 06 Dec 2022 05:17:27 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 05 Dec 2022 05:17:59 GMT</pubDate>
+        <pubDate>Tue, 06 Dec 2022 05:17:27 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2022, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[David Saltares]]></managingEditor>
         <webMaster><![CDATA[David Saltares]]></webMaster>
+        <item>
+            <title><![CDATA[A template for lightning-fast full-stack app development]]></title>
+            <description><![CDATA[A walkthrough of the template I use to build full-stack apps with lightning speed. Featuring technologies like Next.js, Typescript, Tailwind CSS, tRPC and Prisma.]]></description>
+            <link>https://saltares.com/a-template-for-lightning-fast-full-stack-app-development</link>
+            <guid isPermaLink="true">https://saltares.com/a-template-for-lightning-fast-full-stack-app-development</guid>
+            <pubDate>Tue, 06 Dec 2022 00:00:00 GMT</pubDate>
+            <media:content url="https://saltares.com/img/scaffolding.webp" type="image/*"/>
+        </item>
         <item>
             <title><![CDATA[A Definition of Done to align everyone]]></title>
             <description><![CDATA[Your company already has a definition of done, even if it's not writen down. Here is a template to keep everybody align on expected quality.]]></description>
@@ -222,13 +230,6 @@ These engineers exist, but not in the way most people describe them.]]></descrip
             <link>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</link>
             <guid isPermaLink="true">https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</guid>
             <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Continuous Delivery pipeline for Godot and itch.io]]></title>
-            <description><![CDATA[This tutorial helps you configure a continuous delivery pipeline for your Godot games to automatically publish to itch.io using Github Actions]]></description>
-            <link>https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</link>
-            <guid isPermaLink="true">https://saltares.com/continuous-delivery-pipeline-for-godot-and-itchio</guid>
-            <pubDate>Mon, 02 Mar 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
