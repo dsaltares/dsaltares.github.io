@@ -6,7 +6,7 @@
 
 @layer base {
   p {
-    @apply mb-5 text-xl
+    @apply mb-5 text-lg
   }
 
   a {
@@ -38,11 +38,11 @@
   }
 
   ul {
-    @apply list-disc mb-5 pl-10;
+    @apply list-disc mb-5 pl-10 text-lg;
   }
 
   ol {
-    @apply list-decimal mb-5 pl-10;
+    @apply list-decimal mb-5 pl-10 text-lg;
   }
 
   table {

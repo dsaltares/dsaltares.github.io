@@ -20,12 +20,12 @@ const Components = {
       AnchorHTMLAttributes<HTMLAnchorElement>,
       HTMLAnchorElement
     >
-  ) => <a className="text-contentLink text-xl" {...props} />,
+  ) => <a className="text-contentLink text-lg" {...props} />,
   code: (
     props: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>
   ) => (
     <code
-      className="text-code bg-codeBg px-2 py-1 text-base rounded"
+      className="text-code bg-codeBg px-2 py-1 text-sm rounded"
       {...props}
     />
   ),
