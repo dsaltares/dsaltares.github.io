@@ -1,0 +1,71 @@
+---
+title: 'Use PR templates to improve communication'
+date: 2023-05-30T00:00:00+00:00
+author: 'David Saltares'
+categories: ['Leadership']
+description: 'How to leverage pull request templates to improve collaboration and reduce lead times.'
+keywords:
+  [
+    'code review',
+    'pull request',
+    'pr',
+    'template',
+    'communication',
+    'collaboration',
+    'conventional commits',
+    'conventional commit',
+    'GitHub',
+  ]
+banner: '/img/pr-template-example.png'
+---
+
+![XKCD Code Quality joke](/img/code_quality_3.png 'https://xkcd.com/1833/')
+
+Nobody likes long-lived pull requests. The endless back and forth, the delayed projects, the increased tensions and the risk of introducing regressions. The leading cause is poor communication and collaboration.
+
+When faced with poorly presented PR, a reviewer may struggle with the following questions:
+
+- What is this change meant to do?
+- I see many UI changes, but what does the new UX look like?
+- This change feels controversial. How did the author conclude that this was the best course of action?
+
+Ideally, before jumping to implementation, engineers would refine the work, discuss the technical approach, write [ADRs](https://blog.pragmaticengineer.com/scaling-engineering-teams-via-writing-things-down-rfcs/), and even pair program. Bringing all these practices to a team does not happen overnight. In the meantime, here's a low hanging fruit.
+
+## PR templates
+
+As an Engineering Manager, you can help your team shorten review times by introducing a PR template. It doesn't need to be a behemoth of bureaucracy. A tiny bit of structure may go a long way.
+
+At hier foods, for example, we use the following template.
+
+### 🗞️ Title
+
+We follow a simplified version of [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/): `type(package): ticket - summary`. For example:
+
+- `feat(order): 123 - history view`
+- `fix(order): 456 - avoid crashing after the user session expires`
+
+### 🔍 Details
+
+Expand on the PR title, explain what you are trying to achieve, and provide context behind the potentially controversial technical decisions. Each change may require a different level of detail, and the author should use their best judgement.
+
+### 📸 Demo
+
+If the pull request affects the UI/UX of your application for either external or internal users, add a screenshot or a video showcasing the changes. Now, understanding the code will become ten times easier. Ideally, your PRs come with preview deployments. Folks can then easily test, even PMs and Designers. Realistically, not every team can implement them easily enough.
+
+Here's an example PR from my [invoicing side project](https://github.com/dsaltares/invoicing).
+
+![PR template example](/img/pr-template-example.png)
+
+Creating a [template for a repository on GitHub](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository) is very easy.
+
+## ⚖️ Tradeoffs
+
+Every process you bring will undoubtedly involve tradeoffs. In the case of PR templates, you are introducing the requirement for team members to invest some time up-front. In exchange, you are likely to get the following.
+
+- 🌟 Clearer and more streamlined communication.
+- 🚀 Code gets merged faster, decreasing lead times and risk.
+- 😮‍💨 Code reviews are more manageable and feel less taxing.
+- 🎓 Individuals learn more about the product and codebase.
+- 💬 As people explain their work, their communication skills improve.
+
+From my experience, PR templates typically end up being a great low-hanging fruit to improve code reviews significantly.
