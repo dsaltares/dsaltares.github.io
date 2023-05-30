@@ -9,13 +9,21 @@
             <link>https://saltares.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Mon, 29 May 2023 12:13:33 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 30 May 2023 05:15:19 GMT</lastBuildDate>
         <atom:link href="https://saltares.com/index.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Mon, 29 May 2023 12:13:33 GMT</pubDate>
+        <pubDate>Tue, 30 May 2023 05:15:19 GMT</pubDate>
         <copyright><![CDATA[All rights reserved 2023, David Saltares]]></copyright>
         <language><![CDATA[en]]></language>
         <managingEditor><![CDATA[David Saltares]]></managingEditor>
         <webMaster><![CDATA[David Saltares]]></webMaster>
+        <item>
+            <title><![CDATA[Use PR templates to improve communication]]></title>
+            <description><![CDATA[How to leverage pull request templates to improve collaboration and reduce lead times.]]></description>
+            <link>https://saltares.com/use-pr-templates-to-improve-communication</link>
+            <guid isPermaLink="true">https://saltares.com/use-pr-templates-to-improve-communication</guid>
+            <pubDate>Tue, 30 May 2023 00:00:00 GMT</pubDate>
+            <media:content url="https://saltares.com/img/pr-template-example.png" type="image/*"/>
+        </item>
         <item>
             <title><![CDATA[A template for lightning-fast full-stack app development]]></title>
             <description><![CDATA[A walkthrough of the template I use to build full-stack apps with lightning speed. Featuring technologies like Next.js, Typescript, Tailwind CSS, tRPC and Prisma.]]></description>
@@ -224,12 +232,6 @@ These engineers exist, but not in the way most people describe them.]]></descrip
             <link>https://saltares.com/doodle-a-crazy-drawing--guessing-game</link>
             <guid isPermaLink="true">https://saltares.com/doodle-a-crazy-drawing--guessing-game</guid>
             <pubDate>Sun, 17 May 2020 00:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Plague: a Godot Wild Jam 18 game postmortem]]></title>
-            <link>https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</link>
-            <guid isPermaLink="true">https://saltares.com/plague-a-godot-wild-jam-18-game-postmortem</guid>
-            <pubDate>Fri, 13 Mar 2020 00:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
