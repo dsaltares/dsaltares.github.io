@@ -8,7 +8,6 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
     "prettier:check": "prettier -c .",
     "prettier:format": "prettier -w .",
     "optimizeImages": "ts-node src/scripts/images.ts"
