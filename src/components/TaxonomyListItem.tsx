@@ -10,8 +10,8 @@ const TaxonomyListItem = ({
   item: { label, href, date },
 }: TaxonomyListItemProps) => (
   <li className="text-content">
-    <Link href={href}>
-      <a className="text-contentLink">{label}</a>
+    <Link className="text-contentLink" href={href}>
+      {label}
     </Link>
     <span>&nbsp;·&nbsp;</span>
     <span>{formatDate(date)}</span>

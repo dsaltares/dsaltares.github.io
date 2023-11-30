@@ -43,16 +43,12 @@ const Pagination = ({ current, total }: PaginationProps) => {
     <div className="mt-10 mb-5 flex flex-row justify-center">
       <nav className="p-0 m-0 list-none flex flex-row">
         <Link href="/">
-          <a>
-            <div className={cn(buttonBase, enabled, 'border rounded-l')}>
-              <FontAwesomeIcon icon={faBackwardFast} />
-            </div>
-          </a>
+          <div className={cn(buttonBase, enabled, 'border rounded-l')}>
+            <FontAwesomeIcon icon={faBackwardFast} />
+          </div>
         </Link>
         {!prevDisabled ? (
-          <Link href={`/page/${current - 1}`}>
-            <a>{prevItem}</a>
-          </Link>
+          <Link href={`/page/${current - 1}`}>{prevItem}</Link>
         ) : (
           prevItem
         )}
@@ -61,19 +57,15 @@ const Pagination = ({ current, total }: PaginationProps) => {
         </div>
 
         {!nextDisabled ? (
-          <Link href={`/page/${current + 1}`}>
-            <a>{nextItem}</a>
-          </Link>
+          <Link href={`/page/${current + 1}`}>{nextItem}</Link>
         ) : (
           nextItem
         )}
 
         <Link href={`/page/${total}`}>
-          <a>
-            <div className={cn(buttonBase, enabled, 'border rounded-r')}>
-              <FontAwesomeIcon icon={faForwardFast} />
-            </div>
-          </a>
+          <div className={cn(buttonBase, enabled, 'border rounded-r')}>
+            <FontAwesomeIcon icon={faForwardFast} />
+          </div>
         </Link>
       </nav>
     </div>

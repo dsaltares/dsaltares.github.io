@@ -63,37 +63,34 @@ const Sidebar = () => (
     >
       <div>
         <Link href="/">
-          <a>
-            <div className="mb-5">
-              <Image
-                className="rounded-full"
-                src="/img/profile.webp"
-                width={200}
-                height={200}
-                alt="profile picture"
-              />
-            </div>
-            <h1 className="text-white font-bold text-4xl leading-10">
-              {Config.title}
-            </h1>
-          </a>
+          <div className="mb-5">
+            <Image
+              className="rounded-full"
+              src="/img/profile.webp"
+              width={200}
+              height={200}
+              alt="profile picture"
+            />
+          </div>
+          <h1 className="text-white font-bold text-4xl leading-10">
+            {Config.title}
+          </h1>
         </Link>
       </div>
       <p className="text-contentLight text-2xl mb-5 leading-9 text-center md:text-left">
         {Config.description}
       </p>
-      <Link href="https://tinyletter.com/dsaltares/">
-        <a>
-          <p className="mb-5">✉️ Subscribe</p>
-        </a>
-      </Link>
+      <div
+        className="mb-5 font-base"
+        dangerouslySetInnerHTML={{
+          __html: `<button class="ml-onclick-form" onclick="ml('show', '646AL4', true)">✉️ Subscribe</button>`,
+        }}
+      />
       <nav>
         <ul className="mb-5 flex flex-col items-center md:items-start list-none pl-0">
           {NavBarItems.map((item) => (
             <li key={item.href} className="leading-7">
-              <Link href={item.href}>
-                <a>{item.text}</a>
-              </Link>
+              <Link href={item.href}>{item.text}</Link>
             </li>
           ))}
         </ul>
@@ -101,10 +98,8 @@ const Sidebar = () => (
       <ul className="mb-5 list-none pl-0">
         {SocialLinks.map((item) => (
           <li key={item.href} className="inline">
-            <Link href={item.href}>
-              <a aria-label={item.label} rel={item.rel}>
-                <FontAwesomeIcon className="text-4xl mr-2" icon={item.icon} />
-              </a>
+            <Link aria-label={item.label} rel={item.rel} href={item.href}>
+              <FontAwesomeIcon className="text-4xl mr-2" icon={item.icon} />
             </Link>
           </li>
         ))}

@@ -9,11 +9,7 @@ type ItchEmbedProps = {
 
 const ItchGame = ({ gameId, text, link }: ItchEmbedProps) => (
   <Iframe src={`https://itch.io/embed/${gameId}`} ratio="100:24">
-    {text && link && (
-      <Link href={link}>
-        <a>{text}</a>
-      </Link>
-    )}
+    {text && link && <Link href={link}>{text}</Link>}
   </Iframe>
 );
 

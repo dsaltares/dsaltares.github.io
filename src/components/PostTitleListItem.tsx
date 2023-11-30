@@ -9,8 +9,8 @@ type PostTitleListItemProps = {
 
 const PostTitleListItem = ({ post }: PostTitleListItemProps) => (
   <li className="flex flex-row flex-wrap">
-    <Link href={`/${post.slug}`}>
-      <a className="text-contentLink">{post.title}</a>
+    <Link className="text-contentLink" href={`/${post.slug}`}>
+      {post.title}
     </Link>
     {post.categories.length > 0 && (
       <>

@@ -12,8 +12,8 @@ const PostSeries = ({ name, posts }: PostSeriesProps) => (
     <ol className="list-decimal pl-10 mb-5">
       {posts.map((post) => (
         <li key={post.slug}>
-          <Link href={`/${post.slug}`}>
-            <a className="text-contentLink">{post.title}</a>
+          <Link className="text-contentLink" href={`/${post.slug}`}>
+            {post.title}
           </Link>
         </li>
       ))}
