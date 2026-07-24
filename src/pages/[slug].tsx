@@ -13,7 +13,6 @@ import {
 import PostHeader from '@components/PostHeader';
 import PostContent from '@components/PostContent';
 import PostSeries from '@components/PostSeries';
-import Disqus from '@components/Disqus';
 import Config from '@lib/config';
 
 type PostPageProps = {
@@ -51,7 +50,6 @@ const PostPage = ({ metadata, series, source }: PostPageProps) => (
       )}
       <PostContent source={source} />
     </article>
-    <Disqus post={metadata} />
   </Layout>
 );
 

@@ -14,10 +14,6 @@ const PostHeader = ({ post }: PostHeaderProps) => (
     </Link>
     <p className="flex text-contentLight mb-1">
       {`${formatDate(post.date)} · ${post.readingTime}`}
-      <span>&nbsp;·&nbsp;</span>
-      <Link className="text-contentLink" href={`/${post.slug}#disqus_thread`}>
-        Comments
-      </Link>
     </p>
     <div className="mb-3">
       <Categories categories={post.categories} />
