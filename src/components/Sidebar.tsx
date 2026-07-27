@@ -38,7 +38,7 @@ const SocialLinks = [
   },
   {
     icon: faTwitterSquare,
-    href: 'https://twitter.com/dsaltares',
+    href: 'https://twitter.com/d_saltares',
     label: 'Twitter profile',
   },
   {
